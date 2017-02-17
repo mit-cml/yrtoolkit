@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="/scrollstyle.css">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).click( );
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>The Challenge</h3>
+  <div>
+    <p>
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+    </p>
+  </div>
+
+  <h3>Tutorial</h3>
+  <div>
+    <p>
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+    </p>
+  </div>
+
+  <h3>Lets add features to the apps</h3>
+  <div>
+    <p>
+   <ul>
+
+      <li><b> Show an inspiring quotw based on how the user feels. </b></li>
+      <p>Set the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > label component's text </a>to a random message after the user chooses their mood.</p> 
+    </p>
+
+      <li><b>Display an image or play a song to cheer up a friend.</b></li>
+      <p>Use the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > image component </a>to show a picture, or the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > player component </a> to play a song after the user selects an emotion.</p> 
+    </p>
+
+      <li><b>Personalize the app with the user’s name.</b></li>
+      <p>Use the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > text input component </a>to get the user’s name and display it in the app.</p> 
+    </p>
+      
+      <li><b>Text a friend when the user is feeling sad.</b></li>
+      <p>Use the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > texting component </a>to send a message when the sad button is clicked.</p> 
+    </p>
+      
+      <li><b>Let users review how they felt in the past.</b></li>
+      <p>You can use the <a href="http://appinventor.mit.edu/explore/ai2/tutorials.html" title="Tutorial for using label component text" > TinyDb component </a>to store what happens each time the user hit the button.</p> 
+    </p>
+    </ul>
+  </div>
+
+   <h3>Share the app</h3>
+   <div>
+   <p>
+    Click on "My Projects" button on the top menu bar.
+    </p>
+    <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;">
+    <p>
+    Click on the project you want to share, then click on "Publish to Gallery" button.
+    </p>
+    <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;">
+    <p>
+    Fill in all the details and click the "PUBLISH" button.
+    </p>
+    <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;">
+    <p>
+    Click on "SHARE" button to get the link to the app.
+    </p>
+    <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;">
+    <p>
+    Copy and paste the link in the space below.
+    </p>
+    <p><label for="age">Link:</label><input id="age" title="Paste the copied link here"></p>
+    <div class="widget">
+    <button>Share</button>
+    </div>
+   </div>
+
+    <h3>Published apps</h3>
+    <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+     </div>
+     </div>
+        </div>
+</div>
+ 
+ 
+</body>
+  <script src="projectscript.js"></script>
+
+</html>
