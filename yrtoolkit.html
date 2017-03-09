@@ -16,7 +16,7 @@ console.log("window resized")
   
   <script>
   $( function() {
-    $( "#accordion" ).accordion();
+    $( "#accordion" ).accordion({heightStyle: "content"});
     $( ".widget input[type=submit], .widget a, .widget button" ).button();
     $( "button, input, a" ).click( );
   } );
