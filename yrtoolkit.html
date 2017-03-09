@@ -9,6 +9,12 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+  $(window).bind('resize', function() {
+console.log("window resized")
+});
+  </script>
+  
+  <script>
   $( function() {
     $( "#accordion" ).accordion();
     $( ".widget input[type=submit], .widget a, .widget button" ).button();
