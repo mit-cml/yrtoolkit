@@ -43,3 +43,11 @@ a.ui-button:active,
 	width:80%; 
 	padding: 10%;
 }
+
+.ui-helper-reset {
+    font-size:10pt;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding: 1em 1.2em;
+}
