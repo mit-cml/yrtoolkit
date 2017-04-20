@@ -33,7 +33,7 @@ a.ui-button:active,
 .projectbox{
 	float:left;
 	height: 200px; 
-	width: 150px; 
+	width: 120px; 
 	border: 1px solid black;
 	padding-right: 5%;
 	margin: 3px;
@@ -42,6 +42,7 @@ a.ui-button:active,
 .projectimage{
 	width:80%; 
 	padding: 10%;
+	max-height: 130px;
 }
 
 .ui-helper-reset {
@@ -50,4 +51,8 @@ a.ui-button:active,
 
 .ui-accordion .ui-accordion-content {
     padding: 1em 1.2em;
+}
+
+.projectUsername {
+  color: black;
 }
