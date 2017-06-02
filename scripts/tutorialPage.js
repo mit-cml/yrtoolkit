@@ -76,7 +76,7 @@ $(document).ready( function() {
       tutorialIndexDiv.className = "tutorialIndexDiv";
       tutorialIndexDiv.style.display = "none";
       tutorialContainers[i].appendChild(tutorialIndexDiv);
-      totalPageNum = document.getElementsByClassName("tutorialContentPage").length
+      totalPageNum = tutorialContainers[i].getElementsByClassName("tutorialContentPage").length
       
       tutorialIndexToPageObject[tutorialIndex] = {page:0,totalPageNum:totalPageNum}
       setupTutorialHeader(tutorialIndex);
@@ -88,7 +88,8 @@ $(document).ready( function() {
   setupTutorial();
 
   $(".tutorialPreviousButton").click(function(e) {
-    var tutorialIndex = 0;
+    var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
+    
     tutorialIndexToPageObject[tutorialIndex].page--;
     //show next button
     setTutorialNextButtonVisibility(tutorialIndex, true)
@@ -97,7 +98,7 @@ $(document).ready( function() {
   });
 
   $(".tutorialNextButton").click(function(e) {
-    var tutorialIndex = 0;
+    var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
     tutorialPageObject.page++;
 
