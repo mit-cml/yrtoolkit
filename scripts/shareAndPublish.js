@@ -2,7 +2,7 @@ $(document).ready( function() {
   //var galleryAppIds = [{id:"6370796237488128",name:"Tutorial1"},{id:"4861112582144000",name:"chat"}];
 
   //everything below requires a url
-  var serverTutorialId = 1;
+  var serverTutorialId = document.getElementById("serverTutorialId").innerHTML;
 
   var url = bd.util.getURLParamValue("url");
   if(!url) {
