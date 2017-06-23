@@ -111,4 +111,9 @@ $(document).ready( function() {
     return false;
   });
 
+  window.getTutorialVideo = function(tutorialId) {
+    window.parent.postMessage(tutorialId, '*');
+  }
+
+
 });
