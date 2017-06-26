@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+  
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content"});
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+  </script>
+</head>
+<body>
+
+<div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+<div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+<div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
+</div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+
+        Last year, NPR’s Morning Edition ran a story about an app called Mood Ring, created by our friends at Youth Radio, <a href="#" onclick="getTutorialVideo('fl9riiPNykY')" title="Tutorial video for emojis" 
+        >using</a> App Inventor. Mood Ring invites teens to track how they’re feeling using any combo of nine emojis, and to reach out to trusted others <a href="#" onclick="getTutorialVideo('FEEGO6SEw_g')" title="Tutorial video for emojis">when</a> they’re having a rough time. Youth Radio’s Storm White, who co-designed Mood Ring with some other Youth Radio members, told NPR her team wanted to develop “a playful way to address something serious.”
+      </p>
+    </div>
+
+    <h3>Cipher Tutorial</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+
+        <br/>
+        <hr/>
+      </div>
+
+
+      <!-- beginning of page content -->
+      <div class="tutorialContentPage">
+        <p>Let's make an app that uses ciphers to create an Escape the Room-style game.</p>
+
+        <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
+
+        <p>You've started with two screens with a few components each. Click through them on your companion app to see how they interact.</p>
+
+        <p>Screen 1:</p>
+
+        <img src="../images/cipher/screen1.png" style="width:65%" alt="some_text">
+
+        <p>Screen 2:</p>
+
+        <img src="../images/cipher/screen2.png" style="width:65%" alt="some_text">
+
+        <p>Try entering different values in the text box (besides the answer). What happens?</p>
+        
+        <p>Let's add another level to the app to make it more interesting.</p>
+      </div>
+
+      <div class="tutorialContentPage">  
+        <p>
+          When youre done clicking through the app, go to the upper right corner of the screen and click on Screen 3.
+        </p>
+        <img src="../images/cipher/chooseScreen.png" style="width:100%" alt="some_text">
+
+        <p>
+         Click on the Blocks button on the top right of the screen.
+        </p>
+        <img src="../images/cipher/clickBlocks.png" alt="some_text" style="width:100%;">
+
+        <p>
+          In Blocks, click ImageSprite1.
+        </p>        
+        <img src="../images/cipher/clickImageSprite.png" alt="some_text" style="width:60%;">
+
+        <p>
+          Choose the "when ImageSprite1.Touched" block and drag it to the Viewer.
+        </p>
+        <img src="../images/cipher/sprite1Touched.png" alt="some_text" style="width:100%;">
+
+        <p>
+          Click on Control in Blocks. 
+        </p>
+        <img src="../images/cipher/clickControl.png" alt="some_text" style="width:60%;">
+
+        <p>
+          And connect "open another screen screenName". 
+        </p>
+        <img src="../images/cipher/openScreen.png" alt="some_text" style="width:100%">
+
+        <p>
+          Click on Text. 
+        </p>
+        <img src="../images/cipher/clickText.png" alt="some_text" style="width:60%">
+
+        <p>
+          Connect an empty quotes block.
+        </p>
+        <img src="../images/cipher/emptyQuotes.png" alt="some_text" style="width:100%;">
+        
+        <p>
+          Type "Screen4" into the block.
+        </p>
+        <img src="../images/cipher/textScreen4.png" style="width:100%;">
+
+        <p>
+          See what happens when you click on your ImageSprite in your app!
+        </p>
+      </div>
+      <!--- end of page -->
+
+      <div class="tutorialContentPage">        
+        <p>Let's add some features to our next screen.</p>
+
+        <p>If you're not already there, go to Screen4.</p>
+
+        <img src="../images/cipher/clickScreen4.png" style="width:100%" alt="some_text">
+
+        <p>Click on Button1 in Blocks.</p>
+        
+        <img src="../images/cipher/clickButton.png" style="width:60%" alt="some_text">
+        
+        <p>Drag out the "when Button1.Click" block.</p>
+
+        <img src="../images/cipher/button1Click.png" style="width:100%" alt="some_text">
+
+        <p>Click on Control.</p>
+
+        <img src="../images/cipher/clickControl.png" style="width:60%" alt="some_text">
+
+        <p>Drag out the "if... then" block and connect it.</p>
+
+        <img src="../images/cipher/ifThen.png" style="width:60%" alt="some_text">
+
+        <p>Click on the blue gear and add an else block to the statement.</p>
+
+        <img src="../images/cipher/else.png" style="width:60%" alt="some_text">
+
+        <p>Click on Logic.</p>
+
+        <img src="../images/cipher/clickLogic.png" style="width:60%" alt="some_text">
+
+        <p>Drag out the "=" (also called an operator) block and connect it to the if socket.</p>
+
+        <img src="../images/cipher/=.png" style="width:60%" alt="some_text">
+
+        <p>Click TextBox1.</p>
+
+        <img src="../images/cipher/textBox1.png" style="width:60%" alt="some_text">
+
+        <p>Scroll down and choose the "TextBox1.Text" block and drag it into the first socket of the "=" block.</p>
+
+        <img src="../images/cipher/=TextBox.png" style="width:100%" alt="some_text">
+
+        <p>Click Math.</p>
+
+        <img src="../images/cipher/clickMath.png" style="width:60%" alt="some_text">
+
+        <p>Drag out a "0" block and connect it to the second socket of the "=" block.</p>
+
+        <img src="../images/cipher/0.png" style="width:100%" alt="some_text">
+
+        <p>Click on the block and change the number to "55613", the number that correctly corresponds with the code.</p>
+
+        <img src="../images/cipher/55613.png" style="width:100%" alt="some_text">
+
+        <p>Click Notifier1.</p>
+
+        <img src="../images/cipher/clickNotifier.png" style="width:60%" alt="some_text">
+
+        <p>Drag out two "call Notifier1.ShowAlert" blocks and connect them to the then and else sockets.</p>
+
+        <img src="../images/cipher/callNotifier1.png" style="width:100%" alt="some_text">
+
+        <p>Click Text.</p>
+
+        <img src="../images/cipher/clickText.png" style="width:60%" alt="some_text">
+
+        <p>Drag out two "" blocks and connect them to the notice sockets.</p>
+
+        <img src="../images/cipher/quote.png" style="width:100%" alt="some_text">
+
+        <p>Click and change the text of the first quote block to "Correct! You escaped from the museum through the tomb!". This tells the user that they got the cipher correct.</p>
+
+        <img src="../images/cipher/correct.png" style="width:100%" alt="some_text">
+
+        <p>Click and change the text of the second quote block to "Incorrect, you set off alarms and now the security's coming to get you!!". This tells the user that they got the cipher incorrect and need to try again.</p>
+
+        <img src="../images/cipher/incorrect.png" style="width:100%" alt="some_text">
+
+        <p>Try it out on your Android device.</p>
+        
+        <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+
+
+      </div>
+
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <p>
+        <b> Show an inspiring quote based on how the user feels. </b>
+        <p>Set the <a href="#" onclick="return goToHowToTutorial(0)" title="Tutorial for using label component text" > label component's text </a>to a random message after the user chooses their mood.</p> 
+      </p>
+
+      <b>Display an image or play a song to cheer up a friend.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Tutorial for using showing an image" > image component </a>to show a picture, or the <a href="#" onclick="return goToHowToTutorial(1)" title="Tutorial for using player component" > player component </a> to play a song after the user selects an emotion.</p> 
+
+      <b>Personalize the app with the user’s name.</b>
+      <p>Use the text input component to get the user’s name and display it in the app.</p> 
+
+
+      <b>Text a friend when the user is feeling sad.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(3)" title="Tutorial for send a text message" > texting component </a>to send a message when the sad button is clicked.</p> 
+
+
+      <b>Let users review how they felt in the past.</b>
+      <p>You can use the <a href="#" onclick="return goToHowToTutorial(4)" title="Tutorial for saving and writing to a file" > file component</a> to store what happens each time the user hits the button.</p> 
+
+
+    </div>
+
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
+
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div id="howToAccordion" class="accordion" style="display:none">
+    <h3>Show a random message</h3>
+    <div>
+      <p>Components you need: Label (in User Interface), Button (in User Interface)</p>
+      <p>Useful blocks:</p>
+      
+      <img src="../images/howTos/randomMessage.png" style="width:100%" alt="magic eight ball">
+      
+    </div>
+
+    <h3>Play a song</h3>
+    <div>
+      <p>This will play a song when you tap a button</p>
+      
+      <p>Components you need: Player (in Media), Button (in User Interface)</p>
+      
+      <p>In the player properties, click on the source property, upload your sound file, and click ok.</p>
+      <img src="../images/howTos/playerSource.png" style="height:200px" alt="player source">
+      <p>Put together the blocks below:</p>
+      
+      <img src="../images/howTos/playerStart.png" style="width:75%" alt="player start">
+      
+    </div>
+
+    <h3>Show an image</h3>
+    <div>
+      <p>This will show an image when you tap a button</p>
+
+      <p>Components you need: Image (in User Interface), Button (in User Interface)</p>
+
+      <p>In the Image properties, click the "picture" property, upload your image file, and click ok.</p>
+
+      <img src="../images/howTos/imageSource.png" style="height:200px" alt="player source">
+
+      <p>Click the "Visible" checkbox so that the picture will be hidden when the app starts</p>
+
+      <img src="../images/howTos/imageVisibleProperty.png" style="height:200px" alt="player source">
+
+      <p>Put together the blocks below:</p>
+
+      <img src="../images/howTos/imageVisibleOnClickBlocks.png" style="width:100%" alt="magic eight ball">
+
+    </div>
+
+
+    <h3>Send a text message</h3>
+<div>
+
+<p>This will send a text message when you tap a button</p>
+
+<p>Component you need: Texting (in Social), Button (in User Interface)</p>
+
+<p>Useful blocks:</p>
+<img src="../images/howTos/sendTextMessage.png" style="width:100%" alt="send text message">
+
+</div>
+
+  <h3>Store and read files</h3>
+<div>
+
+<p>This will read and write files on your device.</p>
+
+<p>Components you need: File (in Storage), Button (in User Interface), Text Box (in User Interface)</p>
+
+<p>When the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file.</p>
+<img src="../images/howTos/appendAndRead.png" style="width:100%" alt="send text message">
+
+<p>After the text is read from the file, the button's text is set to its contents.</p>
+<img src="../images/howTos/gotText.png" style="width:100%" alt="send text message">
+
+</div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
