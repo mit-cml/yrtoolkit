@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+  
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content"});
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+  </script>
+</head>
+<body>
+
+<div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+<div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+<div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
+</div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+
+        Last year, NPR’s Morning Edition ran a story about an app called Mood Ring, created by our friends at Youth Radio, <a href="#" onclick="getTutorialVideo('fl9riiPNykY')" title="Tutorial video for emojis" 
+        >using</a> App Inventor. Mood Ring invites teens to track how they’re feeling using any combo of nine emojis, and to reach out to trusted others <a href="#" onclick="getTutorialVideo('FEEGO6SEw_g')" title="Tutorial video for emojis">when</a> they’re having a rough time. Youth Radio’s Storm White, who co-designed Mood Ring with some other Youth Radio members, told NPR her team wanted to develop “a playful way to address something serious.”
+      </p>
+    </div>
+
+    <h3>Cipher Tutorial</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+
+        <br/>
+        <hr/>
+      </div>
+
+
+      <!-- beginning of page content -->
+      <div class="tutorialContentPage">
+        <p>Let's make an app that uses ciphers to create an Escape the Room-style game.</p>
+
+        <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
+
+        <p>You've started with two screens with a few components each. Click through them on your companion app to see how they interact.</p>
+
+        <p>Screen 1:</p>
+
+        <img src="../images/cipher_translation/screen1.png" style="width:65%" alt="some_text">
+
+        <p>Screen 2:</p>
+
+        <img src="../images/cipher_translation/screen2.png" style="width:65%" alt="some_text">
+        
+        <p>Let's some blocks to the app to make it more interesting.</p>
+      </div>
+
+      <div class="tutorialContentPage">  
+
+        <p>Click on the Blocks button on the top right of the screen.</p>
+        <img src="../images/cipher_translation/clickBlocks.png" alt="some_text" style="width:90%;">
+
+        <p>In Blocks, click decrypt.</p>
+        <img src="../images/cipher_translation/clickDecrypt.png" style="width:80%" alt="some_text">
+
+        <p>Drag out the "when decrypt.Click" block.</p>
+        <img src="../images/cipher_translation/decryptClick.png" style="width:90%" alt="some_text">
+
+        <p>Click on decrypted.</p>
+        <img src="../images/cipher_translation/clickDecrypted.png" style="width:90%" alt="some_text">
+
+        <p>Drag out and connect "set decrypted.Text".</p>
+        <img src="../images/cipher_translation/setDecrypted.png" style="width:100%" alt="some_text">
+
+        <p>Click Procedures.</p>
+        <img src="../images/cipher_translation/clickProcedures.png" style="width:70%" alt="some_text">
+
+        <p>Drag out and connect the "call decrypt" prodecure.</p>
+        <img src="../images/cipher_translation/callDecrypt.png" style="width:100%" alt="some_text">
+
+        <p>Click Math.</p>
+        <img src="../images/cipher_translation/clickMath.png" style="width:90%" alt="some_text">
+
+        <p>Drag out and connect the "0" block and connect it to the shift socket. Change the 0 to 3.</p>
+        <img src="../images/cipher_translation/3.png" style="width:100%" alt="some_text">
+
+        <p>Click on encrypted.</p>
+        <img src="../images/cipher_translation/clickEncrypted.png" style="width:90%" alt="some_text">
+
+        <p>Drag out the "encrypted.Text" block and connect it to the text socket.</p>
+        <img src="../images/cipher_translation/encryptedText.png" style="width:100%" alt="some_text">
+
+        <p>Test the app out in your companion device. Can you get to the next page through the app?</p>
+        
+      </div>
+      <!--- end of page -->
+
+      <div class="tutorialContentPage">        
+        <p>Let's add some features to the translation screen.</p>
+
+        <p>If you're not already there, go to Screen2.</p>
+        <img src="../images/cipher_translation/goToScreen2.png" style="width:100%" alt="some_text">
+
+        <p>Click on translate in the Blocks panel.</p>
+        <img src="../images/cipher_translation/clickTranslate.png" style="width:70%" alt="some_text">
+        
+        <p>Drag out the "when translate.Click" block.</p>
+
+        <img src="../images/cipher_translation/translateClick.png" style="width:90%" alt="some_text">
+
+        <p>Click on YandexTranslate1.</p>
+
+        <img src="../images/cipher_translation/clickYandex.png" style="width:60%" alt="some_text">
+
+        <p>Drag out the "call YandexTranslate1.RequestTranslation" block and connect it.</p>
+
+        <img src="../images/cipher_translation/callYandex.png" style="width:100%" alt="some_text">
+
+        <p>Click Text.</p>
+
+        <img src="../images/cipher_translation/clickText.png" style="width:60%" alt="some_text">
+
+        <p>Drag out the "" block and connect it to the languageToTranslateTo socket. Change the text to "ru-en" to tell the block what language you're translating from and to.</p>
+
+        <img src="../images/cipher_translation/languageTranslate.png" style="width:100%" alt="some_text">
+
+        <p>Click answer.</p>
+
+        <img src="../images/cipher_translation/clickAnswer.png" style="width:60%" alt="some_text">
+
+        <p>Connect the "answer.Text" block to the textToTranslate socket. This tells the block where to get the text that it will translate.</p>
+
+        <img src="../images/cipher_translation/translateText.png" style="width:100%" alt="some_text">
+
+        <p>Next, click on YandexTranslate1 again.</p>
+
+        <img src="../images/cipher_translation/clickYandex.png" style="width:60%" alt="some_text">
+
+        <p>Drag out the "when YandexTranslate1.RequestTranslation" block.</p>
+
+        <img src="../images/cipher_translation/requestTranslation.png" style="width:100%" alt="some_text">
+
+        <p>Click translation.</p>
+
+        <img src="../images/cipher_translation/clickTranslation.png" style="width:60%" alt="some_text">
+
+        <p>Add the "set translation.Text to" block.</p>
+
+        <img src="../images/cipher_translation/setTranslation.png" style="width:100%" alt="some_text">
+
+        <p>Hover over the red translation variable and click on "get translation".</p>
+
+        <img src="../images/cipher_translation/hoverTranslation.png" style="width:100%" alt="some_text">
+
+        <p>Add the "get translation" block to the last socket. This sets the text of this label to the translation that we got earlier.</p>
+
+        <img src="../images/cipher_translation/getTranslation.png" style="width:100%" alt="some_text">
+
+        <p>Try it out on your companion device. Does the translation work? Were you able to get the right answer?</p>
+        
+        <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+
+
+      </div>
+
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <p>
+      <b>Shake to move to the next level of your game.</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(0)" title="Accelerometer Tutorial">accelerometer sensor</a> sense when the device is being shaken in order to move to the next level.</p> 
+      </p>
+      <b>Compare two words.</b>
+      <p>
+        Use a <a href="#" onclick="return goToHowToTutorial(4)" title="Comparison Tutorial">comparison block</a> to check to see if a word is correct. You can use this to create your own code and see if the user got the correct answer.
+      </p>
+      <b>Create a drop-down menu of options.</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Spinner Tutorial">spinner component</a> to give the uver multiple options to chose from. You can also attach different actions to each option.
+      </p>
+      <b>Use the Video Player.</b>
+      <p>
+        Enhance your app by using the <a href="#" onclick="return goToHowToTutorial(2)" title="Video Tutorial">video player component</a> to use more media and ask more complicated or interesting questions.
+      </p>
+      <b>Give the user disappearing alerts.</b>
+      <p>
+        The <a href="#" onclick="return goToHowToTutorial(3)" title="Video Tutorial"> Notifier component</a> gives the user alerts at a particular event, which can be used to give hints or show messages to the user.
+      </p>   
+      <b>Create options with CheckBoxes.</b>
+      <p>
+        Enhance your app by using the <a href="#" onclick="return goToHowToTutorial(5)" title="Video Tutorial">checkbox component</a> to use more media and ask more complicated or interesting questions.
+      </p>
+      
+    </div>
+
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
+
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div id="howToAccordion" class="accordion" style="display:none">
+    <h3>Acclereometer Sensor</h3>
+    <div>
+      <p>Components you need: Accelerometer Sensor (Sensors)</p>
+
+      <p>Click AccelerometerSensor1.</p>  
+      <img src="../images/howTos/accelClick.png" style="width:80%" alt="magic eight ball">
+
+      <p>Drag out the "when AccelerometerSensor1.Shaking" block.</p>  
+      <img src="../images/howTos/accelShaking.png" style="width:100%" alt="magic eight ball">
+
+      <p>Add any action to the inside of the block. I chose to have it go to the next screen by using the "open another screen" block (in Control) and a "" block (in Text)
+      .</p>  
+      <img src="../images/howTos/accelOption.png" style="width:100%" alt="magic eight ball">
+    </div>
+
+    <h3>Compare Two Strings</h3>
+    <div>
+      <p>Components you need: Label (User Interface), TextBox (User Interface), Button (User Interface)</p>
+      <p>Click Button1.</p>  
+      <img src="../images/howTos/compareClickButton.png" style="width:80%" alt="magic eight ball">
+
+      <p>Drag out the "when Button1.Click" block.</p>  
+      <img src="../images/howTos/compareButtonClick.png" style="width:90%" alt="magic eight ball">
+
+      <p>Click Control.</p>  
+      <img src="../images/howTos/clickControl.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "if... then" statement.</p>  
+      <img src="../images/howTos/compareIfThen.png" style="width:90%" alt="magic eight ball"> 
+
+      <p>Click Logic.</p>  
+      <img src="../images/howTos/clickLogic.png" style="width:90%" alt="magic eight ball">
+
+      <p>Connect the "compare texts" block to the if socket.</p>  
+      <img src="../images/howTos/compareTexts.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on the "<" sign and change it to an "=" sign.</p>  
+      <img src="../images/howTos/compareEquals.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click TextBox1.</p>  
+      <img src="../images/howTos/compareClickTextBox.png" style="width:90%" alt="magic eight ball">
+
+      <p>Connect "TextBox1.Text" to one of the "compare texts" block sockets.</p>  
+      <img src="../images/howTos/compareText.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click Text again.</p>  
+      <img src="../images/howTos/compareClickText.png" style="width:90%" alt="magic eight ball">
+
+      <p>Connect an empty quote block and change the text inside to "Text for Label1" or whatever your label says.</p>  
+      <img src="../images/howTos/compareLabel.png" style="width:100%" alt="magic eight ball">
+
+      <p>Connect any action you want to happen to the then socket. I chose to move to the next page using "open another screen" block (in Control) and an "" block (in Text).</p>  
+      <img src="../images/howTos/compareThenOption.png" style="width:100%" alt="magic eight ball">
+    </div>
+
+    <h3>Spinner Component</h3>
+    <div>
+      <p>Components you need: Spinner (User Interface), Label (User Interface)</p>
+
+      <p>In Designer, click on Spinner1 go to the Properties panel. Add a list of words (I used cat, dog, bird, cow) to ElementsFromString</p>  
+      <img src="../images/howTos/spinList.png" style="width:90%" alt="magic eight ball">
+
+      <p>Go to blocks and click on Spinner1.</p>  
+      <img src="../images/howTos/spinClick.png" style="width:90%" alt="magic eight ball">
+
+      <p>Drag out the "when Spinner1.AfterSelecting" block.</p>  
+      <img src="../images/howTos/spinSelecting.png" style="width:100%" alt="magic eight ball">
+
+      <p>Next, click on Label1.</p> 
+      <img src="../images/howTos/spinLabel.png" style="width:100%" alt="magic eight ball">
+
+      <p>Connect the "set Label1.Text" block.</p>  
+      <img src="../images/howTos/spinText.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on the red selection button.</p>  
+      <img src="../images/howTos/spinSelection.png" style="width:100%" alt="magic eight ball">
+
+      <p>Connect the "get selection" block.</p>  
+      <img src="../images/howTos/spinGetSelection.png" style="width:100%" alt="magic eight ball">
+
+      <p>You can add any other action and even have different events occur depending on the selection, like below.</p>  
+      <img src="../images/howTos/spinOption.png" style="width:100%" alt="magic eight ball">
+    </div>
+
+    <h3>Video Player Component</h3>
+    <div>
+      <p>Components you need: Video Player (Media)</p>
+
+      <p>In Designer, click on VideoPlayer1 and go to the Properties panel. Upload a movie in the Source section.</p>  
+      <img src="../images/howTos/vidSource.png" style="width:70%" alt="magic eight ball">
+
+      <p>If you have a movie in the format .mov, convert it to .mp4 online.</p>  
+    </div>
+
+    <h3>Notifier Component</h3>
+    <div>
+      <p>Components you need: Button (User Interface), Notifier (User Interface)</p>
+
+      <p>In Blocks, click Button1.</p>  
+      <img src="../images/howTos/notiButton.png" style="width:80%" alt="magic eight ball">
+
+      <p>Drag out the "when Button1.Click" block.</p>  
+      <img src="../images/howTos/notiClickButton.png" style="width:90%" alt="magic eight ball">
+
+      <p>Click Notifier1.</p>  
+      <img src="../images/howTos/notiNotifier.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "call Notifier1.ShowAlert" block.</p>  
+      <img src="../images/howTos/notiAlert.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click Text.</p>  
+      <img src="../images/howTos/notiText.png" style="width:80%" alt="magic eight ball">
+
+      <p>Select the "" block and add it to the notice socket. Change the text to "You pressed the button!" or anything else you'd like.</p>  
+      <img src="../images/howTos/notiPressed.png" style="width:100%" alt="magic eight ball">
+    </div>
+
+    <h3>Checkboxes</h3>
+    <div>
+      <p>Components you need: Three CheckBoxes (User Interface), Button (User Interface)</p>
+
+      <p>In Blocks, click Button1.</p>  
+      <img src="../images/howTos/notiButton.png" style="width:80%" alt="magic eight ball">
+
+      <p>Drag out the "when Button1.Click" block.</p>  
+      <img src="../images/howTos/notiClickButton.png" style="width:90%" alt="magic eight ball">
+
+      <p>Click Notifier1.</p>  
+      <img src="../images/howTos/notiNotifier.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "call Notifier1.ShowAlert" block.</p>  
+      <img src="../images/howTos/notiAlert.png" style="width:90%" alt="magic eight ball">
+
+      <p>Click Text.</p>  
+      <img src="../images/howTos/notiText.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "if... then" block.</p>  
+      <img src="../images/howTos/compareIfThen.png" style="width:80%" alt="magic eight ball">
+
+      <p>Click Logic.</p>  
+      <img src="../images/howTos/clickLogic.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "and" block to the if socket.</p>  
+      <img src="../images/howTos/checkAnd.png" style="width:80%" alt="magic eight ball">
+
+      <p>Click CheckBox1.</p>  
+      <img src="../images/howTos/checkClickBox1.png" style="width:80%" alt="magic eight ball">
+
+      <p>Connect the "CheckBox1.Checked" block to the first socket.</p>  
+      <img src="../images/howTos/checkBox1.png" style="width:100%" alt="magic eight ball">
+
+      <p>Repeat with CheckBox3.</p>  
+      <img src="../images/howTos/checkBox3.png" style="width:100%" alt="magic eight ball">
+
+      <p>Add any event to the then socket. I chose to change the button text to "Clicked" using the "set Button1.Text to" block (in Button1) and an "" block (in Text), changed to "Clicked!".</p>
+      <img src="../images/howTos/checkOption.png" style="width:100%" alt="magic eight ball">
+    </div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
