@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+  
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content"});
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+  </script>
+</head>
+<body>
+
+<div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+<div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+<div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
+</div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+        This app is meant to both teach the Map tool in App Inventor and challenge the way we see our surrounding community. By associating images with locations, the user will more easily be able to see what their city is like outside of their immediate surroundings.
+      </p>
+    </div>
+
+    <h3>Map Tutorial</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+
+        <br/>
+        <hr/>
+      </div>
+
+
+      <!-- beginning of page content -->
+      <div class="tutorialContentPage">
+        <p>Let's make an app that gives a user a map of different images around Boston.</p>
+
+        <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
+
+        <img src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+
+        <p>Your app came with a Label, HorizontalAlignment, Image, and a Map.</p>
+
+        <img src="../images/catMap/mapApp.png" style="width:50%" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">  
+        <p>
+          Click Maps in the Palette and click and drag three circles onto the map.
+        </p>
+
+        <img src="../images/catMap/addCircles.png" style="width:50%" alt="some_text">
+
+        <p>
+          Add them to specific points on the map.
+        </p>
+
+        <img src="../images/catMap/mapCircles.png" style="width:50%" alt="some_text">
+
+        <p>
+          Click on Circle1 and in the Properties panel, change the radius of the circle. Add the link to an image to the description. I used an image for <a href="http://i.huffpost.com/gen/2736712/images/o-MIT-facebook.jpg" target="_blank">MIT</a>, an image for the <a href="https://raoulpop.files.wordpress.com/2008/01/bso-at-strathmore-concert-81.jpg" target="_blank">Boston Symphony Orchestra</a>, and an image for the <a href="http://img.timeinc.net/time/photoessays/2010/travel_boston/boston_public_library.jpg" target="_blank">Boston Public Library</a>.
+        </p>
+
+        <img src="../images/catMap/circleProperties.png" style="width:50%" alt="some_text">
+
+        <p>
+          Repeat for all circles so your app looks something like this.
+        </p>
+
+        <img src="../images/catMap/mapScreen.png" alt="some_text" style="width:50%;">
+
+      </div>
+      <!--- end of page -->
+
+      <div class="tutorialContentPage">
+
+        <p>Now we're going to make the circles perform a small action.</p>
+
+        <p>Go to the upper right corner of the page and click Blocks to go to the Blocks page.</p>
+
+        <img src="../images/catMap/goBlocks.png" style="width:100%" alt="some_text">
+
+        <p>Click on Circle1 in the Blocks panel.</p>
+        
+        <img src="../images/catMap/clickCircle1.png" style="width:75%" alt="some_text">
+        
+        <p>Click and drag "when Circle1.Click" to the viewer.</p>
+
+        <img src="../images/catMap/circleClick.png" style="width:75%" alt="some_text">
+
+        <p>Click Image1 in Blocks.</p>
+
+        <img src="../images/catMap/clickImage1.png" style="width:75%" alt="some_text">
+
+        <p>Click and drag "set Image1.Picture to" to the Viewer.</p>
+
+        <img src="../images/catMap/setImage.png" style="width:85%" alt="some_text">
+
+        <p>Click Circle1 again and drag out "Circle1.Description" and connect to the other blocks.</p>
+
+        <img src="../images/catMap/circleDescription.png" style="width:100%" alt="some_text">
+
+        <p>Repeat with the other blocks so they look like this.</p>
+
+        <img src="../images/catMap/allBlocks.png" style="width:100%" alt="some_text">
+
+        <p>Try it out on your companion. Tap on the different circles. What happens?</p>
+        
+        <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+
+      </div>
+
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <p>
+        <b>Notify the user when they're getting close to a location.</b>
+        <p>Use the <a href="#" onclick="return goToHowToTutorial(0)" title="Tutorial for using Location Sensor" > location sensor</a> to tell the user when they're close to a marker.</p> 
+      </p>
+
+      <p>
+        <b>Calculate the distance between user and a point.</b>
+        <p>Compare the user's location as given by the <a href="#" onclick="return goToHowToTutorial(1)" title="Tutorial for using label component text">location sensor with the location of the markers</a> tell the user how far they are from a marker.</p> 
+      </p>
+
+    </div>
+
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
+
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+  <div id="howToAccordion" class="accordion" style="display:none">
+    <h3>Distance Notification</h3>
+    <div>
+      <p>Components you need: Sound (Media), LocationSensor (Sensors)</p>
+
+      <p>In Blocks, click on LocationSensor1 and choose "when LocationSensor1.LocationChanged".</p>
+
+      <img src="../images/howTos/locationSensor.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Control and choose the "if... then" block.</p>
+
+      <img src="../images/howTos/locationIfThen.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on the gear and add two "else if" blocks.</p>
+
+      <img src="../images/howTos/locationElseIf.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Math and add an "=" block. Change the sign to a ≤ sign.</p>
+
+      <img src="../images/howTos/locationCompare.png" style="width:100%" alt="magic eight ball">
+
+      <p>Repeat for all three statements.</p>
+
+      <img src="../images/howTos/locationAll.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Circle1 and add "call Circle1.DistanceToPoint" to the first socket.</p>
+
+      <img src="../images/howTos/locationDistance.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Math and add 0 blocks to the second sockets of all three statements. Change each number.</p>
+
+      <img src="../images/howTos/location50.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on the red latitude button and add "get latitude" to the latitude socket.</p>
+
+      <img src="../images/howTos/locationLat.png" style="width:100%" alt="magic eight ball">
+
+      <p>Repeat for the longitude and for the other two blocks.</p>
+
+      <img src="../images/howTos/locationLatLong.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Logic and add "true" to the centroid socket.</p>
+
+      <img src="../images/howTos/locationTrue.png" style="width:100%" alt="magic eight ball">
+
+      <p>Click on Sound1 and add "call Sound1.Play" to the then socket.</p>
+
+      <img src="../images/howTos/locationSound.png" style="width:100%" alt="magic eight ball">
+      
+    </div>
+
+    <h3>Calculate Distance to Marker</h3>
+    <div>
+      <p>This will calculate your distance to the clicked circle.</p>
+      
+      <p>Components you need: LocationSensor (in Sensors), Label (User Interface)</p>
+      
+      <p>In Blocks, click on Label2 and drag out "set Label2.Text to" and connect it to the "when Circle1.Click" block.</p>
+
+      <img src="../images/howTos/distanceLabel.png" style="width:100%" alt="player source">
+
+      <p>Click on Text and add the "join" block.</p>
+      
+      <img src="../images/howTos/distanceJoin.png" style="width:100%" alt="player start">
+
+      <p>Click on Circle1 and connect "call Circle1.DistanceToPoint" to the top socket.</p>
+      
+      <img src="../images/howTos/distanceToPoint.png" style="width:100%" alt="player start">
+
+      <p>Click on LocationSensor1 and connect "LocationSensor1.Latitude" to the latitude socket and "LocationSensor1.Longitude" to the longitude socket.</p>
+      
+      <img src="../images/howTos/distanceLatLong.png" style="width:100%" alt="player start">
+
+      <p>Click on Logic and connect "true" to the centroid socket.</p>
+      
+      <img src="../images/howTos/distanceTrue.png" style="width:100%" alt="player start">
+
+      <p>Click on Text and connect an empty quotes block to the bottom join socket. Add appropriate text and repeat for other circles.</p>
+      
+      <img src="../images/howTos/distanceText.png" style="width:100%" alt="player start">
+      
+    </div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">4</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+  
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content"});
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+  </script>
+</head>
+<body>
+
+<div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+<div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+<div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
+</div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+
+        Last year, NPR’s Morning Edition ran a story about an app called Mood Ring, created by our friends at Youth Radio, using App Inventor. Mood Ring invites teens to track how they’re feeling using any combo of nine emojis, and to reach out to trusted others when they’re having a rough time. Youth Radio’s Storm White, who co-designed Mood Ring with some other Youth Radio members, told NPR her team wanted to develop “a playful way to address something serious.”
+        <br/><br/>
+        Now it’s your turn to work with App Inventor to design and build your own version of an app that uses emojis to promote positive social and emotional health. Or maybe you have something else entirely in mind. We can’t wait to see what you come up with! 
+        <br/><br/>
+        To hear more from Youth Radio about mobile apps and mental health, check out  their latest story on (add link) artificially intelligence therapy bots (end link). It's part of their series, Youth Mobile Power. 
+      </p>
+    </div>
+
+    <h3>Mood counter tutorial</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+
+        <br/>
+        <hr/>
+      </div>
+
+
+      <!-- beginning of page content -->
+      <div class="tutorialContentPage">
+        <p>Let's make an app that can keep track of how many times you feel different emotions throughout the day.</p>
+
+        <img src="../images/moodCounter/moodTrackApp.png" style="width:75%" alt="some_text">
+
+        <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
+
+        <img src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+        <p>Try clicking the different emojis. What happens?</p>
+        
+        <p>Let's change the app so that when you tap the angry emoji, it increases the anger count.</p>
+
+      </div>
+
+      <div class="tutorialContentPage">  
+        <p>
+          Click on the Blocks button on the right side top bar.
+        </p>
+
+        <img src="../images/moodCounter/blocksButton.png" style="width:100%" alt="some_text">
+
+        <p>
+          Click on the angryButton drawer on the left.
+        </p>
+
+        <img src="../images/moodCounter/angryButtonDrawer.png" alt="some_text" style="height:240px;">
+
+        <p>
+          Click and drag the "When angryButton.Click" block workspace.
+        </p>
+        
+        <img src="../images/moodCounter/angryButtonClickEvent.png" alt="some_text" style="height:240px;">
+
+        <p>
+          Click on the "angryLabel" drawer, then drag and drop the "Set angryLabel.Text to" block in the block workspace. Add the "Set angryLabel.Text to" block to the "When angryButton.Click" block.
+        </p>
+        <img src="../images/moodCounter/angryLabelSetText.png" alt="some_text" style="width:100%;">
+
+        <p>
+          The blocks should look like. 
+        </p>
+
+        <img src="../images/moodCounter/angrySetTextProgressBlocks.png" alt="some_text" style="width:100%;">
+
+        <p>
+          Click on the "Math" drawer. Click and drag the "+" block and add it to the "Set angryLabel.Text to" block. 
+        </p>
+
+        <img src="../images/moodCounter/plusBlock.png" alt="some_text" style="width:100%">
+
+        <p>
+          Click on the "angryLabel" drawer. Click and drag the "angryLabel.Text" block and add it to the first socket in the "+" block. 
+        </p>
+
+        <img src="../images/moodCounter/angryLabelText.png" alt="some_text" style="width:100%">
+
+        <p>
+          The blocks should look like:
+        </p>
+
+        <img src="../images/moodCounter/blocksMissingIncrement.png" alt="some_text" style="width:100%;">
+        <p>
+          Click on the "Math" drawer. Click and drag the "0" block and add it to the second socket in the "+" block.
+        </p>
+        <img src="../images/moodCounter/numberBlock.png" style="width:75%;">
+        <p>
+          Change the value in the "0" block to 1.
+        </p>
+        <img src="../images/moodCounter/changeNumberValue.png" alt="some_text" style="width:100%;">
+
+
+      </div>
+      <!--- end of page -->
+
+      <div class="tutorialContentPage">
+        <p>Try clicking the different emojis. What happens now?</p>
+        
+        <p>Let's now make the sad emoji work too. Right click on the "When angryButton.Click" block, then click duplicate.</p>
+
+        <img src="../images/moodCounter/duplicateAngryClick.png" style="width:75%" alt="some_text">
+
+        <p>Click on the "angryButton" drop down on the "When angryButton.Click" block and choose "sadButton"</p>
+        
+        <img src="../images/moodCounter/sadClickSelect.png" style="width:75%" alt="some_text">
+        
+        <p>Click on the "angryLabel" drop down on the "set angryLabel.Text to" block and choose "sadLabel"</p>
+
+        <img src="../images/moodCounter/sadLabel.png" style="width:75%" alt="some_text">
+
+        <p>Click on the "angryLabel" drop down on the "angryLabel.Text" block and choose "sadLabel"</p>
+
+        <img src="../images/moodCounter/sadLabelInAdd.png" style="width:75%" alt="some_text">
+
+        <p>All of your blocks should look like the picture below</p>
+
+        <img src="../images/moodCounter/allBlocks.png" style="width:75%" alt="some_text">
+
+        <p>Try it out on your Android device. Tap on the different emojis. What happens?</p>
+        
+        <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+
+
+      </div>
+
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <p>
+        <b> Show an inspiring quote based on how the user feels. </b>
+        <p>Set the <a href="#" onclick="return goToHowToTutorial(0)" title="Tutorial for using label component text" > label component's text </a>to a random message after the user chooses their mood.</p> 
+      </p>
+
+      <b>Display an image or play a song to cheer up a friend.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Tutorial for using showing an image" > image component </a>to show a picture, or the <a href="#" onclick="return goToHowToTutorial(1)" title="Tutorial for using player component" > player component </a> to play a song after the user selects an emotion.</p> 
+
+      <b>Personalize the app with the user’s name.</b>
+      <p>Use the text input component to get the user’s name and display it in the app.</p> 
+
+
+      <b>Text a friend when the user is feeling sad.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(3)" title="Tutorial for send a text message" > texting component </a>to send a message when the sad button is clicked.</p> 
+
+
+      <b>Let users review how they felt in the past.</b>
+      <p>You can use the <a href="#" onclick="return goToHowToTutorial(4)" title="Tutorial for saving and writing to a file" > file component</a> to store what happens each time the user hits the button.</p> 
+
+
+    </div>
+
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
+
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+  <div id="howToAccordion" class="accordion" style="display:none">
+    <h3>Show a random message</h3>
+    <div>
+      <p>Components you need: Label (in User Interface), Button (in User Interface)</p>
+      <p>Useful blocks:</p>
+      
+      <img src="../images/howTos/randomMessage.png" style="width:100%" alt="magic eight ball">
+      
+    </div>
+
+    <h3>Play a song</h3>
+    <div>
+      <p>This will play a song when you tap a button</p>
+      
+      <p>Components you need: Player (in Media), Button (in User Interface)</p>
+      
+      <p>In the player properties, click on the source property, upload your sound file, and click ok.</p>
+      <img src="../images/howTos/playerSource.png" style="height:200px" alt="player source">
+      <p>Put together the blocks below:</p>
+      
+      <img src="../images/howTos/playerStart.png" style="width:75%" alt="player start">
+      
+    </div>
+
+    <h3>Show an image</h3>
+    <div>
+      <p>This will show an image when you tap a button</p>
+
+      <p>Components you need: Image (in User Interface), Button (in User Interface)</p>
+
+      <p>In the Image properties, click the "picture" property, upload your image file, and click ok.</p>
+
+      <img src="../images/howTos/imageSource.png" style="height:200px" alt="player source">
+
+      <p>Click the "Visible" checkbox so that the picture will be hidden when the app starts</p>
+
+      <img src="../images/howTos/imageVisibleProperty.png" style="height:200px" alt="player source">
+
+      <p>Put together the blocks below:</p>
+
+      <img src="../images/howTos/imageVisibleOnClickBlocks.png" style="width:100%" alt="magic eight ball">
+
+    </div>
+
+
+    <h3>Send a text message</h3>
+<div>
+
+<p>This will send a text message when you tap a button</p>
+
+<p>Component you need: Texting (in Social), Button (in User Interface)</p>
+
+<p>Useful blocks:</p>
+<img src="../images/howTos/sendTextMessage.png" style="width:100%" alt="send text message">
+
+</div>
+
+  <h3>Store and read files</h3>
+<div>
+
+<p>This will read and write files on your device.</p>
+
+<p>Components you need: File (in Storage), Button (in User Interface), Text Box (in User Interface)</p>
+
+<p>When the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file.</p>
+<img src="../images/howTos/appendAndRead.png" style="width:100%" alt="send text message">
+
+<p>After the text is read from the file, the button's text is set to its contents.</p>
+<img src="../images/howTos/gotText.png" style="width:100%" alt="send text message">
+
+</div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
