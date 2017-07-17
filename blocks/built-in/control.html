@@ -1,0 +1,48 @@
+<ul class="list-group">
+    <li class="list-group-item"><a data-toggle="collapse">if _ then</a>
+        <div id="blocklyDiv" style="height: 100px; width: 250px;"></div>
+    </li>
+    <li class="list-group-item"><a>for each number from</a>
+    </li>
+    <li class="list-group-item"><a>for each item in list</a>
+    </li>
+    <li class="list-group-item"><a>while test</a>
+    </li>
+    <li class="list-group-item"><a>if _ then _ else</a>
+    </li>
+    <li class="list-group-item"><a>do _ result</a>
+    </li>
+    <li class="list-group-item"><a>evaluate but ignore result</a>
+    </li>
+    <li class="list-group-item"><a>open another screen screenName</a>
+    </li>
+</ul>
+
+<!-- Blockly.Xml.domToBlock(black_xml, Blockly.mainWorkspace)
+black_xml = Blockly.Xml.textToDom('<block xmlns="http://www.w3.org/1999/xhtml" type="controls_if" id="[p/,6KQYrn$+rw=A82.f"></block>') -->
+
+<!--   <xml id="toolbox" style="display: none">
+    <block type="controls_if"></block>
+    <block type="controls_repeat_ext"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number"></block>
+    <block type="math_arithmetic"></block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+  </xml>
+</div> -->
+
+<!-- <xml id="toolbox" style="display: none">
+  <category name="Text">
+    <block  xmlns="http://www.w3.org/1999/xhtml" type="controls_if" id="[p/,6KQYrn$+rw=A82.f"></block>
+  </category>
+</xml>
+ -->
+<xml id="toolbox" style="display: none">
+  <block type="controls_if" xmlns="http://www.w3.org/1999/xhtml" id="[p/,6KQYrn$+rw=A82.f"></block>
+</xml>
+
+<script>
+  var workspace = Blockly.inject('blocklyDiv',
+    {toolbox: document.getElementById('toolbox')});
+</script>
