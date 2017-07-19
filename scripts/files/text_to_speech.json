@@ -1,0 +1,14 @@
+[{ "name": "Text-To-Speech",
+  "steps": {
+    "Introduction": {"img": ["tutVideo.png", "Vdo8UdkgDD8"],
+      "text":"Get started with App Inventor by creating an app that translates text to speech on the click of a button!",
+      "text": "Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href='http://appinventor.mit.edu/explore/ai2/setup.html' target='_blank'>click here."
+    },
+    "Add a button": {"text": "Click and hold on the word 'Button' in the <a href='#'' data-toggle='tooltip' data-html='true' title='Choose componenets<img class='tooltipImage' src='images/glossary/palette.png'/>'>Palette</a>. Drag your mouse over to the Viewer. Release the mouse. A new button will appear on the Viewer.",
+      "img": ["addButton.png"],
+      "text": "Check to see if you can see your button in your companion app.",
+      "img": ["addedButton.png"]
+    }
+  }
+
+}]

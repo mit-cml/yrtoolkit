@@ -8,16 +8,30 @@
     </div>
     <div id="collapse1" class="panel-collapse collapse">
       <ul class="list-group">
-        <li class="list-group-item"><img src="../images/blocks/control.png"> <a class="built" data-toggle="collapse" data-target="#control" rel="built-in/control.html">Control</a>
-          <div id="control" class="collapse"></div>
+        <li class="list-group-item"><img src="../images/blocks/control.png"> <a class="open" data-toggle="collapse" href="#cat_Control">Control</a>
+        <div id="cat_Control" class="collapse builtBlock"></div>
         </li>
-        <li class="list-group-item"><img src="../images/blocks/logic.png"> <a class="open" rel="ui/notifier.html">Logic</a></li>
-        <li class="list-group-item"><img src="../images/blocks/math.png"> <a class="open" rel="ui/spinner.html">Math</a></li>
-        <li class="list-group-item"><img src="../images/blocks/text.png"> <a class="open" rel="ui/show-image.html">Text</a></li>
-        <li class="list-group-item"><img src="../images/blocks/lists.png"> <a class="open" rel="ui/spinner.html">Lists</a></li>
-        <li class="list-group-item"><img src="../images/blocks/colors.png"> <a class="open" rel="ui/spinner.html">Colors</a></li>
-        <li class="list-group-item"><img src="../images/blocks/variables.png"> <a class="open" rel="ui/spinner.html">Variables</a></li>
-        <li class="list-group-item"><img src="../images/blocks/procedures.png"> <a class="open" rel="ui/spinner.html">Procedures</a></li>
+        <li class="list-group-item"><img src="../images/blocks/logic.png"> <a class="open" data-toggle="collapse" href="#cat_Logic">Logic</a>
+        <div id="cat_Logic" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/math.png"> <a class="open" data-toggle="collapse" href="#cat_Math">Math</a>
+          <div id="cat_Math" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/text.png"> <a class="open" data-toggle="collapse" href="#cat_Text">Text</a>
+          <div id="cat_Text" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/lists.png"> <a class="open" data-toggle="collapse" href="#cat_Lists">Lists</a>
+          <div id="cat_Lists" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/colors.png"> <a class="open" data-toggle="collapse" href="#cat_Colors">Colors</a>
+          <div id="cat_Colors" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/variables.png"> <a class="open" data-toggle="collapse" href="#cat_Variables">Variables</a>
+          <div id="cat_Variables" class="collapse builtBlock"></div>
+        </li>
+        <li class="list-group-item"><img src="../images/blocks/procedures.png"> <a class="open" data-toggle="collapse" href="#cat_Procedures">Procedures</a>
+          <div id="cat_Procedures" class="collapse builtBlock"></div>
+        </li>
       </ul>
     </div>
   </div>
@@ -95,27 +109,6 @@
     </div>
   </div>
 </div>
-
-<!-- <div>
-  <div id="blocklyDiv" style="height: 480px; width: 300px;"></div>
-
-  <xml id="toolbox" style="display: none">
-    <block type="controls_if"></block>
-    <block type="controls_repeat_ext"></block>
-    <block type="logic_compare"></block>
-    <block type="math_number"></block>
-    <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block xmlns="http://www.w3.org/1999/xhtml" type="color_black" id="[p/,6KQYrn$+rw=A82.f"></block>'
-  </xml>
-</div>
-
-<script>
-  var workspace = Blockly.inject('blocklyDiv',
-    {toolbox: document.getElementById('toolbox')});
-  var xml = Blockly.Xml.textToDom('<block xmlns="http://www.w3.org/1999/xhtml" type="color_black" id="[p/,6KQYrn$+rw=A82.f"></block>');
-  Blockly.Xml.domToWorkspace(xml, Blockly.blocklyWorkspace);
-</script> -->
 
 <script src="../scripts/blocks.js"></script>
 

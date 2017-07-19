@@ -12,15 +12,39 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/bootstrap.min.js"></script>
-  <script src="scripts/blockly/blockly_compressed.js"></script>
+    <script src="scripts/blockly/blockly_compressed.js"></script>
   <script src="scripts/blockly/blocks_compressed.js"></script>
   <script src="scripts/appinventor-blocks/blockColors.js"></script>
+  <script src="scripts/appinventor-blocks/block.js"></script>
+  <script src="scripts/appinventor-blocks/block_svg.js"></script>
+  <script src="scripts/appinventor-blocks/workspace_svg.js"></script>
+  <script src="scripts/appinventor-blocks/field_textblockinput.js"></script>
+  <script src="scripts/appinventor-blocks/field_procedurename.js"></script>
+  <script src="scripts/appinventor-blocks/field_procedure.js"></script>
+  <script src="scripts/appinventor-blocks/field_flydown.js"></script>
+  <script src="scripts/appinventor-blocks/field_global_flydown.js"></script>
+  <script src="scripts/appinventor-blocks/field_lexical_variable.js"></script>
+  <script src="scripts/appinventor-blocks/instrument.js"></script>
+  <script src="scripts/appinventor-blocks/workspace_svg.js"></script>
+  <script src="scripts/appinventor-blocks/warningHandler.js"></script>
+  <script src="scripts/appinventor-blocks/blocklyeditor.js"></script>
+  <script src="scripts/appinventor-blocks/backpack.js"></script>
+  <script src="scripts/appinventor-blocks/field_parameter_flydown.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/utilities.js"></script>
   <script src="scripts/blockly/msg/js/en.js"></script>
   <script src="scripts/appinventor-blocks/msg/en/_messages.js"></script>
   <script>Blockly.Msg.en.switch_language_to_english.init();</script>
   <script src="scripts/appinventor-blocks/blocks/colors.js"></script>
   <script src="scripts/appinventor-blocks/blocks/control.js"></script>
-  <script src="scripts/blockly/utilities.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/lists.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/logic.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/math.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/procedures.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/text.js"></script>
+  <script src="scripts/appinventor-blocks/blocks/lexical-variables.js"></script>
+  <script src="scripts/blockly/utilities.js"></script> <!-- should i replace this with blockly/core/utils.js? -->
+  <script src="scripts/toolboxController.js"></script>
+  <script src="scripts/drawer.js"></script>
   <script>
     $(window).bind('resize', function() {
       console.log("window resized")
@@ -35,7 +59,6 @@
 </script>
 </head>
 <body>
-
   <ul class="nav nav-tabs top">
     <li role="presentation" class="tab active" rel="tutorials/tutorials.html"><a>Tutorials</a></li>
     <li role="presentation" class="tab" rel="howtos/howtos.html"><a>How Tos</a></li>

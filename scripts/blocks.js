@@ -1,9 +1,5 @@
 $(document).ready( function() {
 
-	$(".built").click(function(e){
-		$("#control").load("blocks/built-in/control.html");
-	});
-
 	// $(".panel").on('shown.bs.collapse', function(){
 	// 	alert("hi");
 	// 	// $(this).find(".plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
@@ -12,6 +8,46 @@ $(document).ready( function() {
 	// $(".panel").on('hidden.bs.collapse', function(){
 	// 	// $(this).find(".plus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
 	// });
+	var thisId;
+	$(".builtBlock").click(function(e){
+		var thisId = $(this).attr("id");
+	});
+
+	$(".builtBlock").on('shown.bs.collapse', function(){
+		console.log($(this));
+		$(".builtBlock").html("");
+		var thisId = $(this).attr("id");
+		console.log($(this).attr("id"));
+		// if ($(".builtBlock").attr("id") != tempId) {
+		// 	console.log($(".builtBlock").attr("id"));
+		// 		$(".builtBlock").collapse("hide");
+		// 	}
+		var blockArray = Blockly.Drawer.createBlockInfoArray();
+
+		$.each(blockArray, function(category, blocks){
+			if (category == thisId){
+
+				$.each(blocks, function(id, key){
+					// Creates object to put block in
+					console.log(id + " " + key);
+					var blockDiv = document.createElement('div');
+					$(blockDiv).attr('id', 'blocklyDiv');
+					$(blockDiv).css('height','150px');
+					$(blockDiv).css('width','150px');
+					console.log(thisId);
+					$("#" + thisId).append(blockDiv);
+					var workspace = Blockly.inject('blocklyDiv');
+
+					var blockObject = bd.toolbox.ctr.blockInfoToBlockObject(key);
+					var blockXml = bd.toolbox.ctr.blockObjectToXML(blockObject, false);
+					var block = Blockly.Xml.domToBlock(blockXml, workspace);
+					block.setEditable(false);
+					block.setMovable(false);
+					block.moveBy(10, 0);
+				});
+			}
+		});
+	});
 
 	$.getJSON("scripts/files/simple_components.json", function(result){
 		var categories = {};
@@ -39,13 +75,15 @@ $(document).ready( function() {
 			if ($(".component").attr("id") != tempId) {
 				$(".component").collapse("hide");
 			}
-			// $("."+tempId+">.palette").html("");	
-			// console.log(tempId);
-			// var all = this.getElementsByClassName("palette");
-			// console.log(all);
+			$(".palette").html("");
 			$.each(categories[tempId]["componentName"], function(i, field){
 				var listItem = document.createElement('li');
 				$(listItem).addClass("list-group-item");
+
+				// var img = document.createElement('img');
+				// console.log(field['iconName']);
+				// $(img).attr('src', ("images/" + field['iconName']));
+
 				var link = document.createElement('a');
 				$(link).attr('data-toggle', 'collapse');
 				$(link).attr('data-target', ("#" + field + "3"));
@@ -61,6 +99,7 @@ $(document).ready( function() {
 				$(newList).addClass('list-group block');
 				$(newDiv).append(newList);
 				
+				// $(listItem).append($(img));
 				$(listItem).append($(link));
 				$(listItem).append($(newDiv));
 				$("#"+tempId).next(".component").get()[0].getElementsByClassName("palette")[0].append(listItem);
@@ -68,10 +107,11 @@ $(document).ready( function() {
 			
 			$(".one").click(function(e){
 				var subId = $(this).attr("id");
+
 				if ($(".cat").attr("id") != subId) {
 					$(".cat").collapse("hide");
 				}
-				$(".block").html(""); // or should i get the specific one?
+				$(".block").html("");
 				
 				var allBlocks = [];
 
@@ -87,7 +127,7 @@ $(document).ready( function() {
 				});
 				var desBlocks = [];
 				$.each(components[subId]["properties"], function(i, thing){
-						desBlocks.push(thing['name']);
+					desBlocks.push(thing['name']);
 				});
 				$.each(components[subId]["blockProperties"], function(i, thing){
 					if (thing['deprecated'] == 'false') {
@@ -95,6 +135,7 @@ $(document).ready( function() {
 					}
 				});
 				desBlocks.sort();
+
 				var newBlocks = $.merge(allBlocks, desBlocks);
 				$.each(allBlocks, function(i, thing){
 					var blockItem = document.createElement('li');
@@ -105,29 +146,22 @@ $(document).ready( function() {
 					var indvBlock = document.createElement('div');
 					var setDiv = document.createElement('div');
 					$(setDiv).attr('id', 'blocklyDiv');
-					$(setDiv).css('height','200px');
-					$(setDiv).css('width','200px'); // use css tag
-					var xml = document.createElement('xml');
-					$(xml).attr('id', 'toolbox');
-					$(xml).css('display','none');
-
-					var block = document.createElement('block');
-					$(block).attr('type', "controls_if");
-					$(xml).append($(block));
-					var block2 = document.createElement('block');
-					$(block2).attr('type', "controls_repeat_ext");
-					$(xml).append($(block2));
+					$(setDiv).css('height','100px');
+					$(setDiv).css('width','100px');
 
 					$(indvBlock).append($(setDiv));
-					$(indvBlock).append($(xml));
-
 					// $(description).append(thing["description"])
 					// $(blockItem).append(description);
-					$("#"+subId).next(".collapse").get()[0].getElementsByClassName("block")[0].append(blockItem);
+					$("#"+subId).next(".collapse").get()[0].getElementsByClassName("block")[0].append(indvBlock);
+
+					var workspace = Blockly.inject('blocklyDiv');
+					var xml = Blockly.Xml.textToDom('<block xmlns="http://www.w3.org/1999/xhtml" type="color_black" id="[p/,6KQYrn$+rw=A82.f"></block>');
+					Blockly.Xml.domToBlock(xml, workspace);
 				});
-				var workspace = Blockly.inject('blocklyDiv',
-					{toolbox: document.getElementById('toolbox')});
-			});
+				
+  				// var block = workspace.getAllBlocks()[0];
+  				// block.moveBy(10, 10);
+  			});
 		});
 	});
 });

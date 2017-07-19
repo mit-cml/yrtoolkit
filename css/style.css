@@ -165,14 +165,11 @@ body {
   width: 100%;
 }
 
-.tutorialContainer {
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
 .tutorialContentPage {
   background-color: #f3f3f3;
   padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .enlargeImage {
@@ -180,10 +177,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto
-}
-
-.back {
-  float:left;
 }
 
 .tutorialHead {
@@ -223,4 +216,34 @@ body {
 
 .block {
   background-color: #C3C3C3;
+}
+
+.tutVid {
+  max-width: 250px;
+}
+
+/* Tutorials */
+
+.blocks {
+  background-color: #b18e35;
+  border: 1px dashed #000;
+  color: white;
+  padding:2px;
+}
+
+.tutHeader {
+  background-color: #dddddd;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}
+
+.back {
+  float:left;
+  padding: 7.5px;
+}
+
+.pager {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

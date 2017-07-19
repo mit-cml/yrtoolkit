@@ -1,5 +1,9 @@
 $(document).ready( function() {
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
   $(".tutorials").click(function(e) {
     $(".content").load("tutorials/" + $(this).attr("rel"));
   });
@@ -7,6 +11,9 @@ $(document).ready( function() {
   $(".back").click(function(e) {
     $(".content").load("tutorials/tutorials.html");
   });
+
+  $('.dropdown-toggle').dropdown();
+
 
 
   var tutorialIndexToPageObject = {}; //{0:{page:2,totalPageNum:5}}
@@ -90,10 +97,10 @@ $(document).ready( function() {
 
   $(".tutorialPreviousButton").click(function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
-    
     tutorialIndexToPageObject[tutorialIndex].page--;
     //show next button
     setTutorialNextButtonVisibility(tutorialIndex, true);
+  
     updateTutorialPage(tutorialIndex);
     return false;
   });
@@ -101,19 +108,20 @@ $(document).ready( function() {
   $(".tutorialNextButton").click(function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
+    console.log(tutorialPageObject);
     tutorialPageObject.page++;
 
     if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
       //hide next button
-      setTutorialNextButtonVisibility(tutorialIndex, false)
+      setTutorialNextButtonVisibility(tutorialIndex, false);
     }
     updateTutorialPage(tutorialIndex);
 
     return false;
   });
 
-  $(".back").click(function(e) {
-    $(".content").load("tutorials/tutorials.html");
+  $('.menu').click(function(e){
+    updateTutorialPage(0);
   });
   
 });
