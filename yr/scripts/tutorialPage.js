@@ -110,10 +110,66 @@ $(document).ready( function() {
 
     return false;
   });
-
-  window.getTutorialVideo = function(tutorialId) {
-    window.parent.postMessage(tutorialId, '*');
+// Add tutorial video pop-out
+ window.getTutorialVideo = function(tutorialId) {
+    window.parent.postMessage({type:"video", youtubeId:tutorialId}, '*');
   }
 
+  // Add image enlargement
+
+  var allTutPics = document.getElementsByClassName('enlargeImage');
+
+  for (var i = allTutPics.length - 1; i >= 0; i--) {
+    // console.log(allTutPics);
+    var picHeight = allTutPics[i].height;
+    var picWidth = document.getElementsByClassName("enlargeImage").width;
+    // console.log(picWidth);
+    var pwidth = allTutPics[i].width;
+     if (pwidth == 0) {
+       jQuery(allTutPics[i]).width("100%");
+       pwidth = allTutPics[i].width;
+    }
+    
+    var newDiv = document.createElement("div");
+    newDiv.className = "tutorialDiv";
+    newDiv.style.position = "relative";
+    newDiv.style.width = pwidth;
+
+  var tutImg = document.createElement("img");
+  tutImg.src = allTutPics[i].src;
+    tutImg.style.cssText = allTutPics[i].style.cssText;
+    tutImg.style.width = pwidth + "px";
+    tutImg.className = allTutPics[i].className;
+    newDiv.appendChild(tutImg);
+
+    var magImg = document.createElement("img");
+    magImg.src = "/images/zoom.png";
+    magImg.style.cssText = "position: absolute; width:40px; height:40px";
+    magImg.className = "zoomIcon";
+    // newDiv.appendChild(magImg);
+
+    jQuery(newDiv).insertBefore(allTutPics[i]);
+    jQuery(newDiv).next().remove();
+
+  }  
+
+  /* When tutorial pic is loaded, update the photo's size, 
+   * place magnifying glass in correct location to photo. 
+   */
+  $(".enlargeImage").load(function(){
+    $(this).css({
+      "max-width": 250
+      // "max-height": 300,
+    });
+    $(this).next(".zoomIcon")
+      .css({
+        "top": this.height/2,
+        "left": this.width/2
+      });
+  });
+
+  $(".enlargeImage").click(function(imageId){
+    window.parent.postMessage({type:"img", imageId:$(this).attr("src")}, '*');
+  });
 
 });

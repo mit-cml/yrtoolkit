@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>
+        Youth Radio ran <a href="https://youthradio.org/journalism/education/what-its-like-to-be-a-translator/" target="_blank">this story</a> about a women's immigrant mother and how she struggles to connect with other parents because she's not confident with her English. 
+        <br/><br/>
+        You're challenged with creating an app that could act as an aid for her and other immigrant parents who need a little extra help in English-speaking situations. We can't wait to see what you come up with!
+        <br/><br/>
+        Click connect your app to start building your app!
+      </p>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+        <br/>
+        <hr/>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>1. Connect with your device over wifi</h3>
+        <p>Connect using the companion app so you can see your app on your mobile device.</p>
+        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
+        <p>Download from the Play Store using the QR code below or <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
+        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>3. Go through the installation instructions on your phone</h3>
+        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
+        <!-- Should I expand on this/add clip art? -->
+      </div>
+      <div class="tutorialContentPage">
+        <h3>4. Open your app's QR code</h3>
+        <p>Click Connect, then AI Companion.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/connectAI.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>5. Connect your app with your phone</h3>
+        <p>A QR code similar to this should pop up on your screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
+        <p>Either scan the QR code or enter the code in the text box.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>6. Still confused?</h3>
+        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Hello Bonjour Translator</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+
+        <br/>
+        <hr/>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>1. Introduction</h3>
+        <p>You've started with a screen with a few components already added.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/intro.gif" style="width:100%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>2. Go to Blocks page</h3>
+        <p>Click on the Blocks button on the top right of the screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%;" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage"> 
+      <h3>3. Add click handler</h3>
+        <p>Click on translateButton and add <span class="control">when translateButton.Click</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/clickButton.gif" style="width:100%;" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>4. Request translation</h3>
+        <p>Click on translateButton and add <span class="procedures">call YandexTranslate1.RequestTranslation</span> to your <span class="control">when translateButton.Click</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addRequestTranslation.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>5. Add empty string</h3>
+        <p>Click on Text and add the <span class="text">" "</span> block to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addEmptyString.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>6. Add language codes</h3>
+        <p>Click on your <span class="text">" "</span> block and enter the text, "ru-en".</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/enterLanguageCodes.gif" style="width:80%" alt="some_text">
+        <p>This is how the codes work.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/translationExplanation.png" style="width:80%" alt="some_text">
+        <!--         <p>And <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">this</a> is the list of all supported language codes.</p> -->
+        <!-- Link to all language codes/how-to -->
+      </div>
+      
+      <div class="tutorialContentPage">  
+        <h3>7. Get text to be translated</h3>
+        <p>Click on the russianText label and connect <span class="getters">russianText.Text</span> to the textToTranslate socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/getRussianText.gif" style="width:80%" alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>8. Get the translated text</h3>
+        <p>Click on YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addGetTranslation.gif" style="width:80%" alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>9. Reset the label</h3>
+        <p>Click on the englishText label and drag out the <span class="setters">set englishText.Text to</span>  block and connect it to <span class="control">when YandexTranslate1.GotTranslation</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addEnglishText.gif" style="width:80%" alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>10. Get the translated text</h3>
+        <p>Hover over the red translation button and grab and click on <span class="variables">get translation</span>. Connect this block to <span class="setters">set englishText.Text to</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/getTranslation.gif" style="width:80%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>11. Try and expand your app!</h3>
+        <p>Try out your app on your companion device! When you press the "Translate" button, does the translated text appear?</p>
+        <p>Next, go to the "Expand your app" section below and add more features to your app!</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
+      <!-- Include a how-to for the USB and emulator connections -->
+      <b>Use language codes to translate to other languages.</b>
+      <p>
+        Learn how the <a href="#" onclick="return goToHowToTutorial(0)" title="Comparison Tutorial">language codes</a> work in order to translate to languages other than English.
+      </p>
+      <b>Add a text box to enter your own text.</b>
+      <p>
+        Add a <a href="#" onclick="return goToHowToTutorial(1)" title="Comparison Tutorial">text box</a> to translate from a language other than English.
+      </p>
+      <b>Shake to translate text.</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Accelerometer Tutorial">Accelerometer Component</a> sense when the device is being shaken in order to translate the text.</p> 
+      </p> 
+      <b>Make your text speak!</b>
+      <p>
+        Make your app a bit more vocal with the <a href="#" onclick="return goToHowToTutorial(3)" title="TextToSpeech Tutorial">TextToSpeech component</a>. Try using this with the Yandex Translator and with text entered in a TextBox.
+      </p>
+    </div>
+
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
+
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+  <h3>Translate to another language</h3>
+  <div>
+    <p>Click on Blocks (if you're not already there)</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:80%" alt="magic eight ball">
+    <p>Click in the text box and change the second language code to "it" for Italian.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/toItalian.gif" style="width:80%" alt="magic eight ball">
+    <p>Try it our on your app! You should see Russian translated to Italian now!</p>  
+    <p>Here are some more languages to try. Click <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">here</a> to see all the language codes.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/languageCodes.png" style="width:100%" alt="magic eight ball">
+  </div>
+
+  <h3>Add a TextBox</h3>
+  <div>
+    <p>First, delete the russianText label (you don't need it anymore!).</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/deleteRussian.gif" style="width:80%" alt="magic eight ball">
+    <p>Click on TextBox and add it to your Viewer.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextBox.gif" style="width:80%" alt="magic eight ball">
+    <p>Go to Blocks.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:80%" alt="magic eight ball">
+    <p>Click on TextBox1 and add <span class="getters">TextBox1.Text</span> to the textToTranslate socket of <span class="procedures">call YandexTranslate1.RequestTranslation</span>.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/getTextBoxText.gif" style="width:80%" alt="magic eight ball">
+  </div>
+
+  <h3>Shake to clear screen</h3>
+  <div>
+    <p>Click on Sensors. Click and drag AccelerometerSensor to the Viewer.</p> 
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addAccel.gif" style="width:100%" alt="magic eight ball"> 
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%" alt="magic eight ball">
+    <p>Click on AccelerometerSensor1 and click and add <span class="control">when AccelerometerSensor1.Shaking</span> to the Viewer.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addShaking.gif" style="width:90%" alt="magic eight ball">
+    <p>Right-click or control (ctrl) click on <span class="procedures">call YandexTranslate1.RequestTranslation</span> and click "Duplicate". Drag your new blocks into <span class="control">when AccelerometerSensor1.Shaking</span>.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/duplicateTranslation.gif" style="width:90%" alt="magic eight ball">
+    <p>Test out your app! You should be able to translate your text by shaking or clicking the "Translate" button.</p>  
+  </div>
+
+  <h3>Use the TextToSpeech component</h3>
+  <div>
+    <p>In Designer, click on Sensors and drag and drop TextToSpeech onto the Viewer. It will show up in the non-visible componenets section.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" style="width:80%" alt="magic eight ball">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%" alt="magic eight ball">
+    <p>Click on TextToSpeak1 and add <span class="procedures">call TextToSpeech1.Speak</span> into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif" style="width:100%" alt="magic eight ball">
+    <p>Hover over the red translate button again and click on <span class="variables">get translation</span>. Drag it to the "message" socket of <span class="procedures">call TextToSpeech1.Speak</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" style="width:100%" alt="magic eight ball">
+  </div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
