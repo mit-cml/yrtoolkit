@@ -42,499 +42,426 @@
         Whether you love Snapchat or hate it, use this tutorial to make your bootleg version. Your app will let users take a photo, draw on it, add things to it, and send it to your friends. We can’t wait to see what you come up with from there!
       </p>
       <p>
-      Check out Youth Radio’s Snapchat story for NPR <a href="http://www.npr.org/2017/03/02/518197167/snapchat-goes-public-in-largest-tech-ipo-since-alibaba" target="_blank">here</a>. 
+        Check out Youth Radio’s Snapchat story for NPR <a href="http://www.npr.org/2017/03/02/518197167/snapchat-goes-public-in-largest-tech-ipo-since-alibaba" target="_blank">here</a>. 
       </p>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader">
+        <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
+          <a href="#" class="tutorialPreviousButton">Previous</a>
+        </div>
+        <div style="float:left;width:40%;text-align:center;">
+          <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
+        </div>
+        <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
+          <a href="#" class="tutorialNextButton">Next</a>
+        </div>
+        <br/>
+        <hr/>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>1. Connect with your device over wifi</h3>
+        <p>Connect using the companion app so you can see your app on your mobile device.</p>
+        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
+        <p>Download from the Play Store by scanning the QR code below or by opening<a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a> on your device.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
+        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>3. Go through the installation instructions on your phone</h3>
+        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
+        <!-- Should I expand on this/add clip art? -->
+      </div>
+      <div class="tutorialContentPage">
+        <h3>4. Open your app's QR code</h3>
+        <p>Click Connect, then AI Companion.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/connectAI.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>5. Connect your app with your phone</h3>
+        <p>A QR code similar to this should pop up on your screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
+        <p>Either scan the QR code or enter the code in the text box.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>6. Still confused?</h3>
+        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
     </div>
 
     <h3>Snapchat Remix Tutorial</h3>
 
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader">
-
         <div class="previousLinkContainer" style="float:left;width:20%;text-align:left;visibility:hidden">
           <a href="#" class="tutorialPreviousButton">Previous</a>
         </div>
-
         <div style="float:left;width:40%;text-align:center;">
           <span>Page <span class="currentPageNum">-1</span> of <span class="totalPageNum">5</span></span>
         </div>
-
         <div class="nextLinkContainer" style="float:left;width:20%;text-align:right;">
           <a href="#" class="tutorialNextButton">Next</a>
         </div>
-
         <br/>
         <hr/>
       </div>
 
-
-      <!-- beginning of page content -->
       <div class="tutorialContentPage">
-        <p>Let's make an app that can take a photo and set it as the background, draw different-colored dots and lines on the photo, and sends the photo to your friends.</p>
+        <h3>1. Introduction</h3>
+        <p>Let's make an app that can take a photo and set it as the background, and draw on the image.</p>
+        <!-- Add an image with a what you'll make image! -->
+        <p>This is the initial screen you will see in the viewer. The components include a label, a button, a canvas, and a camera.</p>
+        <img class="enlargeImage" src="../images/snap_remix/intro.gif" alt="some_text">
+      </div>
 
-        <p>
-          Start by connecting the companion app so you can test this on your mobile device. If you don't know how to connect. <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.
-        </p>
-        <img src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
-
-        <p>
-          This is the initial screen you will see in the viewer. The components include a label, two HorizontalArrangements, a button, a canvas, a camera, and an AccelerometerSensor.
-        </p>
-
-        <img src="../images/snapRemix/initialSnapMix.png" style="width:50%" alt="some_text">
-
+      <div class="tutorialContentPage"> 
+        <h3>2. Add Button click event</h3> 
+        <p>Click on the "Blocks" button in the upper right corner.</p>
+        <img class="enlargeImage" src="../images/snap_remix/clickBlocks.png" style="width:100%" alt="some_text">
+        <p>Click pictureButton and drag <span class="control">when pictureButton.Click</span> to the Viewer.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addClick.gif" style="width:100%" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
-
-        <p>
-          First, we will change the app so that when you tap the "Take a picture" button, the camera will turn on so you can take a picture.
+        <h3>3. Take a photo on click</h3> 
+        <p>Click on the Camera1 drawer and drag out <span class="procedures">call Camera1.TakePicture</span> and add it to <span class="control">when pictureButton.Click</span>.
         </p>
-        <p>
-          Begin by clicking on the "Blocks" button in the upper right corner.
-        </p>
-        <img src="../images/snapRemix/blocksTab.png" style="width:100%" alt="some_text">
-
-        <p>
-          Click on the pictureButton drawer on the left.
-        </p>
-        <img src="../images/snapRemix/pictureButton1.png" style="width:50%" alt="some_text">
-
-        <p>
-          Click and drag the "when pictureButton.Click" button into the workspace.
-        </p>
-        <img src="../images/snapRemix/picButtonClick.png" style="width:100%" alt="some_text">
-
-        <p>
-          Click on the Camera1 drawer.
-        </p>
-        <img src="../images/snapRemix/cameraBlock.png" style="width:80%" alt="some_text">
-
-        <p>
-          Click and drag "call Camera1.TakePicture" to the workspace and add it to "when pictureButton.Click".
-        </p>
-        <img src="../images/snapRemix/callCameraBlock.png" style="width:90%" alt="some_text">
-
-        <p>
-          The blocks should look like this:
-        </p>
-        <img src="../images/snapRemix/cameraBlocks.png" alt="some_text" style="width:90%;">
-
+        <img class="enlargeImage" src="../images/snap_remix/addCallCam.gif" style="width:100%" alt="some_text">
+        <p>Try out your app! See if your app takes a picture when you press the camera button.</p>
       </div>
 
       <div class="tutorialContentPage">  
+        <h3>4. Begin to set the Canvas background to the image.</h3>
+        <p>Click on Camera1 again and drag out the <span class="control">when Camera1.AfterPicture</span> block to the Viewer.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addAfterPic.gif" style="width:100%" alt="some_text">
+      </div>
 
-        <p>
-          Now, we'll set the image we took with the camera to be the background image of the camera. Click on Camera1 again inside blocks.
-        </p>
-        <img src="../images/snapRemix/cameraBlock.png" alt="some_text" style="width:80%;">
+      <div class="tutorialContentPage"> 
+        <h3>5. Set the background image.</h3>
+        <p>Now, click Canvas1 in Blocks and drag out <span class="setters">set Canvas1.BackgroundImage to</span> and add it to <span class="control">when Camera1.AfterPicture</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addSetBack.gif" style="width:100%" alt="some_text">
+      </div>
 
-        <p>
-          Then drag the "when Camera1.AfterPicture" block to the Viewer.
-        </p>
-        <img src="../images/snapRemix/cameraAfterPicture.png" alt="some_text" style="width:80%;">
+      <div class="tutorialContentPage">
+        <h3>6. Set background image using the image you just took.</h3>
+        <p>Hover over "image" on the <span class="control">when Camera1.AfterPicture</span> block and click on <span class="variables">get image</span>. Connect it to <span class="setters">set Canvas1.BackgroundImage to</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addGetImg.gif" style="width:100%" alt="some_text">
+      </div>
 
-        <p>
-          Now click Canvas1 in Blocks.
-        </p>
-        <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:90%;">
+      <div class="tutorialContentPage">
+        <h3>7. Add <span class="control">when Canvas1.Dragged</span>.</h3>
+        <p>Click on Canvas1 and add <span class="control">when Canvas1.Dragged</span> to the Viewer.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addDrag.gif" style="width:100%" alt="some_text">
+      </div>
 
-        <p>
-         And scroll down and drag "set Canvas1.BackgroundImage to" to the workspace.
-       </p>
-       <img src="../images/snapRemix/setBackgroundImage.png" alt="some_text" style="width:90%;">
+      <div class="tutorialContentPage">
+        <h3>8. Add <span class="procedures">call Canvas1.DrawLine</span>.</h3>
+        <p>Click on Canvas1 again and add the <span class="procedures">call Canvas1.DrawLine</span> to the <span class="control">when Canvas1.Dragged</span> block.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addDraw.gif" style="width:100%" alt="some_text">
+        <p>This procedure tells the app where each line starts and ends.</p>
+      </div>
 
-       <p>
-        Connect "set Canvas1.BackgroundImage to" to "when Camera1.AfterPicture".
-      </p>
-      <img src="../images/snapRemix/joinedAfterPicture.png" alt="some_text" style="width:100%;">
+      <div class="tutorialContentPage">
+        <h3>9. Add <span class="variables">get prevX</span> to "x1"</h3>
+        <p>Hover over startX on <span class="procedures">call Canvas1.DrawLine</span> and click on <span class="variables">get prevX</span>. Add it to the "x1" socket of <span class="procedures">call Canvas1.DrawLine</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addPrevX.gif" style="width:100%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>10. Add <span class="variables">get prevY</span> to "y1"</h3>
+        <p>Repeat with <span class="variables">get prevY</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addPrevY.gif" style="width:100%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>11. Add <span class="variables">get currentX</span> to "x2"</h3>
+        <p>And <span class="variables">get currentX</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addCurrentX.gif" style="width:100%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>12. Add <span class="variables">get currenty</span> to "y2"</h3>
+        <p>And finally, <span class="variables">get currenty</span>.</p>
+        <img class="enlargeImage" src="../images/snap_remix/addCurrentY.gif" style="width:100%" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>13. Test your app!</h3>
+        <p>Does your app take a picture? Can you set the picture to the canvas background? Can you draw on your image with your finger?</p>
+        <!-- Make these bullet points/check marks? -->
+        <p>If so, move on to the next section where you can add expansions!</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
+      </div>
+    </div>
+
+    <h3>Expand your app</h3>
+    <div>
 
       <p>
-        Click on the red image button on the "when Camera1.AfterPicture" block and click on "get image".
+        <img class="left" src="../images/snap_remix/shake.png" alt="some_text">
+        <b>Shake your device to clear your drawing.</b>
+        <p>Add an <a href="#" onclick="return goToHowToTutorial(0)" title="Trash Button Tutorial" >accelerometer sensor</a> that clears the canvas when shaken.</p> 
       </p>
-      <img src="../images/snapRemix/getImage.png" alt="some_text" style="width:100%;">
 
       <p>
-        Connect this new block to "set Canvas1.BackgroundImage to" so your blocks look like this:
+        <b>Draw dots on your picture.</b>
+        <p>Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Dot Tutorial" >draw circle block</a> to draw dots on your picture.</p> 
       </p>
-      <img src="../images/snapRemix/finishedBackground.png" alt="some_text" style="width:100%;">
 
       <p>
-        Test the "take a picture" button and watch the image appear on the canvas!
+        <b>Add an image you've already taken to the canvas background.</b>
+        <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Image Picker Tutorial" >image picker component</a> to select an image from your device.</p> 
+      </p>
+
+      <p>
+        <img class="right" src="../images/snap_remix/dots.jpg" alt="some_text">
+        <b>Change the color of your lines and dots.</b>
+        <p>Use <a href="#" onclick="return goToHowToTutorial(3)" title="Change Paint Color Tutorial" >buttons</a> to change the color of your paint and even create a <a href="#" onclick="return goToHowToTutorial(4)" title="Random Button Tutorial" >random color button</a>.</p> 
+      </p>
+
+      <p>
+        <b>Add text to the canvas</b>
+        <p>Use a new <a href="#" onclick="return goToHowToTutorial(5)" title="Text Tutorial" >button and text box</a> to add text to the center of the canvas.</p> 
+      </p>
+
+      <p>
+        <b>Create a share button to send your picture to your friends.</b>
+        <p>Use the <a href="#" onclick="return goToHowToTutorial(6)" title="Share Button Tutorial" >sharing component</a> to grab and send your picture.</p> 
+      </p>
+
+      <p>
+        <img class="left" src="../images/snap_remix/twitter.png" alt="some_text">
+        <b>Create a Twitter button.</b>
+        <p>Use the <a href="#" onclick="return goToHowToTutorial(7)" title="Twitter Button Tutorial" >Twitter component</a> to share your picture with the world!</p> 
       </p>
 
     </div>
 
-    <div class="tutorialContentPage">  
+    <h3>Share the app</h3>
+    <div>
+     <p>Click on "My Projects" button on the top menu bar.</p>
+     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Fill in all the details and click the "PUBLISH" button.</p>
+     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Click on "SHARE" button to get the link to the app.</p>
+     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+     <p>Copy and paste the link in the space below.</p>
 
-      <p>
-        Now, we'll learn how to draw on the canvas. 
-      </p>
+     <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
 
-      <p>
-        Click on Canvas1. 
-      </p>
-      <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:100%">
-
-      <p>
-        And choose the "when Canvas1.Dragged" block. 
-      </p>
-      <img src="../images/snapRemix/canvas1Dragged.png" alt="some_text" style="width:100%">
-
-      <p>
-        Click on Canvas1 again and choose "call Canvas1.DrawLine". Connect it to the "when Canvas1.Dragged" block.
-      </p>
-      <img src="../images/snapRemix/drawLine.png" alt="some_text" style="width:100%">
-
-      <p>
-        The app has to be told where each line should start and end. In order to connect each line to the last, hover over prevX and choose "get prevX".
-      </p>
-      <img src="../images/snapRemix/getPrevX.png" alt="some_text" style="width:100%;">
-
-      <p>
-        Drag "get prevX" to the x1 socket.
-      </p>
-      <img src="../images/snapRemix/getPrevX2.png" alt="some_text" style="width:100%;">
-
-      <p>
-        Repeat with the other sockets, corresponding prevY to y1, currentX to x2, and currentY to y2.
-      </p>
-      <img src="../images/snapRemix/finishedLine.png" alt="some_text" style="width:100%;">
-
-      <p>
-        Take a second to test out your app again using your AI Companion or Emulator!
-      </p>
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
 
     </div>
 
-    <div class="tutorialContentPage">
-
-      <p>
-        Finally, we want to clear our canvas by shaking our device.
-      </p>
-
-      <p>
-        Click on AccelerometerSensor1.
-      </p>
-      <img src="../images/snapRemix/clickAccelerometerSensor1.png" alt="some_text" style="width:90%;">
-
-      <p>
-        Choose the "when AccelerometerSensor1.Shaking" block.
-      </p>
-      <img src="../images/snapRemix/accelerometerSensor.png" alt="some_text" style="width:100%;">
-
-      <p>
-        Now, click on Canvas1.
-      </p>
-      <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:80%;">
-
-      <p>
-        Scroll down, and drag the "call Canvas1.clear" block to connect it to the "when AccelerometerSensor1.Shaking" block.
-      </p>
-      <img src="../images/snapRemix/canvasClear.png" alt="some_text" style="width:90%;">
-
-      <p>Try it out on your device. What happens?</p>
-
-      <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
-
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
     </div>
 
-    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-      <button class="tutorialNextButton" style="font-size:28pt;background-color:green;color:white;">Next Step</button>
-    </div>
   </div>
 
-  <h3>Expand your app</h3>
+  <h3>Published apps</h3>
   <div>
-    <p>
-      <b>Create a trash button to erase your image instead of shaking.</b>
-      <p>Connect a <a href="#" onclick="return goToHowToTutorial(0)" title="Trash Button Tutorial" >button</a> that clears the canvas similar to how the Accelerometer Sensor does.</p> 
-    </p>
-
-    <p>
-      <b>Draw dots on your picture.</b>
-      <p>Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Dot Tutorial" >draw circle block</a> to draw dots on your picture.</p> 
-    </p>
-
-    <p>
-      <b>Add an image you've already taken to the canvas background.</b>
-      <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Image Picker Tutorial" >image picker component</a> to select an image from your device.</p> 
-    </p>
-
-    <p>
-      <b>Change the color of your lines and dots.</b>
-      <p>Use <a href="#" onclick="return goToHowToTutorial(3)" title="Change Paint Color Tutorial" >buttons</a> to change the color of your paint and even create a <a href="#" onclick="return goToHowToTutorial(4)" title="Random Button Tutorial" >random color button</a>.</p> 
-    </p>
-
-    <p>
-      <b>Add text to the canvas</b>
-      <p>Use a new <a href="#" onclick="return goToHowToTutorial(5)" title="Text Tutorial" >button and text box</a> to add text to the center of the canvas.</p> 
-    </p>
-
-    <p>
-      <b>Create a share button to send your picture to your friends.</b>
-      <p>Use the <a href="#" onclick="return goToHowToTutorial(6)" title="Share Button Tutorial" >sharing component</a> to grab and send your picture.</p> 
-    </p>
-
-    <p>
-      <b>Create a Twitter button.</b>
-      <p>Use the <a href="#" onclick="return goToHowToTutorial(7)" title="Twitter Button Tutorial" >Twitter component</a> to share your picture with the world!</p> 
-    </p>
-
-  </div>
-
-  <h3>Share the app</h3>
-  <div>
-   <p>Click on "My Projects" button on the top menu bar.</p>
-   <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
-   <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
-   <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
-   <p>Fill in all the details and click the "PUBLISH" button.</p>
-   <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
-   <p>Click on "SHARE" button to get the link to the app.</p>
-   <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
-   <p>Copy and paste the link in the space below.</p>
-
-   <div id="shareLinkError" style="display:none">
-    <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
-  </div>
-
-  <div id="shareLinkContainer">
-    <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
-    <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
-    <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
-    <div class="widget">
-      <button class="shareApp">Share</button>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
     </div>
-
   </div>
-
-  <div id="shareCompleted" style="display:none">
-    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
-  </div>
-
-</div>
-
-<h3>Published apps</h3>
-<div>
-  <div id="container">
-   <div class="projectbox"> 
-    <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
-    <div class="projecttext"><span> Hello World</span> </div>
-  </div>
-</div>
 </div>
 </div>
 
 
 <div id="howToAccordion" class="accordion" style="display:none">
-  <h3>Add a trash button</h3>
+  <h3>Shake to clear your image</h3>
   <div>
-    <p>Components you need: Button (in User Interface)</p>
-    <p>
-      In Designer, add your button to your HorizontalArrangement2 and rename your button to something descriptive, such as trashButton.
-    </p>
-    <img src="../images/howTos/trashButtonRename.png" style="width:90%" alt="share file">
-
-    <p>
-     Upload and add an image as an icon in the Properties panel, such as one from <a href="www.thenounproject.com">The Noun Project</a>. Change the height and width of the button.
-   </p>
-   <img src="../images/howTos/trashButtonIcon.png" style="height:50%" alt="share file">
-
-   <p>Next, click on Blocks and click on trashButton. Grab the "when trashButton.Click" block.</p>
-
-   <img src="../images/howTos/trashButtonClick.png" style="width:80%" alt="share file">
-
-   <p> Then click on Canvas1 and connect the "call Canvas1.clear" block.</p>
-
-   <img src="../images/howTos/trashButtonClear.png" style="width:90%" alt="save file">
-
- </div>
-
- <h3>Draw dots on the canvas</h3>
- <div>
-  <p>Components you need: None!</p>
-  <p>
-    In Blocks, click on Canvas1 and choose the "when Canvas1.Touched" block.
-  </p>
-  <img src="../images/howTos/canvas1Touched.png" style="width:90%" alt="share file">
-
-  <p>
-    Click on Canvas1 again and choose "call Canvas1.DrawCircle".
-  </p>
-  <img src="../images/howTos/canvas1Draw.png" style="height:50%" alt="share file">
-
-  <p>Click on the red x button and choose the "get x" block and drag it to the centerX socket. Repeat with y.</p>
-
-  <img src="../images/howTos/canvas1Center.png" style="width:80%" alt="share file">
-
-  <p>Click on the Math drawer and drag out the 0 block. Connect it to the radius socket and change the number to 5 (or any other number).</p>
-
-  <img src="../images/howTos/canvas1Radius.png" style="width:90%" alt="save file">
-
-</div>
-
-<h3>Pick image from device</h3>
-<div>
-  <p>Components you need: Image Picker (media)</p>
-  <p>In Designer, change your image picker's text or icon.</p>
-
-  <p>Next, go to Blocks, click on ImagePicker1, and select "when when ImagePicker.AfterPicking".</p>
-
-  <img src="../images/howTos/imagePicker.png" style="width:100%" alt="save file">
-
-  <p>Click on Canvas1, and connect the "set Canvas1.BackgroundImage to" block.</p>
-
-  <img src="../images/howTos/imagePickerBackground.png" style="width:100%" alt="add text">
-
-  <p>Click on ImagePicker1, scroll down, and connect the "ImagePicker1.Selection" block.</p>
-
-  <img src="../images/howTos/imagePickerSelection.png" style="width:100%" alt="add text">
-
-</div>
-
-<h3>Change color of paint</h3>
-<div>
-  <p>Components you need: Buttons (User Interface), HorizontalArrangement (Layout)</p>
-  <p>
-    In Designer, add the buttons to the HorizontalArrangement1 and change (or delete) the text, color, shape, and size of the buttons. Also rename the buttons for clarity.
-  </p>
-
-  <img src="../images/howTos/colorButtons.png" style="width:60%" alt="share file">
-
-  <p>Next, go to Blocks and click on blueButton. Drag out the "when blueButton.Click" block.</p>
-
-  <img src="../images/howTos/blueButton.png" style="width:80%" alt="save file">
-
-  <p>Click on Canvas1 and choose "set Canvas1.PaintColor to" and connect it.</p>
-
-  <img src="../images/howTos/blueButtonPaint.png" style="width:100%" alt="add text">
-
-  <p>Click on Colors and choose a blue colored block and connect it.</p>
-
-  <img src="../images/howTos/blueButtonBlue.png" style="width:100%" alt="add text">
-
-  <p>Repeat for the yellow button.</p>
-
-  <img src="../images/howTos/colorButtonBlocks.png" style="width:100%" alt="add text">
-
-</div>
-
-<h3>Random color button</h3>
-<div>
-  <p>Components you need: Button (User Interface).</p>
-
-  <p>Click on randomButton and drag out "when randomButton.Click". Click Canvas1 and connect "set Canvas1.PaintColor to".</p>
-
-  <img src="../images/howTos/randomButton.png" style="width:90%" alt="save file">
-
-  <p>The random colors will be selected from a list of colors. Click Lists and select "pick a random item list".</p>
-
-  <img src="../images/howTos/randomButtonRandom.png" style="width:100%" alt="add text">
-
-  <p>Click Lists again and drag out "make a list".</p>
-
-  <img src="../images/howTos/randomButtonList.png" style="width:100%" alt="add text">
-
-  <p>Click on the blue gear and click and drag as many items to your list as you want.</p>
-
-  <img src="../images/howTos/randomButtonItems.png" style="width:100%" alt="add text">
-
-  <p>Click on Colors and drag out color blocks in order to fill all the empty sockets.</p>
-
-  <img src="../images/howTos/randomButtonColors.png" style="width:100%" alt="add text">
-
-</div>
-
-<h3>Add text to canvas</h3>
-<div>
-  <p>Components you need: TextBox Component (User Interface), Button (User Interface)</p>
-  <p>In Blocks, click on textButton and choose "when textButton.Click". Click on Canvas 1 next and connect "call Canvas1.DrawText".</p>
-
-  <img src="../images/howTos/textButton.png" style="width:80%" alt="share file">
-
-  <p>Next, click on Math and drag out two 0 blocks and connect them to the x and y sockets. Change the values to 10.</p>
-
-  <img src="../images/howTos/textButtonCoordinates.png" style="width:100%" alt="save file">
-
-  <p>Click canvasText and add "canvasText.Text" to the text socket.</p>
-
-  <img src="../images/howTos/textButtonText.png" style="width:100%" alt="add text">
-
-</div>
-
-<h3>Add a share button</h3>
-<div>
-  <p>Components you need: Sharing Component (Social), Button (User Interface)</p>
-  <p>In Blocks, click on shareButton and grab the "when shareButton.Click" block. Then click on Sharing1 and connect the "call Sharing1.ShareFileWithMessage" block.</p>
-
-  <img src="../images/howTos/shareFile.png" style="width:90%" alt="share file">
-
-  <p>Next, click on Canvas1 and connect "call Canvas1.SaveAs" to the file socket.</p>
-
-  <img src="../images/howTos/saveAs.png" style="width:100%" alt="save file">
-
-  <p>Finally, click on Text in the built-in blocks and add two empty text blocks. Name your file and add a message!</p>
-
-  <img src="../images/howTos/saveText.png" style="width:100%" alt="add text">
-
-</div>
-
-<h3>Share picture to Twitter</h3>
-<div>
-  <p>Components you need: Twitter Component (Social), Button (User Interface)</p>
-
-  <p>
-    Go to <a href="http://twitter.com/oauth_clients/new"  target="_blank">http://twitter.com/oauth_clients/new</a> in order to set up your Consumer Key and Consumer Secret. Click on Create New App.
-  </p>
-
-  <img src="../images/howTos/twitterNewApp.png" style="width:90%" alt="share file">
-
-  <p>
-    Fill out the form, creating a name, description, and putting in placeholders for the website and callback URL. Agree to the developer aggrement and create your new application.
-  </p>
-
-  <img src="../images/howTos/twitterApplication.png" style="width:100%" alt="share file">
-
-  <p>
-    When your application has been created, click on the Keys and Access Tokens tab.
-  </p>
-
-  <img src="../images/howTos/twitterTokens.png" style="width:100%" alt="share file">
-
-  <p>
-    Copy the Consumer Key and the Consumer Secret.
-  </p>
-
-  <img src="../images/howTos/twitterTokens2.png" style="width:100%" alt="share file">
-
-  <p>
-    In Designer, click on Twitter1 (in Components) and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.
-  </p>
-
-  <img src="../images/howTos/twitterProperties.png" style="width:100%" alt="share file">
-
-  <p>In Blocks, click on twitterButton and grab the "when twitterButton.Click" block. Then click on Twitter1 and connect the "call Twitter1.Authorize" block.</p>
-
-  <img src="../images/howTos/twitterClick.png" style="width:90%" alt="share file">
-
-  <p>Next, click on Twitter1 again and drag out "when Twitter1.IsAuthorized".</p>
-
-  <img src="../images/howTos/twitterAuthorize.png" style="width:100%" alt="save file">
-
-  <p>Click on Twitter1 again and connect "call Twitter1.TweetWithImage"</p>
-
-  <img src="../images/howTos/twitterTweet.png" style="width:100%" alt="add text">
-
-  <p>Go to Canvas1 and connect "call Canvas1.SaveAs" to the ImagePath socket.</p>
-
-  <img src="../images/howTos/twitterImage.png" style="width:100%" alt="add text">
-
-  <p>Finally, click on Text and grab two empty quotes. Rename them and connect them to the status socket on the "call Twitter1.TweetWithImage" block and to the filename socket on the "call Canvas1.SaveAs" block.</p>
-
-  <img src="../images/howTos/twitterText.png" style="width:100%" alt="add text">
-
-</div>
+    <p>In Designer, click on Sensors and drag and drop an AccelerometerSensor onto the Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addAccel.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on AccelerometerSensor1 and drag out <span class="control">when AccelerometerSensor1.Shaking</span> and add it under your existing blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addShaking.gif" alt="some_text">
+    <p>Then click on Canvas1 and connect the <span class="procedures">call Canvas1.clear</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addCanvasClear.gif" alt="some_text">
+    <p>Test out your app! After drawing on your image, shake the canvas and watch your drawing disappear!</p>
+  </div>
+
+  <h3>Draw dots on the canvas</h3>
+  <div>
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on Canvas1 and choose the <span class="control">when Canvas1.Touched</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addCanvasTouch.gif" alt="some_text">
+    <p>Click on Canvas1 again and choose the <span class="procedures">call Canvas1.DrawCircle</span> block and add it to <span class="control">when Canvas1.Touched</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addDrawCircle.gif" alt="some_text">
+    <p>Hover over the red "x" button and choose the <span class="variables">get x</span> block and drag it to the centerX socket of <span class="procedures">call Canvas1.DrawCircle</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addGetX.gif" alt="some_text">
+    <p>Repeat with the <span class="variables">get y</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addGetY.gif" alt="some_text">
+    <p>Click on the Math drawer and drag out the <span class="math">0</span> block. Connect it to the radius socket of <span class="procedures">call Canvas1.DrawCircle</span> and change the number to 5 (or any other number).</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addRadius.gif" alt="some_text">
+    <p>Test out your app! Tap on your canvas to draw dots!</p>
+  </div>
+
+  <h3>Pick image from device</h3>
+  <div>
+    <p>In Designer, click Media and drag an ImagePicker into your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addImgPick.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on ImagePicker1, and select <span class="control">when ImagePicker.AfterPicking</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/afterPick.gif" alt="some_text">
+    <p>Click on Canvas1, and connect the <span class="setters">set Canvas1.BackgroundImage to</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/setBackImg.gif" alt="some_text">
+    <p>Click on ImagePicker1 and connect the <span class="setters">ImagePicker1.Selection</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/getSelect.gif" alt="some_text">
+    <p>Test out your app! Choose an image from your photo roll and set it as your background.</p>
+  </div>
+
+  <h3>Change color of paint</h3>
+  <div>
+    <p>In Designer, add a Button to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    <p>Change the text of your button so the user knows which color they're selecting. You can also change the size, color, and shape of the buttons.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/changeButText.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p> Click Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    <p>Click on Canvas1 and choose <span class="setters">set Canvas1.PaintColor to</span> and connect it.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/setPaint.gif" alt="some_text">
+    <p>Click on Colors and choose a blue block and connect it to <span class="setters">set Canvas1.PaintColor to</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/blue.gif" alt="some_text">
+    <p>Test out your app! Once it works, add more buttons to give the user more options for colors.</p>
+  </div>
+
+  <h3>Random color button</h3>
+  <div>
+    <p>In Designer, add a Button to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    <p>Change the text of your button so the user knows which color they're selecting. You can also change the size, color, and shape of the buttons.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/changeRandom.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    <p>Click Canvas1 and connect <span class="setters">set Canvas1.PaintColor to</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/setPaint.gif" alt="some_text">
+    <p>The random colors will be selected from a list of colors. Click Lists and select <span class="lists">pick a random item list</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/pickRandom.gif" alt="some_text">
+    <p>Click Lists again and drag out <span class="lists">make a list</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/makeList.gif" alt="some_text">
+    <p>Click on the blue gear and click and drag as many items to your list as you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addItems.gif" alt="some_text">
+    <p>Click on Colors and drag out a color block to fill an empty socket.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addRed.gif" alt="some_text">
+    <p>Repeat with the rest of the sockets.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addColors.gif" alt="some_text">
+    <p>Test out your app! Once it works, you can add more colors to the list.</p>
+  </div>
+
+  <h3>Add text to canvas</h3>
+  <div>
+    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    <p>Again in User Interface, add a TextBox to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addTextBox.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    <p>Click on Canvas 1 next and connect <span class="procedures">call Canvas1.DrawText</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/callDraw.gif" alt="some_text">
+    <p>Click TextBox1 and add "TextBox1.Text" to the "text" socket of the <span class="procedures">call Canvas1.DrawText</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/setTextBox.gif" alt="some_text">
+    <p>Next, click on Math and drag out two <span class="math">0</span> blocks and connect them to the x and y sockets.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/zeros.gif" alt="some_text">
+    <p>Change the values of both the <span class="math">0</span> blocks to 10 (or anywhere else you want the blocks to be).</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/changeTen.gif" alt="some_text">
+    <p>Test out your app! Once it works, you can move around the text or let the user control where the text goes.</p>
+  </div>
+
+  <h3>Add a share button</h3>
+  <div>
+    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    <p>Click Social and add Sharing to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addSharing.gif" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    <p> Then click on Sharing1 and connect the <span class="procedures">call Sharing1.ShareFileWithMessage</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/shareWMess.gif" alt="some_text">
+    <!-- TODO: Is there a better way to do this? -->
+    <p>Next, click on Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "file" socket of <span class="procedures">call Sharing1.ShareFileWithMessage</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/callSaveAs.gif" alt="some_text">
+    <p>Click on Text and add a <span class="text">" "</span> block to the "fileName" socket of <span class="procedures">call Canvas1.SaveAs</span>. Change the text inside to "myPic" or anything else you want to name your file.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/picText.gif" alt="some_text">
+    <p>Click on Text and and add a <span class="text">" "</span> block to the "message socket" of <span class="procedures">call Sharing1.ShareFileWithMessage</span>. Change the text inside to "Look at my picture!" or anything else you want to name your file.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/messageText.gif" alt="some_text">
+    <p>Test out your app! Once it works, you can try out sending pictures to your friends! This component works similarly to other sharing components so try them as well!</p>
+  </div>
+
+  <h3>Share picture to Twitter</h3>
+  <div>
+    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    <p>Click Social and add Sharing to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addTwitter.gif" alt="some_text">
+    <p>Follow <a href="http://twitter.com/oauth_clients/new"  target="_blank">this link</a> in order to set up your Consumer Key and Consumer Secret. Start by clicking on Create New App.</p>
+    <!-- I dont know where this went -->
+    <img class="enlargeImage" src="../images/snap_remix/howto/createApp.png" alt="some_text"> 
+    <p>Fill in the form to create your app.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitCreate.gif" alt="some_text">
+    <!-- Redo these with gifs if possible -->
+    <p>When your application has been created, click on the Keys and Access Tokens tab.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens.png" alt="some_text">
+    <p>Copy the Consumer Key and the Consumer Secret.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens2.png" alt="some_text">
+    <p>Back in Designer, click on Twitter1 and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitProperties.png" alt="some_text">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    <p>Click on Twitter1 and connect the <spen class="procedures">call Twitter1.Authorize</spen> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitAuth.gif" alt="some_text">
+    <p>Click on Twitter1 again and drag out <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/whenAuth.gif" alt="some_text">
+    <p>Click on Twitter1 again and connect <span class="procedures">call Twitter1.TweetWithImage</span> to <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/callTwitImg.gif" alt="some_text">
+     <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitText.gif" alt="some_text">
+    <p>Click Canvas1 and connect <spen class="procedures">call Canvas1.SaveAs</spen> to the ImagePath socket of <spen class="procedures">call Twitter1.TweetWithImage</spen>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitSaveAs.gif" alt="some_text">
+    <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitPicText.gif" alt="some_text">
+    <p>Test out your app! Once it works, you can tweet images and try out some of the functions available with the Twitter component!</p>
+  </div>
 
 </div>
 <div id="serverTutorialId" style="display:none;">2</div>

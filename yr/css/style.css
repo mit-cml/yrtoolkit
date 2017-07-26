@@ -66,6 +66,13 @@ a.ui-button:active,
 	padding:1px;
 }
 
+.variables {
+	background-color: #d05f2d;
+	border: 1px dashed #000;
+	color: white;
+	padding:1px;
+}
+
 .procedures {
 	background-color: #7c5385;
 	border: 1px dashed #000;
@@ -94,12 +101,36 @@ a.ui-button:active,
 	padding:1px;
 }
 
+.math {
+	background-color: #3f71b5;
+	border: 1px dashed #000;
+	color: white;
+	padding:1px;
+}
+
+.lists {
+	background-color: #49a6d4;
+	border: 1px dashed #000;
+	color: white;
+	padding:1px;
+}
+
 /* Enlarge Image feature */
 
 .tutorialDiv:hover .enlargeImage {
   opacity: 0.75; 
 }
 
-.tutorialDiv:hover .zoomIcon {
-  opacity: 0.75; 
+.enlargeImage {
+  max-width: 250px; 
+}
+
+.left {
+	float: left;
+	max-width: 30%;
+}
+
+.right {
+	float:right;
+	max-width: 30%;
 }
