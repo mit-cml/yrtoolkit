@@ -128,15 +128,20 @@ window.getTutorialVideo = function(tutorialId) {
 
      var newDiv = document.createElement("div");
      newDiv.className = "tutorialDiv";
-     newDiv.style.position = "relative";
-     newDiv.style.width = pwidth;
+     // newDiv.style.width = pwidth;
 
      var tutImg = document.createElement("img");
      tutImg.src = allTutPics[i].src;
-     tutImg.style.cssText = allTutPics[i].style.cssText;
-     tutImg.style.width = pwidth + "px";
-     tutImg.className = allTutPics[i].className;
+     // tutImg.style.cssText = allTutPics[i].style.cssText;
+     // tutImg.style.width = pwidth + "px";
+     tutImg.className = "enlargeImage";
      newDiv.appendChild(tutImg);
+
+     var zoom = document.createElement("img");
+     zoom.src = "../images/zoom.png";
+     zoom.className = "zoom";
+     // zoom.css({top: '200px', left: '200px', position:'absolute'});
+     newDiv.appendChild(zoom);
 
      $(newDiv).insertBefore(allTutPics[i]);
      $(newDiv).next().remove();
@@ -144,6 +149,10 @@ window.getTutorialVideo = function(tutorialId) {
 
   $(".enlargeImage").click(function(imageId){
     window.parent.postMessage({type:"img", imageId:$(this).attr("src")}, '*');
+  });
+
+  $(".zoom").click(function(imageId){
+    window.parent.postMessage({type:"img", imageId:$(this).prev(".enlargeImage").attr("src")}, '*');
   });
 
 });
