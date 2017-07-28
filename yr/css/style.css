@@ -166,3 +166,12 @@ a.ui-button:active,
 .tutorialDiv:hover .zoom {
   opacity: 1;
 }
+
+.countDiv{
+	text-align: center;
+}
+
+.tutorialNextButtonContainer {
+	width: 100%;
+	text-align: center;
+}

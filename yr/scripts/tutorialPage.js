@@ -7,6 +7,67 @@ $(document).ready( function() {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
     var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
     
+    var previousLink = document.createElement("div");
+      previousLink.className = "previousLinkContainer";
+      previousLink.style.float = "left";
+      previousLink.style.width = "20%";
+      // previousLink.style.text-align = "left";
+      previousLink.style.visibility = "hidden";
+
+      var prevLink = document.createElement("a");
+      $(prevLink).attr("href", "#");
+      prevLink.className = "tutorialPreviousButton";
+      prevLink.innerHTML = "Previous";
+
+      previousLink.appendChild(prevLink);
+      tutorialNavigationHeader.appendChild(previousLink);
+
+      var countDiv = document.createElement("div");
+      countDiv.style.float = "left";
+      countDiv.style.width = "40%";
+      countDiv.className = "countDiv";
+      // countDiv.style.text-align = "center";
+
+      var pageSpan = document.createElement("span");
+
+      var currentSpan = document.createElement("span");
+      currentSpan.className = "currentPageNum";
+      currentSpan.innerHTML = -1;
+      pageSpan.appendChild(currentSpan);
+
+      var ofDiv = document.createElement("span");
+      ofDiv.innerHTML = " of ";
+      pageSpan.appendChild(ofDiv);
+
+      var totalSpan = document.createElement("span");
+      totalSpan.className = "totalPageNum";
+      totalSpan.innerHTML = 5;
+
+      pageSpan.appendChild(totalSpan);
+      countDiv.appendChild(pageSpan);
+      tutorialNavigationHeader.appendChild(countDiv);
+
+      previousLink.appendChild(prevLink);
+      tutorialNavigationHeader.appendChild(countDiv);
+
+      var nextLink = document.createElement("div");
+      nextLink.className = "nextLinkContainer";
+      nextLink.style.float = "right";
+      nextLink.style.width = "20%";
+      // nextLink.style.text-align = "right";
+
+      var nLink = document.createElement("a");
+      $(nLink).attr("href", "#");
+      nLink.className = "tutorialNextButton";
+      nLink.innerHTML = "Next";
+
+      nextLink.appendChild(nLink);
+      tutorialNavigationHeader.appendChild(nextLink);
+
+      var spacing = document.createElement("div");
+      spacing.innerHTML = "<br/><hr/>"
+      tutorialNavigationHeader.appendChild(spacing);
+
     var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
     var totalPageNumSpan = tutorialNavigationHeader.getElementsByClassName("totalPageNum")[0];
     pageNumSpan.innerHTML = tutorialPageObject.page + 1;
@@ -37,12 +98,11 @@ $(document).ready( function() {
     } else {
       nextLinkContainer.style.visibility = "hidden";
     }
-
   }
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
-    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButtonContainer")[0];
+    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
     nextButtonContainer.style.display = (visibility ? "block" : "none")
   }
 
