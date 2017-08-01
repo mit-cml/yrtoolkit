@@ -175,3 +175,21 @@ a.ui-button:active,
 	width: 100%;
 	text-align: center;
 }
+.btn-success {
+	background-color: #8fc202;
+	font-size: 24px;
+	text-shadow: 0px 0px 1px #404040;
+	border: none;
+}
+
+.btn-success:hover {
+	background-color: #759F00;
+}
+
+.btn-success:active {
+	background-color: #8fc202;
+}
+
+.btn-success:focus {
+	background-color: #8fc202;
+}

@@ -102,8 +102,10 @@ $(document).ready( function() {
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
-    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
-    nextButtonContainer.style.display = (visibility ? "block" : "none")
+    var nextButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
+    var bigButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[1];
+    nextButton.style.display = (visibility ? "block" : "none");
+    bigButton.style.display = (visibility ? "block" : "none");
   }
 
   var updateTutorialPage = function(tutorialIndex) {
@@ -124,6 +126,7 @@ $(document).ready( function() {
   }
 
   var setupTutorial = function() {
+
     var tutorialIndex = 0;
     var totalPageNum;
     var tutorialContainers = document.getElementsByClassName("tutorialContainer");
@@ -143,6 +146,7 @@ $(document).ready( function() {
       updateTutorialPage(tutorialIndex);
       tutorialIndex++;
     }
+
   }
 
   setupTutorial();
@@ -162,7 +166,7 @@ $(document).ready( function() {
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
     tutorialPageObject.page++;
 
-    if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
+    if(tutorialPageObject.page == tutorialPageObject.totalPageNum) {
       //hide next button
       setTutorialNextButtonVisibility(tutorialIndex, false)
     }
