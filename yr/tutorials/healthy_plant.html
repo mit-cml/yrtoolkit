@@ -29,162 +29,89 @@
   <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
     <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
     <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
   </div>
 
+
   <div id="youthRadioAccordion" class="accordion">
-    <h3>The Challenge</h3>
-    <div>
-      <p>
-        Last year, NPR’s Morning Edition ran a story about an app called Mood Ring, created by our friends at Youth Radio, using App Inventor. Mood Ring invites teens to track how they’re feeling using any combo of nine emojis, and to reach out to trusted others when they’re having a rough time. Youth Radio’s Storm White, who co-designed Mood Ring with some other Youth Radio members, told NPR her team wanted to develop “a playful way to address something serious.”
-        <br/><br/>
-        Now it’s your turn to work with App Inventor to design and build your own version of an app that uses emojis to promote positive social and emotional health. Or maybe you have something else entirely in mind. We can’t wait to see what you come up with! 
-        <br/><br/>
-        To hear more from Youth Radio about mobile apps and mental health, check out  their latest story on (add link) artificially intelligence therapy bots (end link). It's part of their series, Youth Mobile Power. 
-      </p>
-    </div>
 
-    <h3>Connect your App</h3>
-    <div class="tutorialContainer">
-      <div class="tutorialNavigationHeader">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>1. Connect with your device over wifi</h3>
-        <p>Connect using the companion app so you can see your app on your mobile device.</p>
-        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
-        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
-        <p>Download from the Play Store using the QR code below or <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a>.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
-        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>3. Go through the installation instructions on your phone</h3>
-        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
-        <!-- Should I expand on this/add clip art? -->
-      </div>
-      <div class="tutorialContentPage">
-        <h3>4. Open your app's QR code</h3>
-        <p>Click Connect, then AI Companion.</p>
-        <img class="enlargeImage" src="../images/connect_device/connectAI.gif" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>5. Connect your app with your phone</h3>
-        <p>A QR code similar to this should pop up on your screen.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
-        <p>Either scan the QR code or enter the code in the text box.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>6. Still confused?</h3>
-        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
-      </div>
-      <br/>
-      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
-    </div>
-
-    <h3>Mood counter tutorial</h3>
+    <h3>Healthy Plant tutorial</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
       <div class="tutorialContentPage">
-        <h4>1. Introduction</h4>
-        <p>Let's make an app that can keep track of how many times you feel different emotions throughout the day.</p>
-        <img class="enlargeImage" src="../images/mood_counter/moodTrackApp.png" alt="some_text">
-        <p>Try clicking the different emojis. What happens?</p>
-        <p>Let's change the app so that when you tap the angry emoji, it increases the anger count.</p>
+        <h4>1. Setup</h4>
+        <p>We'll make an app that measures the health of a plant using graphs.</p>
+        <p>Click <a href="#" onclick="return goToHowToTutorial(0)">here</a> to learn how to set up your device if you haven't yet.</p>
       </div>
 
       <div class="tutorialContentPage">
-        <h4>2. Add click handler</h4>
-        <p>Click on the Blocks button on the right side top bar.</p>
-        <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="some_text">
-        <p>Click on the happyButton drawer on the left and drag the <span class="control">When happyButton.Click</span> block workspace.</p>
-        <img class="enlargeImage" src="../images/mood_counter/happyClick.gif" alt="some_text">
+        <h4>2. Add three VerticalArrangement components</h4>
+        <p>Click on the Layout and drag out three VerticalArrangement to HorizontalArrangement2.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/threeVertical.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
-        <h4>3. Add <span class="setters">set angryLabel.Text</span></h4>
-        <p>Click on the "happyLabel" drawer, then drag the <span class="setters">set happyLabel.Text to</span> block to the <span class="control">shen haooyButton.Click</span> block.</p>
-        <img class="enlargeImage" src="../images/mood_counter/happySetText.gif" alt="some_text">
+        <h4>3. Rename your VerticalArrangements</h4>
+        <p>Select VerticalArrangement1, click "Rename" and rename it to "LightBar". Then, rename VerticalArrangement2 to "TemperatureBar" and VerticalArrangement3 to "MoistureBar".</p>
+        <img class="enlargeImage" src="../images/healthy_plant/renameVertical.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
-        <h4>4. Add <span class="math">__ + __</span></h4>
-        <p>Click on the "Math" drawer. Click and drag the <span class="math">__ + __</span> block and add it to the <span class="setters">set happyLabel.Text to</span> block.</p>
-        <img class="enlargeImage" src="../images/mood_counter/happyPlus.gif" alt="some_text">
+        <h4>4. Set height to "0px" and width to "Fill Parent"</h4>
+        <p>Set the height of LightBar to "0px" and set the width to "Fill Parent". Repeat for TemperatureBar and MoistureBar.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/updateHW.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
-        <h4>5. Add <span class="getters">happyLabel.Text</span></h4>
-        <p>Click on the "angryLabel" drawer. Click and drag the <span class="getters">angryLabel.Text</span> block and add it to the first socket of the <span class="math">__ + __</span> block. 
-        </p>
-        <img class="enlargeImage" src="../images/mood_counter/happyText.gif" alt="some_text">
+        <h4>5. Set the BackgroundColor</h4>
+        <p>Select LightBar and set the BackgroundColor to <font color="yellow">yellow</font>. Set the BackgroundColor of TeperatureBar to <font color="red">red</font> and the BackgroundColor of MoistureBar to <font color="blue">blue</font>.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/updateColor.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
-       <h4>6. Add <span class="math">1</span></h4>
-       <p>Click on the "Math" drawer. Click and drag the <span class="math">0</span>block and add it to the second socket in the <span class="math">__ + __</span> block. Change the "0" to a "1".</p>
-       <img class="enlargeImage" src="../images/mood_counter/happyNum.gif">
+       <h4>6. Add <span class="setters">set LightBar.Height to</span></h4>
+       <p>Click on Blocks.</p>
+       <img class="enlargeImage" src="../images/healthy_plant/clickBlocks.png">
+       <p>Click LightBar1 and select <span class="setters">set LightBar.Height to</span>. Connect it to the first socket of the <span class="math">__ x <span class="math">0.75</span></span> block.</p>
+       <img class="enlargeImage" src="../images/healthy_plant/setHeight.gif">
      </div>
 
      <div class="tutorialContentPage">
-      <h4>7. Duplicate blocks</h4>
-      <p>Try clicking the different emojis. What happens now?</p>
-      <p>Let's now make the angry emoji work too. Right click (or ctrl/control click) on the <span class="control">when happyButton.Click</span> block, then click Duplicate.</p>
-      <img class="enlargeImage" src="../images/mood_counter/duplicatehappyClick.gif" alt="some_text">
+      <h4>7. Connect <span class="setters">set LightBar.Height to</span> to <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span></h4>
+      <p>Locate the <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> (it'll have a few blocks inside of it). It should look like this:</p>
+      <img class="enlargeImage" src="../images/healthy_plant/dataReceived.png" alt="some_text">
+      <br/>
+      <p>Connect your whole <span class="setters">set LightBar.Height to</span> to <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> (under the blocks already inside).</p>
+      <img class="enlargeImage" src="../images/healthy_plant/connectSetHeight.gif" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
-      <h4>8. Change "happyButton" to "angryButton"</h4>
-      <p>Click on the "happyButton" drop down on the  <span class="control">when happyButton.Click</span> block and choose "angryButton"</p>
-      <img class="enlargeImage" src="../images/mood_counter/angryClickSelect.gif" alt="some_text">
+      <h4>8. Add <span class="variable">get intensity</span></h4>
+      <p>On the <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> block, hover over the red "intensity". Click on <span class="variable">get intensity</span> in the pop-up and connect it to the first socket of the <span class="math">__ x <span class="math">0.75</span></span> block.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/hoverIntensity.gif" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
-      <h4>9. Repeat for happyLabel</h4>
-      <p>Change the dropdown of <span class="setters">set happyLabel.Text to</span> to <span class="setters">set angryLabel.Text to</span>. And change <span class="getters">happyLabel.Text</span> to <span class="getters">angryLabel.Text</span></p>
-      <img class="enlargeImage" src="../images/mood_counter/angryLabel.gif" alt="some_text">
+      <h4>9. Repeat steps 6-8 for TemperatureBar</h4>
+      <p>Get the <span class="setters">set MoistureBar.Height to</span> block, and it to <span class="math">__ x <span class="math">0.75</span></span>. Then, add blocks to <span class="control">when Arduino101Moisture1.MoistureReceived</span>. Hover over "moisture" and connect <span class="variables">get moisture</span>.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/tempReceived.gif" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
-      <h4>10. Repeat for sadButton</h4>
-      <p>Repeat steps 7, 8, and 9 for the sadButton.</p>
-      <img class="enlargeImage" src="../images/mood_counter/sadButton.gif" alt="some_text">
+      <h4>10. Repeat steps 6-8 for MoistureBar</h4>
+      <p>Get the <span class="setters">set TemperatureBar.Height to</span> block, and it to <span class="math">__ x <span class="math">4</span></span>. Then, add blocks to <span class="control">when Arduino101Humidity1.TemperatureReceived</span>. Hover over "temperature" and connect <span class="variables">get temperature</span>.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/moistReceived.gif" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>11. Test it out!</h4>
-      <p>Try it out on your  device. Tap on the different emojis. Do the numbers increment when you tap on the buttons?</p>
-      <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+      <p>Try it out on your  device. What happens to the bars? Your app should look something like this:</p>
+      <img class="enlargeImage" src="../images/healthy_plant/final.png" alt="some_text">
     </div>
     <br/>
       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
       </div>
-  </div>
-
-  <h3>Expand your app</h3>
-  <div>
-    <p>
-      <b>Show an inspiring quote based on how the user feels.</b>
-      <p>Set the <a href="#" onclick="return goToHowToTutorial(0)" title="Tutorial for using label component text"> label component's text </a>to a random message after the user chooses their mood.</p> 
-    </p>
-
-    <b>Play a song or display an image to cheer up a friend.</b>
-    <p>Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Tutorial for using player component" > player component </a> to play a song after the user selects an emotion or the <a href="#" onclick="return goToHowToTutorial(2)" title="Tutorial for using showing an image"> image component </a>to show a picture.</p> 
-
-    <b>Personalize the app with the user’s name.</b>
-    <p>Use the <a href="#" onclick="return goToHowToTutorial(3)" title="Tutorial for text component">text input component</a> to get the user’s name and display it in the app.</p> 
-
-    <b>Text a friend when the user is feeling sad.</b>
-    <p>Use the <a href="#" onclick="return goToHowToTutorial(4)" title="Tutorial for send a text message" > texting component </a>to send a message when the sad button is clicked.</p> 
-
-    <b>Let users review how they felt in the past.</b>
-    <p>You can use the <a href="#" onclick="return goToHowToTutorial(5)" title="Tutorial for saving and writing to a file" > file component</a> to store what happens each time the user hits the button.</p> 
-
   </div>
 
   <h3>Share the app</h3>
@@ -231,262 +158,47 @@
 </div>
 
 <div id="howToAccordion" class="accordion" style="display:none">
-  <h3>Show a random message</h3>
-  <div class="tutorialContainer">
-   <div class="tutorialNavigationHeader"></div>
-   <div class="tutorialContentPage">
-     <h4>1. Add a Label and a Button</h4>
-     <p>In Designer, go to User Interface and add a Label. Then, go to User Interface again and add a Button.</p>
-     <img class="enlargeImage" src="../images/mood_counter/howto/addLabelButton.gif" alt="magic eight ball">
-   </div>
-
-   <div class="tutorialContentPage">
-    <h4>2. Add <span class="control">when Button1.Click</span></h4>
-    <p>Click Blocks.</p>
-    <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-    <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/btnClick.gif" alt="magic eight ball">
-  </div>
-
-  <div class="tutorialContentPage">
-    <h4>3. Add <span class="setters">set Label1.Text to</span></h4>
-    <p>Next, click on Label1 and add the <span class="setters">set Label1.Text to</span> block <span class="control">when Button1.Clicks</span>.</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/setLabelText.gif" alt="magic eight ball">
-  </div>
-
-  <div class="tutorialContentPage">
-    <h4>4. Add <span class="lists">pick a random item list</span></h4>
-    <p>Click on Lists and add the <span class="lists">pick a random item list</span> block to <span class="setters">set Label1.Text to</span>.</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/pickRandomList.gif" alt="some_text">
-  </div>
-
-  <div class="tutorialContentPage">
-    <h4>5. Add <span class="lists">make a list</span></h4>
-    <p>Click on Lists again and add the <span class="lists">make a list</span> block to <span class="lists">pick a random item list</span>.</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/makeList.gif" alt="some_text">
-  </div>
-
-  <div class="tutorialContentPage">
-    <h4>6. Add another item to the list</h4>
-    <p>Click on the blue gear of the <span class="lists">make a list</span> block and click and add another list item to the block.</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/addListItem.gif" alt="some_text">
-  </div>
-
-  <div class="tutorialContentPage">
-    <h4>7. Attach Text blocks to sockets</h4>
-    <p>Click on Text and drag and attach a <span class="text">" "</span> blocks to each socket of <span class="lists">make a list</span>. Change the text of each <span class="text">" "</span> block to an encouraging statment, such as "You got this!", "I believe in you", or "You can do it!"</p>
-    <img class="enlargeImage" src="../images/mood_counter/howto/textChangeText.gif" alt="some_text">
-  </div>
-</div>
-
-<h3>Play a song on button press</h3>
-<div class="tutorialContainer">
- <div class="tutorialNavigationHeader"></div>
- <div class="tutorialContentPage">
-   <h4>1. Add a Button</h4>
-   <p>In User Interface, click and drag a Button into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addButton.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-  <h4>2. Add a Player</h4>
-  <p>Now click Media, and drag a Player into the Viewer. It will show up under the non-visible componenets.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/addPlayer.gif" alt="some_text">
-</div>
-
-<div class="tutorialContentPage">
-  <h4>4. Change Player source</h4>
-  <p>In the Player properties, click on the source property, select song.mp3 or upload your sound file, and click ok.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/playerSource.png" alt="player source">
-</div>
-
-<div class="tutorialContentPage">
-  <h4>5. Add <span class="control">when Button1.Click</span></h4>
-  <p>Click Blocks.</p>
-  <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-  <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/btnClick2.gif" alt="magic eight ball">
-</div>
-
-<div class="tutorialContentPage">
-  <h4>6. Call Player</h4>
-  <p>Click Player1 add add <span class="procedures">call Player1.Start</span> to <span class="control">when Button1.Click</span>.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/callPlayer.gif" alt="magic eight ball">
-</div>
-</div>
-
-<h3>Show an image</h3>
-<div class="tutorialContainer">
- <div class="tutorialNavigationHeader"></div>
- <div class="tutorialContentPage">
-   <h4>1. Add an Image</h4>
-   <p>In User Interface, click and drag an Image into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addImg.gif" alt="some_text">
-   <!-- <p>This will show an image when you tap a button</p> -->
- </div>
-
- <div class="tutorialContentPage">
-   <h4>2. Add Image source</h4>
-   <p>Go to the Properties panel and select "dog.jpg" or upload an image of your own. You should see the image show up on your device screen. Now unclick "Visible". You'll add in Blocks to make your image show up when the button is pressed.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/imgSource.gif" alt="some_text">
-   <!-- <p>This will show an image when you tap a button</p> -->
- </div>
-
- <div class="tutorialContentPage">
-   <h4>3. Add a Button</h4>
-   <p>Still in User Interface, click and drag a Button into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addImgButton.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-  <h4>4. Add <span class="control">when Button1.Click</span></h4>
-  <p>Click Blocks.</p>
-  <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-  <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/btnClickImg.gif" alt="magic eight ball">
-</div>
-
-<div class="tutorialContentPage">
-  <h4>5. Add <span class="setters">set Image1.Visable to</span></h4>
-  <p>Click Image1 and connect the <span class="setters">set Image1.Visable to</span> block to <span class="control">when Button1.Click</span>.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/setVisible.gif" alt="magic eight ball">
-</div>
-
-<div class="tutorialContentPage">
-  <h4>6. Add <span class="logic">true</span></h4>
-  <p>Click Logic and connect a <span class="logic">true</span> block to the <span class="setters">set Image1.Visable to</span> block.</p>
-  <img class="enlargeImage" src="../images/mood_counter/howto/imgTrue.gif" alt="magic eight ball">
-  <p>Test out your app! On the click of the button, does the image show up?</p>
-</div>
-</div>
-
-<h3>Enter and show the User's name</h3>
-<div class="tutorialContainer">
- <div class="tutorialNavigationHeader"></div>
- <div class="tutorialContentPage">
-   <h4>1. Add a Label, a TextBox, and a Button</h4>
-   <p>In User Interface, click and drag a Label, a TextBox, and a Button into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addTextComponents.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>2. Add <span class="control">when Button1.Click</span></h4>
-   <p>Click Blocks.</p>
-   <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-   <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/btnClickText.gif" alt="magic eight ball">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>3. Add <span class="setters">set Label1.Text to</span></h4>
-   <p>Click Label1 and drag out <span class="setters">set Label1.Text to</span> and connect it to <span class="control">when Button1.Click</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/setText.gif" alt="magic eight ball">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>4. Add <span class="text">join</span></h4>
-   <p>Click Math and drag out <span class="text">join</span> and connect it to <span class="setters">set Label1.Text to</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/joinText.gif" alt="magic eight ball">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>5. Add <span class="text">" "</span></h4>
-   <p>Click Text and drag out <span class="text">" "</span> and connect it to the first socket of the <span class="text">join</span> block. Change the text to say something else, such as "Hi there,".</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/textText.gif" alt="magic eight ball">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>6. Add <span class="getters">TextBox1.Text</span></h4>
-   <p>Click TextBox1 and drag out <span class="getters">TextBox1.Text</span> and connect it to the second socket of <span class="text">join</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/textBoxText.gif" alt="magic eight ball">
-   <p>Test out your app! When you type your name into the text box, does it reset the label to say "Hi there, (your name)"?</p>
- </div>
-</div>
-
-<h3>Send a text message</h3>
-<div class="tutorialContainer">
- <div class="tutorialNavigationHeader"></div>
- <div class="tutorialContentPage">
-   <h4>1. Add a Button</h4>
-   <p>In User Interface, click and drag a Button into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addButton.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>2. Add a Texting component</h4>
-   <p>Click Social, click and drag a Texting component into the Viewer.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addTexting.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>3. Add a Phone Number and Message</h4>
-   <p>In Properties, add a Phone Number and a message to the boxes.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/addTextingProperties.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>4. Add <span class="control">when Button1.Click</span></h4>
-   <p>Click Blocks.</p>
-   <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-   <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/btnClickTexting.gif" alt="magic eight ball">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>5. Add <span class="procedures">call Texting1.SendMessage</span></h4>
-   <p>Click Texting1 and click and drag <span class="procedures">call Texting1.SendMessage</span> under <span class="setters">set Texting1.Message to</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/callSendMessage.png" alt="magic eight ball">
-   <p>Try out your app! Can you send a message on the click of a button? Next, you can try adding labels so the user can enter their own phone number and message!
-   </div>
- </div>
-
- <h3>Store and read files</h3>
- <div class="tutorialContainer">
-   <div class="tutorialNavigationHeader"></div>
-   <div class="tutorialContentPage">
-     <h4>1. Add a TextBox and a Button</h4>
-     <p>In User Interface, click and drag a TextBox and a Button into the Viewer.</p>
-     <img class="enlargeImage" src="../images/mood_counter/howto/addFileComps.gif" alt="some_text">
-   </div>
-
-   <div class="tutorialContentPage">
-     <h4>2. Add a File Component</h4>
-     <p>Click Storage, click and drag a File component into the Viewer.</p>
-     <img class="enlargeImage" src="../images/mood_counter/howto/addFileComp.gif" alt="some_text">
-   </div>
-
-   <div class="tutorialContentPage">
-     <h4>3. Add <span class="control">when Button1.Click</span></h4>
-   <p>First, when the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file. Start by clicking Blocks.</p>
-   <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-   <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/btnClickFile.gif" alt="magic eight ball">
-   </div>
-
-  <div class="tutorialContentPage">
-     <h4>3. Add <span class="procedures">call File1.AppendToFile</span> and fill sockets</h4>
-   <p>Click File1 and add <span class="control">call File1.AppendToFile</span>. Add <span class="getters">TextBox1.Text</span> to the text socket and add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
-   <img class="enlargeImage" src="../images/mood_counter/appendFile.gif" alt="magic eight ball">
-   </div>
-
-   <div class="tutorialContentPage">
-     <h4>3. Add <span class="procedures">call File1.ReadFrom</span> and fill socket</h4>
-   <p>Click File1 and add <span class="control">call File1.ReadFrom</span>. Add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
-   <img class="enlargeImage" src="../images/mood_counter/readFile.gif" alt="magic eight ball">
-   </div>
-
-  <div class="tutorialContentPage">
-     <h4>3. Add <span class="control">when File1.GotText</span></h4>
-   <p>Click File1 and add <span class="control">when File1.GotText</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/gotText.gif" alt="magic eight ball">
-   </div>
-
-   <div class="tutorialContentPage">
-   <h4>3. Add <span class="setters">set Button1.Text to</span> and <span class="variables">get text</span></h4>
-   <p>Click Button1 and add <span class="setters">set Button1.Text to</span>. Next, hover over "text" and click on <span class="variables">get text</span> and add it to <span class="setters">set Button1.Text to</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/setButtonText.gif" alt="magic eight ball">
-    <p>Try out your app! This should read and write files on your device. Next, using Labels and TextBoxes to write to different files, or save text that the user has entered (such as a journal entry).</p>
-  </div>
+      <h3>Connect your App</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h3>1. Connect with your device over wifi</h3>
+        <p>Connect using the companion app so you can see your app on your mobile device.</p>
+        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
+        <p>Download from the Play Store using the QR code below or <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
+        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>3. Go through the installation instructions on your phone</h3>
+        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
+        <!-- Should I expand on this/add clip art? -->
+      </div>
+      <div class="tutorialContentPage">
+        <h3>4. Open your app's QR code</h3>
+        <p>Click Connect, then AI Companion.</p>
+        <img class="enlargeImage" src="../images/connect_device/connectAI.gif" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>5. Connect your app with your phone</h3>
+        <p>A QR code similar to this should pop up on your screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
+        <p>Either scan the QR code or enter the code in the text box.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>6. Still confused?</h3>
+        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
 </div>
 
 </div>
