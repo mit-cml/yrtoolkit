@@ -82,10 +82,7 @@
         <h3>6. Still confused?</h3>
         <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
       </div>
-      <br/>
-      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
+
     </div>
 
     <h3>Mood counter tutorial</h3>
@@ -163,9 +160,9 @@
       <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
     </div>
     <br/>
-      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Expand your app</h3>
@@ -190,15 +187,25 @@
   </div>
 
   <h3>Share the app</h3>
-  <div>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
     <p>Click on "My Projects" button on the top menu bar.</p>
     <img class="enlargeImage" src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
     <img class="enlargeImage" src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
     <p>Fill in all the details and click the "PUBLISH" button.</p>
     <img class="enlargeImage" src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
     <p>Click on "SHARE" button to get the link to the app.</p>
     <img class="enlargeImage" src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
     <p>Copy and paste the link in the space below.</p>
 
     <div id="shareLinkError" style="display:none">
@@ -212,23 +219,23 @@
       <div class="widget">
         <button class="shareApp">Share</button>
       </div>
-
-    </div>
-
-    <div id="shareCompleted" style="display:none">
-      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
-    </div>
-
-  </div>
-
-  <h3>Published apps</h3>
-  <div>
-    <div id="container">
-     <div class="projectbox"> 
-      <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
-      <div class="projecttext"><span> Hello World</span> </div>
     </div>
   </div>
+
+  <div id="shareCompleted" style="display:none">
+    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+  </div>
+
+</div>
+
+<h3>Published apps</h3>
+<div>
+  <div id="container">
+   <div class="projectbox"> 
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+    <div class="projecttext"><span> Hello World</span> </div>
+  </div>
+</div>
 </div>
 </div>
 
@@ -459,37 +466,37 @@
 
    <div class="tutorialContentPage">
      <h4>3. Add <span class="control">when Button1.Click</span></h4>
-   <p>First, when the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file. Start by clicking Blocks.</p>
-   <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
-   <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/btnClickFile.gif" alt="magic eight ball">
+     <p>First, when the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file. Start by clicking Blocks.</p>
+     <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
+     <p>In Blocks, click on Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
+     <img class="enlargeImage" src="../images/mood_counter/howto/btnClickFile.gif" alt="magic eight ball">
    </div>
 
-  <div class="tutorialContentPage">
+   <div class="tutorialContentPage">
      <h4>3. Add <span class="procedures">call File1.AppendToFile</span> and fill sockets</h4>
-   <p>Click File1 and add <span class="control">call File1.AppendToFile</span>. Add <span class="getters">TextBox1.Text</span> to the text socket and add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
-   <img class="enlargeImage" src="../images/mood_counter/appendFile.gif" alt="magic eight ball">
+     <p>Click File1 and add <span class="control">call File1.AppendToFile</span>. Add <span class="getters">TextBox1.Text</span> to the text socket and add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
+     <img class="enlargeImage" src="../images/mood_counter/appendFile.gif" alt="magic eight ball">
    </div>
 
    <div class="tutorialContentPage">
      <h4>3. Add <span class="procedures">call File1.ReadFrom</span> and fill socket</h4>
-   <p>Click File1 and add <span class="control">call File1.ReadFrom</span>. Add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
-   <img class="enlargeImage" src="../images/mood_counter/readFile.gif" alt="magic eight ball">
-   </div>
-
-  <div class="tutorialContentPage">
-     <h4>3. Add <span class="control">when File1.GotText</span></h4>
-   <p>Click File1 and add <span class="control">when File1.GotText</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/gotText.gif" alt="magic eight ball">
+     <p>Click File1 and add <span class="control">call File1.ReadFrom</span>. Add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
+     <img class="enlargeImage" src="../images/mood_counter/readFile.gif" alt="magic eight ball">
    </div>
 
    <div class="tutorialContentPage">
-   <h4>3. Add <span class="setters">set Button1.Text to</span> and <span class="variables">get text</span></h4>
-   <p>Click Button1 and add <span class="setters">set Button1.Text to</span>. Next, hover over "text" and click on <span class="variables">get text</span> and add it to <span class="setters">set Button1.Text to</span>.</p>
-   <img class="enlargeImage" src="../images/mood_counter/howto/setButtonText.gif" alt="magic eight ball">
-    <p>Try out your app! This should read and write files on your device. Next, using Labels and TextBoxes to write to different files, or save text that the user has entered (such as a journal entry).</p>
-  </div>
-</div>
+     <h4>3. Add <span class="control">when File1.GotText</span></h4>
+     <p>Click File1 and add <span class="control">when File1.GotText</span>.</p>
+     <img class="enlargeImage" src="../images/mood_counter/howto/gotText.gif" alt="magic eight ball">
+   </div>
+
+   <div class="tutorialContentPage">
+     <h4>3. Add <span class="setters">set Button1.Text to</span> and <span class="variables">get text</span></h4>
+     <p>Click Button1 and add <span class="setters">set Button1.Text to</span>. Next, hover over "text" and click on <span class="variables">get text</span> and add it to <span class="setters">set Button1.Text to</span>.</p>
+     <img class="enlargeImage" src="../images/mood_counter/howto/setButtonText.gif" alt="magic eight ball">
+     <p>Try out your app! This should read and write files on your device. Next, using Labels and TextBoxes to write to different files, or save text that the user has entered (such as a journal entry).</p>
+   </div>
+ </div>
 
 </div>
 <div id="serverTutorialId" style="display:none;">1</div>
