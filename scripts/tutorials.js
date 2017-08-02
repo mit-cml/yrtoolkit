@@ -108,7 +108,6 @@ $(document).ready( function() {
     } else {
       nextLinkContainer.style.visibility = "hidden";
     }
-
   }
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {

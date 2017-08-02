@@ -1,27 +1,17 @@
 <div class="tutorialContainer">
-  <div class="dropdown">
-    <div class="back glyphicon glyphicon-chevron-left" aria-hidden="true"></div>
-    <div href="#" class="panel col tutHeader" data-toggle="dropdown">
-    <span class="caret"></span></div>
-    <ul class="dropdown-menu">
-      <li><a href="#" class="menu">Introduction</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Bounce A Ball</p>
   </div>
 
-  <div class="tutorialNavigationHeader">
-    <ul class="pager">
-      <li class="previous"><a class="tutorialPreviousButton" hrf="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
-      <li class="next"><a class="tutorialNextButton" href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
-  </div>
+  <div class="tutorialNavigationHeader"></div>
 
   <div class="tutorialContentPage">
-    <h5>0. Introduction</h5>
-    <img class="tutVid" src="../images/text_to_speech/tutVideo.png" onclick="getTutorialVideo('Vdo8UdkgDD8')">
+    <h5>1. Introduction</h5>
+    <img class="tutVid" src="../images/ball_bounce/ball_vid.png" onclick="getTutorialVideo('w0yxJSlC00w')">
     <p>
-      Expand on your existing Text-To-Speech app! If your app doesn't work yet, click here.
+      In this tutorial, you will learn about animation in App Inventor by making a Ball (a sprite) bounce around
+      on the screen (on a Canvas).
     </p>
     <p>
       Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
@@ -29,64 +19,96 @@
   </div>
 
   <div class="tutorialContentPage">
-    <h5>1. Add a button</h5>
-    <p>Click and hold on the word "Button" in the <a href="#" data-toggle="tooltip" data-html="true" title="Choose componenets<img class='tooltipImage' src='images/glossary/palette.png'/>">Palette</a>. Drag your mouse over to the Viewer. Release the mouse. A new button will appear on the Viewer.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/addButton.png"></img>
-    <p>Check to see if you can see your button in your companion app.</p>
-    <img class="enlargeImage" style="width:70%" src="../images/text_to_speech/addedButton.png"></img>
-  </div>
-
-  <div class="tutorialContentPage">  
-    <h5>2. Change button text</h5>
-    <p>With the button selected in the properties panel, change the text for the Button. Under the Text property, select "Text for Button 1", delete it and type in "Talk To Me".</p>
-    <img class="enlargeImage" src="../images/text_to_speech/talkText.png" alt="some_text">
-    <p>Notice that the text on your app's button changes right away.</p>
+  <h4>2. Add a Canvas</h4>
+    <p>Click on the Drawing and Animation drawer and drag a Canvas component to your viewer.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-    <h5>3. Add TextToSpeech componenet</h5>
-    <p>Go to the Media drawer in the Palette.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/clickMedia.png" style="width:70%" alt="some_text">
-    <p>Drag out a TextToSpeech component. Drag and drop it onto the Viewer. It appears under "Non-visible components" because it is not something that will show up on the app's user interface. It's more like a tool that is available to the app.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/textToSpeech.png" alt="some_text">
+    <h4>3. Set Height and Width to "Fill parent"</h4>
+    <p>In the Properties panel, click Height and set it to "Fill parent". Do the same with the Width.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/setHW.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-    <h5>4. Add Button1 click handler</h5>
-    <p>It's time to tell your app what to do. The Blocks Editor is where you program the behavior of your app. Click the button "Blocks" to move over to the Blocks Editor.</p>
-    <img class="enlargeImage" src="../images/cipher_translation/clickBlocks.png" alt="some_text">
-    <p>Click on <img src="../images/images/button.png"> Button1 under Screen1.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/clickButton1.png" style="width:90%" alt="some_text">
-    <p>Choose <span class="blocks">when Button1.Click</span>.</p> <!-- Or should I add this as a mini-block? -->
-    <img class="enlargeImage" src="../images/text_to_speech/chooseButton1.png" style="width:90%" alt="some_text">
-    <p>Drag the block to the workspace.</p>
-    <div id="blocklyDiv" style="height: 100px; width: 200px;"></div> <!-- Added a block instead of an image? -->
+    <h4>4. Add a Ball</h4>
+    <p>Click on the Drawing and Animation drawer again and drag out a Ball component onto the Canvas.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/addBall.gif" alt="some_text">
+  </div>
+
+    <div class="tutorialContentPage">
+    <h4>5. Set Radius to 15</h4>
+    <p>In the Properties panel, type "15" into the Radius texbox. This will make the ball easier to fling.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/setRadius.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-  <h5>5. Add TextToSpeech "Speak" procedure</h5>
-    <p>Click on TextToSpeech.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/clickTextToSpeech.png" style="width:80%" alt="some_text">
-    <p>Drag out and connect "call TextToSpeech1.Speak".</p>
-    <img class="enlargeImage" src="../images/text_to_speech/addTextToSpeech.png" style="width:70%" alt="some_text">
+    <h4>6. Add <span class="control">when Ball1.Flung</span></h4>
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/clickBlocks.png" alt="some_text">
+    <p>Click Ball1 and click and drag <span class="control">when Ball1.Flung</span> to the Viewer.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/ballFlung.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-  <h5>5. Add Text blocks</h5>
-    <p>In Built-in blocks, click Text.</p>
-    <img style="width:60%" class="enlargeImage" src="../images/text_to_speech/clickText.png" alt="some_text">
-    <p>Drag out an empty quotes ("") block.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/addText.png" alt="some_text">
-    <p>Enter whatever text you want to be spoken into the empty string.</p>
-    <img class="enlargeImage" src="../images/text_to_speech/enterText.png" alt="some_text">
-    <p>Test the app out in your companion device. Can you make your app speak when the button is pressed?</p>
-  </div>
+   <h4>7. Add <span class="setters">set Ball1.Heading to</span></h4>
+   <p>Click on Ball1 again. Click and drag the <span class="setters">set Ball1.Heading to</span> block and add it to <span class="control">when Ball1.Flung</span>.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/setHead.gif" alt="some_text">
+ </div>
+
+<div class="tutorialContentPage">
+   <h4>8. Add <span class="variables">get heading</span></h4>
+   <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "heading" and click on <span class="variables">get heading</span>. Add it to the <span class="getHead">set Ball1.Heading to</span> block.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+  <h4>9. Add <span class="setters">set Ball1.Speed to</span></h4>
+  <p>Try clicking the different emojis. What happens now?</p>
+  <p>Let's now make the angry emoji work too. Right click (or ctrl/control click) on the <span class="control">when happyButton.Click</span> block, then click Duplicate.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/setSpeed.gif" alt="some_text">
 </div>
 
-<script>
-  var workspace = Blockly.inject('blocklyDiv',
-    {toolbox: document.getElementById('toolbox')});
-  black_xml = Blockly.Xml.textToDom('<block xmlns="http://www.w3.org/1999/xhtml" type="controls_if" id="[p/,6KQYrn$+rw=A82.f"></block>')
-  Blockly.Xml.domToBlock(black_xml, Blockly.mainWorkspace)
-</script>
+ <div class="tutorialContentPage">
+   <h4>10. Add <span class="variables">get speed</span></h4>
+   <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "speed" and click on <span class="variables">get speed</span>. Add it to the <span class="setters">set Ball1.Speed to</span> block.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/getSpeed.gif" alt="some_text">
+    <p>Try it out on your device. You'll notice that it gets "stuck" on the edge of the screen. Next, we'll add an event to make the ball bounce off the edge of the screen.</p>
+ </div>
+
+<div class="tutorialContentPage">
+   <h4>11. Add <span class="variables">when Ball1.EdgeReached</span></h4>
+   <p>Click on Ball1 again and drag out the <span class="variables">when Ball1.EdgeReached</span> block.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/ballEdge.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>12. Add <span class="procedures">call Ball1.Bounce</span></h4>
+   <p>Click on Ball1 again and connect the <span class="procedures">call Ball1.Bounce</span> block to <span class="variables">when Ball1.EdgeReached</span>.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/ballBounce.gif" alt="some_text">
+ </div>
+
+  <div class="tutorialContentPage">
+   <h4>13. Add <span class="variables">get edge</span></h4>
+   <p>Go to the <span class="control">when Ball1.EdgeReached</span> block. Hover over "edge" and click on <span class="variables">get edge</span>. Add it to the <span class="control">when Ball1.EdgeReached</span> block.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/getEdge.gif" alt="some_text">
+    <p>Try it out on your device. Your ball should bounce off the edges.</p>
+ </div>
+
+<div class="tutorialContentPage">
+  <h4>13. Extend your App!</h4>
+  <p>After testing your app, try to extend your app using these suggestions or come up with your own!</p>
+  <ul>
+  <li>Change the color of the ball based on how fast it is moving or which edge it reaches</li>
+  <li>Scale the speed of the ball so that it slows down and stops after it gets flung</li>
+  <li>Give the ball obstacles or targets to hit</li>
+  <li>Introduce a paddle for intercepting the ball, like a Pong game</li>
+  <li>Check out the Mini Golf Tutorial, which uses similar tools</li> <!-- Link this -->
+  </ul>
+</div>
+<br/>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+
 <script src="../scripts/tutorials.js"></script>
