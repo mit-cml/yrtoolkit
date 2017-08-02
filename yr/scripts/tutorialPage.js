@@ -166,7 +166,7 @@ $(document).ready( function() {
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
     tutorialPageObject.page++;
 
-    if(tutorialPageObject.page == tutorialPageObject.totalPageNum) {
+    if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
       //hide next button
       setTutorialNextButtonVisibility(tutorialIndex, false)
     }
