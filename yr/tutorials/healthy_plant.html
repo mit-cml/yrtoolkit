@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+</script>
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+
+    <h3>Healthy Plant tutorial</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>1. Setup</h4>
+        <p>We'll make an app that measures the health of a plant using graphs.</p>
+        <p>Click <a href="#" onclick="return goToHowToTutorial(0)">here</a> to learn how to set up your device if you haven't yet.</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>2. Add three VerticalArrangement components</h4>
+        <p>Click on the Layout and drag out three VerticalArrangement to HorizontalArrangement2.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/threeVertical.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>3. Rename your VerticalArrangements</h4>
+        <p>Select VerticalArrangement1, click "Rename" and rename it to "LightBar". Then, rename VerticalArrangement2 to "MoistureBar" and VerticalArrangement3 to "TemperatureBar".</p>
+        <img class="enlargeImage" src="../images/healthy_plant/renameVertical.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>4. Set height to "0px" and width to "Fill Parent"</h4>
+        <p>Set the height of LightBar to "0px" and set the width to "Fill Parent". Repeat for MoistureBar and TemperatureBar.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/updateHW.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>5. Set the BackgroundColor</h4>
+        <p>Select LightBar and set the BackgroundColor to <font color="yellow">yellow</font>. Set the BackgroundColor of MoistureBar to <font color="blue">blue</font> and the BackgroundColor of TeperatureBar to <font color="red">red</font>.</p>
+        <img class="enlargeImage" src="../images/healthy_plant/updateColor.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+       <h4>6. Add <span class="setters">set LightBar.Height to</span></h4>
+       <p>Click on Blocks.</p>
+       <img class="enlargeImage" src="../images/healthy_plant/clickBlocks.png">
+       <p>Click LightBar1 and select <span class="setters">set LightBar.Height to</span>. Connect it to the first socket of the <span class="math">__ x <span class="math">0.75</span></span> block.</p>
+       <img class="enlargeImage" src="../images/healthy_plant/setHeight.gif">
+     </div>
+
+     <div class="tutorialContentPage">
+      <h4>7. Connect <span class="setters">set LightBar.Height to</span> to <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span></h4>
+      <p>Locate the <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> (it'll have a few blocks inside of it). It should look like this:</p>
+      <img class="enlargeImage" src="../images/healthy_plant/dataReceived.png" alt="some_text">
+      <br/>
+      <p>Connect your whole <span class="setters">set LightBar.Height to</span> to <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> (under the blocks already inside).</p>
+      <img class="enlargeImage" src="../images/healthy_plant/connectSetHeight.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>8. Add <span class="variable">get intensity</span></h4>
+      <p>On the <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> block, hover over the red "intensity". Click on <span class="variable">get intensity</span> in the pop-up and connect it to the first socket of the <span class="math">__ x <span class="math">0.75</span></span> block.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/hoverIntensity.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>9. Repeat steps 6-8 for MoistureBar</h4>
+      <p>Get the <span class="setters">set MoistureBar.Height to</span> block, and it to <span class="math">__ x <span class="math">4</span></span>. Then, add blocks to <span class="control">when Arduino101Moisture1.MoistureReceived</span>. Hover over "moisture" and connect <span class="variables">get moisture</span>.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/moistReceived.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>10. Repeat steps 6-8 for TemperatureBar</h4>
+      <p>Get the <span class="setters">set TemperatureBar.Height to</span> block, and it to <span class="math">__ x <span class="math">0.75</span></span>. Then, add blocks to <span class="control">when Arduino101Humidity1.TemperatureReceived</span>. Hover over "temperature" and connect <span class="variables">get temperature</span>.</p>
+      <img class="enlargeImage" src="../images/healthy_plant/tempReceived.gif" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>11. Test it out!</h4>
+      <p>Try it out on your  device. What happens to the bars? Your app should look something like this:</p>
+      <img class="enlargeImage" src="../images/healthy_plant/final.png" alt="some_text">
+    </div>
+    <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+  </div>
+
+  <h3>Share the app</h3>
+  <div>
+    <p>Click on "My Projects" button on the top menu bar.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
+    <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
+    <p>Fill in all the details and click the "PUBLISH" button.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
+    <p>Click on "SHARE" button to get the link to the app.</p>
+    <img class="enlargeImage" src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
+    <p>Copy and paste the link in the space below.</p>
+
+    <div id="shareLinkError" style="display:none">
+      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
+    </div>
+
+    <div id="shareLinkContainer">
+      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
+      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
+      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
+      <div class="widget">
+        <button class="shareApp">Share</button>
+      </div>
+
+    </div>
+
+    <div id="shareCompleted" style="display:none">
+      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+    </div>
+
+  </div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+      <h3>Connect your App</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h3>1. Connect with your device over wifi</h3>
+        <p>Connect using the companion app so you can see your app on your mobile device.</p>
+        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
+        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
+        <p>Download from the Play Store using the QR code below or <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
+        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>3. Go through the installation instructions on your phone</h3>
+        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
+        <!-- Should I expand on this/add clip art? -->
+      </div>
+      <div class="tutorialContentPage">
+        <h3>4. Open your app's QR code</h3>
+        <p>Click Connect, then AI Companion.</p>
+        <img class="enlargeImage" src="../images/connect_device/connectAI.gif" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>5. Connect your app with your phone</h3>
+        <p>A QR code similar to this should pop up on your screen.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
+        <p>Either scan the QR code or enter the code in the text box.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>6. Still confused?</h3>
+        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+</div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
