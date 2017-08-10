@@ -1,0 +1,78 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Digital Doodle</p>
+  </div>
+
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>
+      This tutorial will show you how to design a game where a mole moves once every half-second. If it is touched, the score increases by one, and the phone vibrates. Pressing restart resets the score to zero.
+    </p>
+    <p>
+      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
+    </p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Techniques</h4>
+    <p>Click on the Drawing and Animation drawer and drag a Canvas component to your viewer.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Add a Canvas</h4>
+    <p>Click on the Drawing and Animation drawer and drag a Canvas component to your viewer.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>3. Set Height and Width to "Fill parent"</h4>
+    <p>In the Properties panel, click Height and set it to "Fill parent". Do the same with the Width.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/setHW.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>6. Add <span class="control">when Canvas1.Dragged</span></h4>
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/ball_bounce/clickBlocks.png" alt="some_text">
+    <p>Click Canvas1 and click and drag <span class="control">when Canvas1.Dragged</span> to the Viewer.</p>
+    <img class="enlargeImage" src="../images/doodle/canvasDrag.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+   <h4>7. Add <span class="procedures">call Canvas1.DrawLine</span></h4>
+   <p>Click on Canvas1 again. Click and drag the <span class="procedures">call Canvas1.DrawLine</span> block and add it to <span class="control">when Canvas1.Dragged</span>.</p>
+   <img class="enlargeImage" src="../images/doodle/canvasDraw.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>8. Add <span class="variables">get prevX</span></h4>
+   <p>Go to the <span class="control">when Canvas1.Dragged</span> block. Hover over "prevX" and click on <span class="variables">get prevX</span>. Add it to the "x1" socket of the <span class="procedures">call Canvas1.DrawLine</span> block.</p>
+   <img class="enlargeImage" src="../images/doodle/getPrevX.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Add <span class="variables">get prevY</span>, <span class="variables">get currentX</span>, and <span class="variables">get currentY</span></h4>
+   <p>Next, hover over "prevY" and click on <span class="variables">get prevY</span>. Add it to the "y1" socket of the <span class="procedures">call Canvas1.DrawLine</span> block. Repeat with <span class="variables">get currentX</span> and <span class="variables">get currentX</span>.</p>
+   <img class="enlargeImage" src="../images/doodle/getOthers.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+  <h4>13. Test and extend your App!</h4>
+  <p>Test your app out! Next, try to extend your app using these suggestions or come up with your own!</p>
+  <ul> 
+    <li>Change the color of the ink (and let the user pick from a selection of colors). You can check out the Snapchat Remix tutorial.</li> <!-- Link this -->
+    <li>Change the background to a photograph or picture.</li>
+    <li>Let the user draw dots as well as lines (hint: Use DrawCircle block).</li>
+    <li>Add a button that turns on the camera and lets the user take a picture and then doodle on it.</li>
+  </ul>
+</div>
+<br/>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+
+<script src="../scripts/tutorials.js"></script>
