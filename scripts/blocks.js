@@ -1,42 +1,37 @@
 $(document).ready( function() {
 
-	// $(".panel").on('shown.bs.collapse', function(){
-	// 	alert("hi");
-	// 	// $(this).find(".plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
-	// });
-
-	// $(".panel").on('hidden.bs.collapse', function(){
-	// 	// $(this).find(".plus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
-	// });
-	var thisId;
 	$(".builtBlock").click(function(e){
 		var thisId = $(this).attr("id");
 	});
 
-	$(".builtBlock").on('shown.bs.collapse', function(){
-		console.log($(this));
+	$(".builtBlock").on('shown.bs.collapse', function(e){
 		$(".builtBlock").html("");
-		var thisId = $(this).attr("id");
-		console.log($(this).attr("id"));
-		// if ($(".builtBlock").attr("id") != tempId) {
-		// 	console.log($(".builtBlock").attr("id"));
-		// 		$(".builtBlock").collapse("hide");
-		// 	}
-		var blockArray = Blockly.Drawer.createBlockInfoArray();
+		var thisId = $(this).attr("id"); // do i need this in addition to the click fxn?
 
+		if (thisId == "cat_Variables"){
+			var varImg = document.createElement('img');
+			$(varImg).attr('src', 'images/otherVar.png')
+			$("#" + thisId).append(varImg);
+		}
+
+		if (thisId == "cat_Procedures"){
+			var procImg = document.createElement('img');
+			$(procImg).attr('src', 'images/proc1.png')
+			$("#" + thisId).append(procImg);
+		}
+
+		var blockArray = Blockly.Drawer.createBlockInfoArray();
+		var blockDiv = document.createElement('div');
+		$(blockDiv).attr('id', 'blocklyDiv');
+		$(blockDiv).css('height','0px');
+		$(blockDiv).css('width','150px');
+		$("#" + thisId).append(blockDiv);
+		var workspace = Blockly.inject('blocklyDiv');
+		
 		$.each(blockArray, function(category, blocks){
 			if (category == thisId){
-
 				$.each(blocks, function(id, key){
 					// Creates object to put block in
-					console.log(id + " " + key);
-					var blockDiv = document.createElement('div');
-					$(blockDiv).attr('id', 'blocklyDiv');
-					$(blockDiv).css('height','150px');
-					$(blockDiv).css('width','150px');
-					console.log(thisId);
-					$("#" + thisId).append(blockDiv);
-					var workspace = Blockly.inject('blocklyDiv');
 
 					var blockObject = bd.toolbox.ctr.blockInfoToBlockObject(key);
 					var blockXml = bd.toolbox.ctr.blockObjectToXML(blockObject, false);
@@ -44,9 +39,47 @@ $(document).ready( function() {
 					block.setEditable(false);
 					block.setMovable(false);
 					block.moveBy(10, 0);
-				});
+					var imgData = document.createElement('div');
+					$(imgData).addClass("collapse");
+					$(imgData).attr('id', id);
+					$(imgData).html(block.tooltip);
+
+					var scaleFactor = 0.73;
+					//Any modifications are executed on a deep copy of the element
+					var cp = Blockly.mainWorkspace.svgBlockCanvas_.cloneNode(true);
+					cp.removeAttribute("width");
+					cp.removeAttribute("height");
+					cp.removeAttribute("transform");
+
+					//It is important to create this element in the SVG namespace rather than the XHTML namespace
+					var styleElem = document.createElementNS("http://www.w3.org/2000/svg", "style");
+					//I've manually pasted codethemicrobit.com's CSS for blocks in here, but that can be removed as necessary
+					styleElem.textContent = Blockly.Css.CONTENT.join('');
+					cp.insertBefore(styleElem, cp.firstChild);
+
+					//Creates a complete SVG document with the correct bounds (it is necessary to get the viewbox right, in the case of negative offsets)
+					var bbox = Blockly.mainWorkspace.svgBlockCanvas_.getBBox();
+					var xml = new XMLSerializer().serializeToString(cp);
+
+					xml = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+(bbox.width*scaleFactor)+'" height="'+(bbox.height*scaleFactor)+'" viewBox="' + bbox.x + ' ' + bbox.y + ' '  + bbox.width + ' ' + bbox.height + '"><rect width="100%" height="100%" fill="white"></rect>'+xml+'</svg>';
+					//If you just want the SVG then do console.log(xml)
+					//Otherwise we render as an image and export to PNG
+					var svgBase64 = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(xml)));
+					var img = document.createElement('img');
+					img.src = svgBase64;
+					$(img).addClass('imgCollapse');
+					$(img).attr('data-toggle', 'collapse');
+					$(img).attr('href', '#' + id);
+					$(img).attr('aria-expanded', false);
+					$(img).attr('aria-controls', 'collapseEx');
+					$("#" + thisId).append(img);
+					$("#" + thisId).append(imgData);
+					$("#" + thisId).append('<br/>')		
+
+					workspace.clear();
+				});				
 			}
-		});
+		});		
 	});
 
 	$.getJSON("scripts/files/simple_components.json", function(result){

@@ -344,3 +344,7 @@ body {
   color: white;
   padding:1px;
 }
+
+.builtBlock {
+  margin-top: 3px;
+}
