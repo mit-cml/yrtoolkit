@@ -102,7 +102,6 @@ $(document).ready( function() {
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
-    console.log(tutorialContainer);
     // var nextButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
     var bigButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[1];
     // nextButton.style.display = (visibility ? "block" : "none");
@@ -216,5 +215,16 @@ window.getTutorialVideo = function(tutorialId) {
   $(".zoom").click(function(imageId){
     window.parent.postMessage({type:"img", imageId:$(this).prev(".enlargeImage").attr("src")}, '*');
   });
+
+  var addImages = function () {
+    var allIcons = document.getElementsByClassName('icon');
+    for (var i = 0;i<allIcons.length;i++) {
+      var iconImg = document.createElement('img');
+      $(iconImg).addClass('iconImg')
+      iconImg.src = "../../images/images/" + $(allIcons[i]).attr('alt') + '.png';
+      allIcons[i].appendChild(iconImg);
+    }
+  }
+  addImages();
 
 });

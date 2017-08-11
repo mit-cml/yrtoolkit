@@ -228,22 +228,30 @@
 
     </div>
 
-    <h3>Share the app</h3>
-    <div>
-     <p>Click on "My Projects" button on the top menu bar.</p>
-     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
-     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Fill in all the details and click the "PUBLISH" button.</p>
-     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Click on "SHARE" button to get the link to the app.</p>
-     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Copy and paste the link in the space below.</p>
-
-     <div id="shareLinkError" style="display:none">
+  <h3>Share your App</h3>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+    <p>Click on "My Projects" button on the top menu bar.</p>
+    <img class="enlargeImage" src="../images/share/myProjects.png" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+    <img class="enlargeImage" src="../images/share/publish.gif" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Fill in all the details and click the "PUBLISH" button.</p>
+    <img class="enlargeImage" src="../images/share/publishDetails.gif" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on "SHARE" button to get the link to the app.</p>
+    <img class="enlargeImage" src="../images/share/copyLink.gif" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Paste the link in the space below and click "Share".</p>
+    <div id="shareLinkError" style="display:none">
       <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
     </div>
-
     <div id="shareLinkContainer">
       <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
       <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
@@ -251,14 +259,15 @@
       <div class="widget">
         <button class="shareApp">Share</button>
       </div>
-
     </div>
-
-    <div id="shareCompleted" style="display:none">
-      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
-    </div>
-
   </div>
+  <div id="shareCompleted" style="display:none">
+    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
 
   <h3>Published apps</h3>
   <div>
@@ -274,170 +283,361 @@
 
 <div id="howToAccordion" class="accordion" style="display:none">
   <h3>Shake to clear your image</h3>
-  <div>
-    <p>In Designer, click on Sensors and drag and drop an AccelerometerSensor onto the Viewer.</p>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add an <span class='icon' alt='accelerometersensor'></span>AccelerometerSensor</h4>
+    <p>In Designer, click on Sensors and drag and drop an <span class='icon' alt='accelerometersensor'></span>AccelerometerSensor onto the Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addAccel.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add <span class="control">when AccelerometerSensor1.Shaking</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on AccelerometerSensor1 and drag out <span class="control">when AccelerometerSensor1.Shaking</span> and add it under your existing blocks.</p>
+    <p>Click on <span class='icon' alt='accelerometersensor'></span>AccelerometerSensor1 and drag out <span class="control">when AccelerometerSensor1.Shaking</span> and add it under your existing blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addShaking.gif" alt="some_text">
-    <p>Then click on Canvas1 and connect the <span class="procedures">call Canvas1.clear</span> block.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="procedures">call Canvas1.clear</span></h4>
+    <p>Then click on <span class='icon' alt='canvas'></span>Canvas1 and connect the <span class="procedures">call Canvas1.clear</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addCanvasClear.gif" alt="some_text">
-    <p>Test out your app! After drawing on your image, shake the canvas and watch your drawing disappear!</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>Test your app!</h4>
+    <p>After drawing on your image, shake the canvas and watch your drawing disappear!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Draw dots on the canvas</h3>
-  <div>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add <span class="control">when Canvas1.Touched</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on Canvas1 and choose the <span class="control">when Canvas1.Touched</span> block.</p>
+    <p>Click on <span class='icon' alt='canvas'></span>Canvas1 and choose the <span class="control">when Canvas1.Touched</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addCanvasTouch.gif" alt="some_text">
-    <p>Click on Canvas1 again and choose the <span class="procedures">call Canvas1.DrawCircle</span> block and add it to <span class="control">when Canvas1.Touched</span>.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add <span class="procedures">call Canvas1.DrawCircle</span></h4>
+    <p>Click on <span class='icon' alt='canvas'></span>Canvas1 again and choose the <span class="procedures">call Canvas1.DrawCircle</span> block and add it to <span class="control">when Canvas1.Touched</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addDrawCircle.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. <span class="variables">get x</span></h4>
     <p>Hover over the red "x" button and choose the <span class="variables">get x</span> block and drag it to the centerX socket of <span class="procedures">call Canvas1.DrawCircle</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addGetX.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Add <span class="variables">get y</span></h4>
     <p>Repeat with the <span class="variables">get y</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addGetY.gif" alt="some_text">
-    <p>Click on the Math drawer and drag out the <span class="math">0</span> block. Connect it to the radius socket of <span class="procedures">call Canvas1.DrawCircle</span> and change the number to 5 (or any other number).</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Add <span class="math">5</span></h4>
+    <p>Click on the <span class='icon' alt='math'></span>Math drawer and drag out the <span class="math">0</span> block. Connect it to the "radius" socket of <span class="procedures">call Canvas1.DrawCircle</span> and change the number to 5 (or any other number).</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addRadius.gif" alt="some_text">
-    <p>Test out your app! Tap on your canvas to draw dots!</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>6. Test your app!</h4>
+    <p>Tap on your canvas to draw dots!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Pick image from device</h3>
-  <div>
-    <p>In Designer, click Media and drag an ImagePicker into your Viewer.</p>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add an ImagePicker</h4>
+    <p>In Designer, click Media and drag an <span class='icon' alt='imagePicker'></span>ImagePicker into your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addImgPick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add <span class="control">when ImagePicker.AfterPicking</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on ImagePicker1, and select <span class="control">when ImagePicker.AfterPicking</span>.</p>
+    <p>Click on <span class='icon' alt='imagePicker'></span>ImagePicker1, and select <span class="control">when ImagePicker.AfterPicking</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/afterPick.gif" alt="some_text">
-    <p>Click on Canvas1, and connect the <span class="setters">set Canvas1.BackgroundImage to</span> block.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="setters">set Canvas1.BackgroundImage to</span></h4>
+    <p>Click on <span class='icon' alt='canvas'></span>Canvas1, and connect the <span class="setters">set Canvas1.BackgroundImage to</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/setBackImg.gif" alt="some_text">
-    <p>Click on ImagePicker1 and connect the <span class="setters">ImagePicker1.Selection</span> block.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Add <span class="setters">ImagePicker1.Selection</span></h4>
+    <p>Click on <span class='icon' alt='imagePicker'></span>ImagePicker1 and connect the <span class="setters">ImagePicker1.Selection</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/getSelect.gif" alt="some_text">
-    <p>Test out your app! Choose an image from your photo roll and set it as your background.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Test your app!</h4>
+    <p>Choose an image from your photo roll and set it as your background.</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Change color of paint</h3>
-  <div>
-    <p>In Designer, add a Button to your Viewer.</p>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add a <span class='icon' alt='canvas'></span>Button</h4>
+    <p>In Designer, add a <span class='icon' alt='canvas'></span>Button to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Change button text</h4>
     <p>Change the text of your button so the user knows which color they're selecting. You can also change the size, color, and shape of the buttons.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/changeButText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="control">when Button1.Click</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p> Click Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
+    <p> Click <span class='icon' alt='button'></span> Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
-    <p>Click on Canvas1 and choose <span class="setters">set Canvas1.PaintColor to</span> and connect it.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Add <span class="setters">set Canvas1.PaintColor to</span></h4>
+    <p>Click on <span class='icon' alt='canvas'></span> Canvas1 and choose <span class="setters">set Canvas1.PaintColor to</span> and connect it.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/setPaint.gif" alt="some_text">
-    <p>Click on Colors and choose a blue block and connect it to <span class="setters">set Canvas1.PaintColor to</span>.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Add a <span class="colors">blue</span> block</h4>
+    <p>Click on <span class='icon' alt='colors'></span>Colors and choose a <span class="colors">blue</span> block and connect it to <span class="setters">set Canvas1.PaintColor to</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/blue.gif" alt="some_text">
-    <p>Test out your app! Once it works, add more buttons to give the user more options for colors.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>6. Test out your app!</h4>
+    <p>Once it works, add more buttons to give the user more options for colors.</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Random color button</h3>
-  <div>
-    <p>In Designer, add a Button to your Viewer.</p>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add a <span class='icon' alt='button'></span> Button</h4>
+    <p>In Designer, add a <span class='icon' alt='button'></span> Button to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Change button text</h4>
     <p>Change the text of your button so the user knows which color they're selecting. You can also change the size, color, and shape of the buttons.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/changeRandom.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="control">when Button1.Click</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
-    <p>Click Canvas1 and connect <span class="setters">set Canvas1.PaintColor to</span>.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Add <span class="setters">set Canvas1.PaintColor to</span></h4>
+    <p>Click <span class='icon' alt='canvas'></span> Canvas1 and connect <span class="setters">set Canvas1.PaintColor to</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/setPaint.gif" alt="some_text">
-    <p>The random colors will be selected from a list of colors. Click Lists and select <span class="lists">pick a random item list</span>.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Add <span class="lists">pick a random item list</span></h4>
+    <p>The random colors will be selected from a list of colors. Click <span class='icon' alt='lists'></span> Lists and select <span class="lists">pick a random item list</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/pickRandom.gif" alt="some_text">
-    <p>Click Lists again and drag out <span class="lists">make a list</span>.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>6. Add <span class="lists">make a list</span></h4>
+    <p>Click <span class='icon' alt='lists'></span> Lists again and drag out <span class="lists">make a list</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/makeList.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>7. Add more list items</h4>
     <p>Click on the blue gear and click and drag as many items to your list as you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addItems.gif" alt="some_text">
-    <p>Click on Colors and drag out a color block to fill an empty socket.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>8. Add a color</h4>
+    <p>Click on <span class='icon' alt='colors'></span> Colors and drag out a color block to fill an empty socket.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addRed.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>9. Add the other colors</h4>
     <p>Repeat with the rest of the sockets.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addColors.gif" alt="some_text">
-    <p>Test out your app! Once it works, you can add more colors to the list.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>10. Test out your app!</h4>
+    <p>Once it works, you can add more colors to the list.</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Add text to canvas</h3>
-  <div>
-    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add a <span class='icon' alt='button'></span> Button</h4>
+    <p>In Designer, go to User Interface and add a <span class='icon' alt='button'></span> Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
-    <p>Again in User Interface, add a TextBox to your Viewer.</p>
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add a <span class='icon' alt='textbox'></span> Textbox</h4>
+    <p>Again in User Interface, add a <span class='icon' alt='textbox'></span> TextBox to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addTextBox.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="control">when Button1.Click</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. 
     <p>Click on Canvas 1 next and connect <span class="procedures">call Canvas1.DrawText</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callDraw.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click TextBox1 and add "TextBox1.Text" to the "text" socket of the <span class="procedures">call Canvas1.DrawText</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/setTextBox.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Next, click on Math and drag out two <span class="math">0</span> blocks and connect them to the x and y sockets.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/zeros.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Change the values of both the <span class="math">0</span> blocks to 10 (or anywhere else you want the blocks to be).</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/changeTen.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Test out your app! Once it works, you can move around the text or let the user control where the text goes.</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Add a share button</h3>
-  <div>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
     <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click Social and add Sharing to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addSharing.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
     <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p> Then click on Sharing1 and connect the <span class="procedures">call Sharing1.ShareFileWithMessage</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/shareWMess.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <!-- TODO: Is there a better way to do this? -->
     <p>Next, click on Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "file" socket of <span class="procedures">call Sharing1.ShareFileWithMessage</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callSaveAs.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Text and add a <span class="text">" "</span> block to the "fileName" socket of <span class="procedures">call Canvas1.SaveAs</span>. Change the text inside to "myPic" or anything else you want to name your file.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/picText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Text and and add a <span class="text">" "</span> block to the "message socket" of <span class="procedures">call Sharing1.ShareFileWithMessage</span>. Change the text inside to "Look at my picture!" or anything else you want to name your file.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/messageText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Test out your app! Once it works, you can try out sending pictures to your friends! This component works similarly to other sharing components so try them as well!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
   <h3>Share picture to Twitter</h3>
-  <div>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
     <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click Social and add Sharing to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addTwitter.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Follow <a href="http://twitter.com/oauth_clients/new"  target="_blank">this link</a> in order to set up your Consumer Key and Consumer Secret. Start by clicking on Create New App.</p>
     <!-- I dont know where this went -->
     <img class="enlargeImage" src="../images/snap_remix/howto/createApp.png" alt="some_text"> 
+    </div>
+    <div class="tutorialContentPage">
     <p>Fill in the form to create your app.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitCreate.gif" alt="some_text">
     <!-- Redo these with gifs if possible -->
+    </div>
+    <div class="tutorialContentPage">
     <p>When your application has been created, click on the Keys and Access Tokens tab.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Copy the Consumer Key and the Consumer Secret.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens2.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Back in Designer, click on Twitter1 and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitProperties.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
     <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Twitter1 and connect the <spen class="procedures">call Twitter1.Authorize</spen> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitAuth.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Twitter1 again and drag out <span class="control">when Twitter1.IsAuthorized</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/whenAuth.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Twitter1 again and connect <span class="procedures">call Twitter1.TweetWithImage</span> to <span class="control">when Twitter1.IsAuthorized</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callTwitImg.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
      <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click Canvas1 and connect <spen class="procedures">call Canvas1.SaveAs</spen> to the ImagePath socket of <spen class="procedures">call Twitter1.TweetWithImage</spen>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitSaveAs.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitPicText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
     <p>Test out your app! Once it works, you can tweet images and try out some of the functions available with the Twitter component!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
   </div>
 
 </div>

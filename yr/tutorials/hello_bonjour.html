@@ -86,71 +86,70 @@
 
     <h3>Hello Bonjour Translator</h3>
     <div class="tutorialContainer">
-      <div class="tutorialNavigationHeader">
-      </div>
+      <div class="tutorialNavigationHeader"></div>
 
       <div class="tutorialContentPage">
         <h3>1. Introduction</h3>
         <p>You've started with a screen with a few components already added.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/intro.gif" style="width:100%" alt="some_text">
+        <img class="enlargeImage" src="../images/hello_bonjour/intro.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
         <h3>2. Go to Blocks page</h3>
         <p>Click on the Blocks button on the top right of the screen.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%;" alt="some_text">
+        <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage"> 
-      <h3>3. Add click handler</h3>
-        <p>Click on translateButton and add <span class="control">when translateButton.Click</span>.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/clickButton.gif" style="width:100%;" alt="some_text">
+        <h3>3. Add click handler</h3>
+        <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="control">when translateButton.Click</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/clickButton.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
         <h3>4. Request translation</h3>
-        <p>Click on translateButton and add <span class="procedures">call YandexTranslate1.RequestTranslation</span> to your <span class="control">when translateButton.Click</span> block.</p>
+        <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="procedures">call YandexTranslate1.RequestTranslation</span> to your <span class="control">when translateButton.Click</span> block.</p>
         <img class="enlargeImage" src="../images/hello_bonjour/addRequestTranslation.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
         <h3>5. Add empty string</h3>
-        <p>Click on Text and add the <span class="text">" "</span> block to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <p>Click on <span class='icon' alt='text'></span> Text and add the <span class="text">" "</span> block to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
         <img class="enlargeImage" src="../images/hello_bonjour/addEmptyString.gif" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
         <h3>6. Add language codes</h3>
         <p>Click on your <span class="text">" "</span> block and enter the text, "ru-en".</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/enterLanguageCodes.gif" style="width:80%" alt="some_text">
+        <img class="enlargeImage" src="../images/hello_bonjour/enterLanguageCodes.gif" alt="some_text">
         <p>This is how the codes work.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/translationExplanation.png" style="width:80%" alt="some_text">
+        <img class="enlargeImage" src="../images/hello_bonjour/translationExplanation.png" alt="some_text">
         <!--         <p>And <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">this</a> is the list of all supported language codes.</p> -->
         <!-- Link to all language codes/how-to -->
       </div>
       
       <div class="tutorialContentPage">  
         <h3>7. Get text to be translated</h3>
-        <p>Click on the russianText label and connect <span class="getters">russianText.Text</span> to the textToTranslate socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/getRussianText.gif" style="width:80%" alt="some_text"> 
+        <p>Click on the <span class='icon' alt='label'></span> russianText label and connect <span class="getters">russianText.Text</span> to the "textToTranslate" socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/getRussianText.gif"  alt="some_text"> 
       </div>
 
       <div class="tutorialContentPage">  
         <h3>8. Get the translated text</h3>
-        <p>Click on YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/addGetTranslation.gif" style="width:80%" alt="some_text"> 
+        <p>Click on <span class='icon' alt='yandex'></span> YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addGetTranslation.gif"  alt="some_text"> 
       </div>
 
       <div class="tutorialContentPage">  
         <h3>9. Reset the label</h3>
-        <p>Click on the englishText label and drag out the <span class="setters">set englishText.Text to</span>  block and connect it to <span class="control">when YandexTranslate1.GotTranslation</span>.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/addEnglishText.gif" style="width:80%" alt="some_text"> 
+        <p>Click on the <span class='icon' alt='label'></span> englishText label and drag out the <span class="setters">set englishText.Text to</span>  block and connect it to <span class="control">when YandexTranslate1.GotTranslation</span>.</p>
+        <img class="enlargeImage" src="../images/hello_bonjour/addEnglishText.gif"  alt="some_text"> 
       </div>
 
       <div class="tutorialContentPage">  
         <h3>10. Get the translated text</h3>
         <p>Hover over the red translation button and grab and click on <span class="variables">get translation</span>. Connect this block to <span class="setters">set englishText.Text to</span>.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/getTranslation.gif" style="width:80%" alt="some_text">
+        <img class="enlargeImage" src="../images/hello_bonjour/getTranslation.gif"  alt="some_text">
       </div>
 
       <div class="tutorialContentPage">  
@@ -169,7 +168,7 @@
       <!-- Include a how-to for the USB and emulator connections -->
       <b>Use language codes to translate to other languages.</b>
       <p>
-        Learn how the <a href="#" onclick="return goToHowToTutorial(0)" title="Comparison Tutorial">language codes</a> work in order to translate to languages other than English.
+        Learn how the <a href="#" onclick="return goToHowToTutorial(0)" title="Language Codes Tutorial">language codes</a> work in order to translate to languages other than English.
       </p>
       <b>Add a text box to enter your own text.</b>
       <p>
@@ -179,28 +178,40 @@
       <p>
         Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Accelerometer Tutorial">Accelerometer Component</a> sense when the device is being shaken in order to translate the text.</p> 
       </p> 
-      <b>Make your text speak!</b>
+      <b>Make your text speak in English!</b>
       <p>
-        Make your app a bit more vocal with the <a href="#" onclick="return goToHowToTutorial(3)" title="TextToSpeech Tutorial">TextToSpeech component</a>. Try using this with the Yandex Translator and with text entered in a TextBox.
+        Make your app a bit more vocal with the <a href="#" onclick="return goToHowToTutorial(3)" title="TextToSpeech English Tutorial">TextToSpeech component</a>. Try using this with the Yandex Translator and with text entered in a TextBox.
+      </p>
+      <b>Make your text speak in other languages!</b>
+      <p>
+        Use the <a href="#" onclick="return goToHowToTutorial(4)" title="TextToSpeech Other Languages Tutorial">TextToSpeech component</a> to make your app speak in German, Spanish, French, or Italian.
       </p>
     </div>
 
-    <h3>Share the app</h3>
-    <div>
-     <p>Click on "My Projects" button on the top menu bar.</p>
-     <img src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
-     <img src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Fill in all the details and click the "PUBLISH" button.</p>
-     <img src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Click on "SHARE" button to get the link to the app.</p>
-     <img src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
-     <p>Copy and paste the link in the space below.</p>
-
-     <div id="shareLinkError" style="display:none">
+  <h3>Share your App</h3>
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+    <p>Click on "My Projects" button on the top menu bar.</p>
+    <img class="enlargeImage" src="../images/share/myProjects.png" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
+    <img class="enlargeImage" src="../images/share/publish.gif" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Fill in all the details and click the "PUBLISH" button.</p>
+    <img class="enlargeImage" src="../images/share/publishDetails.gif" alt="some_text"/>
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click on "SHARE" button to get the link to the app.</p>
+    <img class="enlargeImage" src="../images/share/copyLink.gif" alt="some_text" style="width:width;height:height;" />
+  </div>
+  <div class="tutorialContentPage">
+    <p>Paste the link in the space below and click "Share".</p>
+    <div id="shareLinkError" style="display:none">
       <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
     </div>
-
     <div id="shareLinkContainer">
       <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
       <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
@@ -208,14 +219,15 @@
       <div class="widget">
         <button class="shareApp">Share</button>
       </div>
-
     </div>
-
-    <div id="shareCompleted" style="display:none">
-      <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
-    </div>
-
   </div>
+  <div id="shareCompleted" style="display:none">
+    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
 
   <h3>Published apps</h3>
   <div>
@@ -230,52 +242,146 @@
 
 <div id="howToAccordion" class="accordion" style="display:none">
   <h3>Translate to another language</h3>
-  <div>
-    <p>Click on Blocks (if you're not already there)</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:80%" alt="magic eight ball">
-    <p>Click in the text box and change the second language code to "it" for Italian.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/toItalian.gif" style="width:80%" alt="magic eight ball">
-    <p>Try it our on your app! You should see Russian translated to Italian now!</p>  
+  <div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+     <h4>1. Change language to Italian</h4>
+     <p>Click on Blocks (if you're not already there)</p>
+     <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+     <p>Click in the text box and change the second language code to "it" for Italian.</p>  
+     <img class="enlargeImage" src="../images/hello_bonjour/howto/toItalian.gif" alt="magic eight ball">
+   </div>
+   <div class="tutorialContentPage">
+    <h4>2. Try out other language codes</h4>
+    <p>Try it our on your app! You should see Russian translated to Italian now!</p>
     <p>Here are some more languages to try. Click <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">here</a> to see all the language codes.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/languageCodes.png" style="width:100%" alt="magic eight ball">
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/languageCodes.png"  alt="magic eight ball">
   </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+</div>
 
-  <h3>Add a TextBox</h3>
-  <div>
-    <p>First, delete the russianText label (you don't need it anymore!).</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/deleteRussian.gif" style="width:80%" alt="magic eight ball">
-    <p>Click on TextBox and add it to your Viewer.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextBox.gif" style="width:80%" alt="magic eight ball">
-    <p>Go to Blocks.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:80%" alt="magic eight ball">
-    <p>Click on TextBox1 and add <span class="getters">TextBox1.Text</span> to the textToTranslate socket of <span class="procedures">call YandexTranslate1.RequestTranslation</span>.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/getTextBoxText.gif" style="width:80%" alt="magic eight ball">
+<h3>Add a TextBox</h3>
+<div class="tutorialContainer">
+ <div class="tutorialNavigationHeader"></div>
+ <div class="tutorialContentPage">
+   <h4>1. Delete russianText</h4>
+   <p>First, delete the <span class='icon' alt='label'></span> russianText label (you don't need it anymore!).</p>
+   <img class="enlargeImage" src="../images/hello_bonjour/howto/deleteRussian.gif" alt="magic eight ball">
+ </div>
+ <div class="tutorialContentPage">
+  <h4>2. Add a TextBox</h4>
+  <p>Click and drag a  <span class='icon' alt='textbox'></span> TextBox to your Viewer.</p>  
+  <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextBox.gif" alt="magic eight ball">
+</div>
+<div class="tutorialContentPage">
+  <h4>3. Add <span class="getters">TextBox1.Text</span></h4>
+  <p>Go to Blocks.</p>  
+  <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+  <p>Click on <span class='icon' alt='textbox'></span> TextBox1 and add <span class="getters">TextBox1.Text</span> to the textToTranslate socket of <span class="procedures">call YandexTranslate1.RequestTranslation</span>.</p>  
+  <img class="enlargeImage" src="../images/hello_bonjour/howto/getTextBoxText.gif" alt="magic eight ball">
+</div>
+<div class="tutorialContentPage">
+  <h4>4. Test it out!</h4>
+  <p>Change the language code (in Blocks) to whatever language you're entering. Enter text into the TextBox and watch your text translate!</p> <!-- Elaborate on this -->
+</div>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+</div>
+
+<h3>Shake to clear screen</h3>
+<div class="tutorialContainer">
+ <div class="tutorialNavigationHeader"></div>
+ <div class="tutorialContentPage">
+   <h4>1. Add an AccelerometerSensor</h4>
+   <p>Click on Sensors. Click and drag an <span class="icon" alt="accelerometersensor"></span>AccelerometerSensor to the Viewer.</p> 
+   <img class="enlargeImage" src="../images/hello_bonjour/howto/addAccel.gif" alt="magic eight ball"> 
+ </div>
+ <div class="tutorialContentPage">
+  <h4>2. Add <span class="control">when AccelerometerSensor1.Shaking</span></h4>
+  <p>Click Blocks.</p>
+  <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+  <p>Click on <span class="icon" alt="accelerometersensor"></span> AccelerometerSensor1 and click and add <span class="control">when AccelerometerSensor1.Shaking</span> to the Viewer.</p>
+  <img class="enlargeImage" src="../images/hello_bonjour/howto/addShaking.gif" alt="magic eight ball">
+</div>
+<div class="tutorialContentPage">
+  <h4>3. Duplicate blocks</h4>
+  <p>Right-click or control (ctrl) click on <span class="procedures">call YandexTranslate1.RequestTranslation</span> and click "Duplicate". Drag your new blocks into <span class="control">when AccelerometerSensor1.Shaking</span>.</p>  
+  <img class="enlargeImage" src="../images/hello_bonjour/howto/duplicateTranslation.gif" alt="magic eight ball">
+</div>
+<div class="tutorialContentPage">
+  <h4>4. Test it out!</h4>
+  <p>You should be able to translate your text by shaking or clicking the "Translate" button.</p> 
+</div>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div> 
+</div>
+
+<h3>Use the TextToSpeech component (English)</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+  <div class="tutorialContentPage">
+    <h4>1. Add <span class="icon" alt="textToSpeech"></span> TextToSpeech</h4>
+    <p>In Designer, click on Sensors and drag and drop <span class="icon" alt="textToSpeech"></span> TextToSpeech onto the Viewer. It will show up in the non-visible componenets section.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" alt="magic eight ball">
   </div>
-
-  <h3>Shake to clear screen</h3>
-  <div>
-    <p>Click on Sensors. Click and drag AccelerometerSensor to the Viewer.</p> 
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addAccel.gif" style="width:100%" alt="magic eight ball"> 
+  <div class="tutorialContentPage">
+    <h4>2. Add <span class="procedures">call TextToSpeech1.Speak</span></h4>
     <p>Click Blocks.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%" alt="magic eight ball">
-    <p>Click on AccelerometerSensor1 and click and add <span class="control">when AccelerometerSensor1.Shaking</span> to the Viewer.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addShaking.gif" style="width:90%" alt="magic eight ball">
-    <p>Right-click or control (ctrl) click on <span class="procedures">call YandexTranslate1.RequestTranslation</span> and click "Duplicate". Drag your new blocks into <span class="control">when AccelerometerSensor1.Shaking</span>.</p>  
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/duplicateTranslation.gif" style="width:90%" alt="magic eight ball">
-    <p>Test out your app! You should be able to translate your text by shaking or clicking the "Translate" button.</p>  
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+    <p>Click on <span class="icon" alt="textToSpeech"></span> TextToSpeech1 and add <span class="procedures">call TextToSpeech1.Speak</span> into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif"  alt="magic eight ball">
   </div>
-
-  <h3>Use the TextToSpeech component</h3>
-  <div>
-    <p>In Designer, click on Sensors and drag and drop TextToSpeech onto the Viewer. It will show up in the non-visible componenets section.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" style="width:80%" alt="magic eight ball">
-    <p>Click Blocks.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" style="width:100%" alt="magic eight ball">
-    <p>Click on TextToSpeak1 and add <span class="procedures">call TextToSpeech1.Speak</span> into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif" style="width:100%" alt="magic eight ball">
+  <div class="tutorialContentPage">
+    <h4>3. Add <span class="variables">get translation</span></h4>
     <p>Hover over the red translate button again and click on <span class="variables">get translation</span>. Drag it to the "message" socket of <span class="procedures">call TextToSpeech1.Speak</span>.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" style="width:100%" alt="magic eight ball">
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" alt="magic eight ball">
   </div>
+  <div class="tutorialContentPage">
+    <h4>4. Test it out!</h4>
+    <p>Press the Translate button and watch your speech translate and be spoken by your device!</p>
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
+
+<h3>Use the TextToSpeech component (German, Spanish, French, or Italian)</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+  <div class="tutorialContentPage">
+    <p>In Designer, click on Sensors and drag and drop <span class="icon" alt="textToSpeech"></span> TextToSpeech onto the Viewer. It will show up in the non-visible componenets section.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" alt="magic eight ball">
+  </div>
+  <div class="tutorialContentPage">
+    <p>Go to the Properties panel and find country. We'll make our <span class="icon" alt="textToSpeech"></span> TextToSpeech component speak in Spanish. Go to the "Country" dropdown and choose "MCO" for Mexico.</p> <!-- full list of country codes? -->
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/changeMCO.gif" alt="magic eight ball">
+  </div>
+  <div class="tutorialContentPage">
+    <p>Then go to the "Language" dropdown and choose "es" for Spanish.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/changeES.gif" alt="magic eight ball"> <!-- ditto language codes? -->
+  </div>
+  <div class="tutorialContentPage">
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+    <p>Click on <span class="icon" alt="textToSpeech"></span> TextToSpeech1 and add <span class="procedures">call TextToSpeech1.Speak</span> into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif" alt="magic eight ball">
+  </div>
+  <div class="tutorialContentPage">
+    <p>Hover over the red translate button again and click on <span class="variables">get translation</span>. Drag it to the "message" socket of <span class="procedures">call TextToSpeech1.Speak</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" alt="magic eight ball">
+  </div>
+  <div class="tutorialContentPage">
+    <p>Finally, go to <span class="control">when translateButton.Click</span> and click on the <span class="text">"ru-en"</span> block and change the text to "ru-es" so the text the translator translates to is Spanish.</p>
+    <p>Test out your app! When the button is pressed, it should translate from Russian to Spanish and speak the Spanish.</p>
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
 
 </div>
 <div id="serverTutorialId" style="display:none;">5</div>
