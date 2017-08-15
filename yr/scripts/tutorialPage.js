@@ -8,9 +8,9 @@ $(document).ready( function() {
     var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
     
     var previousLink = document.createElement("div");
-      previousLink.className = "previousLinkContainer";
-      previousLink.style.float = "left";
-      previousLink.style.width = "20%";
+    previousLink.className = "previousLinkContainer";
+    previousLink.style.float = "left";
+    previousLink.style.width = "20%";
       // previousLink.style.text-align = "left";
       previousLink.style.visibility = "hidden";
 
@@ -68,24 +68,24 @@ $(document).ready( function() {
       spacing.innerHTML = "<br/><hr/>"
       tutorialNavigationHeader.appendChild(spacing);
 
-    var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
-    var totalPageNumSpan = tutorialNavigationHeader.getElementsByClassName("totalPageNum")[0];
-    pageNumSpan.innerHTML = tutorialPageObject.page + 1;
-    totalPageNumSpan.innerHTML = tutorialPageObject.totalPageNum;
+      var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
+      var totalPageNumSpan = tutorialNavigationHeader.getElementsByClassName("totalPageNum")[0];
+      pageNumSpan.innerHTML = tutorialPageObject.page + 1;
+      totalPageNumSpan.innerHTML = tutorialPageObject.totalPageNum;
 
-  }
+    }
 
-  var updateTutorialHeader = function(tutorialIndex) {
-    var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
-    var tutorialContainer = getTutorialContainer(tutorialIndex);
-    var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
+    var updateTutorialHeader = function(tutorialIndex) {
+      var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
+      var tutorialContainer = getTutorialContainer(tutorialIndex);
+      var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
 
-    var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
-    pageNumSpan.innerHTML = tutorialPageObject.page + 1;
+      var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
+      pageNumSpan.innerHTML = tutorialPageObject.page + 1;
 
-    var previousLinkContainer = tutorialNavigationHeader.getElementsByClassName("previousLinkContainer")[0];
-    
-    if(tutorialPageObject.page == 0) {
+      var previousLinkContainer = tutorialNavigationHeader.getElementsByClassName("previousLinkContainer")[0];
+
+      if(tutorialPageObject.page == 0) {
       //hide previous link
       previousLinkContainer.style.visibility = "hidden";
     } else {
@@ -102,10 +102,8 @@ $(document).ready( function() {
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
-    // var nextButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
-    var bigButton = tutorialContainer.getElementsByClassName("tutorialNextButton")[1];
-    // nextButton.style.display = (visibility ? "block" : "none");
-    bigButton.style.display = (visibility ? "block" : "none");
+    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButtonContainer")[0];
+    nextButtonContainer.style.display = (visibility ? "block" : "none");
   }
 
   var updateTutorialPage = function(tutorialIndex) {
@@ -125,30 +123,43 @@ $(document).ready( function() {
     return tutorialContainers[tutorialIndex];
   }
 
-  var setupTutorial = function() {
+  var setupConnect = function() {
+    $('.connect').load('connectApp.html', function(){
+      $('.connect').ready(function(){
+        setupTutorial();
+      })
+    });
+  }
+  setupConnect();
 
+  var setupTutorial = function() {
     var tutorialIndex = 0;
     var totalPageNum;
     var tutorialContainers = document.getElementsByClassName("tutorialContainer");
     for(var i=0;i<tutorialContainers.length;i++) {
       //add tutorial id
-      var tutorialIndexDiv = document.createElement("div")
-      tutorialIndexDiv.innerHTML = tutorialIndex;
-      tutorialIndexDiv.className = "tutorialIndexDiv";
-      tutorialIndexDiv.style.display = "none";
-      tutorialContainers[i].appendChild(tutorialIndexDiv);
+      if (tutorialContainers[i].getElementsByClassName('tutorialIndexDiv').length == 0){
+       var tutorialIndexDiv = document.createElement("div")
+       tutorialIndexDiv.innerHTML = tutorialIndex;
+       tutorialIndexDiv.className = "tutorialIndexDiv";
+       tutorialIndexDiv.style.display = "none";
+       tutorialContainers[i].appendChild(tutorialIndexDiv);
+       totalPageNum = tutorialContainers[i].getElementsByClassName("tutorialContentPage").length
+       tutorialIndexToPageObject[tutorialIndex] = {page:0,totalPageNum:totalPageNum}
+     } else {
+      tutorialIndex = i;
+      tutorialContainers[i].getElementsByClassName('tutorialIndexDiv')[0].innerHTML = tutorialIndex;
       totalPageNum = tutorialContainers[i].getElementsByClassName("tutorialContentPage").length
-      
       tutorialIndexToPageObject[tutorialIndex] = {page:0,totalPageNum:totalPageNum}
-      setupTutorialHeader(tutorialIndex);
-      updateTutorialPage(tutorialIndex);
-      tutorialIndex++;
     }
+    if (tutorialContainers[i].getElementsByClassName('currentPageNum').length == 0){
+      setupTutorialHeader(tutorialIndex);
+    }
+    updateTutorialPage(tutorialIndex);
+    tutorialIndex++;
   }
 
-  setupTutorial();
-
-  $(".tutorialPreviousButton").click(function(e) {
+    $(".tutorialPreviousButton").off('click').on('click', function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     
     tutorialIndexToPageObject[tutorialIndex].page--;
@@ -158,19 +169,21 @@ $(document).ready( function() {
     return false;
   });
 
-  $(".tutorialNextButton").click(function(e) {
+  $(".tutorialNextButton").off('click').on('click', function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
     tutorialPageObject.page++;
 
-    if(tutorialPageObject.page == tutorialPageObject.totalPageNum) {
+    if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
       //hide next button
       setTutorialNextButtonVisibility(tutorialIndex, false)
     }
     updateTutorialPage(tutorialIndex);
-
     return false;
   });
+  
+}
+
 // Add tutorial video pop-out
 window.getTutorialVideo = function(tutorialId) {
   window.parent.postMessage({type:"video", youtubeId:tutorialId}, '*');
@@ -184,11 +197,11 @@ window.getTutorialVideo = function(tutorialId) {
     var pwidth = allTutPics[i].width;
     if (pwidth == 0) {
      $(allTutPics[i]).width("100%");
-       pwidth = 250;
-     }
+     pwidth = 250;
+   }
 
-     var newDiv = document.createElement("div");
-     newDiv.className = "tutorialDiv";
+   var newDiv = document.createElement("div");
+   newDiv.className = "tutorialDiv";
      // newDiv.style.width = pwidth;
 
      var tutImg = document.createElement("img");
@@ -208,15 +221,15 @@ window.getTutorialVideo = function(tutorialId) {
      $(newDiv).next().remove();
    }
 
-  $(".enlargeImage").click(function(imageId){
+   $(".enlargeImage").click(function(imageId){
     window.parent.postMessage({type:"img", imageId:$(this).attr("src")}, '*');
   });
 
-  $(".zoom").click(function(imageId){
+   $(".zoom").click(function(imageId){
     window.parent.postMessage({type:"img", imageId:$(this).prev(".enlargeImage").attr("src")}, '*');
   });
 
-  var addImages = function () {
+   var addImages = function () {
     var allIcons = document.getElementsByClassName('icon');
     for (var i = 0;i<allIcons.length;i++) {
       var iconImg = document.createElement('img');

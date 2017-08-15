@@ -28,66 +28,18 @@
   <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
     <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
     <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
-
   </div>
-
 
   <div id="youthRadioAccordion" class="accordion">
     <h3>The Challenge</h3>
     <div>
-
-      <p>
-        When Snapchat went public in Spring 2017, NPR turned to Youth Radio to help listeners understand the huge appeal of the app, which teens understand intuitively, while older people can--let’s be honest--be completely clueless about how it even works.
-      </p>
-      <p>
-        Whether you love Snapchat or hate it, use this tutorial to make your bootleg version. Your app will let users take a photo, draw on it, add things to it, and send it to your friends. We can’t wait to see what you come up with from there!
-      </p>
-      <p>
-        Check out Youth Radio’s Snapchat story for NPR <a href="http://www.npr.org/2017/03/02/518197167/snapchat-goes-public-in-largest-tech-ipo-since-alibaba" target="_blank">here</a>. 
-      </p>
+      <p>When Snapchat went public in Spring 2017, NPR turned to Youth Radio to help listeners understand the huge appeal of the app, which teens understand intuitively, while older people can--let’s be honest--be completely clueless about how it even works.</p>
+      <p>Whether you love Snapchat or hate it, use this tutorial to make your bootleg version. Your app will let users take a photo, draw on it, add things to it, and send it to your friends. We can’t wait to see what you come up with from there!</p>
+      <p>Check out Youth Radio’s Snapchat story for NPR <a href="http://www.npr.org/2017/03/02/518197167/snapchat-goes-public-in-largest-tech-ipo-since-alibaba" target="_blank">here</a>.</p>
     </div>
 
     <h3>Connect your App</h3>
-    <div class="tutorialContainer">
-      <div class="tutorialNavigationHeader"></div>
-      <div class="tutorialContentPage">
-        <h3>1. Connect with your device over wifi</h3>
-        <p>Connect using the companion app so you can see your app on your mobile device.</p>
-        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" alt="some_text">
-        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
-        <p>Download from the Play Store by scanning the QR code below or by opening <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a> on your device.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
-        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>3. Go through the installation instructions on your phone</h3>
-        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
-        <!-- Should I expand on this/add clip art? -->
-      </div>
-      <div class="tutorialContentPage">
-        <h3>4. Open your app's QR code</h3>
-        <p>Click Connect, then AI Companion.</p>
-        <img class="enlargeImage" src="../images/snap_remix/connectAI.gif" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>5. Connect your app with your phone</h3>
-        <p>A QR code similar to this should pop up on your screen.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
-        <p>Either scan the QR code or enter the code in the text box.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>6. Still confused?</h3>
-        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
-      </div>
-      <br/>
-      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
-    </div>
+    <div class="connect"></div>
 
     <h3>Snapchat Remix Tutorial</h3>
 
@@ -503,24 +455,28 @@
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <h4>4. 
-    <p>Click on Canvas 1 next and connect <span class="procedures">call Canvas1.DrawText</span>.</p>
+    <h4>4. Add <span class="procedures">call Canvas1.DrawText</span></h4>
+    <p>Click on <span class='icon' alt='canvas'></span> Canvas1 next and connect <span class="procedures">call Canvas1.DrawText</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callDraw.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click TextBox1 and add "TextBox1.Text" to the "text" socket of the <span class="procedures">call Canvas1.DrawText</span> block.</p>
+    <h4>5. Add <span class="getters">TextBox1.Text</span></h4>
+    <p>Click <span class='icon' alt='textbox'></span> TextBox1 and add <span class="getters">TextBox1.Text</span> to the "text" socket of the <span class="procedures">call Canvas1.DrawText</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/setTextBox.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Next, click on Math and drag out two <span class="math">0</span> blocks and connect them to the x and y sockets.</p>
+    <h4>6. Add two <span class="math">0</span> blocks</h4>
+    <p>Next, click on <span class='icon' alt='math'></span> Math and drag out two <span class="math">0</span> blocks and connect them to the "x" and "y" sockets.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/zeros.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Change the values of both the <span class="math">0</span> blocks to 10 (or anywhere else you want the blocks to be).</p>
+    <h4>7. Change block values</h4>
+    <p>Change the values of both the <span class="math">0</span> blocks to "10" (or anywhere else on the screen you want the blocks to be).</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/changeTen.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Test out your app! Once it works, you can move around the text or let the user control where the text goes.</p>
+    <h4>8. Test out your app!</h4>
+    <p>Once it works, you can move around the text or let the user control where the text goes.</p>
     </div>
     <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
       <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
@@ -531,38 +487,46 @@
   <div class="tutorialContainer">
    <div class="tutorialNavigationHeader"></div>
    <div class="tutorialContentPage">
-    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+   <h4>1. Add a  <span class='icon' alt='button'></span> Button</h4>
+    <p>In Designer, go to User Interface and add a  <span class='icon' alt='button'></span> Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click Social and add Sharing to your Viewer.</p>
+    <h4>2. Add <span class='icon' alt='sharing'></span></h4>
+    <p>Click Social and add <span class='icon' alt='sharing'></span> Sharing to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addSharing.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
+    <h4>3. Add <span class="control">when Button1.Click</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p> Then click on Sharing1 and connect the <span class="procedures">call Sharing1.ShareFileWithMessage</span> block.</p>
+    <h4>4. Add <span class="procedures">call Sharing1.ShareFileWithMessage</span></h4>
+    <p> Then click on <span class='icon' alt='sharing'></span> Sharing1 and connect the <span class="procedures">call Sharing1.ShareFileWithMessage</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/shareWMess.gif" alt="some_text">
+    <!-- TODO: Is there a better way to do this? -->
     </div>
     <div class="tutorialContentPage">
-    <!-- TODO: Is there a better way to do this? -->
-    <p>Next, click on Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "file" socket of <span class="procedures">call Sharing1.ShareFileWithMessage</span>.</p>
+    <h4>5. Add <span class="procedures">call Canvas1.SaveAs</span></h4>
+    <p>Next, click on <span class='icon' alt='canvas'></span> Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "file" socket of <span class="procedures">call Sharing1.ShareFileWithMessage</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callSaveAs.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Text and add a <span class="text">" "</span> block to the "fileName" socket of <span class="procedures">call Canvas1.SaveAs</span>. Change the text inside to "myPic" or anything else you want to name your file.</p>
+    <h4>6. Add <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and add a <span class="text">" "</span> block to the "fileName" socket of <span class="procedures">call Canvas1.SaveAs</span>. Change the text inside to "myPic" or anything else you want to name your file.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/picText.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Text and and add a <span class="text">" "</span> block to the "message socket" of <span class="procedures">call Sharing1.ShareFileWithMessage</span>. Change the text inside to "Look at my picture!" or anything else you want to name your file.</p>
+    <h4>7. Add another <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and and add a <span class="text">" "</span> block to the "message socket" of <span class="procedures">call Sharing1.ShareFileWithMessage</span>. Change the text inside to "Look at my picture!" or anything else you want to name your file.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/messageText.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Test out your app! Once it works, you can try out sending pictures to your friends! This component works similarly to other sharing components so try them as well!</p>
+    <h4>8. Test out your app!</h4>
+    <p>Once it works, you can try out sending pictures to your friends! This component works similarly to other sharing components so try them as well!</p>
     </div>
     <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
       <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
@@ -573,67 +537,82 @@
   <div class="tutorialContainer">
    <div class="tutorialNavigationHeader"></div>
    <div class="tutorialContentPage">
-    <p>In Designer, go to User Interface and add a Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+   <h4>1. Add a <span class='icon' alt='button'></span> Button</h4>
+    <p>In Designer, go to User Interface and add a <span class='icon' alt='button'></span> Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click Social and add Sharing to your Viewer.</p>
+    <h4>2. Add <span class='icon' alt='sharing'></span> Sharing</h4>
+    <p>Click Social and add <span class='icon' alt='sharing'></span> Sharing to your Viewer.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/addTwitter.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
+    <h4>3. Create a new app</h4>
     <p>Follow <a href="http://twitter.com/oauth_clients/new"  target="_blank">this link</a> in order to set up your Consumer Key and Consumer Secret. Start by clicking on Create New App.</p>
     <!-- I dont know where this went -->
     <img class="enlargeImage" src="../images/snap_remix/howto/createApp.png" alt="some_text"> 
     </div>
     <div class="tutorialContentPage">
+    <h4>4. Fill out the form</h4>
     <p>Fill in the form to create your app.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitCreate.gif" alt="some_text">
     <!-- Redo these with gifs if possible -->
     </div>
     <div class="tutorialContentPage">
+    <h4>5. Click on Keys and Access Tokens</h4>
     <p>When your application has been created, click on the Keys and Access Tokens tab.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens.png" alt="some_text">
     </div>
     <div class="tutorialContentPage">
+    <h4>6. Copy the Key and Secret codes</h4>
     <p>Copy the Consumer Key and the Consumer Secret.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens2.png" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Back in Designer, click on Twitter1 and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.</p>
+    <h4>7. Enter the codes into the Properties</h4>
+    <p>Back in Designer, click on <span class='icon' alt='twitter'></span> Twitter1 and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitProperties.png" alt="some_text">
     </div>
     <div class="tutorialContentPage">
+    <h4>8. Add <span class="control">when Button1.Click</span></h4>
     <p>Click Blocks.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
-    <p>Click on Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Twitter1 and connect the <spen class="procedures">call Twitter1.Authorize</spen> block.</p>
+    <h4>9. Add <span class="procedures">call Twitter1.Authorize</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 and connect the <span class="procedures">call Twitter1.Authorize</span> block.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitAuth.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Twitter1 again and drag out <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <h4>10. Add <span class="control">when Twitter1.IsAuthorized</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 again and drag out <span class="control">when Twitter1.IsAuthorized</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/whenAuth.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Twitter1 again and connect <span class="procedures">call Twitter1.TweetWithImage</span> to <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <h4>11. Add <span class="procedures">call Twitter1.TweetWithImage</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 again and connect <span class="procedures">call Twitter1.TweetWithImage</span> to <span class="control">when Twitter1.IsAuthorized</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/callTwitImg.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-     <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <h4>12. Add <span class="text">" "</span></h4>
+     <p>Click on <span class='icon' alt='text'></span> Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitText.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click Canvas1 and connect <spen class="procedures">call Canvas1.SaveAs</spen> to the ImagePath socket of <spen class="procedures">call Twitter1.TweetWithImage</spen>.</p>
+    <h4>13. Add <span class="procedures">call Canvas1.SaveAs</span></h4>
+    <p>Click <span class='icon' alt='canvas'></span> Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "ImagePath" socket of <span class="procedures">call Twitter1.TweetWithImage</span>.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitSaveAs.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Click on Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <h4>14. Add <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
     <img class="enlargeImage" src="../images/snap_remix/howto/twitPicText.gif" alt="some_text">
     </div>
     <div class="tutorialContentPage">
-    <p>Test out your app! Once it works, you can tweet images and try out some of the functions available with the Twitter component!</p>
+    <h4>15. Test out your app!</h4>
+    <p>Once it works, you can tweet images and try out some of the functions available with the Twitter component!</p>
     </div>
     <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
       <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
