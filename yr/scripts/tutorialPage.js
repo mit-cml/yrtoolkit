@@ -132,6 +132,15 @@ $(document).ready( function() {
   }
   setupConnect();
 
+    var setupShare = function() {
+    $('.share').load('shareApp.html', function(){
+      $('.share').ready(function(){
+        setupTutorial();
+      })
+    });
+  }
+  setupShare();
+
   var setupTutorial = function() {
     var tutorialIndex = 0;
     var totalPageNum;
