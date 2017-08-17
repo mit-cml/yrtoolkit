@@ -5,32 +5,33 @@ $(document).ready( function() {
 	});
 
 	$(".builtBlock").on('shown.bs.collapse', function(e){
-		$(".builtBlock").html("");
-		var thisId = $(this).attr("id"); // do i need this in addition to the click fxn?
+		if (!($(e.target).hasClass("imgData"))) {
+			$(".builtBlock").html("");
+			var thisId = $(this).attr("id"); // do i need this in addition to the click fxn?
 
-		if (thisId == "cat_Variables"){
-			var varImg = document.createElement('img');
-			$(varImg).attr('src', 'images/otherVar.png')
-			$("#" + thisId).append(varImg);
-		}
+			if (thisId == "cat_Variables"){
+				var varImg = document.createElement('img');
+				$(varImg).attr('src', 'images/otherVar.png')
+				$("#" + thisId).append(varImg);
+			}
 
-		if (thisId == "cat_Procedures"){
-			var procImg = document.createElement('img');
-			$(procImg).attr('src', 'images/proc1.png')
-			$("#" + thisId).append(procImg);
-		}
+			if (thisId == "cat_Procedures"){
+				var procImg = document.createElement('img');
+				$(procImg).attr('src', 'images/proc1.png')
+				$("#" + thisId).append(procImg);
+			}
 
-		var blockArray = Blockly.Drawer.createBlockInfoArray();
-		var blockDiv = document.createElement('div');
-		$(blockDiv).attr('id', 'blocklyDiv');
-		$(blockDiv).css('height','0px');
-		$(blockDiv).css('width','150px');
-		$("#" + thisId).append(blockDiv);
-		var workspace = Blockly.inject('blocklyDiv');
-		
-		$.each(blockArray, function(category, blocks){
-			if (category == thisId){
-				$.each(blocks, function(id, key){
+			var blockArray = Blockly.Drawer.createBlockInfoArray();
+			var blockDiv = document.createElement('div');
+			$(blockDiv).attr('id', 'blocklyDiv');
+			$(blockDiv).css('height','0px');
+			$(blockDiv).css('width','150px');
+			$("#" + thisId).append(blockDiv);
+			var workspace = Blockly.inject('blocklyDiv');
+
+			$.each(blockArray, function(category, blocks){
+				if (category == thisId){
+					$.each(blocks, function(id, key){
 					// Creates object to put block in
 
 					var blockObject = bd.toolbox.ctr.blockInfoToBlockObject(key);
@@ -40,7 +41,7 @@ $(document).ready( function() {
 					block.setMovable(false);
 					block.moveBy(10, 0);
 					var imgData = document.createElement('div');
-					$(imgData).addClass("collapse");
+					$(imgData).addClass("collapse imgData");
 					$(imgData).attr('id', id);
 					$(imgData).html(block.tooltip);
 
@@ -61,7 +62,7 @@ $(document).ready( function() {
 					var bbox = Blockly.mainWorkspace.svgBlockCanvas_.getBBox();
 					var xml = new XMLSerializer().serializeToString(cp);
 
-					xml = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+(bbox.width*scaleFactor)+'" height="'+(bbox.height*scaleFactor)+'" viewBox="' + bbox.x + ' ' + bbox.y + ' '  + bbox.width + ' ' + bbox.height + '"><rect width="100%" height="100%" fill="white"></rect>'+xml+'</svg>';
+					xml = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+(bbox.width*scaleFactor)+'" height="'+(bbox.height*scaleFactor)+'" viewBox="' + bbox.x + ' ' + bbox.y + ' '  + bbox.width + ' ' + bbox.height + '"><rect width="100%" height="100%" fill="none"></rect>'+xml+'</svg>';
 					//If you just want the SVG then do console.log(xml)
 					//Otherwise we render as an image and export to PNG
 					var svgBase64 = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(xml)));
@@ -70,16 +71,15 @@ $(document).ready( function() {
 					$(img).addClass('imgCollapse');
 					$(img).attr('data-toggle', 'collapse');
 					$(img).attr('href', '#' + id);
-					$(img).attr('aria-expanded', false);
-					$(img).attr('aria-controls', 'collapseEx');
 					$("#" + thisId).append(img);
 					$("#" + thisId).append(imgData);
 					$("#" + thisId).append('<br/>')		
 
 					workspace.clear();
 				});				
-			}
-		});		
+				}
+			});
+		}
 	});
 
 	$.getJSON("scripts/files/simple_components.json", function(result){

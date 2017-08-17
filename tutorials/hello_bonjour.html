@@ -1,0 +1,91 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Hello Bonjour Translator</p>
+  </div>
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h3>The Challenge</h3>
+    <p>
+      Youth Radio ran <a href="https://youthradio.org/journalism/education/what-its-like-to-be-a-translator/" target="_blank">this story</a> about a women's immigrant mother and how she struggles to connect with other parents because she's not confident with her English. 
+      <br/><br/>
+      You're challenged with creating an app that could act as an aid for her and other immigrant parents who need a little extra help in English-speaking situations. We can't wait to see what you come up with!
+      <br/><br/>
+      Click connect your app to start building your app!
+    </p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h3>1. Introduction</h3>
+    <p>You've started with a screen with a few components already added.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/intro.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>2. Go to Blocks page</h3>
+    <p>Click on the Blocks button on the top right of the screen.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage"> 
+    <h3>3. Add click handler</h3>
+    <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="control">when translateButton.Click</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/clickButton.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>4. Request translation</h3>
+    <p>Click on <span class='icon' alt='button'></span> translateButton and add <span class="procedures">call YandexTranslate1.RequestTranslation</span> to your <span class="control">when translateButton.Click</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/addRequestTranslation.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>5. Add empty string</h3>
+    <p>Click on <span class='icon' alt='text'></span> Text and add the <span class="text">" "</span> block to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/addEmptyString.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>6. Add language codes</h3>
+    <p>Click on your <span class="text">" "</span> block and enter the text, "ru-en".</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/enterLanguageCodes.gif" alt="some_text">
+    <p>This is how the codes work.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/translationExplanation.png" alt="some_text">
+    <p>Click <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">here</a> to see the list of all supported language codes.</p>
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>7. Get text to be translated</h3>
+    <p>Click on the <span class='icon' alt='label'></span> russianText label and connect <span class="getters">russianText.Text</span> to the "textToTranslate" socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/getRussianText.gif"  alt="some_text"> 
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>8. Get the translated text</h3>
+    <p>Click on <span class='icon' alt='yandex'></span> YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/addGetTranslation.gif"  alt="some_text"> 
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>9. Reset the label</h3>
+    <p>Click on the <span class='icon' alt='label'></span> englishText label and drag out the <span class="setters">set englishText.Text to</span>  block and connect it to <span class="control">when YandexTranslate1.GotTranslation</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/addEnglishText.gif"  alt="some_text"> 
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>10. Get the translated text</h3>
+    <p>Hover over the red translation button and grab and click on <span class="variables">get translation</span>. Connect this block to <span class="setters">set englishText.Text to</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/getTranslation.gif"  alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h3>11. Try and expand your app!</h3>
+    <p>Try out your app on your companion device! When you press the "Translate" button, does the translated text appear?</p>
+    <p>Next, go to the "Expand your app" section below and add more features to your app!</p>
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
+<script src="../scripts/tutorials.js"></script>

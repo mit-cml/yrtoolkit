@@ -88,21 +88,24 @@ $(document).ready( function() {
     totalPageNumSpan.innerHTML = tutorialPageObject.totalPageNum;
   }
 
-  var updateTutorialHeader = function(tutorialIndex) {
-    var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
-    var tutorialContainer = getTutorialContainer(tutorialIndex);
-    var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
+    var updateTutorialHeader = function(tutorialIndex) {
+      var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
+      var tutorialContainer = getTutorialContainer(tutorialIndex);
+      var tutorialNavigationHeader = tutorialContainer.getElementsByClassName("tutorialNavigationHeader")[0];
 
-    var previousLinkContainer = tutorialNavigationHeader.getElementsByClassName("tutorialPreviousButton")[0];
-    
-    if(tutorialPageObject.page == 0) {
+      var pageNumSpan = tutorialNavigationHeader.getElementsByClassName("currentPageNum")[0];
+      pageNumSpan.innerHTML = tutorialPageObject.page + 1;
+
+      var previousLinkContainer = tutorialNavigationHeader.getElementsByClassName("previousLinkContainer")[0];
+
+      if(tutorialPageObject.page == 0) {
       //hide previous link
       previousLinkContainer.style.visibility = "hidden";
     } else {
       previousLinkContainer.style.visibility = "visible";      
     }
 
-    var nextLinkContainer = tutorialNavigationHeader.getElementsByClassName("tutorialNextButton")[0];
+    var nextLinkContainer = tutorialNavigationHeader.getElementsByClassName("nextLinkContainer")[0];
     if(tutorialPageObject.page + 1 < tutorialPageObject.totalPageNum) {      
       nextLinkContainer.style.visibility = "visible";
     } else {
@@ -112,8 +115,8 @@ $(document).ready( function() {
 
   var setTutorialNextButtonVisibility = function(tutorialIndex, visibility) {
     var tutorialContainer = getTutorialContainer(tutorialIndex);
-    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButton")[0];
-    nextButtonContainer.style.display = (visibility ? "block" : "none")
+    var nextButtonContainer = tutorialContainer.getElementsByClassName("tutorialNextButtonContainer")[0];
+    nextButtonContainer.style.display = (visibility ? "block" : "none");
   }
 
   var updateTutorialPage = function(tutorialIndex) {
@@ -138,8 +141,6 @@ $(document).ready( function() {
     var totalPageNum;
     var tutorialContainers = document.getElementsByClassName("tutorialContainer");
     for(var i=0;i<tutorialContainers.length;i++) {
-      //TODO generate tutorial header
-
       //add tutorial id
       var tutorialIndexDiv = document.createElement("div")
       tutorialIndexDiv.innerHTML = tutorialIndex;
@@ -154,15 +155,14 @@ $(document).ready( function() {
       tutorialIndex++;
     }
   }
-
   setupTutorial();
 
   $(".tutorialPreviousButton").click(function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
+    
     tutorialIndexToPageObject[tutorialIndex].page--;
     //show next button
-    setTutorialNextButtonVisibility(tutorialIndex, true);
-  
+    setTutorialNextButtonVisibility(tutorialIndex, true)
     updateTutorialPage(tutorialIndex);
     return false;
   });
@@ -170,20 +170,14 @@ $(document).ready( function() {
   $(".tutorialNextButton").click(function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
-    console.log(tutorialPageObject);
     tutorialPageObject.page++;
 
     if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
       //hide next button
-      setTutorialNextButtonVisibility(tutorialIndex, false);
+      setTutorialNextButtonVisibility(tutorialIndex, false)
     }
     updateTutorialPage(tutorialIndex);
-
     return false;
-  });
-
-  $('.menu').click(function(e){
-    updateTutorialPage(0);
   });
 
 // Add tutorial video pop-out
@@ -231,5 +225,15 @@ window.getTutorialVideo = function(tutorialId) {
     window.parent.postMessage({type:"img", imageId:$(this).prev(".enlargeImage").attr("src")}, '*');
   });
 
+   var addImages = function () {
+    var allIcons = document.getElementsByClassName('icon');
+    for (var i = 0;i<allIcons.length;i++) {
+      var iconImg = document.createElement('img');
+      $(iconImg).addClass('iconImg')
+      iconImg.src = "../../images/images/" + $(allIcons[i]).attr('alt') + '.png';
+      allIcons[i].appendChild(iconImg);
+    }
+  }
+  addImages();
   
 });

@@ -1,228 +1,116 @@
 <div class="tutorialContainer">
-  <button type="button" class="btn btn-default back" aria-label="Back">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  </button>
-  <h3 class="tutorialHead">Snapchat Remix Tutorial</h3>
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Snapchat Remix</p>
+  </div>
+  <div class="tutorialNavigationHeader"></div>
 
-  <div class="tutorialNavigationHeader">
-    <ul class="pager">
-      <li class="previous"><a class="tutorialPreviousButton" hrf="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
-      <li class="next"><a class="tutorialNextButton" href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>Let's make an app that can take a photo and set it as the background, draw different-colored dots and lines on the photo, and sends the photo to your friends.</p>
+    <p>Start by connecting the companion app so you can test this on your mobile device. If you don't know how to connect. <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
+    <p>This is the initial screen you will see in the viewer. The components include a label, two HorizontalArrangements, a button, a canvas, a camera, and an AccelerometerSensor.</p>
+    <img src="../images/snap_remix/intro.gif" style="width:50%" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage"> 
+    <h4>2. Add Button click event</h4> 
+    <p>Click on the "Blocks" button in the upper right corner.</p>
+    <img class="enlargeImage" src="../images/snap_remix/clickBlocks.png" style="width:100%" alt="some_text">
+    <p>Click pictureButton and drag <span class="control">when pictureButton.Click</span> to the Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addClick.gif" style="width:100%" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h4>3. Take a photo on click</h4> 
+    <p>Click on the Camera1 drawer and drag out <span class="procedures">call Camera1.TakePicture</span> and add it to <span class="control">when pictureButton.Click</span>.
+    </p>
+    <img class="enlargeImage" src="../images/snap_remix/addCallCam.gif" alt="some_text">
+    <p>Try out your app! See if your app takes a picture when you press the camera button.</p>
+  </div>
+
+  <div class="tutorialContentPage">  
+    <h4>4. Begin to set the Canvas background to the image.</h4>
+    <p>Click on Camera1 again and drag out the <span class="control">when Camera1.AfterPicture</span> block to the Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addAfterPic.gif" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage"> 
+    <h4>5. Set the background image.</h4>
+    <p>Now, click Canvas1 in Blocks and drag out <span class="setters">set Canvas1.BackgroundImage to</span> and add it to <span class="control">when Camera1.AfterPicture</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addSetBack.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-        <p>Let's make an app that can take a photo and set it as the background, draw different-colored dots and lines on the photo, and sends the photo to your friends.</p>
-
-        <p>
-          Start by connecting the companion app so you can test this on your mobile device. If you don't know how to connect. <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.
-        </p>
-        <img src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
-
-        <p>
-          This is the initial screen you will see in the viewer. The components include a label, two HorizontalArrangements, a button, a canvas, a camera, and an AccelerometerSensor.
-        </p>
-
-        <img src="../images/snapRemix/initialSnapMix.png" style="width:50%" alt="some_text">
+    <h4>6. Set background image using the image you just took.</h4>
+    <p>Hover over "image" on the <span class="control">when Camera1.AfterPicture</span> block and click on <span class="variables">get image</span>. Connect it to <span class="setters">set Canvas1.BackgroundImage to</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addGetImg.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-     <p>
-          First, we will change the app so that when you tap the "Take a picture" button, the camera will turn on so you can take a picture.
-        </p>
-        <p>
-          Begin by clicking on the "Blocks" button in the upper right corner.
-        </p>
-        <img src="../images/snapRemix/blocksTab.png" style="width:100%" alt="some_text">
+    <h4>7. Add <span class="control">when Canvas1.Dragged</span>.</h4>
+    <p>Click on Canvas1 and add <span class="control">when Canvas1.Dragged</span> to the Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addDrag.gif" alt="some_text">
+  </div>
 
-        <p>
-          Click on the pictureButton drawer on the left.
-        </p>
-        <img src="../images/snapRemix/pictureButton1.png" style="width:50%" alt="some_text">
-
-        <p>
-          Click and drag the "when pictureButton.Click" button into the workspace.
-        </p>
-        <img src="../images/snapRemix/picButtonClick.png" style="width:100%" alt="some_text">
-</div>
-
-    <div class="tutorialContentPage">  
-<p>
-          Click on the Camera1 drawer.
-        </p>
-        <img src="../images/snapRemix/cameraBlock.png" style="width:80%" alt="some_text">
-
-        <p>
-          Click and drag "call Camera1.TakePicture" to the workspace and add it to "when pictureButton.Click".
-        </p>
-        <img src="../images/snapRemix/callCameraBlock.png" style="width:90%" alt="some_text">
-
-        <p>
-          The blocks should look like this:
-        </p>
-        <img src="../images/snapRemix/cameraBlocks.png" alt="some_text" style="width:90%;">
-
-      </div>
-     
   <div class="tutorialContentPage">
-    <p>
-          Now, we'll set the image we took with the camera to be the background image of the camera. Click on Camera1 again inside blocks.
-        </p>
-        <img src="../images/snapRemix/cameraBlock.png" alt="some_text" style="width:80%;">
+    <h4>8. Add <span class="procedures">call Canvas1.DrawLine</span>.</h4>
+    <p>Click on Canvas1 again and add the <span class="procedures">call Canvas1.DrawLine</span> to the <span class="control">when Canvas1.Dragged</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addDraw.gif" alt="some_text">
+    <p>This procedure tells the app where each line starts and ends.</p>
+  </div>
 
-        <p>
-          Then drag the "when Camera1.AfterPicture" block to the Viewer.
-        </p>
-        <img src="../images/snapRemix/cameraAfterPicture.png" alt="some_text" style="width:80%;">
+  <div class="tutorialContentPage">
+    <h4>9. Add <span class="variables">get prevX</span> to "x1"</h4>
+    <p>Hover over startX on <span class="procedures">call Canvas1.DrawLine</span> and click on <span class="variables">get prevX</span>. Add it to the "x1" socket of <span class="procedures">call Canvas1.DrawLine</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addPrevX.gif" alt="some_text">
+  </div>
 
-        <p>
-          Now click Canvas1 in Blocks.
-        </p>
-        <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:90%;">
+  <div class="tutorialContentPage">
+    <h4>10. Add <span class="variables">get prevY</span> to "y1"</h4>
+    <p>Repeat with <span class="variables">get prevY</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addPrevY.gif" alt="some_text">
+  </div>
 
-        <p>
-           And scroll down and drag "set Canvas1.BackgroundImage to" to the workspace.
-        </p>
-        <img src="../images/snapRemix/setBackgroundImage.png" alt="some_text" style="width:90%;">
-</div>
+  <div class="tutorialContentPage">
+    <h4>11. Add <span class="variables">get currentX</span> to "x2"</h4>
+    <p>And <span class="variables">get currentX</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addCurrentX.gif" alt="some_text">
+  </div>
 
-<div class="tutorialContentPage">        
-  
- <p>
-          Connect "set Canvas1.BackgroundImage to" to "when Camera1.AfterPicture".
-        </p>
-        <img src="../images/snapRemix/joinedAfterPicture.png" alt="some_text" style="width:100%;">
+  <div class="tutorialContentPage">
+    <h4>12. Add <span class="variables">get currenty</span> to "y2"</h4>
+    <p>And finally, <span class="variables">get currenty</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/addCurrentY.gif" alt="some_text">
+  </div>
 
-        <p>
-          Click on the red image button on the "when Camera1.AfterPicture" block and click on "get image".
-        </p>
-        <img src="../images/snapRemix/getImage.png" alt="some_text" style="width:100%;">
+  <div class="tutorialContentPage">
+    <h4>13. Test your app!</h4>
+    <p>Does your app take a picture? Can you set the picture to the canvas background? Can you draw on your image with your finger?</p>
+    <!-- Make these bullet points/check marks? -->
+    <p>If so, move on to the next section where you can add expansions!</p>
+  </div>
 
-        <p>
-          Connect this new block to "set Canvas1.BackgroundImage to" so your blocks look like this:
-        </p>
-        <img src="../images/snapRemix/finishedBackground.png" alt="some_text" style="width:100%;">
-
-        <p>
-          Test the "take a picture" button and watch the image appear on the canvas!
-        </p>
-</div>
-<div class="tutorialContentPage">
-  <p>
-          Now, we'll learn how to draw on the canvas. 
-        </p>
-
-        <p>
-          Click on Canvas1. 
-        </p>
-        <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:100%">
-
-         <p>
-          And choose the "when Canvas1.Dragged" block. 
-        </p>
-        <img src="../images/snapRemix/canvas1Dragged.png" alt="some_text" style="width:100%">
-
-        <p>
-          Click on Canvas1 again and choose "call Canvas1.DrawLine". Connect it to the "when Canvas1.Dragged" block.
-        </p>
-        <img src="../images/snapRemix/drawLine.png" alt="some_text" style="width:100%">
-
-</div>
-<div class="tutorialContentPage">
- <p>
-          The app has to be told where each line should start and end. In order to connect each line to the last, hover over prevX and choose "get prevX".
-        </p>
-        <img src="../images/snapRemix/getPrevX.png" alt="some_text" style="width:100%;">
-
-        <p>
-          Drag "get prevX" to the x1 socket.
-        </p>
-        <img src="../images/snapRemix/getPrevX2.png" alt="some_text" style="width:100%;">
-
-        <p>
-          Repeat with the other sockets, corresponding prevY to y1, currentX to x2, and currentY to y2.
-        </p>
-        <img src="../images/snapRemix/finishedLine.png" alt="some_text" style="width:100%;">
-
-        <p>
-          Take a second to test out your app again using your AI Companion or Emulator!
-        </p>
-</div>
-
- <div class="tutorialContentPage">  
-<p>
-          Finally, we want to clear our canvas by shaking our device.
-        </p>
-       
-        <p>
-          Click on AccelerometerSensor1.
-        </p>
-        <img src="../images/snapRemix/clickAccelerometerSensor1.png" alt="some_text" style="width:90%;">
-
-        <p>
-          Choose the "when AccelerometerSensor1.Shaking" block.
-        </p>
-        <img src="../images/snapRemix/accelerometerSensor.png" alt="some_text" style="width:100%;">
-
-        <p>
-          Now, click on Canvas1.
-        </p>
-        <img src="../images/snapRemix/clickCanvas1.png" alt="some_text" style="width:80%;">
-
-        <p>
-          Scroll down, and drag the "call Canvas1.clear" block to connect it to the "when AccelerometerSensor1.Shaking" block.
-        </p>
-        <img src="../images/snapRemix/canvasClear.png" alt="some_text" style="width:90%;">
-
-        <p>Try it out on your device. What happens?</p>
-        
-        <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
-
-
-      </div>
-
-            <div class="tutorialContentPage">  
-
-<h3>Expand your app</h3>
-      <p>
-        <b>Create a trash button to erase your image instead of shaking.</b>
-        <p>Connect a <a href="#" onclick="return goToHowToTutorial(0)" title="Trash Button Tutorial" >button</a> that clears the canvas similar to how the Accelerometer Sensor does.</p> 
-      </p>
-
-      <p>
-        <b>Draw dots on your picture.</b>
-        <p>Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Dot Tutorial" >draw circle block</a> to draw dots on your picture.</p> 
-      </p>
-
-      <p>
-        <b>Add an image you've already taken to the canvas background.</b>
-        <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Image Picker Tutorial" >image picker component</a> to select an image from your device.</p> 
-      </p>
-
-      <p>
-        <b>Change the color of your lines and dots.</b>
-        <p>Use <a href="#" onclick="return goToHowToTutorial(3)" title="Change Paint Color Tutorial" >buttons</a> to change the color of your paint and even create a <a href="#" onclick="return goToHowToTutorial(4)" title="Random Button Tutorial" >random color button</a>.</p> 
-      </p>
-
-      <p>
-        <b>Add text to the canvas</b>
-        <p>Use a new <a href="#" onclick="return goToHowToTutorial(5)" title="Text Tutorial" >button and text box</a> to add text to the center of the canvas.</p> 
-      </p>
-
-      <p>
-        <b>Create a share button to send your picture to your friends.</b>
-        <p>Use the <a href="#" onclick="return goToHowToTutorial(6)" title="Share Button Tutorial" >sharing component</a> to grab and send your picture.</p> 
-      </p>
-
-      <p>
-        <b>Create a Twitter button.</b>
-        <p>Use the <a href="#" onclick="return goToHowToTutorial(7)" title="Twitter Button Tutorial" >Twitter component</a> to share your picture with the world!</p> 
-      </p>
-</div>
-
-<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-  <button type="button" class="btn tutorialNextButton">Next Step</button>
-</div>
+  <div class="tutorialContentPage">
+    <h4>14. Expand you App</h4>
+    <b>Shake your device to clear your drawing.</b>
+      <p>Add an <a href="#" onclick="return goToHowToTutorial(0)" title="Trash Button Tutorial" >accelerometer sensor</a> that clears the canvas when shaken.</p> 
+      <b>Draw dots on your picture.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(1)" title="Dot Tutorial" >draw circle block</a> to draw dots on your picture.</p> 
+      <b>Add an image you've already taken to the canvas background.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(2)" title="Image Picker Tutorial" >image picker component</a> to select an image from your device.</p> 
+      <b>Change the color of your lines and dots.</b>
+      <p>Use <a href="#" onclick="return goToHowToTutorial(3)" title="Change Paint Color Tutorial" >buttons</a> to change the color of your paint and even create a <a href="#" onclick="return goToHowToTutorial(4)" title="Random Button Tutorial" >random color button</a>.</p> 
+      <b>Add text to the canvas</b>
+      <p>Use a new <a href="#" onclick="return goToHowToTutorial(5)" title="Text Tutorial" >button and text box</a> to add text to the center of the canvas.</p> 
+      <b>Create a share button to send your picture to your friends.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(6)" title="Share Button Tutorial" >sharing component</a> to grab and send your picture.</p>
+      <b>Create a Twitter button.</b>
+      <p>Use the <a href="#" onclick="return goToHowToTutorial(7)" title="Twitter Button Tutorial" >Twitter component</a> to share your picture with the world!</p> 
+  </div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
 </div>
 
 <script src="../scripts/tutorials.js"></script>
