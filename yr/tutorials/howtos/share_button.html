@@ -1,0 +1,48 @@
+<div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add a Button</h4>
+    <p>In Designer, go to User Interface and add a  <span class='icon' alt='button'></span> Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add a Sharing component</h4>
+    <p>Click Social and add <span class='icon' alt='sharing'></span> Sharing component to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addSharing.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Add <span class="control">when Button1.Click</span></h4>
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Add <span class="procedures">call Sharing1.ShareFileWithMessage</span></h4>
+    <p> Then click on <span class='icon' alt='sharing'></span> Sharing1 and connect the <span class="procedures">call Sharing1.ShareFileWithMessage</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/shareWMess.gif" alt="some_text">
+    <!-- TODO: Is there a better way to do this? -->
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Add <span class="procedures">call Canvas1.SaveAs</span></h4>
+    <p>Next, click on <span class='icon' alt='canvas'></span> Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "file" socket of <span class="procedures">call Sharing1.ShareFileWithMessage</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/callSaveAs.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>6. Add <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and add a <span class="text">" "</span> block to the "fileName" socket of <span class="procedures">call Canvas1.SaveAs</span>. Change the text inside to "myPic" or anything else you want to name your file.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/picText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>7. Add another <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and and add a <span class="text">" "</span> block to the "message socket" of <span class="procedures">call Sharing1.ShareFileWithMessage</span>. Change the text inside to "Look at my picture!" or anything else you want to name your file.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/messageText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>8. Test out your app!</h4>
+    <p>Once it works, you can try out sending pictures to your friends! This component works similarly to other sharing components so try them as well!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>

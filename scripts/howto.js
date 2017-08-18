@@ -18,10 +18,6 @@ $(document).ready( function() {
    $(".back").attr("style", "display:none;");
  });
 
-
-$(".howtohead").click(function(e){
-  alert("hey");
-});
 // Add tutorial video pop-out
 window.getTutorialVideo = function(tutorialId) {
   window.parent.postMessage({type:"video", youtubeId:tutorialId}, '*');
