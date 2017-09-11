@@ -157,10 +157,22 @@ $(document).ready( function() {
  }
  $(".enlargeImage").off('click').on('click', function(imageId){
   window.parent.postMessage({type:"img", imageId:$(this).attr("src")}, '*');
+  sendAnalyticsEvent({
+    hitType: 'event',
+    eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+    eventAction: 'enlargeImage',
+    eventLabel: $(this).attr("src")
+  });
 });
 
  $(".zoom").off('click').on('click', function(imageId){
   window.parent.postMessage({type:"img", imageId:$(this).prev(".enlargeImage").attr("src")}, '*');
+  sendAnalyticsEvent({
+    hitType: 'event',
+    eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+    eventAction: 'enlargeImage',
+    eventLabel: $(this).prev(".enlargeImage").attr("src")
+  });
 });
 
  // }
@@ -197,8 +209,15 @@ var setupTutorial = function() {
 
   $(".tutorialPreviousButton").off('click').on('click', function(e) {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
-    
     tutorialIndexToPageObject[tutorialIndex].page--;
+    var analyticsTutorialName = ($(this.closest(".tutorialContainer")).prev().prop("tagName") == "H3" ? $(this.closest(".tutorialContainer")).prev().text() : $(this.closest(".tutorialContainer")).parent().prev().text());
+    sendAnalyticsEvent({
+      hitType: 'event',
+      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML + '-' + analyticsTutorialName,
+      eventAction: 'previousButton',
+      eventValue: tutorialIndexToPageObject[tutorialIndex].page
+    });
+
     //show next button
     setTutorialNextButtonVisibility(tutorialIndex, true)
     updateTutorialPage(tutorialIndex);
@@ -209,6 +228,13 @@ var setupTutorial = function() {
     var tutorialIndex = this.closest(".tutorialContainer").getElementsByClassName("tutorialIndexDiv")[0].innerHTML;
     var tutorialPageObject = tutorialIndexToPageObject[tutorialIndex];
     tutorialPageObject.page++;
+    var analyticsTutorialName = ($(this.closest(".tutorialContainer")).prev().prop("tagName") == "H3" ? $(this.closest(".tutorialContainer")).prev().text() : $(this.closest(".tutorialContainer")).parent().prev().text());
+    sendAnalyticsEvent({
+      hitType: 'event',
+      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML + '-' + analyticsTutorialName,
+      eventAction: 'nextButton',
+      eventValue: tutorialIndexToPageObject[tutorialIndex].page
+    });
 
     if(tutorialPageObject.page == tutorialPageObject.totalPageNum - 1) {
       //hide next button
@@ -252,3 +278,10 @@ window.getTutorialVideo = function(tutorialId) {
   howToSetup();
 
 });
+
+sendAnalyticsEvent = function(eventObject) {
+  if(document.getElementById("hasAnalytics") && document.getElementById("hasAnalytics").innerHTML == "1") {
+    ga('send', eventObject);
+    //console.log(eventObject);
+  }
+}
