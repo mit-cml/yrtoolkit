@@ -10,78 +10,78 @@
     <p>Let's make an app that can take a photo and set it as the background, draw different-colored dots and lines on the photo, and sends the photo to your friends.</p>
     <p>Start by connecting the companion app so you can test this on your mobile device. If you don't know how to connect. <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">click here</a>.</p>
     <p>This is the initial screen you will see in the viewer. The components include a label, two HorizontalArrangements, a button, a canvas, a camera, and an AccelerometerSensor.</p>
-    <img src="../images/snap_remix/intro.gif" style="width:50%" alt="some_text">
+    <img src="images/snap_remix/intro.gif" style="width:50%" alt="some_text">
   </div>
 
   <div class="tutorialContentPage"> 
     <h4>2. Add Button click event</h4> 
     <p>Click on the "Blocks" button in the upper right corner.</p>
-    <img class="enlargeImage" src="../images/snap_remix/clickBlocks.png" style="width:100%" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/clickBlocks.png" style="width:100%" alt="some_text">
     <p>Click pictureButton and drag <span class="control">when pictureButton.Click</span> to the Viewer.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addClick.gif" style="width:100%" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addClick.gif" style="width:100%" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">  
     <h4>3. Take a photo on click</h4> 
     <p>Click on the Camera1 drawer and drag out <span class="procedures">call Camera1.TakePicture</span> and add it to <span class="control">when pictureButton.Click</span>.
     </p>
-    <img class="enlargeImage" src="../images/snap_remix/addCallCam.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addCallCam.gif" alt="some_text">
     <p>Try out your app! See if your app takes a picture when you press the camera button.</p>
   </div>
 
   <div class="tutorialContentPage">  
     <h4>4. Begin to set the Canvas background to the image.</h4>
     <p>Click on Camera1 again and drag out the <span class="control">when Camera1.AfterPicture</span> block to the Viewer.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addAfterPic.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addAfterPic.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage"> 
     <h4>5. Set the background image.</h4>
     <p>Now, click Canvas1 in Blocks and drag out <span class="setters">set Canvas1.BackgroundImage to</span> and add it to <span class="control">when Camera1.AfterPicture</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addSetBack.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addSetBack.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>6. Set background image using the image you just took.</h4>
     <p>Hover over "image" on the <span class="control">when Camera1.AfterPicture</span> block and click on <span class="variables">get image</span>. Connect it to <span class="setters">set Canvas1.BackgroundImage to</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addGetImg.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addGetImg.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>7. Add <span class="control">when Canvas1.Dragged</span>.</h4>
     <p>Click on Canvas1 and add <span class="control">when Canvas1.Dragged</span> to the Viewer.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addDrag.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addDrag.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>8. Add <span class="procedures">call Canvas1.DrawLine</span>.</h4>
     <p>Click on Canvas1 again and add the <span class="procedures">call Canvas1.DrawLine</span> to the <span class="control">when Canvas1.Dragged</span> block.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addDraw.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addDraw.gif" alt="some_text">
     <p>This procedure tells the app where each line starts and ends.</p>
   </div>
 
   <div class="tutorialContentPage">
     <h4>9. Add <span class="variables">get prevX</span> to "x1"</h4>
     <p>Hover over startX on <span class="procedures">call Canvas1.DrawLine</span> and click on <span class="variables">get prevX</span>. Add it to the "x1" socket of <span class="procedures">call Canvas1.DrawLine</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addPrevX.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addPrevX.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>10. Add <span class="variables">get prevY</span> to "y1"</h4>
     <p>Repeat with <span class="variables">get prevY</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addPrevY.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addPrevY.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>11. Add <span class="variables">get currentX</span> to "x2"</h4>
     <p>And <span class="variables">get currentX</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addCurrentX.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addCurrentX.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>12. Add <span class="variables">get currenty</span> to "y2"</h4>
     <p>And finally, <span class="variables">get currenty</span>.</p>
-    <img class="enlargeImage" src="../images/snap_remix/addCurrentY.gif" alt="some_text">
+    <img class="enlargeImage" src="images/snap_remix/addCurrentY.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
@@ -113,4 +113,4 @@
   </div>
 </div>
 
-<script src="../scripts/tutorials.js"></script>
+<script src="scripts/tutorials.js"></script>

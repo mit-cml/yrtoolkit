@@ -208,7 +208,7 @@ window.getTutorialVideo = function(tutorialId) {
      newDiv.appendChild(tutImg);
 
      var zoom = document.createElement("img");
-     zoom.src = "../images/zoom.png";
+     zoom.src = "images/zoom.png";
      zoom.className = "zoom";
      // zoom.css({top: '200px', left: '200px', position:'absolute'});
      newDiv.appendChild(zoom);

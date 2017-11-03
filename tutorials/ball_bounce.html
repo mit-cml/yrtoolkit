@@ -8,7 +8,7 @@
 
   <div class="tutorialContentPage">
     <h4>1. Introduction</h4>
-    <img class="tutVid" src="../images/ball_bounce/ball_vid.png" onclick="getTutorialVideo('w0yxJSlC00w')">
+    <img class="tutVid" src="images/ball_bounce/ball_vid.png" onclick="getTutorialVideo('w0yxJSlC00w')">
     <p>
       In this tutorial, you will learn about animation in App Inventor by making a Ball (a sprite) bounce around
       on the screen (on a Canvas).
@@ -21,77 +21,77 @@
   <div class="tutorialContentPage">
   <h4>2. Add a Canvas</h4>
     <p>Click on the Drawing and Animation drawer and drag a Canvas component to your viewer.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/addCanvas.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>3. Set Height and Width to "Fill parent"</h4>
     <p>In the Properties panel, click Height and set it to "Fill parent". Do the same with the Width.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setHW.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/setHW.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>4. Add a Ball</h4>
     <p>Click on the Drawing and Animation drawer again and drag out a Ball component onto the Canvas.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/addBall.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/addBall.gif" alt="some_text">
   </div>
 
     <div class="tutorialContentPage">
     <h4>5. Set Radius to 15</h4>
     <p>In the Properties panel, type "15" into the Radius texbox. This will make the ball easier to fling.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setRadius.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/setRadius.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>6. Add <span class="control">when Ball1.Flung</span></h4>
     <p>Click Blocks.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/clickBlocks.png" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/clickBlocks.png" alt="some_text">
     <p>Click Ball1 and click and drag <span class="control">when Ball1.Flung</span> to the Viewer.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/ballFlung.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/ballFlung.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
    <h4>7. Add <span class="setters">set Ball1.Heading to</span></h4>
    <p>Click on Ball1 again. Click and drag the <span class="setters">set Ball1.Heading to</span> block and add it to <span class="control">when Ball1.Flung</span>.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setHead.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/setHead.gif" alt="some_text">
  </div>
 
 <div class="tutorialContentPage">
    <h4>8. Add <span class="variables">get heading</span></h4>
    <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "heading" and click on <span class="variables">get heading</span>. Add it to the <span class="getHead">set Ball1.Heading to</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/addCanvas.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/addCanvas.gif" alt="some_text">
  </div>
 
  <div class="tutorialContentPage">
   <h4>9. Add <span class="setters">set Ball1.Speed to</span></h4>
   <p>Try clicking the different emojis. What happens now?</p>
   <p>Let's now make the angry emoji work too. Right click (or ctrl/control click) on the <span class="control">when happyButton.Click</span> block, then click Duplicate.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setSpeed.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/setSpeed.gif" alt="some_text">
 </div>
 
  <div class="tutorialContentPage">
    <h4>10. Add <span class="variables">get speed</span></h4>
    <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "speed" and click on <span class="variables">get speed</span>. Add it to the <span class="setters">set Ball1.Speed to</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/getSpeed.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/getSpeed.gif" alt="some_text">
     <p>Try it out on your device. You'll notice that it gets "stuck" on the edge of the screen. Next, we'll add an event to make the ball bounce off the edge of the screen.</p>
  </div>
 
 <div class="tutorialContentPage">
    <h4>11. Add <span class="variables">when Ball1.EdgeReached</span></h4>
    <p>Click on Ball1 again and drag out the <span class="variables">when Ball1.EdgeReached</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/ballEdge.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/ballEdge.gif" alt="some_text">
  </div>
 
  <div class="tutorialContentPage">
    <h4>12. Add <span class="procedures">call Ball1.Bounce</span></h4>
    <p>Click on Ball1 again and connect the <span class="procedures">call Ball1.Bounce</span> block to <span class="variables">when Ball1.EdgeReached</span>.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/ballBounce.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/ballBounce.gif" alt="some_text">
  </div>
 
   <div class="tutorialContentPage">
    <h4>13. Add <span class="variables">get edge</span></h4>
    <p>Go to the <span class="control">when Ball1.EdgeReached</span> block. Hover over "edge" and click on <span class="variables">get edge</span>. Add it to the <span class="control">when Ball1.EdgeReached</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/getEdge.gif" alt="some_text">
+    <img class="enlargeImage" src="images/ball_bounce/getEdge.gif" alt="some_text">
     <p>Try it out on your device. Your ball should bounce off the edges.</p>
  </div>
 
@@ -111,4 +111,4 @@
   <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
 </div>
 
-<script src="../scripts/tutorials.js"></script>
+<script src="scripts/tutorials.js"></script>
