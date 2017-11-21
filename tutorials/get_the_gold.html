@@ -1,0 +1,88 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Get The Gold</p>
+  </div>
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>In this game you will be flinging a pirate ship across the screen with your finger!</p>
+    <p>There will be a coin on the screen that you will be trying to catch with your pirate ship.</p>
+    <p>If you don't catch it quick enough a timer will cause it to move to a new location.</p>
+
+    <!--Insert image of the game-->
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Fling the Pirate Ship</h4>
+    <p>Drag the when PirateSprite.Flung block onto your viewer.</p>
+
+    <img class="enlargeImage" src="../images/get_the_gold/pirateShipFlung.gif"></img>
+
+
+    <p></p>
+    <p>Within the block we will set the heading to the passed-in variable heading. This will make the pirate ship go in the direction that you fling it.</p>
+
+    <img class="enlargeImage" src="../images/get_the_gold/pirateShipFlungSetHeading.gif"></img>
+    <p></p>
+    <p><b>Test your code.</b> Does your pirate ship move when you fling it?</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>3. Bounce When On Edge</h4>
+    <p>Now we will make the pirate ship bounce when it touches the edge.</p>
+    <p>Drag out the when PirateSprite.Edge Reached block onto your viewer.</p>  
+    <img class="enlargeImage" src="../images/get_the_gold/pirateShipEdgeReached.gif"></img>
+    <p></p>
+    <p>Within this block we will tell the pirate ship to bounce. Drag out the call PirateSprite.Bounce edge block and attach the get edge command.</p>
+    <!--Insert gif-->
+    <p></p>
+    <p><b>Test your code.</b> Does the pirate ship bounce when you fling it at an edge.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>4. Colliding With the Coin</h4>
+    <p>Now we will write the code for when the pirate ship collides, or touches, the coin. When they touch, the coin should become invisible.</p>
+    <p>Drag out the <i>when PirateSprite.CollideWith other</i> block along with an <i>if-then</i> statement</p>
+    <img class="enlargeImage" src="../images/get_the_gold/pirateCollidedWithIf.gif"></img>
+    <p></p>
+    <p>For the <i>if</i> part of the statement we will say "if the pirate ship collides with the coin..."</p>
+    <img class="enlargeImage" src="../images/get_the_gold/pirateCollidedWithIfStatement.gif"></img>
+    <p></p>
+    <p>"...then set the coin's visibility to false." Meaning if the coin is touched, make it disappear.</p>
+    <img class="enlargeImage" src="../images/get_the_gold/pirateCollidedWithThenStatement.gif"></img>
+    <p></p>
+    <p><b>Test your code.</b> Does the coin disappear when the pirate ship touches it?</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>5. Timer</h4>
+    <p>Here we will be using the when Clock1.Timer for when the timer runs out and we want the coin to move to a new location.</p>
+    <img class="enlargeImage" src="../images/get_the_gold/clockCallsCoin.gif"></img>
+    <p></p>
+    <p>The coin should move to a new random location that is on the canvas. We will use the random integer function.</p>
+    <img class="enlargeImage" src="../images/get_the_gold/clockYPosition.gif"></img>
+    <p></p>
+    <p>To make things easier you can duplicate your blocks for the y-position and change the components accordingly:</p>
+    <img class="enlargeImage" src="../images/get_the_gold/clockXPosition.gif"></img>
+    <p></p>
+    <p><b>Test your code.</b> If your pirate ship doesn't touch the coin for a while, does the coin move to a new position?</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>6. Reset Button</h4>
+    <p>Finally we will set up the reset button so that the coin reappears and the user can play again.</p>
+    <img class="enlargeImage" src="../images/get_the_gold/resetButton.gif"></img>
+    <p></p>
+    <p>Using the when ResetButton.Click block, set the coinSprite visibility to true. This will make the coin visible again.</p>
+    <img class="enlargeImage" src="../images/get_the_gold/resetVisibility.gif"></img>
+    <p></p>
+    <p><b>Test your code.</b> Does the coin reappear if you press the reset button?</p>
+  </div>
+
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+
+<script src="../scripts/tutorials.js"></script>
