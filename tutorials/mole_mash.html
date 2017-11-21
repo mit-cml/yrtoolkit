@@ -9,8 +9,15 @@
   <div class="tutorialContentPage">
     <h4>1. Introduction</h4>
     <p>
-      This tutorial will show you how to design a game where a mole moves once every half-second. If it is touched, the score increases by one, and the phone vibrates. Pressing restart resets the score to zero.
-    </p>
+      In Mole Mash your mole is constantly moving. It moves when you tap on it and it moves if you don't tap it quick enough! You get points when you tap the mole.
+
+      For this game we will be:</p>
+    <ul>
+      <li>Keeping count of the score</li>
+      <li>Moving the mole to a random location</li>
+      <li>Using the timer to tell the mole when to move</li>
+    </ul>
+ 
     <p>
       Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="howtos/companion-wifi.html" class="setup">click here</a>.
     </p>
@@ -20,217 +27,115 @@
 <!-- Rename the screen to MoleMash? -->
 
   <div class="tutorialContentPage">
-    <h4>2. Add a Canvas</h4>
-    <p>Click on "Drawing and Animation". Click and drag a Canvas to your Viewer. Go to Properties and set the height to 300px and the width to 300px.</p>
-    <img class="enlargeImage" src="images/mole_mash/addCanvas.gif" alt="some_text">
+
+    <h4>1. Create the Score Variable</h4>
+    <p>In computer science we use "variables" to keep track of values.</p>
+    <p>The score is a value that we want to know at all times. We will create a global variable called <i>score</i> and set it equal to zero. This process is known as <b>initializing a variable.</b></p>
+    <img class="enlargeImage" src="../images/mole_mash/initializeScore.gif"></img>
+    <p>We can now use the variable <i>score</i> anywhere in our code.<p>
   </div>
 
   <div class="tutorialContentPage">
-    <h4>3. Add a Sprite</h4>
-    <p>Still in "Drawing and Animation", click and drag an ImageSprite to your Canvas. Go to Properties and download <a href="http://appinventor.mit.edu/explore/sites/all/files/ai2tutorials/moleMash/mole.png" target="_blank">this image</a> to your computer, then upload it to the Picture property.</p>
-    <img class="enlargeImage" src="images/mole_mash/addSprite.gif" alt="some_text">
+    <h4>2. Increase the Score</h4>
+    <p>The score increases when the player touches the mole.</p>
+    <p>We will begin by dragging out the<b> when Mole.Touched </b> block.</p>
+    <img class="enlargeImage" src="../images/mole_mash/whenMoleTouchedBlock.gif"></img><p></p>
+    <p>Every time the mole is touched we want the global <i>score</i> to increase by one. We will be resetting the <i>score</i> variable to:</p>
+    <p><b> (the current score + 1) </b></p>
+    <p> To do this we will <b>get</b> the value of <i>score</i> and add one to it</p>
+    <img class="enlargeImage" src="../images/mole_mash/scoreAlgorithm.gif"></img>
+    <p></p>
+    <p>Now we want to change the value of our variable <i>score</i> to the new score. We do so by <b>setting</b> the variable to (the current score + 1).</p>
+    <img class="enlargeImage" src="../images/mole_mash/setScore.gif"></img>
   </div>
 
   <div class="tutorialContentPage">
-    <h4>4. Add a Label</h4>
-    <p>Click on the User Interface drawer and drag a Label component to your Viewer. Go to Properties and change your Label's text to "Score: --"</p>
-    <img class="enlargeImage" src="images/mole_mash/addLabel.gif" alt="some_text">
+    <h4>3. Update Score on the App</h4>
+    <p>So far we've changed the value of the <i>score</i> variable but we can't see these changes on our app, so let's fix that!</p>
+    <p>In our app the <i>ScoreLabel</i> component displays the score. We will change the text of the <i>ScoreLabel</i> by <b>setting</b> it everytime the user touches the mole.</p>
+    <p>Begin by dragging out the set ScoreLabel.Text to into your blocks. 
+    <img class="enlargeImage" src="../images/mole_mash/dragSetScoreLabel.gif"></img>
+    <p></p>
+    <p>If the user has ten points then we want the ScoreLabel to show "Score: 10" How do we combine a piece of text with the value of the <i>score</i> variable?</p>
+    <p>Use the <span class="text">join</span> block from the text compoments!</p>
+    <img class="enlargeImage" src="../images/mole_mash/updateScoreCode.gif"></img>
+    <p></p>
   </div>
 
   <div class="tutorialContentPage">
-    <h4>5. Add a Button</h4>
-    <p>Again in User Interface, click and drag a Button to your Viewer. Go to Properties and change your Button's text to Reset"</p>
-    <img class="enlargeImage" src="images/mole_mash/addButton.gif" alt="some_text">
+    <h4>4. Test Your Code</h4>
+    <p>So far, your code should look like this:</p>
+    <img class="enlargeImage" src="../images/mole_mash/updateScoreCode.png"></img>
+    <p></p>
+    <p><b>Use your companion to test your code!</b> Does the score change when you tap the mole on your companion? If not, find the mistake in your code before moving on!</p>
+    <p>Always test your code while you are working on it, it's an important step!</p>
   </div>
 
   <div class="tutorialContentPage">
-    <h4>6.Add a Sound</h4>
-    <p>Click Sensors and click and drag a Sound component to your viewer. It should appear under "Non-Visible Componenets".</p>
-    <img class="enlargeImage" src="images/mole_mash/addSound.gif" alt="some_text">
+    <h4>4. Reset the Score</h4>
+    <p>Now lets reset the score when the user presses the Reset Button<p>
+    <p>Call the event when ResetButton.Click, and inside of it set the global score to zero.</p>
+    <img class="enlargeImage" src="../images/mole_mash/resetButtonSetScore.gif"></img>
+    <p></p>
+    <p>If you test your app you'll notice that it seems as though the score does not reset when you press the reset button. This is because the score label has not been updated.<p>
+    <p>To update the score label we will use the same lines of code that we used when we touched the mole. Instead of the same code repeated numerous times we can define a <b>procedure</b>. This makes your code easier to read.</p>
+    <p>Start by defining a new procedure called update score</p>
+    <img class="enlargeImage" src="../images/mole_mash/updateScoreProcedure1.gif"></img>
+    <p></p>
+    <p>Then drag in the blocks you created earlier for updating the score label.</p>
+    <img class="enlargeImage" src="../images/mole_mash/updateScoreProcedure2.gif"></img>
+    <p></p>
+    <p>Now you can use this procedure whenever you want to update the score label:</p>
+    <img class="enlargeImage" src="../images/mole_mash/callUpdateScore.gif"></img>
+    <p></p>
+
+  </div>
+
+   <div class="tutorialContentPage">
+    <h4>5. Move the Mole</h4>
+    <p>Now that we have the score set up we can move the mole.</p>
+    <p>To move the mole we will be setting the mole's x and y position to a random location on our canvas.</p>
+    <p>The random location must be between zero and the canvas width (or height) minus the mole's width (or height). So we will take that and multiply it by a random fraction. </p>
+    <p>This is what your code should look like to move the mole:</p>
+    <img class="enlargeImage" src="../images/mole_mash/moveMoleCode.png"></img>
+    <p></p>
+    <p>Make sure you understand what this code is doing before you move on.</p>
+    <p>When you put this code within your When mole.touched does the mole move when you click on him?</p>
+    <img class="enlargeImage" src="../images/mole_mash/moveMoleCodeInProcedure.png"></img>
+    <p></p>
   </div>
 
   <div class="tutorialContentPage">
-    <h4>6.Add a Clock</h4>
-    <p>Click Media and click and drag a Clock component to your viewer. It should appear under "Non-Visible Componenets". Go to Properties and set the TimeInterval property to 500 milliseconds. This makes the mole move every half second.</p>
-    <img class="enlargeImage" src="images/mole_mash/addClock.gif" alt="some_text">
+    <h4>6. Make a Procedure to Move the Mole</h4>
+    <p>Once again we will be making a procedure, but this time to move the mole. </p>
+    <p>Take the two lines of code you made in the previous step and put them in a new procedure named moveMole.</p>
+    <img class="enlargeImage" src="../images/mole_mash/moveMoleProcedure.gif"></img>
+    <p></p>
+    <p>Don't forget to put your new procedure back into your code!</p>
   </div>
 
   <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">to MoveMole</span></h4>
-   <p>Click Blocks.</p>
-   <img class="enlargeImage" src="images/mole_mash/clickBlocks.png" alt="some_text">
-   <p>Click on Procedures. Drag the <span class="procedures">procedure then do</span> block to your Viewer. Rename it to "MoveMole".</p>
-   <img class="enlargeImage" src="images/mole_mash/moveMole.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>8. Add <span class="setters">set ImageSprite1.X to</span></h4>
-   <p>Click on ImageSprite1 and click and drag the <span class="setters">set ImageSprite1.X to</span> to your <span class="procedures">to MoveMole</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/setImgX.gif" alt="some_text">
- </div>
-
-<div class="tutorialContentPage">
-   <h4>8. Add <span class="setters">set ImageSprite1.Y to</span></h4>
-   <p>Click on ImageSprite1 and click and drag the <span class="setters">set ImageSprite1.Y to</span> to your <span class="procedures">to MoveMole</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/setImgY.gif" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>10. Add two <span class="math">__ x __</span> blocks</h4>
-   <p>Click on Math and add one <span class="math">__ x __</span> block to <span class="setters">set ImageSprite1.X to</span>. Click Math again and add a second <span class="math">__ x __</span> block to <span class="setters">set ImageSprite1.Y to</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/multiply.gif" alt="some_text">
- </div>
+    <h4>7. Set up the Mole Timer</h4>
+    <p>If you don't tap on the mole quick enough, it will move by itself!</p>
+    <p>We do this by using the Mole Timer and calling our moveMole procedure once the time is up:</p>
+    <img class="enlargeImage" src="../images/mole_mash/moleTimer.gif"></img>
+    <p></p>
+    <p>Can you explain why it was helpful to use a procedure for moving the mole?</p>
+    <p><b>Test your code:</b> Does the mole move after a while if you don't tap on it?</p>
+  </div>
 
   <div class="tutorialContentPage">
-   <h4>10. Add two <span class="math">random fraction</span> blocks</h4>
-   <p>Click on Math and add one <span class="math">random fraction</span> block to the first socket of your first <span class="math">__ x __</span> block. Click Math again and add a second <span class="math">random fraction</span> block to the first socket of your second <span class="math">__ x __</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/randFraction.gif" alt="some_text">
- </div>
+    <h4>8. Vibrate on Touch!</h4>
+    <p>Let's make a fun addition where the mole makes a noise and causes your phone to vibrate when you tap on him.</p>
 
-  <div class="tutorialContentPage">
-   <h4>10. Add two <span class="math">__ - __</span> blocks</h4>
-   <p>Click on Math and add one <span class="math">__ - __</span> block to the second socket of your first <span class="math">__ x __</span> block. Click Math again and add a second <span class="math">__ - __</span> block to the second socket of your second <span class="math">__ x __</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/minus.gif" alt="some_text">
- </div>
+    <p>Add the Noise.Vibrate block into your when mole.Touched block and set the time to 100 milliseconds.</p>
+    <img class="enlargeImage" src="../images/mole_mash/vibrateOnTouch.gif"></img>
+    <p></p>
+  </div>
 
-   <div class="tutorialContentPage">
-   <h4>10. Add <span class="getters">Canvas1.Width</span> and <span class="getters">ImageSprite1.Width</span></h4>
-   <p>Click on Canvas1 and add <span class="getters">Canvas1.Width</span> to the first socket of your first <span class="math">__ - __</span> block. Click ImageSprite1 and add <span class="getters">ImageSprite1.Width</span> to the second socket of your first <span class="math">__ - __</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/canvasMoleW.gif" alt="some_text">
- </div>
 
-  <div class="tutorialContentPage">
-   <h4>10. Add <span class="getters">Canvas1.Height</span> and <span class="getters">ImageSprite1.Height</span></h4>
-   <p>Click on Canvas1 and add <span class="getters">Canvas1.Height</span> to the first socket of your second <span class="math">__ - __</span> block. Click ImageSprite1 and add <span class="getters">ImageSprite1.Height</span> to the second socket of your second <span class="math">__ - __</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/canvasMoleH.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>10. Add <span class="variables">initialize global score to</span> and <span class="math">0</span></h4>
-   <p>Click on Variables and drag <span class="variables">initialize global score to</span> to your Viewer. Change "name" to "score". Then, click Math and drag a <span class="math">0</span> to your <span class="variables">initialize global score to</span> block.</p>
-   <img class="enlargeImage" src="images/mole_mash/initializeScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">to UpdateScore</span></h4>
-   <p>Click on Procedures. Drag the <span class="procedures">procedure then do</span> block to your Viewer. Rename it to "UpdateScore".</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="setters">set Label1.Text to</span></h4>
-   <p>Click on Label1. Drag the <span class="setters">set Label1.Text to</span> block to <span class="procedures">to UpdateScore</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="text">join</span></h4>
-   <p>Click Text. Drag the <span class="text">join</span> block to <span class="setters">set Label1.Text to</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="text">Score: </span></h4>
-   <p>Click Text. Drag the <span class="text">" "</span> block to the first socket of <span class="text">join</span>. Change its text to "Score: "</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="variables">get __</span></h4>
-   <p>Click Variable. Drag the <span class="variables">get __</span> block to the second socket of <span class="text">join</span>. Click on the dropdown and choose "score".</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-   <div class="tutorialContentPage">
-   <h4>7. Add <span class="control">when Clock1.Timer</span></h4>
-   <p>Click Clock1 and drag the <span class="control">when Clock1.Timer</span> block to your Viewer.</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">call MoveMole</span></h4>
-   <p>Click Procedures and drag the <span class="procedures">call ___</span> block to <span class="control">when Clock1.Timer</span>. Click on the dropdown and choose "MoveMole".</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="controls">when ImageSprite1.Touched</span></h4>
-   <p>Click ImageSprite and drag the <span class="controls">when ImageSprite1.Touched</span> block to your Viewer.</p>
-   <img class="enlargeImage" src="images/mole_mash/updateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="variables">set global score to</span></h4>
-   <p>Click Variables and drag the <span class="variables">set global score to</span> block to <span class="controls">when ImageSprite1.Touched</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/setGlobalScore.gif" alt="some_text">
- </div>
-
-   <div class="tutorialContentPage">
-   <h4>7. Add <span class="math">__ + __</span></h4>
-   <p>Click Math and drag the <span class="math">__ + __</span> block to <span class="variables">set global score to</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/setGlobalScorePlus.gif" alt="some_text">
- </div>
-
-   <div class="tutorialContentPage">
-   <h4>7. Add <span class="variables">get global score</span> and <span class="math">1</span></h4>
-   <p>Click Variables and drag the <span class="variables">get global score</span> block to the first socket of  <span class="math">__ + __</span>. Click Math and drag the <span class="math">0</span> block to the second socket of  <span class="math">__ + __</span>. Change the "0" to a "1".</p>
-   <img class="enlargeImage" src="images/mole_mash/getGlobalScorePlus.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">call Sound1.Vibrate</span></h4>
-   <p>Click Sound1 and drag the <span class="procedures">call Sound1.Vibrate</span> block to <span class="controls">when ImageSprite1.Touched</span>. Click Math and add <span class="math">0</span> to the millisecs socket. Change the "0" to "100".</p>
-   <img class="enlargeImage" src="images/mole_mash/vibrateSound.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">call UpdateScore</span></h4>
-   <p>Click Procedures and drag the <span class="procedures">call UpdateScore</span> block to <span class="controls">when ImageSprite1.Touched</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/callUpdateScore.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">call MoveMole</span></h4>
-   <p>Click Procedures and drag the <span class="procedures">call MoveMole</span> block to <span class="controls">when ImageSprite1.Touched</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/callMoveMole.gif" alt="some_text">
- </div>
-
-   <div class="tutorialContentPage">
-   <h4>7. Add <span class="controls">when Button1.Click</span></h4>
-   <p>Finally, we'll add the Reset Button. Click Button1 and drag the <span class="controls">when Button1.Click</span> block to the Viewer.</p>
-   <img class="enlargeImage" src="images/mole_mash/buttonClick.gif" alt="some_text">
- </div> 
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="variables">set global score to</span></h4>
-   <p>Click Variables and drag the <span class="variables">set global __ to</span> block to <span class="controls">when Button1.Click</span>. Click on the dropdown and choose "score". Click Math and drag a <span class="math">0</span> block to <span class="variables">set global score to</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/buttonClick.gif" alt="some_text">
- </div>
-
-  <div class="tutorialContentPage">
-   <h4>7. Add <span class="procedures">call UpdateScore</span></h4>
-   <p>Click Procedures and drag the <span class="procedures">call UpdateScore</span> block to <span class="controls">when Button1.Click</span>.</p>
-   <img class="enlargeImage" src="images/mole_mash/buttonClick.gif" alt="some_text">
- </div>
-
-   <div class="tutorialContentPage">
-   <h4>7. Final Blocks</h4>
-   <p>When you're finished, check to make sure your blocks look like this:</p>
-   <img class="enlargeImage" src="images/mole_mash/finalBlocks.png" alt="some_text">
- </div> 
-
- <div class="tutorialContentPage">
-  <h4>13. Test your App!</h4>
-  <p>When you open your app on your device check to see if:</p>
-  <ul> 
-    <li>The sprite moves around the screen at regular intervals</li> <!-- Link this -->
-    <li>The score increments when the sprite is touched</li>
-    <li>Touching the reset button sets the score to 0.</li>
-  </ul>
-</div>
-<br/>
-<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-</div>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
 
 <script src="scripts/tutorials.js"></script>
