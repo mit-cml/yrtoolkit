@@ -1,0 +1,81 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Magic 8</p>
+  </div>
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>In this tutorial we will make a simple Magic 8 ball that you can use on your phone!</p>
+
+    <p>By the end you should be able to ask the Magic 8 ball a yes or no question and get a response when you click on it in your app.</p>
+
+    <p>Before starting, make sure you connect your app to your companion device. To do so go to the Connect tab in the top display bar and click on AI companion.</p>
+
+    <!--Insert image of the game-->
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. When the ball is clicked...</h4>
+    <p>Drag the when magic_8_ball.Click block onto your viewer.</p>
+    <img class="enlargeImage" src="../images/magic_eight/magic8_when_clicked_block.gif"></img>
+    <p></p>
+
+    <p>With this block we will tell the magic 8 ball what to do when we touch/click it in our app</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>3. Set the text</h4>
+    <p>When the Magic 8 ball is clicked we want it to display a new message to us.</p>
+    <p>We will update the message by setting the text of the Magic 8 ball when it is clicked. Do this by dragging out the <i>set magic_8_ball.text to </i> block.</p>  
+    <img class="enlargeImage" src="../images/magic_eight/magic8_set_text_block.gif"></img>
+    <p></p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>4. List of responses</h4>
+    <p>The Magic 8 Ball will have a list of responses to choose from to display when you ask a question.</p>
+
+    <p>Start by dragging out the <i>make a list</i> block.</p>
+    <img class="enlargeImage" src="../images/magic_eight/magic8_drag_out_make_list.gif"></img>
+    <p></p>
+    <p>Now we will populate the list with responses. Drag in text blocks and write the words "Yes" and "No" as the responses.</p>
+    <p><b>Bonus:</b> Can you add more responses? <i>Hint:</i> Click the blue gear on the <i>make a list</i> block.</p>
+    <img class="enlargeImage" src="../images/magic_eight/magic8_populate_list.gif"></img>
+    <p></p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>5. Random response</h4>
+    <p>The Magic 8 Ball should give the player a random response. To do this, let's use the <i>pick random item</i> block.</p>
+    <img class="enlargeImage" src="../images/magic_eight/magic8_pick_random_from_list.gif"></img>
+    <p></p>
+
+    <p>The last step is to combine the blocks we have!</p>
+    <p>Put the blocks together so that the Magic 8 Ball gives a random response when the user clicks the ball.</p>
+    <img class="enlargeImage" src="../images/magic_eight/magic8_combine_the_last_blocks.gif"></img>
+    <p></p>
+
+    <p></b>Test your code!</b> Does the Magic 8 Ball work on your companion?</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>6. Extensions</h4>
+ 
+    <p>Now that you've completed your app can you think of any more features to add?</p>
+
+    <p>Here are some suggestions to help you out:</p>
+    <ul>
+      <li>Can you change the color of the text when the ball is clicked?</li>
+      <li>Can you add more responses, or change the types of questions that the user can ask?</li>
+      <li>Can you make the ball answer questions when you shake your phone?</li>
+      <li>Can you make the ball <i>say</i> the answers out loud to you?</li>
+    </ul>
+  </div>
+
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+
+<script src="../scripts/tutorials.js"></script>
