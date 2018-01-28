@@ -45,6 +45,10 @@ $(document).ready( function() {
       
     }
 
+  } else {
+    $(".content").load("tutorials/tutorials.html", function(){
+      assignEventHandlers();
+    });
   }
   
   tutorialIndexToPageObject = {}; //{0:{page:2,totalPageNum:5}}
