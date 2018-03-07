@@ -1,0 +1,192 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Don't Get Faked</p>
+  </div>
+  <div class="tutorialNavigationHeader"></div>
+
+      
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>Let's make a quiz app that can test a user's ability to detect if a story is fake or not.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/introScreenshot.png" alt="some_text">
+    <p>There are four key elements to our quiz app: the question, the image, the possible answer choices, and feedback to the user.</p>
+    <p>We also have the question number, a link (the source of the news article in question), and the score. </p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Create lists</h4>
+    <p>Click on the Blocks button on the right side top bar.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/blocksBtn.png" alt="some_text">
+    <p>Click on the <span class='icon' alt='variables'></span> Variables drawer on the left and drag two <span class="variables">initialize global name</span> blocks into the workspace.</p>
+    <p>Some global variables have already been created for you--questions, answers, images, options, and links.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/globalVariables.png" alt="some_text">
+    <p>Let's rename our new global variables to "index" and "score".</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>3. Set score and index</h4>
+    <p>Click on the <span class='icon' alt='Math'></span> Math drawer on the left and drag in two <span class="Math">0</span> blocks. </p>
+    <p>Set one of the 0 blocks to "1". </p>
+    <p>Connect the "1" block to "index" and the "0" block to "score". </p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step3.png" alt="some_text">
+    <p>"Index" will keep track of what question number we're on. In this version of the quiz, we have three questions in total.</p>
+    <p>"Score" will keep track of how many answers the user has gotten right.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+  	<h4>4. Create <span class="procedures">SetQuestion</span> procedure.</h4>
+  	<p>Click on the <span class='icon' alt='procedures'></span>Procedures drawer on the left and drag out a <span class='procedures'>to procedure</span> block.</p>
+   	<p>Rename this new procedure to "SetQuestion".</p>
+   	<img class="enlargeImage" src="../images/dont_get_faked/step4.png" alt="some_text">
+   	<p>This procedure will help us cut down on repetitive code. Every time we need to set a new question, we can call this procedure instead of rewriting the same code again and again.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+   	<h4>5. <span class='setters'>Set QuestionNumberLabel.Text</span></h4>
+   	<p> Click on the <span class='icon' alt='label'></span>QuestionNumberLabel drawer, and drag out a <span class='setters'>Set QuestionNumberLabel.Text</span> block. </p>
+   	<p> Click on the <span class='icon' alt='text'></span>Text drawer and drag out a <span class='text'>join</span> block and an empty text <span class='text'>&nbsp;&nbsp;&nbsp;&nbsp;</span> block.</p>
+   	<p>Click on the <span class='icon' alt='variables'></span>Variables drawer and drag out a <span class='variables'>get</span> block.</p>
+   	<p>Set the empty text block to say "Question".</p>
+  	<p>Set the <span class='variables'>get</span> block to "Index".</p>
+   	<img class="enlargeImage" src="../images/dont_get_faked/step5.png" alt="some_text">
+   	<p>Now, snap the <span class='text'>Question</span> and the <span class='variables'>get index</span> blocks into <span class='text'>join</span>, and snap <span class='text'>join</span> into <span class='setters'>Set QuestionNumberLabel.Text</span>.</p>
+  </div>
+      
+
+  <div class="tutorialContentPage">
+    <h4>6. <span class='setters'> Set QuestionPictureButton.Image</span></h4>
+    <p> Click on the <span class='icon' alt='button'></span>QuestionPictureButton drawer, and drag out a <span class='setters'>Set QuestionPictureButton.Image</span> block. </p>
+    <p> Click on the <span class='icon' alt='lists'></span>Lists drawer, and drag out a <span class='lists'>select list item</span> block. This block will let us pick an item from a list at a given index.</p>
+    <p> Click on the <span class='icon' alt='variables'></span>Variables drawer, and drag out two <span class='variables'>get</span> blocks. Set one to <span class='variables'>images</span> and one to <span class='variables'>index</span>.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step6.png" alt="some_text">
+    <p> Finally, snap the blocks together so that your new line of code sets the image of the button to the picture in the images list at the correct index. </p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>7. Finishing up <span class='procedures'>SetQuestion</span></h4>
+    <p> Now that you've done two sets, you should be able to do three more: <span class='setters'>set LinkLabel.Text</span>, <span class='setters'>set QuestionLabel.Text</span>, and <span class='setters'>set ListPicker1.Elements</span>.</p>
+    <p> For all of them, you need to use <span class='lists'>select list item</span> with the appropriate list (<span class='variables'>links</span>, <span class='variables'>questions</span>, and <span class='variables'>options</span>). </p>
+    <p> Note that "Elements" is a list--so <span class='variables'>options</span> is actually a list of lists. </p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step7.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>8. Setting the first question</h4>
+    <p> When we first open the screen, the first question should automatically load. We can do this with our new <span class='procedures'>SetQuestion</span> procedure.</p>
+    <p> Drag out a <span class='control'>when Screen1.Initialize</span> block from the Screen1 drawer. </p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step8a.png" alt="some_text">
+    <p> Drag out a <span class='procedures'>SetQuestion</span> block from the <span class='icon' alt='procedures'></span>Procedures drawer, and snap it into the event block.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step8b.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>9. Displaying the article link</h4>
+    <p> As this is a quiz about news, our quiz has to include sources, too. Let's have the link display when the image button is clicked, and become invisible when the button is clicked again. </p>
+    <p> In other words, when the link is visible, set it to invisible, and vice versa.</p>
+    <p> From the <span class='icon' alt='control'></span>Control drawer, pull out an <span class='control'>if then</span> block. </p>
+    <p> Click on the blue gear to add an <span class='control'>else</span> to the block.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step9a.png" alt="some_text">
+    <p> From the <span class='icon' alt='label'></span>LinkLabel drawer, pull out a <span class='getters'>LinkLabel.Visible</span> block, and two <span class='setters'>set LinkLabel.Visible</span> blocks.</p>
+    <p> From the <span class='icon' alt='logic'></span>Logic drawer, pull out a <span class='logic'>true</span> and a <span class='logic'>false</span> block.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step9b.png" alt="some_text">
+    <p> Snap these blocks together so that if the link label is visible, visibility is set to false, otherwise it is set to true.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>10. Checking for a correct answer</h4>
+    <p> Users can select an answer by picking from the ListPicker. After they pick an answer, an event is triggered: <span class='control'>When ListPicker1.AfterPicking</span>. </p>
+    <p> Pull out one of these event blocks from the ListPicker1 drawer. </p>
+    <p> <span class='getters'>ListPicker1.SelectionIndex</span> will give us the index of the answer the user picked. The correct answer indices are given in <span class='variables'>answers</span>. </p>
+    <p> In code, this would be: </p>
+    <p><span class='control'> if </span> &nbsp; <span class='getters'> ListPicker1.SelectionIndex </span> &nbsp; <span class='math'> = </span> &nbsp; <span class='lists'> select list item </span> &nbsp; <span class='variables'> get global answers</span>, <span class='variables'> get global index</span></p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step10.png" alt="some_text">
+    <p> <span class='control'> then</span> we got a correct answer, and we can increment the score!</p>
+    <p> <span class='control'> else</span> we got a wrong answer, and we can decrement the score.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+  	<h4>11. Handling a correct answer</h4>
+    <p> When we get a correct answer, three things should happen: <p>
+    <p> 1) the score increases, </p>
+    <p> 2) the <span class='icon' alt='notifier'></span>Notifier should show an alert, </p>
+    <p> 3) the app should advance to the next question.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>12. Handling a correct answer, continued</h4>
+    <p> Drag out a <span class='variables'>set global</span> block and a <span class='variables'>get global</span> block.</p>
+    <p> Set both of them to <span class='variables'>score</span>. </p>
+    <p> Now, drag out a <span class='math'>__+__</span> block from the <span class='icon' alt='math'></span>Math drawer, as well as a <span class='math'>0</span>.</p>
+    <p> Change the <span class='math'>0</span> to a <span class='math'>1</span>.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step12.png" alt="some_text">
+    <p> Snap these blocks together so that <span class='variables'>score</span> = <span class='variables'>score</span> <span class='math'>+</span> <span class='math'>1</span>. </p>
+    <p> Finally, pull out a <span class='setters'>set ScoreLabel.Text</span> block, a <span class='text'>join</span> block, and an empty text block.</p>
+    <p> Snap these blocks together to update the score label appropriately (<span class='setters'>ScoreLabel.Text</span> = <span class='text'>join</span> <span class='text'>Score: </span>, <span class=variables> get global score</span>).</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>13. Handling a correct answer, continued</h4>
+    <p> From the <span class='icon' alt='notifier'></span>Notifier1 drawer, pull out a <span class='procedures'>call Notifier1.ShowAlert</span> block.</p>
+    <p> Connect an empty text box to the ShowAlert block, and set the text of that block to "Good job!"</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step13.png" alt="some_text">
+    <p> Now, whenever a user gets an answer correct, an alert saying "Good job!" will pop up.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>14. Handling a correct answer, continued.</h4>
+  	<p> Just like we incremented the score two steps ago, we need to increment the index variable, because we want to move onto the next question.</p>
+    <p> Right click on the score increment line, and click "Duplicate." Change "score" to "index".</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step14.png" alt="some_text">
+    <p> Call the <span class='procedures'>SetQuestion</span> procedure.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>15. Handling a wrong answer</h4>
+    <p> Much of this code is the same as what we do for a correct answer, except in reverse. We need to decrement the score and show an alert.</p>
+    <p> Pull out a <span class='math'>__-__</span> block from the <span class='icon' alt='math'></span>Math drawer.</p>
+    <p> Duplicate blocks from before so that <span class='variables'>score</span> = <span class='variables'>score</span> <span class='math'>-</span> <span class='math'>1</span>. </p>
+    <p> Duplicate the <span class='setters'>set ScoreLabel.Text</span> line from above.</p>
+    <p> Duplicate the <span class='procedures'>Notifer1.ShowAlert</span> block from above, and change the message to say "Oh no...try again!"</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step15.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>16. Handle the Restart button</h4>
+    <p> When the quiz restarts: </p>
+    <p> 1) the score needs to be updated (and the score label), </p>
+    <p> 2) the index needs to be set back to 1, </p>
+    <p> 3) and we should call SetQuestion.</p>
+    <p>All four of these lines of code have been written previously in this tutorial.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/step16.png" alt="some_text">
+  </div>
+    
+  <div class="tutorialContentPage">
+  	<h4>17. Test it out!</h4>
+    <p>Try it out on your device. Tap on the picture button and the reset button. Do they work? What about the ListPicker? Does your app detect right or wrong answers?</p>
+    <p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
+    <img class="enlargeImage" src="../images/dont_get_faked/deviceScreenshot.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>18. Expand your app</h4>
+    <b>Add more questions.</b>
+    <p>This app only has the first three questions from the Don't Get Faked quiz on the Youth Radio website. Add more questions! </p> 
+    
+    <b>Add previous and next buttons.</b>
+    <p>Add two more buttons so that the user can go back and forwards instead of only forwards on a right answer.</p>
+
+    <b>Improve feedback.</b>
+    <p>In the current version of this app, a right or wrong answer generates a notification. Add a better feedback system of your own choice.</p>
+
+    <b>Fix a potential bug.</b>
+    <p>Right now, the app does not check whether the index exceeds the length of the list. If you go too far, the app crashes. Add a check to make sure that this doesn't happen.</p>
+
+    <b>Sharing.</b>
+    <p>Add the ability to save and share your highest score!</p>
+  </div>
+      
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>
