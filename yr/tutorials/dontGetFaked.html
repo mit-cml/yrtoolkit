@@ -36,12 +36,10 @@
     <h3>The Challenge</h3>
     <div>
       <p>
-
-      In the past year, "Fake News" has become an increasingly rampant problem. This whole fake news situation is out of hand, and no one wants to be the next clown spreading nonsense about something that never happened! <br>
-      To counteract this, the <a href="https://youtu.be/pz8N-AbAZp8"> Fake News Fairy</a> is here to help! To test your Fake News sleuthing skills, Youth Radio published <a href="https://yri.youthradio.org/dontgetfaked/">a quiz</a>. <br>
-      Now it's your turn to create and test a BS detector. Can you detect Fake News?
-
-      </p>
+      In the past two years, "Fake News" has become an increasingly rampant problem. This whole fake news situation is out of hand, and no one wants to be the next clown spreading nonsense about something that never happened! <br>
+      To counteract this, the Fake News Fairy is here to help! To test your Fake News sleuthing skills, Youth Radio published <a href="https://yri.youthradio.org/dontgetfaked/">a quiz</a>. <br>
+      Now it's your turn to create and test a BS detector. Can you detect Fake News?</p>
+      <iframe width="250" height="150" src="https://www.youtube.com/embed/pz8N-AbAZp8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
     <h3>Connect your App</h3>
@@ -55,8 +53,8 @@
         <h4>1. Introduction</h4>
         <p>Let's make a quiz app that can test a user's ability to detect if a story is fake or not.</p>
         <img class="enlargeImage" src="../images/dont_get_faked/introScreenshot.png" alt="some_text">
-        <p>There are a three key elements to our quiz app: the question, the image, and the possible answer choices.</p>
-        <p>We also have the question number, a link (the source of the news article in question), a previous button, a next button, and the score. </p>
+        <p>There are four key elements to our quiz app: the question, the image, the possible answer choices, and feedback to the user.</p>
+        <p>We also have the question number, a link (the source of the news article in question), and the score. </p>
       </div>
 
 
@@ -180,7 +178,7 @@
       </div>
 
       <div class="tutorialContentPage">
-      	<h4>14. Hanling a correct answer, continued.</h4>
+      	<h4>14. Handling a correct answer, continued.</h4>
       	<p> Just like we incremented the score two steps ago, we need to increment the index variable, because we want to move onto the next question.</p>
       	<p> Right click on the score increment line, and click "Duplicate." Change "score" to "index".</p>
       	<img class="enlargeImage" src="../images/dont_get_faked/step14.png" alt="some_text">
@@ -209,7 +207,7 @@
     
       <div class="tutorialContentPage">
       	<h4>17. Test it out!</h4>
-      	<p>Try it out on your  device. Tap on the previous, next, and picture buttons. Do they work? What about the ListPicker? Does your app detect right or wrong answers?</p>
+      	<p>Try it out on your  device. Tap on the picture button and the reset button. Do they work? What about the ListPicker? Does your app detect right or wrong answers?</p>
       	<p>Change up this basic tutorial by adding more features using the ideas in the next section.</p>
       	<img class="enlargeImage" src="../images/dont_get_faked/deviceScreenshot.png" alt="some_text">
       </div>
@@ -223,15 +221,18 @@
   <div>
       <b>Add more questions.</b>
       <p>This app only has the first three questions from the Don't Get Faked quiz on the Youth Radio website. Add more questions! </p> 
-
-      <b>Fix a potential bug.</b>
-      <p>Right now, the app does not check whether the index exceeds the length of the list. If you go too far, the app crashes. Add a check to make sure that this doesn't happen.</p>
     
       <b>Add previous and next buttons.</b>
       <p>Add two more buttons so that the user can go back and forwards instead of only forwards on a right answer.</p>
 
-      <b>Change text color.</b>
-      <p>Change the color of the score text to red or green based on a correct or incorrect answer.</p>
+      <b>Improve feedback.</b>
+      <p>In the current version of this app, a right or wrong answer generates a notification. Add a better feedback system of your own choice.</p>
+
+      <b>Fix a potential bug.</b>
+      <p>Right now, the app does not check whether the index exceeds the length of the list. If you go too far, the app crashes. Add a check to make sure that this doesn't happen.</p>
+
+      <b>Sharing.</b>
+      <p>Add the ability to save and share your highest score!</p>
 
   </div>
 
@@ -250,24 +251,13 @@
 </div>
 
 <div id="howToAccordion" class="accordion" style="display:none">
-  <h3>Show a random message</h3>
-  <div class="setup" id="rand_message"></div>
-
-  <h3>Play a song on button press</h3>
-  <div class="setup" id="play_song"></div>
-
-  <h3>Show an image</h3>
-  <div class="setup" id="show_img"></div>
-
-  <h3>Enter and show the User's name</h3>
-  <div class="setup" id="enter_text"></div>
-
-  <h3>Send a text message</h3>
+  <h3>Text your score</h3>
   <div class="setup" id="send_text"></div>
 
-  <h3>Store and read files</h3>
+  <h3>Store scores in a file</h3>
   <div class="setup" id="store_read_files"></div>
 
+  <h3>
 </div>
 <div id="serverTutorialId" style="display:none;">1</div>
 </body>
