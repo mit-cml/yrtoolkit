@@ -28,3 +28,6 @@
 
 <br></br><p><b>Pushing to the Real World </b></p>
 <p>Update master branch! A git hook will do the work of putting it on the site for you. </p>
+
+<br></br><p><b>Creating GIFs</b></p>
+<p>We have a pro Screencastify account you can use. More info: https://help.screencastify.com/article/151-export-your-recording. </p>
