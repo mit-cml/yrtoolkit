@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+        sendAnalyticsEvent( {
+          hitType: 'event',
+          eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+          eventAction: 'headerClick',
+          eventLabel: ui.newHeader.text()
+        });
+
+      }});
+      
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+<span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+</div>
+
+  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="maldenTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+  <div id="maldenAccordion" class="accordion">
+    <h3>Talk To Me Tutorial</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">Talk to Me</p>
+  </div>
+
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>
+      In this tutorial, you will learn to make an app that speaks words you type in aloud!
+    </p>
+    <p>
+      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
+    </p>
+  </div>
+
+  <div class="tutorialContentPage">
+  <h4>2. Add a Button</h4>
+    <p>Under User Interface, drag button to the screen.</p>
+    <img class="enlargeImage" src="images/talk_to_me/addButton.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Change the text on the button to "Talk to Me"</h4>
+    <p>Click on the button to view its settings. "Text" is towards the bottom.</p>
+    <img class="enlargeImage" src="images/talk_to_me/changeText.png" alt="some_text">
+  </div>
+
+    <div class="tutorialContentPage">
+    <h4>3. Add text-to-speech capabilities</h4>
+    <p>In the Media drawer, drag text-to-speech to the screen.</p>
+    <img class="enlargeImage" src="images/talk_to_me/addSpeech.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>4. Switch to the blocks editor</h4>
+    <p>Click on the Blocks button in the top right of your screen.</p>
+    <p>About the blocks editor:<p>
+    <img class="enlargeImage" src="images/talk_to_me/blocksEditor.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+   <h4>5. Make a button click event</h4>
+   <p>On the left panel, click on button and drag the <span class="control">when Button1.Click</span> block to the workspace.</p>
+    <img class="enlargeImage" src="images/talk_to_me/button1Click.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>6. Program the TextToSpeech action</h4>
+   <p>Drag the <span class="procedures">call TextToSpeech1.Speak</span> block into the <span class="control">when Button1.Click</span> block.</p>
+    <img class="enlargeImage" src="images/talk_to_me/textToSpeechAction.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+  <h4>7. Fill in the message socket</h4>
+  <p>Drag an empty text bubble (under Text) and connect it to the message section.</p>
+    <img class="enlargeImage" src="images/talk_to_me/emptyMessage.png" alt="some_text">
+  <p>Enter whatever message you want the app to say when the button is clicked</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>8. Test out your app!</h4>
+   <p>You might have to reconnect the companion app.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>9. Shake It</h4>
+   <p>We'll add a feature so the app says something whenever you shake it.</p>
+   <p>To start, go back to the designer view.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Add an accelerometer sensor</h4>
+   <p>The accelerometer sensor is in the sensors drawer</p>
+    <img class="enlargeImage" src="images/talk_to_me/accelerometer.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>11. Add an accelerometer shaking event</h4>
+   <p>Go back to the blocks editor, and drag a <span class="control">when AccelerometerSensor1.Shaking</span> block into the workspace.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>12. Make the app speak when you shake the device</h4>
+   <p>Copy the <span class="procedures">call TextToSpeech1.Speak</span> block from before and then paste and attach it to the accelerometer block.</p>
+    <img class="enlargeImage" src="images/talk_to_me/addSpeech2.png" alt="some_text">
+   <p>Change the text to "Stop Shaking Me!"</p>
+   <p>Test it out!</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>13. Say anything</h4>
+   <p>Go back to the designer editor, and drag a TextBox into the screen (it's in the user interface section).</p>
+    <img class="enlargeImage" src="images/talk_to_me/textBox.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>14. Change the hint text</h4>
+   <p>Click on TextBox, and change the hint text to something else</p>
+    <img class="enlargeImage" src="images/talk_to_me/hintText.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>15. Change the message to what the user types</h4>
+   <p>Switch back to blocks editor. Instead of whatever message you had before, drag a <span class="getters">TextBox1.Text</span> block instead</p>
+    <img class="enlargeImage" src="images/talk_to_me/textBoxMessage1.png" alt="some_text">
+    <img class="enlargeImage" src="images/talk_to_me/textBoxMessage2.png" alt="some_text">
+ </div>
+
+<div class="tutorialContentPage">
+  <h4>16. Congratulations, you made your first app!</h4>
+</div>
+</br>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+
+</div>
+<div id="serverTutorialId" style="display:none;">2</div>
+<div id="hasAnalytics" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
