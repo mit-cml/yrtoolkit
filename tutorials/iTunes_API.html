@@ -1,0 +1,239 @@
+<div class="tutorialContainer">
+  <div class="topBar">
+    <span class="glyphicon glyphicon-chevron-left back" aria-hidden="true"></span>
+    <p class="headText">iTunes API</p>
+  </div>
+
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>
+      In this tutorial you will use a Web API to get artist and music information from iTunes to display and play in your own app!
+    </p>
+    <p>
+      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
+    </p>
+  </div>
+
+  <div class="tutorialContentPage">
+  <h4>2. Make the layout</h4>
+    <p>From the Palette window, drag to the View window an Image, Label, TextBox, and Button, making sure to keep this order.</p>
+    <img class="enlargeImage" src="images/iTunes_API/template_order.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>2. Add a horizontal arrangement below what you added before</h4>
+    <p>Horizontal arrangements allow you to place components horizontally.</p>
+    <img class="enlargeImage" src="images/iTunes_API/horizontal_arrangement.png" alt="some_text">
+    <p>Drag two labels into the horizontal arrangement.</p>
+    <img class="enlargeImage" src="images/iTunes_API/labels.png" alt="some_text">
+  </div>
+
+    <div class="tutorialContentPage">
+    <h4>3. Add a web component and player component</h4>
+    <p>These will show up below the view, since they are hidden components.</p>
+    <img class="enlargeImage" src="images/iTunes_API/web.png" alt="some_text">
+    <img class="enlargeImage" src="images/iTunes_API/player.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>4. Name all the components</h4>
+    <p>It’s good practice to name your components descriptively, so you can identify which component is which when coding. Use the names below:</p>
+    <img class="enlargeImage" src="images/iTunes_API/rename.png" alt="some_text">
+    <img class="enlargeImage" src="images/iTunes_API/how_to_rename.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>5. Make it look a little better</h4>
+    <p>Change the AlignHorizontal property of both Screen1 and ResponseArrangement to "Center: 3". Change ResponseArrangement's width to "Fill Parent".</p>
+    <img class="enlargeImage" src="images/iTunes_API/center_3.png" alt="some_text">
+    <img class="enlargeImage" src="images/iTunes_API/fill_parent.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+   <h4>6. A few last changes</h4>
+   <p>Change the picture for IconImage to itunes-icon.png (it should be preloaded in the template)</p>
+   <p>For ArtistTextBox, change its Width to 75% and its Hint to "Enter artist's name here".</p>
+    <img class="enlargeImage" src="images/iTunes_API/icon_image.png" alt="some_text">
+    <img class="enlargeImage" src="images/iTunes_API/width_hint.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>7. Update the button and label text properties</h4>
+   <p>It should look like this:</p>
+    <img class="enlargeImage" src="images/iTunes_API/final_layout_look.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+  <h4>8. Create a procedure</h4>
+  <p>A procedure is a way to take a set of blocks and give them a name, so they can be used in multiple places, by “calling” the procedure.</p>
+  <p>We'll make a query iTunes procedure that will query the iTunes server.</p>
+  <p>Switch to the blocks editor and drag a <span class="procedures">to procedure</span> block out. Rename it "queryiTunes".</p>
+    <img class="enlargeImage" src="images/iTunes_API/query_itunes.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>9. Add an input parameter</h4>
+   <p>Click on the blue mutator button to add an input parameter to your procedure. Rename it "artistName".</p>
+   <img class="enlargeImage" src="images/iTunes_API/input_parameter.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Build up the procedure</h4>
+   <p>Drag out a <span class="setters">set Web1.Url to</span> block and snap it into your procedure.</p>
+   <img class="enlargeImage" src="images/iTunes_API/web1_url.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Build up the procedure</h4>
+   <p>Drag out a <span class="text">join</span> block and add a third input slot.</p>
+   <p>Add the below text strings into the first and third slots</p>
+   <p>And add <span class="variables">get artistName</span> in the middle slot</p>
+   <img class="enlargeImage" src="images/iTunes_API/joining.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Build up the procedure</h4>
+   <p>Your blocks should now look like the following:</p>
+   <img class="enlargeImage" src="images/iTunes_API/final_joining.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>10. Build up the procedure</h4>
+   <p>Finally, drag a <span class="procedures">call Web1.Get</span> block to the end of the procedure.</p>
+   <img class="enlargeImage" src="images/iTunes_API/web1_get.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>11. Code the query button</h4>
+   <p>Drag out a <span class="control">when QueryButton.Click</span> block</p>
+    <img class="enlargeImage" src="images/iTunes_API/query_button_click.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>11. Code the query button</h4>
+   <p>First let’s reset the IconImage.Picture to our iTunes icon image.</p>
+    <img class="enlargeImage" src="images/iTunes_API/icon_image_picture.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>11. Code the query button</h4>
+   <p>Then, call the <span class="procedures">queryiTunes</span> procedure.</p>
+    <img class="enlargeImage" src="images/iTunes_API/call_query_itunes.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>11. Code the query button</h4>
+   <p>The input to <span class="procedures">queryiTunes</span> will be the contents of ArtistTextbox. We can’t have any spaces in the query, so we’ll trim spaces from before and after the name, and replace all spaces between names with a plus sign “+”.</p>
+    <img class="enlargeImage" src="images/iTunes_API/artist_textbox_mod.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>12. Web response</h4>
+   <p>When you make a Web API request with the <span class="control">Web1.Get</span> block, it waits until a response is received, and it triggers the <span class="control">Web1.GotText</span> event. Here is an example of a response, which may look confusing:</p>
+   <img class="enlargeImage" src="images/iTunes_API/example_response.png" alt="some_text">
+   <p>App Inventor provides a block, <span class="procedures">Web1.JsonTextDecode</span>, that puts this text into a series of lists, so that you can extract the pieces you want by using select list item. In the text above, think of the brackets “{“ and “[“ as the start of a new list. And each comma is a separator between list items.</p>
+   <p>The large text block above  that starts with “wrapperType” is another kind of list organizer, called key/value pairs. For example, "wrapperType" is the key, and "track" is the value.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>12. Web response</h4>
+   <p>App Inventor supplies a block called <span class="lists">look up in pairs</span> that we can use to extract specific information using the key, once we’ve stripped out all the extra information at the beginning of the text string.</p>
+   <p>We'll also use <span class="lists">select list item</span> in the next step.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>13. Drag out a <span class="control">Web1.GotText</span> block</h4>
+   <p>When you make a Web API request with the <span class="control">Web1.Get</span> block, the apps waits until a response is received, and then the app triggers the <span class="control">Web1.GotText</span> event. </p>
+    <img class="enlargeImage" src="images/iTunes_API/web1_text.png" alt="some_text">
+   <p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>14. Variables</h4>
+   <p>We need to strip out the extraneous text to get to those key/value pairs. There are a few steps we need to take to do that, so we’re going to store the text in a variable as we do it.</p>
+   <p>Variables are a way to store information by giving it a name, and referencing the name in our code. We can also change the value of a variable if we need to. We will do that as we strip away the extra text to get to the key/value pairs.</p>
+    <img class="enlargeImage" src="images/iTunes_API/variables.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>14. Variables</h4>
+   <p>The first step is make a local variable called <span class="variables">resonsePairs</span>. Local means it’s only being used within the event block.</p>
+    <img class="enlargeImage" src="images/iTunes_API/response_pairs.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>15. Drag out <span class="procedures">JsonTextDecode</span></h4>
+   <p>We'll use <span class="procedures">JsonTextDecode</span> to put the long text response into lists.</p>
+    <img class="enlargeImage" src="images/iTunes_API/json_decode.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>16. Making the list</h4>
+   <p>We’ll need three <span class="lists">select list item</span> blocks, to get to the inner pair lists.</p>
+    <img class="enlargeImage" src="images/iTunes_API/list_items.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>16. Making the list</h4>
+   <p>Let’s put it all together, using the appropriate indexes. Note that blocks are executed from right to left here, with <span class="procedures">Web1.JsonTextDecode</span> executed first, then each <span class="lists">select list item</span>.</p>
+    <img class="enlargeImage" src="images/iTunes_API/list_decode.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>17. Setting up the player component</h4>
+   <p>The Player component plays music files. Drag out a <span class="setters">set Player1.Source</span> block so we can set it based on the response.</p>
+    <img class="enlargeImage" src="images/iTunes_API/player1_source_set.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>17. Setting up the player component</h4>
+   <p>Drag out a <span class="lists">look up in pairs</span> block from the Lists palette and snap it in. The key we’re looking for is “previewUrl”. We’ll extract this from our <span class="variables">responsePairs</span> variable.</p>
+    <img class="enlargeImage" src="images/iTunes_API/look_up_in_pairs.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>17. Setting up the player component</h4>
+   <p>Drag out a <span class="procedures">Player1.Start</span> block and snap it in below.</p>
+   <p>Finally, reset <span class="setters">set ArtistTextBox.Text</span> to a blank string for the next search.</p>
+    <img class="enlargeImage" src="images/iTunes_API/player1_start.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>18. Reset the ArtitsLabel text and SongLabel text</h4>
+   <p>Here is a challenge for you. Can you add code to set ArtistLabel.Text and SongLabel.Text by using the <span class="lists">look up in pairs</span> block?</p>
+   <p>For the keys, you will use the highlighted names shown below.</p>
+    <img class="enlargeImage" src="images/iTunes_API/keys.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>19. Test it out!</h4>
+   <p>Test your app out using the MIT AI2 Companion! Type in the name of your favorite musical artist, submit, and listen!</p>
+    <img class="enlargeImage" src="images/iTunes_API/test_it.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>20. Challenge</h4>
+   <p>Recall that the response from iTunes includes many key/value pairs. Look through the text that iTunes returns from the Web API to see what other key/pair values you could extract.</p>
+    <img class="enlargeImage" src="images/iTunes_API/api.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>20. Challenge</h4>
+   <p>Use <span class="lists">look up in pairs</span> in <span class="control">Web1.GotText</span> to pull out other information. For example, you could extract the album/CD cover image.</p>
+    <img class="enlargeImage" src="images/iTunes_API/cover_image.png" alt="some_text">
+   <p>Consider what information you are extracting. The artwork would have to go in an Image component (set Picture to). If it’s text information, it would go in a Label (set Text to).</p>
+ </div>
+
+<div class="tutorialContentPage">
+  <h4>21. Extend your app</h4>
+  <p>Here are a few things you could try:</p>
+  <p>Add a button to stop the song</p>
+  <p>Display different artist information, like the CD cover</p>
+  <p>Have the app pick a new song from the same artist</p>
+</div>
+<br/>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
