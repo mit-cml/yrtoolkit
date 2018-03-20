@@ -146,7 +146,7 @@ a.ui-button:active,
   display: block;
   transition: .5s ease;
   backface-visibility: hidden;
-  width: 50%;
+  width: 100%;
 }
 
 .zoom {
@@ -157,6 +157,10 @@ a.ui-button:active,
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.DialogBox-image {
+	max-width: 50%;
 }
 
 .tutorialDiv:hover .enlargeImage {
