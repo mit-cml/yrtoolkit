@@ -159,6 +159,10 @@ a.ui-button:active,
   -ms-transform: translate(-50%, -50%);
 }
 
+.DialogBox-image {
+	max-width: 50%;
+}
+
 .tutorialDiv:hover .enlargeImage {
   opacity: 0.3;
 }
