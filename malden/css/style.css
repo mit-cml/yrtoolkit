@@ -160,7 +160,7 @@ a.ui-button:active,
 }
 
 .DialogBox-image {
-	max-width: 50%;
+	max-width: 100%;
 }
 
 .tutorialDiv:hover .enlargeImage {
