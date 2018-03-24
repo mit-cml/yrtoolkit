@@ -126,6 +126,7 @@
  <div class="tutorialContentPage">
    <h4>11. Code the query button</h4>
    <p>The input to <span class="procedures">queryiTunes</span> will be the contents of ArtistTextbox. We can’t have any spaces in the query, so we’ll trim spaces from before and after the name, and replace all spaces between names with a plus sign “+”.</p>
+   <p>The <span class="text">replace all text</span> block can be found in the text drawer.</p>
     <img class="enlargeImage" src="images/iTunes_API/artist_textbox_mod.png" alt="some_text">
  </div>
 
@@ -133,6 +134,7 @@
    <h4>12. Web response</h4>
    <p>When you make a Web API request with the <span class="control">Web1.Get</span> block, it waits until a response is received, and it triggers the <span class="control">Web1.GotText</span> event. Here is an example of a response, which may look confusing:</p>
    <img class="enlargeImage" src="images/iTunes_API/example_response.png" alt="some_text">
+   <p>But don't worry- once you understand what it is doing, it can be a really powerful tool!</p>
    <p>App Inventor provides a block, <span class="procedures">Web1.JsonTextDecode</span>, that puts this text into a series of lists, so that you can extract the pieces you want by using select list item. In the text above, think of the brackets “{“ and “[“ as the start of a new list. And each comma is a separator between list items.</p>
    <p>The large text block above  that starts with “wrapperType” is another kind of list organizer, called key/value pairs. For example, "wrapperType" is the key, and "track" is the value.</p>
  </div>
@@ -159,7 +161,7 @@
 
  <div class="tutorialContentPage">
    <h4>14. Variables</h4>
-   <p>The first step is make a local variable called <span class="variables">resonsePairs</span>. Local means it’s only being used within the event block.</p>
+   <p>The first step is make a local variable called <span class="variables">resonsePairs</span>. Click on the default name to rename it after you drag it out. Local means it’s only being used within the event block.</p>
     <img class="enlargeImage" src="images/iTunes_API/response_pairs.png" alt="some_text">
  </div>
 
@@ -208,6 +210,16 @@
  </div>
 
  <div class="tutorialContentPage">
+   <h4>18. Reset the ArtistsLabel text and SongLabel text</h4>
+   <p>Here's some help if you couln't figure out the challenge. You need to follow the same format as the <span class="setters">set Player1.Source</span> block.</p>
+   <p>Drag out blocks to set the Text for ArtistLabel and SongLabel.</p>
+   <p>And duplicate the look up in pairs block from above. Twice.</p>
+   <p>Change “previewUrl” to “artistName” for ArtistLabel, and to “trackName” for SongLabel. Get the spelling exactly as shown.</p>
+   <p>Snap in both below <span class="setters">set Player1.Source</span>.</p>
+   <img class="enlargeImage" src="images/iTunes_API/challenge_help.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
    <h4>19. Test it out!</h4>
    <p>Test your app out using the MIT AI2 Companion! Type in the name of your favorite musical artist, submit, and listen!</p>
     <img class="enlargeImage" src="images/iTunes_API/test_it.png" alt="some_text">
@@ -228,10 +240,7 @@
 
 <div class="tutorialContentPage">
   <h4>21. Extend your app</h4>
-  <p>Here are a few things you could try:</p>
-  <p>Add a button to stop the song</p>
-  <p>Display different artist information, like the CD cover</p>
-  <p>Have the app pick a new song from the same artist</p>
+  <img class="enlargeImage" src="images/iTunes_API/extend_app.png" alt="some_text">
 </div>
 <br/>
 <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
