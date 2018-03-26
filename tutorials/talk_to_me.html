@@ -8,12 +8,28 @@
 
   <div class="tutorialContentPage">
     <h4>1. Introduction</h4>
-    <p>
-      In this tutorial, you will learn to make an app that speaks words you type in aloud!
-    </p>
-    <p>
-      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
-    </p>
+    <p>In this tutorial, you will learn to make an app that speaks words you type in aloud!</p>
+    <p>Connect using the companion app so you can test this on your mobile device. Start by launching the companion app on your phone or tablet.</p>
+    <img class="enlargeImage" src="images/talk_to_me/companion_app.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>Select "AI Companion" under Connect in App Inventor</p>
+    <img class="enlargeImage" src="images/talk_to_me/ai_companion.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>Click on "scan QR code" on the companion App (on your phone or tablet)</p>
+    <img class="enlargeImage" src="images/talk_to_me/qr_code.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>1. Introduction</h4>
+    <p>Then, hold your tablet's camera up to the QR code (the black and white square) that appears on your computer screen.</p>
+    <img class="enlargeImage" src="images/talk_to_me/scan.png" alt="some_text">
+    <p>You're now connected!</p>
   </div>
 
   <div class="tutorialContentPage">
@@ -37,7 +53,7 @@
   <div class="tutorialContentPage">
     <h4>4. Switch to the blocks editor</h4>
     <p>Click on the Blocks button in the top right of your screen.</p>
-    <p>About the blocks editor:<p>
+    <p>About the blocks editor:</p>
     <img class="enlargeImage" src="images/talk_to_me/blocksEditor.png" alt="some_text">
   </div>
 
@@ -51,6 +67,7 @@
    <h4>6. Program the TextToSpeech action</h4>
    <p>Drag the <span class="procedures">call TextToSpeech1.Speak</span> block into the <span class="control">when Button1.Click</span> block.</p>
     <img class="enlargeImage" src="images/talk_to_me/textToSpeechAction.png" alt="some_text">
+   <p>When you connect  the blocks, they should click into place - if you have your speakers on, you can hear the clicking sound!</p>
  </div>
 
  <div class="tutorialContentPage">
@@ -66,51 +83,55 @@
  </div>
 
  <div class="tutorialContentPage">
-   <h4>9. Shake It</h4>
-   <p>We'll add a feature so the app says something whenever you shake it.</p>
-   <p>To start, go back to the designer view.</p>
- </div>
-
- <div class="tutorialContentPage">
-   <h4>10. Add an accelerometer sensor</h4>
-   <p>The accelerometer sensor is in the sensors drawer</p>
-    <img class="enlargeImage" src="images/talk_to_me/accelerometer.png" alt="some_text">
- </div>
-
- <div class="tutorialContentPage">
-   <h4>11. Add an accelerometer shaking event</h4>
-   <p>Go back to the blocks editor, and drag a <span class="control">when AccelerometerSensor1.Shaking</span> block into the workspace.</p>
- </div>
-
- <div class="tutorialContentPage">
-   <h4>12. Make the app speak when you shake the device</h4>
-   <p>Copy the <span class="procedures">call TextToSpeech1.Speak</span> block from before and then paste and attach it to the accelerometer block.</p>
-    <img class="enlargeImage" src="images/talk_to_me/addSpeech2.png" alt="some_text">
-   <p>Change the text to "Stop Shaking Me!"</p>
-   <p>Test it out!</p>
- </div>
-
- <div class="tutorialContentPage">
-   <h4>13. Say anything</h4>
+   <h4>9. Part 2: Say anything</h4>
    <p>Go back to the designer editor, and drag a TextBox into the screen (it's in the user interface section).</p>
     <img class="enlargeImage" src="images/talk_to_me/textBox.png" alt="some_text">
  </div>
 
  <div class="tutorialContentPage">
-   <h4>14. Change the hint text</h4>
+   <h4>10. Change the hint text</h4>
    <p>Click on TextBox, and change the hint text to something else</p>
     <img class="enlargeImage" src="images/talk_to_me/hintText.png" alt="some_text">
  </div>
 
  <div class="tutorialContentPage">
-   <h4>15. Change the message to what the user types</h4>
-   <p>Switch back to blocks editor. Instead of whatever message you had before, drag a <span class="getters">TextBox1.Text</span> block instead</p>
+   <h4>11. Change the message to what the user types</h4>
+   <p>Switch back to blocks editor. Instead of whatever message you had before, drag a <span class="getters">TextBox1.Text</span> block from the TextBox1 menu (you will need to scroll down to see it).</p>
     <img class="enlargeImage" src="images/talk_to_me/textBoxMessage1.png" alt="some_text">
     <img class="enlargeImage" src="images/talk_to_me/textBoxMessage2.png" alt="some_text">
  </div>
 
+ <div class="tutorialContentPage">
+   <h4>12. Part 3: Shake It</h4>
+   <p>We'll add a feature so the app says something whenever you shake it.</p>
+   <p>First, check to make sure your device has an accelerometer sensor.</p>
+   <p>The accelerometer is a device on your phone or tablet that senses when the device has been moved quickly (like being shaken)!</p>
+   <p>To start, go back to the designer view.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>13. Add an accelerometer sensor</h4>
+   <p>The accelerometer sensor is in the sensors drawer</p>
+    <img class="enlargeImage" src="images/talk_to_me/accelerometer.png" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>14. Add an accelerometer shaking event</h4>
+   <p>Go back to the blocks editor, and drag a <span class="control">when AccelerometerSensor1.Shaking</span> block into the workspace.</p>
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>15. Make the app speak when you shake the device</h4>
+   <p>Copy the <span class="procedures">call TextToSpeech1.Speak</span> block from before and then paste and attach it to the accelerometer block.</p>
+    <img class="enlargeImage" src="images/talk_to_me/addSpeech2.png" alt="some_text">
+   <p>Change the text to "Stop Shaking Me!"</p>
+   <p>Test it out!</p>
+   <p>Sometimes if you haven't used the companion in a bit it can disconnect. Repeat the connection process in the first step if it disconnects</p>
+ </div>
+
 <div class="tutorialContentPage">
   <h4>16. Congratulations, you made your first app!</h4>
+  <p>Please fill out the <a href="http://bit.ly/TalkToMeCheckIn" class="setup">Post Tutorial Check-In</a></p>
 </div>
 <br/>
 <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
