@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malden Tour Guide</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+      $(window).bind('resize', function() {
+          console.log("window resized")
+      });
+  </script>
+
+  <script>
+      $( function() {
+          $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+                  sendAnalyticsEvent( {
+                      hitType: 'event',
+                      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+                      eventAction: 'headerClick',
+                      eventLabel: ui.newHeader.text()
+                  });
+
+              }});
+
+          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+      } );
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31803258-2', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+  <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+</div>
+
+<div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+  <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+  <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+</div>
+
+<div id="maldenAccordion" class="accordion">
+
+  <h3>Connect your App</h3>
+  <div class="setup" id="connect_app"></div>
+
+  <h3>Malden Tour Guide: Screen1</h3>
+
+  <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+    <div class="tutorialContentPage">
+      <h4>Introduction</h4>
+      <p>In this unit, you will make an app to show people some cool places in your area!</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_1_1.png" alt="some_text">
+      <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Maps Components</h4>
+      <p>Add a new Map component in the Designer, below the InstructionLabel.</p>
+      <p>Drag four Marker components onto the Map.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_1_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Maps Components</h4>
+      <p>Change the height and width properties for Map1 to “Fill Parent”.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_1_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Maps Components</h4>
+      <p>In the CenterFromString property, erase what is there, and type in the latitude and longitude for Malden, separated by a comma (,). Your map should now show Malden.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_1_4.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Maps Components</h4>
+      <p>Change the names of your four markers to the locations and/or landmarks they will represent. Use your Landmark Worksheet for the names.  Remember, you cannot use spaces in component names!</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_1_5.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Setting Properties</h4>
+      <p>Using your Landmarks Worksheet, set the following properties for each marker: Title (name), Description (short description), latitude and longitude.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_2_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Setting Properties</h4>
+      <p>To make sure all your markers are visible, drag the map in the Designer to move its center, and update the ZoomLevel for Map1.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_2_2.png" alt="some_text">
+      <p>If you lose view of your markers, you can zoom out by changing ZoomLevel to 10.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Setting Properties</h4>
+      <p>Increase ZoomLevel by 1 or 2 and drag the map in the Designer so all 4 markers appear and are zoomed in.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_2_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Test with the MIT AI2 Companion!</h4>
+      <p>Test that a short click displays the title and short description for each marker.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_2_4.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Go to Blocks Editor</h4>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_3_1.png" alt="some_text">
+      <p>Click on one of your markers in the Blocks window and drag out a LongClick event block.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_3_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Location Screen</h4>
+      <p>This app will use two different screens, for two different parts of the app. Let's check out the second screen.</p>
+      <p>Open the "LocationScreen"</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_4_1.png" alt="some_text">
+      <p>Switch to the Designer.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_4_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Location Screen Layout</h4>
+      <p>With your partner, look at the user interface and try to identify what each component does.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_4_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Opening Location Screen</h4>
+      <p>Now that we’ve seen the Location Screen, let’s go back to Screen1 and write the code to open the Location Screen.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_5_1.png" alt="some_text">
+      <p>Change back to Screen1, and switch back to the Blocks Editor.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_5_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Opening Location Screen</h4>
+      <p>Fill in the screenName.</p>
+      <p>The startValue will be the name of the marker’s landmark. Note that you should type the name normally, with spaces, because it will be displayed in LocationScreen as we type it here.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_5_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Opening Location Screen</h4>
+      <p>Repeat LongClick events for your other three markers.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_5_4.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Test with the MIT AI2 Companion!</h4>
+      <p>Make sure that a short-click on each marker pops up the info box for that location.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg1_5_5.png" alt="some_text">
+    </div>
+
+  <br/>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+  </div>
+
+<h3> Malden Tour Guide: Location Screen</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+    <div class="tutorialContentPage">
+      <h4>Challenges</h4>
+      <img class="enlargeImage" src="../images/iTunes_API/challenge_hints.png" alt="some_text">
+    </div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+<h3> Malden Tour Guide: Challenge</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+    <div class="tutorialContentPage">
+      <h4>Challenges</h4>
+      <img class="enlargeImage" src="../images/iTunes_API/challenge_hints.png" alt="some_text">
+    </div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="serverTutorialId" style="display:none;">2</div>
+<div id="hasAnalytics" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
