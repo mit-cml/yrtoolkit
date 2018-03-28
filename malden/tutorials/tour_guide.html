@@ -180,8 +180,127 @@
 <div class="tutorialContainer">
   <div class="tutorialNavigationHeader"></div>
     <div class="tutorialContentPage">
-      <h4>Challenges</h4>
-      <img class="enlargeImage" src="../images/iTunes_API/challenge_hints.png" alt="some_text">
+      <h4>Coding the Location Screen</h4>
+      <p>Switch back to the Location Screen.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_1_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Upload Images</h4>
+      <p>Let's start by uploading the images you've selected for your landmarks.</p>
+      <p>Click on "Upload File" under Media, and upload your image files.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_1_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Variables</h4>
+      <p>We need to store all the information for our landmarks in our app.</p>
+	  <p>We can do that with variables. Variables are a way to store information by giving it a name, and referencing the name in our code. We can also change the value of a variable if we need to. </p>
+	  <p>The Variables drawer holds the blocks used for variables.</p>
+	  <p>To use a variable, you must first initialize it.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_1_3.png" alt="some_text">
+	  <p>You can get the value of a variable.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_1_4.png" alt="some_text">
+	  <p>You can also set (change) the value of a variable within your app.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_1_5.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Make New Variables</h4>
+      <p>Make three new variables, and name them Locations, Descriptions, and Pictures.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_2_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Make a List</h4>
+      <p>Drag out 3 make a list blocks from the Lists drawer. Add items so they are each 4 elements long, and snap them into the 3 variables.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_2_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Locations Variable</h4>
+      <p>To Locations, add 4 text blocks with the names of your four landmarks. These should match exactly the names you used as startValue in Screen1.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_3_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Descriptions Variable</h4>
+      <p>Add text descriptions (the longer descriptions from the Landmarks worksheet) for your four landmarks to the Descriptions list, making sure they are in the same order as the Locations!</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_3_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Pictures Variable</h4>
+      <p>And to Pictures, add text blocks that contain the exact filenames for the uploaded pictures.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_4_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>locationIndex Variable</h4>
+      <p>Let’s make a new variable, locationIndex, to keep track of which Location we want to display.</p>
+      <p>Initialize it to 0.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_4_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set locationIndex</h4>
+      <p>Set the value of locationIndex in LocationScreen.Initialize event, the event is triggered when the screen first opens.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_4_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Index in List</h4>
+      <p>Set the value of locationIndex based on the start value passed from Screen1. Look for the location passed in start value in the Locations list, and set locationIndex to whatever that index is.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_5_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set LocationLabel</h4>
+      <p>Now we use locationIndex to point to the correct Location, Description, and Picture items in our three lists!</p>
+      <p>Start with the set LocationLabel.Text block, snapping it in below set global locationIndex.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_6_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Duplicate LocationLabel</h4>
+      <p>Let’s do the same for the Description. Let’s make it easier by duplicating the block we just made.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_6_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set DescriptionLabel</h4>
+      <p>Change LocationLabel to DescriptionLabel, and Locations to Descriptions.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_7_1.png" alt="some_text">
+      <p>And snap it into LocationScreen.Initialize event, below set LocationLabel.Text.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set Image.Picture</h4>
+      <p>Let’s also set the Image.Picture to the correct Picture. We can’t Duplicate the entire block so drag out out set Image1.Picture.</p>
+      <p>Duplicate just select list item this time, and change Locations and to Pictures.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_7_2.png" alt="some_text">
+      <p>And snap the block into LocationScreen.Initialize event, below set DescriptionLabel.Text.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add TextToSpeech</h4>
+      <p>Let’s use the TextToSpeech component to have the app “speak” the description.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_8_1.png" alt="some_text">
+      <p>And snap it in to LocationScreen.Initialize event, below set Image1.Picture.<p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Last Button!</h4>
+      <p>One more button and we’re finished with this screen!</p>
+      <p>Complete the when BackButton.Click block.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_8_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Test your app with the MIT AI2 Companion!</h4>
+      <p>Long click on each of your markers and see that the LocationScreen opens, displays the correct description and picture, and the correct description is read aloud.</p>
+      <p>Try the Back to Maps button to make sure you can go back and forth between the first two screens.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_9_1.png" alt="some_text">
     </div>
 
     <br/>
@@ -194,8 +313,196 @@
 <div class="tutorialContainer">
   <div class="tutorialNavigationHeader"></div>
     <div class="tutorialContentPage">
-      <h4>Challenges</h4>
-      <img class="enlargeImage" src="../images/iTunes_API/challenge_hints.png" alt="some_text">
+      <h4>Gallery Screen</h4>
+      <p>The GalleryScreen will allow users to take pictures of thes ites to add to a Gallery!</p>
+      <p>Go to the "GalleryScreen".</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_1_1.png" alt="some_text">
+      <p>Switch to the Designer.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_1_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Identify Components</h4>
+      <p>With your partner, look at the user interface and see if you can identify what each component does. See the screen layout below.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_1_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add to LocationScreen</h4>
+      <p>Let’s go back to LocationScreen and add the button and code to open the GalleryScreen</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_2_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>GalleryButton</h4>
+      <p>Select GalleryButton in the Components panel, and click on the Visible checkbox to make it visible.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_2_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Blocks</h4>
+      <p>Switch to the Blocks Editor.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_2_3.png" alt="some_text">
+      <p>In when GalleryButton.Click event, open the GalleryScreen.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_3_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Go back to GalleryScreen</h4>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_3_2.png" alt="some_text">
+      <p>Drag out a CameraButton.Click event.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_3_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Camera Button</h4>
+      <p>When we click the Camera button, the Camera should take a picture.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_4_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>After Picture</h4>
+      <p>When a picture is taken, the Camera.AfterPicture event is triggered.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_4_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>After Picture</h4>
+      <p>Set the Image.Picture to the image the camera just took.</p>
+      <p>Hover over image and snap it into set Image1.Picture.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_5_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Test the Camera feature!</h4>
+      <p>Take a picture, and see that the image changes.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_5_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>About TinyDB</h4>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_1.png" alt="some_text">
+      <p>TinyDB is a component that stores “persistent” data--so it saves data even after we close the app for the next time we use it. It stands for “Tiny Database”.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_2.png" alt="some_text">
+      <p>TinyDB has two main functions: StoreValue and GetValue.</p>
+      <p>StoreValue stores a value, replacing whatever was in the database before. The name of the value is tag adn the new value is valueToStore.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_3.png" alt="some_text">
+      <p><em>tag</em> is like a variable name.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_4.png" alt="some_text">
+      <p><em>valueToStore</em> is like a value of a variable.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_5.png" alt="some_text">
+      <p>GetValue fetches a value from the database that we stored before, by its <em>tag</em>. If there's no value stored, then it returns <em>valueIfTagNotThere</em>. </p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_6_6.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>photoList</h4>
+      <p>Let’s make our app more versatile, by allowing users to take many pictures and save them to the Gallery! We’ll use photoList to store the images in the app, and TinyDB to store the list so it can be retrieved each time the user runs the app. </p>
+      <p>Initialize two new variables. Name them and set them as seen below.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_7_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add Image to photoList</h4>
+      <p>When a picture is taken, let’s add the image to our photoList.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_7_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Update currentIndex</h4>
+      <p>Update currentIndex to point to the end of our list, by setting it to the length of the list.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_8_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Store in TinyDB</h4>
+      <p>Store the updated list in TinyDB.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_8_2.png" alt="some_text">
+      <p>Snap TinyDB1.StoreValue in after the set global currentIndex block.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Initialize Screen</h4>
+      <p>Because we are storing photoList to TInyDB, we need to get it from TinyDB each time we open the screen. Let’s do that in GalleryScreen.Initialize event.</p>
+      <p>Drag out a GalleryScreen.Initialize event.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_9_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set currentIndex to 0</h4>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_9_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Get photoList</h4>
+      <p>Get the photoList from TinyDB. If it’s not stored there, default to an empty list.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_9_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Check List</h4>
+      <p>We need to check if we have anything in our list yet.</p>
+      <p>Drag out an if-then block. Snap in blocks to check if the list is <em>not</em> empty.
+      <img class="enlargeImage" src="../images/tour_guide/tg3_10_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>If Not Empty</h4>
+      <p>If it’s not empty, point to the first photo, index 1.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_10_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set Picture</h4>
+      <p>Set the Image.Picture to the item in the list at that index.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_10_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Previous and Next buttons</h4>
+      <p>Now let’s code the PreviousButton and NextButtons. We need to update currentIndex, by either adding or subtracting to go back or forward in our list of photos.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Previous Button</h4>
+      <p>Drag out a PreviousButton.Click block.</p>
+      <p>If we’re not at the front of the list (index > 1)...</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_11_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Previous Button</h4>
+      <p>...Then subtract 1 from the index.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_11_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set Picture</h4>
+      <p>Set the Image1.Picture to the photo at the new index.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_11_3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Next Button</h4>
+      <p>Do you think you can figure out the NextButton.Click event?</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_12_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Back Button</h4>
+      <p>The BackButton works the same as it did in the LocationScreen.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_12_2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Here we go!</h4>
+      <p>Test out your app with the MIT AI2 Companion. </p>
+	  <ul>
+	  	<li>Go to the GalleryScreen.</li>
+	  	<li>Take some pictures.</li>
+	  	<li>Scroll through your pictures with the Previous and Next buttons.</li>
+	  </ul>
+      <img class="enlargeImage" src="../images/tour_guide/tg3_12_3.png" alt="some_text">
     </div>
 
     <br/>
