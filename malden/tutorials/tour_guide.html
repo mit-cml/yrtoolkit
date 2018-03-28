@@ -250,8 +250,14 @@
 
     <div class="tutorialContentPage">
       <h4>Index in List</h4>
-      <p>Set the value of locationIndex based on the start value passed from Screen1. Look for the location passed in start value in the Locations list, and set locationIndex to whatever that index is.</p>
+      <p>Add an index in list block.</p>
       <img class="enlargeImage" src="../images/tour_guide/tg2_5_1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Index in List</h4>
+      <p>Set the value of locationIndex based on the start value passed from Screen1. Look for the location passed in start value in the Locations list, and set locationIndex to whatever that index is.</p>
+      <img class="enlargeImage" src="../images/tour_guide/tg2_5_2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -314,7 +320,7 @@
   <div class="tutorialNavigationHeader"></div>
     <div class="tutorialContentPage">
       <h4>Gallery Screen</h4>
-      <p>The GalleryScreen will allow users to take pictures of thes ites to add to a Gallery!</p>
+      <p>The GalleryScreen will allow users to take pictures of the sites to add to a Gallery!</p>
       <p>Go to the "GalleryScreen".</p>
       <img class="enlargeImage" src="../images/tour_guide/tg3_1_1.png" alt="some_text">
       <p>Switch to the Designer.</p>
@@ -349,9 +355,9 @@
 
     <div class="tutorialContentPage">
       <h4>Go back to GalleryScreen</h4>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_3_2.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_1_1.png" alt="some_text">
       <p>Drag out a CameraButton.Click event.</p>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_3_3.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_3_2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -423,39 +429,30 @@
 
     <div class="tutorialContentPage">
       <h4>Initialize Screen</h4>
-      <p>Because we are storing photoList to TInyDB, we need to get it from TinyDB each time we open the screen. Let’s do that in GalleryScreen.Initialize event.</p>
+      <p>Because we are storing photoList to TinyDB, we need to get it from TinyDB each time we open the screen. Let’s do that in GalleryScreen.Initialize event.</p>
       <p>Drag out a GalleryScreen.Initialize event.</p>
+      <p>Set currentIndex to 0.</p>
       <img class="enlargeImage" src="../images/tour_guide/tg3_9_1.png" alt="some_text">
-    </div>
-
-    <div class="tutorialContentPage">
-      <h4>Set currentIndex to 0</h4>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_9_2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>Get photoList</h4>
       <p>Get the photoList from TinyDB. If it’s not stored there, default to an empty list.</p>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_9_3.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_9_2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>Check List</h4>
       <p>We need to check if we have anything in our list yet.</p>
       <p>Drag out an if-then block. Snap in blocks to check if the list is <em>not</em> empty.
-      <img class="enlargeImage" src="../images/tour_guide/tg3_10_1.png" alt="some_text">
-    </div>
-
-    <div class="tutorialContentPage">
-      <h4>If Not Empty</h4>
       <p>If it’s not empty, point to the first photo, index 1.</p>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_10_2.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_10_1.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>Set Picture</h4>
       <p>Set the Image.Picture to the item in the list at that index.</p>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_10_3.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_10_2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -502,7 +499,7 @@
 	  	<li>Take some pictures.</li>
 	  	<li>Scroll through your pictures with the Previous and Next buttons.</li>
 	  </ul>
-      <img class="enlargeImage" src="../images/tour_guide/tg3_12_3.png" alt="some_text">
+      <img class="enlargeImage" src="../images/tour_guide/tg3_5_2.png" alt="some_text">
     </div>
 
     <br/>
