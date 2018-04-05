@@ -76,13 +76,13 @@
 
     <div class="tutorialContentPage">
     <h4>2. Make the layout</h4>
-      <p>From the Palette window, drag to the View window an Image and a Label.</p>
+      <p>From the User Interface drawer in Palette window, drag an Image and a Label to the View window.</p>
       <img class="enlargeImage" src="../images/iTunes_API/template1.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
     <h4>2. Make the layout</h4>
-      <p>Add a Textbox.</p>
+      <p>Drag a Textbox from User Interface onto the View window.</p>
       <img class="enlargeImage" src="../images/iTunes_API/template2.png" alt="some_text">
     </div>
 
@@ -98,7 +98,6 @@
       <p>Horizontal arrangements allow you to place components horizontally.</p>
       <img class="enlargeImage" src="../images/iTunes_API/horizontal_arrangement.png" alt="some_text">
     </div>
-
 
     <div class="tutorialContentPage">
       <h4>2. Make the layout</h4>
@@ -122,7 +121,7 @@
 
     <div class="tutorialContentPage">
       <h4>5. Make it look a little better</h4>
-      <p>Change the AlignHorizontal property of both Screen1 and ResponseArrangement to "Center: 3". Change ResponseArrangement's width to "Fill Parent".</p>
+      <p>Change the AlignHorizontal property of both Screen1 and ResponseArrangement to "Center: 3". Change ResponseArrangement's width to "Fill Parent". You can do this by selecting the component in the Components window and changing values in the Properties pane</p>
       <img class="enlargeImage" src="../images/iTunes_API/center_3.png" alt="some_text">
       <img class="enlargeImage" src="../images/iTunes_API/fill_parent.png" alt="some_text">
     </div>
@@ -151,13 +150,13 @@
 
    <div class="tutorialContentPage">
      <h4>9. Add an input parameter</h4>
-     <p>Click on the blue mutator button to add an input parameter to your procedure. Rename it "artistName".</p>
+     <p>Click on the blue mutator button to add an input parameter to your procedure. Replace the "x" with "artistName".</p>
      <img class="enlargeImage" src="../images/iTunes_API/input_parameter.png" alt="some_text">
    </div>
 
    <div class="tutorialContentPage">
      <h4>10. Build up the procedure</h4>
-     <p>Drag out a <span class="setters">set Web1.Url to</span> block and snap it into your procedure.</p>
+     <p>Select the "Web" component. Drag out a <span class="setters">set Web1.Url to</span> block and snap it into your procedure.</p>
      <img class="enlargeImage" src="../images/iTunes_API/web1_url.png" alt="some_text">
    </div>
 
@@ -169,7 +168,9 @@
 
    <div class="tutorialContentPage">
      <h4>10. Build up the procedure</h4>
-     <p>Add the below text strings into the first and third slots</p>
+     <p>Add the following text strings into the first and third slots:</p>
+     <p><span class="text">https://itunes.apple.com/search?term=</span></p>
+     <p><span class="text">&limit=1</span></p>
      <img class="enlargeImage" src="../images/iTunes_API/joining2.png" alt="some_text">
    </div>
 
@@ -199,7 +200,7 @@
 
    <div class="tutorialContentPage">
      <h4>11. Code the query button</h4>
-     <p>First let’s reset the IconImage.Picture to our iTunes icon image.</p>
+     <p>First let’s reset the IconImage.Picture to our iTunes icon image (itunes-icon.jpg).</p>
       <img class="enlargeImage" src="../images/iTunes_API/icon_image_picture.png" alt="some_text">
    </div>
 
@@ -211,9 +212,10 @@
 
    <div class="tutorialContentPage">
      <h4>11. Code the query button</h4>
-     <p>The input to <span class="procedures">queryiTunes</span> will be the contents of ArtistTextbox. We can’t have any spaces in the query, so we’ll trim spaces from before and after the name, and replace all spaces between names with a plus sign “+”.</p>
+     <p>The input to <span class="procedures">queryiTunes</span> will be the contents of ArtistTextbox. We can’t have any spaces in the query, so we’ll trim spaces from before and after the name, and replace all spaces between names with a plus sign “<span class="text">+</span>”.</p>
      <p>The <span class="text">replace all text</span> block can be found in the text drawer.</p>
-      <img class="enlargeImage" src="../images/iTunes_API/artist_textbox_mod.png" alt="some_text">
+     <img class="enlargeImage" src="../images/iTunes_API/artist_textbox_mod.png" alt="some_text">
+     <p>Make sure you use a space <span class="text"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, not a blank!</p>
    </div>
 
    <div class="tutorialContentPage">
@@ -247,7 +249,7 @@
 
    <div class="tutorialContentPage">
      <h4>14. Variables</h4>
-     <p>The first step is make a local variable called <span class="variables">resonsePairs</span>. Click on the default name to rename it after you drag it out. Local means it’s only being used within the event block.</p>
+     <p>The first step is make a local variable. Drag out the block, then click on the default <span class="variables">name</span> and change it to <span class="variables">responsePairs</span>. <em>Local</em> means it’s only being used within the event block.</p>
       <img class="enlargeImage" src="../images/iTunes_API/response_pairs.png" alt="some_text">
    </div>
 
@@ -313,23 +315,7 @@
       <img class="enlargeImage" src="../images/iTunes_API/test_it.png" alt="some_text">
    </div>
 
-   <div class="tutorialContentPage">
-     <h4>20. Challenge</h4>
-     <p>Recall that the response from iTunes includes many key/value pairs. Look through the text that iTunes returns from the Web API to see what other key/pair values you could extract.</p>
-      <img class="enlargeImage" src="../images/iTunes_API/api.png" alt="some_text">
-   </div>
 
-   <div class="tutorialContentPage">
-     <h4>20. Challenge</h4>
-     <p>Use <span class="lists">look up in pairs</span> in <span class="control">Web1.GotText</span> to pull out other information. For example, you could extract the album/CD cover image.</p>
-      <img class="enlargeImage" src="../images/iTunes_API/cover_image.png" alt="some_text">
-     <p>Consider what information you are extracting. The artwork would have to go in an Image component (set Picture to). If it’s text information, it would go in a Label (set Text to).</p>
-   </div>
-
-  <div class="tutorialContentPage">
-    <h4>21. Extend your app</h4>
-    <img class="enlargeImage" src="../images/iTunes_API/extend_app.png" alt="some_text">
-  </div>
   <br/>
   <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
     <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
@@ -369,6 +355,11 @@
       <p>Use look up in pairs in  Web1.GotText to pull out other information. For example, you could extract the album/CD cover image.</p>
       <img class="enlargeImage" src="../images/iTunes_API/challenge2_2.png" alt="some_text">
       <p>Consider what information you are extracting. The artwork would have to go in an Image component (set Picture to). If it’s text information, it would go in a Label (set Text to).</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Extend your app!</h4>
+      <img class="enlargeImage" src="../images/iTunes_API/extend_app.png" alt="some_text">
     </div>
 
     <br/>
