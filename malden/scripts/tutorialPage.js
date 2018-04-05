@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         var currentSpan = document.createElement("span");
         currentSpan.className = "currentPageNum";
-        currentSpan.innerHTML = -1;
+        currentSpan.innerHTML = "-1";
         pageSpan.appendChild(currentSpan);
 
         var ofDiv = document.createElement("span");
