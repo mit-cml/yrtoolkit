@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malden Tour Guide</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+      $(window).bind('resize', function() {
+          console.log("window resized")
+      });
+  </script>
+
+  <script>
+      $( function() {
+          $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+                  sendAnalyticsEvent( {
+                      hitType: 'event',
+                      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+                      eventAction: 'headerClick',
+                      eventLabel: ui.newHeader.text()
+                  });
+
+              }});
+
+          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+      } );
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31803258-2', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+  <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+</div>
+
+<div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+  <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+  <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+</div>
+
+<div id="maldenAccordion" class="accordion">
+
+  <h3>Connect your App</h3>
+  <div class="setup" id="connect_app"></div>
+
+  <h3>Two Button Game: Part 1</h3>
+
+  <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+    <div class="tutorialContentPage">
+      <h4>Introduction</h4>
+      <img class="enlargeImage" src="../images/two_button_game/0.png" alt="some_text">
+      <p>Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>Set <i>AlignHorizontal</i> and <i>AlignVertical</i> for <b>Screen1</b> to "Center".</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.1.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>Drag in 4 HorizontalArrangements. Name them <i>TimerArrangement</i>, <i>ButtonArrangement</i>, <i>ScoreArrangement</i>, and <i>StartButtonArrangement</i>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.1.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>For each HorizontalArrangement, change its <i>AlignHorizontal</i> property to “Center” and its <i>Width</i> property to “Fill Parent”.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.1.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>Drag in the following components to the corresponding HorizontalArrangement:</p>
+      <ul>
+        <li>TimerArrangement - 2 labels</li>
+        <li>ButtonArrangement - 2 buttons</li>
+        <li>ScoreArrangement - 4 labels</li>
+        <li>StartButtonArrangement - 1 button</li>
+      </ul>
+      <img class="enlargeImage" src="../images/two_button_game/1.2.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>Name each new component as shown below:</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.2.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Screen1</h4>
+      <p>Change the time labels to the color red</p>
+      <p>Set the <i>Height</i> property for the two player buttons to 150 pixels, and the <i>Width</i> property to 50 percent. And uncheck <i>Enabled</i> for both.</p>
+      <img class="enlargeImage" src="../images.two_button_game/1.2.4.png" alt="some_text">
+      <p>Set the <i>Text</i> property of each component so the final User Interface looks like this:</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.2.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Player1's score</h4>
+      <p>Switch to the blocks editor</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.9.1.png" alt="some_text">
+      <p>Drag out a <span class="control">when Player1Button.Click</span> event block.</p>
+      <p>And increase Player1's score by 1</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.3.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Player1's score</h4>
+      <p>Fill in the addition block</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.4.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Player2's score</h4>
+      <p>Now, let’s code the Player2Button by <b>duplicating</b> the Player1Button and changing it slightly.</p>
+      <p>Right-click on the <span class="control">when Player1Button.Click</span> event block, and click <b>Duplicate</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.4.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set up Player2's score</h4>
+      <p>Click the dropdown menu of <b>Player1Button</b>, and select <b>Player2Button</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.5.1.png" alt="some_text">
+      <p>Click the dropdown menu of <b>Player1Score</b>, and click <b>Player2Score</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.5.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Start Button</h4>
+      <p>Drag out a <span class="control">when StartButton1.Click</span> block</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.5.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Start Button</h4>
+      <p>Set Player1's and Player2's scores to zero.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.6.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Start Button</h4>
+      <p>Enable Player1's and Player2's buttons so that they can start clicking.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.7.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Testing!</h4>
+      <p>Now test your app by connecting to the MIT AI2 Companion. Start the game and press both buttons. Do the scores update correctly?</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.8.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add a Clock Timer</h4>
+      <p>Switch back to the Designer.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.8.2.png" alt="some_text">
+      <p>From the Sensors palette, drag in a Clock component.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.8.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add a Clock Timer</h4>
+      <p>Set <i>TimerEnabled</i> to false (uncheck the box), and change the <i>TimerInterval</i> to 1000 (1000 milliseconds = 1 second).</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.8.4.png" alt="some_text">
+      <p>Switch back to the Blocks Editor.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.9.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Set the Time</h4>
+      <p>Set the Time to 10 (seconds)</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.9.2.png" alt="some_text">
+      <p>And enable the Clock to start ticking!</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.9.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Update the Counter</h4>
+      <p>Every time the Clock Timer “fires”, we need to update the time counter.</p>
+      <p>Drag out a <span class="control">when Clock1.Timer</span> block.</p>
+      <p>Each time the clock timer fires, we need to decrease the Time by 1.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.10.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Ending the Game</h4>
+      <p>Add an <span class="control">if</span> block to test if the Time = 0, which means we’re out of time and the game is over.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.11.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Ending the Game</h4>
+      <p>If we are out of time, disable the <b>Player1Button</b> so the users cannot continue clicking it.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.1.png" alt="some_text">
+      <p>Disable <b>Player2Button</b> too.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Ending the Game</h4>
+      <p>Finally, disable the <b>Clock.Timer</b> so it stops ticking.</p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.3.png" alt="some_text">
+      <p>Now test your app again by connecting to the MIT AI2 Companion. Does the time count down from 10 to 1 and then stop?</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Concepts</h4>
+      <p><b>1. Events:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.13.1.png" alt="some_text">
+      <p><b>2. Conditionals:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.13.2.png" alt="some_text">
+      <p><b>3. Naming:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.13.3.png" alt="some_text">
+      <p><b>4. Operators:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.13.4.png" alt="some_text">
+    </div>
+
+  <br/>
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+  </div>
+
+<h3>Two Button Game: Part 2</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+
+    <div class="tutorialContentPage">
+      <h4>Introduction</h4>
+      <img class="enlargeImage" src="../images/two_button_game/2.1.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>How CloudDB Works</h4>
+      <p>We will use CloudDB in the app to update each player’s score on the other player’s tablet by adding code to do the following. When a player clicks on their button, they’ll store their new score in CloudDB. The DataChanged event will be triggered every time that happens, and that will signal the other player to update the score on their tablet.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.1.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Changing Screen1</h4>
+      <p>Open your TwoButtonGame app from Part 1, and switch to the Designer.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.2.1.png" alt="some_text">
+	    <p>Drag in a second button to <b>StartButtonArrangement</b> and rename it <b>StartButton2</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.2.2.png" alt="some_text">
+	    <p>Change the <i>Text</i> of <b>StartButton1</b> to “Start Player1” and change the <i>Text</i> of <b>StartButton2</b> to “Start Player2”.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.2.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Add CloudDB</h4>
+      <p>Drag in a <b>CloudDB</b> component from the Experimental drawer. It’s a non-visible component so it will appear below the viewer screen.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.3.1.png" alt="some_text">
+      <p>Switch back to the Blocks Editor.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.3.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Updating the Start Buttons</h4>
+      <p>The first thing we have to do is update the Start buttons. <b>StartButton1</b> should be mostly correct already.</p>
+      <p><b>Player2Button</b> should <b>not</b> be enabled for Player 1. Change <span class="setters">set Player2Button.Enabled</span> to <b>false</b> by clicking on <b>true</b> and selecting <b>false</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.4.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Updating the Start Buttons</h4>
+      <p>Rather than rewrite all the code, we can <b>duplicate StartButton1</b> and change it. Right click on <span class="control">when StartButton1.Click</span>, and select <b>Duplicate</b>.<p>
+      <img class="enlargeImage" src="../images/two_button_game/2.4.2.png" alt="some_text">
+      <p>Click the drop down menu of <b>StartButton1</b> and change it to <b>StartButton2</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.4.3.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Updating the Start Buttons</h4>
+      <p>Change <span class="setters">set Player1.Enabled</span> to <b>false</b><p>
+      <img class="enlargeImage" src="../images/two_button_game/2.4.4.png" alt="some_text">
+      <p>And change <span class="setters">set Player2.Enabled</span> to <b>true</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.4.5.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Saving to CloudDB</h4>
+      <p>Every time a player scores a point, we will save the new score in CloudDB.</p>
+      <p>Update <span class="control">when Player1Button.Click</span> to include a <span class="procedures">call CloudDB.StoreValue</span> block.</p>
+      <p>The <i><b>tag</b></i> is “Player1Score” and the <i><b>valueToStore</b></i> is Player1Score.Text.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.5.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Saving to CloudDB</h4>
+      <p>Do the same for <span class="control">when Player2Button.Click</span>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.6.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Data Changed</h4>
+      <p>Every time we update a player’s score in CloudDB, that generates a <span class="control">when CloudDB.DataChanged</span> event.</p>
+      <p>Drag out a <span class="control">when CloudDB.DataChanged</span> block</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.6.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Data Changed</h4>
+      <p>We need to check which tag has been changed.</p>
+      <p>Drag out an <span class="control">if</span> block, and then use the <u>blue mutator</u> to make an <span class="control">if-then-elseif</span> block.</p>
+      <p>Drag out a <span class="control">when CloudDB.DataChanged</span> block</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.7.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Data Changed</h4>
+      <p>Add a Logic <span class="logic">equals</span> block to the <span class="control">if</span> block, and test if the tag is “Player1Score”.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.7.2.png" alt="some_text">
+      <p>Duplicate the <span class="logic">equals</span> block</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.8.1.png" alt="some_text">
+      <p>Change “Player1Score” to “Player2Score” in the text block, then snap it into the <span class="control">else if</span>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.8.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Data Changed</h4>
+      <p>Set the corresponding score label to the value passed to <b>DataChanged</b>.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.9.1.png" alt="some_text">
+      <p>Duplicate the <span class="setters">set Player1Score.Text</span> block and change to Player2Score.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.9.2.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Testing</h4>
+      <p>Time to test! Because this game app sends scores to the cloud, we need to test using two devices. We can only test with one AI2 Companion, so we’ll make our project an apk file and install the app on two separate tablets.</p>
+      <p>Go to the “Build” menu at the top of the screen, and click on “App (provide QR code for .apk)”. This will start the process of building the app so that it can be installed on any tablet.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.10.1.png" alt="some_text">
+      <p>A QR code will appear in a pop-up window once the app is built. When it appears, both you and your partner should scan it using your tablets. Follow the prompts to download and install the .apk on your tablets.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.10.2.png" alt="some_text">
+      <p>Play the game against your partner on your own tablets. Does it work correctly? Do the scores update correctly?</p>
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Extend Your App</h4>
+      <img class="enlargeImage" src="../images/two_button_game/2.11.1.png" alt="some_text">
+    </div>
+
+    <div class="tutorialContentPage">
+      <h4>Concepts</h4>
+      <p><b>1. Events:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.1.png" alt="some_text">
+      <p><b>2. Conditionals:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.2.png" alt="some_text">
+      <p><b>3. Data Manipulation:</b></p>
+      <img class="enlargeImage" src="../images/two_button_game/1.12.3.png" alt="some_text">
+    </div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+<h3>Two Button Game: Challenge</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+
+  <div class="tutorialContentPage">
+    <h4>Extend Your App</h4>
+    <img class="enlargeImage" src="../images/two_button_game/3.1.1.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>Add a Sound</h4>
+    <p>Add a Sound (or Player) component. Remember that it’s non-visible so you won’t “see” it on the Viewer.</p>
+    <p>Find a sound, like this <a href="https://drive.google.com/open?id=1KqRIyVFt0aVPLHUD4gyaQ7eix0cnFucs">DING.WAV</a> and download it to your computer.</p>
+    <p>Upload your sound file and set it as the component’s Source file.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.1.2.png" alt="some_text">
+    <p>In the Blocks Editor, add <span class="getters">call Sound1.Play</span> where you want the sound to play. Perhaps when a user clicks their button?</p>
+    <p>You can use more than one Sound component if you want different sounds to play for each Player.</p>
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>Display Leaderboard</h4>
+    <p>How about showing the players who is in the lead while the game is being played? And also displaying who the winner is?</p>
+    <p>Add a Label somewhere in your user interface in the Designer. Name it appropriately.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.2.1.png" alt="some_text">
+    <p>Add a Clock component from the Sensor Drawer. Name it something different from your other Clock. Because we’re using CloudDB, we want to account for any time lag between the 2 devices.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.2.2.png" alt="some_text">
+    <p>Set your new Clock’s <i>TimerEnabled</i> property to false (uncheck the box) and set its <i>TimerInterval</i> property to 5000 milliseconds (5 seconds).</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.2.3.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>Display Leaderboard</h4>
+    <p>Use an <span class="control">if-then</span> block to test who is leading. Depending on who is leading, set your Label appropriately.</p>
+    <p>You need to cover 3 possible conditions:</p>
+    <ul>
+      <li>Player1 leads</li>
+      <li>Player2 leads</li>
+      <li>It's a tie</li>
+    </ul>
+    <p>Might make sense to add <span class="control">else if</span> and <span class="control">else</span> to your <span class="control">if</span> block.</p>
+    <p>To test is something is greater than, drag out an <span class="logic">equals</span> block from the Math drawer and change it to a greater than (>) block.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.3.1.png" alt="some_text">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>Display Leaderboard</h4>
+    <p>Use Player1.Text and Player2.Text to compare which is larger.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.4.1.png" alt="some_text">
+    <p>Set the approprate text for your Label in each of your 3 conditions. Your else condition will be the tie. Use <span class="setters">set LeaderLabel.Text</span>.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.4.2.png" alt="some_text">
+    <p>This entire <span class="control">if-else-if-else</span> block needs to be snapped in... where? (Hint: Remember where the score gets updated from before)</p>
+    <p>We can use the same <span class="control">if-else-if-else</span> block for the end of the game. We can Duplicate the entire block and just change the text blocks slightly.</p>
+    <p>The new Clock component we added will wait 5 seconds for both players to finish up their game. Then the timer will go off, and that’s where the second <span class="control">if-else-if-else</span> block goes.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.4.4.png" alt="some_text">
+    <p>Don’t forget to test out your new features! Listen for your sounds and look for the updates in your new Label.</p>
+  </div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="serverTutorialId" style="display:none;">2</div>
+<div id="hasAnalytics" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
