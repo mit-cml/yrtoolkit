@@ -544,10 +544,10 @@
   	  <h4>Add Marker Button</h4>
   	  <p>Drag out a <span class="procedures">call Notifier.ShowChooseDialog</span> block from the <span class="icon" alt="notifier"></span> Notifier drawer, and fill in the slots with the appropriate text blocks. </p>
   	  <p><ul>
-  	  	<li>Set <em>message</em> to "Do you want to add your current location or pick a location on the map?</li>
-  	  	<li>Set <em>title</em> to "Add a Marker".</li>
-  	  	<li>Set <em>button1Text</em> to "My Location".</li>
-  	  	<li>Set <em>button2Text</em> to "Specify on Map".</li>
+  	  	<li>Set <em>message</em> to <span class="text">Do you want to add your current location or pick a location on the map?</span></li>
+  	  	<li>Set <em>title</em> to <span class="text">Add a Marker</span>.</li>
+  	  	<li>Set <em>button1Text</em> to <span class="text">My Location</span>.</li>
+  	  	<li>Set <em>button2Text</em> to <span class="text">Specify on Map</span>.</li>
   	  </ul></p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_4_2.png" alt="some_text">
   	</div>
@@ -568,7 +568,7 @@
   	 <div class="tutorialContentPage">
   	  <h4>Check GPS</h4>
   	  <p>Let’s make sure that the user’s position is registering on their device. Sometimes the GPS doesn’t function well, and the user’s latitude and longitude register as (0,0).</p>
-  	  <p>Add another <span class="control">if-then</span> block and snap it into the <span class="control">then</span> part of the first <span class="control">if</span> block.</p>
+  	  <p>Add another <span class="control">if-then</span> block and snap it into the <span class="control">then</span> part of the first <span class="control">if-then</span> block.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_1.png" alt="some_text">
   	</div>
 
@@ -582,7 +582,7 @@
 
   	 <div class="tutorialContentPage">
   	  <h4>Check GPS</h4>
-  	  <p>From the <span class="icon" alt="map"></span>Map1 drawer, drag out a <span class="getters">Map1.UserLatitude</span> and <span class="getters">Map1.UserLongitude</span> block, and test if both are equal to <span class="math">zero</span>>.</p>
+  	  <p>From the <span class="icon" alt="map"></span>Map1 drawer, drag out a <span class="getters">Map1.UserLatitude</span> and <span class="getters">Map1.UserLongitude</span> block, and test if both are equal to <span class="math">zero</span>.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_4.png" alt="some_text">
   	</div>
 
@@ -614,7 +614,7 @@
   	<div class="tutorialContentPage">
   	  <h4>Specify on Map</h4>
   	  <p>The second choice from the <span class="icon" alt="notifier"></span>Notifier, "Specify on Map", will let the user click somewhere on the map to add a marker at that spot.</p>
-  	  <p>Add another <span class="control">if</span> block, testing for the second choice from the <span class="icon" alt="notifier"></span>Notifier message dialog.</p>
+  	  <p>Add another <span class="control">if-then</span> block, testing for the second choice from the <span class="icon" alt="notifier"></span>Notifier message dialog.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_8_1.png" alt="some_text">
   	</div>
 
@@ -641,26 +641,21 @@
   	  <h4>Tap At Point</h4>
   	  <p>Now we need to catch the event where the user taps on the map to add their location.</p>
   	  <p>Drag out a <span class="control">Map1.TapAtPoint</span> block from the <span class="icon" alt="map"></span>Map1 drawer. Note that its parameters are the <span class="variables">latitude</span> and <span class="variables">longitude</span> of where the user has tapped/clicked.</p>
+  	  <p>Drag in another <span class="control">if-then</span> block.</p>
+  	  <p>Check first if we've set the <span class="variables">addingMarker</span> variable to <span class="logic">true</span>. Otherwise, we can ignore the tap event. </p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_1.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Tap At Point</h4>
-  	  <p>Drag in another <span class="control">if-then</span> block.</p>
-  	  <p>Check first if we've set the <span class="variables">addingMarker</span> variable to <span class="logic">true</span>. Otherwise, we can ignore the tap event. </p>
+  	  <p>In the <span class="control">then</span> slot, set <span class="variables">addingMarker</span> to <span class="logic">false</span>, because they've done it already.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_2.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Tap At Point</h4>
-  	  <p>In the <span class="control">then</span> slot, set <span class="variables">addingMarker</span> to <span class="logic">false</span>, because they've done it already.</p>
-  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_3.png" alt="some_text">
-  	</div>
-
-  	<div class="tutorialContentPage">
-  	  <h4>Tap At Point</h4>
   	  <p>Now, open the <b>AddMarkerScreen</b>, passing the <span class="variables">latitude</span> and <span class="variables">longitude</span> of the location the user click as a list for <b>startValue</b>.</p>
-  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_4.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_3.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
@@ -720,7 +715,7 @@
   	  <ul><p><li>latitude and longitude are both zero</li>
   	  	<li>OR title is not filled in</li>
   	  	<li>OR Description is not filled in</li></p></ul>
-  	  <p> Using a combination of these blocks, add a condition to the <span class="control">if</span> block to test if it's <b>invalid</b>.</p>
+  	  <p> Using a combination of these blocks, add a condition to the <span class="control">if</span> socket to test if it's <b>invalid</b>.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_12_2.png" alt="some_text">
   	</div>
 
@@ -763,8 +758,8 @@
 
 	<div class="tutorialContentPage">
   	  <h4>Start Here</h4>
-  	  <p>Wait until your partner shares their <b>BostonTourGuide_CrowdSource</b> project with you. Then open it from your project list.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_1.png" alt="some_text">
+  	  <p>Wait until your partner shares their <b>MaldenTourGuide_CrowdSource</b> project with you. Then open it from your project list.</p>
   	  <p>Make sure you have the Blocks Editor of Screen1 open. </p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_2.png" alt="some_text">
   	</div>
@@ -791,14 +786,14 @@
   	  <h4>Update Markers</h4>
   	  <p>During the last step, in <span class="control">Screen1.Initialize</span>, we called <span class="procedures">CloudDB1.GetValue</span> to get the latest list of markers. </p>
   	  <p>We need a <span class="control">CloudDB1.GotValue</span> block to retrieve the value. This block will trigger once CloudDB responds to the request.</p>
-  	  <p>Add an <span class="control">if</span> block to make sure the tag is the right one.</p>
+  	  <p>Add an <span class="control">if-then</span> block to make sure the tag is the right one.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_1.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Update Markers</h4>
   	  <p>At any point, a user could add a marker, so we also want to include a <span class="control">CloudDB1.DataChanged</span> block and update our markers there, too.</p>
-  	  <p><em>Duplicate</em> the <span class="control">if</span> block from <span class="control">CloudDB1.GotValue</span> and snap it into <span class="control">CloudDB1.DataChanged</span>.</p>
+  	  <p><em>Duplicate</em> the <span class="control">if-then</span> block from <span class="control">CloudDB1.GotValue</span> and snap it into <span class="control">CloudDB1.DataChanged</span>.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_2.png" alt="some_text">
   	</div>
 
@@ -806,7 +801,7 @@
   	  <h4>Update Markers</h4>
   	  <p>There is quite a bit involved in updating the markers, and we need the code in two places (<span class="control">GotValue</span> and <span class="control">DataChanged</span>), so let's make a new <em>procedure</em> to update the markers.</p>
   	  <p>Drag out a procedure block, name it <span class="procedures">UpdateMarkers</span>, and add an input called <span class="variables">value</span>. </p>
-  	  <img class="enlargeImage" src="../images/tour_guide/5_2_3.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_3.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
@@ -856,29 +851,30 @@
   	  <h4>Marker Title</h4>
   	  <p>We need to use the <b>Any Component</b> feature of App Inventor to set the <b>Title</b> of the new marker.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_1.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_2.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Marker Description</h4>
   	  <p>Set the <b>Description</b> in the same way you set the <b>Title</b>. But remember, the description is the fourth item in <span class="variables">marker</span>. </p>
-  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_2.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_3.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
       <h4>Marker Infobox</h4>
   	  <p>Make sure the <b>Infobox</b> is enabled for the marker, so when users click on the marker, the infobox appears.</p>
-  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_3.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_4.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Add to Global List</h4>
   	  <p>Now that we've created our marker completely, add it to the global list of markers. </p>
-  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_4.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_5.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>Helper Procedure</h4>
-  	  <p>Now, we have a porcedure to update our markers. But what if the marker already exists?</p>
+  	  <p>Now, we have a procedure to update our markers. But what if the marker already exists?</p>
   	  <p>Since we’re asking for the full list of markers, we want to make sure we don’t already have the marker in our list, which could happen if we’ve had the app open on our device. Let’s make another procedure to check if a marker already exists.</p>
   	  <p>Drag out a procedure block, but one that returns a <b>result</b>. We'll make a procedure called <span class="procedures">MarkerExists?</span> that returns either <span class="logic">true</span> (the marker exists) or <span class="logic">false</span> (the marker does not exist). Add an input called <span class="variables">marker</span>. </p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_6_1.png" alt="some_text">
@@ -900,7 +896,8 @@
   	<div class="tutorialContentPage">
   	  <h4>Marker Exists?</h4>
   	  <p>We will look through the entire list of markers to see if we have found the input marker. </p>
-  	  <p>Drag a <span class="control">for each item in list</span> block from the <span class="icon" alt="control"></span>Control drawer, and snap a new <span class="control">if</span> block in.</p>
+  	  <p>Drag a <span class="control">for each item in list</span> block from the <span class="icon" alt="control"></span>Control drawer, and snap a new <span class="control">if-then</span> block in.</p>
+  	  <p>We are <b>iterating</b> over the entire list of markers, so snap <span class="variables">MarkerList</span> into the <b>for-each</b> loop.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_7_1.png" alt="some_text">
   	</div>
 
@@ -925,7 +922,7 @@
 
   	<div class="tutorialContentPage">
   	  <h4>Test Longitude</h4>
-  	  <p>In the right side of the <span class="logic">and</span> block, test if the input marker’s Longitude equals the item’s Longitude. Longitude is stored in index <span class='math'>2</span> of <span class="variables">item</span>. </p>
+  	  <p>In the right side of the <span class="logic">and</span> block, test if the input marker’s Longitude equals the item’s Longitude. Longitude is stored in index <span class='math'>2</span>. </p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_8_3.png" alt="some_text">
   	</div>
 
@@ -939,8 +936,8 @@
   	<div class="tutorialContentPage">
   	  <h4>Marker Exists?</h4>
   	  <p><span class="procedures">MarkerExists?</span> will return <span class="logic">true</span> or <span class="logic">false</span>, depending on whether the marker exists or not. We want to call <span class="procedures">MarkerExists?</span> in the <span class="procedures">UpdateMarkers</span> procedure, before we create a new marker. We only want to create the new Marker if the marker does NOT exist already. </p>
-  	  <p>Drag out an <span class="control">if</span> block. Don't snap it in anywhere just yet.</p>
-  	  <p>From the <span class="icon" alt="logic"></span>Logic drawer, drag out a <span class="logic">not</span> block, and snap it into the <span class="control">if</span> block. <span class="logic">not</span> tests for <span class="logic">not true</span>>, or, <b>false</b>.</p>
+  	  <p>Drag out an <span class="control">if-then</span> block. Don't snap it in anywhere just yet.</p>
+  	  <p>From the <span class="icon" alt="logic"></span>Logic drawer, drag out a <span class="logic">not</span> block, and snap it into the <span class="control">if</span> socket. <span class="logic">not</span> tests for <span class="logic">not true</span>, or, <span class="logic">false</span>.</p>
   	  <p>Snap <span class="procedures">MarkerExists?</span> to the <span class="logic">not</span> block.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_9_2.png" alt="some_text">
   	</div>
