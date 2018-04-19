@@ -527,10 +527,19 @@
   	</div>
 
   	<div class="tutorialContentPage">
-  	  <h4>Add Marker Button</h4>
+  	  <h4>Add Components</h4>
   	  <p>In the Designer window, add a <span class="icon" alt="button"></span>Button above the <span class="icon" alt="map"></span>Map, naming it <b>AddMarkerButton</b>.</p>
   	  <p>Then add a <span class="icon" alt="notifier"></span>Notifier component from the User Interface Drawer, and a <span class="icon" alt="clouddb"></span>CloudDB component from the Experimental Drawer.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg4_3_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>CloudDB "Sharing Token"</h4>
+  	  <p>In order to share the same <span class="icon" alt="clouddb"></span>CloudDB with your partner, you will both have to have the exact same <b>CloudDB Token</b> in your project. Even though you are sharing the same project,  you have to use a special token.</p>
+  	  <p>Open <a href="https://drive.google.com/open?id=18uN-oPmIfX-emHZB6W9RCpHl-ItJrTuYZ5hIVaJE-XY" target="_blank">this spreadsheet</a>, and find your name in the list in Column A. Highlight the CloudDB token in Column B and <b>copy</b> it. Make sure you have the <em>entire</em> token highlighted.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_1.png" alt="some_text">
+  	  <p>Go back to your project in App Inventor. Click on <span class="icon" alt="clouddb"></span>CloudDB1 in the Components list, and <b>paste</b> the copied token in the <b>Token</b> field.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_2.png" alt="some_text">
   	</div>
 
   	 <div class="tutorialContentPage">
@@ -760,13 +769,22 @@
   	  <h4>Start Here</h4>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_1.png" alt="some_text">
   	  <p>Wait until your partner shares their <b>MaldenTourGuide_CrowdSource</b> project with you. Then open it from your project list.</p>
-  	  <p>Make sure you have the Blocks Editor of Screen1 open. </p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_2.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>CloudDB "Sharing Token"</h4>
+  	  <p>In order to share the same <span class="icon" alt="clouddb"></span>CloudDB with your partner, you will both have to have the exact same <b>CloudDB Token</b> in your project. Even though you are sharing the same project,  you have to use a special token.</p>
+  	  <p>Open <a href="https://drive.google.com/open?id=18uN-oPmIfX-emHZB6W9RCpHl-ItJrTuYZ5hIVaJE-XY" target="_blank">this spreadsheet</a>, and find your name in the list in Column A. Highlight the CloudDB token in Column B and <b>copy</b> it. Make sure you have the <em>entire</em> token highlighted.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_1.png" alt="some_text">
+  	  <p>Go back to your project in App Inventor. Click on <span class="icon" alt="clouddb"></span>CloudDB1 in the Components list, and <b>paste</b> the copied token in the <b>Token</b> field.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_2.png" alt="some_text">
   	</div>
 
   	<div class="tutorialContentPage">
   	  <h4>App Initialization</h4>
   	  <p>Each time we open the app, there is a chance that other users have added new markers, so we need to check <span class="icon" alt="clouddb"></span>CloudDB to get the latest set of markers to display.</p>
+  	  <p>Open the Blocks Editor of Screen1.</p>
   	  <p>Initialize a new <span class="icon" alt="variables"></span>variable that will hold the list of all markers for our map.</p>
   	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_3.png" alt="some_text">
   	  <p>Initialize the variable <span class="variables">MarkerTag</span>, the same as we used in <b>AddMarkerScreen</b>.</p>
