@@ -23,8 +23,9 @@
 <p>If you want to view your local copy of your tutorials while testing, change Ode.java in your local copy of App Inventor to allow any URL in the TutorialURL property. </p>
 
 <br></br><p><b>So you want to add a new tutorial?  </b></p>
-<p>Easy. Add your html page in the tutorials folder, images to a new folder under images/ and your starter aia under aiaFiles. Also, use the convert asc python script to convert your aia to an asc and keep that in the folder as well. Finally, add it to tutorials/tutorials.html. Done! </p>
-<p>However, if this is a tutorial you want to function as a standalone (such as a full-blown youth radio tutorial), add it under the yr folder (images, html, aia, asc as necessary). Modify your html file to be full-blown/standalone, with the headers and everything (TODO add details). </p>
+<p>Easy. Add your html page in the tutorials folder, images to a new folder under images/ and your starter aia under aiaFiles. Use the convert asc python script to convert your aia to an asc ("python convertToAsc.py FileToConvert") and keep that .asc in the folder as well. Finally, add it to tutorials/tutorials.html. Done! </p>
+<p>However, if this is a tutorial you want to function as a standalone (such as a full-blown youth radio tutorial), add it under the yr folder (images, html, aia, asc as necessary). Modify your html file to be full-blown/standalone, with the headers/footers.  Make sure the TutorialURL property is filled in correctly in your .aia! </p>
+<p>In order to have an .asc file that will open up to an App Inventor project with the appropriate tutorial, the link will be as such: http://ai2.appinventor.mit.edu/?locale=en&repo=http://appinventor.mit.edu/yrtoolkit/path/to/file.asc</p>
 
 <br></br><p><b>Pushing to the Real World </b></p>
 <p>Update master branch! A git hook will do the work of putting it on the site for you. </p>
