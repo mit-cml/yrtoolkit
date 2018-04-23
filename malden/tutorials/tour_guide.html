@@ -506,7 +506,483 @@
     </div>
   </div>
 
-</div>
+<h3> Map Crowdsourcing: Part 1</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Introduction</h4>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_1_1.png" alt="some_text">
+  	  <p>Under the <b>File</b> menu, select <b>Save As</b> and save the project as <b>"MaldenTourGuide_Crowdsource"</b>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_1_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Sharing</h4>
+  	  <p>Share your project with your partner.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_1_3.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_2_1.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_2_2.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_3_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add Components</h4>
+  	  <p>In the Designer window, add a <span class="icon" alt="button"></span>Button above the <span class="icon" alt="map"></span>Map, naming it <b>AddMarkerButton</b>.</p>
+  	  <p>Then add a <span class="icon" alt="notifier"></span>Notifier component from the User Interface Drawer, and a <span class="icon" alt="clouddb"></span>CloudDB component from the Experimental Drawer.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_3_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>CloudDB "Sharing Token"</h4>
+  	  <p>In order to share the same <span class="icon" alt="clouddb"></span>CloudDB with your partner, you will both have to have the exact same <b>CloudDB Token</b> in your project. Even though you are sharing the same project,  you have to use a special token.</p>
+  	  <p>Open <a href="https://drive.google.com/open?id=18uN-oPmIfX-emHZB6W9RCpHl-ItJrTuYZ5hIVaJE-XY" target="_blank">this spreadsheet</a>, and find your name in the list in Column A. Highlight the CloudDB token in Column B and <b>copy</b> it. Make sure you have the <em>entire</em> token highlighted.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_1.png" alt="some_text">
+  	  <p>Go back to your project in App Inventor. Click on <span class="icon" alt="clouddb"></span>CloudDB1 in the Components list, and <b>paste</b> the copied token in the <b>Token</b> field.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_2.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>Add Marker Button</h4>
+  	  <p>When the user clicks on the <span class="icon" alt="button"></span> AddMarkerButton, use the <span class="icon" alt="notifier"></span> Notifier component to display a dialog box, asking them whether they want to add a marker at their location, or do they want to pick a location on the map to add.</p>
+  	  <p>Drag out a <span class="control">when AddMarkerButton.Click</span> event block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add Marker Button</h4>
+  	  <p>Drag out a <span class="procedures">call Notifier.ShowChooseDialog</span> block from the <span class="icon" alt="notifier"></span> Notifier drawer, and fill in the slots with the appropriate text blocks. </p>
+  	  <p><ul>
+  	  	<li>Set <em>message</em> to <span class="text">Do you want to add your current location or pick a location on the map?</span></li>
+  	  	<li>Set <em>title</em> to <span class="text">Add a Marker</span>.</li>
+  	  	<li>Set <em>button1Text</em> to <span class="text">My Location</span>.</li>
+  	  	<li>Set <em>button2Text</em> to <span class="text">Specify on Map</span>.</li>
+  	  </ul></p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>After Choosing</h4>
+  	  <p>When the user makes their choice with <span class="icon" alt="notifier"></span> Notifier, an event called <span class="control">AfterChoosing</span> is triggered. </p>
+  	  <p>Drag out the <span class="control">AfterChoosing</span> event block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_5_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>After Choosing</h4>
+  	  <p>Add an <span class="control">if-then</span> block to test which <em>choice</em> the user made.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_5_2.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>Check GPS</h4>
+  	  <p>Let’s make sure that the user’s position is registering on their device. Sometimes the GPS doesn’t function well, and the user’s latitude and longitude register as (0,0).</p>
+  	  <p>Add another <span class="control">if-then</span> block and snap it into the <span class="control">then</span> part of the first <span class="control">if-then</span> block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_1.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>Check GPS</h4>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_2.png" alt="some_text">
+  	  <p>Add an <span class="logic">and</span> block from the <span class="icon" alt="logic"></span>Logic drawer. </p>
+  	  <p>Snap the Logic <span class="logic">=</span> block into both sides of the <span class="logic">and</span> block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_3.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>Check GPS</h4>
+  	  <p>From the <span class="icon" alt="map"></span>Map1 drawer, drag out a <span class="getters">Map1.UserLatitude</span> and <span class="getters">Map1.UserLongitude</span> block, and test if both are equal to <span class="math">zero</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_6_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Check GPS</h4>
+  	  <p>If the user’s location does not register, let them know with a <span class="icon" alt="notifier"></span>Notifier message.</p>
+  	  <p>Add the following with text blocks: <ul>
+  	  	<li><span class="text">Your location is not registering. Try again, but choose 'Add a Marker' to set the location.</span></li>
+  	  	<li><span class="text">Error</span></li>
+  	  	<li><span class="text">OK</span></li>
+  	  </ul></p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_7_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>After Choosing</h4>
+  	  <p>Now add an <span class="control">else</span> to the <span class="control">if-then</span> so we can handle when the user's location is registering.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_7_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>After Choosing</h4>
+  	  <p>From the <span class="icon" alt="control"></span>Control drawer, drag out an <span class="control">open another screen with start value</span> block and snap that into the <span class="control">else</span> part of the <span class="control">if-then-else</span> block.</p>
+  	  <p><b>screenName</b> is <span class="text">AddMarkerScreen</span></p>
+  	  <p>For <b>startValue</b>, let's pass a list that contains the user's latitude and longitude.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_7_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Specify on Map</h4>
+  	  <p>The second choice from the <span class="icon" alt="notifier"></span>Notifier, "Specify on Map", will let the user click somewhere on the map to add a marker at that spot.</p>
+  	  <p>Add another <span class="control">if-then</span> block, testing for the second choice from the <span class="icon" alt="notifier"></span>Notifier message dialog.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_8_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Specify on Map</h4>
+  	  <p>We need to let the app know to wait for the tap, and when it happens, it should add a <span class="icon" alt="marker"></span>Marker at that spot. </p>
+  	  <p>To do that, we’ll add a new variable, call it <span class="variable">addingMarker</span>, and initialize it to <span class="logic">false</span>. This means, we’re not currently adding a marker.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_8_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Adding Marker</h4>
+  	  <p>However, in our <span class="control">Notifier1.AfterChoosing</span> block, if they choose <b>“Specify on Map”</b>, we want to set <span class="variables">addingMarker</span> to <span class="logic">true</span>, which means, hey, we’re adding a marker, so wait for it.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_8_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Show Alert</h4>
+  	  <p>Then, use <span class="procedures">Notifer1.ShowAlert</span> to tell the user to go ahead and tap on the map to add the marker.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_8_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Tap At Point</h4>
+  	  <p>Now we need to catch the event where the user taps on the map to add their location.</p>
+  	  <p>Drag out a <span class="control">Map1.TapAtPoint</span> block from the <span class="icon" alt="map"></span>Map1 drawer. Note that its parameters are the <span class="variables">latitude</span> and <span class="variables">longitude</span> of where the user has tapped/clicked.</p>
+  	  <p>Drag in another <span class="control">if-then</span> block.</p>
+  	  <p>Check first if we've set the <span class="variables">addingMarker</span> variable to <span class="logic">true</span>. Otherwise, we can ignore the tap event. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Tap At Point</h4>
+  	  <p>In the <span class="control">then</span> slot, set <span class="variables">addingMarker</span> to <span class="logic">false</span>, because they've done it already.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Tap At Point</h4>
+  	  <p>Now, open the <b>AddMarkerScreen</b>, passing the <span class="variables">latitude</span> and <span class="variables">longitude</span> of the location the user click as a list for <b>startValue</b>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_9_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add Marker Screen</h4>
+  	  <p>Let's add the second screen, where the users will add the marker information, including a title and a description. </p>
+  	  <p>Click the <b>Add Screen</b> button on the top menu bar, and name the new screen <b>AddMarkerScreen</b>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_10_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add Marker Screen</h4>
+  	  <p>Add the following components to <b>AddMarkerScreen</b>. You can adjust the layout if you wish. This layout uses a <b>TableArrangement</b> (from the Layout Drawer), with with 2 colums and 4 rows.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_10_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add Marker Screen</h4>
+  	  <p>Switch to the Blocks Editor and let's code this screen!</p>
+  	  <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+  	  <p>We will store all of our <span class="icon" alt="marker"></span>Markers in a list in <span class="icon" alt="clouddb"></span>CloudDB. We need to access that list to add to it on this screen, so let’s initialize 2 variables:<ul>
+  	  	<li>One for marker information we are going to add to CloudDB</li>
+  	  	<li>One for the Markers tag we’ll use to get the full list from CloudDB</li></ul></p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_11_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Initialize Screen</h4>
+  	  <p>Remember that we passed the <em>latitude</em> and <em>longitude</em> the user wants to add in the <b>startValue</b> when opening this screen.  </p>
+  	  <p>Let’s add an <span class="control">AddMarkerScreen.Initialize</span> block to grab that information as the screen opens.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_11_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Set Lat/Long Labels</h4>
+  	  <p>Set the <span class="setters">Latitude</span> and <span class="setters">Longitude</span> labels to display the values passed in <b>startValue</b>.</p>
+  	  <p>Remember that we passed it as a list, so use <span class="lists">select list item</span> to get the values.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_11_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Get Markers</h4>
+  	  <p>Finally, get the latest markers list from <span class="icon" alt="clouddb"></span>CloudDB.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_11_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Submit Button</h4>
+  	  <p>When the user presses the <span class="icon" alt="button"></span>Submit button, we want to add the marker information to our list on <span class="icon" alt="clouddb"></span>CloudDB. But first, let's make sure we have good information! </p>
+  	  <p>Drag out a <span class="control">SubmitButton.Click</span> event block.</p>
+  	  <p>Add an <span class="control">if-then</span> block, and the <b>mutate</b> it to make it an <span class="control">if-then-else</span> block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_12_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Submit Button</h4>
+  	  <p>We want to check if the information is valid. Let's do it by checking for invalid input.</p>
+  	  <ul><p><li>latitude and longitude are both zero</li>
+  	  	<li>OR title is not filled in</li>
+  	  	<li>OR Description is not filled in</li></p></ul>
+  	  <p> Using a combination of these blocks, add a condition to the <span class="control">if</span> socket to test if it's <b>invalid</b>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_12_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Submit Button</h4>
+  	  <p>If the input information is invalid, let the user know with the <span class="icon" alt="notifier"></span>Notifier.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_12_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Submit Button</h4>
+  	  <p>Let's cover the <span class="control">else</span> case, where all the information is valid. We need to add the informatin as a new marker in our list that is stored in <span class="icon" alt="clouddb"></span>CloudDB.</p>
+  	  <p>Recall that we already have the latitude and longitude for the new marker stored in <span class="variables">markerInfo</span>. </p>
+  	  <p>Add the title and description from the corresponding <span class="icon" alt="textbox"></span>TextBoxes to <span class="variables">markerInfo</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_13_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Submit Button</h4>
+  	  <p><b>Append</b> <span class="variables">markerInfo</span> to the markers list that is stored in CloudDB.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_13_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Close Screen</h4>
+  	  <p>After that, close the screen to return to <b>Screen1</b>.</p>
+  	  <p>Code the <span class="control">BackButton.Click</span> event to also close the screen.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_13_3.png" alt="some_text">
+  	</div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+<h3> Map Crowdsourcing: Part 2</h3>
+<div class="tutorialContainer">
+  <div class="tutorialNavigationHeader"></div>
+
+	<div class="tutorialContentPage">
+  	  <h4>Start Here</h4>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_1.png" alt="some_text">
+  	  <p>Wait until your partner shares their <b>MaldenTourGuide_CrowdSource</b> project with you. Then open it from your project list.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_2.png" alt="some_text">
+  	</div>
+
+  	 <div class="tutorialContentPage">
+  	  <h4>CloudDB "Sharing Token"</h4>
+  	  <p>In order to share the same <span class="icon" alt="clouddb"></span>CloudDB with your partner, you will both have to have the exact same <b>CloudDB Token</b> in your project. Even though you are sharing the same project,  you have to use a special token.</p>
+  	  <p>Open <a href="https://drive.google.com/open?id=18uN-oPmIfX-emHZB6W9RCpHl-ItJrTuYZ5hIVaJE-XY" target="_blank">this spreadsheet</a>, and find your name in the list in Column A. Highlight the CloudDB token in Column B and <b>copy</b> it. Make sure you have the <em>entire</em> token highlighted.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_1.png" alt="some_text">
+  	  <p>Go back to your project in App Inventor. Click on <span class="icon" alt="clouddb"></span>CloudDB1 in the Components list, and <b>paste</b> the copied token in the <b>Token</b> field.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg4_4a_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>App Initialization</h4>
+  	  <p>Each time we open the app, there is a chance that other users have added new markers, so we need to check <span class="icon" alt="clouddb"></span>CloudDB to get the latest set of markers to display.</p>
+  	  <p>Open the Blocks Editor of Screen1.</p>
+  	  <p>Initialize a new <span class="icon" alt="variables"></span>variable that will hold the list of all markers for our map.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_3.png" alt="some_text">
+  	  <p>Initialize the variable <span class="variables">MarkerTag</span>, the same as we used in <b>AddMarkerScreen</b>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Screen Initialization</h4>
+  	  <p>Drag out a <span class="control">Screen1.Initialize</span> block. </p>
+  	  <p>Initialize <span class="variables">addingMarker</span> and <span class="variables">MarkerList</span> variables.
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_5.png" alt="some_text">
+  	  <p>Ask CloudDB for the latest list of markers.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_1_6.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers</h4>
+  	  <p>During the last step, in <span class="control">Screen1.Initialize</span>, we called <span class="procedures">CloudDB1.GetValue</span> to get the latest list of markers. </p>
+  	  <p>We need a <span class="control">CloudDB1.GotValue</span> block to retrieve the value. This block will trigger once CloudDB responds to the request.</p>
+  	  <p>Add an <span class="control">if-then</span> block to make sure the tag is the right one.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers</h4>
+  	  <p>At any point, a user could add a marker, so we also want to include a <span class="control">CloudDB1.DataChanged</span> block and update our markers there, too.</p>
+  	  <p><em>Duplicate</em> the <span class="control">if-then</span> block from <span class="control">CloudDB1.GotValue</span> and snap it into <span class="control">CloudDB1.DataChanged</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers</h4>
+  	  <p>There is quite a bit involved in updating the markers, and we need the code in two places (<span class="control">GotValue</span> and <span class="control">DataChanged</span>), so let's make a new <em>procedure</em> to update the markers.</p>
+  	  <p>Drag out a procedure block, name it <span class="procedures">UpdateMarkers</span>, and add an input called <span class="variables">value</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_2_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Local Variables</h4>
+  	  <p>From the <span class="icon" alt="variables"></span>Variables drawer, pull out an <span class="variables">initialize local</span> variable and name it <span class="variables">markersData</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_3_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers Procedure</h4>
+  	  <p><span class="variables">value</span> will be a list of markers. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_3_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers Procedure</h4>
+  	  <p>We want to look at each marker in the list and add it to our map, one by one. In other words, we want to see <em>each</em> marker from the list, one at a time.</p>
+  	  <p>From the <span class="icon" alt="control"></span>Control drawer, drag out a <span class="control">for each item in list</span> block. Change <span class="variables">item</span> to <span class='variables'>marker</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_3_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers Procedure</h4>
+  	  <p>Add <span class="variables">markersData</span> as the list in the <b>for each</b> block. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_3_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers Procedure</h4>
+  	  <p>Add another <em>local variable</em> inside the <b>for each</b> block, and name it <span class="variables">newMarker</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_4_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Create Marker</h4>
+  	  <p>From the <span class="icon" alt="map"></span>Map1 drawer, drag out a <span class="procedures">Map1.CreateMarker</span> block to create a new marker for the map. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_4_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Lat/Long for New Marker</h4>
+  	  <p>Remember that <span class="variables">marker</span> is a list with all the information the user entered for the added marker. Latitude and Longitude are the first two items in the list. Use <span class="lists">select list item</span> to get Latitude and Longitude as input to <span class="procedures">CreateMarker</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_4_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Title</h4>
+  	  <p>We need to use the <b>Any Component</b> feature of App Inventor to set the <b>Title</b> of the new marker.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_1.png" alt="some_text">
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Description</h4>
+  	  <p>Set the <b>Description</b> in the same way you set the <b>Title</b>. But remember, the description is the fourth item in <span class="variables">marker</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+      <h4>Marker Infobox</h4>
+  	  <p>Make sure the <b>Infobox</b> is enabled for the marker, so when users click on the marker, the infobox appears.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_4.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add to Global List</h4>
+  	  <p>Now that we've created our marker completely, add it to the global list of markers. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_5_5.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Helper Procedure</h4>
+  	  <p>Now, we have a procedure to update our markers. But what if the marker already exists?</p>
+  	  <p>Since we’re asking for the full list of markers, we want to make sure we don’t already have the marker in our list, which could happen if we’ve had the app open on our device. Let’s make another procedure to check if a marker already exists.</p>
+  	  <p>Drag out a procedure block, but one that returns a <b>result</b>. We'll make a procedure called <span class="procedures">MarkerExists?</span> that returns either <span class="logic">true</span> (the marker exists) or <span class="logic">false</span> (the marker does not exist). Add an input called <span class="variables">marker</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_6_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Add a Local Variable</h4>
+  	  <p>Initialize a <em>local variable</em>, <span class="variables">found</span>, to <span class="logic">false</span>. </p>
+  	  <p>Notice that there are two types of local variables, one that returns a value and one that doesn't. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_6_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Do Block</h4>
+  	  <p>Now, add a <span class="control">do</span> block to allow us to return the result (the value of <span class="variables">found</span>). </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_6_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Exists?</h4>
+  	  <p>We will look through the entire list of markers to see if we have found the input marker. </p>
+  	  <p>Drag a <span class="control">for each item in list</span> block from the <span class="icon" alt="control"></span>Control drawer, and snap a new <span class="control">if-then</span> block in.</p>
+  	  <p>We are <b>iterating</b> over the entire list of markers, so snap <span class="variables">MarkerList</span> into the <b>for-each</b> loop.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_7_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Exists?</h4>
+  	  <p>We need to check if the marker's Latitude AND Longitude are the same for the item in the list. </p>
+  	  <p> We'll need an <span class="logic">and</span> block, and two <span class="logic">=</span> blocks from the <span class="icon" alt="logic"></span>Logic drawer.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_7_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Test Latitude</h4>
+  	  <p>We need to use the <b>Any Component</b> feature to get the <span class='getters'>Latitude</span> of the input marker. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_8_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Test Latitude</h4>
+  	  <p>We are comparing the input Marker's Latitude to the item's Latitude. Remember we put Latitude and Longitude in a list for each marker. Latitude is at index <span class='math'>1</span> of <span class="variables">item</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_8_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Test Longitude</h4>
+  	  <p>In the right side of the <span class="logic">and</span> block, test if the input marker’s Longitude equals the item’s Longitude. Longitude is stored in index <span class='math'>2</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_8_3.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Exists?</h4>
+  	  <p>If the latitude and longitude match, set <span class="variables">found</span> to <span class='logic'>true</span>. </p>
+  	  <p>Then, return <span class="variables">found</span> as the result.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_9_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Marker Exists?</h4>
+  	  <p><span class="procedures">MarkerExists?</span> will return <span class="logic">true</span> or <span class="logic">false</span>, depending on whether the marker exists or not. We want to call <span class="procedures">MarkerExists?</span> in the <span class="procedures">UpdateMarkers</span> procedure, before we create a new marker. We only want to create the new Marker if the marker does NOT exist already. </p>
+  	  <p>Drag out an <span class="control">if-then</span> block. Don't snap it in anywhere just yet.</p>
+  	  <p>From the <span class="icon" alt="logic"></span>Logic drawer, drag out a <span class="logic">not</span> block, and snap it into the <span class="control">if</span> socket. <span class="logic">not</span> tests for <span class="logic">not true</span>, or, <span class="logic">false</span>.</p>
+  	  <p>Snap <span class="procedures">MarkerExists?</span> to the <span class="logic">not</span> block.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_9_2.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Update Markers</h4>
+  	  <p>Let's insert the new <span class="control">if</span> block into <span class="procedures">UpdateMarkers</span>.</p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_10_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Last Step!</h4>
+  	  <p>The last thing we need to do is call <span class="procedures">UpdateMarkers</span> from <span class="control">CloudDB1.GotValue</span> and <span class="control">CloudDB1.DataChanged</span>. </p>
+  	  <img class="enlargeImage" src="../images/tour_guide/tg5_11_1.png" alt="some_text">
+  	</div>
+
+  	<div class="tutorialContentPage">
+  	  <h4>Test Your App!</h4>
+  	  <p>Add a marker by either tapping a location on the map, or adding your own location. Make sure the markers, with the corrent <em>Title</em> and <em>Description</em>, appear on the map. Closing the app and re-opening it should preserve all previous markers.</p>
+  	  <img class="enlargeImage" src="../images/howTos/play_store_logo.png" alt="some_text">
+  	</div>
+
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
 </div>
 
 <div id="serverTutorialId" style="display:none;">2</div>

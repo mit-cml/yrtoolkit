@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Malden Tour Guide</title>
+  <title>Two-Button Game</title>
   <link rel="stylesheet" href="../css/scrollstyle.css">
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -108,9 +108,9 @@
 
     <div class="tutorialContentPage">
       <h4>Set up Screen1</h4>
-      <p>Change the time labels to the color red</p>
+      <p>Change the time labels to the color red.</p>
       <p>Set the <i>Height</i> property for the two player buttons to 150 pixels, and the <i>Width</i> property to 50 percent. And uncheck <i>Enabled</i> for both.</p>
-      <img class="enlargeImage" src="../images.two_button_game/1.2.4.png" alt="some_text">
+      <img class="enlargeImage" src="../images/two_button_game/1.2.4.png" alt="some_text">
       <p>Set the <i>Text</i> property of each component so the final User Interface looks like this:</p>
       <img class="enlargeImage" src="../images/two_button_game/1.2.3.png" alt="some_text">
     </div>
@@ -141,14 +141,15 @@
       <h4>Set up Player2's score</h4>
       <p>Click the dropdown menu of <b>Player1Button</b>, and select <b>Player2Button</b>.</p>
       <img class="enlargeImage" src="../images/two_button_game/1.5.1.png" alt="some_text">
-      <p>Click the dropdown menu of <b>Player1Score</b>, and click <b>Player2Score</b>.</p>
+      <p>Click the dropdown menu of <b>Player1Score</b>, and click <b>Player2Score</b> in both places.</p>
       <img class="enlargeImage" src="../images/two_button_game/1.5.2.png" alt="some_text">
+      <img class="enlargeImage" src="../images/two_button_game/1.5.3.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>Start Button</h4>
       <p>Drag out a <span class="control">when StartButton1.Click</span> block</p>
-      <img class="enlargeImage" src="../images/two_button_game/1.5.3.png" alt="some_text">
+      <img class="enlargeImage" src="../images/two_button_game/1.5.4.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -159,8 +160,9 @@
 
     <div class="tutorialContentPage">
       <h4>Start Button</h4>
-      <p>Enable Player1's and Player2's buttons so that they can start clicking.</p>
+      <p>Set both Player1 and Player2's <span class="icon" alt="button"></span>Buttons to <b>enabled</b> so that players can click on their buttons.</p>
       <img class="enlargeImage" src="../images/two_button_game/1.7.1.png" alt="some_text">
+      <img class="enlargeImage" src="../images/two_button_game/1.7.2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -220,18 +222,6 @@
       <p>Finally, disable the <b>Clock.Timer</b> so it stops ticking.</p>
       <img class="enlargeImage" src="../images/two_button_game/1.12.3.png" alt="some_text">
       <p>Now test your app again by connecting to the MIT AI2 Companion. Does the time count down from 10 to 1 and then stop?</p>
-    </div>
-
-    <div class="tutorialContentPage">
-      <h4>Concepts</h4>
-      <p><b>1. Events:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.13.1.png" alt="some_text">
-      <p><b>2. Conditionals:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.13.2.png" alt="some_text">
-      <p><b>3. Naming:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.13.3.png" alt="some_text">
-      <p><b>4. Operators:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.13.4.png" alt="some_text">
     </div>
 
   <br/>
@@ -300,8 +290,9 @@
       <h4>Saving to CloudDB</h4>
       <p>Every time a player scores a point, we will save the new score in CloudDB.</p>
       <p>Update <span class="control">when Player1Button.Click</span> to include a <span class="procedures">call CloudDB.StoreValue</span> block.</p>
-      <p>The <i><b>tag</b></i> is “Player1Score” and the <i><b>valueToStore</b></i> is Player1Score.Text.</p>
       <img class="enlargeImage" src="../images/two_button_game/2.5.1.png" alt="some_text">
+      <p>The <i><b>tag</b></i> is “Player1Score” and the <i><b>valueToStore</b></i> is Player1Score.Text.</p>
+      <img class="enlargeImage" src="../images/two_button_game/2.5.2.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
@@ -358,16 +349,6 @@
       <img class="enlargeImage" src="../images/two_button_game/2.11.1.png" alt="some_text">
     </div>
 
-    <div class="tutorialContentPage">
-      <h4>Concepts</h4>
-      <p><b>1. Events:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.12.1.png" alt="some_text">
-      <p><b>2. Conditionals:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.12.2.png" alt="some_text">
-      <p><b>3. Data Manipulation:</b></p>
-      <img class="enlargeImage" src="../images/two_button_game/1.12.3.png" alt="some_text">
-    </div>
-
     <br/>
     <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
     <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
@@ -386,7 +367,7 @@
   <div class="tutorialContentPage">
     <h4>Add a Sound</h4>
     <p>Add a Sound (or Player) component. Remember that it’s non-visible so you won’t “see” it on the Viewer.</p>
-    <p>Find a sound, like this <a href="https://drive.google.com/open?id=1KqRIyVFt0aVPLHUD4gyaQ7eix0cnFucs">DING.WAV</a> and download it to your computer.</p>
+    <p>Find a sound, like this <a href="../images/two_button_game/DING.WAV">DING.WAV</a> and download it to your computer.</p>
     <p>Upload your sound file and set it as the component’s Source file.</p>
     <img class="enlargeImage" src="../images/two_button_game/3.1.2.png" alt="some_text">
     <p>In the Blocks Editor, add <span class="getters">call Sound1.Play</span> where you want the sound to play. Perhaps when a user clicks their button?</p>
@@ -413,9 +394,10 @@
       <li>Player2 leads</li>
       <li>It's a tie</li>
     </ul>
-    <p>Might make sense to add <span class="control">else if</span> and <span class="control">else</span> to your <span class="control">if</span> block.</p>
-    <p>To test is something is greater than, drag out an <span class="logic">equals</span> block from the Math drawer and change it to a greater than (>) block.</p>
+    <p>It might make sense to add <span class="control">else if</span> and <span class="control">else</span> to your <span class="control">if</span> block.</p>
     <img class="enlargeImage" src="../images/two_button_game/3.3.1.png" alt="some_text">
+    <p>To test is something is greater than, drag out an <span class="logic">equals</span> block from the Math drawer and change it to a greater than (>) block.</p>
+    <img class="enlargeImage" src="../images/two_button_game/3.3.2.png" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">

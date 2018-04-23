@@ -115,6 +115,13 @@ a.ui-button:active,
 	padding:1px;
 }
 
+.logic {
+	background-color: #82a950;
+	border: 1px dashed #000;
+	color: white;
+	padding:1px;
+}
+
 /* Enlarge Image feature */
 
 .tutorialDiv:hover .enlargeImage {
