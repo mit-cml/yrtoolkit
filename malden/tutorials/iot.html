@@ -65,19 +65,14 @@
     <div class="tutorialNavigationHeader"></div>
 
     <div class="tutorialContentPage">
-      <h4>Start</h4>
-      <p>Start a new project in App Inventor and name it BasicIoTSetup.</p>
-    </div>
-
-    <div class="tutorialContentPage">
       <h4>Set up Screen1</h4>
       <p>First, we need to set up some buttons to find and connect to our Arduino over Bluetooth.</p>
       <ul>
-        <li>Drag a <i>HorizontalArrangement</i> from the Layout drawer in the Palette and add 4 Buttons to it.</li>
+        <li>Drag a <span class="icon" alt="horizontal"></span><i>HorizontalArrangement</i> from the Layout drawer in the Palette and add 4 Buttons to it.</li>
         <li>Rename the buttons: <b>ButtonScan</b>, <b>ButtonStopScan</b>, <b>ButtonConnect</b>, and <b>ButtonDisconnect</b>.</li>
         <li>Change their text to "Scan", "Stop Scan", "Connect", and Disconnect".</li>
         <li>Below the <i>Horizontal Arrangement</i> add a Label. Rename it <b>LabelStatus</b> and change its text to "Status: ".</li>
-        <li>Drag in a <i>ListView</i> below <b>LabelStatus</b> and rename it <b>ListBLE</b>.</li>
+        <li>Drag in a <span class="icon" alt="listView"></span><i>ListView</i> below <b>LabelStatus</b> and rename it <b>ListBLE</b>.</li>
       </ul>
       <img class="enlargeImage" src="../images/iot/1.1.1.png" alt="some_text">
     </div>
@@ -86,7 +81,7 @@
       <h4>Set up Bluetooth</h4>
       <p>Next, we need to install the BluetoothLE extension.</p>
       <ul>
-        <li>Download the <a href="edu.mit.appinventor.ble.aix" download>edu.mit.appinventor.ble.aix</a> extension to your computer.</li>
+        <li>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.ble.aix" download>edu.mit.appinventor.ble.aix</a> extension to your computer.</li>
         <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
         <li>Find the extension on your computer and upload it.</li>
       </ul>
@@ -95,7 +90,7 @@
 
     <div class="tutorialContentPage">
       <h4>Set up Bluetooth</h4>
-      <p>Add the BluetoothLE extension by dragging it onto the Viewer.</p>
+      <p>Add the <span class="icon" alt="bluetooth"></span>BluetoothLE extension by dragging it onto the Viewer.</p>
       <p>After it is are dragged onto the Viewer it will appear below the main screen, since it is a non-visible component.</p>
       <img class="enlargeImage" src="../images/iot/1.2.1.png" alt="some_text">
     </div>
@@ -106,11 +101,11 @@
       <p>We want to set up the app to scan for available Bluetooth devices. To do this, we will use the ButtonScan button to set the Bluetooth component to start scanning, and change the status label.</p>
       <p>From the Blocks pane, click on ButtonScan, and drag out <span class="control">when ButtonScan.Click</span>.</p>
       <ul>
-        <li>From the BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.StartScanning</span>.</li>
-        <li>From the LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
-        <li>From the Text drawer, add a <span class="text">text</span> block and type in "Status: Scanning".</li>
-        <li>From the ListBLE drawer, add <span class="setters">set ListBLE.Visible</span>.</li>
-        <li>From the Logic drawer, drag out a <span class="logic">true</span> block and snap to <span class="setters">set ListBLE.Visible</span>.</li>
+        <li>From the <span class="icon" alt="bluetooth"></span>BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.StartScanning</span>.</li>
+        <li>From the <span class="icon" alt="label"></span>LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="text">text</span> block and type in "Status: Scanning".</li>
+        <li>From the <span class="icon" alt="lists"></span>ListBLE drawer, add <span class="setters">set ListBLE.Visible</span>.</li>
+        <li>From the <span class="icon" alt="logic"></span>Logic drawer, drag out a <span class="logic">true</span> block and snap to <span class="setters">set ListBLE.Visible</span>.</li>
       </ul>
       <p><i>Note: We do this so we can hide the list later, because it can get very long if there are a lot of Bluetooth devices nearby.</i></p>
       <img class="enlargeImage" src="../images/iot/1.3.1.png" alt="some_text">
@@ -121,9 +116,9 @@
       <p>Next, we'll have the app stop scanning and change the status label when we press ButtonStopScan.</p>
       <p>From the Blocks pane click on ButtonStopScan, and drag out <span class="control">when ButtonStopScan.Click</span>.</p>
       <ul>
-        <li>From the BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.StopScanning</span>.</li>
-        <li>From the LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
-        <li>From the Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
+        <li>From the <span class="icon" alt="bluetooth"></span>BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.StopScanning</span>.</li>
+        <li>From the <span class="icon" alt="label"></span>LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
       </ul>
       <img class="enlargeImage" src="../images/iot/1.3.2.png" alt="some_text">
     </div>
@@ -132,8 +127,8 @@
       <h4>Programming the blocks</h4>
       <p>We need to populate the device list with all the available Bluetooth devices.</p>
       <p>From the Blocks pane, click on BluetoothLE1, and drag out <span class="control">when BluetoothLE1.DeviceFound</span>.</p>
-      <p>From the ListBLE drawer, add <span class="setters">set ListBLE.ElementsFromString to</span>.</p>
-      <p>From the BluetoothLE1 drawer, add <span class="getters">BluetoothLE1.Devicelist</span>.</p>
+      <p>From the <span class="icon" alt="lists"></span>ListBLE drawer, add <span class="setters">set ListBLE.ElementsFromString to</span>.</p>
+      <p>From the <span class="icon" alt="bluetooth"></span>BluetoothLE1 drawer, add <span class="getters">BluetoothLE1.Devicelist</span>.</p>
       <img class="enlargeImage" src="../images/iot/1.4.1.png" alt="some_text">
     </div>
 
@@ -142,10 +137,10 @@
       <p>Now, we’ll use the app to connect to the Arduino over Bluetooth.</p>
       <p>From the Blocks pane, click on ButtonConnect, and drag out <span class="control">when ButtonConnect.Click</span>.</p>
       <ul>
-        <li>From the BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.Connect index</span>.</li>
-        <li>From the ListBLE drawer, add <span class="getters">ListBLE.SelectionIndex</span>.</li>
-        <li>From the LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
-        <li>From the Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
+        <li>From the <span class="icon" alt="bluetooth"></span>BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.Connect index</span>.</li>
+        <li>From the <span class="icon" alt="lists"></span>ListBLE drawer, add <span class="getters">ListBLE.SelectionIndex</span>.</li>
+        <li>From the <span class="icon" alt="label"></span>LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
       </ul>
       <img class="enlargeImage" src="../images/iot/1.4.2.png" alt="some_text">
     </div>
@@ -155,11 +150,10 @@
       <p>Let's set it up so we know when the app has successfully connected to the Arduino:</p>
       <p>From the Blocks pane, click on BlutoothLE1, and drag out <span class="control">when BluetoothLE1.Connected</span>.</p>
       <ul>
-        <li>From the LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
-        <li>From the Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
-
-        <li>From the ListBLE drawer, add <span class="setters">set ListBLE.Visible</span>.</li>
-        <li>From the Logic drawer, drag out a <span class="logic">false</span> block and snap to <span class="setters">set ListBLE.Visible</span>.</li>
+        <li>From the <span class="icon" alt="label"></span>LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Stopped Scanning"</b>.</li>
+        <li>From the <span class="icon" alt="lists"></span>ListBLE drawer, add <span class="setters">set ListBLE.Visible</span>.</li>
+        <li>From the <span class="icon" alt="logic"></span>Logic drawer, drag out a <span class="logic">false</span> block and snap to <span class="setters">set ListBLE.Visible</span>.</li>
       </ul>
       <p><i>Note: We do this to hide the list. As we mentioned above, it can get very long if there are a lot of Bluetooth devices nearby.</i></p>
       <img class="enlargeImage" src="../images/iot/1.4.3.png" alt="some_text">
@@ -169,7 +163,7 @@
       <h4>Programming the blocks</h4>
       <p>Next we want to be able to disconnect from the Bluetooth device.</p>
       <p>From the Blocks pane, click on ButtonDisconnect, and drag out <span class="control">when ButtonDisconnect.Click</span>.</p>
-      <p>From the BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.Disconnect</span>.</p>
+      <p>From the <span class="icon" alt="bluetooth"></span>BluetoothLE1 drawer, add <span class="procedures">call BluetoothLE1.Disconnect</span>.</p>
       <img class="enlargeImage" src="../images/iot/1.5.1.png" alt="some_text">
     </div>
 
@@ -177,8 +171,8 @@
       <h4>Programming the blocks</h4>
       <p>We also want to know when the Bluetooth device successfully disconnects (to know pressing the button above worked).</p>
       <p>From the Blocks pane, click on BlutoothLE1, and drag out <span class="control">when BluetoothLE1.Disconnected</span>.</p>
-      <p>From the LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</p>
-      <p>From the Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Disconnected"</b>.</p>
+      <p>From the <span class="icon" alt="label"></span>LabelStatus drawer, add <span class="setters">set LabelStatus.Text to</span>.</p>
+      <p>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="text">text</span> block and type in <b>"Status: Disconnected"</b>.</p>
       <img class="enlargeImage" src="../images/iot/1.5.2.png" alt="some_text">
     </div>
 
@@ -209,8 +203,8 @@
     <div class="tutorialContentPage">
       <h4>Setting Up Your Arduino</h4>
       <p>In order to make the Arduino 101 to work with App Inventor + IoT we need to do a bit of setup. Most of this you will only need to do once.</p>
-      <p>If you haven't already, install the Arduino Integrated Development Environment (IDE)</p>
-      <p>Now open up the IDE and open the <b>AIM-for-Things-Arduino101.ino</b> file (the Arduino file for App Inventor), which you can download <a href="https://www.arduino.cc/en/Main/Software" download>here</a>.</p>
+      <p>If you haven't already, install the Arduino Integrated Development Environment (IDE) <a href="https://www.arduino.cc/en/Main/Software" target="_blank">(Link)</a></p>
+      <p>Now open up the IDE and open the <b>AIM-for-Things-Arduino101.ino</b> file (the Arduino file for App Inventor), which you can download <a href="http://iot.appinventor.mit.edu/assets/resources/AIM-for-Things-Arduino101.zip" download>here</a>.</p>
       <p><i>Note: If another file is open (often named "sketch_today's date" you can close it once you open the AIM-for-Things-Arduino101 file.)</i></p>
       <p>You should see a screen that looks very similar to the picture below:</p>
       <img class="enlargeImage" src="../images/iot/10.1.1.png" alt="some_text">
@@ -289,7 +283,7 @@
 
   <div class="tutorialContentPage">
     <h4>Introduction</h4>
-    <p>This tutorial will help you get started with App Inventor + IoT and the built-in accelerometer on the Arduino 101 controller. Accelerometers measure acceleration, which is the rate of change of the velocity of an object (the Arduino). Before you start you should first complete the IoT Basic Bluetooth Connection Setup tutorial to set up your Arduino device.</p>
+    <p>This tutorial will help you get started with App Inventor + IoT and the built-in accelerometer on the Arduino 101 controller. Accelerometers measure acceleration, which is the rate of change of the velocity of an object (the Arduino). Before you start you should first complete the IoT Basic Bluetooth Connection Setup and IoT Setup tutorials to set up your Arduino device.</p>
   </div>
 
   <div class="tutorialContentPage">
@@ -302,7 +296,7 @@
   <div class="tutorialContentPage">
     <h4>Changing Screen1</h4>
     <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-    <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+    <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
     <p>Rename the <b>Label</b> "LabelData".</p>
     <p>Change its text to "Data: ".</p>
     <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -315,7 +309,7 @@
     <h4>Accelerometer functionality</h4>
     <p>Next, we need to let App Inventor know which BLE device is reading the accelerometer data.</p>
     <p>Click on <b>Ardunio101Accelerometer1</b> in the Components pane.</p>
-    <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+    <p>In the Properties pane, click on BluetoothDevice and select <span class="icon" alt="bluetooth"></span>BluetoothLE1.</p>
     <img class="enlargeImage" src="../images/iot/2.3.1.png" alt="some_text">
   </div>
 
@@ -324,7 +318,7 @@
     <p>First, we want to request data updates when the accelerometer sensor values on the Arduino change.</p>
     <p>From <b>Arduino101Accelerometer1</b> in the Blocks pane, add <span class="procedures">call Arduino101Accelerometer1.RequestAccelerometerDataUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
     <img class="enlargeImage" src="../images/iot/2.4.1.png" alt="some_text">
-    <p>Next, we need to store the data we receive from the accelerometer. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Accel_X". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the X-Axis value.</p>
+    <p>Next, we need to store the data we receive from the accelerometer. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Accel_X". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the X-Axis value.</p>
     <p>Do this again, and rename the second variable "Accel_Y".</p>
     <p>Repeat a third time, and rename the third variable "Accel_Z".</p>
     <img class="enlargeImage" src="../images/iot/2.4.2.png" alt="some_text">
@@ -332,18 +326,18 @@
 
   <div class="tutorialContentPage">
     <h4>Programming the Accelerometer</h4>
-    <p>Let's make a new procedure to display the current readings in the LabelData when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
+    <p>Let's make a new procedure to display the current readings in the LabelData when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the <span class="icon" alt="procedures"></span>Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
     <ul>
-      <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-      <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-      <li>From the Text drawer, connect a text block and type <b>"Reading: "</b>.</li>
-      <li>From the Text drawer, connect a text block and type <b>"X "</b>. (note the extra space after the X)</li>
+      <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Reading: "</b>.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"X "</b>. (note the extra space after the X)</li>
       <li>We need 4 more slots in our join block. To do this, hover over the gear on the <span class="text">join</span> block. In the popup, attach four of the <span class="text">string</span> blocks the the two already there.</li>
-      <li>From the Variables drawer, connect a <span class="variables">get global Accel_X</span> block.</li>
-      <li>From the Text drawer, connect a text block and type <b>"Y "</b>. (note the extra space after the Y)</li>
-      <li>From the Variables drawer, connect a <span class="variables">get global Accel_Y</span> block.</li>
-      <li>From the Text drawer, connect a text block and type <b>"Z "</b>. (note the extra space after the Z)</li>
-      <li>From the Variables drawer, connect a <span class="variables">get global Accel_Z</span> block.</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_X</span> block.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Y "</b>. (note the extra space after the Y)</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Y</span> block.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Z "</b>. (note the extra space after the Z)</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Z</span> block.</li>
     <img class="enlargeImage" src="../images/iot/2.5.1.png" alt="some_text">
   </div>
 
@@ -352,10 +346,10 @@
     <p>Finally, we need to call the procedure when this data is received.</p>
     <ul>
       <li>From the <b>Arduino101Accelerometer1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Accelerometer1.AccelerometerDataReceived</span>.</li>
-      <li>From the Variables drawer, add <span class="variables">set global Accel_X to</span>.</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Accel_X to</span>.</li>
       <li>Hover over the orange "Accelerometer_X" in <span class="control">when Arduino101Accelerometer1.AccelerometerDataReceived</span> to see the <span class="variables">get Accelerometer_X</span> block. Drag the <span class="variables">get Accelerometer_X</span> block from this window and snap to <span class="variables">set global Accel_X</span>.</li>
       <li>Do the same for <b>Accel_Y</b> and <b>Accel_Z</b>.</li>
-      <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+      <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
     <img class="enlargeImage" src="../images/iot/2.6.1.png" alt="some_text">
   </div>
 
@@ -393,7 +387,7 @@
   <div class="tutorialContentPage">
     <h4>Changing Screen1</h4>
     <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-    <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+    <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
     <p>Rename the <b>Label</b> "LabelData".</p>
     <p>Change its text to "Data: ".</p>
     <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -406,7 +400,7 @@
     <h4>Button functionality</h4>
     <p>Next, we need to let App Inventor know which pin on the Grove board the button is connected to.</p>
     <p>Click on <b>Ardunio101Button1</b> in the Components pane.</p>
-    <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+    <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
     <p>Under <b>Pin</b>, enter the <u>digital</u> pin that matches the one the button is plugged into on the Grove board (in this case D4).</p>
     <p><i>Note: You only need to set the number (4) not the letter (D).</i></p>
     <img class="enlargeImage" src="../images/iot/3.3.1.png" alt="some_text">
@@ -417,18 +411,18 @@
     <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
     <p>From <b>Arduino101Button1</b> in the Blocks pane, add <span class="procedures">call Arduino101Button1.RequestButtonStateUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
     <img class="enlargeImage" src="../images/iot/3.4.1.png" alt="some_text">
-    <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "buttonPresses". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the number of times the button is pressed.</p>
+    <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "buttonPresses". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the number of times the button is pressed.</p>
     <img class="enlargeImage" src="../images/iot/3.4.2.png" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
     <h4>Programming the Button</h4>
-    <p>Let's make a new procedure to display the number of times the button is pressed in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
+    <p>Let's make a new procedure to display the number of times the button is pressed in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the <span class="icon" alt="procedures"></span>Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
     <ul>
-      <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-      <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-      <li>From the Text drawer, connect a text block and type <b>"Button Presses: "</b>.</li>
-      <li>From the Variables drawer, connect a <span class="variables">get global buttonPresses</span> block.</li>
+      <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+      <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Button Presses: "</b>.</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global buttonPresses</span> block.</li>
     <img class="enlargeImage" src="../images/iot/3.4.3.png" alt="some_text">
   </div>
 
@@ -437,12 +431,12 @@
     <p>The Button has two states that we can code for: When the Button is <b><i>Pressed</i></b> and when the Button is <b><i>Released</i></b>. This means that you can have some things happen each time the button is pressed or held down, and some things happen each time the button is released. Let's see how each of these work. First, let's program the behavior for when the button is pressed down. From Arduino101Button1 in the Blocks pane drag in the <span class="control">when Ardunio101Button1.Pressed</span> block.</p>
     <ul>
       <li>From Screen1 in the Blocks pane, add in <span class="setters">set Screen1.BackgroundColor to</span>.</li>
-      <li>And from Color drawer in the Blocks pane, connect a Cyan block.</li>
-      <li>From the Variables drawer, add <span class="variables">set global ButtonPress to</span>.</li>
-      <li>Then from the Math drawer connect a <span class="math">+</span> block.</li>
-      <li>Next, from the Variables drawer add <span class="variables">get globalButtonPress</span> to the Addition block.</li>
-      <li>From the Math drawer, add a <span class="math">0</span> and change it to <span class="math">1</span>.</li>
-      <li>Finally, from the Procedures drawer add <span class="procedures">call updateDataLabel</span>.</li>
+      <li>And from <span class="icon" alt="colors"></span>Color drawer in the Blocks pane, connect a Cyan block.</li>
+      <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global ButtonPress to</span>.</li>
+      <li>Then from the <span class="icon" alt="math"></span>Math drawer connect a <span class="math">+</span> block.</li>
+      <li>Next, from the <span class="icon" alt="variables"></span>Variables drawer add <span class="variables">get globalButtonPress</span> to the Addition block.</li>
+      <li>From the <span class="icon" alt="math"></span>Math drawer, add a <span class="math">0</span> and change it to <span class="math">1</span>.</li>
+      <li>Finally, from the <span class="icon" alt="procedures"></span>Procedures drawer add <span class="procedures">call updateDataLabel</span>.</li>
     <img class="enlargeImage" src="../images/iot/3.5.1.png" alt="some_text">
   </div>
 
@@ -450,7 +444,7 @@
     <h4>Programming the Button</h4>
     <p>Now let's code for when the button is released. From the Arduino101Button1 drawer in the Blocks pane, drag in the <span class="control">when Ardunio101Button1.Released</span> block.</p>
     <p>From Screen1 in the Blocks pane, add in <span class="setters">set Screen1.BackgroundColor to</span>.</p>
-    <p>And from the Color drawer, connect a White block.</p>
+    <p>And from the <span class="icon" alt="colors"></span>Color drawer, connect a White block.</p>
     <img class="enlargeImage" src="../images/iot/3.5.2.png" alt="some_text">
   </div>
 
@@ -488,7 +482,7 @@
     <div class="tutorialContentPage">
       <h4>Changing Screen1</h4>
       <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-	    <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+	    <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
       <p>Rename the <b>Label</b> "LabelData".</p>
       <p>Change its text to "Data: ".</p>
       <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -501,7 +495,7 @@
       <h4>Humidity sensor functionality</h4>
       <p>Next, we need to let App Inventor know which pin on the Grove board the humidity sensor is connected to.</p>
       <p>Click on <b>Ardunio101Humidity1</b> in the Components pane.</p>
-      <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+      <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
       <p>Under <b>Pin</b>, enter the <u>digital</u> pin that matches the one the button is plugged into on the Grove board (in this case D4).</p>
       <p><i>Note: You only need to set the number (4) not the letter (D).</i></p>
       <img class="enlargeImage" src="../images/iot/4.3.1.png" alt="some_text">
@@ -512,7 +506,7 @@
       <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
       <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call Arduino101Humidity1.RequestHumidityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
       <img class="enlargeImage" src="../images/iot/4.4.1.png" alt="some_text">
-      <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Humidity". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
+      <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Humidity". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
       <img class="enlargeImage" src="../images/iot/4.4.2.png" alt="some_text">
     </div>
 
@@ -520,10 +514,10 @@
       <h4>Programming the Humidity Sensor</h4>
       <p>Let's make a new procedure to display the current readings in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
       <ul>
-        <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-        <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-        <li>From the Text drawer, connect a text block and type <b>"Humidity: "</b>.</li>
-        <li>From the Variables drawer, connect a <span class="variables">get global Humidity</span> block.</li>
+        <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Humidity: "</b>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Humidity</span> block.</li>
       <img class="enlargeImage" src="../images/iot/4.4.3.png" alt="some_text">
     </div>
 
@@ -532,9 +526,9 @@
       <p>Finally, we need to call the procedure when this data is received.</p>
       <ul>
         <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Humidity1.HumidityReceived</span>.</li>
-        <li>From the Variables drawer, add <span class="variables">set global Humidity to</span>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Humidity to</span>.</li>
         <li>Hover over the orange "reading" in <span class="control">when Arduino101Humidity1.HumidityReceived</span> to see the <span class="variables">get Humidity</span> block. Drag the <span class="variables">get Humidity</span> block from this window and snap to <span class="variables">set global Humidity</span>.</li>
-        <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+        <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
       <img class="enlargeImage" src="../images/iot/4.5.1.png" alt="some_text">
     </div>
 
@@ -571,7 +565,7 @@
     <div class="tutorialContentPage">
       <h4>Changing Screen1</h4>
       <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-      <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+      <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
       <p>Rename the <b>Label</b> "LabelData".</p>
       <p>Change its text to "Data: ".</p>
       <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -584,7 +578,7 @@
       <h4>Light sensor functionality</h4>
       <p>Next, we need to let App Inventor know which pin on the Grove board the light sensor is connected to.</p>
       <p>Click on <b>Ardunio101Light1</b> in the Components pane.</p>
-      <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+      <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
       <p>Under <b>Pin</b>, enter the <u>analog</u> pin that matches the one the button is plugged into on the Grove board (in this case A1).</p>
       <p><i>Note: You only need to set the number (1) not the letter (A).</i></p>
       <img class="enlargeImage" src="../images/iot/5.3.1.png" alt="some_text">
@@ -595,7 +589,7 @@
       <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
       <p>From <b>Arduino101LightSensor1</b> in the Blocks pane, add <span class="procedures">call Arduino101LightSensor1.RequestLightUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
       <img class="enlargeImage" src="../images/iot/5.4.1.png" alt="some_text">
-      <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "light". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
+      <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "light". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
       <img class="enlargeImage" src="../images/iot/5.4.2.png" alt="some_text">
     </div>
 
@@ -603,10 +597,10 @@
       <h4>Programming the Light Sensor</h4>
       <p>Let's make a new procedure to display the current readings in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
       <ul>
-        <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-        <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-        <li>From the Text drawer, connect a text block and type <b>"Light: "</b>.</li>
-        <li>From the Variables drawer, connect a <span class="variables">get global light</span> block.</li>
+        <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Light: "</b>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global light</span> block.</li>
       <img class="enlargeImage" src="../images/iot/5.4.3.png" alt="some_text">
     </div>
 
@@ -615,9 +609,9 @@
       <p>Finally, we need to call the procedure when this data is received.</p>
       <ul>
         <li>From the <b>Arduino101LightSensor1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101LightSensor1.LightSensorDataReceived</span>.</li>
-        <li>From the Variables drawer, add <span class="variables">set global light to</span>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global light to</span>.</li>
         <li>Hover over the orange "reading" in <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global light</span>.</li>
-        <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+        <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
       <img class="enlargeImage" src="../images/iot/5.5.1.png" alt="some_text">
     </div>
 
@@ -654,7 +648,7 @@
     <div class="tutorialContentPage">
       <h4>Changing Screen1</h4>
       <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-      <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+      <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
       <p>Rename the <b>Label</b> "LabelData".</p>
       <p>Change its text to "Data: ".</p>
       <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -667,7 +661,7 @@
       <h4>Moisture sensor functionality</h4>
       <p>Next, we need to let App Inventor know which pin on the Grove board the moisture sensor is connected to.</p>
       <p>Click on <b>Ardunio101Moisture1</b> in the Components pane.</p>
-      <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+      <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
       <p>Under <b>Pin</b>, enter the <u>analog</u> pin that matches the one the button is plugged into on the Grove board (in this case A2).</p>
       <p><i>Note: You only need to set the number (2) not the letter (A).</i></p>
       <img class="enlargeImage" src="../images/iot/6.3.1.png" alt="some_text">
@@ -678,7 +672,7 @@
       <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
       <p>From <b>Arduino101Moisture1</b> in the Blocks pane, add <span class="procedures">call Arduino101Moisture1.RequestMoistureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
       <img class="enlargeImage" src="../images/iot/6.4.1.png" alt="some_text">
-      <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "moisture". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
+      <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "moisture". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
       <img class="enlargeImage" src="../images/iot/6.4.2.png" alt="some_text">
     </div>
 
@@ -686,10 +680,10 @@
       <h4>Programming the Moisture Sensor</h4>
       <p>Let's make a new procedure to display the current readings in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
       <ul>
-        <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-        <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-        <li>From the Text drawer, connect a text block and type <b>"Moisture: "</b>.</li>
-        <li>From the Variables drawer, connect a <span class="variables">get global moisture</span> block.</li>
+        <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Moisture: "</b>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global moisture</span> block.</li>
       <img class="enlargeImage" src="../images/iot/6.4.3.png" alt="some_text">
     </div>
 
@@ -698,9 +692,9 @@
       <p>Finally, we need to call the procedure when this data is received.</p>
       <ul>
         <li>From the <b>Arduino101Moisture1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Moisture1.MoistureDataReceived</span>.</li>
-        <li>From the Variables drawer, add <span class="variables">set global moisture to</span>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global moisture to</span>.</li>
         <li>Hover over the orange "reading" in <span class="control">when Arduino101Moisture1.MoistureDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global moisture</span>.</li>
-        <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+        <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
       <img class="enlargeImage" src="../images/iot/6.5.1.png" alt="some_text">
     </div>
 
@@ -737,7 +731,7 @@
     <div class="tutorialContentPage">
       <h4>Changing Screen1</h4>
       <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-      <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+      <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
       <p>Rename the <b>Label</b> "LabelData".</p>
       <p>Change its text to "Data: ".</p>
       <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -750,7 +744,7 @@
       <h4>Proximity sensor functionality</h4>
       <p>Next, we need to let App Inventor know which pin on the Grove board the proximity sensor is connected to.</p>
       <p>Click on <b>Ardunio101ProximitySensor1</b> in the Components pane.</p>
-      <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+      <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
       <p>Under <b>Pin</b>, enter the <u>analog</u> pin that matches the one the button is plugged into on the Grove board (in this case A0).</p>
       <p><i>Note: You only need to set the number (0) not the letter (A).</i></p>
       <p><i>Another note: If your sensor wires look like the picture below, note that the yellow wire goes to the A1 pin, not A0 as you would think. Therefore, you should type the number 1 into the <b>Pin</b> property setting, not 0.</i></p>
@@ -763,7 +757,7 @@
       <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
       <p>From <b>Arduino101ProximitySensor1</b> in the Blocks pane, add <span class="procedures">call Arduino101ProximitySensor1.RequestProximityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
       <img class="enlargeImage" src="../images/iot/7.4.1.png" alt="some_text">
-      <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Proximity". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
+      <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Proximity". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
       <img class="enlargeImage" src="../images/iot/7.4.2.png" alt="some_text">
     </div>
 
@@ -771,10 +765,10 @@
       <h4>Programming the Proximity Sensor</h4>
       <p>Let's make a new procedure to display the current readings in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
       <ul>
-        <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-        <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-        <li>From the Text drawer, connect a text block and type <b>"Distance: "</b>.</li>
-        <li>From the Variables drawer, connect a <span class="variables">get global Proximity</span> block.</li>
+        <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+        <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Distance: "</b>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Proximity</span> block.</li>
       <img class="enlargeImage" src="../images/iot/7.4.3.png" alt="some_text">
     </div>
 
@@ -783,9 +777,9 @@
       <p>Finally, we need to call the procedure when this data is received.</p>
       <ul>
         <li>From the <b>Arduino101ProximitySensor1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101ProximitySensor1.ProximitySensorDataReceived</span>.</li>
-        <li>From the Variables drawer, add <span class="variables">set global Proximity to</span>.</li>
+        <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Proximity to</span>.</li>
         <li>Hover over the orange "proximity" in <span class="control">when Arduino101ProximitySensor1.ProximitySensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global Proximity</span>.</li>
-        <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+        <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
       <img class="enlargeImage" src="../images/iot/7.5.1.png" alt="some_text">
     </div>
 
@@ -823,7 +817,7 @@
     <div class="tutorialContentPage">
       <h4>Changing Screen1</h4>
       <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-      <p>Drag a <b>ListPicker</b>, <b>TextBox</b>, and <b>Button</b> from the User Interface Palette and drop them underneath <b>ListBLE</b></p>
+      <p>Drag a <span class="icon" alt="listPicker"></span>ListPicker, <span class="icon" alt="textbox"></span>TextBox, and <span class="icon" alt="button"></span>Button from the User Interface Palette and drop them underneath <b>ListBLE</b></p>
       <p>Rename the <b>ListPicker</b> "ListPickerBackgroundColor", the <b>TextBox</b> "TextMessage", and the <b>Button</b> "ButtonMessageSend".</p>
       <p>Set the text of <b>ListPicker</b> to "Background Color".</p>
       <p>Set the text of <b>Button</b> to "Send Message".</p>
@@ -837,7 +831,7 @@
     <div class="tutorialContentPage">
       <h4>RGB LCD Sensor functionality</h4>
       <p>Click on <b>Ardunio101RgbLcd1</b> in the Components pane.</p>
-      <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+      <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
       <p>Unlike many other components, RgbLcd doesn’t need to define a pin in the designer. You just need to plug the RgbLcd component into any of the I2C slots on the Grove.</p>
       <img class="enlargeImage" src="../images/iot/8.3.1.png" alt="some_text">
     </div>
@@ -846,22 +840,22 @@
       <h4>Programming the RGB LCD Sensor</h4>
       <p>Next we want to set it up so that we set the text and background color when we first connect to the Arduino.</p>
       <p>From <b>Arduino101RgbLcd1</b> in the Blocks pane, add <span class="procedures">call Arduino101RgbLcd1.setText</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
-      <p>From the Text drawer, add a text block and type “Connected!”.</p>
+      <p>From the <span class="icon" alt="text"></span>Text drawer, add a text block and type “Connected!”.</p>
       <p>From the <b>Arduino101RgbLcd1</b> drawer, add a <span class="procedures">call Arduino101RgbLcd1.SetBackgroundColor</span> block.</p>
-      <p>From the Color drawer, add a color block (we used green below).</p>
-      <p>From the ListPickerBackgroundColor drawer in the Blocks pane, drag out a <span class="setters">set ListPickerBackgroundColor.ElementsFromString</span> block.</p>
-      <p>From the Text drawer, add a text block and type “red, orange, yellow, green, blue, purple, grey, white”. This will give you the different options for the ListPicker.</p>
+      <p>From the <span class="icon" alt="colors"></span>Color drawer, add a color block (we used green below).</p>
+      <p>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, drag out a <span class="setters">set ListPickerBackgroundColor.ElementsFromString</span> block.</p>
+      <p>From the <span class="icon" alt="text"></span>Text drawer, add a text block and type “red, orange, yellow, green, blue, purple, grey, white”. This will give you the different options for the ListPicker.</p>
       <img class="enlargeImage" src="../images/iot/8.4.1.png" alt="some_text">
     </div>
 
     <div class="tutorialContentPage">
       <h4>Programming the RGB LCD Sensor</h4>
       <p>Then, we want to update the LCD's text with what the user has typed into the textbox when they click the "Send Message" button.</p>
-      <p>from the ButtonMessageSend drawer in the Blocks pane, drag out a <span class="control">when ButtonMessageSend.Click</span> block.</p>
+      <p>From the <span class="icon" alt="button"></span>ButtonMessageSend drawer in the Blocks pane, drag out a <span class="control">when ButtonMessageSend.Click</span> block.</p>
       <p>From the Arduino101RgbLcd1 drawer add a <span class="procedures">call Arduino101RgbLcd1.setText</span> block.</p>
-      <p>From TextMessage in the Blocks Pane, add <b>TextMessage.Text</b>.</p>
-      <p>From TextMessage in the Blocks Pane, add a <span class="setters">set TextMessage.Text to</span> block.</p>
-      <p>From the Text draw, add an empty text block. This will clear the TextBox after you send the message.</p>
+      <p>From <span class="icon" alt="textbox"></span>TextMessage in the Blocks Pane, add <b>TextMessage.Text</b>.</p>
+      <p>From <span class="icon" alt="textbox"></span>TextMessage in the Blocks Pane, add a <span class="setters">set TextMessage.Text to</span> block.</p>
+      <p>From the <span class="icon" alt="text"></span>Text drawer, add an empty text block. This will clear the TextBox after you send the message.</p>
       <img class="enlargeImage" src="../images/iot/8.4.2.png" alt="some_text">
     </div>
 
@@ -869,20 +863,20 @@
       <h4>Programming the RGB LCD Sensor</h4>
       <p>Finally, we want to be able to change the the background color of the RGB LCD. We’ll use the ListPicker, “Background Color”, to initiate this change.</p>
       <ul>
-        <li>From the ListPickerBackgroundColor drawer in the Blocks pane, add <span class="control">when ListPickerBackgroundColor.AfterPicking</span>.</li>
-        <li>From the Control drawer, add an <span class="control">if-then</span> block.</li>
+        <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, add <span class="control">when ListPickerBackgroundColor.AfterPicking</span>.</li>
+        <li>From the <span class="icon" alt="control"></span>Control drawer, add an <span class="control">if-then</span> block.</li>
         <li>Click on the blue gear icon to get a popup window. Drag 7 <span class="control">else if</span> blocks into the <span class="control">if-then</span> block to make a very large if-then-else-if block.</li>
       </ul>
       <img class="enlargeImage" src="../images/iot/8.5.1.png" alt="some_text">
       <ul>
         <li>Drag a <span class="logic">=</span> block from the Logic drawer and connect to the first <span class="control">if</span> block.</li>
-        <li>From the ListPickerBackgroundColor drawer, add ListPickerBackgroundColor.Selection and snap into the left side of the = block.</li>
-        <li>from the Text drawer, drag a text block, type in “red” and snap that block into the right side of the = block.</li>
+        <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer, add ListPickerBackgroundColor.Selection and snap into the left side of the = block.</li>
+        <li>from the <span class="icon" alt="text"></span>Text drawer, drag a text block, type in “red” and snap that block into the right side of the = block.</li>
         <li>From the Arduino101RgbLcd1 drawer, add <span class="procedures">call Arduino101RgbLcd1.SetBackgroundColor</span> to the <span class="control">then</span> part of the <span class="control">if</span> block.</li>
-        <li>From the Color drawer, add a red block and snap in.</li>
+        <li>From the <span class="icon" alt="colors"></span>Color drawer, add a red block and snap in.</li>
       </ul>
       <img class="enlargeImage" src="../images/iot/8.5.2.png" alt="some_text">
-      <p>In each of the remaining else if parts of the if-else-if block, repeat what you have done for the color red. Just change the name of the color and the corresponding color block from the Color drawer.</p>
+      <p>In each of the remaining else if parts of the if-else-if block, repeat what you have done for the color red. Just change the name of the color and the corresponding color block from the <span class="icon" alt="colors"></span>Color drawer.</p>
     </div>
 
     <div class="tutorialContentPage">
@@ -920,7 +914,7 @@
       <div class="tutorialContentPage">
         <h4>Changing Screen1</h4>
         <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-  	    <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+  	    <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
         <p>Rename the <b>Label</b> "LabelData".</p>
         <p>Change its text to "Data: ".</p>
         <p>In the Palette window, click on Extension at the bottom, and then select "Import extension" and click on "URL."</p>
@@ -933,7 +927,7 @@
         <h4>Temperature sensor functionality</h4>
         <p>Next, we need to let App Inventor know which pin on the Grove board the humidity sensor is connected to.</p>
         <p>Click on <b>Ardunio101Humidity1</b> in the Components pane.</p>
-        <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+        <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
         <p>Under <b>Pin</b>, enter the <u>digital</u> pin that matches the one the button is plugged into on the Grove board (in this case D4).</p>
         <p><i>Note: You only need to set the number (4) not the letter (D).</i></p>
         <img class="enlargeImage" src="../images/iot/9.3.1.png" alt="some_text">
@@ -944,7 +938,7 @@
         <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
         <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call Arduino101Humidity1.RequestTemperatureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
         <img class="enlargeImage" src="../images/iot/9.4.1.png" alt="some_text">
-        <p>Next, we need to store the data we receive from the sensor. From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Temperature". From the Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
+        <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Temperature". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
         <img class="enlargeImage" src="../images/iot/9.4.2.png" alt="some_text">
       </div>
 
@@ -952,10 +946,10 @@
         <h4>Programming the Temperature Sensor</h4>
         <p>Let's make a new procedure to display the current readings in <b>LabelData</b> when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
         <ul>
-          <li>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-          <li>From the Text drawer connect a <span class="text">join</span> block.</li>
-          <li>From the Text drawer, connect a text block and type <b>"Temperature: "</b>.</li>
-          <li>From the Variables drawer, connect a <span class="variables">get global Temperature</span> block.</li>
+          <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
+          <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
+          <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Temperature: "</b>.</li>
+          <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Temperature</span> block.</li>
         <img class="enlargeImage" src="../images/iot/9.4.3.png" alt="some_text">
       </div>
 
@@ -964,9 +958,9 @@
         <p>Finally, we need to call the procedure when this data is received.</p>
         <ul>
           <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Humidity1.TemperatureReceived</span>.</li>
-          <li>From the Variables drawer, add <span class="variables">set global Temperature to</span>.</li>
+          <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Temperature to</span>.</li>
           <li>Hover over the orange "temperature" in <span class="control">when Arduino101Humidity1.TemperatureReceived</span> to see the <span class="variables">get temperature</span> block. Drag the <span class="variables">get temperature</span> block from this window and snap to <span class="variables">set global Temperature</span>.</li>
-          <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+          <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
         <img class="enlargeImage" src="../images/iot/9.5.1.png" alt="some_text">
       </div>
 
@@ -1003,14 +997,14 @@
       <div class="tutorialContentPage">
         <h4>Changing Screen1</h4>
         <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-  	    <p>Drag a <b>Label</b> from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
+  	    <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface Palette and drop it between <b>LabelStatus</b> and <b>ListBLE</b></p>
         <p>Rename the <b>Label</b> "LabelData".</p>
         <p>Change its text to "Data: ".</p>
         <p>Next, we need to add the buttons to start and stop the sound recording and let us play it back.</p>
         <ul>
-          <li>In the Palette window, click on Layout and drag in a <i>HoriztontalArrangement</i> below <i>LabelData</i> in the Viewer.</li>
+          <li>In the Palette window, click on Layout and drag in a <span class="icon" alt="horizontal"></span>HoriztontalArrangement below <i>LabelData</i> in the Viewer.</li>
           <li>In the Properties window set the <i>AlignHorizontal</i> to "Center: 3" and <i>Width</i> to “Fill Parent”.</li>
-          <li>From User Interface, drag in three buttons.</li>
+          <li>From User Interface, drag in three <span class="icon" alt="button"></span>buttons.</li>
           <li>Rename the first "ButtonStartRecording" and set its text to "Start Recording"</li>
           <li>Rename the second "ButtonStopRecording" and set its text to "Stop Recording"</li>
           <li>Rename the third "ButtonPlay" and set its text to "Playback"</li>
@@ -1027,7 +1021,7 @@
         <img class="enlargeImage" src="../images/iot/11.3.1.png" alt="some_text">
         <p>Next, we need to let App Inventor know which pin on the Grove board the sound recorder is connected to.</p>
         <p>Click on <b>Ardunio101SoundRecorder1</b> in the Components pane.</p>
-        <p>In the Properties pane, click on BluetoothDevice and select <b>BluetoothLE1</b>.</p>
+        <p>In the Properties pane, click on <span class="icon" alt="bluetooth"></span>BluetoothDevice and select <b>BluetoothLE1</b>.</p>
         <p>Under <b>PlayPin</b>, enter the <u>digital</u> pin that matches the one the button is plugged into on the Grove board (in this case D4).</p>
         <p><i>Note: You only need to set the number (4) not the letter (D).</i></p>
         <p>Under <b>RecordPin</b>, enter a number one <b><i>higher</i></b> than the <b>PlayPin</b> (5).</p>
@@ -1037,27 +1031,27 @@
       <div class="tutorialContentPage">
         <h4>Programming the Sound Recorder</h4>
         <p>First, we want to set it up so the sound recorder begins recording when we press the "Start Recording" button.</p>
-        <p>From <b>ButtonStartRecording</b> in the Blocks pane, drag in a <span class="control">when ButtonStartRecording.Click</span> block.</p>
+        <p>From <span class="icon" alt="button"></span>ButtonStartRecording in the Blocks pane, drag in a <span class="control">when ButtonStartRecording.Click</span> block.</p>
         <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.StartRecording</span> block.</p>
-        <p>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
-        <p>From the Text drawer, connect a text block and type <b>"Data: Recording"</b>.</p>
+        <p>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
+        <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Data: Recording"</b>.</p>
         <img class="enlargeImage" src="../images/iot/11.4.1.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Programming the Sound Recorder</h4>
         <p>Next, we want to set it up so the sound recorder stops recording when we press the "Stop Recording" button.</p>
-        <p>From <b>ButtonStopRecording</b> in the Blocks pane, drag in a <span class="control">when ButtonStopRecording.Click</span> block.</p>
+        <p>From <span class="icon" alt="button"></span>ButtonStopRecording in the Blocks pane, drag in a <span class="control">when ButtonStopRecording.Click</span> block.</p>
         <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.StopRecording</span> block.</p>
-        <p>From LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
-        <p>From the Text drawer, connect a text block and type <b>"Data: Recorded"</b>.</p>
+        <p>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
+        <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Data: Recorded"</b>.</p>
         <img class="enlargeImage" src="../images/iot/11.4.2.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Programming the Sound Recorder</h4>
         <p>Finally, we want to start play back the sound when we press the "Playback" button.</p>
-        <p>From <b>ButtonPlay</b> in the Blocks pane, drag in a <span class="control">when ButtonPlay.Click</span> block.</p>
+        <p>From <span class="icon" alt="button"></span>ButtonPlay in the Blocks pane, drag in a <span class="control">when ButtonPlay.Click</span> block.</p>
         <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.PlayRecordedSound</span> block.</p>
         <img class="enlargeImage" src="../images/iot/11.4.3.png" alt="some_text">
       </div>
@@ -1095,13 +1089,13 @@
       <div class="tutorialContentPage">
         <h4>Changing Screen1</h4>
         <p>The remaining steps all build off of the the starter code for Basic Connection tutorial and .aia.</p>
-        <p>Drag a <i>HorizontalArrangement</i> from the Layout Drawere in the Palette window and place it below <b>LabelStatus</b>.</p>
+        <p>Drag a <span class="icon" alt="horizontal"></span><i>HorizontalArrangement</i> from the Layout Drawer in the Palette window and place it below <b>LabelStatus</b>.</p>
         <ul>
-          <li>Drag two <b>Buttons</b> from the User Interface drawer and drag into the <i>HorizontalArrangement</i>.</li>
+          <li>Drag two <span class="icon" alt="button"></span>Buttons from the User Interface drawer and drag into the <i>HorizontalArrangement</i>.</li>
           <li>Rename the first "ButtonOn" and change its text to "Turn On".</li>
           <li>Rename the second "ButtonOff" and change its text to "Turn Off".</li>
         </ul>
-        <p>Below the <i>HorizontalArrangement</i>, drag in a <b>Slider</b> from the User Interface drawer of the Palette window.</p>
+        <p>Below the <i>HorizontalArrangement</i>, drag in a <span class="icon" alt="slider"></span>Slider from the User Interface drawer of the Palette window.</p>
         <ul>
           <li>Rename the Slider to “SliderIntensity”.</li>
           <li>Set the Slider’s <i>Width</i> to "Fill parent"</li>
@@ -1112,7 +1106,7 @@
 
       <div class="tutorialContentPage">
         <h4>LED Extension</h4>
-        <p>Drag a <b>Label</b> from the User Interface drawer in the Palette window and drop it between <b>SliderIntensity</b> and <b>ListBLE</b>.</p>
+        <p>Drag a <span class="icon" alt="label"></span>Label from the User Interface drawer in the Palette window and drop it between <b>SliderIntensity</b> and <b>ListBLE</b>.</p>
         <ul>
           <li>Rename the <b>Label</b> "LabelData".</li>
           <li>Change its Text property to “Data: “.</li>
@@ -1124,7 +1118,7 @@
         <p>Add the <b>Arduino101LED</b> extension to your app by dragging it onto the Viewer.</p>
         <p>In the Properties tab for the <b>Arduino101LED1</b></p>
         <ul>
-          <li>Set <i>BluetoothDevice</i> to "BluetoothLE1".</li>
+          <li>Set <span class="icon" alt="bluetooth"></span>BluetoothDevice to "BluetoothLE1".</li>
           <li>Check that <i>Intensity</i> is set to "100."</li>
           <li>Under <b>Pin</b>, enter the <u>digital</u> pin that matches the one the LED control is plugged into on the Grove board (in this case D5).</li>
           <li><i>Note: You only need to set the number (4) not the letter (D).</i></li>
@@ -1134,9 +1128,9 @@
       <div class="tutorialContentPage">
         <h4>Programming the LED</h4>
         <p>Now we need turn the LED on and off when we press the buttons.</p>
-        <p>From <b>ButtonOn</b> in the Blocks pane, drag in a <span class="control">when ButtonOn.Click</span> block.</p>
+        <p>From <span class="icon" alt="button"></span>ButtonOn in the Blocks pane, drag in a <span class="control">when ButtonOn.Click</span> block.</p>
         <p>From <b>Arduino101LED1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101LED1.TurnOn</span> block.</p>
-        <p>From <b>ButtonOff</b> in the Blocks pane, drag in a <span class="control">when ButtonOff.Click</span> block.</p>
+        <p>From <span class="icon" alt="button"></span>ButtonOff in the Blocks pane, drag in a <span class="control">when ButtonOff.Click</span> block.</p>
         <p>From <b>Arduino101LED1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101LED1.TurnOff</span> block.</p>
         <img class="enlargeImage" src="../images/iot/12.4.1.png" alt="some_text">
       </div>
@@ -1144,8 +1138,8 @@
       <div class="tutorialContentPage">
         <h4>Programming the LED</h4>
         <p>Next we need to store the data we receive from the sensor.</p>
-        <p>From the Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Intensity".</p>
-        <p>From the Math drawer add a number block and set it to "0". We'll use this to keep track of the slider setting for the LED brightness (intensity).</p>
+        <p>From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Intensity".</p>
+        <p>From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the slider setting for the LED brightness (intensity).</p>
         <img class="enlargeImage" src="../images/iot/12.4.2.png" alt="some_text">
       </div>
 
@@ -1153,10 +1147,10 @@
         <h4>Programming the LED</h4>
         <p>Let's make a new procedure to display the current LED intensity in the LabelData. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the Procedures drawer in the Blocks pane. Let's rename it <span class="procedures">updateDataLabel</span>.</p>
         <ul>
-          <li>From LabelData in the Blocks pane, add a <span class="setters">set LabelData.Text to</span> block.</li>
-          <li>From the Text drawer, add a <span class="control">join</span> block.</li>
-          <li>From the Text drawer drag out a <span class="text">text</span> block and type in <b>"Intensity: "</b> and snap to the join block.</li>
-          <li>From the Variables drawer, drag out a <span class="variables">get global Intensity</span> block and snap to the join block.</li>
+          <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add a <span class="setters">set LabelData.Text to</span> block.</li>
+          <li>From the <span class="icon" alt="text"></span>Text drawer, add a <span class="control">join</span> block.</li>
+          <li>From the <span class="icon" alt="text"></span>Text drawer drag out a <span class="text">text</span> block and type in <b>"Intensity: "</b> and snap to the join block.</li>
+          <li>From the <span class="icon" alt="variables"></span>Variables drawer, drag out a <span class="variables">get global Intensity</span> block and snap to the join block.</li>
         </ul>
         <img class="enlargeImage" src="../images/iot/12.4.3.png" alt="some_text">
       </div>
@@ -1165,12 +1159,12 @@
         <h4>Programming the LED</h4>
         <p>Finally, we want to change the brightness of the LED when we move the slider.</p>
         <ul>
-          <li>From SliderIntensity in the Blocks pane, add a <span class="control">when SliderIntensity.PositionChanged</span> block.</li>
-          <li>From the Variables drawer, add <span class="variables">set Arduino101Led1.Intensity to</span>.</li>
+          <li>From <span class="icon" alt="slider"></span>SliderIntensity in the Blocks pane, add a <span class="control">when SliderIntensity.PositionChanged</span> block.</li>
+          <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set Arduino101Led1.Intensity to</span>.</li>
           <li>Hover over the orange "thumbPosition" in the <span class="control">when SliderIntensity.PositionChanged</span> block to see the <span class="variables">get thumbPosition</span> block. Connect this block to the <span class="setters">set Arduino101Led1.Intensity to</span> block.</li>
-          <li>From the Variables drawer, drag out a <span class="variables">set global Intensity to</span> block.</li>
+          <li>From the <span class="icon" alt="variables"></span>Variables drawer, drag out a <span class="variables">set global Intensity to</span> block.</li>
           <li>Add another <span class="variables">get thumbPosition</span> block by hovering over the orange “thumbPosition”.</li>
-          <li>From the Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
+          <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
         </ul>
         <img class="enlargeImage" src="../images/iot/12.5.1.png" alt="some_text">
       </div>
