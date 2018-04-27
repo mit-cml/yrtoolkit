@@ -296,10 +296,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and the built-in accelerometer on the Arduino 101 controller. Accelerometers measure acceleration, which is the rate of change of the velocity of an object (the Arduino). Before you start you should first complete the IoT Basic Bluetooth Connection Setup and IoT Setup tutorials to set up your Arduino device.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -309,6 +305,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/2.1.1.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -332,7 +337,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Accelerometer</h4>
           <p>First, we want to request data updates when the accelerometer sensor values on the Arduino change.</p>
-          <p>From <b>Arduino101Accelerometer1</b> in the Blocks pane, add <span class="procedures">call Arduino101Accelerometer1.RequestAccelerometerDataUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101Accelerometer1</b> in the Blocks pane, add a <span class="procedures">RequestAccelerometerDataUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/2.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the accelerometer. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Accel_X". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the X-Axis value.</p>
           <p>Do this again, and rename the second variable "Accel_Y".</p>
@@ -343,30 +348,28 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Accelerometer</h4>
           <p>Let's make a new procedure to display the current readings in the LabelData when we get new data. You can create a procedure by dragging out a purple <span class="procedures">procedure</span> block from the <span class="icon" alt="procedures"></span>Procedures drawer in the Blocks pane. Let's rename it <b>updateDataLabel</b>.</p>
-          <ul>
-            <li>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</li>
-            <li>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</li>
-            <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Reading: "</b>.</li>
-            <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"X "</b>. (note the extra space after the X)</li>
-            <li>We need 4 more slots in our join block. To do this, hover over the gear on the <span class="text">join</span> block. In the popup, attach four of the <span class="text">string</span> blocks the the two already there.</li>
-            <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_X</span> block.</li>
-            <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Y "</b>. (note the extra space after the Y)</li>
-            <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Y</span> block.</li>
-            <li>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Z "</b>. (note the extra space after the Z)</li>
-            <li>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Z</span> block.</li>
-            <img class="enlargeImage" src="../images/iot/2.5.1.png" alt="some_text">
+          <p>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text</span>.</p>
+          <p>From the <span class="icon" alt="text"></span>Text drawer connect a <span class="text">join</span> block.</p>
+          <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Reading: "</b>.</li>
+          <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"X "</b>. (note the extra space after the X)</p>
+          <p>We need 4 more slots in our join block. To do this, hover over the gear on the <span class="text">join</span> block. In the popup, attach four of the <span class="text">string</span> blocks the the two already there.</p>
+          <p>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_X</span> block.</p>
+          <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Y "</b>. (note the extra space after the Y)</p>
+          <p>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Y</span> block.</p>
+          <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Z "</b>. (note the extra space after the Z)</p>
+          <p>From the <span class="icon" alt="variables"></span>Variables drawer, connect a <span class="variables">get global Accel_Z</span> block.</p>
+          <img class="enlargeImage" src="../images/iot/2.5.1.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
           <h4>Programming the Accelerometer</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
-          <ul>
-            <li>From the <b>Arduino101Accelerometer1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Accelerometer1.AccelerometerDataReceived</span>.</li>
-            <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Accel_X to</span>.</li>
-            <li>Hover over the orange "Accelerometer_X" in <span class="control">when Arduino101Accelerometer1.AccelerometerDataReceived</span> to see the <span class="variables">get Accelerometer_X</span> block. Drag the <span class="variables">get Accelerometer_X</span> block from this window and snap to <span class="variables">set global Accel_X</span>.</li>
-            <li>Do the same for <b>Accel_Y</b> and <b>Accel_Z</b>.</li>
-            <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
-            <img class="enlargeImage" src="../images/iot/2.6.1.png" alt="some_text">
+          <p>From the <b>Arduino101Accelerometer1</b> drawer in the Blocks pane, drag <span class="control">when.AccelerometerDataReceived</span>.</p>
+          <p>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Accel_X to</span>.</p>
+          <p>Hover over the orange "Accelerometer_X" in <span class="control">when AccelerometerDataReceived</span> to see the <span class="variables">get Accelerometer_X</span> block. Drag the <span class="variables">get Accelerometer_X</span> block from this window and snap to <span class="variables">set global Accel_X</span>.</p>
+          <p>Do the same for <b>Accel_Y</b> and <b>Accel_Z</b>.</p>
+          <p>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</p>
+          <img class="enlargeImage" src="../images/iot/2.6.1.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -389,10 +392,6 @@ ga('send', 'pageview');
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a button on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The button we recommend is the Grove button sensor.</p>
           <p>Before you start you should have first completed the App Inventor + IoT Setup tutorial to set up your Arduino device.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -404,6 +403,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/3.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -429,7 +437,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Button</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101Button1</b> in the Blocks pane, add <span class="procedures">call Arduino101Button1.RequestButtonStateUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101Button1</b> in the Blocks pane, add <span class="procedures">call RequestButtonStateUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/3.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "buttonPresses". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the number of times the button is pressed.</p>
           <img class="enlargeImage" src="../images/iot/3.4.2.png" alt="some_text">
@@ -488,11 +496,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a humidity sensor on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The humidity sensor we recommend is the Grove temperature & humidity sensor.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul>
-            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -504,6 +507,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/4.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -529,7 +541,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Humidity Sensor</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call Arduino101Humidity1.RequestHumidityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call RequestHumidityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/4.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Humidity". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
           <img class="enlargeImage" src="../images/iot/4.4.2.png" alt="some_text">
@@ -550,9 +562,9 @@ ga('send', 'pageview');
           <h4>Programming the Humidity Sensor</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
           <ul>
-            <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Humidity1.HumidityReceived</span>.</li>
+            <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when HumidityReceived</span>.</li>
             <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Humidity to</span>.</li>
-            <li>Hover over the orange "reading" in <span class="control">when Arduino101Humidity1.HumidityReceived</span> to see the <span class="variables">get Humidity</span> block. Drag the <span class="variables">get Humidity</span> block from this window and snap to <span class="variables">set global Humidity</span>.</li>
+            <li>Hover over the orange "reading" in <span class="control">when HumidityReceived</span> to see the <span class="variables">get Humidity</span> block. Drag the <span class="variables">get Humidity</span> block from this window and snap to <span class="variables">set global Humidity</span>.</li>
             <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
             <img class="enlargeImage" src="../images/iot/4.5.1.png" alt="some_text">
         </div>
@@ -576,10 +588,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a light sensor on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The light sensor we recommend is the Grove light sensor.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -591,6 +599,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/5.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -616,7 +633,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Light Sensor</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101LightSensor1</b> in the Blocks pane, add <span class="procedures">call Arduino101LightSensor1.RequestLightUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101LightSensor1</b> in the Blocks pane, add <span class="procedures">call RequestLightUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/5.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "light". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
           <img class="enlargeImage" src="../images/iot/5.4.2.png" alt="some_text">
@@ -637,9 +654,9 @@ ga('send', 'pageview');
           <h4>Programming the Light Sensor</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
           <ul>
-            <li>From the <b>Arduino101LightSensor1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101LightSensor1.LightSensorDataReceived</span>.</li>
+            <li>From the <b>Arduino101LightSensor1</b> drawer in the Blocks pane, drag <span class="control">when LightSensorDataReceived</span>.</li>
             <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global light to</span>.</li>
-            <li>Hover over the orange "reading" in <span class="control">when Arduino101LightSensor1.LightSensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global light</span>.</li>
+            <li>Hover over the orange "reading" in <span class="control">when LightSensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global light</span>.</li>
             <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
             <img class="enlargeImage" src="../images/iot/5.5.1.png" alt="some_text">
         </div>
@@ -663,10 +680,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a Moisture sensor on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The moisture sensor we recommend is the Grove moisture sensor.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -678,6 +691,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/6.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -703,7 +725,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Moisture Sensor</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101Moisture1</b> in the Blocks pane, add <span class="procedures">call Arduino101Moisture1.RequestMoistureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101Moisture1</b> in the Blocks pane, add <span class="procedures">call RequestMoistureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/6.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "moisture". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
           <img class="enlargeImage" src="../images/iot/6.4.2.png" alt="some_text">
@@ -724,9 +746,9 @@ ga('send', 'pageview');
           <h4>Programming the Moisture Sensor</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
           <ul>
-            <li>From the <b>Arduino101Moisture1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Moisture1.MoistureDataReceived</span>.</li>
+            <li>From the <b>Arduino101Moisture1</b> drawer in the Blocks pane, drag <span class="control">when MoistureDataReceived</span>.</li>
             <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global moisture to</span>.</li>
-            <li>Hover over the orange "reading" in <span class="control">when Arduino101Moisture1.MoistureDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global moisture</span>.</li>
+            <li>Hover over the orange "reading" in <span class="control">when MoistureDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global moisture</span>.</li>
             <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
             <img class="enlargeImage" src="../images/iot/6.5.1.png" alt="some_text">
         </div>
@@ -750,10 +772,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a proximity sensor on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The proximity sensor we recommend is the Grove Infared Proximity Sensor.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -765,6 +783,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/7.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -792,7 +819,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Proximity Sensor</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101ProximitySensor1</b> in the Blocks pane, add <span class="procedures">call Arduino101ProximitySensor1.RequestProximityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101ProximitySensor1</b> in the Blocks pane, add <span class="procedures">call RequestProximityUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/7.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Proximity". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
           <img class="enlargeImage" src="../images/iot/7.4.2.png" alt="some_text">
@@ -813,9 +840,9 @@ ga('send', 'pageview');
           <h4>Programming the Proximity Sensor</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
           <ul>
-            <li>From the <b>Arduino101ProximitySensor1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101ProximitySensor1.ProximitySensorDataReceived</span>.</li>
+            <li>From the <b>Arduino101ProximitySensor1</b> drawer in the Blocks pane, drag <span class="control">when ProximitySensorDataReceived</span>.</li>
             <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Proximity to</span>.</li>
-            <li>Hover over the orange "proximity" in <span class="control">when Arduino101ProximitySensor1.ProximitySensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global Proximity</span>.</li>
+            <li>Hover over the orange "proximity" in <span class="control">when ProximitySensorDataReceived</span> to see the <span class="variables">get reading</span> block. Drag the <span class="variables">get reading</span> block from this window and snap to <span class="variables">set global Proximity</span>.</li>
             <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
             <img class="enlargeImage" src="../images/iot/7.5.1.png" alt="some_text">
         </div>
@@ -840,10 +867,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and RGB LCD on an Arduino 101 controller. An RGB LCD is a color liquid crystal display, where text can be displayed. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The LCD we recommend is the Grove LCD RGB Backlight.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -855,6 +878,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/8.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -884,7 +916,7 @@ ga('send', 'pageview');
           <p>From the <span class="icon" alt="text"></span>Text drawer, add a text block and type “Connected!”.</p>
           <p>From the <b>Arduino101RgbLcd1</b> drawer, add a <span class="procedures">call Arduino101RgbLcd1.SetBackgroundColor</span> block.</p>
           <p>From the <span class="icon" alt="colors"></span>Color drawer, add a color block (we used green below).</p>
-          <p>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, drag out a <span class="setters">set ListPickerBackgroundColor.ElementsFromString</span> block.</p>
+          <p>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, drag out a <span class="setters">set ElementsFromString</span> block.</p>
           <p>From the <span class="icon" alt="text"></span>Text drawer, add a text block and type “red, orange, yellow, green, blue, purple, grey, white”. This will give you the different options for the ListPicker.</p>
           <img class="enlargeImage" src="../images/iot/8.4.1.png" alt="some_text">
         </div>
@@ -904,16 +936,16 @@ ga('send', 'pageview');
           <h4>Programming the RGB LCD Sensor</h4>
           <p>Finally, we want to be able to change the the background color of the RGB LCD. We’ll use the ListPicker, “Background Color”, to initiate this change.</p>
           <ul>
-            <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, add <span class="control">when ListPickerBackgroundColor.AfterPicking</span>.</li>
+            <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer in the Blocks pane, add <span class="control">when AfterPicking</span>.</li>
             <li>From the <span class="icon" alt="control"></span>Control drawer, add an <span class="control">if-then</span> block.</li>
             <li>Click on the blue gear icon to get a popup window. Drag 7 <span class="control">else if</span> blocks into the <span class="control">if-then</span> block to make a very large if-then-else-if block.</li>
           </ul>
           <img class="enlargeImage" src="../images/iot/8.5.1.png" alt="some_text">
           <ul>
             <li>Drag a <span class="logic">=</span> block from the Logic drawer and connect to the first <span class="control">if</span> block.</li>
-            <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer, add ListPickerBackgroundColor.Selection and snap into the left side of the = block.</li>
+            <li>From the <span class="icon" alt="listPicker"></span>ListPickerBackgroundColor drawer, add Selection and snap into the left side of the = block.</li>
             <li>from the <span class="icon" alt="text"></span>Text drawer, drag a text block, type in “red” and snap that block into the right side of the = block.</li>
-            <li>From the Arduino101RgbLcd1 drawer, add <span class="procedures">call Arduino101RgbLcd1.SetBackgroundColor</span> to the <span class="control">then</span> part of the <span class="control">if</span> block.</li>
+            <li>From the Arduino101RgbLcd1 drawer, add <span class="procedures">call SetBackgroundColor</span> to the <span class="control">then</span> part of the <span class="control">if</span> block.</li>
             <li>From the <span class="icon" alt="colors"></span>Color drawer, add a red block and snap in.</li>
           </ul>
           <img class="enlargeImage" src="../images/iot/8.5.2.png" alt="some_text">
@@ -941,10 +973,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a temperature sensor on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The temperature sensor we recommend is the Grove temperature & humidity sensor.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -956,6 +984,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/9.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -981,7 +1018,7 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Programming the Temperature Sensor</h4>
           <p>First, we want to request data updates when the sensor value on the Arduino changes.</p>
-          <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call Arduino101Humidity1.RequestTemperatureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
+          <p>From <b>Arduino101Humidity1</b> in the Blocks pane, add <span class="procedures">call RequestTemperatureUpdates</span> to the existing <span class="control">when BluetoothLE1.Connected</span> block from the Basic Connection tutorial.</p>
           <img class="enlargeImage" src="../images/iot/9.4.1.png" alt="some_text">
           <p>Next, we need to store the data we receive from the sensor. From the <span class="icon" alt="variables"></span>Variables drawer in the Blocks pane, drag an <span class="variables">initialize global name to</span> block and name it "Temperature". From the <span class="icon" alt="math"></span>Math drawer add a number block and set it to "0". We'll use this to keep track of the sensor value.</p>
           <img class="enlargeImage" src="../images/iot/9.4.2.png" alt="some_text">
@@ -1002,9 +1039,9 @@ ga('send', 'pageview');
           <h4>Programming the Temperature Sensor</h4>
           <p>Finally, we need to call the procedure when this data is received.</p>
           <ul>
-            <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when Ardunio101Humidity1.TemperatureReceived</span>.</li>
+            <li>From the <b>Arduino101Humidity1</b> drawer in the Blocks pane, drag <span class="control">when TemperatureReceived</span>.</li>
             <li>From the <span class="icon" alt="variables"></span>Variables drawer, add <span class="variables">set global Temperature to</span>.</li>
-            <li>Hover over the orange "temperature" in <span class="control">when Arduino101Humidity1.TemperatureReceived</span> to see the <span class="variables">get temperature</span> block. Drag the <span class="variables">get temperature</span> block from this window and snap to <span class="variables">set global Temperature</span>.</li>
+            <li>Hover over the orange "temperature" in <span class="control">when TemperatureReceived</span> to see the <span class="variables">get temperature</span> block. Drag the <span class="variables">get temperature</span> block from this window and snap to <span class="variables">set global Temperature</span>.</li>
             <li>From the <span class="icon" alt="procedures"></span>Procedures drawer, add <span class="procedures">call updateDataLabel</span>.</li>
             <img class="enlargeImage" src="../images/iot/9.5.1.png" alt="some_text">
         </div>
@@ -1028,10 +1065,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and a sound recorder on an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The sound recorder we recommend is the Grove Recorder.</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -1043,6 +1076,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/11.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -1080,7 +1122,7 @@ ga('send', 'pageview');
           <h4>Programming the Sound Recorder</h4>
           <p>First, we want to set it up so the sound recorder begins recording when we press the "Start Recording" button.</p>
           <p>From <span class="icon" alt="button"></span>ButtonStartRecording in the Blocks pane, drag in a <span class="control">when ButtonStartRecording.Click</span> block.</p>
-          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.StartRecording</span> block.</p>
+          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call StartRecording</span> block.</p>
           <p>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
           <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Data: Recording"</b>.</p>
           <img class="enlargeImage" src="../images/iot/11.4.1.png" alt="some_text">
@@ -1090,7 +1132,7 @@ ga('send', 'pageview');
           <h4>Programming the Sound Recorder</h4>
           <p>Next, we want to set it up so the sound recorder stops recording when we press the "Stop Recording" button.</p>
           <p>From <span class="icon" alt="button"></span>ButtonStopRecording in the Blocks pane, drag in a <span class="control">when ButtonStopRecording.Click</span> block.</p>
-          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.StopRecording</span> block.</p>
+          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call StopRecording</span> block.</p>
           <p>From <span class="icon" alt="label"></span>LabelData in the Blocks pane, add <span class="setters">set LabelData.Text to</span>.</p>
           <p>From the <span class="icon" alt="text"></span>Text drawer, connect a text block and type <b>"Data: Recorded"</b>.</p>
           <img class="enlargeImage" src="../images/iot/11.4.2.png" alt="some_text">
@@ -1100,7 +1142,7 @@ ga('send', 'pageview');
           <h4>Programming the Sound Recorder</h4>
           <p>Finally, we want to start play back the sound when we press the "Playback" button.</p>
           <p>From <span class="icon" alt="button"></span>ButtonPlay in the Blocks pane, drag in a <span class="control">when ButtonPlay.Click</span> block.</p>
-          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call Arduino101SoundRecorder1.PlayRecordedSound</span> block.</p>
+          <p>From <b>Arduino101SoundRecorder1</b> in the Blocks pane, drag in a <span class="procedures">call PlayRecordedSound</span> block.</p>
           <img class="enlargeImage" src="../images/iot/11.4.3.png" alt="some_text">
         </div>
 
@@ -1123,10 +1165,6 @@ ga('send', 'pageview');
         <div class="tutorialContentPage">
           <h4>Introduction</h4>
           <p>This tutorial will help you get started with App Inventor + IoT and an LED (light emitting diode ... basically a small light) attatched to an Arduino 101 controller. We are also using a Seeed Grove shield for this tutorial. You do not need to use this board, but it does make things easier. The LED control we recommend is the Grove White LED (They come in different colors).</p>
-          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
-          <p><ul><li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
-            <li>Find the extension on your computer and upload it.</li></ul></p>
-          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
@@ -1138,6 +1176,15 @@ ga('send', 'pageview');
           <p>Make sure you have your Arduino board connected to your computer.</p>
           <p>Click the arrow button in the top left to upload the code.</p>
           <img class="enlargeImage" src="../images/iot/12.1.2.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+          <h4>Import Extension</h4>
+          <p>Download the <a href="http://iot.appinventor.mit.edu/assets/resources/edu.mit.appinventor.iot.arduino101.aix" download>Arduino 101 Extension Bundle</a> and upload it as an extension in your project.</p>
+          <p><ul>
+            <li>In the Palette, click on Extension at the bottom and then on "Import extension" and then "Choose File".</li>
+            <li>Find the extension on your computer and upload it.</li></ul></p>
+          <img class="enlargeImage" src="../images/iot/1.1.2.png" alt="some_text">
         </div>
 
         <div class="tutorialContentPage">
