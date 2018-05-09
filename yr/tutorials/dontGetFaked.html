@@ -40,6 +40,7 @@
       To counteract this, the Fake News Fairy is here to help! To test your Fake News sleuthing skills, Youth Radio published <a href="https://yri.youthradio.org/dontgetfaked/">a quiz</a>. <br>
       Now it's your turn to create and test a BS detector. Can you detect Fake News?</p>
       <iframe width="250" height="150" src="https://www.youtube.com/embed/pz8N-AbAZp8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <p>In this tutorial, we're going to build a Fake News quiz to see if users can can figure out if a story if fake or real, and why.</p>
     </div>
 
     <h3>Connect your App</h3>
@@ -80,10 +81,11 @@
 
       <div class="tutorialContentPage">
       	<h4>4. Create <span class="procedures">SetQuestion</span> procedure.</h4>
+        <p><b>Procedures</b> allow us to cut down repetitive code. In this case, we're going to make a procedure that handles changing to the next question so that we don't have the write the same code over and over again.</p> 
+        <p>There are two types of procedure blocks, one that <b>returns</b> a value, and one that does not. We will be using the <b>do</b> procedure block, not the <b>result</b> procedure block.</p>
       	<p>Click on the <span class='icon' alt='procedures'></span>Procedures drawer on the left and drag out a <span class='procedures'>to procedure</span> block.</p>
       	<p>Rename this new procedure to "SetQuestion".</p>
       	<img class="enlargeImage" src="../images/dont_get_faked/step4.png" alt="some_text">
-      	<p>This procedure will help us cut down on repetitive code. Every time we need to set a new question, we can call this procedure instead of rewriting the same code again and again.</p>
       </div>
 
       <div class="tutorialContentPage">
@@ -121,6 +123,7 @@
       	<p> Drag out a <span class='control'>when Screen1.Initialize</span> block from the Screen1 drawer. </p>
         <img class="enlargeImage" src="../images/dont_get_faked/step8a.png" alt="some_text">
       	<p> Drag out a <span class='procedures'>SetQuestion</span> block from the <span class='icon' alt='procedures'></span>Procedures drawer, and snap it into the event block.</p>
+        <p> You can use this block to call any procedure that you make.</p>
         <img class="enlargeImage" src="../images/dont_get_faked/step8b.png" alt="some_text">
       </div>
 
@@ -128,6 +131,7 @@
       	<h4>9. Displaying the article link</h4>
       	<p> As this is a quiz about news, our quiz has to include sources, too. Let's have the link display when the image button is clicked, and become invisible when the button is clicked again. </p>
       	<p> In other words, when the link is visible, set it to invisible, and vice versa.</p>
+        <p> From the <span class="icon" alt="button"></span>QuestionPictureButton drawer, pull out a <span class="control">when QuestionPictureButton.Click</span> block.</p>
       	<p> From the <span class='icon' alt='control'></span>Control drawer, pull out an <span class='control'>if then</span> block. </p>
       	<p> Click on the blue gear to add an <span class='control'>else</span> to the block.</p>
       	<img class="enlargeImage" src="../images/dont_get_faked/step9a.png" alt="some_text">
@@ -219,6 +223,22 @@
 
   <h3>Expand your app</h3>
   <div>
+
+      <b>Save scores to a file.</b>
+      <p>Add the ability to <a href="#" onclick="return goToHowToTutorial(0)" title="Store scores in a file">save your score to a file</a>.</p>
+
+      <b>Sharing.</b>
+      <p>Add the ability to <a href="#" onclick="return goToHowToTutorial(1)" title="Text your score">share</a> your score!</p>
+
+      <b>Open source in browser.</b>
+      <p>Clicking on the picture shows the link to the original source, but it should actually <a href="#" onclick="return goToHowToTutorial(2)" title="Open browser via Activity Starter">open the source article</a>.</p>
+
+      <b>Change score color.</b>
+      <p>Add <a href="#" onclick="return goToHowToTutorial(3)" title="Change score color">changing text color</a>! When someone answers correctly, have the score turn green. When someone answers incorrectly, have the score turn red.</p>
+
+      <b>Speak the result.</b>
+      <p>When someone answers a question right or wrong, the app should <a href="#" onclick="return goToHowToTutorial(4)" title="Text to speech">'speak'</a> to tell the user the result.</p>
+
       <b>Add more questions.</b>
       <p>This app only has the first three questions from the Don't Get Faked quiz on the Youth Radio website. Add more questions! </p> 
     
@@ -230,9 +250,6 @@
 
       <b>Fix a potential bug.</b>
       <p>Right now, the app does not check whether the index exceeds the length of the list. If you go too far, the app crashes. Add a check to make sure that this doesn't happen.</p>
-
-      <b>Sharing.</b>
-      <p>Add the ability to save and share your highest score!</p>
 
   </div>
 
@@ -251,13 +268,22 @@
 </div>
 
 <div id="howToAccordion" class="accordion" style="display:none">
-  <h3>Text your score</h3>
-  <div class="setup" id="send_text"></div>
 
   <h3>Store scores in a file</h3>
-  <div class="setup" id="store_read_files"></div>
+  <div class="setup" id="store_score_file"></div>
+ 
+  <h3>Text your score</h3>
+  <div class="setup" id="send_score_text"></div>
 
-  <h3>
+  <h3>Open browser via Activity Starter</h3>
+  <div class="setup" id="open_browser_activitystarter"></div>
+
+  <h3>Change score color</h3>
+  <div class="setup" id="change_text_color"></div>
+
+  <h3>Text to speech</h3>
+  <div class="setup" id="text_to_speech"></div>
+
 </div>
 <div id="serverTutorialId" style="display:none;">1</div>
 </body>
