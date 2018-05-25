@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I Have a Dream Tutorial</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+   <link href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="mcspstyle.css">
+  <script>
+  $( function() {  // use jquery-ui accordion which can be nested
+    $( ".accordion" ).accordion(
+    {     collapsible: true ,
+      heightStyle: "content"
+  } );
+      
+      
+	//try to get pop up enlarged images in parent frame
+   $.featherlight.defaults.root = $(window.parent.document.body).body(); //$(window.parent.document.body).find('body');
+
+  } );
+  </script>
+</head>
+<body>
+    <img src="https://course.mobilecsp.org/mobilecsp/assets/img/mobile-csp-logo-large.png" height="70px" align="middle">
+    <h3>Unit 2 : I Have a Dream Tutorial</h3>
+ 
+      <div class="accordion">
+          <h3>Getting Started</h3>
+<div>
+  
+    Preview video: <br>
+    <iframe width="100%" height="200px" src="https://www.youtube.com/embed/0vLz8TIwido?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+     Click on each tutorial section below or for more details see the <a href="https://www.youtube.com/watch?v=4tB_BuV1tew" target="_blank">video tutorial</a> or the <a href="https://docs.google.com/document/d/1Bg64PZclbPwhFg8Qg2GZJw5hVC08tDIFBhs5bBbyves/edit?usp=sharing" target="_blank">text tutorial</a> or the <a href="https://docs.google.com/document/d/1x9KDcEIyXwC7_h-bRJQCe-sIuXpQTGSRUnONxMs-MLA/edit?usp=sharing" target="_blank">short handout</a>.
+          
+          
+      <p>There is a Toggle Tutorial button in the green bar at the top that you can use to open and close this tutorial pane: <img src="images/HelloWorld/toggleTutorial.PNG" width="100%"></p>
+        </div>
+    
+  
+
+          <h3>User Interface (UI)</h3>
+          <div><a href="#" data-featherlight="images/IHaveADream/UI.png"><img src="images/IHaveADream/UI.png" style="float:left;margin-right:5px" width=40%></a>Drag in the following UI (User Interface) components and change their properties. <a href="#" data-featherlight="images/HelloWorld/dragDropButton.gif">
+      <img  src="images/HelloWorld/dragDropButton.gif" width="100%">
+      </a>  <p>
+
+<table border class="tutTable">
+<tbody>
+<tr>
+<th width="20%">UI Component 
+</th>
+<th width="20%">
+Name
+</th>
+<th width="60%">Properties
+</th>
+</tr>
+<tr>
+<td>
+Screen
+</td>
+<td>
+Screen1
+</td>
+<td>
+<ul>
+<li>BackgroundColor of your choice</li>
+<li>Title - type in Speech Player</li>
+<li>AlignHorizontal - Center</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Label
+</td>
+<td>
+Label1
+</td>
+<td>
+<ul>
+<li>Text - type in Martin Luther King</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Button
+</td>
+<td>
+Button1
+</td>
+<td>
+<ul>
+<li>Image - select mlk.jpg</li>
+<li>Text - erase Text for Button1</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Label
+</td>
+<td>
+Label2 (under button)
+</td>
+<td>
+<ul>
+<li>Text - type in Tap &nbsp;to hear speech</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Media/Player
+</td>
+<td>
+Player1 (non-visible component)
+</td>
+<td>
+<ul>
+<li>Source - select king.mp3</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+          </div>   
+         
+      
+        
+      
+    <h3>Coding the App</h3>
+    <div>       <a href="#" data-featherlight="images/HelloWorld/switchToBlocks.png">     
+<img src="images/HelloWorld/switchToBlocks.png" width="40%" style="float:left;margin-right:2px">
+      </a>Click on the Blocks button at the top right to switch to the Blocks editor. This is where you add the code to make the app work.  
+       
+    <ol>
+        <li>
+ Click Button1 and drag the <span class="control">When Button1.Clicked</span> block out to the middle.</li>
+      
+            <li>Click on Player1 and drag the  <span class="procedures">Player1.Start</span> block out and put it inside the When Button1.Clicked  block.
+        </li></ol>
+      <a href="#" data-featherlight="images/IHaveADream/blocks.gif"> <img  src="images/IHaveADream/blocks.gif" width="100%"></a>
+        
+        
+        </div>
+           <h3>Testing the App</h3>  
+  <div>
+  
+
+        In your App Inventor project, click on the <b>Connect</b> menu at the top and choose <b>AI Companion</b>. <br>
+        <a href="#" data-featherlight="images/setup/connectAI.gif"><img src="images/setup/connectAI.gif" width="80%"></a>
+        <p><a href="#" data-featherlight="images/setup/phoneScreen.png"><img src="images/setup/phoneScreen.png" height="200px" style="float:left;margin-right:5px"></a>Start up the AI Companion app on your mobile device and click on Scan the QR code (or enter the text code) by pointing your mobile device's camera to the computer screen to read the displayed QR code.</p>
+
+      <p>If you have problems, make sure your mobile device and your computer are on the same WiFi or other network. See the <a href="http://appinventor.mit.edu/explore/ai2/support/troubleshooting.html" target="_blank">Troubleshooting</a> page or try another method of connecting your device such as <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">USB</a> or using the <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">emulator</a>.</p>
+      <p>When you click on the image of Martin Luther King Jr. in your running app, his I have Dream speech should play.</p>
+        </div>
+          </div>
+      
+       
+</body>
+</html>
