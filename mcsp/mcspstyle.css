@@ -1,0 +1,83 @@
+.accordion div { 
+    margin: 2px !important;
+    padding: 2px !important;
+}
+.accordion h3 { 
+    background-color:  #A5C93F; /* android green? */
+    border: forestgreen; 
+    padding: 2px !important;
+}
+.subaccordion h4 {
+     padding: 2px !important;
+}
+ .subaccordion .ui-accordion-header-active { 
+    background-color:   #A5C93F;
+    border: forestgreen; 
+}
+.tutTable td {
+    padding-left: 5px;
+}
+.tutTable td ul {
+    margin-left: -20px;
+}
+
+/* Inline blocks properties from App Inventor tutorials*/
+
+.control {
+  background-color: #b18e35;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.variables {
+  background-color: #d05f2d;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.procedures {
+  background-color: #7c5385;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.text {
+  background-color: #b32d5e;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.getters {
+  background-color: #439970;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.setters {
+  background-color: #266643;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.math {
+  background-color: #3f71b5;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+.lists {
+  background-color: #49a6d4;
+  border: 1px dashed #000;
+  color: white;
+  padding:1px;
+}
+
+
+ 

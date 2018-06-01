@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorial</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+   <link href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="mcspstyle.css">
+  <script>
+  $( function() {  // use jquery-ui accordion which can be nested
+    $( ".accordion" ).accordion(
+    {     collapsible: true ,
+      heightStyle: "content"
+  } );
+      
+      
+	//try to get pop up enlarged images in parent frame
+   $.featherlight.defaults.root = $(window.parent.document.body).body(); //$(window.parent.document.body).find('body');
+
+  } );
+  </script>
+</head>
+<body>
+    <img src="https://course.mobilecsp.org/mobilecsp/assets/img/mobile-csp-logo-large.png" height="70px" align="middle">
+    <h3>Unit 1 : Hello World Tutorial</h3>
+ 
+    
+    <div class="accordion">
+        <h3>Welcome to App Inventor</h3>
+        <div>
+    App Inventor is a programming development environment for designing apps for phones and tablets using a visual drag-and-drop online interface. <p>
+    <p>Note that App Inventor is not supported on Internet Explorer browsers. We suggest using Chrome or Firefox. </p> <p>Click on Designer Window below to follow the tutorial.</p>
+        </div>
+  <h3>Designer Window</h3>
+  <div>
+ What you see when you open an App Inventor template is     the Designer window. This is where you will design the <b>UI (User Interface)</b> for your app.
+Explore the Designer window. <br>
+    <a href="#" data-featherlight="images/HelloWorld/DesignTab.png"><img src="images/HelloWorld/DesignTab.png" width="100%" ></a>
+    
+    
+      <p>There is a Toggle Tutorial button in the green bar at the top that you can use to open and close this tutorial pane:<br> <img src="images/HelloWorld/toggleTutorial.PNG" width="100%"></p>
+      
+      <p>Try changing the background color of the Screen in the properties window!<br>
+      <a href="#" data-featherlight="images/HelloWorld/BackgroundColor.gif"><img src="images/HelloWorld/backgroundColor.gif" width="100%" ></a>
+        </div>
+    
+  <h3>My Projects</h3>
+  <div>
+    Try clicking on My Projects at the top to go to your list of projects and then click on HelloWorldTemplate to get back into this project. You will  create many projects in this class.   <br>
+      <img src="images/HelloWorld/myprojects.png" width="80%">
+        </div>
+
+    
+  <h3>Connect Mobile Device</h3>
+  <div>
+    <p>Let's connect your mobile device to your App Inventor Project.
+         <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have WiFi available.</p>
+   
+  <h4>1. Download Companion App</h4>
+  
+    <div>
+Download and install the MIT AI2 Companion App on your mobile device if you have not already done so. On Android tablets and phones, it is available free from the play store, just search for App Inventor and you will see the <img src="images/setup/codi.png" width="25%">MIT AI2 Companion. You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.
+    <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
+      </div>
+       <h4>2. Connect to the Companion</h4>
+  
+    <div>
+        In your App Inventor project, click on the <b>Connect</b> menu at the top and choose <b>AI Companion</b>. <br>
+        <a href="#" data-featherlight="images/setup/connectAI.gif"><img src="images/setup/connectAI.gif" width="80%"></a>
+        <p><a href="#" data-featherlight="images/setup/phoneScreen.png"><img src="images/setup/phoneScreen.png" height="200px" style="float:left;margin-right:5px"></a>Start up the AI Companion app on your mobile device and click on Scan the QR code (or enter the text code) by pointing your mobile device's camera to the computer screen to read the displayed QR code.</p>
+
+      <p>If you have problems, make sure your mobile device and your computer are on the same WiFi or other network. If the app seems frozen, try Connect/Reset Connection and then try Connect/AI Companion again. See the <a href="http://appinventor.mit.edu/explore/ai2/support/troubleshooting.html" target="_blank">Troubleshooting</a> page or try another method of connecting your device such as <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">USB</a> or using the <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">emulator</a>.</p>
+  </div>
+        </div>
+
+    
+  <h3>Blocks Window</h3>     
+      
+    <div>Now that you have connected your app, try it! The classic first program in any programming language is Hello World. This app will say hello when you click the button.
+    
+    <p>Click on the Blocks button at the top right to switch to the Blocks editor.  <br>
+       <a href="#" data-featherlight="images/HelloWorld/switchToBlocks.png">     
+<img src="images/HelloWorld/switchToBlocks.png" width="70%">
+      </a>
+      <p>The Blocks editor is where you add the code to make your button and other UI components work! You can go back and forth between Designer and Blocks at any time in your project.  </p>
+      <a href="#" data-featherlight="images/HelloWorld/BlocksTab.png">     
+          <img src="images/HelloWorld/BlocksTab.png" width="100%"></a>
+         
+    
+    <p>Change the code to choose a different background color. Double click where it says "Hello" and change it to say "Hello World!" instead.<br>
+      <a href="#" data-featherlight="images/HelloWorld/.gif"> <img  src="images/HelloWorld/ChangeCode.gif" width="100%"></a>
+        <p>Try your app! It should still be connected to your mobile device, but if it is not, do Connect/AI Companion (or reset if needed).</p>
+      
+        </div>  
+        
+
+        </div>
+</body>
+</html>
