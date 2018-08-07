@@ -34,7 +34,7 @@
     <div>
       <p>On the street, at government offices, and via social media: young people are calling for gun control on a national scale. The movement is everywhere, and we’ve tracked the story from its tragic beginnings to the latest call to action.</p>
       <p>Youth Radio has created an <a href="https://yri.youthradio.org/neveragain/" target="blank"> interactive, real-time tracker</a> of the #NeverAgain movement. </p>
-      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map.</p>
+      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map. Tapping on the map will show any #NeverAgain tweets from that location (i.e., tweets that have both #NeverAgain and #Boston).</p>
       <p>Click connect your app to start building your app!</p>
     </div>
 
@@ -48,9 +48,9 @@
       <div class="tutorialContentPage">
         <h3>Add Components</h3>
         <p>We've started with a blank app, and need to add components.</p>
-        <p>From the User Interface palette, drag in two <span class="icon" alt="label"></span>Labels and a <span class="icon" alt="notifier"></span>Notifier.</p>
+        <p>From the User Interface palette, drag in two <span class="icon" alt="label"></span>Labels, a <span class="icon" alt="notifier"></span>Notifier, and a <span class="icon" alt="webviewer"></span>WebViewer.</p>
         <p>Rename the labels to <b>InstructionLabel</b> and <b>LocationLabel</b>. </p>
-        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component.</p>
+        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component. Make sure the WebViewer component is at the bottom of the app.</p>
         <p>Finally, from the Connectivity palette, drag in a <span class="icon" alt="web"></span>Web component.</p>
         <img class="enlargeImage" src="../images/map_the_movement/componentslist.png" alt="some_text">
       </div>
@@ -59,9 +59,19 @@
         <h3>Modify Component Properties</h3>
         <p>Change the text of the <b>InstructionLabel</b> to say 'Tap anywhere on the map to see the Never Again action on Twitter!'</p>
         <p>Change the text of the <b>LocationLabel</b> to say 'No Location Selected!'</p>
-        <p>Experiment with the text properties of the two labels until you find something you like. Adjust the map to a comfortable size as well. A sample layout is shown below.</p>
+        <p>Experiment with the text properties of the two labels until you find something you like. Adjust the map and webviewer to comfortable sizes as well. A sample layout is shown below.</p>
         <p>Remember, to center all components, set the <em>AlignHorizontal</em> propery of Screen1 to Center!</p>
         <img class="enlargeImage" src="../images/map_the_movement/samplelayout.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Change "AboutScreen" Property</h3>
+        <p>In the Screen1 properties, there's something called <em>AboutScreen</em>. </p>
+        <img class="enlargeImage" src="../images/map_the_movement/aboutscreen.png" alt="some_text">
+        <p>Let's use that to give instructions on how to use this app. </p>
+        <p>Fill in the property with something like: "Click anywhere on the map. #NeverAgain tweets from that location will appear below! Scroll to see more tweets."</p>
+        <p>You can access the "About Screen" information by clicking on the three dots icon, highlighted in the below screenshot, and then clicking "About this application".</p>
+        <img class="enlargeImage" src="../images/map_the_movement/aboutscreenshot.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
@@ -176,7 +186,7 @@
 
       <div class="tutorialContentPage">
         <h3>Test for Error</h3>
-        <p>Drag in an <span class="control">if then</span> block, and mutate it into an <span class="control">if then else</span> block.</p> 
+        <p>Drag in an <span class="control">if then</span> block, and mutate it into an <span class="control">if then else</span> block. Snap it in under the <span class="setters">set LocationLabel.Text</span> block we just built.</p> 
         <p>Drag out an <span class="logic">=</span> block from the <span class="icon" alt="logic"></span>Logic drawer.</p>
         <p>From the <span class="icon" alt="label"></span>LocationLabel drawer, drag out a <span class="getters">LocationLabel.Text</span> block and snap it into the first socket of the <span class="logic">=</span> block.</p>
         <p>Set the second socket of the <span class="logic">=</span> block to <span class="text">error</span>.</p>
@@ -185,40 +195,11 @@
       </div>
 
       <div class="tutorialContentPage">
-        <h3>Open New Screen</h3>
-        <p>If there's no error, then we can open a new screen to show tweets from the location that we parsed.</p>
-        <p>From the <span class="icon" alt="control"></span>Control drawer, drag in a <span class="control">open another screen with start value</span> block.</p>
-        <p>Set the <b>screenName</b> to <span class="text">WebScreen</span>.</p>
-        <p>Set the <b>startValue</b> to <span class="getters">LocationLabel.Text</span>.</p>.
-        <img class="enlargeImage" src="../images/map_the_movement/openanotherscreen.png" alt="some_text">
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Create New Screen</h3>
-        <p>At the top right, click on "Add Screen". Call this new screen "WebScreen".</p>
-        <img class="enlargeImage" src="../images/map_the_movement/addnewscreen.png" alt="some_text">
-        <p>In the Designer, add two components: a Button, and a WebViewer (both under User Interface).</p>
-        <p>Rename the button to BackButton, and fill in the text to say "Go Back".</p>
-        <img class="enlargeImage" src="../images/map_the_movement/webscreen.png" alt="some_text">
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Back Button</h3>
-        <p>Drag in a <span class="control">when BackButton.Click</span> block.</p>
-        <p>From the Control drawer, drag in a <span class="control">close screen</span> block, and snap it into the Back Button event handler.</p>
-        <img class="enlargeImage" src="../images/map_the_movement/backbutton.png" alt="some_text">
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Web Screen Initialization</h3>
-        <p>From the WebScreen drawer, drag in a <span class="control">when WebScreen.Initialize</span> block.</p>
-        <p>From the <span class="icon" alt="webviewer"></span>WebViewer1 drawer, drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it in.</p>
-        <img class="enlargeImage" src="../images/map_the_movement/webinitialize.png" alt="some_text">
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Fill in URL</h3>
-        <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets.</p>
+        <h3>Display Tweets!</h3>
+        <p>If there's no error, then we can show tweets from the location that we parsed.</p>
+        <p>Drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it into the <span class="control">else</span>.</p>
+        <img class="enlargeImage" src="../images/map_the_movement/gotourl1.png" alt="some_text">
+        <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets. Snap it into the <span class="procedures">GoToUrl</span> block.</p>
         <p>In the first socket, enter: <span class="text">https://m.twitter.com/search?q=%23NeverAgain%20%23</span>.</p>
         <p>In the third socket, enter: <span class="text">&src=typd</span>.</p>
         <p>For the second socket, we need to make sure that the location name doesn't have any spaces in it. We will do this in the next step.</p>
@@ -236,7 +217,7 @@
 
       <div class="tutorialContentPage">
         <h3>Test!</h3>
-        <p>When you tap on the map on the first screen, it should open the second screen with a list of #NeverAgain tweets from that location. Does your app work?</p>
+        <p>When you tap on the map, it should navigate to a list of #NeverAgain tweets from that location. Does your app work?</p>
         <img class="enlargeImage" src="../images/map_the_movement/finishedscreenshots.png" alt="some_text">
       </div>
 
@@ -248,6 +229,22 @@
 
   <h3>Expand your app</h3>
     <div>
+
+      <b>Change the Twitter search manually.</b>
+      <p>Remember where we put in "#NeverAgain" as a search term? Can you figure out how to search for a different hashtag?</p>
+
+      <b>Use a TextBox to change the search terms.</b>
+      <p>Now, rather than manually changing the code, what if you changed the hashtag to <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">whatever is in a TextBox</a>?</p>
+
+      <b>Create a Button to switch to a random location.</b>
+      <p>You know how to use a Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
+
+      <b>Create Buttons to Zoom In or Zoom Out.</b>
+      <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
+
+      <b>Create Different Search Options.</b>
+      <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
+
     </div>
 
   <h3>Share your App</h3>
@@ -265,6 +262,13 @@
 </div>
 
 <div id="howToAccordion" class="accordion" style="display:none">
+
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>
+
 </div>
 
 

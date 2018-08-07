@@ -1,0 +1,45 @@
+<div class="tutorialContainer">
+ <div class="tutorialNavigationHeader"></div>
+
+ <div class="tutorialContentPage">
+  <h4>Map Component</h4>
+  <p>Click and drag a <span class='icon' alt='map'></span>Map to your Viewer.</p>  
+  <img class="enlargeImage" src="../images/howTos/mapViewer.png">
+  <p>There are a lot of options here! Let's go through what some of the properties mean.</p>
+</div>
+
+<div class="tutorialContentPage">
+  <h4>Map-Specific Properties</h4>
+  <p><em>CenterFromString</em> expects a latitude/longitude pair that the map centers at.</p>
+  <p><em>EnablePan</em> allows a user to drag the map around, or makes it stay static.</p>
+  <p>Similarly, <em>EnableRotation</em> lets the user spin the map around.</p>
+  <p><em>EnableZoom</em> allows the user to zoom in and out by pinching the map.</p>
+  <p><em>LocationSensor</em> allows you to connect to a separate <span class="icon" alt="locationsensor"></span>LocationSensor component.</p>
+  <p><em>MapType</em> allows you to select three map appearances: Roads, Aerial, and Terrain.</p>
+  <p><em>ShowCompass</em> shows a compass directly on the map.</p>
+  <p><em>ShowUser</em> shows the user's auto-detected location on the map.</p>
+  <p><em>ShowZoom</em> shows +/- zoom buttons directly on the map.</p>
+  <p><em>ZoomLevel</em> controls how zoomed in or out the map is.</p>
+</div>
+
+<div class="tutorialContentPage">
+  <h4>Event Blocks</h4>
+  <p>Here's a quick overview of the available event blocks.</p>
+  <p>"Feature" blocks (like <span class="control">when Map1.FeatureClick</span>) allow you to interact with any feature on the Map--usually a Marker.</p>
+  <p>Tap/Click blocks (like double tap, long press at point, and a few others) gauge various types of click events that can happen on the map.</p>
+  <img class="enlargeImage" src="../images/howTos/mapEvents.png">
+</div>
+
+<div class="tutorialContentPage">
+  <h4>Procedure Blocks</h4>
+  <p>Here's a quick overview of the available procedure (call) blocks.</p>
+  <p><span class="procedures">CreateMarker</span> will let you create a new Marker, and returns the new Marker. Potentially, you could save this new Marker in a list to use later. Can you think of a reason why you might do that? </p>
+  <p><span class="procedures">FeatureFromDescription</span> and <span class="procedures">LoadFromURL</span> are advanced and you probably won't find yourself using them much.</p>
+  <p><span class="procedures">PanTo</span> allows you to go to a different lat/long and zoom, anywhere on the map. It's a good way to quickly change where the map is looking at. Hint: It's very similar to changing the <em>CenterFromString</em> property. </p>
+  <p><span class="procedures">Save</span> lets you save the current map to your device storage.</p>
+  <img class="enlargeImage" src="../images/howTos/mapProcedures.png">
+  <p>The available getters and setters are the same as in any other component, so they are omitted here.</p>
+<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+</div>
