@@ -10,64 +10,70 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../scripts/utils.js"></script>
   <script>
-      $(window).bind('resize', function() {
-          console.log("window resized")
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
       });
-  </script>
 
-  <script>
-      $( function() {
-          $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
-                  sendAnalyticsEvent( {
-                      hitType: 'event',
-                      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
-                      eventAction: 'headerClick',
-                      eventLabel: ui.newHeader.text()
-                  });
+    }});
 
-              }});
-
-          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
           //$( "button, input, a" ).click( );
-      } );
+        } );
   </script>
 
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-31803258-2', 'auto');
-      ga('send', 'pageview');
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
 
   </script>
 </head>
 <body>
 
-<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
-  <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
-</div>
+  <div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+    <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+  </div>
 
-<div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
-  <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
-  <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
-</div>
+  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+
+    <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
 
 
   <div id="youthRadioAccordion" class="accordion">
-
-  <h3>Connect your App</h3>
-  <div class="setup" id="connect_app"></div>
-
     <h3>Hour of Code</h3>
+    <div>
+    <h4 style="color: #F88D34; font-size: 2em;">Welcome to the MIT App Inventor Hour of Code!</h4>
+    <p>Are you ready to build your first mobile app with MIT App Inventor? 
+    In this hour, we will build an app that plays a buzzing sound when you click on a picture of Codi the bee.</p>
+    <p>You first need to setup your computer to be able to run your app, so first click on the "Setup your Computer" tab below and follow the instructions. Then you should continue with the "Codi the Bee" tab to make the app.</p>
+    <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">hAPPy Inventing!</p>
+    </div>
+    
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>
+
+
+    <h3>Codi the Bee</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
-      <div class="tutorialContentPage">
-        <h4>Welcome to the MIT App Inventor Hour of Code!</h4>
-        <p>Are you ready to build your first mobile app with MIT App Inventor? Make sure you followed the instructions from the Connect tab to live-test your app as you build it!</p>
-        <p>In this hour, we will build an app that plays a buzzing sound when you click on a picture of Codi the bee.</p>
-      </div>
 
       <div class="tutorialContentPage">
         <h4>Introduction to Environment</h4>
@@ -76,33 +82,42 @@
         <img class="enlargeImage" src="../images/hour_of_code/designer.png" alt="some_text">
         <p>The <b>Blocks Editor</b> allows you to <em>code</em> your app to give it functionality--that is, make it do stuff!</p>
         <img class="enlargeImage" src="../images/hour_of_code/blockseditor.png" alt="some_text">
-        <p>You can toggle between the two environments via the buttons in the top right corner. </p>
+        <p>You can toggle between the two screens using the buttons in the top right corner. </p>
         <img class="enlargeImage" src="../images/hour_of_code/toggle.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Designer Components</h4>
         <p>Within the Designer, there are five windows: <em>Palette</em>, <em>Viewer</em>, <em>Components</em>, <em>Media</em>, and <em>Properties</em>.</p>
-        <p>The Palette is where all available components are. You can drag and drop any component from the Palette into the Viewer.</p>
-        <p>The Viewer is where you can see what the app will look like.</p>
-        <p>The Components menu shows all available components that have been added to the app. Note that the Screen component is always available as a component.</p>
-        <p>Media shows any uploaded files. There should be three files already pre-uploaded. <b>Note: If you do not have these files, you can download them here (and use the Upload File button to upload them into your app): </b>
-          <li><a href="../images/hour_of_code/icon.png" target=_none>Icon</a></li>
-          <li><a href="../images/hour_of_code/codi.jpg" target=_none>Codi</a></li>
-          <li><a href="../images/hour_of_code/Bee-Sound.mp3" target=_none>Buzz Sound</a></li></p>
-        <p>Finally, the Properties window allows you to manipulate any of the finer details of the currently selected component.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/designer_rectangles.png" alt="some_text">
-      </div>
 
+
+        <p>The <b>Palette</b> is where all available components are. You can drag and drop any component from the Palette into the Viewer.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/palette.png" alt="the palette window">
+        <p>The <b>Viewer</b> is where you can see what the app will look like and is where you drag components.</p><img class="enlargeImage" src="../images/hour_of_code/viewer.png" alt="the viewer window">
+        <p>The <b>Components</b> window shows all components that have been added to the app. Note that the Screen component is automatically listed as a component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/components.png" alt="the components window">
+        <p>The <b>Media</b> window shows any uploaded media files, like images and sounds. There should be three files already pre-uploaded for this app.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/media.png" alt="the media window">
+        <p><b>Note:</b> If you do not have these files, you can download them here (and use the Upload File button to upload them into your app): </p>
+
+        <ul>
+          <li><a href="../images/hour_of_code/icon.png" target="_blank">Icon</a></li>
+          <li><a href="../images/hour_of_code/codi.jpg" target="_blank">Codi</a></li>
+          <li><a href="../images/hour_of_code/Bee-Sound.mp3" target="_blank">Buzz Sound</a></li>
+        </ul>
+        <p>Finally, the <b>Properties</b> window allows you to view or change any of the properties (or characteristics) of the currently selected component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/properties.png" alt="the properties window">
+
+      </div>
       <div class="tutorialContentPage">
         <h4>Add Button</h4>
-        <p>From the <b>User Interface</b> palette, drag in a <span class="icon" alt="button"></span>Button, and drop it onto the Viewer.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/dragDropButton.gif" alt="some_text">
+        <p>From the <b>User Interface</b> palette, drag in a <span class="icon" alt="button">Button </span>, and drop it onto the Viewer.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/dragDropButton.gif" alt="drag and drop a button">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Add Sound</h4>
-        <p>From the <b>Media</b> palette, drag in a <span class="icon" alt="sound"></span>Sound component, and drop it onto the Viewer.</p>
+        <p>From the <b>Media</b> palette, drag in a <span class="icon" alt="sound">Sound </span> component, and drop it onto the Viewer.</p>
         <img class="enlargeImage" src="../images/hour_of_code/dragDropSound.gif" alt="some_text">
         <p>Because this is a <em>non-visible</em> component, the Sound will drop to the bottom, rather than appearing on the Viewer screen itself.</p>
       </div>
@@ -110,11 +125,27 @@
       <div class="tutorialContentPage">
         <h4>Button Properties</h4>
         <p>In the Components window, click on <b>Button1</b>. The Properties window for Button1 will appear.</p>
-        <p>Set the <b>Height</b> property to <em>Automatic</em> and the <b>Width</b> property to <em>Fill Parent</em>. This will allow Codi to be a large square the width of your device's screen. </p>
-        <p>Set the <b>Image</b> property to <em>codi.jpg</em>. 
-        <p>Set the <b>Text</b> property to be empty.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/buttonproperties.png" alt="some_text">
-        <p>If you are connected to the Companion app, you should now see a mirroring Codi on your device screen!</p>
+        <img class="enlargeImage" src="../images/hour_of_code/button-properties.gif" alt="some_text">
+        <p>Set the <b>Height</b> property to <em>Automatic</em>.</p>
+        <p>And set the <b>Width</b> property to <em>Fill Parent</em>. This will allow Codi to be a large square the width of your device's screen. </p>
+        <p>Set the <b>Image</b> property to <em>codi.jpg</em>.</p> 
+        <p>Set the <b>Text</b> property to be empty. Just erase what's in the box.</p>
+
+        <img class="enlargeImage" src="../images/hour_of_code/buttonproperties.png" alt="some_text" style="height: 400px; width: auto;">
+      <!--<p>If you are connected to the Companion app, you should now see a mirroring Codi on your device screen!</p>
+    -->
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Connect and Run the App</h4>
+        <p>Let's run our app to see what it looks like!</p>
+        <p>You have a few options:</p>
+          <ol>
+            <li>If you don't have a phone or tablet, you can run the app using an emulator in the browser. Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> to get instructions to set up the emulator if you haven't already set it up.</li>
+            <li>If you have an Android phone or tablet, you can connect it by following <a href="#connect_app">these steps.</a></li>
+          </ol>
+        
+        <p>Or you can run the emulator, which pops up a new window in your browser with your app running.</p>. 
       </div>
 
       <div class="tutorialContentPage">
@@ -127,56 +158,63 @@
         <h4>Let's Write Some Code!</h4>
         <p>Switch to the Blocks Editor. </p>
         <img class="enlargeImage" src="../images/hour_of_code/toggle.png" alt="some_text">
-        <p>You'll see that there are three windows in the Blocks Editor - Blocks, Media, and Viewer.</p>
-        <p>Media is exactly the same as in the Designer.</p>
-        <p>Blocks has three categories: <em>built-in blocks</em>, <em>component blocks</em>, and <em>generic</em> blocks.</p>
-        <p>Notice that the component blocks are exactly the same as what is in the Components window from the Designer.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/emptyblocks.png" alt="some_text">
+        <p>You'll see that there are three windows in the Blocks Editor - <b>Blocks</b>, <b>Media</b>, and <b>Viewer</b>.</p>
+        <p>The <b>Media</b> window is exactly the same as in the Designer, just located in a different place on the screen. It contains all uploaded media files for the app.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/blocks-editor-media.png" alt="media window in blocks editor">
+        <p>The <b>Blocks</b> window is like a palette of available blocks. There are three categories: <em>Built-in blocks</em>, <em>component blocks</em>, and <em>Any Component</em> blocks.</p>
+        <p>Notice that the component blocks list just the components that are in your app.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/blocks-editor-blocks.png" alt="component window in blocks editor">
+        <p>The <b>Viewer</b> is the area where you will drag your blocks and build the code for your app.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/blocks-editor-viewer.png" alt="blocks window in blocks editor">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Add Button Click Event</h4>
-        <p>From the <span class="icon" alt="button"></span>Button1 drawer, drag in a <span class="control">when Button1.Click</span> event block, and drop it onto the Viewer.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/buttonclick.png" alt="some_text">
+        <p>From the <span class="icon" alt="button">Button1 </span> drawer, drag in a <span class="control">when Button1.Click</span> event block, and drop it onto the Viewer.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/button-click.gif" alt="button click animation">
       </div>
 
       <div class="tutorialContentPage">
         <h4>Add Sound</h4>
-        <p>From the <span class="icon" alt="sound"></span>Sound1 drawer, drag in a <span class="procedures">call Sound1.Play</span> block, and snap it into the Button Click block.</p>
+        <p>From the <span class="icon" alt="sound">Sound1 </span> drawer, drag in a <span class="procedures">call Sound1.Play</span> block, and snap it into the Button Click block.</p>
         <p>Also drag in a <span class="procedures">call Sound1.Vibrate</span> block. Snap it in underneath the Play block.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/soundblocks.png" alt="some_text">
+        <img class="enlargeImage" src="../images/hour_of_code/sound-blocks.gif" alt="dragging sound blocks to play sound and vibrate">
       </div>
 
       <div class="tutorialContentPage">
-        <h4>Add Built-In Block</h4>
-        <p>From the <span class="icon" alt="math"></span>Math drawer, drag in a <span class="math">0</span> block.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/mathblocks.png" alt="some_text">        
+        <h4>Add Math Block</h4>
+        <p>From the <span class="icon" alt="math">Math</span> drawer, drag in a <span class="math">0</span> block.</p>        
         <p>Snap it into the <b>millisecs</b> socket of the Vibrate block. Here, millisecs is a <b>parameter</b>: It needs to be told how long to vibrate for.</p>
         <p>Change the <span class="math">0</span> to <span class="math">50</span>.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/insertzero.png" alt="some_text">
-      </div>
+        <img class="enlargeImage" src="../images/hour_of_code/insert-zero.gif" alt="insert zero block from Math drawer">
+      </div>  
 
       <div class="tutorialContentPage">
         <h4>Test your App!</h4>
-        <p>What happens when you click the picture of Codi in the Companion app? Does it play a sound and vibrate the device?</p>
-        <p><em>If the vibration does not work, your device may not support this function.</em>
+        <p>Let's assume that you have connected your phone or tablet, or have the emulator running in your browser. If you haven't done so, click on the "Setup your Computer" tab above to setup your computer to test your app.</p>
+        <p>What happens when you click the picture of Codi in the emulator or on your device? Does it play a sound?</p>
+        <p><em>If the vibration does not work, your device may not support this function. The emulator does not support vibration.</em></p>
         <img class="enlargeImage" src="../images/hour_of_code/codi.jpg" alt="some_text">
         <p>Congratulations! You've built your first app. You're an App Inventor!</p>
+        <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
       </div>
 
       <div class="tutorialContentPage">
         <h4>Install App</h4>
-        <p>If you would like to install your app onto your device, navigate to the Build menu at the top of the screen, and click <b>App (provide QR code for .apk)</b>. This will build your app and provide you a scannable QR code that will let you install your app onto your device!</p>
+        <p>If you are working with a device, and would like to install your app onto your device, navigate to the Build menu at the top of the screen, and click <b>App (provide QR code for .apk)</b>. This will build your app and provide you a scannable QR code that will let you install your app onto your device!</p>
         <img class="enlargeImage" src="../images/hour_of_code/buildapp.png" alt="some_text">
       </div>
 
-    <br/>
-    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-    </div>
-  </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+      </div>
 
-</div>
+      
+    </div>
+
+
 
 <div id="serverTutorialId" style="display:none;">1</div>
 </body>

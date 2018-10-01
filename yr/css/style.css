@@ -122,7 +122,9 @@ a.ui-button:active,
 }
 
 .enlargeImage {
-  max-width: 250px; 
+  max-width: 250px;
+  max-height: 400px;
+  width: auto !important;
 }
 
 .left {
