@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hour of Code</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
+      });
+
+    }});
+
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+        } );
+  </script>
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+  <div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+    <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+  </div>
+
+  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+
+    <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>Hour of Code</h3>
+    <div>
+    <h4 style="color: #F88D34; font-size: 2em;">Welcome to the MIT App Inventor Hour of Code!</h4>
+    <p>This is another good starter app to try some features of App Inventor. In this tutorial, we'll build an app that makes a ball bounce on your screen.</p>
+            <a onclick="enlargeVideo('aEoFmKkvdZo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_1_ss.png" alt="Ball Bounce tutorial introduction"></a>
+    <p>You first need to setup your computer to be able to run your app, so first click on the "Setup your Computer" tab below and follow the instructions. Then you should continue with the "Ball Bounce" tab to make the app.</p>
+    <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">hAPPy Inventing!</p>
+    </div>
+    
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>
+
+
+    <h3>Ball Bounce</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Set the Screen Properties</h4>
+        <p>Before we add any components, uncheck the <b>Scrollable</b> property so the app does not extend outside the window of the mobile device.</p>
+           <a onclick="enlargeVideo('h946lsaF3_0')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_2_ss.png" alt="set the Screen property "></a>
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h4>Add a Canvas Component</h4>
+        <p>From the <b>Drawing and Animation</b> drawer in the Designer, drag in a <span class="icon" alt="canvas"> Canvas </span> component. Then, set its <b>Width</b> and <b>Height</b> properties to <em>"Fill Parent"</em>.</p>
+           <a onclick="enlargeVideo('7PBIS7svUNU')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_3_ss.png" alt="set the Screen property "></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Add a Ball Sprite</h4>
+        <p>Drag a <span class="icon" alt="ball"> Ball </span> sprite from the <b>Drawing and Animation</b> drawer and drop it onto the Canvas. Then, set its <b>Radius</b> property to <em>10</em>.</p>
+           <a onclick="enlargeVideo('eypuBi5d7Wo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_4_ss.png" alt="drag in a Ball sprite "></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Ball1.Flung</h4>
+        <p>In the Blocks Editor,click on <b>Ball1</b> and click and drag <span class="control">when Ball1.Flung</span> to the Viewer.</p>
+           <a onclick="enlargeVideo('nSkjE5bN30U')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_5a_ss.png" alt="drag Ball1.Flung event block to viewer"></a>
+          <p>Click on <b>Ball1</b> again. Click and drag the <span class="setters">set Ball1.Heading to</span> block and add it to <span class="control">when Ball1.Flung</span>.</p> Also, drag a <span class="setters">set Ball1.Speed to</span> block to <span class="control">when Ball1.Flung</span>.
+           <a onclick="enlargeVideo('4M9wcRoTyBw')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_5b_ss.png" alt="drag setter blocks to Ball1.Flung"></a>
+
+            <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "heading" and click on <span class="variables">get heading</span>. Snap it to the <span class="setters">set Ball1.Heading to</span> block.</p> Do the same for <span class="variables">get speed</span>, snapping it to the <span class="setters">set Ball1.Speed to</span> block.
+            <a onclick="enlargeVideo('kMghj9l2Hz8')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_6_ss.png" alt="set heading and speed according to fling"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Test it out!</h4>
+        <p>Try it out on your device, or in the emulator. If you're not connected yet, follow the Setup instructions above to connect and test your app.</p>
+        <p>You'll notice that it gets "stuck" on the edge of the screen. Next, we'll add an event to make the ball bounce off the edge of the screen.</p>
+        <a onclick="enlargeVideo('GB2gS8moLn8')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_7_ss.png" alt="test your app"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Make the Ball Bounce</h4>
+        <p>Click on <b>Ball1</b> again and drag out the <span class="control">when Ball1.EdgeReached</span> block. Then click on <b>Ball1</b> again and connect the <span class="procedures">call Ball1.Bounce</span> block to <span class="control">when Ball1.EdgeReached</span>.</p>
+        <p>Go to the <span class="control">when Ball1.EdgeReached</span> block. Hover over "edge" and click on <span class="variables">get edge</span>. Snap it to the <span class="procedures">call Ball1.Bounce</span> block.</p>
+        <a onclick="enlargeVideo('zF70WMCZWog')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_8a_ss.png" alt="code Ball1.EdgeReached event"></a>
+        <br/>
+        <p>Test your app out again. The Ball should bounce off the edges now!.</p>
+         <a onclick="enlargeVideo('wTIpwZVet3Y')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_8b_ss.png" alt="code Ball1.EdgeReached event"></a>       
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h4>Extend your app</h4>
+        <p>Try to extend your app using these suggestions or come up with your own!</p>
+        <ul>
+        <li>Change the color of the ball based on how fast it is moving or which edge it reaches</li>
+        <li>Scale the speed of the ball so that it slows down and stops after it gets flung</li>
+        <li>Give the ball obstacles or targets to hit</li>
+        <li>Introduce a paddle for intercepting the ball, like a Pong game</li>
+        <li>Check out the <a href="http://appinventor.mit.edu/explore/ai2/minigolf.html" target="_blank">Mini Golf Tutorial</a>, which uses the Ball1.Flung event too.</li></ul>
+        <a onclick="enlargeVideo('w3qbTsYZOPs')" href="javascript:void(0);"><img  width="100%" src="../images/ball_bounce/ball_bounce_9_ss.png" alt="shows how you can extend app with a mini-golf game"></a>
+        <p>Keep exploring! See what you can come up with!</p>
+        <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">Now you've made a fun ball bounce game app!</p>
+        <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+
+      </div>
+
+
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+      </div>
+
+      
+    </div>
+
+
+
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
