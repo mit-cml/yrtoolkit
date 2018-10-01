@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hour of Code</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
+      });
+
+    }});
+
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+        } );
+  </script>
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+  <div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+    <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+  </div>
+
+  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+
+    <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>Hour of Code</h3>
+    <div>
+    <h4 style="color: #F88D34; font-size: 2em;">Welcome to the MIT App Inventor Hour of Code!</h4>
+    <p>Are you ready to build your first mobile app with MIT App Inventor? 
+           <a onclick="enlargeVideo('I-EN0geaeCA')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_1_1_ss.png" alt="the components window"></a>
+    In this hour, we will build an app that talks to you!</p>
+    <p>You first need to setup your computer to be able to run your app, so first click on the "Setup your Computer" tab below and follow the instructions. Then you should continue with the "Talk to Me" tab to make the app.</p>
+    <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">hAPPy Inventing!</p>
+    </div>
+    
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>
+
+
+    <h3>Talk To Me</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Introduction to Environment</h4>
+        <p>There are two main components to the App Inventor environment: the <b>Designer</b> and the <b>Blocks Editor</b>. </p>
+        <p>The <b>Designer</b> allows you to add <em>components</em> to your app and lay out what it will look like.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/designer.png" alt="some_text">
+        <p>The <b>Blocks Editor</b> allows you to <em>code</em> your app to give it functionality--that is, make it do stuff!</p>
+        <img class="enlargeImage" src="../images/hour_of_code/blockseditor.png" alt="some_text">
+        <p>You can toggle between the two screens using the buttons in the top right corner. </p>
+        <img class="enlargeImage" src="../images/hour_of_code/toggle.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Designer Components</h4>
+        <p>Within the Designer, there are five windows: <em>Palette</em>, <em>Viewer</em>, <em>Components</em>, <em>Media</em>, and <em>Properties</em>.</p>
+
+
+        <p>The <b>Palette</b> is where all available components are. You can drag and drop any component from the Palette into the Viewer.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/palette.png" alt="the palette window">
+        <p>The <b>Viewer</b> is where you can see what the app will look like and is where you drag components.</p><img class="enlargeImage" src="../images/hour_of_code/viewer.png" alt="the viewer window">
+        <p>The <b>Components</b> window shows all components that have been added to the app. Note that the Screen component is automatically listed as a component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/components.png" alt="the components window">
+        <p>The <b>Media</b> window shows any uploaded media files, like images and sounds.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/media.png" alt="the media window">
+
+        <p>Finally, the <b>Properties</b> window allows you to view or change any of the properties (or characteristics) of the currently selected component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/properties.png" alt="the properties window">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Add a Button</h4>
+        <p>In the designer, add a <span class="icon" alt="button">Button </span> component.</p>
+        <a onclick="enlargeVideo('31XDDrShcPY')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_1_4_ss.png" alt="the components window"></a>
+        <p>If you have your device connected, or emulator running, you should see your button appear.</p>
+        <p>Now change the Text property for Button1 to "Talk to Me".</p>
+        <a onclick="enlargeVideo('IxRuagFmrCI')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_20_ss.png" alt="the components window"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Add a TextToSpeech component</h4>
+        <p>Now add another component, <span class="icon" alt="texttospeech">TextToSpeech </span>, which is in the Media drawer.</p>
+        <a onclick="enlargeVideo('sJpLrLufaK0')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_11_ss.png" alt="the components window"></a>
+        <br/>
+        <p>And that's it for the components! Now switch to the Blocks editor.</p>
+             <a onclick="enlargeVideo('r3_JAJWws0g')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_12_ss.png" alt="the components window"></a>
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h4>Code the Button.Click event</h4>
+        <p>In the Blocks Editor, you will choose Button1, and drag in a Button1.Click</span> event block.. </p>
+             <a onclick="enlargeVideo('qH74ZLpg_Aw')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_13_ss.png" alt="the components window"></a>
+        <p>Now drop in a <span class="procedures">TextToSpeech.Speak</span> block into the <span class="control">Button1.Click</span> event block.</b>. </p>
+             <a onclick="enlargeVideo('vLfJv18SCLs')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_14_ss.png" alt="the components window"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Tell the app what to say</h4>
+        <p>The last part is dragging a text block to the message field to tell the app what to say. From the Text drawer, drag in a blank text block and snap it to the <span class="procedures">TextToSpeech.Speak</span> block.</p>
+        <a onclick="enlargeVideo('fiGGXda3zcI')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_1_15_ss.png" alt="the components window"></a>
+        <p>Now change the text block to what you want the app to say. How about "Congratulations, you made your first app!".</p>
+        <a onclick="enlargeVideo('hL_e2fGsAYQ')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_1_16_ss.png" alt="the components window"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Test your app</h4>
+        <p>Now you can test your app. The video shows how it works on a phone, but you can also click the button in the emulator . </p>
+        <a onclick="enlargeVideo('1FXKXOdejx8')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_1_18_ss.png" alt="the components window"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>What's next?</h4>
+        <p>Follow the Talk to Me Part 2 tutorial on the next tab to add some more fun features to your app.</p>
+        <a onclick="enlargeVideo('49FeDjKLWF0')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_1_19_ss.png" alt="the components window"></a>
+        <p>You've done a great job on this app! If you want to stop at this point, click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+      </div>
+            <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+    <h3>Talk To Me Part 2</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Add new features to Talk to Me</h4>
+        <p>We will add shaking and variable text in Part 2.</p>
+        
+        <a onclick="enlargeVideo('v5IVEbmkLyA')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_1_ss.png" alt="the components window"></a>
+      </div>
+      
+
+      <div class="tutorialContentPage">
+        <h4>Add the Accelerometer Sensor</h4>
+        <p>Go back to the Designer window, and drag in an  Accelerometer component from the Sensors drawer.</p>
+        <a onclick="enlargeVideo('7sOMUQdqS6Q')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_2_ss.png" alt="the components window"></a>
+      </div>
+        <div class="tutorialContentPage">
+        <h4>Accelerometer.Shaking block</h4>    
+        <p>Back in the Blocks Editor, drag out an <span class="control">Accelerometer1.Shaking</span> block.</p>
+        <p><b>Note:</b> If you are working with the emulator, this code will not be able to be tested, because you can't shake your computer!</p>
+        <a onclick="enlargeVideo('vacHVR0YGDQ')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_2_3_ss.png" alt="the components window"></a>
+        <p>Copy and paste the <span class="procedures">TextToSpeech.Speak</span> block from the <span class="control">Button1.Click</span> event block, and snap it into the <span class="control">Accelerometer1.Shaking</span> event block.
+        <a onclick="enlargeVideo('ylolCxA7DBA')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_4_ss.png" alt="the components window"></a>
+        <p>Change the text block to say something different when the phone is shaken. Something like "Stop shaking me!".
+        <a onclick="enlargeVideo('iKQqQGKn9cY')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_5_ss.png" alt="the components window"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Test the app</h4>
+        <p>If you are using a phone or tablet, try shaking the phone!</p>
+        <a onclick="enlargeVideo('lXkwR2_dsco')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_5a_ss.png" alt="the components window"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+         <h4>Add a TextBox</h4>   
+        <p>Go back to the Designer, and drag a <span class="icon" alt="textbox"> TextBox </span>  into the Viewer. Then move <span class="icon" alt="button"> Button1 </span> below the <span class="icon" alt="textbox"> TextBox </span>.</p>
+        <a onclick="enlargeVideo('Eh8hdNvt3yA')" href="javascript:void(0);"><img  width="100%" src="../images/talk_to_me/talk_to_me_2_6_ss.png" alt="the components window"></a>
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Speak what is in the Textbox</h4>
+        <p>Go back to the Blocks Editor. Then drag out a <span class="getters">TextBox1.Text</span> block and replace the "Congratulations" text block in the <span class="control">Button1.Click</span> event block with the new block.</p>
+        <a onclick="enlargeVideo('nXGEGpSj9kc')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_7_ss.png" alt="the components window"></a>
+        
+      </div> 
+      <div class="tutorialContentPage">
+        <h4>Test the App</h4>
+        <p>Try typing something in the textbox in your app. You can do this whether you are using the Emulator or a phone or tablet.</p>
+        <a onclick="enlargeVideo('AHNTXyRDRYs')" href="javascript:void(0);"><img width="100%"  src="../images/talk_to_me/talk_to_me_2_8_ss.png" alt="the components window"></a>
+        <br/>
+        <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">Congratulations! You've built a talking app. You're an App Inventor!</p>
+        <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+      </div>
+
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+      </div>
+
+      
+    </div>
+
+
+
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
