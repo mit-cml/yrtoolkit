@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hour of Code</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
+      });
+
+    }});
+
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+        } );
+  </script>
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+  <div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
+    <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
+  </div>
+
+  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+
+    <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>Hour of Code</h3>
+    <div>
+    <h4 style="color: #F88D34; font-size: 2em;">Welcome to the MIT App Inventor Hour of Code!</h4>
+    <p>Let's begin a new program that will allow us to use the screen of our phones as a canvas and our finger as a pen!
+           <a onclick="enlargeVideo('RPhS6QQpxeo')" href="javascript:void(0);"><img width="100%"  src="../images/digital_doodle/digital_doodle_1_ss.png" alt="the components window"></a>
+    This tutorial will show you how to draw a line on the screen as the user drags a finger around.</p>
+    <p>You first need to setup your computer to be able to run your app, so first click on the "Setup your Computer" tab below and follow the instructions. Then you should continue with the "Digital Doodle" tab to make the app.</p>
+    <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">hAPPy Inventing!</p>
+    </div>
+    
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>
+
+
+    <h3>Digital Doodle</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Introduction to Environment</h4>
+        <p>There are two main components to the App Inventor environment: the <b>Designer</b> and the <b>Blocks Editor</b>. </p>
+        <p>The <b>Designer</b> allows you to add <em>components</em> to your app and lay out what it will look like.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/designer.png" alt="some_text">
+        <p>The <b>Blocks Editor</b> allows you to <em>code</em> your app to give it functionality--that is, make it do stuff!</p>
+        <img class="enlargeImage" src="../images/hour_of_code/blockseditor.png" alt="some_text">
+        <p>You can toggle between the two screens using the buttons in the top right corner. </p>
+        <img class="enlargeImage" src="../images/hour_of_code/toggle.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Designer Components</h4>
+        <p>Within the Designer, there are five windows: <em>Palette</em>, <em>Viewer</em>, <em>Components</em>, <em>Media</em>, and <em>Properties</em>.</p>
+
+
+        <p>The <b>Palette</b> is where all available components are. You can drag and drop any component from the Palette into the Viewer.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/palette.png" alt="the palette window">
+        <p>The <b>Viewer</b> is where you can see what the app will look like and is where you drag components.</p><img class="enlargeImage" src="../images/hour_of_code/viewer.png" alt="the viewer window">
+        <p>The <b>Components</b> window shows all components that have been added to the app. Note that the Screen component is automatically listed as a component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/components.png" alt="the components window">
+        <p>The <b>Media</b> window shows any uploaded media files, like images and sounds. There should be three files already pre-uploaded for this app.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/media.png" alt="the media window">
+        <p>Finally, the <b>Properties</b> window allows you to view or change any of the properties (or characteristics) of the currently selected component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/properties.png" alt="the properties window">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <p>Change scroll settings</p>
+        <p>First thing to do is uncheck the <b>Scrollable</b> property for <b>Screen1</b> so we can keep the screen from scrolling.</p>
+        <a onclick="enlargeVideo('rYnM6qS3mQ0')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_2_ss.png" alt="uncheck scrollable property for Screen1"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Set Height and Width to "Fill Parent"</h4>
+    <p>In the Properties panel for <b>Canvas1</b>, click <b>Height</b> and set it to <em>"Fill parent"</em>. Do the same for the <b>Width</b> property.</p>
+    <p>Then drag an <b> Accelerometer </b> component from the Sensors drawer into the Viewer.</p>
+        <a onclick="enlargeVideo('WSkRhm3hBj4')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_3_ss.png" alt="set heigth and width properties for Canvas"></a>
+       
+        
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h4>Code Canvas1.Dragged</h4>
+        <p>Click on <b>Canvas1</b> and drag a <span class="control">when Canvas1.Dragged</span> event block to the Viewer.</p>
+             <a onclick="enlargeVideo('4HZWB2OCCFs')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_4_ss.png" alt="the components window"></a>
+          <br/>
+          <p>Click on <b>Canvas1</b> again. Click and drag the <span class="procedures">call Canvas1.DrawLine</span> block and snap it into <span class="control">when Canvas1.Dragged</span>.</p>
+          <a onclick="enlargeVideo('4V5oqvgVwfg')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_5_ss.png" alt="the components window"></a>
+          <p>Hover over "prevX" and click on <span class="variables">get prevX</span>. Add it to the "x1" socket of the <span class="procedures">call Canvas1.DrawLine</span> block.
+          <p>Next, hover over "prevY" and click on <span class="variables">get prevY</span>. Add it to the "y1" socket of the <span class="procedures">call Canvas1.DrawLine</span> block.</p>
+          <p>Repeat with <span class="variables">get currentX</span> and <span class="variables">get currentX</span>, adding them to the "x2" and "y2" sockets.</p>
+          <a onclick="enlargeVideo('2qYAWroLEVo')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_6_ss.png" alt="the components window"></a>
+          <p>Now test your app on your phone or tablet, or using the emulator in your browser. If you haven't set up your computer yet, follow the directions in the Setup tab above.</p>
+          <a onclick="enlargeVideo('XhcWsNJ4db4')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_6b_ss.png" alt="the components window"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Shake to Erase! Plus add your own touches!</h4>
+        <p>Let's use the Accelerometer to detect shaking of the mobile device and erase the Canvas when that happens.</p>
+        <p>Drag out a <span class="control">when Accelerometer1.Shaking</span> block.</p>
+        <a onclick="enlargeVideo('uKaxKOZ8TUA')" href="javascript:void(0);"><img width="100%"  src="../images/digital_doodle/digital_doodle_7_ss.png" alt="drag out Accelerometer1.Shaking"></a>
+        <p>Now drag out a <span class="procedures">Canvas1.Clear</span> block and snap it into <span class="control">when Accelerometer1.Shaking</span>.</p>
+         <a onclick="enlargeVideo('_3rKc01dfNA')" href="javascript:void(0);"><img width="100%"  src="../images/digital_doodle/digital_doodle_7b_ss.png" alt="add a Canvas1.Clear block"></a>
+         <p>Test it out! You can only do this if you are connected with a phone or tablet. This feature cannot be tested using the Emulator.</p>
+      </div>
+
+    
+      <div class="tutorialContentPage">
+        <h4>Extend your App!</h4>
+        <a onclick="enlargeVideo('djoDLnSG3K8')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_8_ss.png" alt="the components window"></a>
+          <p>Next, try to extend your app using these suggestions or come up with your own!</p>
+              <ul> 
+                <li>Change the color of the ink (and let the user pick from a selection of colors). You can check out the Snapchat Remix tutorial.</li> <!-- Link this -->
+                <li>Change the background to a photograph or picture.</li>
+                <li>Let the user draw dots as well as lines (hint: Use DrawCircle block).</li>
+                <li>Add a button that turns on the camera and lets the user take a picture and then doodle on it.</li>
+              </ul>
+              <p>All these ideas can be completed with the <a href="http://appinventor.mit.edu/explore/ai2/paintpot-part1.html" target="_blank">Paint Pot tutorial</a> on the App Inventor site.</p>
+              <p>The possibilities are endless! It is now up to you to see how much fun you can have with your friends.</p>
+
+
+              <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">Congratulations! You've built a game app. You're an App Inventor!</p>
+              <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+ 
+      </div>
+
+            <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+
+      </div>
+
+      
+    </div>
+
+
+
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
