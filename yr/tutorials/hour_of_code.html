@@ -63,15 +63,15 @@
     <h4 style="color: #F88D34; font-size: 2em;">Welcome to the MIT App Inventor Hour of Code!</h4>
     <p>Are you ready to build your first mobile app with MIT App Inventor? 
     In this hour, we will build an app that plays a buzzing sound when you click on a picture of Codi the bee.</p>
-    <p>You first need to setup your computer to be able to run your app, so first click on the "Setup your Computer" tab below and follow the instructions. Then you should continue with the "Codi the Bee" tab to make the app.</p>
+    <p>You first need to set up your computer to be able to run your app, so first click on the "Set up your Computer" tab below and follow the instructions. Then you should continue with the "Hello Codi!" tab to make the app.</p>
     <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">hAPPy Inventing!</p>
     </div>
     
-    <h3>Setup your Computer</h3>
+    <h3>Set up your Computer</h3>
     <div class="setup" id="connect_app"></div>
 
 
-    <h3>Codi the Bee</h3>
+    <h3>Hello Codi!</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
 
@@ -116,6 +116,11 @@
       </div>
 
       <div class="tutorialContentPage">
+        <h4>Add Label</h4>
+        <p>From the <b>User Interface</b> palette, drag in a <span class="icon" alt="label"> Label </span>, and drop it onto the Viewer, below the <span class="icon" alt="button"> Button. </span></p>
+        <img class="enlargeImage" src="../images/hour_of_code/add_label.gif" alt="drag and drop a label">
+      </div>
+      <div class="tutorialContentPage">
         <h4>Add Sound</h4>
         <p>From the <b>Media</b> palette, drag in a <span class="icon" alt="sound">Sound </span> component, and drop it onto the Viewer.</p>
         <img class="enlargeImage" src="../images/hour_of_code/dragDropSound.gif" alt="some_text">
@@ -136,22 +141,36 @@
     -->
       </div>
 
+
+      <div class="tutorialContentPage">
+        <h4>Label Properties</h4>
+        <p>In the Components window, click on <b>Label1</b>. The Properties window for Label1 will appear.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/label-properties.gif" alt="some_text">
+        <p>Set the <b>BackgroundColor</b> property to <em>any color you like</em>.</p>
+        <p>And set the <b>FontSize</b> property to <em>30</em>.</p>
+        <p>Set the <b>Text</b> property to <em>"Touch the Bee!"</em>.</p> 
+        <p>Set the <b>TextColor</b> property to any color you like, as long as it contrasts well with the <b>BackgroundColor</b>.</p>
+
+        <img class="enlargeImage" src="../images/hour_of_code/labelproperties.png" alt="some_text" style="height: 400px; width: auto;">
+      <!--<p>If you are connected to the Companion app, you should now see a mirroring Codi on your device screen!</p>
+    -->
+      </div>
+
       <div class="tutorialContentPage">
         <h4>Connect and Run the App</h4>
         <p>Let's run our app to see what it looks like!</p>
         <p>You have a few options:</p>
           <ol>
             <li>If you don't have a phone or tablet, you can run the app using an emulator in the browser. Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> to get instructions to set up the emulator if you haven't already set it up.</li>
-            <li>If you have an Android phone or tablet, you can connect it by following <a href="#connect_app">these steps.</a></li>
+            <li>If you have an Android phone or tablet, you can connect it by following <a href="http://appinventor.mit.edu/explore/ai2/setup-device-wifi.html" target="_blank"> these steps.</a></li>
           </ol>
         
-        <p>Or you can run the emulator, which pops up a new window in your browser with your app running.</p>. 
       </div>
 
       <div class="tutorialContentPage">
         <h4>Sound Properties</h4>
-        <p>Under <b>Source</b>, select <em>Bee-Sound.mp3</em>.</p>
-        <img class="enlargeImage" src="../images/hour_of_code/soundproperties.png" alt="some_text">
+        <p>Click on <span class="icon" alt="sound"> Sound1 </span> in the Components pane. Then, in the Properties pane, under <b>Source</b>, select <em>Bee-Sound.mp3</em>.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/soundproperties.gif" alt="button click animation">
       </div>
 
       <div class="tutorialContentPage">
@@ -183,7 +202,7 @@
 
       <div class="tutorialContentPage">
         <h4>Add Math Block</h4>
-        <p>From the <span class="icon" alt="math">Math</span> drawer, drag in a <span class="math">0</span> block.</p>        
+        <p>From the <b> Math </b> drawer, drag in a <span class="math">0</span> block.</p>        
         <p>Snap it into the <b>millisecs</b> socket of the Vibrate block. Here, millisecs is a <b>parameter</b>: It needs to be told how long to vibrate for.</p>
         <p>Change the <span class="math">0</span> to <span class="math">50</span>.</p>
         <img class="enlargeImage" src="../images/hour_of_code/insert-zero.gif" alt="insert zero block from Math drawer">
@@ -191,20 +210,26 @@
 
       <div class="tutorialContentPage">
         <h4>Test your App!</h4>
-        <p>Let's assume that you have connected your phone or tablet, or have the emulator running in your browser. If you haven't done so, click on the "Setup your Computer" tab above to setup your computer to test your app.</p>
+        <p>Let's assume that you have connected your phone or tablet, or have the emulator running in your browser. If you haven't done so, click on the "Set up your Computer" tab above to set up your computer to test your app.</p>
         <p>What happens when you click the picture of Codi in the emulator or on your device? Does it play a sound?</p>
         <p><em>If the vibration does not work, your device may not support this function. The emulator does not support vibration.</em></p>
-        <img class="enlargeImage" src="../images/hour_of_code/codi.jpg" alt="some_text">
-        <p>Congratulations! You've built your first app. You're an App Inventor!</p>
-        <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+        <p><b>Note:</b> There is a known issue with the Sound component on some devices. If you see an "OS Error" and the sound does not play - or is very delayed in playing, go back into the Designer and try using a Player component (found under Media) instead of the Sound component.</p>
+        <img class="enlargeImage" src="../images/hour_of_code/codi.jpg" alt="codi the bee">
+
       </div>
 
       <div class="tutorialContentPage">
         <h4>Install App</h4>
         <p>If you are working with a device, and would like to install your app onto your device, navigate to the Build menu at the top of the screen, and click <b>App (provide QR code for .apk)</b>. This will build your app and provide you a scannable QR code that will let you install your app onto your device!</p>
         <img class="enlargeImage" src="../images/hour_of_code/buildapp.png" alt="some_text">
+        <p>You will need to first install a QR Scanner app on your phone or tablet, like the ZXing barcode scanner (freely available in Google Play).</p>
       </div>
 
+      <div class="tutorialContentPage">
+        <h4 style="color: #92267C; font-size: 1.5em;">Congratulations!</h4>
+        <p>Hey, you've built your first app! You're an App Inventor!</p>
+        <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
+      </div>
       <br/>
       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
