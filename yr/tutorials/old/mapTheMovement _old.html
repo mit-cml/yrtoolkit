@@ -4,9 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>yrtoolkit</title>
-
-
-
   <link rel="stylesheet" href="../css/scrollstyle.css">
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -36,10 +33,6 @@
 
 </script>
 
-
-
-
-
 </head>
 <body>
 
@@ -51,10 +44,10 @@
   <div id="youthRadioAccordion" class="accordion">
     <h3>The Challenge</h3>
     <div>
-      <p>On the street, at government offices, and via social media: young people are grappling with school shootings and gun violence on a national scale. They're sparking new conversations and organizing for change.</p>
-      <p>Youth Radio has created an <a href="https://yri.youthradio.org/neveragain/" target="blank">interactive</a> tracker of student-led action, starting with the tragic shooting at Marjory Stoneman Douglas High School in Parkland, Florida in February 2018. </p>
-      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map. Tapping on the map will show any #NeverAgain tweets from that location (i.e.  for example tweets that have both #NeverAgain and #Boston).</p>
-      <p>Click "Connect your App" below to start building your app!</p>
+      <p>On the street, at government offices, and via the social media: young people are calling for gun control on a national scale. The movement is everywhere, and we’ve tracked the story from its tragic beginnings to the latest call to action.</p>
+      <p>Youth Radio has created an <a href="https://yri.youthradio.org/neveragain/" target="blank"> interactive, real-time tracker</a> of the #NeverAgain movement. </p>
+      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map. Tapping on the map will show any #NeverAgain tweets from that location (i.e., tweets that have both #NeverAgain and #Boston).</p>
+      <p>Click connect your app to start building your app!</p>
     </div>
 
     <h3>Connect your App</h3>
@@ -209,7 +202,7 @@
         <p>Drag out an <span class="logic">=</span> block from the <span class="icon" alt="logic"></span>Logic drawer.</p>
         <p>From the <span class="icon" alt="label"></span>LocationLabel drawer, drag out a <span class="getters">LocationLabel.Text</span> block and snap it into the first socket of the <span class="logic">=</span> block.</p>
         <p>Set the second socket of the <span class="logic">=</span> block to <span class="text">error</span>.</p>
-        <p>In the <span class="control">then</span> socket, drag in a <span class="procedures">call Notifier1.ShowAlert</span> block. Set the <b>notice</b> to <span class="text">Error finding location! Try tapping somewhere else.</span></p>
+        <p>In the <span class="control">then</span> socket, drag in a <span class=procedures">call Notifier1.ShowAlert</span> block. Set the <b>notice</b> to <span class="text">Error finding location! Try tapping somewhere else.</span></p>
         <img class="enlargeImage" src="../images/map_the_movement/ifthenelse.png" alt="some_text">
       </div>
 
@@ -221,25 +214,24 @@
         <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets. Snap it into the <span class="procedures">GoToUrl</span> block.</p>
         <p>In the first socket, enter: <span class="text">https://m.twitter.com/search?q=%23NeverAgain%20%23</span>.</p>
         <p>In the third socket, enter: <span class="text">&src=typd</span>.</p>
-		    <img class="enlargeImage" src="../images/map_the_movement/elsecallWebViewer.png" alt="some_text">
         <p>For the second socket, we need to make sure that the location name doesn't have any spaces in it. We will do this in the next step.</p>
-        
+        <img class="enlargeImage" src="../images/map_the_movement/gotourl.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Remove Spaces from Location Name</h3>
-        <p>Drag out a <span class="text">replace all text</span> block and snap it into the second socket of the <span class="text">join</span> block of the previous step.</p>
-		    <p>From the <span class="icon" alt="label"></span>LocationLabel drawer, drag out a <span class="getters">LocationLabel.Text</span> block and snap it into the first  socket of the <span class="text">replace all text</span> block.</p>
+        <p>Drag out a <span class="text">replace all text</span> block and snap it into the second socket of the <span class="text">join</span> block of the previous step.</p> 
+        <p>From the Control drawer, drag in a <span class="control">get start value</span> block. This goes into the <b>text</b> socket.</p>
         <p>In a new empty text block, enter a space character. This goes into the <b>segment</b> socket.</p>
         <p>In a new empty text block, make sure it is completely empty--no spaces. This goes into the <b>replacement</b> socket.</p>
-        <img class="enlargeImage" src="../images/map_the_movement/replacealltext.png" alt="some_text">
+        <img class="enlargeImage" src="../images/map_the_movement/replacetext.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Test!</h3>
         <p>When you tap on the map, it should navigate to a list of #NeverAgain tweets from that location. Does your app work?</p>
         <img class="enlargeImage" src="../images/map_the_movement/finishedscreenshots.png" alt="some_text">
-	   </div>
+      </div>
 
       <br/>
       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
@@ -248,67 +240,24 @@
     </div>
 
   <h3>Expand your app</h3>
-    <div class="tutorialContainer">
-    <div class="tutorialNavigationHeader"></div>
+    <div>
 
-      	<div class="tutorialContentPage">
-			   <strong>Change the Twitter search manually in your code.</strong>
-			   <p>Remember where we put in "#NeverAgain" as a search term  in your code? Can you figure out how to alter  your code to search for a different hashtag?</p>
+      <b>Change the Twitter search manually.</b>
+      <p>Remember where we put in "#NeverAgain" as a search term? Can you figure out how to search for a different hashtag?</p>
 
-			   <b>Use a TextBox to change the search terms.</b>
-			   <p>Now, rather than manually changing the code each time, what if you changed the hashtag to whatever is in a <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">TextBox</a>?</p>
-				 
-         
+      <b>Use a TextBox to change the search terms.</b>
+      <p>Now, rather than manually changing the code, what if you changed the hashtag to <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">whatever is in a TextBox</a>?</p>
 
-            <p>Click the <button onclick="myFunction()">Hint</button> button to see some hints on how you may go about this extension acitivity.  </p>
+      <b>Create a Button to switch to a random location.</b>
+      <p>You know how to use a Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
 
+      <b>Create Buttons to Zoom In or Zoom Out.</b>
+      <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
 
+      <b>Create Different Search Options.</b>
+      <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
 
-            <div id="hint" style="display:none;">
-              <p>Here are some hints on how you may be able change your code to accommodate a generic hashtag input.</p>
-                      <ul>
-                        <li>Create a TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
-                        </li>
-                        <li>Create a Button that will store this entry to a variable.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
-                        </li>
-                        <li>Concatenate the value stored in this variable into the twitter search string.<br/>
-                          <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
-                        </li>
-                      </ul>
-            </div>
-
-            <script>
-            function myFunction() {
-                var x = document.getElementById("hint");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-            </script>
-
-        
-		    </div>
-			
-	
-    		<div class="tutorialContentPage">
-    		  <b>Create a Button to switch to a random location.</b>
-    		  <p>You know how to use a Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
-    		
-    		  <b>Create Buttons to Zoom In or Zoom Out.</b>
-    		  <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
-    		  <b>Create Different Search Options.</b>
-    		  <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
-		    </div>
-
-        <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
-      </div>
-	
-    </div>	
+    </div>
 
   <h3>Share your App</h3>
   <div class="setup" id="share_app"></div>
