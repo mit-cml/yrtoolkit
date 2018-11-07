@@ -112,7 +112,7 @@
 
       <div class="tutorialContentPage">
         <h3>Set Marker</h3>
-        <p>From the <span class="icon" alt="marker"></span>Marker1 drawer, drag in a <span class="procedure">call Marker1.SetLocation</span> block.</p>
+        <p>From the <span class="icon" alt="marker"></span>Marker1 drawer, drag in a <span class="procedures">call Marker1.SetLocation</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/setlocation.png" alt="some_text">
         <p>Fill in the <b>latitude</b> and <b>longitude</b> of the new block with the <span class="variables">latitude</span> and <span class="variables">longitude</span> from the Tap block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/filllatlong.png" alt="some_text">
@@ -160,7 +160,7 @@
 
       <div class="tutorialContentPage">
         <h3>JSON Text Decode</h3>
-        <p>The API provided us a response, but it provided it to us in a format called "JSON" (pronounced 'jay-sohn').</p>
+        <p>The API response content is in a format called "JSON" (pronounced 'jay-sohn').</p>
         <p>From the <span class="icon" alt="web"></span>Web1 drawer, pull out a <span class="procedures">call Web1.JsonTextDecode</span> block. Drag <span class="variables">get responseContent</span> into this new block.</p>
         <p>This will turn the response from JSON into lists that we can manipulate with App Inventor.</p>
         <img class="enlargeImage" src="../images/map_the_movement/jsontextdecode.png" alt="some_text">
@@ -216,7 +216,7 @@
       <div class="tutorialContentPage">
         <h3>Display Tweets!</h3>
         <p>If there's no error, then we can show tweets from the location that we parsed.</p>
-        <p>Drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it into the <span class="control">else</span>.</p>
+        <p>Drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it into the <span class="control">else</span> part of the <span class="control">if-then-else</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/gotourl1.png" alt="some_text">
         <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets. Snap it into the <span class="procedures">GoToUrl</span> block.</p>
         <p>In the first socket, enter: <span class="text">https://m.twitter.com/search?q=%23NeverAgain%20%23</span>.</p>
@@ -260,20 +260,20 @@
 				 
          
 
-            <p>Click the <button onclick="myFunction()">Hint</button> button to see some hints on how you may go about this extension acitivity.  </p>
+            <p>Need a hint?  Click here <button onclick="myFunction()">Hint</button> to see some hints on how you may go about this extension acitivity.  </p>
 
 
 
             <div id="hint" style="display:none;">
               <p>Here are some hints on how you may be able change your code to accommodate a generic hashtag input.</p>
                       <ul>
-                        <li>Create a TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
+                        <li>Create a <span class="icon" alt="textbox"></span>TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the <span class="icon" alt="textbox"></span> TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
                         <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
                         </li>
-                        <li>Create a Button that will store this entry to a variable.<br/>
+                        <li>Create a <span class="icon" alt="button"></span>Button and add a <span class="control">Button.Click</span> event that stores the <span class="icon" alt="textbox"></span>TextBox contents in a variable.<br/>
                         <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
                         </li>
-                        <li>Concatenate the value stored in this variable into the twitter search string.<br/>
+                        <li>Join the value stored in this variable as part of the twitter search string.<br/>
                           <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
                         </li>
                       </ul>
@@ -296,7 +296,7 @@
 	
     		<div class="tutorialContentPage">
     		  <b>Create a Button to switch to a random location.</b>
-    		  <p>You know how to use a Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
+    		  <p>You know how to use a <span class="icon" alt="button"></span>Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
     		
     		  <b>Create Buttons to Zoom In or Zoom Out.</b>
     		  <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
