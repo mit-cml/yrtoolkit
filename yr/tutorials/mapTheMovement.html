@@ -69,7 +69,7 @@
         <p>We've started with a blank app, and need to add components.</p>
         <p>From the User Interface palette, drag in two <span class="icon" alt="label"></span>Labels, a <span class="icon" alt="notifier"></span>Notifier, and a <span class="icon" alt="webviewer"></span>WebViewer.</p>
         <p>Rename the labels to <b>InstructionLabel</b> and <b>LocationLabel</b>. </p>
-        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component. Make sure the WebViewer component is at the bottom of the app.</p>
+        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component. Make sure the <span class="icon" alt="webviewer"></span>WebViewer component is at the bottom of the app.</p>
         <p>Finally, from the Connectivity palette, drag in a <span class="icon" alt="web"></span>Web component.</p>
         <img class="enlargeImage" src="../images/map_the_movement/componentslist.png" alt="some_text">
       </div>
@@ -116,6 +116,7 @@
         <img class="enlargeImage" src="../images/map_the_movement/setlocation.png" alt="some_text">
         <p>Fill in the <b>latitude</b> and <b>longitude</b> of the new block with the <span class="variables">latitude</span> and <span class="variables">longitude</span> from the Tap block and snap the <span class="procedures">call Marker1.SetLocation</span> block into the <span class="control">when Map1.TapAtPoint</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/filllatlong.png" alt="some_text">
+        <p><span class="procedures">SetLocation</span> block will move the <span class="icon" alt="marker"></span>Marker1 to the <span class="variables">latitude</span> and <span class="variables">longitude</span> where the user tapped on the map.</p>
       </div>
 
       <div class="tutorialContentPage">
@@ -216,16 +217,18 @@
       <div class="tutorialContentPage">
         <h3>Display Tweets!</h3>
         <p>If there's no error, then we can show tweets from the location that we parsed.</p>
+        
+        <p>Now you will be doing a slightly different kind of API call with the WebViewer component, where you will construct a query to Twitter that will display the results directly in the app.</p>
         <p>Drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it into the <span class="control">else</span> part of the <span class="control">if-then-else</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/gotourl1.png" alt="some_text">
         <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets. Snap it into the <span class="procedures">GoToUrl</span> block.</p>
         <p>In the first socket, enter: <br /><span class="text">https://m.twitter.com/search?q=</span>.</p>
-        
+        <p>Special characters like # & % might conflict with the URL request and need to be <em>encoded</em> to avoid conflicts. Because we are searching for hashtags like #NeverAgain #Boston, we need to encode that part of the search string.</p>
         <p>For  the second  socket: go to the <span class="icon" alt="web"></span>Web drawer  and drag  a <span class="procedures">UriEncode</span>  block.</p> 
         <img class="enlargeImage" src="../images/map_the_movement/webUriEncode.png" alt="some_text">
-        <p>and snap to its socket the text  "#NeverAgain # as shown.  This will go into the second socket of the <span class="text">join</span> block. </p>
+        <p>and snap to its socket the text  "#NeverAgain #" as shown.  This will go into the second socket of the <span class="text">join</span> block. </p>
 		    <img class="enlargeImage" src="../images/map_the_movement/elsecallWebViewer.png" alt="some_text">
-        <p>In  case you are wondering why we need to do the encoding for the URL, note that we are joining the Twitter search query URL:  "https://twitter.com/search?q=" with search terms like #NeverAgain  #Boston containing special characters like the hashtag symbol #.  Special characters like # & % might conflict with the URL request and need to be encoded to avoid conflicts.</p>
+        
 
         <p>For the third socket, we need to make sure that the location name doesn't have any spaces in it. We will do this in the next step.</p>
         
@@ -238,12 +241,16 @@
         <p>In a new empty text block, enter a space character. This goes into the <b>segment</b> socket.</p>
         <p>In a new empty text block, make sure it is completely empty--no spaces. This goes into the <b>replacement</b> socket.</p>
         <img class="enlargeImage" src="../images/map_the_movement/replacealltext.png" alt="some_text">
+        <p>Here is what the entire code block should look like:</p>
+        <img class="enlargeImage" src="../images/map_the_movement/gotourlfinal.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Test!</h3>
-        <p>When you tap on the map, it should navigate to a list of #NeverAgain tweets from that location. Does your app work?</p>
+        <p>When you tap on the map, <span class="icon" alt="webviewer"></span>WebViewer component should navigate to Twitter and display a list of #NeverAgain tweets from that location. Does your app work?</p>
         <img class="enlargeImage" src="../images/map_the_movement/finishedscreenshots.png" alt="some_text">
+        <br/>
+        <p>If you would like to learn more about API's you can check out the chapter titled <a href="http://www.appinventor.org/bookChapters/chapter24.pdf" target="_blank">Communicating with the  Web</a> from USF Professor David Wolber's book <em>App Inventor 2: Create your own Android Apps</em>.</p>
 	   </div>
 
       <br/>
