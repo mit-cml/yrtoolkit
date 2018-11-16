@@ -243,6 +243,11 @@ var setupTutorial = function() {
     updateTutorialPage(tutorialIndex);
     return false;
   });
+
+  // Add show/hide hint functionality
+  $(".hintContainer").off("click").on("click", function(e) {
+    $(".hint").toggleClass("hideHint");
+  });
 }
 
 // Add tutorial video pop-out

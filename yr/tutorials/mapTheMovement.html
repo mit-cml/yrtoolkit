@@ -251,63 +251,46 @@
     <div class="tutorialContainer">
     <div class="tutorialNavigationHeader"></div>
 
-      	<div class="tutorialContentPage">
-			   <strong>Change the Twitter search manually in your code.</strong>
-			   <p>Remember where we put in "#NeverAgain" as a search term  in your code? Can you figure out how to alter  your code to search for a different hashtag?</p>
+        <div class="tutorialContentPage">
+          <strong>Change the Twitter search manually in your code.</strong>
+          <p>Remember where we put in "#NeverAgain" as a search term  in your code? Can you figure out how to alter  your code to search for a different hashtag?</p>
 
-			   <b>Use a TextBox to change the search terms.</b>
-			   <p>Now, rather than manually changing the code each time, what if you changed the hashtag to whatever is in a <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">TextBox</a>?</p>
-				 
+          <b>Use a TextBox to change the search terms.</b>
+          <p>Now, rather than manually changing the code each time, what if you changed the hashtag to whatever is in a <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">TextBox</a>?</p>
          
-
-            <p>Need a hint?  Click here <button onclick="myFunction()">Hint</button> to see some hints on how you may go about this extension acitivity.  </p>
-
-
-
-            <div id="hint" style="display:none;">
-              <p>Here are some hints on how you may be able change your code to accommodate a generic hashtag input.</p>
-                      <ul>
-                        <li>Create a <span class="icon" alt="textbox"></span>TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the <span class="icon" alt="textbox"></span> TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
-                        </li>
-                        <li>Create a <span class="icon" alt="button"></span>Button and add a <span class="control">Button.Click</span> event that stores the <span class="icon" alt="textbox"></span>TextBox contents in a variable.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
-                        </li>
-                        <li>Join the value stored in this variable as part of the twitter search string.<br/>
-                          <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
-                        </li>
-                      </ul>
+          <div class="hintContainer">
+            <button>Need a hint?</button>
+            <div class="hint hideHint">
+              Here are some hints on how you may be able change your code to accommodate a generic hashtag input.
+                <ul>
+                  <li>Create a <span class="icon" alt="textbox"></span>TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the <span class="icon" alt="textbox"></span> TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
+                  <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
+                  </li>
+                  <li>Create a <span class="icon" alt="button"></span>Button and add a <span class="control">Button.Click</span> event that stores the <span class="icon" alt="textbox"></span>TextBox contents in a variable.<br/>
+                  <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
+                  </li>
+                  <li>Join the value stored in this variable as part of the twitter search string.<br/>
+                    <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
+                  </li>
+                </ul>
             </div>
-
-            <script>
-            function myFunction() {
-                var x = document.getElementById("hint");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-            </script>
-
+          </div>
+        </div>
+  
+        <div class="tutorialContentPage">
+          <b>Create a Button to switch to a random location.</b>
+          <p>You know how to use a <span class="icon" alt="button"></span>Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
         
-		    </div>
-			
-	
-    		<div class="tutorialContentPage">
-    		  <b>Create a Button to switch to a random location.</b>
-    		  <p>You know how to use a <span class="icon" alt="button"></span>Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
-    		
-    		  <b>Create Buttons to Zoom In or Zoom Out.</b>
-    		  <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
-    		  <b>Create Different Search Options.</b>
-    		  <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
-		    </div>
+          <b>Create Buttons to Zoom In or Zoom Out.</b>
+          <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
+          <b>Create Different Search Options.</b>
+          <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
+        </div>
 
         <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
       </div>
-	
+  
     </div>	
 
   <h3>Share your App</h3>
