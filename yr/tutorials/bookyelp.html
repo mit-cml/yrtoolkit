@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+
+
+
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>INTRO  TEXT  HERE FROM YR MEDIA</p>
+      <p>Click "Connect your App" below to start building your app!</p>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Book Yelp</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        <img src="../images/bookyelp/BookYelpIcon.png" width="150">
+        <p>In this project you will create an app that allows multiple users of your app to write and read book reviews.   You will be introduced to the CloudDB component of MIT App Inventor and learn how to store, access and modify data in the Cloud.</p>
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        <p>This is what the user interface looks like when the user starts the program.</p>
+        <img class="enlargeImage" src="../images/bookyelp/bookyelpUI1.png" alt="some_text">
+        <p>When the "Write Review" button is pressed, the following interface opens up where the user can write and submit a review for a book of their choice.</p>
+        <img class="enlargeImage" src="../images/bookyelp/bookyelpUI3.png" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        <p>When the "Read Reviews" button is pressed a list of book titles appears which is searchable.</p>
+        <img class="enlargeImage" src="../images/bookyelp/bookyelpUI4.png" alt="some_text">
+        <p>When a particular book title is selected by the user then all the reviews previously submitted for that book title is displayed.</p>
+        <img class="enlargeImage" src="../images/bookyelp/bookyelpUI5.png" alt="some_text">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Add Components</h3>
+        <p>Here is how the user interface looks like in MIT App Inventor Designer window.</p>
+        <img class="enlargeImage" src="../images/bookyelp/bookyelp_appinvUI.png" alt="some_text">
+        <p>And here is the Component embedding hierarchy.</p>
+        <img class="enlargeImage" src="../images/bookyelp/componentshierarchy.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Modify Component Properties</h3>
+        <p>Note that there is a horizontal arrangement for the write and read buttons and there are several vertical arrangements where different components are embedded to facilitate hiding and showing.  Also note that the "Read Reviews" button is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface palette.  The interface where the reviews are displayed is a <span class="icon" alt="listview"></span>ListView from the User Interface palette.  Here are a few components with some properties that need to be set.</p>
+        <img class="enlargeImage" src="../images/bookyelp/setproperties.png" alt="some_text">
+        <p>The first property setting ensures that when the the <span class="icon" alt="listpicker"></span>ListPicker "Read Reviews" button is clicked, the list of reviews shown is searchable through the use of a filter.</p>
+        <p>The second property setting ensures that the user can enter a multi-line text in the <span class="icon" alt="textbox"></span>TextBox for writing reviews.</p>
+
+      
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>For this project you will use <span class="icon" alt="cloudDB"></span>CloudDB as your database to store the book titles and the associated book reviews entered by the users of your app.   This component can be found in the Experimental pallete.</p>
+        <img class="enlargeImage" src="../images/bookyelp/experimentalpalette.png" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which is a database for storing data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be used by the individual user.  <span class="icon" alt="cloudDB"></span>CloudDB on the other hand allows data to be stored, accessed and modified in the Cloud by multiple users.</p>
+        <p>Here is what the blocks in the <span class="icon" alt="cloudDB"></span>CloudDB  drawer look like.</p>
+        <img class="enlargeImage" src="../images/bookyelp/cloudDBblocksdrawer.png" alt="some_text">
+      </div> 
+      <div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>Below is a diagram that may help you visualize how you can store book titles as "tags" in the <span class="icon" alt="cloudDB"></span>CloudDB where each tag (i.e. book title) is linked to a list containing the reviews associated with that book title.  When a user enters a new review for a book title previously entered in the database, that title is identified as a tag and the new review is added to the list of existing reviews associated with the given tag (i.e. book title).</p>
+        <img class="enlargeImage" src="../images/bookyelp/cloudDBstoragestructure.png" alt="some_text">
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Blocks</h3>
+        <p>Now it is  time to give functionality to the User Interface (UI) you have  created. Switch to the Blocks Editor.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Initialization</h3>
+        <p>First initialize the app screen by hiding the two vertical arrangements that contain the interfaces for writing and reading reviews.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whenscreeninitialize.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Writing A Review</h3>
+        <p>When the <strong>WriteReviewButton</strong> is clicked, reveal the first vertical arrangement containing the interface for writing reviews by making it visible.  The second vertical arrangement containing the interface for reading reviews should be hidden.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whenwritereviewbuttonclick.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Submitting A Review</h3>
+        <p>When the user is done writing their review and the <strong>SubmitReviewButton</strong> is clicked, have the book title be the <strong>tag</strong> and the review text be the <strong>itemToAdd</strong> to the <span class="icon" alt="cloudDB"></span>CloudDB.  With this method you will make sure that all the reviews associated with a particular book title are grouped together.  When the <strong>SubmitReviewButton</strong> is clicked, clear and hide the interface for writing reviews.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whensubmitreviewbuttonclick.png" alt="some_text">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Reading Reviews</h3>
+        <p>The button to read the book reviews is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface palette and when the user presses the <strong>ReadReviewsListPicker</strong>  (i.e. the "Read Reviews" button), make the review reading interface contained in <strong>ReadReviewVerticalArrangement</strong> visible, while hiding the review writing interface.  Also send a request to the <span class="icon" alt="cloudDB"></span>CloudDB to get a list of book titles stored as tags.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whenreadreviewslistpickertouchdown.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Reading Reviews</h3>
+        <p>When the <span class="icon" alt="cloudDB"></span>CloudDB returns the <strong>TagList</strong> containing the book titles, assign these titles as the <strong>Elements</strong> of the <strong>ReadReviewsListPicker</strong>.  This assignment will list all the previously entered book titles for the user to view.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whencloudDBtaglist.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Reading Reviews</h3>
+        <p>When the user picks a book title from the list picker, send a request to <span class="icon" alt="cloudDB"></span>CloudDB to get all the reviews associated with that book title. </p>
+        <img class="enlargeImage" src="../images/bookyelp/whenreadreviewslistpickerafterpicking.png" alt="some_text">
+      
+      </div>
+
+    
+
+      <div class="tutorialContentPage">
+        <h3>Reading Reviews</h3>
+        <p>The app has to wait to get the response  that comes in the <span class="control">GotValue</span> event.  When <span class="icon" alt="cloudDB"></span>CloudDB returns a list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong> which is a <span class="icon" alt="listview"></span>ListView object from the User Interface palette.</p>
+        <img class="enlargeImage" src="../images/bookyelp/whencloudDBgotvalue.png" alt="some_text">
+
+	   </div>
+
+     <div class="tutorialContentPage">
+        <h3>Test your App</h3>
+        <p>Test your app thoroughly with the help of multiple users and with multiple phones/tablets.  Make sure that each user is able to write and submit a review and is able to read reviews submitted by others.</p>
+        <p>Congratulations!  Fantastic job!</p>
+        <img src="../images/bookyelp/BookYelpIcon.png" width="150">
+      </div>
+      <br/>
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+  <h3>Expand your app</h3>
+    <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+      	<div class="tutorialContentPage">
+			   <strong>Erasing the contents of the CloudDB</strong>
+         <ul>
+			     <li>Currently there is no way to erase all the contents of the CloudDB when you want to restart everything fresh. Create  “Clear Database” button to erase everything stored in the CloudDB.</li>
+            <li>Make the "Clear Database" button password protected so that only an administrator of the database can erase it.</li>
+          </ul>
+            <p>Need a hint?  Click here <button onclick="myFunction()">Hint</button> to see some hints on how you may go about this extension acitivity.  </p>
+
+
+
+            <div id="hint" style="display:none;">
+              <p>Here are some hints on how you may be able to ........</p>
+                      <ul>
+                        <li></li>
+                        <li></li>
+                      </ul>
+            </div>
+
+            <script>
+            function myFunction() {
+                var x = document.getElementById("hint");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+            </script>
+
+        
+		    </div>
+			
+	
+    		<div class="tutorialContentPage">
+    		  <b>Uploading Images for Reviews</b>
+          <ul>
+            <li>Allow the users of the app upload images along with their book reviews.</li>
+          </ul>
+
+          
+		    </div>
+
+        <div class="tutorialContentPage">
+          <b>Speaking and Listening to Reviews</b>
+          
+          <ul>
+          <li>Allow users to input their book reviews via speech rather than typing.</li>
+
+          <li>Allow users to listen to book reviews rather than read.</li>
+        </ul>
+        
+        </div>
+
+
+        <div class="tutorialContentPage">
+          <b>Rating the Books</b>
+          <ul>
+          <li>Allow users to rate the books using something like a 5-star system.  Report the average ratings associated with each book title.</li>
+        </ul>
+        </div>
+
+<div class="tutorialContentPage">
+          <b>Avoiding Duplicate Book Titles</b>
+          <ul>
+          <li>Currently any slight differences in the writing of a book title will lead to the creation of different tags.  For example, "Catcher in the Rye", Catcher In The Rye" and "CATCHER IN THE RYE" will be assumed to be different book titles.  You could solve this issue by making existing book titles selectable for writing review.  Come up with a solution to this issue.</li>
+          </ul>
+</p>
+        </div>
+
+
+        <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
+      </div>
+	
+    </div>	
+
+  <h3>Share your App</h3>
+  <div class="setup" id="share_app"></div>
+
+  <h3>Published apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="100"><img src="../images/logos/MITAppInvlogo1.jpg" width="100"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="100">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
+</div>
+
+
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+<!--Revise these
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>-->
+
+</div>
+
+
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
