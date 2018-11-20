@@ -58,7 +58,7 @@
     <h3>Connect your App</h3>
     <div class="setup" id="connect_app"></div>
 
-    <h3>Book Yelp</h3>
+    <h3>DIY  Book Club</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
 
@@ -87,17 +87,17 @@
 
       <div class="tutorialContentPage">
         <h3>Add Components</h3>
-        <p>Here is how the user interface looks like in MIT App Inventor Designer window.</p>
+        <p>Here is what the user interface looks like in the Designer window.</p>
         <img class="enlargeImage" src="../images/bookyelp/bookyelp_appinvUI.png" alt="some_text">
-        <p>And here is the Component embedding hierarchy.</p>
+        <p>Here is the list of Components. Note that certain components are contained within Horizontal and VerticalArrangements.</p>
         <img class="enlargeImage" src="../images/bookyelp/componentshierarchy.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Modify Component Properties</h3>
-        <p>Note that there is a horizontal arrangement for the write and read buttons and there are several vertical arrangements where different components are embedded to facilitate hiding and showing.  Also note that the "Read Reviews" button is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface palette.  The interface where the reviews are displayed is a <span class="icon" alt="listview"></span>ListView from the User Interface palette.  Here are a few components with some properties that need to be set.</p>
+        <p>Note that there is a <span class="icon" alt="horizontal"></span>HorizontalArrangement for the write and read buttons and there are several vertical arrangements where different components are embedded to facilitate hiding and showing.  Also note that the "Read Reviews" button is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface tab of the Palette.  The interface where the reviews are displayed is a <span class="icon" alt="listview"></span>ListView from the User Interface tab of the Palette.  Here are a few components with some properties that need to be set.</p>
         <img class="enlargeImage" src="../images/bookyelp/setproperties.png" alt="some_text">
-        <p>The first property setting ensures that when the the <span class="icon" alt="listpicker"></span>ListPicker "Read Reviews" button is clicked, the list of reviews shown is searchable through the use of a filter.</p>
+        <p>The first property setting ensures that when the <strong>ReadReviewsListPicker</strong> is clicked, the list of reviews shown is searchable through the use of a filter.</p>
         <p>The second property setting ensures that the user can enter a multi-line text in the <span class="icon" alt="textbox"></span>TextBox for writing reviews.</p>
 
       
@@ -105,7 +105,7 @@
 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>For this project you will use <span class="icon" alt="cloudDB"></span>CloudDB as your database to store the book titles and the associated book reviews entered by the users of your app.   This component can be found in the Experimental pallete.</p>
+        <p>For this project you will use <span class="icon" alt="cloudDB"></span>CloudDB as your database to store the book titles and the associated book reviews entered by the users of your app.   This component can be found in the Experimental tab of the Pallete.</p>
         <img class="enlargeImage" src="../images/bookyelp/experimentalpalette.png" alt="some_text">
       </div>
       <div class="tutorialContentPage">
@@ -144,12 +144,12 @@
         <h3>Submitting A Review</h3>
         <p>When the user is done writing their review and the <strong>SubmitReviewButton</strong> is clicked, have the book title be the <strong>tag</strong> and the review text be the <strong>itemToAdd</strong> to the <span class="icon" alt="cloudDB"></span>CloudDB.  With this method you will make sure that all the reviews associated with a particular book title are grouped together.  When the <strong>SubmitReviewButton</strong> is clicked, clear and hide the interface for writing reviews.</p>
         <img class="enlargeImage" src="../images/bookyelp/whensubmitreviewbuttonclick.png" alt="some_text">
-
+        <p>Note that in the <span class="icon" alt="cloudDB"></span>CloudDB each book title (tag) has as its value a list that contains all the reviews for that title. Any new review is <em>appended</em> to the end of the list of reviews, so the list can grow, rather than writing over the old reviews.</p>
       </div>
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>The button to read the book reviews is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface palette and when the user presses the <strong>ReadReviewsListPicker</strong>  (i.e. the "Read Reviews" button), make the review reading interface contained in <strong>ReadReviewVerticalArrangement</strong> visible, while hiding the review writing interface.  Also send a request to the <span class="icon" alt="cloudDB"></span>CloudDB to get a list of book titles stored as tags.</p>
+        <p>When the user presses the <strong>ReadReviewsListPicker</strong>  (i.e. the "Read Reviews" button), make the review reading interface contained in <strong>ReadReviewVerticalArrangement</strong> visible, while hiding the review writing interface.  Also send a request to the <span class="icon" alt="cloudDB"></span>CloudDB to get the list of tags stored. Each book title is a tag, so this will return a list of all the book titles in <span class="icon" alt="cloudDB"></span>CloudDB that currently have reviews. You will display this list for the user so they can choose which book’s reviews to read.</p>
         <img class="enlargeImage" src="../images/bookyelp/whenreadreviewslistpickertouchdown.png" alt="some_text">
       </div>
 
@@ -164,20 +164,28 @@
         <p>When the user picks a book title from the list picker, send a request to <span class="icon" alt="cloudDB"></span>CloudDB to get all the reviews associated with that book title. </p>
         <img class="enlargeImage" src="../images/bookyelp/whenreadreviewslistpickerafterpicking.png" alt="some_text">
       
+        <p>Note that <span class="procedures">GetValue</span> is asking for a list of reviews, so the <strong>valueIfTagNotThere</strong> should be an empty list.</p>
       </div>
 
     
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>The app has to wait to get the response  that comes in the <span class="control">GotValue</span> event.  When <span class="icon" alt="cloudDB"></span>CloudDB returns a list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong> which is a <span class="icon" alt="listview"></span>ListView object from the User Interface palette.</p>
+        <p>The <span class="procedures">GetValue</span> event requests information from <span class="icon" alt="cloudDB"></span>CloudDB. When <span class="icon" alt="cloudDB"></span>CloudDB responds to the request, a <span class="control">GotValue</span> event is triggered. Remember that the tag is the book title. The value will be the list of reviews for that book title.</p>
+        <p>When <span class="icon" alt="cloudDB"></span>CloudDB returns a list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong> which is a <span class="icon" alt="listview"></span>ListView object from the User Interface tab of the Palette.</p>
         <img class="enlargeImage" src="../images/bookyelp/whencloudDBgotvalue.png" alt="some_text">
 
 	   </div>
 
      <div class="tutorialContentPage">
         <h3>Test your App</h3>
-        <p>Test your app thoroughly with the help of multiple users and with multiple phones/tablets.  Make sure that each user is able to write and submit a review and is able to read reviews submitted by others.</p>
+        <p>Test your app thoroughly with the help of multiple users and with multiple phones/tablets.   You can test with the AI Companion by first connecting one phone,</p>
+        <img class="enlargeImage" src="../images/bookyelp/aicompanion.png" alt="some_text">
+        <img class="enlargeImage" src="../images/bookyelp/qrcode1.png" alt="some_text">
+        <p>then Reseting the Connection and connecting to a second phone.</p>
+        <img class="enlargeImage" src="../images/bookyelp/resetconnection.png" alt="some_text">
+
+        <p>Make sure that each user is able to write and submit a review and is able to read reviews submitted by others.</p>
         <p>Congratulations!  Fantastic job!</p>
         <img src="../images/bookyelp/BookYelpIcon.png" width="150">
       </div>
