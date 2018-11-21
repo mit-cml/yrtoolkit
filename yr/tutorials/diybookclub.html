@@ -102,7 +102,7 @@
       <div class="tutorialContentPage">
         <h3>Modify Component Properties</h3>
         
-        <p>  Also note that the "Read Reviews" button is actually a <span class="icon" alt="listpicker"></span>ListPicker from the User Interface tab of the Palette.  The interface where the reviews are displayed is a <span class="icon" alt="listview"></span>ListView from the User Interface tab of the Palette.  Here are a few components with some properties that need to be set.</p>
+        <p>  Also note that the "Read Reviews" button is actually a <span class="icon" alt="listPicker"></span>ListPicker from the User Interface tab of the Palette.  The interface where the reviews are displayed is a <span class="icon" alt="listView"></span>ListView from the User Interface tab of the Palette.  Here are a few components with some properties that need to be set.</p>
         <img class="enlargeImage" src="../images/diybookclub/setproperties.png" alt="some_text">
         <p>The first property setting ensures that when the <strong>ReadReviewsListPicker</strong> is clicked, the list of reviews shown is searchable through the use of a filter.</p>
         <p>The second property setting ensures that the user can enter a multi-line text in the <span class="icon" alt="textbox"></span>TextBox for writing reviews.</p>
@@ -114,18 +114,18 @@
 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>For this project you will use <span class="icon" alt="cloudDB"></span>CloudDB as your database to store the book titles and the associated book reviews entered by the users of your app.   This component can be found in the Experimental tab of the Pallete.</p>
+        <p>For this project you will use <span class="icon" alt="clouddb"></span>CloudDB as your database to store the book titles and the associated book reviews entered by the users of your app.   This component can be found in the Experimental tab of the Pallete.</p>
         <img class="enlargeImage" src="../images/diybookclub/experimentalpalette.png" alt="some_text">
       </div>
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which is a database for storing data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be used by the individual user.  <span class="icon" alt="cloudDB"></span>CloudDB on the other hand allows data to be stored, accessed and modified in the Cloud by multiple users.</p>
-        <p>Here is what the blocks in the <span class="icon" alt="cloudDB"></span>CloudDB  drawer look like.</p>
+        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which is a database for storing data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be used by the individual user.  <span class="icon" alt="clouddb"></span>CloudDB on the other hand allows data to be stored, accessed and modified in the Cloud by multiple users.</p>
+        <p>Here is what the blocks in the <span class="icon" alt="clouddb"></span>CloudDB  drawer look like.</p>
         <img class="enlargeImage" src="../images/diybookclub/cloudDBblocksdrawer.png" alt="some_text">
       </div> 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>Below is a diagram that may help you visualize how you can store book titles as "tags" in the <span class="icon" alt="cloudDB"></span>CloudDB where each tag (i.e. book title) is linked to a list containing the reviews associated with that book title.  When a user enters a new review for a book title previously entered in the database, that title is identified as a tag and the new review is added to the list of existing reviews associated with the given tag (i.e. book title).</p>
+        <p>Below is a diagram that may help you visualize how you can store book titles as "tags" in the <span class="icon" alt="clouddb"></span>CloudDB where each tag (i.e. book title) is linked to a list containing the reviews associated with that book title.  When a user enters a new review for a book title previously entered in the database, that title is identified as a tag and the new review is added to the list of existing reviews associated with the given tag (i.e. book title).</p>
         <img class="enlargeImage" src="../images/diybookclub/howcloudDBworks.png" alt="some_text">
       </div>
 
@@ -151,26 +151,26 @@
 
       <div class="tutorialContentPage">
         <h3>Submitting A Review</h3>
-        <p>When the user is done writing their review and the <strong>SubmitReviewButton</strong> is clicked, have the book title be the <strong>tag</strong> and the review text be the <strong>itemToAdd</strong> to the <span class="icon" alt="cloudDB"></span>CloudDB.  With this method you will make sure that all the reviews associated with a particular book title are grouped together.  When the <strong>SubmitReviewButton</strong> is clicked, clear and hide the interface for writing reviews.</p>
+        <p>When the user is done writing their review and the <strong>SubmitReviewButton</strong> is clicked, have the book title be the <strong>tag</strong> and the review text be the <strong>itemToAdd</strong> to the <span class="icon" alt="clouddb"></span>CloudDB.  With this method you will make sure that all the reviews associated with a particular book title are grouped together.  When the <strong>SubmitReviewButton</strong> is clicked, clear and hide the interface for writing reviews.</p>
         <img class="enlargeImage" src="../images/diybookclub/whensubmitreviewbuttonclick.png" alt="some_text">
-        <p>Note that in the <span class="icon" alt="cloudDB"></span>CloudDB each book title (tag) has as its value a list that contains all the reviews for that title. Any new review is <em>appended</em> to the end of the list of reviews, so the list can grow, rather than writing over the old reviews.</p>
+        <p>Note that in the <span class="icon" alt="clouddb"></span>CloudDB each book title (tag) has as its value a list that contains all the reviews for that title. Any new review is <em>appended</em> to the end of the list of reviews, so the list can grow, rather than writing over the old reviews.</p>
       </div>
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>When the user presses the <strong>ReadReviewsListPicker</strong>  (i.e. the "Read Reviews" button), make the review reading interface contained in <strong>ReadReviewVerticalArrangement</strong> visible, while hiding the review writing interface.  Also send a request to the <span class="icon" alt="cloudDB"></span>CloudDB to get the list of tags stored. Each book title is a tag, so this will return a list of all the book titles in <span class="icon" alt="cloudDB"></span>CloudDB that currently have reviews. You will display this list for the user so they can choose which book’s reviews to read.</p>
+        <p>When the user presses the <strong>ReadReviewsListPicker</strong>  (i.e. the "Read Reviews" button), make the review reading interface contained in <strong>ReadReviewVerticalArrangement</strong> visible, while hiding the review writing interface.  Also send a request to the <span class="icon" alt="clouddb"></span>CloudDB to get the list of tags stored. Each book title is a tag, so this will return a list of all the book titles in <span class="icon" alt="clouddb"></span>CloudDB that currently have reviews. You will display this list for the user so they can choose which book’s reviews to read.</p>
         <img class="enlargeImage" src="../images/diybookclub/whenreadreviewslistpickertouchdown.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>When the <span class="icon" alt="cloudDB"></span>CloudDB returns the <strong>TagList</strong> containing the book titles, assign these titles as the <strong>Elements</strong> of the <strong>ReadReviewsListPicker</strong>.  This assignment will list all the previously entered book titles for the user to view.</p>
+        <p>When the <span class="icon" alt="clouddb"></span>CloudDB returns the <strong>TagList</strong> containing the book titles, assign these titles as the <strong>Elements</strong> of the <strong>ReadReviewsListPicker</strong>.  This assignment will list all the previously entered book titles for the user to view.</p>
         <img class="enlargeImage" src="../images/diybookclub/whencloudDBtaglist.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>When the user picks a book title from the list picker, send a request to <span class="icon" alt="cloudDB"></span>CloudDB to get all the reviews associated with that book title. </p>
+        <p>When the user picks a book title from the list picker, send a request to <span class="icon" alt="clouddb"></span>CloudDB to get all the reviews associated with that book title. </p>
         <img class="enlargeImage" src="../images/diybookclub/whenreadreviewslistpickerafterpicking.png" alt="some_text">
       
         <p>Note that <span class="procedures">GetValue</span> is asking for a list of reviews, so the <strong>valueIfTagNotThere</strong> should be an empty list.</p>
@@ -180,8 +180,8 @@
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>The <span class="procedures">GetValue</span> event requests information from <span class="icon" alt="cloudDB"></span>CloudDB. When <span class="icon" alt="cloudDB"></span>CloudDB responds to the request, a <span class="control">GotValue</span> event is triggered. Remember that the tag is the book title. The value will be the list of reviews for that book title.</p>
-        <p>When <span class="icon" alt="cloudDB"></span>CloudDB returns a list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong> which is a <span class="icon" alt="listview"></span>ListView object from the User Interface tab of the Palette.</p>
+        <p>The <span class="procedures">GetValue</span> event requests information from <span class="icon" alt="clouddb"></span>CloudDB. When <span class="icon" alt="clouddb"></span>CloudDB responds to the request, a <span class="control">GotValue</span> event is triggered. Remember that the tag is the book title. The value will be the list of reviews for that book title.</p>
+        <p>When <span class="icon" alt="clouddb"></span>CloudDB returns a list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong> which is a <span class="icon" alt="listView"></span>ListView object from the User Interface tab of the Palette.</p>
         <img class="enlargeImage" src="../images/diybookclub/whencloudDBgotvalue.png" alt="some_text">
 
 	   </div>
