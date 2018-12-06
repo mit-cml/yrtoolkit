@@ -245,7 +245,7 @@ var setupTutorial = function() {
   });
 
   // Add show/hide hint functionality
-  $(".hintContainer>button").off("click").on("click", function(e) {
+  $(".hintContainer>*:first-child").off("click").on("click", function(e) {
     $(".hint", this.parentElement).toggleClass("hideHint");
   });
 }
