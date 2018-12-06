@@ -177,6 +177,19 @@ a.ui-button:active,
 	width: 100%;
 	text-align: center;
 }
+
+.hint {
+	background-color: #eef2e0;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hideHint {
+	display: none;
+}
+
 .btn-success {
 	background-color: #8fc202;
 	font-size: 24px;
