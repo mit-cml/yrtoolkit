@@ -51,9 +51,9 @@
   <div id="youthRadioAccordion" class="accordion">
     <h3>The Challenge</h3>
     <div>
-      <p>Calling all book nerds (and culture critics of any type): our latest guide challenges you to make an app that collects and shares original reviews of your favorite -- or most detested -- books.</p>
+      <p>Calling all book nerds (and culture critics of any type): our latest guide challenges you to make an app that collects and shares original reviews of your favorite -or most detested- books.</p>
       <p>We were once again inspired by our friends at <a href="http://yr.media/" target="_blank">YR Media</a>, who reported earlier this year on an intriguing subculture: young people on YouTube who make bootleg audiobooks, some with huge followings. Cool, right? But is it legal...? Check out <a href="https://yr.media/tech/young-people-are-now-using-youtube-for-audiobooks/"   target="_blank">YR’s story</a> to find out.</p>
-      <p>And while you’re at it, create your very own mobile platform for reviews--yours and your friends'--so that next time you’re in the market for a book, you’ll know just which titles to pick...and which to skip.</p>
+      <p>And while you’re at it, create your very own mobile platform for reviews -yours and your friends'- so that next time you’re in the market for a book, you’ll know just which titles to pick...and which to skip.</p>
 
       <p>Click "Connect Your App" below to start building your app!</p>
     </div>
@@ -160,7 +160,7 @@
 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>For this project you will use <span class="icon" alt="clouddb"></span>CloudDB as your database to store the book titles and reviews entered by your users.   This <em>invisible</em> component can be found in the Experimental tab of the Palette.  Grab and drop the <span class="icon" alt="clouddb"></span>CloudDB component on your Screen1 to add it your app's Components.</p>
+        <p>For this project you will use <span class="icon" alt="clouddb"></span>CloudDB as your database to store the book titles and reviews entered by your users.   This <em>invisible</em> component can be found in the Experimental tab of the Palette.  Grab and drop the <span class="icon" alt="clouddb"></span>CloudDB component on your Screen1 to add it to your app's Components.</p>
         <img class="enlargeImage" src="../images/diybookclub/experimentalpalette.png" alt="some_text">
       </div>
       <div class="tutorialContentPage">
@@ -226,7 +226,7 @@
 
       <div class="tutorialContentPage">
         <h3>Reading Reviews</h3>
-        <p>The <span class="procedures">GetValue</span> event requests information from <span class="icon" alt="clouddb"></span>CloudDB. When <span class="icon" alt="clouddb"></span>CloudDB responds to the request, a <span class="control">GotValue</span> event is triggered. Remember that the tag is the book title. The value will be the list of reviews for that book title.</p>
+        <p>The <span class="procedures">GetValue</span> action requests information from <span class="icon" alt="clouddb"></span>CloudDB. When <span class="icon" alt="clouddb"></span>CloudDB responds to the request, a <span class="control">GotValue</span> event is triggered. Remember that the tag is the book title. The value will be the list of reviews for that book title.</p>
         <p>When <span class="icon" alt="clouddb"></span>CloudDB returns the list of the reviews for the requested book title, display these in the <strong>ReviewsforaTitleList</strong>, which is a <span class="icon" alt="listView"></span>ListView object from the User Interface tab of the Palette.</p>
         <img class="enlargeImage" src="../images/diybookclub/whencloudDBgotvalue.png" alt="some_text">
 
@@ -237,10 +237,10 @@
         <p>Test your app thoroughly with multiple users and devices. First, test your app with the AI Companion and connect one phone.</p>
         <img class="enlargeImage" src="../images/diybookclub/aicompanion.png" alt="some_text">
         <img class="enlargeImage" src="../images/diybookclub/qrcode1.png" alt="some_text">
-        <p>Then reset the connection and connect to a second phone.</p>
+        <p>Then reset the connection and connect to a <em>second</em> phone.</p>
         <img class="enlargeImage" src="../images/diybookclub/resetconnection.png" alt="some_text">
 
-        <p>Make sure that each user is able to write and submit a review and is able to read reviews submitted by others.</p>
+        <p>Make sure that each user of your app is able to write and submit a review and is able to read reviews submitted by other users of your app.  Please note that when you first use your app, the <span class="icon" alt="clouddb"></span>CloudDB associated with your app will be empty. Also note that there might be a slight delay before the data entered into the <span class="icon" alt="clouddb"></span>CloudDB is readable on your app.</p>
         
       </div>
       <div class="tutorialContentPage">
@@ -298,7 +298,7 @@
     		  <b>Enriching Book Reviews</b>
           
           <ul>
-            <li>Allow the users of the app upload images along with their book reviews.</li>
+            <li>Allow the users of the app to upload images along with their book reviews.</li>
           
             <li>Allow users to input their book reviews via speech rather than typing.</li>
 
