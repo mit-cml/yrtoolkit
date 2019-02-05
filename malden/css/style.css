@@ -131,7 +131,11 @@ a.ui-button:active,
 .enlargeImage {
   max-width: 250px; 
 }
-
+.tutVid {
+	max-width: 300px;
+	display: block;
+	margin:auto;
+}
 .left {
 	float: left;
 	max-width: 30%;
@@ -203,4 +207,15 @@ img.DialogBox-image {
 
 .btn-success:focus {
 	background-color: #8fc202;
+}
+.hint {
+	background-color: #eef2e0;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hideHint {
+	display: none;
 }
