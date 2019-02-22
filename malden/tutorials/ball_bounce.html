@@ -57,7 +57,7 @@
 <div id="maldenAccordion" class="accordion">
 
   <h3>Connect your App</h3>
-  <div class="setup" id="connect_app"></div>
+  <div class="setup" id="connect_app" name="connect_app"></div>
 
   <h3>Ball Bounce</h3>
 
@@ -66,13 +66,13 @@
 
     <div class="tutorialContentPage">
     <h4>1. Introduction</h4>
-    <img class="tutVid" src="../images/ball_bounce/ball_vid.png" onclick="getTutorialVideo('w0yxJSlC00w')">
+    <img class="tutVid" src="../images/ball_bounce/ball_vid.png" onclick="getTutorialVideo('aEoFmKkvdZo')">
     <p>
       In this tutorial, you will learn about animation in App Inventor by making a Ball (a sprite) bounce around
       on the screen (on a Canvas).
     </p>
     <p>
-      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, <a href="#" class="setup">click here</a>.
+      Connect using the companion app so you can test this on your mobile device. If you don't know how to connect, click the Connect your App tab above.
     </p>
   </div>
 
@@ -102,66 +102,71 @@
 
   <div class="tutorialContentPage">
     <h4>6. Add <span class="control">when Ball1.Flung</span></h4>
-    <p>Click Blocks.</p>
+    <p>Click the Blocks button to switch to the Blocks Editor.</p>
     <img class="enlargeImage" src="../images/ball_bounce/clickBlocks.png" alt="some_text">
     <p>Click Ball1 and click and drag <span class="control">when Ball1.Flung</span> to the Viewer.</p>
     <img class="enlargeImage" src="../images/ball_bounce/ballFlung.gif" alt="some_text">
   </div>
 
   <div class="tutorialContentPage">
-   <h4>7. Add <span class="setters">set Ball1.Heading to</span></h4>
-   <p>Click on Ball1 again. Click and drag the <span class="setters">set Ball1.Heading to</span> block and add it to <span class="control">when Ball1.Flung</span>.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setHead.gif" alt="some_text">
- </div>
-
-<div class="tutorialContentPage">
-   <h4>8. Add <span class="variables">get heading</span></h4>
-   <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "heading" and click on <span class="variables">get heading</span>. Add it to the <span class="getHead">set Ball1.Heading to</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/getHead.gif" alt="some_text">
+   <h4>7. Set Heading for Ball1 based on flinging action</span></h4>
+    <div class="hintContainer">
+    <button>Show Me How</button>
+    <div class="hint hideHint">
+       <p>Click on Ball1 again. Click and drag the <span class="setters">set Ball1.Heading to</span> block and add it to <span class="control">when Ball1.Flung</span>.</p>
+        <img class="enlargeImage" src="../images/ball_bounce/setHead.gif" alt="some_text">
+       <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "heading" and click on <span class="variables">get heading</span>. Add it to the <span class="getters">set Ball1.Heading to</span> block.</p>
+        <img class="enlargeImage" src="../images/ball_bounce/getHead.gif" alt="some_text">
+        <p>This sets the heading, or direction of the ball according to the flinging action.</p>
+    </div>
+  </div>
  </div>
 
  <div class="tutorialContentPage">
-  <h4>9. Add <span class="setters">set Ball1.Speed to</span></h4>
+  <h4>8. Set Speed for Ball1</h4>
   <p>Let's add blocks to make the ball move.</p>
-  <p>Get the <span class="setters">set Ball1.Speed to</span> block and place it in the flung event.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/setSpeed.gif" alt="some_text">
-</div>
-
- <div class="tutorialContentPage">
-   <h4>10. Add <span class="variables">get speed</span></h4>
-   <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "speed" and click on <span class="variables">get speed</span>. Add it to the <span class="setters">set Ball1.Speed to</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/getSpeed.gif" alt="some_text">
-    <p>Try it out on your device. You'll notice that it gets "stuck" on the edge of the screen. Next, we'll add an event to make the ball bounce off the edge of the screen.</p>
+    <div class="hintContainer">
+    <button>Show Me How</button>
+    <div class="hint hideHint">
+      <p>Get the <span class="setters">set Ball1.Speed to</span> block and place it in the flung event.</p>
+        <img class="enlargeImage" src="../images/ball_bounce/setSpeed.gif" alt="some_text">
+       <p>Go to the <span class="control">when Ball1.Flung</span> block. Hover over "speed" and click on <span class="variables">get speed</span>. Add it to the <span class="setters">set Ball1.Speed to</span> block.</p>
+        <img class="enlargeImage" src="../images/ball_bounce/getSpeed.gif" alt="some_text">
+        
+    </div>
+  </div>
+  <p>Then test it out on your device. Fling the ball and it should move in the direction of your fling. You'll notice that it gets "stuck" on the edge of the screen though. Next, you'll add an event to make the ball bounce off the edge of the screen.</p>
  </div>
 
 <div class="tutorialContentPage">
-   <h4>11. Add <span class="variables">when Ball1.EdgeReached</span></h4>
-   <p>Click on Ball1 again and drag out the <span class="variables">when Ball1.EdgeReached</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/ballEdge.gif" alt="some_text">
- </div>
+   <h4>9. When Ball1 reaches an edge, make it bounce.</h4>
+    <div class="hintContainer">
+    <button>Show Me How</button>
+    <div class="hint hideHint">
+       <p>Click on Ball1 again and drag out the <span class="control">when Ball1.EdgeReached</span> block.</p>
+        <img class="enlargeImage" src="../images/ball_bounce/ballEdge.gif" alt="some_text">
+        
 
- <div class="tutorialContentPage">
-   <h4>12. Add <span class="procedures">call Ball1.Bounce</span></h4>
-   <p>Click on Ball1 again and connect the <span class="procedures">call Ball1.Bounce</span> block to <span class="variables">when Ball1.EdgeReached</span>.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/ballBounce.gif" alt="some_text">
- </div>
+          <p>Click on Ball1 again and connect the <span class="procedures">call Ball1.Bounce</span> block to <span class="control">when Ball1.EdgeReached</span>.</p>
+            <img class="enlargeImage" src="../images/ball_bounce/ballBounce.gif" alt="some_text">
+          <p>Hover over "edge" and click on <span class="variables">get edge</span>. Add it to the <span class="procedures">call Ball1.Bounce</span> block.</p>
+            <img class="enlargeImage" src="../images/ball_bounce/getEdge.gif" alt="some_text">
+    </div>
+  </div>
 
-  <div class="tutorialContentPage">
-   <h4>13. Add <span class="variables">get edge</span></h4>
-   <p>Go to the <span class="control">when Ball1.EdgeReached</span> block. Hover over "edge" and click on <span class="variables">get edge</span>. Add it to the <span class="control">when Ball1.EdgeReached</span> block.</p>
-    <img class="enlargeImage" src="../images/ball_bounce/getEdge.gif" alt="some_text">
-    <p>Try it out on your device. Your ball should bounce off the edges.</p>
+    <p>Then test it out on your device. Your ball should bounce off the edges.</p>
  </div>
 
 <div class="tutorialContentPage">
-  <h4>14. Extend your App!</h4>
+  <h4>10. Extend your App!</h4>
   <p>After testing your app, try to extend your app using these suggestions or come up with your own!</p>
   <ul>
   <li>Change the color of the ball based on how fast it is moving or which edge it reaches</li>
-  <li>Scale the speed of the ball so that it slows down and stops after it gets flung</li>
+  <li>Adjust the speed of the ball so that it slows down and stops after it gets flung</li>
   <li>Give the ball obstacles or targets to hit</li>
   <li>Introduce a paddle for intercepting the ball, like a Pong game</li>
   </ul>
+  <p>Don't forget to complete the <a href="http://bit.ly/BallBounceCheckIn" target="_blank">Ball Bounce check-in questions</a>.</p>
 </div>
     <br/>
     <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
