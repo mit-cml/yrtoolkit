@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+
+
+
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <!--You will use stg like this for videos:
+    <a onclick="enlargeVideo('aEoFmKkvdZo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_1_ss.png" alt="Ball Bounce tutorial introduction"></a>
+  -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>YR MEDIA CHALLENGE GOES HERE. Check out YR’s story <a href="https://yr.media/video/how-to-bullet-journal-a-visual-guide/"   target="_blank">How to Bullet Journal: A Visual Guide </a> by Sarah Ng to find out.</p>
+      
+
+      <p>Click "Connect Your App" below to start building your app!</p>
+    </div>
+
+    <h3>Connect Your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3><em>my</em>ToDoList Tutorial (Level: Intermed-Advanced)</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        
+        <p>In this tutorial you will learn how to build a "To Do List" app to keep track of your daily tasks.  As the items on your list need to be preserved even when you close the app, you will learn how to access the long-term data storage capability of your mobile device using the <span class="icon" alt="tinydb"></span> TinyDB component of MIT App Inventor.  Click below to watch this animation to get a feel for the app you are going to build.</p>
+        <img class="enlargeImage" src="../images/mytodolist/ToDoListAnimation.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        <p>This is how the user interface looks.  Initially, the user must enter a password.  This is needed to maintain the privacy of the user's To Do List from curious parents, siblings, friends, teachers, etc.</p>
+        <img class="enlargeImage" src="../images/mytodolist/emulatorScreen1.png" alt="some_text">
+        <p>  Once the correct password has been entered, the user will then have access to a second interface where they can either enter the To Do List items, erase these items individually or erase them collectively.
+</p>
+        <img class="enlargeImage" src="../images/mytodolist/emulatorScreen2b.png" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>The Components</h3>
+          <p>This is what the user interface looks like in the Designer view of the MIT App Inventor.  Note that there will be two screens.  The first screen is for the password interface:</p>
+          <img class="enlargeImage" src="../images/mytodolist/Screen1UI.png" alt="some_text"><img class="enlargeImage" src="../images/mytodolist/Screen1Components.png" alt="some_text">
+
+
+          <p>and the second screen is for the To Do List interface:</p>
+          <img class="enlargeImage" src="../images/mytodolist/Screen2UI.png" alt="some_text"><img class="enlargeImage" src="../images/mytodolist/Screen2Components.png" alt="some_text"><br />
+
+          <p>Study the components hierarchy in each screen.   Can you build the user interface on your own?  Try it but if you need help, look at the hints on the next pages as needed.  Be sure to rename your components exactly as shown so that you can follow the steps on the coding of the blocks.</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Creating the Password Interface</h3>
+
+        <p>Click on the video linked below to learn how to add components to the password interface.</p>
+        <a onclick="enlargeVideo('6JaKScGRBcg')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/passwordInterface1a.png" alt=""></a>
+        <p>Click on the video linked below to learn how to adjust the component properties in the password interface.</p>
+        <a onclick="enlargeVideo('2GaGUddyv3w')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/passwordInterface1b.png" alt=""></a>
+        <p>Click on the video linked below to learn how to rename the components in the password interface so that they match the tutorial.  This is needed for the coding part of the tutorial.</p>
+        <a onclick="enlargeVideo('VYj49sjA8J0')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/passwordInterface1c.png" alt=""></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Creating the To Do List Interface</h3>
+
+        <p>Click on the video linked below to learn how to add a second screen to your app.</p>
+        <a onclick="enlargeVideo('jpUEePk5jSE')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1a.png" alt=""></a>
+        <p>Click on the video linked below to learn how to add components to the To Do List interface.</p>
+        <a onclick="enlargeVideo('eaOE2fseWHk')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1b.png" alt=""></a>
+        <p>Click on the video linked below to learn how to adjust the component properties in the To Do List interface.</p>
+        <a onclick="enlargeVideo('bI0fz0sHw_A')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1c.png" alt=""></a>
+        <p>Click on the video linked below to learn how to refine the component properties in the To Do List interface.</p>
+        <a onclick="enlargeVideo('GJvfy3zFPRQ')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1d.png" alt=""></a>
+        <p>Click on the video linked below to learn how to further refine the component properties in the To Do List interface.</p>
+        <a onclick="enlargeVideo('iDSuwet9A-I')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1e.png" alt=""></a>
+        <p>Click on the video linked below to learn how to add the <span class="icon" alt="tinydb"></span> TinyDB component to the To Do List interface.</p>
+        <a onclick="enlargeVideo('abxXK_Xre_I')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1f.png" alt=""></a>
+        <p>Click on the video linked below to learn how to rename the components in the To Do List interface so that they match the tutorial.  This is needed for the coding part of the tutorial.</p>
+        <a onclick="enlargeVideo('vmUoYhKIESk')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1g.png" alt=""></a>
+
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Introduction to TinyDB</h3>
+        <p>For this project you will use <span class="icon" alt="tinydb"></span>TinyDB as your database to store the items in your To Do List.   This <em>invisible</em> component can be found in the Storage tab of the Palette.  If you have not already done so during the user interface (UI) set up, grab and drop the <span class="icon" alt="tinydb"></span>TinyDB component on your Screen2 to add it to your app's Components.</p>
+        <img class="enlargeImage" src="../images/mytodolist/StorageTabHighlight.png" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>Introduction to TinyDB</h3>
+        <p><span class="icon" alt="tinyDB"></span>TinyDB component, stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In more advanced projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
+        <p>Here are some of the blocks in the <span class="icon" alt="tinydb"></span>TinyDB drawer.</p>
+        <p>The following block allows you to store a value in the local memory of your mobile device using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="tinyDB"></span>TinyDB will be available to the user each time the app is run.</p>
+        <img class="enlargeImage" src="../images/mytodolist/TinyDBStoreValue.png" alt="some_text">
+        <p>The following block allows you to retrieve a value stored in the local memory of your mobile device using its tag.  Note that if there is no such tag, an empty string will be returned.</p>
+        <img class="enlargeImage" src="../images/mytodolist/TinyDBGetValue.png" alt="some_text">
+        <p>The following block will clear the content in the memory associated with a given tag.</p>
+        <img class="enlargeImage" src="../images/mytodolist/TinyDBClearTag.png" alt="some_text">
+        <p>The following block will clear the entire data store in the <span class="icon" alt="tinyDB"></span>TinyDB.</p>
+        <img class="enlargeImage" src="../images/mytodolist/TinyDBClearAll.png" alt="some_text">
+        <p>Here is some more advanced information you can read about <span class="icon" alt="tinyDB"></span>TinyDB.</p>
+        <div class="hintContainer">
+            <button>More TinyDB Info</button>
+            <div class="hint hideHint">
+              
+              <p>Each app has its own data store. There is only one data store per app. Even if you have multiple <span class="icon" alt="tinydb"></span> TinyDB components, they will use the same data store. To get the effect of separate stores, use different keys. You cannot use the <span class="icon" alt="tinydb"></span> TinyDB to pass data between two different apps on the phone, although you can use the <span class="icon" alt="tinydb"></span> TinyDB to share data between the different screens of a multi-screen app.</p>
+              <p>When you are developing apps using the AI Companion, all the apps using that Companion will share the same <span class="icon" alt="tinydb"></span> TinyDB. That sharing will disappear once the apps are packaged and installed on the phone. During development you should be careful to clear the Companion app's data each time you start working on a new app.</p>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Screen1 Blocks Editor</h3>
+        <p>Now you will give functionality to the user interface (UI) you have created. Select Screen1 from the screen menu, </p>
+        <img class="enlargeImage" src="../images/mytodolist/selectScreen1.png" alt="some_text"><br />
+        <p> and switch to the Blocks editor in Screen1.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen1: PasswordButton</h3>
+        <p>Here is the functionality you would like to implement in Screen1 when the <strong>PasswordButton</strong> is clicked, 
+            <ul>
+            <li>if the password entered by the user is correct, the app should open the next screen, Screen2, where the To Do List interface is displayed.</li>
+            <li>if the password entered is incorrect, the password textbox should be cleared so the user can try again.</li>
+          </ul>
+        </p>
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
+          <div class="hintContainer">
+            <button>Help with coding the Password Interface</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenPasswordButtonClick1.png" alt="some_text">
+              <p>Note that by default the password is set to "1234" but this is where you can, as the coder, decide what the password should be.</p>
+
+            </div>
+          </div>
+          <div class="hintContainer">
+              <button>Show me how to do it.</button>
+              <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/mytodolist/whenPasswordButtonClick2.png" alt="some_text">
+              </div>
+          </div>
+          
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen2 Blocks Editor</h3>
+        <p>Now you are ready to give fuctionality to Screen2.  Select Screen2 from the screen menu, </p>
+        <img class="enlargeImage" src="../images/mytodolist/selectScreen2.png" alt="some_text"><br />
+        <p> and switch to the Blocks editor in Screen2.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen2: Initializations</h3>
+        <p>Initialize a variable, <var>todoList</var>, which will be used to keep track of the items in the To Do List.  As this variable will hold a list, you need to initialize it with an empty list.</p>
+        <img class="enlargeImage" src="../images/mytodolist/initializetodoListvariable.png" alt="some_text">
+        <p>When the  Screen2 is initialized you will need to 
+          <ul>
+          <li>assign to the variable <var>todoList</var> the list of items previously stored in the device memory under the tag "myToDoList";</li>
+          <li>set the elements of the <span class="icon" alt="listView"></span> ListView component to the list stored in the variable <var>todoList</var>.</li>
+          </ul> 
+        </p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
+        <div class="hintContainer">
+            <button>Help with Screen2 Initialization</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/Screen2Initialize1.png" alt="some_text">
+
+            </div>
+          </div>
+
+        <div class="hintContainer">
+            <button>Show me how to do it.</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/Screen2Initialize2.png" alt="some_text">
+            </div>
+        </div>
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen2: EnterItemButton</h3>
+        <p>When the user clicks the <strong>EnterItemButton</strong>, 
+          <ul>
+            <li>the item in the <strong>ToDoTextBox</strong> should be added to the list stored in the variable <var>todoList</var>;</li>
+            <li>the <span class="icon" alt="tinyDB"></span>TinyDB should be updated, so that the most recent list of items is stored in the device memory;</li>
+            <li>the <span class="icon" alt="listView"></span>ListView component elements should be updated;</li>
+            <li>the textbox containing the latest item entry should be flushed.</li>
+          </ul>
+
+        </p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
+
+        <div class="hintContainer">
+            <button>Help with EnterItemButton</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenEnterItemButtonClick1.png" alt="some_text">
+
+            </div>
+          </div>
+
+        <div class="hintContainer">
+            <button>Show me how to do it.</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenEnterItemButtonClick2.png" alt="some_text">
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen2: EraseItemButton</h3>
+        <p>When <strong>EraseItemButton</strong> is clicked,
+          <ul>
+            <li>check that the user has indeed selected an item to be erased;</li>
+            <li>remove this item from the <var>todoList</var>;</li>
+            <li>update the <span class="icon" alt="listView"></span> ListView component elements;</li>
+            <li>update the <span class="icon" alt="tinyDB"></span>TinyDB;</li>
+            <li>reset the selection index of the <span class="icon" alt="listView"></span>ListView component.</li>
+          </ul> 
+        </p>  
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
+        <div class="hintContainer">
+            <button>Help with EraseItemButton</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick1.png" alt="some_text">
+
+            </div>
+          </div>
+
+        <div class="hintContainer">
+            <button>Show me how to do it.</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick2.png" alt="some_text">
+            </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Screen2: ClearAllButton</h3>
+        <p>When the <strong>ClearAllButton</strong> is clicked,
+          <ul>
+            <li>reset the variable <var>todoList</var> to the empty list;</li>
+            <li>reset the <span class="icon" alt="listView"></span> ListView elements to the empty list;</li>
+            <li>Clear all that is stored in the <span class="icon" alt="tinyDB"></span> TinyDB under the tag "myToDoList".  Note that you should <em>not</em> clear everything stored in the <span class="icon" alt="tinyDB"></span>TinyDB but only the contents stored under the tag "myToDoList".</li>
+            </ul>
+</p>
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
+          <div class="hintContainer">
+            <button>Help with ClearAllButton</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick1.png" alt="some_text">
+
+            </div>
+          </div>
+
+        <div class="hintContainer">
+            <button>Show me how to do it.</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick2.png" alt="some_text">
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Test your App!</h3>
+        <p>You are done!  Test your app thoroughly.  
+          <ul>
+            <li>While using the AI Companion make sure that, on your computer, Screen1 is the active screen before testing.</li>
+            <li>Make sure that the password protection works in Screen1 as intended.</li>
+            <li>Make sure that you can enter an item to your To Do List in Screen2.  </li>
+            <li>Also make sure that you can erase an individual item from the list and clear the entire list of items as needed.</li>
+            <li>Quit your app and restart to make sure that the items you stored on your to do list continue to be accessible each time you run your app.</li>
+          </ul>
+</p>
+      </div>
+
+    
+     <br />
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+  <h3>Expand Your App</h3>
+    <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+      	<div class="tutorialContentPage">
+			   <strong>Extension Ideas</strong>
+         <ul>
+            <li>Allow the users to enter their own choice for a password to access their To Do List rather than handing them a hardcoded password you provide.</li>
+            <li>Allow editing of an existing To Do List item.</li>
+            <li>Allow the users to indicate due dates/deadlines for the list items as they enter into the list.</li>
+            <li>Create something like a star rating system where the user can indicate relative urgency and importance of the tasks in their to do list.</li>
+            <li>Allow the user to enter To Do List items by speaking to the mobile device, for example in case the user is driving. </li>
+            <li>Give an option for the mobile device to speak the list of items to do, for example in case the user is driving. </li>
+            <li>Use your experience creating the To Do List to create your very own mobile-digital-calendar-based Bullet Journal.   Review the YR Media story <a href="https://yr.media/video/how-to-bullet-journal-a-visual-guide/" target="_blank">How to Bullet Journal: A Visual Guide </a> by Sarah Ng.</li>
+            <li>Your original ideas here.  What else can you imagine?
+
+          </ul>
+        
+		    </div>
+			
+	
+
+
+        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
+      </div>-->
+	
+    </div>	
+
+  <h3>Share Your App</h3>
+  <div class="setup" id="share_app"></div>
+
+ <!-- <h3>Published Apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>-->
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
+</div>
+
+
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+<!--Revise these
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>-->
+
+</div>
+
+
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
