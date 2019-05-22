@@ -246,7 +246,7 @@ var setupTutorial = function() {
 
   // Add show/hide hint functionality
   $(".hintContainer>*:first-child").off("click").on("click", function(e) {
-    $(".hint", this.parentElement).toggleClass("hideHint");
+    $(this.parentElement).children('.hint').toggleClass("hideHint");
   });
 }
 
