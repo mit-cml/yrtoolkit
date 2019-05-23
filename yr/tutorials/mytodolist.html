@@ -60,8 +60,9 @@
   <div id="youthRadioAccordion" class="accordion">
     <h3>The Challenge</h3>
     <div>
-      <p>Whether you're already hyper-organized or battling procrastination, bullet journaling can be a fun and effective way to set and track progress towards your personal goals. With this <a href="https://yr.media/video/how-to-bullet-journal-a-visual-guide/"   target="_blank">video</a>, our friends at YR Media tell you everything you need to know to create a beautiful bullet journal the old fashioned way, with paper and markers. Or for those who want it all on your phones, use this guide to make your very own "To Do List" app. Let the productivity begin!</p>
-      
+      <p>Whether you're already hyper-organized or battling procrastination, bullet journaling can be a fun and effective way to set and track progress towards your personal goals. With this video, our friends at YR Media tell you everything you need to know to create a beautiful bullet journal the old fashioned way, with paper and markers.</p>
+      <a onclick="enlargeVideo('rtwhgI122hg')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/BulletJournalYouTube.png" alt=""></a>
+      <p>Or for those who want it all on your phones, use this guide to make your very own "To Do List" app. Let the productivity begin!</p>
 
       <p>Click "Connect Your App" below to start building your app!</p>
     </div>
@@ -180,7 +181,7 @@
         <p>Here are the components you will add to Screen2:</p>
         <img class="enlargeImage" src="../images/mytodolist/Screen2Components.png" alt="some_text">
         <br />
-
+        <p>If you need some help with setting up and naming the To Do List interface, click on the help buttons below.</p>
         <div class="hintContainer">
           <button>Help with Component Layout</button>
           <div class="hint hideHint">
@@ -284,7 +285,7 @@
       
       <div class="tutorialContentPage">
         <h3>Introduction to TinyDB</h3>
-        <p><span class="icon" alt="tinyDB"></span>TinyDB component, stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In more advanced projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
+        <p> The <span class="icon" alt="tinyDB"></span>TinyDB component stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In other projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
       </div>
       <div class="tutorialContentPage">
         <h3>Introduction to TinyDB</h3>
@@ -332,7 +333,7 @@
             <div class="hint hideHint">
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/mytodolist/whenPasswordButtonClick1.png" alt="some_text">
-              <p>Note that by the password shown here is "1234" but this is where you can, as the coder, decide what the password should be.</p>
+              <p>Note that the password shown here is "1234" but this is where you can, as the coder, decide what the password should be.</p>
 
               <div class="hintContainer">
               <button>Just show me the code</button>
@@ -368,8 +369,8 @@
         <img class="enlargeImage" src="../images/mytodolist/initializetodoListvariable.png" alt="some_text">
         <p>When the  Screen2 is initialized you will need to 
           <ul>
-          <li>assign to the variable <var>todoList</var> the list of items previously stored in the device memory via the <span class="icon" alt="tinyDB"></span>TinyDB, under the tag "myToDoList";</li>
-          <li>set the elements of the <span class="icon" alt="listView"></span> ListView component to the list stored in the variable <var>todoList</var>.</li>
+          <li>get the “myToDoList” tag from <span class="icon" alt="tinyDB"></span>TinyDB and store its value in the <var>todoList</var> variable;</li>
+          <li>set the elements of the <span class="icon" alt="listView"></span> ListView component to the <var>todoList</var> variable.</li>
           </ul> 
         </p>
         <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
