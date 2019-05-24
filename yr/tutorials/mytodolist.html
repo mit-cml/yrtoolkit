@@ -60,8 +60,9 @@
   <div id="youthRadioAccordion" class="accordion">
     <h3>The Challenge</h3>
     <div>
-      <p>Whether you're already hyper-organized or battling procrastination, bullet journaling can be a fun and effective way to set and track progress towards your personal goals. With this <a href="https://yr.media/video/how-to-bullet-journal-a-visual-guide/"   target="_blank">video</a>, our friends at YR Media tell you everything you need to know to create a beautiful bullet journal the old fashioned way, with paper and markers. Or for those who want it all on your phones, use this guide to make your very own "To Do List" app. Let the productivity begin!</p>
-      
+      <p>Whether you're already hyper-organized or battling procrastination, bullet journaling can be a fun and effective way to set and track progress towards your personal goals. With this video, our friends at YR Media tell you everything you need to know to create a beautiful bullet journal the old fashioned way, with paper and markers.</p>
+      <a onclick="enlargeVideo('rtwhgI122hg')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/BulletJournalYouTube.png" alt=""></a>
+      <p>Or for those who want it all on your phones, use this guide to make your very own "To Do List" app. Let the productivity begin!</p>
 
       <p>Click "Connect Your App" below to start building your app!</p>
     </div>
@@ -76,7 +77,7 @@
       <div class="tutorialContentPage">
         <h3>Introduction</h3>
         
-        <p>In this tutorial you will learn how to build a "To Do List" app to keep track of your daily tasks.  As the items on your list need to be preserved even when you close the app, you will learn how to access the long-term data storage capability of your mobile device using the <span class="icon" alt="tinydb"></span> TinyDB component of MIT App Inventor.  Click below to watch this animation to get a feel for the app you are going to build.</p>
+        <p>In this tutorial you will learn how to build a "To Do List" app to keep track of your daily tasks.  As the items on your list need to be preserved even when you close the app, you will learn how to access the long-term data storage capability of your mobile device using the <span class="icon" alt="tinydb"></span>TinyDB component of MIT App Inventor.  Click below to watch this animation to get a feel for the app you are going to build.</p>
         <img class="enlargeImage" src="../images/mytodolist/ToDoListAnimation.gif" alt="some_text">
       </div>
 
@@ -180,7 +181,7 @@
         <p>Here are the components you will add to Screen2:</p>
         <img class="enlargeImage" src="../images/mytodolist/Screen2Components.png" alt="some_text">
         <br />
-
+        <p>If you need some help with setting up and naming the To Do List interface, click on the help buttons below.</p>
         <div class="hintContainer">
           <button>Help with Component Layout</button>
           <div class="hint hideHint">
@@ -250,7 +251,7 @@
             <div class="hint hideHint">
               <p>For this project you will use <span class="icon" alt="tinydb"></span>TinyDB as your database to store the items in your To Do List.   This <em>non-visible</em> component can be found in the Storage drawer of the Palette. Grab and drop the <span class="icon" alt="tinydb"></span>TinyDB component onto your Screen2 to add it to your app's components.</p>
               <img class="enlargeImage" src="../images/mytodolist/StorageTabHighlight.png" alt="some_text">
-              <p>Click on the video below to learn how to add the <span class="icon" alt="tinydb"></span> TinyDB component to the To Do List interface.</p>
+              <p>Click on the video below to learn how to add the <span class="icon" alt="tinydb"></span>TinyDB component to the To Do List interface.</p>
               <a onclick="enlargeVideo('abxXK_Xre_I')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1f.png" alt=""></a>
             </div>
           </div>
@@ -272,21 +273,26 @@
               <a onclick="enlargeVideo('vmUoYhKIESk')" href="javascript:void(0);"><img width="100%"  src="../images/mytodolist/todolistInterface1g.png" alt=""></a>
           </div>
         </div>
-      
+        <br />
+        
       </div>
-
+        <div class="tutorialContentPage">
+          <h3>Test your App</h3>
+          <p>When you are done building the user interface, this may be a good time to test your app using the AI Companion via the Connect menu.</p>
+          <img class="enlargeImage" src="../images/mytodolist/AICompanion.png" alt="some_text">
+        </div>
 
       
       <div class="tutorialContentPage">
         <h3>Introduction to TinyDB</h3>
-        <p><span class="icon" alt="tinyDB"></span>TinyDB component, stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In more advanced projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
+        <p> The <span class="icon" alt="tinyDB"></span>TinyDB component stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In other projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
       </div>
       <div class="tutorialContentPage">
         <h3>Introduction to TinyDB</h3>
         <p>Here are some of the blocks in the <span class="icon" alt="tinydb"></span>TinyDB drawer.</p>
         <p>The following block allows you to store a value in the local memory of your mobile device using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="tinyDB"></span>TinyDB will be available to the user each time the app is run.</p>
         <img class="enlargeImage" src="../images/mytodolist/TinyDBStoreValue.png" alt="some_text">
-        <p>The following block allows you to retrieve a value stored in the local memory of your mobile device using its tag.  Note that if there is no such tag, by default an empty string is set be returned, but you can choose to return some other value instead by replacing the empty string block.</p>
+        <p>The following block allows you to retrieve a value stored in the local memory of your mobile device using its tag.  Note that if there is no such tag, by default an empty string is set to be returned, but you can choose to return some other value instead by replacing the empty string block.</p>
         <img class="enlargeImage" src="../images/mytodolist/TinyDBGetValue.png" alt="some_text">
         <p>The following block will clear the content in the memory associated with a given tag.</p>
         <img class="enlargeImage" src="../images/mytodolist/TinyDBClearTag.png" alt="some_text">
@@ -297,8 +303,8 @@
             <button>More TinyDB Info</button>
             <div class="hint hideHint">
               
-              <p>Each app has its own data store. There is only one data store per app. Even if you have multiple <span class="icon" alt="tinydb"></span> TinyDB components, they will use the same data store. To get the effect of separate stores, use different keys. You cannot use the <span class="icon" alt="tinydb"></span> TinyDB to pass data between two different apps on the phone, although you can use the <span class="icon" alt="tinydb"></span> TinyDB to share data between the different screens of a multi-screen app.</p>
-              <p>When you are developing apps using the AI Companion, all the apps using that Companion will share the same <span class="icon" alt="tinydb"></span> TinyDB. That sharing will disappear once the apps are packaged and installed on the phone. During development you should be careful to clear the Companion app's data each time you start working on a new app.</p>
+              <p>Each app has its own data store. There is only one data store per app. Even if you have multiple <span class="icon" alt="tinydb"></span>TinyDB components, they will use the same data store. To get the effect of separate stores, use different keys. You cannot use the <span class="icon" alt="tinydb"></span>TinyDB to pass data between two different apps on the phone, although you can use the <span class="icon" alt="tinydb"></span>TinyDB to share data between the different screens of a multi-screen app.</p>
+              <p>When you are developing apps using the AI Companion, all the apps using that Companion will share the same <span class="icon" alt="tinydb"></span>TinyDB. That sharing will disappear once the apps are packaged and installed on the phone. During development you should be careful to clear the Companion app's data each time you start working on a new app in order to avoid tag name collisions.</p>
             </div>
           </div>
         </div>
@@ -327,16 +333,22 @@
             <div class="hint hideHint">
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/mytodolist/whenPasswordButtonClick1.png" alt="some_text">
-              <p>Note that by the password shown here is "1234" but this is where you can, as the coder, decide what the password should be.</p>
+              <p>Note that the password shown here is "1234" but this is where you can, as the coder, decide what the password should be.</p>
 
-            </div>
-          </div>
-          <div class="hintContainer">
+              <div class="hintContainer">
               <button>Just show me the code</button>
               <div class="hint hideHint">
                   <img class="enlargeImage" src="../images/mytodolist/whenPasswordButtonClick2.png" alt="some_text">
               </div>
+            </div>
+
+
+            </div>
+            
+            
+
           </div>
+          
           
 
       </div>
@@ -353,11 +365,12 @@
       <div class="tutorialContentPage">
         <h3>Screen2: Initializations</h3>
         <p>Initialize a variable, <var>todoList</var>, which will be used to keep track of the items in the To Do List.  As this variable will hold a list, you need to initialize it with an empty list.</p>
+        <img class="enlargeImage" src="../images/mytodolist/initializeVariable.png" alt="some_text">
         <img class="enlargeImage" src="../images/mytodolist/initializetodoListvariable.png" alt="some_text">
         <p>When the  Screen2 is initialized you will need to 
           <ul>
-          <li>assign to the variable <var>todoList</var> the list of items previously stored in the device memory via the <span class="icon" alt="tinyDB"></span>TinyDB, under the tag "myToDoList";</li>
-          <li>set the elements of the <span class="icon" alt="listView"></span> ListView component to the list stored in the variable <var>todoList</var>.</li>
+          <li>get the “myToDoList” tag from <span class="icon" alt="tinyDB"></span>TinyDB and store its value in the <var>todoList</var> variable;</li>
+          <li>set the elements of the <span class="icon" alt="listView"></span> ListView component to the <var>todoList</var> variable.</li>
           </ul> 
         </p>
         <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
@@ -365,17 +378,19 @@
             <button>Give me a hint</button>
             <div class="hint hideHint">
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/mytodolist/Screen2Initialize1.png" alt="some_text">
+              <img class="enlargeImage" src="../images/mytodolist/Screen2Initialize1.png" alt="some_text"><br />
 
-            </div>
-          </div>
-
-        <div class="hintContainer">
+              <div class="hintContainer">
             <button>Just show me the code</button>
             <div class="hint hideHint">
               <img class="enlargeImage" src="../images/mytodolist/Screen2Initialize2.png" alt="some_text">
             </div>
+
         </div>
+            </div>
+          </div>
+
+        
 
       </div>
 
@@ -396,17 +411,19 @@
             <button>Give me a hint</button>
             <div class="hint hideHint">
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/mytodolist/whenEnterItemButtonClick1.png" alt="some_text">
+              <img class="enlargeImage" src="../images/mytodolist/whenEnterItemButtonClick1.png" alt="some_text"><br />
 
-            </div>
-          </div>
-
-        <div class="hintContainer">
+              <div class="hintContainer">
             <button>Just show me the code</button>
             <div class="hint hideHint">
               <img class="enlargeImage" src="../images/mytodolist/whenEnterItemButtonClick2.png" alt="some_text">
             </div>
-        </div>
+            </div>
+
+            </div>
+          </div>
+
+        
         
       </div>
 
@@ -427,17 +444,19 @@
             <div class="hint hideHint">
               <p>Note that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the SelectionIndex is the index of the selected element in that list.  When no item is selected the SelectionIndex is 0.</p>
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick1.png" alt="some_text">
+              <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick2.png" alt="some_text">
+                </div>
+              </div>
 
             </div>
           </div>
 
-        <div class="hintContainer">
-            <button>Just show me the code</button>
-            <div class="hint hideHint">
-              <img class="enlargeImage" src="../images/mytodolist/whenEraseItemButtonClick2.png" alt="some_text">
-            </div>
-        </div>
+        
       </div>
 
       <div class="tutorialContentPage">
@@ -446,7 +465,7 @@
           <ul>
             <li>reset the variable <var>todoList</var> to an empty list;</li>
             <li>reset the <span class="icon" alt="listView"></span> ListView elements to an empty list;</li>
-            <li>Clear all that is stored in the <span class="icon" alt="tinyDB"></span> TinyDB under the tag "myToDoList".  Note that you should <em>not</em> clear everything stored in the <span class="icon" alt="tinyDB"></span>TinyDB but only the contents stored under the tag "myToDoList".</li>
+            <li>Clear all that is stored in the <span class="icon" alt="tinyDB"></span>TinyDB under the tag "myToDoList".  Note that you should <em>not</em> clear everything stored in the <span class="icon" alt="tinyDB"></span>TinyDB but only the contents stored under the tag "myToDoList".</li>
             </ul>
 </p>
           <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint buttons below.</p>
@@ -454,17 +473,18 @@
             <button>Give me a hint</button>
             <div class="hint hideHint">
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick1.png" alt="some_text">
+              <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
 
             </div>
           </div>
 
-        <div class="hintContainer">
-            <button>Just show me the code</button>
-            <div class="hint hideHint">
-              <img class="enlargeImage" src="../images/mytodolist/whenClearAllButtonClick2.png" alt="some_text">
-            </div>
-        </div>
+        
         
       </div>
 
@@ -502,6 +522,7 @@
             <li>Create something like a star rating system where the user can indicate relative urgency and importance of the tasks in their To Do List.</li>
             <li>Allow the user to enter To Do List items by speaking to the mobile device, for example in case the user is unable to type. </li>
             <li>Give an option for the mobile device to speak the list of items to do, for example in case the user is visually impaired. </li>
+            <li>Give the user the capability to text or e-mail their To Do List to someone.</li>
             <li>Use your experience creating the To Do List to create your very own mobile-digital-calendar-based Bullet Journal.   Review the YR Media story <a href="https://yr.media/video/how-to-bullet-journal-a-visual-guide/" target="_blank">How to Bullet Journal: A Visual Guide </a> by Sarah Ng.</li>
             <li>Your original ideas here.  What else can you imagine?
 
