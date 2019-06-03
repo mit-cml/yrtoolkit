@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+
+
+
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <!--You will use stg like this for videos:
+    <a onclick="enlargeVideo('aEoFmKkvdZo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_1_ss.png" alt="Ball Bounce tutorial introduction"></a>
+  -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p><a href="https://yr.media/tech/asmr-changed-this-twitch-streamers-life/" target="_blank">ASMR</a></p>
+      <p><a href="https://yr.media/video/found-sounds-ep-1-latham-square/" target="_blank"> Making Beats</a></p>
+      
+
+      <p>Click "Connect Your App" below to start building your app!</p>
+    </div>
+
+    <h3>Connect Your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>SoundLibrary Tutorial (Level: Intermediate)</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        <img class="enlargeImage" src="../images/soundlibrary/soundLibrary.png" alt="some_text">
+        <p>In this project you will create your own app to capture sounds from daily life and store them in your very own Sound Library on your mobile device.  Be it for the purpose of capturing soothing sounds like in ASMR to calm yourself at the end of a long day or for capturing cool natural rhythms to generate your own funky music, we invite you to take on this challenge merging technology and the sonic arts.</p>
+
+    	</div>
+    	<div class="tutorialContentPage">
+        <h3>Introduction</h3>
+
+  		<p>As the sounds in your Sound Library need to be preserved even when you close the app, you will learn how to access the long-term data storage capability of your mobile device using the <span class="icon" alt="tinyDB"></span>TinyDB component of MIT App Inventor.  </p>
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        <p>The user interface has been created for you in the starter project.  Examine the components and their layout in the Viewer and also examine the component hierarchy and the naming in the Components tab.  Pay special attention to non-visible components.  Feel free to change the properties of the components to get the look and feel you want for your app.  For example, change the color and shape of the buttons.  However, as the coding section of the tutorial will make references to them, do not alter the names of the components.
+		</p>
+		<img class="enlargeImage" src="../images/soundlibrary/UICorrespondence.png" alt="some_text">
+        <!--<img class="enlargeImage" src="../images/soundlibrary/viewer.png" alt="some_text">
+        <img class="enlargeImage" src="../images/soundlibrary/componentHierarchy.png" alt="some_text">-->
+        
+      </div>
+
+      <div class="tutorialContentPage">
+          <h3>Test your App</h3>
+          <p>If you chose to do so, when you are done revising the look and feel of the user interface, this may be a good time to test your app using the AI Companion via the Connect menu.</p>
+          <img class="enlargeImage" src="../images/soundlibrary/AICompanion.png" alt="some_text">
+        </div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction to TinyDB</h3>
+
+        <p> The <span class="icon" alt="tinyDB"></span>TinyDB component stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  In other projects you will learn about <span class="icon" alt="clouddb"></span>CloudDB which allows multiple users to store, access and modify data in the Cloud.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h3>Introduction to TinyDB</h3>
+        <p>We will use <span class="icon" alt="tinyDB"></span>TinyDB to store sounds recorded by the user on the local device using the sound titles as tags.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/soundOfDogBarking.png" alt="some_text">
+        <p>Here are some of the blocks in the <span class="icon" alt="tinyDB"></span>TinyDB drawer.</p>
+        <p>The following block allows you to store a value in the local memory of your mobile device using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="tinyDB"></span>TinyDB will be available to the user each time the app is run.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBStoreValue.png" alt="some_text">
+        <p>The following block allows you to retrieve a value stored in the local memory of your mobile device using its tag.  Note that if there is no such tag, by default an empty string is set to be returned, but you can choose to return some other value instead by replacing the empty string block.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBGetValue.png" alt="some_text">
+        <p>The following block will clear the content in the memory associated with a given tag.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBClearTag.png" alt="some_text">
+        <p>The following block will return a list of all tags stored in the <span class="icon" alt="tinyDB"></span>TinyDB.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBGetTags.png" alt="some_text">
+        <p>The following block will clear the entire data store in the <span class="icon" alt="tinyDB"></span>TinyDB.</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBClearAll.png" alt="some_text">
+        <p>Here is some more advanced information you can read about <span class="icon" alt="tinyDB"></span>TinyDB.</p>
+        <div class="hintContainer">
+            <button>More TinyDB Info</button>
+            <div class="hint hideHint">
+              
+              <p>Each app has its own data store. There is only one data store per app. Even if you have multiple <span class="icon" alt="tinyDB"></span>TinyDB components, they will use the same data store. To get the effect of separate stores, use different keys. You cannot use the <span class="icon" alt="tinyDB"></span>TinyDB to pass data between two different apps on the phone, although you can use the <span class="icon" alt="tinyDB"></span>TinyDB to share data between the different screens of a multi-screen app.</p>
+              <p>When you are developing apps using the AI Companion, all the apps using that Companion will share the same <span class="icon" alt="tinyDB"></span>TinyDB. That sharing will disappear once the apps are packaged and installed on the phone. During development you should be careful to clear the Companion app's data each time you start working on a new app in order to avoid tag name collisions.</p>
+            </div>
+          </div>
+        </div>
+
+      
+
+      <div class="tutorialContentPage">
+        <h3>Blocks Editor</h3>
+        <p>Now you will give functionality to the user interface (UI). Switch to the Blocks editor.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        
+      </div>
+
+
+
+      <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        <p>In this project you will need several variables to keep track of the data you would like to store and process.  The first variable, <var>currentSoundTitle</var>, is used to store the title of the sound currently selected by the user and the second variable, <var>currentSound</var>, stores the reference to the actual sound file itself.  The third variable, <var>soundTitleList</var>, is used to store the list containing the titles of all the sounds in the Sound Library.  Create and initialize these variables as shown.
+		</p>
+
+        <img class="enlargeImage" src="../images/soundlibrary/initialize.png" alt="some_text">
+        
+        </div>
+
+        <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        <p>When Screen1 is initialized you will need to 
+          <ul>
+          <li>get all the tags (*) from <span class="icon" alt="tinyDB"></span>TinyDB which is a list of all the titles of the sounds already stored in the Sound Library and store these in the variable <var>soundTitleList</var>;</li>
+          <li>have the <strong>SoundsListView</strong> display these sound titles so that user knows what sounds have already been recorded and stored in the Sound Library.</li>
+          </ul> 
+        </p>
+        
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/soundlibrary/whenScreen1Initialize1.png" alt="some_text"><br />
+
+              <div class="hintContainer">
+            <button>Just show me the code</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/soundlibrary/whenScreen1Initialize2.png" alt="some_text">
+            </div>
+
+        </div>
+            </div>
+          </div>
+
+        <p>Note (*): To avoid accidentally getting tags associated with  other App Inventor projects the <em>Namespace</em> property of <span class="icon" alt="tinyDB"></span>TinyDB has been set for you to "SoundLibrary".</p>
+        <img class="enlargeImage" src="../images/soundlibrary/TinyDBNamespace.png" alt="some_text">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Recording Sounds</h3>
+        
+        	<p>Give functionality to the <strong>RecordSoundButton</strong> and <strong>StopRecordingButton</strong>.</p>
+            <div class="hintContainer">
+	            <button>Just show me the code</button>
+	            <div class="hint hideHint">
+	              <img class="enlargeImage" src="../images/soundlibrary/whenRecordSoundButtonClick.png" alt="some_text"><img class="enlargeImage" src="../images/soundlibrary/whenStopRecordingButtonClick.png" alt="some_text">
+	            </div>
+
+            </div>
+
+      </div>
+
+        
+        
+      
+
+      <div class="tutorialContentPage">
+        <h3>Recording Sounds</h3>
+        <p>Now code the behavior for the <strong>SoundRecorder1</strong>.  After the <strong>SoundRecorder1</strong> has recorded a sound:
+
+          <ul>
+            <li>check that the user has actually entered a title for the sound;</li>
+            <li>if a title has been entered for the sound, store that sound in the <span class="icon" alt="tinyDB"></span>TinyDB using the title as its tag;</li>
+            <li>if the title entered is new and has not been used before, add it to the <var>soundTitleList</var>;</li>
+            <li>update the <strong>SoundsListsView</strong> to display the latest sound titles;</li>
+            <li>clear the <strong>SoundTitleTextBox</strong> so that it is ready for the next input to be entered by the user.</li>
+          </ul> 
+        </p>  
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/soundlibrary/whenSoundRecorder1AfterSoundRecorded1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/soundlibrary/whenSoundRecorder1AfterSoundRecorded2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Retrieving Sounds</h3>
+        <p>The work you have done so far was about recording properly labeled sounds into the Sound Library.  Now you will learn how to retrieve sounds from the Sound Library, play them, loop them and erase them.</p>
+        <p>When the user makes a selection from the <strong>SoundListView</strong> where the sound titles are displayed
+          <ul>
+            <li>set the <var>currentSoundTitle</var> variable to the user's selection;</li>
+            <li>set the <var>currentSound</var> variable to the value stored in the <span class="icon" alt="tinyDB"></span>TinyDB under the tag named by this selection.
+			</li>
+            </ul>
+		</p>
+		<p>Note that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>
+
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/soundlibrary/whenSoundListViewAfterPicking1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/soundlibrary/whenSoundListViewAfterPicking2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+          
+        
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Playing, Looping and Stopping Sounds</h3>
+        
+        <p>Now code the behavior for the <strong>PlaySoundButton</strong>.  When the button is clicked,
+
+          <ul>
+            <li>set <strong>Player1</strong> to loop or not depending whether the <strong>LoopCheckBox</strong> has been checked;</li>
+            <li>set the source of <strong>Player1</strong> to the sound file referenced in the variable <var>currentSound</var>;</li>
+			<li>start <strong>Player1</strong>.</li>
+            </ul>
+		</p>
+		
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/soundlibrary/whenPlaySoundButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/soundlibrary/whenPlaySoundButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+          <p><strong>StopSoundButton</strong> should simply stop <strong>Player1</strong>.</p>
+            <div class="hintContainer">
+	            <button>Just show me the code</button>
+	            <div class="hint hideHint">
+	              <img class="enlargeImage" src="../images/soundlibrary/whenStopSoundButtonClick.png" alt="some_text">
+	            </div>
+
+            </div>
+        
+        
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Erasing Sounds</h3>
+        
+        <p>Finally, give functionality to the <strong>EraseSoundButton</strong>.  When the button is clicked,
+
+          <ul>
+            <li>check that a sound title selection has indeed been made in the <strong>SoundsListView</strong>, i.e. <em>SelectionIndex</em> is not zero;</li>
+            <li>if a selection has been made, erase the sound associated with that title in the <span class="icon" alt="tinyDB"></span>TinyDB;</li>
+			<li>remove the sound title from the list stored in the variable <var>soundTitleList</var>;</li>
+			<li>revise the <strong>SoundsListView</strong> to reflect the changes;</li>
+			<li>re-initialize the variables <var>currentSoundTitle</var>, <var>currentSound</var> to empty strings</li>
+			<li>set the <strong>SoundListView</strong> <em>SelectionIndex</em> to zero, indicating that no selection has been made.</li>
+            </ul>
+		</p>
+
+		<p>Remember that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>
+		
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/soundlibrary/whenEraseSoundButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Just show me the code</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/soundlibrary/whenEraseSoundButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+         
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Test your App!</h3>
+        <p>You are done!  Test your app thoroughly.  
+          <ul>
+            <li>make sure that you can capture sounds, give them titles and save them in the mobile device memory;</li>
+            <li>make sure that you can play any sound in your Sound Library, looping if desired;</li>
+            <li>make sure that you can erase any sound from your Sound Library;</li>
+            <li>test that the sounds stored in your Sound Library are accessible after turning the app off and restarting.</li>
+          </ul>
+		</p>
+      </div>
+
+    
+     <br />
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+  <h3>Expand Your App</h3>
+    <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+      	<div class="tutorialContentPage">
+			   <strong>Extension Ideas</strong>
+         <ul>
+            <li>Have the app warn the user with a notifier if they are about to override an existing sound file by reusing an existing sound title.</li>
+			<li>Have the app alert  and double check with the user with a notifier when they are about to erase a sound from the Sound Library.</li>
+			<li>Allow the user to enter information about the sound other than the title (such as date recorded, location info, background information, credits etc.)</li>
+			<li>Create functionality so that you can simultaneously play any of number of sounds stored in your Sound Library to superimpose sounds to get cool sonic effects.</li>
+			<li>Learn about the <span class="icon" alt="clouddb"></span>CloudDB component of App Inventor to create a Sound Library app that multiple users can use together to contribute and access sounds.</li>
+
+
+            </li>
+            <li>Your original ideas here.  What else can you imagine?
+
+          </ul>
+        
+		    </div>
+			
+	
+
+
+        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
+      </div>-->
+	
+    </div>	
+
+  <h3>Share Your App</h3>
+  <div class="setup" id="share_app"></div>
+
+ <!-- <h3>Published Apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>-->
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
+</div>
+
+
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+<!--Revise these
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>-->
+
+</div>
+
+
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
