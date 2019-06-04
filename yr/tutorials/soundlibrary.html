@@ -98,8 +98,8 @@
       </div>
 
       <div class="tutorialContentPage">
-          <h3>Test your App</h3>
-          <p>If you chose to do so, when you are done revising the look and feel of the user interface, this may be a good time to test your app using the AI Companion via the Connect menu.</p>
+          <h3>Connect your App</h3>
+          <p>This may be a good time to test your app on the AI Companion or the Emulator (via the Connect menu) to make sure your layout fits well and looks good when running on an actual device.</p>
           <img class="enlargeImage" src="../images/soundlibrary/AICompanion.png" alt="some_text">
         </div>
 
@@ -110,12 +110,12 @@
       </div>
       <div class="tutorialContentPage">
         <h3>Introduction to TinyDB</h3>
-        <p>We will use <span class="icon" alt="tinyDB"></span>TinyDB to store sounds recorded by the user on the local device using the sound titles as tags.</p>
+        <p>You will use <span class="icon" alt="tinyDB"></span>TinyDB to store sounds recorded by the user on the local device using the sound titles as tags.</p>
         <img class="enlargeImage" src="../images/soundlibrary/soundOfDogBarking.png" alt="some_text">
-        <p>Here are some of the blocks in the <span class="icon" alt="tinyDB"></span>TinyDB drawer.</p>
-        <p>The following block allows you to store a value in the local memory of your mobile device using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="tinyDB"></span>TinyDB will be available to the user each time the app is run.</p>
+        <p>Below are descriptions and images of the <span class="icon" alt="tinyDB"></span>TinyDB blocks that are available.</p>
+        <p>The following block allows you to store a value in the local storage of your mobile device using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="tinyDB"></span>TinyDB will be available to the user the next time the app is run.</p>
         <img class="enlargeImage" src="../images/soundlibrary/TinyDBStoreValue.png" alt="some_text">
-        <p>The following block allows you to retrieve a value stored in the local memory of your mobile device using its tag.  Note that if there is no such tag, by default an empty string is set to be returned, but you can choose to return some other value instead by replacing the empty string block.</p>
+        <p>The following block allows you to retrieve a value stored in the local storage of your mobile device using its tag.  Note that if there is no such tag, by default an empty string is set to be returned, but you can choose to return some other value instead by replacing the empty string block.</p>
         <img class="enlargeImage" src="../images/soundlibrary/TinyDBGetValue.png" alt="some_text">
         <p>The following block will clear the content in the memory associated with a given tag.</p>
         <img class="enlargeImage" src="../images/soundlibrary/TinyDBClearTag.png" alt="some_text">
@@ -147,7 +147,7 @@
 
       <div class="tutorialContentPage">
         <h3>Initializations</h3>
-        <p>In this project you will need several variables to keep track of the data you would like to store and process.  The first variable, <var>currentSoundTitle</var>, is used to store the title of the sound currently selected by the user and the second variable, <var>currentSound</var>, stores the reference to the actual sound file itself.  The third variable, <var>soundTitleList</var>, is used to store the list containing the titles of all the sounds in the Sound Library.  Create and initialize these variables as shown.
+        <p>In this project you will need several variables to keep track of the data you will store and process.  The first variable, <var>currentSoundTitle</var>, is used to store the title of the sound currently selected by the user and the second variable, <var>currentSound</var>, stores the pathname for the actual sound file itself.  The third variable, <var>soundTitleList</var>, is used to store the list containing the titles of all the sounds in the Sound Library.  Create and initialize these variables as shown.
 		</p>
 
         <img class="enlargeImage" src="../images/soundlibrary/initialize.png" alt="some_text">
@@ -181,7 +181,7 @@
             </div>
           </div>
 
-        <p>Note (*): To avoid accidentally getting tags associated with  other App Inventor projects the <em>Namespace</em> property of <span class="icon" alt="tinyDB"></span>TinyDB has been set for you to "SoundLibrary".</p>
+        <p>Note (*): Remember that you are storing sounds recorded by the user in <span class="icon" alt="tinyDB"></span>TinyDB using the <em><strong>titles</strong></em> of the sounds as <em><strong>tags</strong></em>. To avoid accidentally getting tags associated with  other App Inventor projects the <em>Namespace</em> property of <span class="icon" alt="tinyDB"></span>TinyDB has been set for you to "SoundLibrary".</p>
         <img class="enlargeImage" src="../images/soundlibrary/TinyDBNamespace.png" alt="some_text">
 
       </div>
@@ -205,8 +205,8 @@
       
 
       <div class="tutorialContentPage">
-        <h3>Recording Sounds</h3>
-        <p>Now code the behavior for the <strong>SoundRecorder1</strong>.  After the <strong>SoundRecorder1</strong> has recorded a sound:
+        <h3>Storing Recorded Sounds</h3>
+        <p>Now code the behavior for the <span class="icon" alt="SoundRecorder"></span>SoundRecorder.  After the <strong>SoundRecorder1</strong> has recorded a sound:
 
           <ul>
             <li>check that the user has actually entered a title for the sound;</li>
@@ -352,7 +352,7 @@
         <h3>Test your App!</h3>
         <p>You are done!  Test your app thoroughly.  
           <ul>
-            <li>make sure that you can capture sounds, give them titles and save them in the mobile device memory;</li>
+            <li>make sure that you can capture sounds, give them titles and save them in the mobile device storage;</li>
             <li>make sure that you can play any sound in your Sound Library, looping if desired;</li>
             <li>make sure that you can erase any sound from your Sound Library;</li>
             <li>test that the sounds stored in your Sound Library are accessible after turning the app off and restarting.</li>
