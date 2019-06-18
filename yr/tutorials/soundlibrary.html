@@ -89,9 +89,10 @@
 
       <div class="tutorialContentPage">
         <h3>The User Interface</h3>
-        <p>The user interface has been created for you in the starter project.  Examine the components and their layout in the Viewer and also examine the component hierarchy and the naming in the Components tab.  Pay special attention to non-visible components.  Feel free to change the properties of the components to get the look and feel you want for your app.  For example, change the color and shape of the buttons.  However, as the coding section of the tutorial will make references to them, do not alter the names of the components.
+        <p>The user interface has been created for you in the starter project.  Examine the components and their layout in the Viewer and also examine the component hierarchy and the naming in the Components tab.  Pay special attention to non-visible components.  Feel free to change the properties of the components to get the look and feel you want for your app.  For example, change the color and shape of the buttons.  However, as the coding section of the tutorial will make references to them, do not alter the names of the components.  
 		</p>
 		<img class="enlargeImage" src="../images/soundlibrary/UICorrespondence.png" alt="some_text">
+		<p>Click on the tutorial images to enlarge them and click on the outline of the enlarged images to drag.</p>
         <!--<img class="enlargeImage" src="../images/soundlibrary/viewer.png" alt="some_text">
         <img class="enlargeImage" src="../images/soundlibrary/componentHierarchy.png" alt="some_text">-->
         
@@ -173,7 +174,7 @@
               <img class="enlargeImage" src="../images/soundlibrary/whenScreen1Initialize1.png" alt="some_text"><br />
 
               <div class="hintContainer">
-            <button>Just show me the code</button>
+            <button>Check your solution</button>
             <div class="hint hideHint">
               <img class="enlargeImage" src="../images/soundlibrary/whenScreen1Initialize2.png" alt="some_text">
             </div>
@@ -192,7 +193,7 @@
         
         	<p>Give functionality to the <strong>RecordSoundButton</strong> and <strong>StopRecordingButton</strong>.</p>
             <div class="hintContainer">
-	            <button>Just show me the code</button>
+	            <button>Check your solution</button>
 	            <div class="hint hideHint">
 	              <img class="enlargeImage" src="../images/soundlibrary/whenRecordSoundButtonClick.png" alt="some_text"><img class="enlargeImage" src="../images/soundlibrary/whenStopRecordingButtonClick.png" alt="some_text">
 	            </div>
@@ -211,11 +212,14 @@
 
           <ul>
             <li>check that the user has actually entered a title for the sound;</li>
-            <li>if a title has been entered for the sound, store that sound in the <span class="icon" alt="tinyDB"></span>TinyDB using the title as its tag;</li>
+            If a title has been entered for the sound, 
+            <ul>
+            <li>store that sound in the <span class="icon" alt="tinyDB"></span>TinyDB using the title as its tag;</li>
             <li>if the title entered is new and has not been used before, add it to the <var>soundTitleList</var>;</li>
             <li>update the <strong>SoundsListsView</strong> to display the latest sound titles;</li>
             <li>clear the <strong>SoundTitleTextBox</strong> so that it is ready for the next input to be entered by the user.</li>
           </ul> 
+      	</ul>
         </p>  
 
         <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
@@ -227,7 +231,7 @@
               <img class="enlargeImage" src="../images/soundlibrary/whenSoundRecorder1AfterSoundRecorded1.png" alt="some_text"><br />
               
               <div class="hintContainer">
-                <button>Just show me the code</button>
+                <button>Check your solution</button>
                 <div class="hint hideHint">
                   <img class="enlargeImage" src="../images/soundlibrary/whenSoundRecorder1AfterSoundRecorded2.png" alt="some_text">
                 </div>
@@ -249,7 +253,7 @@
 			</li>
             </ul>
 		</p>
-		<p>Note that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>
+		<!--<p>Note that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>-->
 
           <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
           <div class="hintContainer">
@@ -258,7 +262,7 @@
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/soundlibrary/whenSoundListViewAfterPicking1.png" alt="some_text"><br />
               <div class="hintContainer">
-                <button>Just show me the code</button>
+                <button>Check your solution</button>
                   <div class="hint hideHint">
                     <img class="enlargeImage" src="../images/soundlibrary/whenSoundListViewAfterPicking2.png" alt="some_text">
                   </div>
@@ -291,7 +295,7 @@
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/soundlibrary/whenPlaySoundButtonClick1.png" alt="some_text"><br />
               <div class="hintContainer">
-                <button>Just show me the code</button>
+                <button>Check your solution</button>
                   <div class="hint hideHint">
                     <img class="enlargeImage" src="../images/soundlibrary/whenPlaySoundButtonClick2.png" alt="some_text">
                   </div>
@@ -302,7 +306,7 @@
 
           <p><strong>StopSoundButton</strong> should simply stop <strong>Player1</strong>.</p>
             <div class="hintContainer">
-	            <button>Just show me the code</button>
+	            <button>Check your solution</button>
 	            <div class="hint hideHint">
 	              <img class="enlargeImage" src="../images/soundlibrary/whenStopSoundButtonClick.png" alt="some_text">
 	            </div>
@@ -320,15 +324,18 @@
 
           <ul>
             <li>check that a sound title selection has indeed been made in the <strong>SoundsListView</strong>, i.e. <em>SelectionIndex</em> is not zero;</li>
-            <li>if a selection has been made, erase the sound associated with that title in the <span class="icon" alt="tinyDB"></span>TinyDB;</li>
+            If a selection has been made,
+            <ul>
+            <li> erase the sound associated with that title in the <span class="icon" alt="tinyDB"></span>TinyDB;</li>
 			<li>remove the sound title from the list stored in the variable <var>soundTitleList</var>;</li>
 			<li>revise the <strong>SoundsListView</strong> to reflect the changes;</li>
 			<li>re-initialize the variables <var>currentSoundTitle</var>, <var>currentSound</var> to empty strings</li>
 			<li>set the <strong>SoundListView</strong> <em>SelectionIndex</em> to zero, indicating that no selection has been made.</li>
             </ul>
+        </ul>
 		</p>
 
-		<p>Remember that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>
+		<p>Note that the <span class="icon" alt="listView"></span> ListView component allows a list of text elements to be displayed on your mobile device's screen and when an element is selected by the user, the <em>SelectionIndex</em> is the index of the selected element in that list.  When no item is selected the <em>SelectionIndex</em> is 0.</p>
 		
           <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
           <div class="hintContainer">
@@ -337,7 +344,7 @@
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/soundlibrary/whenEraseSoundButtonClick1.png" alt="some_text"><br />
               <div class="hintContainer">
-                <button>Just show me the code</button>
+                <button>Check your solution</button>
                   <div class="hint hideHint">
                     <img class="enlargeImage" src="../images/soundlibrary/whenEraseSoundButtonClick2.png" alt="some_text">
                   </div>
@@ -378,7 +385,7 @@
             <li>Have the app warn the user with a notifier if they are about to override an existing sound file by reusing an existing sound title.</li>
 			<li>Have the app alert  and double check with the user with a notifier when they are about to erase a sound from the Sound Library.</li>
 			<li>Allow the user to enter information about the sound other than the title (such as date recorded, location info, background information, credits etc.)</li>
-			<li>Create functionality so that you can simultaneously play any of number of sounds stored in your Sound Library to superimpose sounds to get cool sonic effects.</li>
+			<li>Create functionality so that you can simultaneously play any number of sounds stored in your Sound Library to superimpose sounds to get cool sonic effects.</li>
 			<li>Learn about the <span class="icon" alt="clouddb"></span>CloudDB component of App Inventor to create a Sound Library app that multiple users can use together to contribute and access sounds.</li>
 
 
