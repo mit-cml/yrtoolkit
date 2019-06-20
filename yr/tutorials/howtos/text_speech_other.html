@@ -1,31 +1,31 @@
 <div class="tutorialContainer">
   <div class="tutorialNavigationHeader"></div>
   <div class="tutorialContentPage">
-    <p>In Designer, click on Sensors and drag and drop <span class="icon" alt="textToSpeech"></span> TextToSpeech onto the Viewer. It will show up in the non-visible components section.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" alt="magic eight ball">
+    <h4>1. Add TextToSpeech Component</h4>
+         <p>Switch to the Designer.</p>
+          <img class="enlargeImage" src="../images/hello_bonjour/clickDesigner.png" alt="switch to designer">
+    <p>In the Designer, click on the Media drawer and drag and drop a <span class="icon" alt="textToSpeech"></span> TextToSpeech component onto the Viewer. It will show up in the non-visible components section.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextToSpeech.gif" alt="add a TextToSpeech component">
   </div>
   <div class="tutorialContentPage">
-    <p>Go to the Properties panel and find country. We'll make our <span class="icon" alt="textToSpeech"></span> TextToSpeech component speak in Spanish. Go to the "Country" dropdown and choose "MCO" for Mexico.</p> <!-- full list of country codes? -->
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/changeMCO.gif" alt="magic eight ball">
+    <h4>2. Change Country and Language Properties</h4>
+    <p>Go to the Properties panel and find Country. We'll make our <span class="icon" alt="textToSpeech"></span> TextToSpeech component speak in Spanish. Go to the "Country" dropdown and choose "MCO" for Mexico.</p>
+    <p>Change "Language" to "es" for Spanish.</p> <!-- full list of country codes? -->
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/changeMCO.gif" alt="change country to Mexico and language to Spanish">
   </div>
   <div class="tutorialContentPage">
-    <p>Then go to the "Language" dropdown and choose "es" for Spanish.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/changeES.gif" alt="magic eight ball"> <!-- ditto language codes? -->
-  </div>
-  <div class="tutorialContentPage">
-    <p>Click Blocks.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
+    <h4>3. Make the App Speak</h4>
+    <p>Switch to the Blocks Editor.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/smallClickBlocks.png" alt="switch to blocks editor">
     <p>Click on <span class="icon" alt="textToSpeech"></span> TextToSpeech1 and add <span class="procedures">call TextToSpeech1.Speak</span> into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif" alt="magic eight ball">
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addTextSpeak.gif" alt="add texttospeech block">
+    <p>Hover over the orange translation button and click on <span class="variables">get translation</span>. Drag it to the "message" socket of <span class="procedures">call TextToSpeech1.Speak</span>.</p>
+    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" alt="add translation variable to block">
   </div>
   <div class="tutorialContentPage">
-    <p>Hover over the red translate button again and click on <span class="variables">get translation</span>. Drag it to the "message" socket of <span class="procedures">call TextToSpeech1.Speak</span>.</p>
-    <img class="enlargeImage" src="../images/hello_bonjour/howto/addSpeakTranslation.gif" alt="magic eight ball">
+    <p>Test out your app! When the Translate button is pressed, it should translate from English to Spanish and speak the Spanish.</p>
   </div>
-  <div class="tutorialContentPage">
-    <p>Finally, go to <span class="control">when translateButton.Click</span> and click on the <span class="text">"ru-en"</span> block and change the text to "ru-es" so the text the translator translates to is Spanish.</p>
-    <p>Test out your app! When the button is pressed, it should translate from Russian to Spanish and speak the Spanish.</p>
-  </div>
+  <br/>
   <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
     <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
   </div>

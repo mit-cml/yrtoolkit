@@ -267,6 +267,8 @@ window.getTutorialVideo = function(tutorialId) {
   }
   addImages();
 
+
+
   // Sets up the connect app, share app, and how tos
   // Calls setupTutorial() 
   var howToSetup = function () {
@@ -281,6 +283,7 @@ window.getTutorialVideo = function(tutorialId) {
     }
   }
   howToSetup();
+
 
 });
 
