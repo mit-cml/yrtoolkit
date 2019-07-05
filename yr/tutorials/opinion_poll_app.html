@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+
+
+
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <!--You will use stg like this for videos:
+    <a onclick="enlargeVideo('aEoFmKkvdZo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_1_ss.png" alt="Ball Bounce tutorial introduction"></a>
+  -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+
+    	<p><a href="https://yr.media/interactive/are-you-ready-to-vote" target="_blank"> Ready To Vote?</a>
+      	<a href="https://yr.media/news/16-to-vote" target="_blank">16 To Vote</a></p>
+
+      <p>Click "Connect Your App" below to start building your app!</p>
+    </div>
+
+    <h3>Connect Your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Opinion Poll App Tutorial (Level: Intermediate)</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        <img class="enlargeImage" src="../images/opinion_poll_app/67-33Bar.png" alt="some_text">
+        <p>In this project you will create a simple polling app that will allow users to express their opinions on a topic and the results will be collected via the Cloud.  In the process you will also catch a glimpse of how to represent, process and visualize data in the MIT App Inventor coding environment. 
+		</p>
+
+    	</div>
+    	<div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+
+  		<p>Below you can see the user interface (UI).  There is a section in the upper part of the screen that allows the poll administrators to reset the Cloud database where data will be collected.  If you choose to do so, in the extensions of the project you can make this admin interface password protected so that an arbitrary user of the app cannot reset the database. The rest of the UI is dedicated to non-admin users (voters) who will be taking the poll.  There will be a label where a Yes/No poll question will be displayed.  There will be two buttons (Yes/No) where the voters can indicate their choice.  The graph will be hidden from the voters until they have cast their vote but once a vote has been cast, they can view the graph that is dynamically updated as other voters also cast their votes.  The exact number of Yes/No votes will be displayed and their relative percentages will be shown in the form of horizontal bar graphs.</p>
+  		
+  		<p>Click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/DesignerView.png" alt="some_text">
+        <p>Study the UI and the component hierarchy which has already been created for you.  Feel free to change the look and feel of the interface (such as button shapes and colors); however do not change the names of the components because in the coding part of the tutorial there will be references made to these names.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/ComponentsHierarchy.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        <p>Here is another look showing the correspondence between the UI and the components hierarchy.</p>
+		<img class="enlargeImage" src="../images/opinion_poll_app/UICorrespondence.png" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">
+          <h3>Connect your App</h3>
+          <p>This may be a good time to test your app on the AI Companion or the Emulator (via the Connect menu) to make sure your layout fits well and looks good when running on an actual device.  Please note that some components, like the graphs, may not be visible yet due to their default settings.</p>
+          <img class="enlargeImage" src="../images/opinion_poll_app/AICompanion.png" alt="some_text">
+        </div>
+
+        <div class="tutorialContentPage">
+        <h3>Visual Display of Graphs</h3>
+        <p>Here are some screenshots that show how the visual display of data, in the form of horizontal bar graphs, changes as votes are cast.  Study these screenshots so you get a feel for the graphical displays you will be creating.  Note that the leftmost bases of these graphs are used to display the actual number of Yes/No votes that are cast while the horizontal bar graphs display the relative percentage of the Yes/No votes.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/bargraphs.png" alt="some_text">
+
+    	</div>
+
+
+    	<div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>For this project you will use <span class="icon" alt="clouddb"></span>CloudDB as your database to store the Yes/No votes entered by the users of your app.   This <em>non-visible</em> component can be found in the Experimental tab of the Palette.  This component has already been added to the user interface (UI) for you but in another project you would just need to grab and drop the <span class="icon" alt="clouddb"></span>CloudDB component on your Screen1 to add it to your app's Components.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/experimentalpalette.png" alt="some_text">
+      </div>
+      <div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  On the other hand<span class="icon" alt="clouddb"></span>CloudDB allows multiple users to store, access and modify data in the Cloud.</p>
+        <p>Here is what the blocks in the <span class="icon" alt="clouddb"></span>CloudDB  drawer look like.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/cloudDBblocksdrawer.png" alt="some_text">
+      </div> 
+      <div class="tutorialContentPage">
+        <h3>Introduction to CloudDB</h3>
+        <p>For this project we will be using the <span class="icon" alt="clouddb"></span>CloudDB component of App Inventor as a database to collect and store the votes cast in the cloud.  You will create two tags in the <span class="icon" alt="clouddb"></span>CloudDB, "YesVotes" and "NoVotes", and under each tag you will store a list of "Yes" and "No" votes cast by the polling app users.  The length of each list at any moment will give you the total count of Yes and No votes cast up until that time.  Below you can see a depiction of the <span class="icon" alt="clouddb"></span>CloudDB at an instant in the voting and the corresponding UI at that moment.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/instantinCloudDB.png" alt="some_text">
+
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Blocks Editor</h3>
+        <p>Now you will give functionality to the user interface (UI). Switch to the Blocks editor.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        
+      </div>
+
+
+
+      <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        <img class="enlargeImage" src="../images/opinion_poll_app/initializeVariable.png" alt="some_text">
+        <p>You will need to keep track of various variables in this project.  <var>yesCount</var> and <var>noCount</var>  will keep track of the number of Yes and No votes cast by those who are polled.  <var>yesPercentage</var> and <var>noPercentage</var> variables will keep track of the relative percentages of the Yes and No votes cast.  Initialize these variables to zero.
+		</p>
+
+        <img class="enlargeImage" src="../images/opinion_poll_app/initializeVariables.png" alt="some_text">
+        
+        </div>
+
+        <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        <p>As you will need to initialize many variables and many components several times (such as when the poll administrator presses the Reset Database button), you will create a <strong>procedure</strong> to <em>modularize</em> this initialization process.  To do so, go to the Procedures drawer in the Built-in Blocks panel and edit the default name of the procedure block to "initialize".
+        </p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/procedureEdit.png" alt="some_text">
+
+          </div>
+
+          <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+          <p>Define the <strong>initialize</strong> procedure to:
+          	<ul>
+			<li>set the <strong>PollQuestionLabel</strong> to a Yes/No poll question you would like.  For example, "Should the minimum wage increase to $15?"</li>
+			<li>enable the Yes and No buttons;</li>
+			<li>set the <strong>ShowHideGraphButton</strong> text to "Show Graph";</li>
+			<li>disable the <strong>ShowHideGraphButton</strong> (until the user casts a vote);</li>
+			<li>hide the <strong>HorizontalArrangement2</strong> containing the bar graphs;</li>
+			<li>initialize the variables <var>yesCount</var>, <var>noCount</var>, <var>yesPercentage</var>, <var>noPercentage</var> all to zero;</li>
+			<li>set the <strong>YesBar</strong> and <strong>NoBar</strong> width percentages to zero;</li>
+			<li>set the <strong>YesLabel</strong> and <strong>NoLabel</strong> texts to zero.</li>
+			</ul>
+		</p>
+    <p>When done, call this procedure when the Screen1 initializes.</p>
+
+			<p>Do this coding on your own. Click on the button below to check your solution.</p>
+        	<div class="hintContainer">
+   
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/initializations.png" alt="some_text">
+              </div>
+          </div>
+      </div>
+
+   
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+        <p>Now code the Yes and No buttons.  When the YesButton is clicked:
+			<ul>
+            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to set these buttons enabled so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
+			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "Yes" to the list stored under the tag "YesVotes".</li>
+		</ul>
+        </p>  
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+        <p>No button process is similar.  When the NoButton is clicked:
+			<ul>
+            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to set these buttons enabled so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
+			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "No" to the list stored under the tag "NoVotes".</li>
+		</ul>
+        </p>  
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+	      <p>When you are testing your app, you want to be able to press the Yes and No buttons multiple times to make sure that the vote counts and graphs update appropriately, so leave these buttons enabled set to true while testing. Don't forget to change these to false after you're done testing and are ready to publish your app. That way, each voter will only be able to cast a single vote, as the voting buttons will be disabled once they vote.</p>
+	      <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
+
+	  </div>
+
+      
+
+      <div class="tutorialContentPage">
+        <h3>Show and Hide Graph Button</h3>
+        
+        <p>Now you will give functionality to the <strong>ShowHideGraphButton</strong>.  When this button is clicked:
+			<ul>
+			<li>if the <strong>HorizontalArrangement2</strong> which contains the graphs is currently visible:
+				<ul>
+					<li>make the <strong>HorizontalArrangement2</strong> invisible;</li>
+					<li>make the <strong>ShowHideGraphButton</strong> text "Show Graph";</li>
+				</ul></li>
+			<li>otherwise 
+					<ul>
+					<li>make the <strong>HorizontalArrangement2</strong> visible;</li>
+					<li>make the <strong>ShowHideGraphButton</strong> text "Hide Graph".</li>
+					</ul>
+				</li>
+          </ul>
+		</p>
+		
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+      
+        
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Reset Database Button</h3>
+        
+        <p>When an administrator of the polling app clicks the <strong>ResetDatabaseButton</strong>:
+        <ul>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "YesVotes" with an empty list;</li>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "NoVotes" with an empty list;</li>
+			<li>call the procedure <strong>initialize</strong> to reset everything.</li>
+		</ul>
+
+		</p>
+		
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+         
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Data Change in CloudDB</h3>
+
+
+        <p>
+        	When the user of the polling app cast their votes, the information is sent to the <span class="icon" alt="clouddb"></span>CloudDB (see your code above when <strong>YesButton</strong>, <strong>NoButton</strong> are clicked).  As soon as the database has changed, the <span class="icon" alt="clouddb"></span>CloudDB will need to inform <strong><em>all</em></strong> users of the app to update the information on the local devices and update the graphs etc.  Here is a sequence of events which needs to happen when <span class="icon" alt="clouddb"></span>CloudDB data has changed:
+        		<ul>
+				<li>If the value returned by <span class="icon" alt="clouddb"></span>CloudDB is an empty list (which means that the <span class="icon" alt="clouddb"></span>CloudDB is responding to a database reset initiated by the poll administrator) then call <strong>initialize</strong> procedure to reset everything.</li>
+				<li>otherwise, 
+					<ul>
+						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" contains is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
+						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember the list under the tag "NoVotes" contains is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
+						<li>set the <var>yesPercentage</var> and <var>noPercentage</var> variables to the percentage calculations shown below.  
+							<img class="enlargeImage" src="../images/opinion_poll_app/percentageCalculations.png" alt="some_text">
+							Note that  the sum: <br /><var>yesCount</var> + <var>noCount</var> <br />gives the total number of votes cast and the ratio: <br /><var>yesCount</var> / (<var>yesCount</var> + <var>noCount</var>) <br />gives the ratio of the Yes votes to the total number of votes.  Multiplication with 100 turns this ratio into a percentage and the round operator rounds the result to the nearest whole number for simplicity. The calculation is similar for No votes.
+							
+						</li>
+						<li>set <strong>YesLabel</strong> and <strong>NoLabel</strong> to the <var>yesCount</var> and <var>noCount</var> respectively.  These labels will report the exact number of Yes and No votes cast.</li>
+
+						<li>set the <em>WidthPercentage</em> parameter for the <strong>YesBar</strong> and <strong>NoBar</strong> components to the <var>yesPercentage</var> and <var>noPercentage</var> variables which you calculated above.  This will ensure that the bar graphs will have correct width sizes.</li>
+						<li>set the text of <strong>YesBar</strong> and <strong>NoBar</strong> components to display the proper percentages calculated above followed with the "%" symbol to indicate that these values are percentages.</li>
+
+					</ul>
+
+			</ul>
+
+        </p>
+
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are some of the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDBDataChanged1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDBDataChanged2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+
+       </div>
+
+
+
+
+
+
+      <div class="tutorialContentPage">
+        <h3>Test your App!</h3>
+        <p>You are done!  Test your app thoroughly.  
+          <ul>
+            <li>make sure that you can cast Yes and No votes;</li>
+            <li>make sure that you can view the graphs after casting a vote;</li>
+            <li>make sure that the graphs dynamically update as more and more votes are cast;</li>
+            <li>make sure that the graphs correctly display the relative percentages of the Yes and No votes cast;</li>
+            <li>make sure that an admin can correctly reset the database and this change promptly leads to a reset in the user interface.</li>
+          </ul>
+          When you are done testing your app, remember that you will need to revisit the codes for <strong>YesButton</strong> and <strong>NoButton</strong> and disable the buttons as shown after a vote is cast.  This will ensure that each user of your app can only cast a single vote in the opinion poll.
+          <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
+		</p>
+      </div>
+
+    
+     <br />
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+  <h3>Expand Your App</h3>
+    <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+      	<div class="tutorialContentPage">
+			   <strong>Further Explorations</strong>
+         <ul>
+            <li>Make administrator access to Reset Database button be <em>password protected</em> so that arbitrary users cannot reset the database.  (You may wish to look at another YR Media tutorial titled "My To Do List" to learn how to add password protection to your user interface.)</li>
+			<li>Create an interface in the password protected administrator section so that the admin can write a poll question to be broadcast to all users of the app taking the poll via the <span class="icon" alt="clouddb"></span>CloudDB.  This will allow the admin to generate and broadcast poll questions as needed instead of being limited to a single hard-coded poll question.</li>
+			<li>Create a version where there are multiple choices to select from, for example A, B, C, D and thus more bar graphs to display.  This version may be even more useful in a classroom setting for a teacher than the simple Yes/No version.</li>
+			<li>Make a version of the project where the bar graphs are vertical rather than horizontal.</li>
+			<li>Your own innovative ideas here.</li>
+
+
+          </ul>
+        
+		    </div>
+			
+	
+
+
+        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
+      </div>-->
+	
+    </div>	
+
+  <h3>Share Your App</h3>
+  <div class="setup" id="share_app"></div>
+
+ <!-- <h3>Published Apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>-->
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
+</div>
+
+
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+<!--Revise these
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>-->
+
+</div>
+
+
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
