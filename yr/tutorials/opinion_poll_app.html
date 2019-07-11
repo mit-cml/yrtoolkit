@@ -127,7 +127,7 @@
         <p>The following block allows you to retrieve a value stored in <span class="icon" alt="clouddb"></span>CloudDB using its tag.  If there is no such tag, you can choose to return some other value like the empty string or the empty list.  </p>
           <img class="enlargeImage" src="../images/opinion_poll_app/callCloudDB1GetValue.png" alt="some_text">
 
-          <p>Note that the unlike the "get" call made to <span class="icon" alt="tinyDB"></span>TinyDB, which returns a value (almost) instantaneously, the "get" call to <span class="icon" alt="clouddb"></span>CloudDB is a request made to the database and does <em>not</em> return a value instantaneously.  When the database finally retrieves the desired value stored under the given tag, it triggers a GotValue event which needs to be handled with the following event handler.</p>
+          <p>Note that the unlike the "get" call made to <span class="icon" alt="tinyDB"></span>TinyDB, which returns a value (almost) instantaneously, the "get" call to <span class="icon" alt="clouddb"></span>CloudDB is a request made to the database and does <em>not</em> return a value instantaneously.  When the database finally retrieves the desired value stored under the given tag, it triggers a GotValue event.</p>
           <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue.png" alt="some_text">
 
           <p>One of the most important blocks in the <span class="icon" alt="clouddb"></span>CloudDB drawer is the following block.  When data is changed in the Cloud database, <span class="icon" alt="clouddb"></span>CloudDB informs <strong><em>all</em></strong> the users of the app of this change so that changes can be made on local devices as needed.</p>
@@ -473,7 +473,7 @@
             <li>make sure that the graphs correctly display the relative percentages of the Yes and No votes cast;</li>
             <li>make sure that an admin can correctly reset the database and this change promptly leads to a reset in the user interface.</li>
           </ul>
-          When you are done testing your app, remember that you will need to revisit the codes for <strong>YesButton</strong> and <strong>NoButton</strong> and disable the buttons as shown after a vote is cast.  This will ensure that each user of your app can only cast a single vote in the opinion poll.  When you make the change, be sure to test your app again using multiple devices.
+          When you are done testing your app, remember that you will need to revisit the code blocks for <strong>YesButton</strong> and <strong>NoButton</strong> and disable the buttons as shown after a vote is cast.  This will ensure that each user of your app can only cast a single vote in the opinion poll.  When you make the change, be sure to test your app again using multiple devices.
           <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
 		</p>
       </div>
