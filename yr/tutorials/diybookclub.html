@@ -165,9 +165,26 @@
       </div>
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  On the other hand<span class="icon" alt="clouddb"></span>CloudDB allows multiple users to store, access and modify data in the Cloud.</p>
-        <p>Here is what the blocks in the <span class="icon" alt="clouddb"></span>CloudDB  drawer look like.</p>
-        <img class="enlargeImage" src="../images/diybookclub/cloudDBblocksdrawer.png" alt="some_text">
+        <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  On the other hand <span class="icon" alt="clouddb"></span>CloudDB allows multiple users to store, access and modify data in the Cloud.</p>
+        <p>Here are some of the blocks in the <span class="icon" alt="clouddb"></span>CloudDB  drawer.</p>
+
+        <p>The following block allows you to store a value in <span class="icon" alt="clouddb"></span>CloudDB using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="clouddb"></span>CloudDB will be available to the user each time the app is run until the value is erased.</p>
+        <img class="enlargeImage" src="../images/diybookclub/callCloudDB1StoreValue.png" alt="some_text">
+
+        <p>The following block is similar to the block above; however, this block allows you to add a value at the end of a list stored in <span class="icon" alt="clouddb"></span>CloudDB under a unique tag.</p>
+        <img class="enlargeImage" src="../images/diybookclub/callCloudDB1AppendValueToList.png" alt="some_text">
+        <p>The following block allows you to retrieve a value stored in <span class="icon" alt="clouddb"></span>CloudDB using its tag.  If there is no such tag, you can choose to return some other value like the empty string or the empty list.  </p>
+          <img class="enlargeImage" src="../images/diybookclub/callCloudDB1GetValue.png" alt="some_text">
+
+          <p>Note that the unlike the "get" call made to <span class="icon" alt="tinyDB"></span>TinyDB, which returns a value (almost) instantaneously, the "get" call to <span class="icon" alt="clouddb"></span>CloudDB is a request made to the database and does <em>not</em> return a value instantaneously.  When the database finally retrieves the desired value stored under the given tag, it triggers a GotValue event.</p>
+          <img class="enlargeImage" src="../images/diybookclub/whenCloudDB1GotValue.png" alt="some_text">
+
+          <p>One of the most important blocks in the <span class="icon" alt="clouddb"></span>CloudDB drawer is the following block.  When data is changed in the Cloud database, <span class="icon" alt="clouddb"></span>CloudDB informs <strong><em>all</em></strong> the users of the app of this change so that changes can be made on local devices as needed.</p>
+          <img class="enlargeImage" src="../images/diybookclub/whenCloudDB1DataChanged.png" alt="some_text">
+
+          <p>The following block allows you to erase a tag and its current value.</p>
+          <img class="enlargeImage" src="../images/diybookclub/callCloudDB1ClearTag.png" alt="some_text">
+
       </div> 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
