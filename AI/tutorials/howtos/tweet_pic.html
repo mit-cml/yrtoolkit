@@ -1,0 +1,84 @@
+<div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+   <h4>1. Add a Button</h4>
+    <p>In Designer, go to User Interface and add a <span class='icon' alt='button'></span> Button to your Viewer. Change the text of the button in the Properties panel if you want.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addButton.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>2. Add a Sharing component</h4>
+    <p>Click Social and add <span class='icon' alt='sharing'></span> Sharing component to your Viewer.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/addTwitter.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>3. Create a new app</h4>
+    <p>Follow <a href="http://twitter.com/oauth_clients/new"  target="_blank">this link</a> in order to set up your Consumer Key and Consumer Secret. Start by clicking on Create New App.</p>
+    <!-- I dont know where this went -->
+    <img class="enlargeImage" src="../images/snap_remix/howto/createApp.png" alt="some_text"> 
+    </div>
+    <div class="tutorialContentPage">
+    <h4>4. Fill out the form</h4>
+    <p>Fill in the form to create your app.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitCreate.gif" alt="some_text">
+    <!-- Redo these with gifs if possible -->
+    </div>
+    <div class="tutorialContentPage">
+    <h4>5. Click on Keys and Access Tokens</h4>
+    <p>When your application has been created, click on the Keys and Access Tokens tab.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>6. Copy the Key and Secret codes</h4>
+    <p>Copy the Consumer Key and the Consumer Secret.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitterTokens2.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>7. Enter the codes into the Properties</h4>
+    <p>Back in Designer, click on <span class='icon' alt='twitter'></span> Twitter1 and in Properties, add your created Consumer Key and Consumer Secret to the corresponding boxes.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitProperties.png" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>8. Add <span class="control">when Button1.Click</span></h4>
+    <p>Click Blocks.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/clickBlocks.png" alt="some_text">
+    <p>Click on <span class='icon' alt='button'></span> Button1 and drag out <span class="control">when Button1.Click</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/butClick.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>9. Add <span class="procedures">call Twitter1.Authorize</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 and connect the <span class="procedures">call Twitter1.Authorize</span> block.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitAuth.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>10. Add <span class="control">when Twitter1.IsAuthorized</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 again and drag out <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/whenAuth.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>11. Add <span class="procedures">call Twitter1.TweetWithImage</span></h4>
+    <p>Click on <span class='icon' alt='twitter'></span> Twitter1 again and connect <span class="procedures">call Twitter1.TweetWithImage</span> to <span class="control">when Twitter1.IsAuthorized</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/callTwitImg.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>12. Add <span class="text">" "</span></h4>
+     <p>Click on <span class='icon' alt='text'></span> Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>13. Add <span class="procedures">call Canvas1.SaveAs</span></h4>
+    <p>Click <span class='icon' alt='canvas'></span> Canvas1 and connect <span class="procedures">call Canvas1.SaveAs</span> to the "ImagePath" socket of <span class="procedures">call Twitter1.TweetWithImage</span>.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitSaveAs.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>14. Add <span class="text">" "</span></h4>
+    <p>Click on <span class='icon' alt='text'></span> Text and grab a <span class="text">" "</span> and connect it to the "status" socket of  <span class="procedures">call Twitter1.TweetWithImage</span>. Change your text to "Look at my picture!" or anything else you'd like.</p>
+    <img class="enlargeImage" src="../images/snap_remix/howto/twitPicText.gif" alt="some_text">
+    </div>
+    <div class="tutorialContentPage">
+    <h4>15. Test out your app!</h4>
+    <p>Once it works, you can tweet images and try out some of the functions available with the Twitter component!</p>
+    </div>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+      <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>

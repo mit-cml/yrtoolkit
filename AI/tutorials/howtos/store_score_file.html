@@ -1,0 +1,31 @@
+<div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+
+   <div class="tutorialContentPage">
+     <h4>Add a File Component</h4>
+     <p>From the Storage Palette in the Designer, drag in a <span class="icon" alt="file"></span>File component.</p>
+     <img class="enlargeImage" src="../images/howTos/fileComponent.png" alt="some_text">
+   </div> 
+
+   <div class="tutorialContentPage">
+     <h4>Append to File vs Save to File</h4>
+     <p>In the Blocks Editor, open the <span class="icon" alt="file"></span>File drawer. There are two similar blocks: <span class="procedures">File.AppendToFile</span> and <span class="procedures">File.SaveFile</span>.</p>
+     <p>Saving to a file means overwriting a file if it already exists with the new text.</p>
+     <p>Appending to a file means adding new text to the file if it already exists.
+     <img class="enlargeImage" src="../images/howTos/fileAppendSaveBlocks.png" alt="some_text">
+   </div> 
+
+   <div class="tutorialContentPage">
+     <h4>Appending Score to File</h4>
+     <p>Drag out the <span class="procedures">File.AppendToFile</span> block and two empty text blocks.</p>
+     <p>Fill in the <b>fileName</b> field with one of the empty text blocks, and enter <span class="text">scores.txt</span>. </p>
+     <p>Drag in a <span class="text">join</span> block from the <span class="icon" alt="text"></span>Text drawer, and snap it into the <b>text</b> field.</p>
+     <p>Fill the second empty text box with <span class="text">Score: </span>, and snap it into the <span class='text'>join</span> block.</p>
+     <p>Finally, snap in a <span class="variables">get global score</span> block.</p>
+     <img class="enlargeImage" src="../images/howTos/finalAppendBlock.png" alt="some_text">
+   </div> 
+
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+</div>
