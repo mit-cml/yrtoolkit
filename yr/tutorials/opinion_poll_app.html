@@ -127,7 +127,7 @@
         <p>The following block allows you to retrieve a value stored in <span class="icon" alt="clouddb"></span>CloudDB using its tag.  If there is no such tag, you can choose to return some other value like the empty string or the empty list.  </p>
           <img class="enlargeImage" src="../images/opinion_poll_app/callCloudDB1GetValue.png" alt="some_text">
 
-          <p>Note that the unlike the "get" call made to <span class="icon" alt="tinyDB"></span>TinyDB, which returns a value (almost) instantaneously, the "get" call to <span class="icon" alt="clouddb"></span>CloudDB is a request made to the database and does <em>not</em> return a value instantaneously.  When the database finally retrieves the desired value stored under the given tag, it triggers a GotValue event.</p>
+          <p>Note that unlike the "get" call made to <span class="icon" alt="tinyDB"></span>TinyDB, which returns a value (almost) instantaneously, the "get" call to <span class="icon" alt="clouddb"></span>CloudDB is a request made to the database and does <em>not</em> return a value instantaneously.  When the database finally retrieves the desired value stored under the given tag, it triggers a GotValue event.</p>
           <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue.png" alt="some_text">
 
           <p>One of the most important blocks in the <span class="icon" alt="clouddb"></span>CloudDB drawer is the following block.  When data is changed in the Cloud database, <span class="icon" alt="clouddb"></span>CloudDB informs <strong><em>all</em></strong> the users of the app of this change so that changes can be made on local devices as needed.</p>
@@ -139,7 +139,7 @@
       </div> 
       <div class="tutorialContentPage">
         <h3>Introduction to CloudDB</h3>
-        <p>For this project you will be using the <span class="icon" alt="clouddb"></span>CloudDB component of App Inventor as a database to collect and store the votes cast in the cloud.  You will create two tags in the <span class="icon" alt="clouddb"></span>CloudDB, "YesVotes" and "NoVotes", and under each tag you will store a list of "Yes" and "No" votes cast by the polling app users.  The length of each list at any moment will give you the total count of Yes and No votes cast up until that time.  Below you can see a depiction of the <span class="icon" alt="clouddb"></span>CloudDB at an instant in the voting and the corresponding UI at that moment.</p>
+        <p>You will use the <span class="icon" alt="clouddb"></span>CloudDB as a database to collect and store the votes cast in the cloud.  You will create two tags in the <span class="icon" alt="clouddb"></span>CloudDB, "YesVotes" and "NoVotes", and under each tag you will store a list of "Yes" and "No" votes cast by the polling app users.  The length of each list at any moment will give you the total count of Yes and No votes cast up until that time.  Below you can see a depiction of the <span class="icon" alt="clouddb"></span>CloudDB at an instant in the voting and the corresponding UI at that moment.</p>
         <img class="enlargeImage" src="../images/opinion_poll_app/instantinCloudDB.png" alt="some_text">
 
       </div>
@@ -198,6 +198,13 @@
           </div>
       </div>
 
+      <div class="tutorialContentPage">
+        <h3>Collapsing Code Blocks</h3>
+        <p>In this project you will do quite a bit of coding and you may benefit from "collapsing" long blocks of code in order to have more work space and to better organize your code, as shown below.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/collapseCode1.png" alt="some_text">
+        <img class="enlargeImage" src="../images/opinion_poll_app/collapseCode2.png" alt="some_text">
+      </div>
+
        <div class="tutorialContentPage">
         <h3>Screen1 Initialization</h3>
         <p>When Screen1 initializes:
@@ -241,7 +248,12 @@
               
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue1.png" alt="some_text"><br />
-              
+              <p>You can create the "if-then-else-if-then" block via:</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/ifelseif.png" alt="some_text"><br />
+              <p>You can access "get value" and "get tag" blocks by having the mouse hover over <em>value</em> and <em>tag</em> parameters respectively:</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/getvalue.png" alt="some_text">
+              <img class="enlargeImage" src="../images/opinion_poll_app/gettag.png" alt="some_text"><br />
+
               <div class="hintContainer">
                 <button>Check your solution</button>
                 <div class="hint hideHint">
@@ -269,6 +281,7 @@
 		</ul>
         </p>  
 
+
         <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
         <div class="hintContainer">
             <button>Give me a hint</button>
@@ -286,6 +299,8 @@
 
             </div>
           </div>
+
+          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
 
       </div>
 
@@ -318,6 +333,8 @@
             </div>
           </div>
 
+          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
+
       </div>
 
       <div class="tutorialContentPage">
@@ -349,6 +366,9 @@
 		</p>
 		
           <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+
+          
+
           <div class="hintContainer">
             <button>Give me a hint</button>
             <div class="hint hideHint">
@@ -364,7 +384,7 @@
             </div>
           </div>
 
-      
+      <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
         
       </div>
 
@@ -387,8 +407,8 @@
 				<li>If the value returned by <span class="icon" alt="clouddb"></span>CloudDB is an empty list (which means that the <span class="icon" alt="clouddb"></span>CloudDB is responding to a database reset initiated by the poll administrator) then call <strong>initialize</strong> procedure to reset everything.</li>
 				<li>otherwise, 
 					<ul style="padding-left: 1.2em;">
-						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" contains is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
-						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember the list under the tag "NoVotes" contains is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
+						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
+						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "NoVotes" is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
 						<li>calculate the values you need to set the <var>yesPercentage</var> and <var>noPercentage</var> variables.  
               <div class="hintContainer">
                 <button>Check your solution</button>
@@ -400,7 +420,7 @@
 						</li>
 						<li>set <strong>YesLabel</strong> and <strong>NoLabel</strong> to the <var>yesCount</var> and <var>noCount</var> respectively.  These labels will report the exact number of Yes and No votes cast.</li>
 
-						<li>set the <em>WidthPercentage</em> parameter for the <strong>YesBar</strong> and <strong>NoBar</strong> components to the <var>yesPercentage</var> and <var>noPercentage</var> variables which you calculated above.  This will ensure that the bar graphs will have correct width sizes.</li>
+						<li>set the <em>WidthPercent</em> parameter for the <strong>YesBar</strong> and <strong>NoBar</strong> components to the <var>yesPercentage</var> and <var>noPercentage</var> variables which you calculated above.  This will ensure that the bar graphs will have correct width sizes.</li>
 						<li>set the text of <strong>YesBar</strong> and <strong>NoBar</strong> components to display the proper percentages calculated above followed with the "%" symbol to indicate that these values are percentages.</li>
 
 					</ul>
@@ -426,6 +446,7 @@
             </div>
           </div>
 
+          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
 
        </div>
 
