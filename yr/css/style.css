@@ -121,12 +121,6 @@ a.ui-button:active,
   opacity: 0.75; 
 }
 
-.enlargeImage {
-  max-width: 250px;
-  max-height: 400px;
-  width: auto !important;
-}
-
 .left {
 	float: left;
 	max-width: 30%;
@@ -148,7 +142,8 @@ a.ui-button:active,
   display: block;
   transition: .5s ease;
   backface-visibility: hidden;
-  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
 }
 
 .zoom {
@@ -177,6 +172,23 @@ a.ui-button:active,
 	width: 100%;
 	text-align: center;
 }
+
+.hint {
+	background-color: #eef2e0;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.hint .hint {
+	padding: 10px 0;
+}
+
+.hideHint {
+	display: none;
+}
+
 .btn-success {
 	background-color: #8fc202;
 	font-size: 24px;

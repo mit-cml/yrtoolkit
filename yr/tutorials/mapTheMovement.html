@@ -49,18 +49,21 @@
   </div>
 
   <div id="youthRadioAccordion" class="accordion">
+
+
+
     <h3>The Challenge</h3>
     <div>
       <p>On the street, at government offices, and via social media: young people are grappling with school shootings and gun violence on a national scale. They're sparking new conversations and organizing for change.</p>
-      <p>Youth Radio has created an <a href="https://yri.youthradio.org/neveragain/" target="blank">interactive</a> tracker of student-led action, starting with the tragic shooting at Marjory Stoneman Douglas High School in Parkland, Florida in February 2018. </p>
-      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map. Tapping on the map will show any #NeverAgain tweets from that location (i.e.  for example tweets that have both #NeverAgain and #Boston).</p>
+      <p>YR  Media has created an <a href="https://yri.youthradio.org/neveragain/" target="blank">interactive</a> tracker of student-led action, starting with the tragic shooting at Marjory Stoneman Douglas High School in Parkland, Florida in February 2018. </p>
+      <p>You're challenged with creating an app that shows what's happening on Twitter in any given location on a map. Tapping on the map will show any #NeverAgain tweets from that location (i.e.  for example tweets that have both #NeverAgain and #Boston).  From there, you can extend the app by picking a hashtag of your choice to plot on a map.</p>
       <p>Click "Connect your App" below to start building your app!</p>
     </div>
 
     <h3>Connect your App</h3>
     <div class="setup" id="connect_app"></div>
 
-    <h3>Map the Movement</h3>
+    <h3>Map the Movement (Level: Advanced)</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
 
@@ -69,7 +72,7 @@
         <p>We've started with a blank app, and need to add components.</p>
         <p>From the User Interface palette, drag in two <span class="icon" alt="label"></span>Labels, a <span class="icon" alt="notifier"></span>Notifier, and a <span class="icon" alt="webviewer"></span>WebViewer.</p>
         <p>Rename the labels to <b>InstructionLabel</b> and <b>LocationLabel</b>. </p>
-        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component. Make sure the WebViewer component is at the bottom of the app.</p>
+        <p>From the Maps palette, drag in a <span class="icon" alt="map"></span>Map component, and a <span class="icon" alt="marker"></span>Marker component. Make sure the <span class="icon" alt="webviewer"></span>WebViewer component is at the bottom of the app.</p>
         <p>Finally, from the Connectivity palette, drag in a <span class="icon" alt="web"></span>Web component.</p>
         <img class="enlargeImage" src="../images/map_the_movement/componentslist.png" alt="some_text">
       </div>
@@ -114,8 +117,9 @@
         <h3>Set Marker</h3>
         <p>From the <span class="icon" alt="marker"></span>Marker1 drawer, drag in a <span class="procedures">call Marker1.SetLocation</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/setlocation.png" alt="some_text">
-        <p>Fill in the <b>latitude</b> and <b>longitude</b> of the new block with the <span class="variables">latitude</span> and <span class="variables">longitude</span> from the Tap block.</p>
+        <p>Fill in the <b>latitude</b> and <b>longitude</b> of the new block with the <span class="variables">latitude</span> and <span class="variables">longitude</span> from the Tap block and snap the <span class="procedures">call Marker1.SetLocation</span> block into the <span class="control">when Map1.TapAtPoint</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/filllatlong.png" alt="some_text">
+        <p><span class="procedures">SetLocation</span> block will move the <span class="icon" alt="marker"></span>Marker1 to the <span class="variables">latitude</span> and <span class="variables">longitude</span> where the user tapped on the map.</p>
       </div>
 
       <div class="tutorialContentPage">
@@ -216,29 +220,40 @@
       <div class="tutorialContentPage">
         <h3>Display Tweets!</h3>
         <p>If there's no error, then we can show tweets from the location that we parsed.</p>
+        
+        <p>Now you will be doing a slightly different kind of API call with the WebViewer component, where you will construct a query to Twitter that will display the results directly in the app.</p>
         <p>Drag out a <span class="procedures">call WebViewer1.GoToUrl</span> block, and snap it into the <span class="control">else</span> part of the <span class="control">if-then-else</span> block.</p>
         <img class="enlargeImage" src="../images/map_the_movement/gotourl1.png" alt="some_text">
         <p>Drag out a <span class="text">join</span> block, and mutate it to have three sockets. Snap it into the <span class="procedures">GoToUrl</span> block.</p>
-        <p>In the first socket, enter: <span class="text">https://m.twitter.com/search?q=%23NeverAgain%20%23</span>.</p>
-        <p>In the third socket, enter: <span class="text">&src=typd</span>.</p>
+        <p>In the first socket, enter: <br /><span class="text">https://m.twitter.com/search?q=</span>.</p>
+        <p>Special characters like # & % might conflict with the URL request and need to be <em>encoded</em> to avoid conflicts. Because we are searching for hashtags like #NeverAgain #Boston, we need to encode that part of the search string.</p>
+        <p>For  the second  socket: go to the <span class="icon" alt="web"></span>Web drawer  and drag  a <span class="procedures">UriEncode</span>  block.</p> 
+        <img class="enlargeImage" src="../images/map_the_movement/webUriEncode.png" alt="some_text">
+        <p>and snap to its socket the text  "#NeverAgain #" as shown.  This will go into the second socket of the <span class="text">join</span> block. </p>
 		    <img class="enlargeImage" src="../images/map_the_movement/elsecallWebViewer.png" alt="some_text">
-        <p>For the second socket, we need to make sure that the location name doesn't have any spaces in it. We will do this in the next step.</p>
+        
+
+        <p>For the third socket, we need to make sure that the location name doesn't have any spaces in it. We will do this in the next step.</p>
         
       </div>
 
       <div class="tutorialContentPage">
         <h3>Remove Spaces from Location Name</h3>
-        <p>Drag out a <span class="text">replace all text</span> block and snap it into the second socket of the <span class="text">join</span> block of the previous step.</p>
+        <p>Drag out a <span class="text">replace all text</span> block and snap it into the third socket of the <span class="text">join</span> block of the previous step.</p>
 		    <p>From the <span class="icon" alt="label"></span>LocationLabel drawer, drag out a <span class="getters">LocationLabel.Text</span> block and snap it into the first  socket of the <span class="text">replace all text</span> block.</p>
         <p>In a new empty text block, enter a space character. This goes into the <b>segment</b> socket.</p>
         <p>In a new empty text block, make sure it is completely empty--no spaces. This goes into the <b>replacement</b> socket.</p>
         <img class="enlargeImage" src="../images/map_the_movement/replacealltext.png" alt="some_text">
+        <p>Here is what the entire code block should look like:</p>
+        <img class="enlargeImage" src="../images/map_the_movement/gotourlfinal.png" alt="some_text">
       </div>
 
       <div class="tutorialContentPage">
         <h3>Test!</h3>
-        <p>When you tap on the map, it should navigate to a list of #NeverAgain tweets from that location. Does your app work?</p>
+        <p>When you tap on the map, <span class="icon" alt="webviewer"></span>WebViewer component should navigate to Twitter and display a list of #NeverAgain tweets from that location. Does your app work?</p>
         <img class="enlargeImage" src="../images/map_the_movement/finishedscreenshots.png" alt="some_text">
+        <br/>
+        <p>If you would like to learn more about API's you can check out the chapter titled <a href="http://www.appinventor.org/bookChapters/chapter24.pdf" target="_blank">Communicating with the  Web</a> from USF Professor David Wolber's book <em>App Inventor 2: Create your own Android Apps</em>.</p>
 	   </div>
 
       <br/>
@@ -251,63 +266,46 @@
     <div class="tutorialContainer">
     <div class="tutorialNavigationHeader"></div>
 
-      	<div class="tutorialContentPage">
-			   <strong>Change the Twitter search manually in your code.</strong>
-			   <p>Remember where we put in "#NeverAgain" as a search term  in your code? Can you figure out how to alter  your code to search for a different hashtag?</p>
+        <div class="tutorialContentPage">
+          <strong>Change the Twitter search manually in your code.</strong>
+          <p>Remember where we put in "#NeverAgain" as a search term  in your code? Can you figure out how to alter  your code to search for a different hashtag?</p>
 
-			   <b>Use a TextBox to change the search terms.</b>
-			   <p>Now, rather than manually changing the code each time, what if you changed the hashtag to whatever is in a <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">TextBox</a>?</p>
-				 
+          <b>Use a TextBox to change the search terms.</b>
+          <p>Now, rather than manually changing the code each time, what if you changed the hashtag to whatever is in a <a href="#" onclick="return goToHowToTutorial(0)" title="Use a TextBox">TextBox</a>?</p>
          
-
-            <p>Need a hint?  Click here <button onclick="myFunction()">Hint</button> to see some hints on how you may go about this extension acitivity.  </p>
-
-
-
-            <div id="hint" style="display:none;">
-              <p>Here are some hints on how you may be able change your code to accommodate a generic hashtag input.</p>
-                      <ul>
-                        <li>Create a <span class="icon" alt="textbox"></span>TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the <span class="icon" alt="textbox"></span> TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
-                        </li>
-                        <li>Create a <span class="icon" alt="button"></span>Button and add a <span class="control">Button.Click</span> event that stores the <span class="icon" alt="textbox"></span>TextBox contents in a variable.<br/>
-                        <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
-                        </li>
-                        <li>Join the value stored in this variable as part of the twitter search string.<br/>
-                          <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
-                        </li>
-                      </ul>
+          <div class="hintContainer">
+            <button>Need a hint?</button>
+            <div class="hint hideHint">
+              Here are some hints on how you may be able change your code to accommodate a generic hashtag input.
+                <ul>
+                  <li>Create a <span class="icon" alt="textbox"></span>TextBox where the user can enter a <em>generic</em> hashtag of their choice. In the <span class="icon" alt="textbox"></span> TextBox hint inform the user not to use the # symbol and not to  leave spaces between the words making up the hashtag.<br/>
+                  <img class="enlargeImage" src="../images/map_the_movement/generichashtagversion.png" alt="some_text">
+                  </li>
+                  <li>Create a <span class="icon" alt="button"></span>Button and add a <span class="control">Button.Click</span> event that stores the <span class="icon" alt="textbox"></span>TextBox contents in a variable.<br/>
+                  <img class="enlargeImage" src="../images/map_the_movement/generichashtagsetup.png" alt="some_text">
+                  </li>
+                  <li>Join the value stored in this variable as part of the twitter search string.<br/>
+                    <img class="enlargeImage" src="../images/map_the_movement/concatenategenerichashtag.png" alt="some_text">
+                  </li>
+                </ul>
             </div>
-
-            <script>
-            function myFunction() {
-                var x = document.getElementById("hint");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-            </script>
-
+          </div>
+        </div>
+  
+        <div class="tutorialContentPage">
+          <b>Create a Button to switch to a random location.</b>
+          <p>You know how to use a <span class="icon" alt="button"></span>Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
         
-		    </div>
-			
-	
-    		<div class="tutorialContentPage">
-    		  <b>Create a Button to switch to a random location.</b>
-    		  <p>You know how to use a <span class="icon" alt="button"></span>Button. You know Latitude and Longitude. Can you figure out how to make a button that jumps to a random location?</p>
-    		
-    		  <b>Create Buttons to Zoom In or Zoom Out.</b>
-    		  <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
-    		  <b>Create Different Search Options.</b>
-    		  <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
-		    </div>
+          <b>Create Buttons to Zoom In or Zoom Out.</b>
+          <p>Play with the <a href="#" onclick="return goToHowToTutorial(1)" title="Map Properties">Map Properties</a> to figure out how to zoom in and out of the map. Can you make corresponding buttons?</p>
+          <b>Create Different Search Options.</b>
+          <p>Now that you know how to do a Twitter search, what other ways can you expand on this? Do you have to search via hashtag? What other search options can you use?</p>
+        </div>
 
         <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
       </div>
-	
+
     </div>	
 
   <h3>Share your App</h3>
@@ -322,7 +320,21 @@
     </div>
   </div>
 </div>
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
 </div>
+
+</div>
+
+
 
 <div id="howToAccordion" class="accordion" style="display:none">
 

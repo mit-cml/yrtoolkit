@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 import base64
 if len(sys.argv) < 2:

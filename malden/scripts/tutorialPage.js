@@ -242,6 +242,10 @@ $(document).ready(function () {
             updateTutorialPage(tutorialIndex);
             return false;
         });
+        // Add show/hide hint functionality
+        $(".hintContainer>*:first-child").off("click").on("click", function(e) {
+            $(".hint", this.parentElement).toggleClass("hideHint");
+        });
     };
 
     // Add tutorial video pop-out

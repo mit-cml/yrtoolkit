@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+<script>
+      $( function() {
+          $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+                  sendAnalyticsEvent( {
+                      hitType: 'event',
+                      eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+                      eventAction: 'headerClick',
+                      eventLabel: ui.newHeader.text()
+                  });
+
+              }});
+
+          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+      } );
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31803258-2', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
+  </div>
+
+  <div id="maldenAccordion" class="accordion">
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Hello Hola Translator</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        <p>In the Designer, add a <span class="icon" alt="label"></span> Label, a <span class="icon" alt="textbox"></span> TextBox, another <span class="icon" alt="label"></span> Label, and a <span class="icon" alt="button"></span> Button.</p>
+        <img class="enlargeImage" src="../images/hello_hola/designer-components.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Rename Components</h3>
+        <p>Rename <span class="icon" alt="label"></span> Label1 to TitleLabel.</p>
+        <img class="enlargeImage" src="../images/hello_hola/rename-label.gif" alt="some_text">
+        <p>Rename the other components as shown below.
+          <img class="enlargeImage" src="../images/hello_hola/rename-components.png" alt="some_text">        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Change Text property for Components</h3>
+        <p>Change the Text property for <span class="icon" alt="label"></span> TitleLabel to "Enter text to translate below".</p>
+        <img class="enlargeImage" src="../images/hello_hola/change-text.gif" alt="some_text">
+        <p>Change the text properties for <span class="icon" alt="label"></span> TranslationLabel and <span class="icon" alt="button"></span> TranslateButton so your Designer view looks like the image below.
+          <img class="enlargeImage" src="../images/hello_hola/text-updates.png" alt="some_text">        
+      </div>
+      <div class="tutorialContentPage">
+        <h3>Add YandexTranslate Component</h3>
+        <p>From the Media drawer, drag out a <span class="icon" alt="yandex"></span> YandexTranslate component and drop it in the Viewer. Note this is a non-visible component, so it appears below the phone screen.</p>
+        <img class="enlargeImage" src="../images/hello_hola/add-translator.gif" alt="some_text">      
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Go to Blocks Editor</h3>
+        <p>Click on the Blocks button on the top right of the screen.</p>
+        <img class="enlargeImage" src="../images/hello_hola/clickBlocks.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage"> 
+        <h3>Add Button.Click event</h3>
+        <p>Click on <span class='icon' alt='button'></span> TranslateButton in the Blocks palette and drag out a <span class="control">when TranslateButton.Click</span>. event block</p>
+        <img class="enlargeImage" src="../images/hello_hola/clickButton.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Request translation</h3>
+        <p>Click on <span class='icon' alt='yandex'></span> YandexTranslate1 in the Blocks palette and drag out a <span class="procedures">call YandexTranslate1.RequestTranslation</span> block to add to your <span class="control">when TranslateButton.Click</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_hola/addRequestTranslation.gif" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Specify which languages to translate</h3>
+        <p>You are going to translate from English to Spanish, so you need to tell the Yandex Translator that information.</p>
+        <p>From the Text drawer, drag out a blank Text <span class="text">" "</span> block and snap to the "languageToTranslateTo" socket of your <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_hola/addEmptyString.gif" alt="some_text">
+  
+        <p>Click on the blank <span class="text">" "</span> text block and enter the text, "en-es".</p>
+        <img class="enlargeImage" src="../images/hello_hola/enterLanguageCodes.gif" alt="some_text">
+        <p>This is how the codes work.</p>
+        <img class="enlargeImage" src="../images/hello_hola/translationExplanation.png" alt="some_text">
+        <!--         <p>And <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">this</a> is the list of all supported language codes.</p> -->
+        <!-- Link to all language codes/how-to -->
+      </div>
+      
+      <div class="tutorialContentPage">  
+        <h3>Add text to be translated</h3>
+        <p>Click on <span class='icon' alt='textbox'></span> TextBox1 in the Blocks palette and drag out a <span class="getters">TextBox1.Text</span> block and snap to the "textToTranslate" socket of the <span class="procedures">call YandexTranslate1.RequestTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_hola/getText.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Get the translated text</h3>
+        <p>Once the Yandex Translator has translated the text, it triggers the GotTranslation event. Click on <span class='icon' alt='yandex'></span> YandexTranslate1 again and drag out the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+        <img class="enlargeImage" src="../images/hello_hola/addGetTranslation.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Display the translation</h3>
+        <p>Click on <span class='icon' alt='label'></span> TranslationLabel in the Blocks Palette and drag out the <span class="setters">set TranslationLabel.Text to</span>  block and snap it into the <span class="control">when YandexTranslate1.GotTranslation</span> block.</p>
+        <p>Hover over the orange translation button and grab the <span class="variables">get translation</span> block. Connect this block to <span class="setters">set TranslationLabel.Text to</span> block.
+        <img class="enlargeImage" src="../images/hello_hola/displayTranslation.gif"  alt="some_text"> 
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Test your app!</h3>
+        <p>Try out your app on your companion device! Type a sentence in the TextBox. When you press the "Translate" button, does the translated text appear?</p>
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Speak the translation!</h3>
+        <p>Add a <span class='icon' alt='textToSpeech'></span>TextToSpeech component, and have your app "speak" the translation. </p>
+        <p><strong>NOTE:</strong> Some devices may not be able to run the TextToSpeech component. Test your device before adding this component.</p>
+        <p>You should know how to add TextToSpeech from the <strong>Talk to Me</strong> app.</p>
+        <p>One thing you will need to do is to change the Language and Country for the <span class='icon' alt='textToSpeech'></span> TextToSpeech component before speaking the message.</p>
+        <img class="enlargeImage" src="../images/hello_hola/change-language.png"  alt="set the language and country for the TextToSpeech component"> 
+
+      </div>
+
+      <div class="tutorialContentPage">  
+        <h3>Extend your app</h3>
+        <p>Add another <span class='icon' alt='label'></span> Label below <span class='icon' alt='label'></span> TranslationLabel.</p>
+        <p>Add code blocks to do a second translation to a different language, and display that translation too. Here is a <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">link</a> to the language codes for the Yandex Translator.</p>
+        <p>You could also try from another language to English.</p>
+        <p>Another idea - add the <span class='icon' alt='speechRecognizer'></span> SpeechRecoginizer component to let the user speak the words they want translated.</p><p>It's up to you. Explore!</p>
+      </div>     
+    <br/>
+    <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="serverTutorialId" style="display:none;">2</div>
+<div id="hasAnalytics" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
