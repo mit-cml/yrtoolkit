@@ -68,7 +68,8 @@
     <h3>Connect Your App</h3>
     <div class="setup" id="connect_app"></div>
 
-    <h3>Opinion Poll App Tutorial (Level: Intermediate)</h3>
+    <h3>Opinion Poll App Tutorial<br>&nbsp&nbsp&nbsp&nbsp&nbsp(Level: Intermediate)</h3>
+
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
 
@@ -119,7 +120,7 @@
         <p>You may have previously used the <span class="icon" alt="tinyDB"></span>TinyDB component, which stores data locally on the user's mobile phone or tablet.  <span class="icon" alt="tinyDB"></span>TinyDB can only be accessed by one user on a single device.  On the other hand <span class="icon" alt="clouddb"></span>CloudDB allows multiple users to store, access and modify data in the Cloud.</p>
         <p>Here are some of the blocks in the <span class="icon" alt="clouddb"></span>CloudDB  drawer.</p>
 
-        <p>The following block allows you to store a value in <span class="icon" alt="clouddb"></span>CloudDB using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="clouddb"></span>CloudDB will be available to the user each time the app is run until the value is erased.</p>
+        <p>The following block allows you to store a value in <span class="icon" alt="clouddb"></span>CloudDB using a unique tag, very much like how you would assign a value to a uniquely named variable.  One important difference to note however is that while a variable can hold a value only until the app quits, a value stored in the <span class="icon" alt="clouddb"></span>CloudDB will be available to the user each time the app is run until the value is erased or changed.</p>
         <img class="enlargeImage" src="../images/opinion_poll_app/callCloudDB1StoreValue.png" alt="some_text">
 
         <p>The following block is similar to the block above; however, this block allows you to add a value at the end of a list stored in <span class="icon" alt="clouddb"></span>CloudDB under a unique tag.</p>
@@ -300,14 +301,14 @@
             </div>
           </div>
 
-          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
+          <p>Important: This is a good place to test your app's Yes Button before going any further.</p>
 
       </div>
 
 
       <div class="tutorialContentPage">
         <h3>Yes and No Buttons</h3>
-        <p>No button process is similar.  When the NoButton is clicked:
+        <p>The No button process is similar.  When the NoButton is clicked:
 			<ul>
             <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to leave the <em>Enabled</em> property of these buttons set to true so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
 			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
@@ -333,7 +334,7 @@
             </div>
           </div>
 
-          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
+          <p>Important: This is a good place to test your app's No Button before going any further.</p>
 
       </div>
 
@@ -384,7 +385,7 @@
             </div>
           </div>
 
-      <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
+      <p>Important: This is a good place to test your app's Show and Hide Graph Button before going any further.</p>
         
       </div>
 
@@ -398,22 +399,68 @@
       </div>
 
       <div class="tutorialContentPage">
-        <h3>Data Change in CloudDB</h3>
+        <h3>Data Changed in CloudDB</h3>
 
 
         <p>
-        	When the users of the polling app cast their votes, the information is sent to the <span class="icon" alt="clouddb"></span>CloudDB (see your code above when <strong>YesButton</strong>, <strong>NoButton</strong> are clicked).  As soon as the database has changed, the <span class="icon" alt="clouddb"></span>CloudDB will need to inform <strong><em>all</em></strong> users of the app to update the information on the local devices and update the graphs etc.  Here is a sequence of events which needs to happen when <span class="icon" alt="clouddb"></span>CloudDB data has changed:
+        	When the users of the polling app cast their votes, the information is sent to the <span class="icon" alt="clouddb"></span>CloudDB (see your code above when <strong>YesButton</strong>, <strong>NoButton</strong> are clicked).  As soon as the database has changed, the <span class="icon" alt="clouddb"></span>CloudDB will need to inform <strong><em>all</em></strong> users of the app to update the information on the local devices and update the graphs etc.  Here is a sequence of events which needs to happen when <span class="icon" alt="clouddb"></span>CloudDB data has changed:</p>
         		<ul style="padding-left: 1.2em;">
 				<li>If the value returned by <span class="icon" alt="clouddb"></span>CloudDB is an empty list (which means that the <span class="icon" alt="clouddb"></span>CloudDB is responding to a database reset initiated by the poll administrator) then call <strong>initialize</strong> procedure to reset everything.</li>
-				<li>otherwise, 
+				<li>otherwise, </li>
+        </ul>
+        <div class="hintContainer">
+                <button>Give me a hint</button>
+                  <div class="hint hideHint">  
+                    <p>Here are some of the blocks you will need to complete this functionality.</p>
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedA.png" alt="some_text">
+                </div>
+              </div>
+
+        <p>Continued on the next page.</p>
+      
+    
+  </div>
+
+  <div class="tutorialContentPage">
+        <h3>Data Changed in CloudDB (continued)</h3>
+
+        <p>Continued from the previous page</p>
+        <ul style="padding-left: 1.2em;">
+        <li>otherwise,
 					<ul style="padding-left: 1.2em;">
 						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
 						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "NoVotes" is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
-						<li>calculate the values you need to set the <var>yesPercentage</var> and <var>noPercentage</var> variables.  
-              <div class="hintContainer">
-                <button>Check your solution</button>
+						</ul>
+          </li>
+        </ul>
+      
+       <div class="hintContainer">
+                <button>Give me a hint</button>
                   <div class="hint hideHint">  
-    							<img class="enlargeImage" src="../images/opinion_poll_app/percentageCalculations.png" alt="some_text">
+                    <p>Here are some of the blocks you will need to complete this functionality.</p>
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedB.png" alt="some_text">
+                </div>
+              </div>
+
+
+      <p>Continued on the next page.</p>
+    </div>
+
+
+
+<div class="tutorialContentPage">
+        <h3>Data Changed in CloudDB (continued) </h3>
+
+          <p>Continued from the previous page</p>
+
+            <ul style="padding-left: 1.2em;">
+            <ul style="padding-left: 1.2em;">
+            <li>set the <var>yesPercentage</var> and <var>noPercentage</var> variables to the proper calculations.  
+              <div class="hintContainer">
+                <button>Give me a hint</button>
+                  <div class="hint hideHint">  
+                    
+    							<img class="enlargeImage" src="../images/opinion_poll_app/setyesnoPercentages.png" alt="some_text">
     							Note that  the sum: <br /><var>yesCount</var> + <var>noCount</var> <br />gives the total number of votes cast and the ratio: <br /><var>yesCount</var> / (<var>yesCount</var> + <var>noCount</var>) <br />gives the ratio of the Yes votes to the total number of votes.  Multiplication with 100 turns this ratio into a percentage and the round operator rounds the result to the nearest whole number for simplicity. The calculation is similar for No votes.
     							</div>
             </div>
@@ -425,17 +472,15 @@
 
 					</ul>
 
+
 			</ul>
 
-        </p>
-
-
-        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+    
           <div class="hintContainer">
             <button>Give me a hint</button>
             <div class="hint hideHint">
               <p>Here are some of the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDBDataChanged1.png" alt="some_text"><br />
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedC.png" alt="some_text"><br />
               <div class="hintContainer">
                 <button>Check your solution</button>
                   <div class="hint hideHint">
@@ -446,7 +491,7 @@
             </div>
           </div>
 
-          <p>Important: This may be a good place to test your app using the AI Companion via the Connect menu, before going any further.</p>
+          <p>Important: This is a good place to test your app before going any further.</p>
 
        </div>
 
@@ -481,7 +526,16 @@
          
       </div>
 
-
+      <div class="tutorialContentPage">
+        <h3>Build Your App</h3>
+        <p>Because this app sends information to the cloud to be shared by multiple users, it is helpful to test it using at least two devices so you can check that each user is properly accessing the cloud and getting the data updates.</p>
+        <p>Go to the "Build" menu at the  top of the screen and click on "App (provide QR code for .apk)".  This will start the process of building the app so it can be installed on any tablet.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/apkBuild.png" alt="some_text">
+        <p>A QR code will appear in a pop-up window once the app is built.  This may take a few minutes.  When it appears, both you and your partner should scan it using your devices.  Follow the prompts to download and install the .apk on your tablets.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/apkBarcode.png" alt="some_text">
+        
+        <p>After testing, if you need to make adjustments to your code, you will need to uninstall the old .apk file from each tablet and do a new build, repeating the above procedure.</p>
+      </div>
 
 
       <div class="tutorialContentPage">
