@@ -1,0 +1,50 @@
+<div class="tutorialContainer">
+ <div class="tutorialNavigationHeader"></div>
+ <div class="tutorialContentPage">
+   <h4>1. Add a TextBox and a Button</h4>
+   <p>In User Interface, click and drag a <span class='icon' alt='textbox'></span> TextBox and a <span class='icon' alt='button'></span> Button into the Viewer.</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/addFileComps.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>2. Add a File Component</h4>
+   <p>Click Storage, click and drag a <span class='icon' alt='file'></span> File component into the Viewer.</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/addFileComp.gif" alt="some_text">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>3. Add <span class="control">when Button1.Click</span></h4>
+   <p>First, when the button is clicked, the text from the TextBox is added to the file. The contents of the file are then read from the file. Start by clicking Blocks.</p>
+   <img class="enlargeImage" src="../images/mood_counter/blocksBtn.png" alt="magic eight ball">
+   <p>In Blocks, click on <span class='icon' alt='button'></span> Button1 and drag out the <span class="control">when Button1.Click</span> block.</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/btnClickFile.gif" alt="magic eight ball">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>4. Add <span class="procedures">call File1.AppendToFile</span> and fill sockets</h4>
+   <p>Click <span class='icon' alt='file'></span> File1 and add <span class="control">call File1.AppendToFile</span>. Add <span class="getters">TextBox1.Text</span> to the "text" socket and add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/appendFile.gif" alt="magic eight ball">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>5. Add <span class="procedures">call File1.ReadFrom</span> and fill socket</h4>
+   <p>Click <span class='icon' alt='file'></span> File1 and add <span class="control">call File1.ReadFrom</span>. Add <span class="text">" "</span> to the fileName socket and change the text to "myFile".</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/readFile.gif" alt="magic eight ball">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>6. Add <span class="control">when File1.GotText</span></h4>
+   <p>Click <span class='icon' alt='file'></span> File1 and add <span class="control">when File1.GotText</span>.</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/gotText.gif" alt="magic eight ball">
+ </div>
+
+ <div class="tutorialContentPage">
+   <h4>7. Add <span class="setters">set Button1.Text to</span> and <span class="variables">get text</span></h4>
+   <p>Click <span class='icon' alt='button'></span> Button1 and add <span class="setters">set Button1.Text to</span>. Next, hover over "text" and click on <span class="variables">get text</span> and add it to <span class="setters">set Button1.Text to</span>.</p>
+   <img class="enlargeImage" src="../images/mood_counter/howto/setButtonText.gif" alt="magic eight ball">
+   <p>Try out your app! This should read and write files on your device. Next, using Labels and TextBoxes to write to different files, or save text that the user has entered (such as a journal entry).</p>
+ </div>
+ <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+  <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+</div>
+</div>

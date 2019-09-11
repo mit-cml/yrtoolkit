@@ -1,18 +1,31 @@
 <div class="tutorialContainer">
    <div class="tutorialNavigationHeader"></div>
    <div class="tutorialContentPage">
-     <h4>1. Change language to Italian</h4>
-     <p>Click on Blocks (if you're not already there)</p>
-     <img class="enlargeImage" src="../images/hello_bonjour/clickBlocks.png" alt="magic eight ball">
-     <p>Click in the text box and change the second language code to "it" for Italian.</p>  
-     <img class="enlargeImage" src="../images/hello_bonjour/howto/toItalian.gif" alt="magic eight ball">
+     <h4>1. Add additional components</h4>
+     <p>Switch to the Designer.</p>
+          <img class="enlargeImage" src="../images/hello_bonjour/clickDesigner.png" alt="switch to designer">
+     <p>Add another <span class="icon" alt="yandex"></span> YandexTranslator component, and another <span class="icon" alt="label"></span> Label for the second translation.</p>
+     <p>Rename the <span class="icon" alt="label"></span> Label to <strong>TranslationLabel2</strong>, and change the Text property to "translated text".</p>
+     <img class="enlargeImage" src="../images/hello_bonjour/howto/translate-extension.gif" alt="drag out new components">
+
    </div>
    <div class="tutorialContentPage">
-    <h4>2. Try out other language codes</h4>
-    <p>Try it our on your app! You should see Russian translated to Italian now!</p>
-    <p>Here are some more languages to try. Click <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">here</a> to see all the language codes.</p>  
+    <h4>2. Code translation to a different language</h4>
+     <p>Click on Blocks to switch to the Blocks Editor.</p>
+     <img class="enlargeImage" src="../images/hello_bonjour/smallClickBlocks.png" alt="switch to blocks editor">
+     <p>Duplicate the <span class="procedures">YandexTranslate1.RequestTranslation</span> block, then change YandexTranslate1 to YandexTranslate2 so the translator gets called twice.</p>  
+     <p>Then, change the <span class="text">Text</span> block for languageToTranslateTo to "en-it" so it translates to Italian. Or look at the <a href="https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/" target="_blank">available language codes</a> and try a different one.</p>
+     <img class="enlargeImage" src="../images/hello_bonjour/howto/translate-italian.gif" alt="add code blocks to translate english to italian">
+     <p>Now Duplicate the <span class="control">YandexTranslate1.GotTranslation</span> block and change YandexTranslate1 to YandexTranslate2.</p>
+     <p>And change TranslationLabel to TranslationLabel2 in the inner block so the second translation will be displayed in the second label.</p>
+      <img class="enlargeImage" src="../images/hello_bonjour/howto/translate-label2.gif" alt="add code blocks to display second translation">    
+   </div>
+   <div class="tutorialContentPage">
+    <h4>3. Test it out</h4>
+    <p>Try it out on your app! You should see two translations now!</p>
   </div>
   <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <br/>
   <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
 </div>
 </div>

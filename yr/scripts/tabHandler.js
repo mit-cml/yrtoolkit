@@ -42,6 +42,7 @@ $(document).ready( function() {
       eventAction: 'goToHowTo',
       eventValue: tutorialNum
     });
+    
     return false;
   }
 });
