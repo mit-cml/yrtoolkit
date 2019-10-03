@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Personal Image Classifier</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>About this Tutorial</h3>
+    <div>
+      <p>
+      This tutorial is part of the Personal Image Classifier tutorials. In this tutorial, you will use the model you trained in Personal Image Classifier Part 1 in a mobile app that will identify objects based on your model.
+    </p>
+            <img class="enlargeImage" src="../images/PIC/pic_demo.png" alt="screenshot of demo">
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Personal Image Classifier Tutorial</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>1. Introduction</h4>
+        <p>The components for this app have all been pre-built for you. What you will do is load the model you created in Part 1 of this tutorial, using the <a href="http://classifier.appinventor.mit.edu" target="_blank">classifier.appinventor.mit.edu</a> website.</p>
+        <p>Look at the Designer screen, and scan the components included in the app.</p>
+                <img class="enlargeImage" src="../images/PIC/pic_components.png" alt="upload the new model file"> <br/>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>2. Add your Model </h4>
+        <p>Click on the <strong>PersonalImageClassifier1</strong> component in the Components list. Then click on <strong>Model</strong> in the Properties pane, and click on model.mdl. Choose <i>Upload File</i>, locate the model file you downloaded in Part 1 of the tutorial, and upload that file as the new model.</p>
+        <img class="enlargeImage" src="../images/PIC/pic_model.gif" alt="upload the new model file"> <br/>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>3. Download and Install the App </h4>
+        <p>Under the Build menu, choose &quot;App (provide QR code for .apk)&quot; to build the apk file to install on your mobile device. Once the apk is built, scan the QR code with a QR Code Scanner app on your device. If you don't have a QR Code Scanner app installed, either download one from the Play Store, or use the MIT AI Companion to scan and download the apk. Once downloaded, follow the instructions to install the app.</p>
+                <a onclick="enlargeVideo('2PE6gGFeIoM')" href="javascript:void(0);"><img width="100%"  src="../images/PIC/pic_video.png" alt="pic tutorial video"></a>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>4. Update the App Settings </h4>
+        <p>When you first run the app, it will ask for Camera and Storage permissions. Go to the Settings on your device, and make sure Camera and Storage permissions are turned on for the app.</p>
+                <a onclick="enlargeVideo('Kuj8ec__isw')" href="javascript:void(0);"><img width="100%"  src="../images/PIC/pic_video.png" alt="pic settings video"></a>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>5. Try out the app! </h4>
+        <p>Try identifying some objects with the app. How accurate is your model?</p>
+        <a onclick="enlargeVideo('Gy7pr9SntNg')" href="javascript:void(0);"><img width="100%"  src="../images/PIC/pic_video.png" alt="pic tutorial video"></a>
+      </div>
+
+
+
+      <div class="tutorialContentPage">
+        <h4>6. Try a more advanced app</h4>
+        <p>If you would like to use the PersonalImageClassifer extension to make a more advanced app, click here!</p>
+      </div> <br/>
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+  </div>
+
+
+
+  </div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
