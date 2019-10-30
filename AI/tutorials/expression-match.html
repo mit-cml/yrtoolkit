@@ -52,11 +52,12 @@
     <h3>About this Tutorial</h3>
     <div>
       <p>
-      This tutorial is Part 3 of the <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier" target="_blank">Personal Image Classifier</a> tutorials. In this tutorial, you will use the model you trained in <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier-part1" target="_blank">Personal Image Classifier Part 1</a> to make a game app where the user has to try to match the given expression to gain points.
+      This tutorial is Part 3 of the <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier" target="_blank">Personal Image Classifier</a> tutorials. In this tutorial, you will use the model you trained in <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier-part1" target="_blank">Personal Image Classifier Part 1</a> to make a game app where the user has to try to match the given facial expression to gain points.
       </p>
             <img class="enlargeImage" src="../images/expression-match/em-demo.png" alt="screenshot of demo">
-      <p style="margin-top: 10px;">Each of the labels in your trained model will be displayed, one at a time, and the user will be asked to match that expression. The user will gain points based on the returned confidence level for their image against the model. For example, in the image above, the user matched &quot;sad&quot; with a confidence level of 78.27% so she scored 78.27 points.</p>
+      <p style="margin-top: 10px;">Each of the labels in your trained model will be displayed, one at a time, and the user will be asked to match that facial expression. The user will gain points based on the returned confidence level for their image against the model. For example, in the image above, the user matched &quot;happy&quot; with a confidence level of 78.27% so she scored 78.27 points.</p>
       <p>See how high you can score by matching the displayed expression!</p> 
+      <strong>NOTE: The Personal Image Classifier extension will not work on all mobile devices. Follow Steps 1-3 of the tutorial to see if your mobile device's hardware is sufficient to make this app.</strong>
     </div>
 
     <h3>Connect your App</h3>
@@ -105,21 +106,21 @@
                       <br/>
                 </div>
           </div><br />
-          <p>Then add the PersonalImageClassifer and WebViewer components. </p><p>Set the WebViewer in the PersonalImageClassifier properties, and upload the model trained in Part 1 as the model for the PersonalImageClassifier.
+          <p>Then add the <span class="icon" alt="lookextension"></span> PersonalImageClassifer and <span class="icon" alt="webviewer"></span> WebViewer components. </p><p>Set the <span class="icon" alt="webviewer"></span> WebViewer in the <span class="icon" alt="lookextension"></span> PersonalImageClassifier properties, and upload the model trained in Part 1 as the model for the <span class="icon" alt="lookextension"></span> PersonalImageClassifier.
           <div class="hintContainer">
    
               <button>Show me how</button>
                 <div class="hint hideHint">
                 <h4>Add PersonalImageClassifier Component</h4>
                 <p>
-                The PersonalImageClassifier is an extension component that has been preloaded into the project for you. To add it to your app, drag the extension into the Viewer to add it to your app. It will appear at the bottom of the screen, because it is a non-visible component.</p>
+                The <span class="icon" alt="lookextension"></span> PersonalImageClassifier is an extension component that has been preloaded into the project for you. To add it to your app, drag the extension into the Viewer to add it to your app. It will appear at the bottom of the screen, because it is a non-visible component.</p>
               <img class="enlargeImage" src="../images/expression-match/add-pic-extension.gif" alt="upload the new model file"> <br/>
   
               <h4>Add a WebViewer component </h4>
-              <p>The PersonImageClassifier extension requires a <span class="icon" alt="webviewer"></span> WebViewer component and a model file to work. Drag in a <span class="icon" alt="button"></span> WebViewer component from the User Interface drawer. Change its Width and Height properties to “Fill Parent”.</p>
+              <p>The <span class="icon" alt="lookextension"></span> PersonImageClassifier extension requires a <span class="icon" alt="webviewer"></span> WebViewer component and a model file to work. Drag in a <span class="icon" alt="button"></span> WebViewer component from the User Interface drawer. Change its Width and Height properties to “Fill Parent”.</p>
               <img class="enlargeImage" src="../images/expression-match/add-webviewer.gif" alt="add webviewer component"> <br/>
               <h4>Connect WebViewer to PersonalImageClassifier </h4>
-            <p>Click on PersonalImageClassifier1 in the Components panel, and select WebViewer1 as the WebViewer property.</p>
+            <p>Click on <strong>PersonalImageClassifier1</strong> in the Components panel, and select <strong>WebViewer1</strong> as the WebViewer property.</p>
             <img class="enlargeImage" src="../images/expression-match/set-webviewer-property.gif" alt="set webviewer property for personalimageclassifier"> <br/>
 
             <h4>Upload model for PersonalImageClassifier </h4>
@@ -135,7 +136,7 @@
         <h4>2. Start Coding</h4>
         <p>Switch to the Blocks Editor by pressing the Blocks button in the top right corner of your screen.</p>
         <img class="enlargeImage" src="../images/expression-match/switch-blocks.png" alt="switch to the blocks editor"> <br/>
-        <p>Code the <span class="control">PersonalImageClassifier1.ClassifierReady</span> event, which is triggered when the Classifier is ready to start classifying images. Display the status as "Ready!" in StatusLabel.</p>
+        <p>Code the <span class="control">PersonalImageClassifier1.ClassifierReady</span> event, which is triggered when the Classifier is ready to start classifying images. Display the status as "Ready!" in <strong>StatusLabel</strong>.</p>
         <p>Also code the <span class="control">PersonalImageClassifier1.Error</span> event, which is triggered if there is an error with the Classifier. Display the error returned in <strong>StatusLabel</strong>.</p>
         <div class="hintContainer">
           <button>Show me how</button>
@@ -147,7 +148,7 @@
 
       <div class="tutorialContentPage">
         <h4>3. Try the app!</h4>
-        <p>It's a good time to stop and test that the PersonalImageClassifier extension works on your mobile device. Under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. Start the companion app on your device, and scan the QR code when it appears on your computer. You should see the status label change to “Status: Ready!” when the model is done loading.</p><p><strong>Note:</strong> if you do not get the "Ready!" status, the PersonalImageClassifier extension may not work correctly with your device.</p>
+        <p>It's a good time to stop and test that the <span class="icon" alt="lookextension"></span> PersonalImageClassifier extension works on your mobile device. Under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. Start the companion app on your device, and scan the QR code when it appears on your computer. You should see the status label change to “Status: Ready!” when the model is done loading.</p><p><strong>Note:</strong> if you do not get the "Ready!" status, the PersonalImageClassifier extension may not work correctly with your device.</p>
         <img class="enlargeImage" src="../images/expression-match/ai-companion.png" alt="connect the ai companion">
       </div> 
 
@@ -261,12 +262,12 @@
 
       <div class="tutorialContentPage">
         <h4>9. Check for more labels</h4>
-        <p>Check if there are more labels (expressions) in the model. If so, prompt the player to match the next expression by calling <span class="procedures">playGame</span>. Otherwise, end the game by hiding <strong>SwitchCameraButton</strong> and <strong>CameraButton</strong>, making <strong>ResetButton</strong> visible, and displaying a message that the game is over in <strong>StatusLabel</strong>. 
+        <p>Check if there are more labels (expressions) in the model. If so, prompt the player to match the next expression by calling <span class="procedures">playGame</span>. Otherwise, end the game by hiding <strong>SwitchCameraButton</strong> and <strong>CameraButton</strong>, making <strong>ResetButton</strong> visible, and displaying a message that the game is over in <strong>ExpressionLabel</strong>. 
         </p>
            <div class="hintContainer">
             <button>Show me how</button>
             <div class="hint hideHint">         
-              <p>Add an <span class="control">if then else</span> block. Compare <span class="variables">currentIndex</span> to <span class="variables">numLabels</span> to see if you have reached the end of the list of labels. If not, increment <span class="variables">currentIndex</span> by 1 and call <span class="procedures">playGame</span> again. If you’ve reached the end of the list, hide the game  Buttons, show ResetButton, and use the StatusLabel at the top of the app screen for an end of game message.</p>
+              <p>Add an <span class="control">if then else</span> block. Compare <span class="variables">currentIndex</span> to <span class="variables">numLabels</span> to see if you have reached the end of the list of labels. If not, increment <span class="variables">currentIndex</span> by 1 and call <span class="procedures">playGame</span> again. If you’ve reached the end of the list, hide the game  Buttons, show ResetButton, and use the ExpressionLabel for an end of game message.</p>
               <img class="enlargeImage" src="../images/expression-match/increment-index.png" alt="increment index in list">
             </div>
            </div>
