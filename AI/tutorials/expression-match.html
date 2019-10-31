@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Expression Match</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>About this Tutorial</h3>
+    <div>
+      <p>
+      This tutorial is Part 3 of the <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier" target="_blank">Personal Image Classifier</a> tutorials. In this tutorial, you will use the model you trained in <a href="http://appinventor.mit.edu/explore/resources/ai/personal-image-classifier-part1" target="_blank">Personal Image Classifier Part 1</a> to make a game app where the user has to try to match the given facial expression to gain points.
+      </p>
+            <img class="enlargeImage" src="../images/expression-match/em-demo.png" alt="screenshot of demo">
+      <p style="margin-top: 10px;">Each of the labels in your trained model will be displayed, one at a time, and the user will be asked to match that facial expression. The user will gain points based on the returned confidence level for their image against the model. For example, in the image above, the user matched &quot;happy&quot; with a confidence level of 78.27% so she scored 78.27 points.</p>
+      <p>See how high you can score by matching the displayed expression!</p> 
+      <strong>NOTE: The Personal Image Classifier extension will not work on all mobile devices. Follow Steps 1-3 of the tutorial to see if your mobile device's hardware is sufficient to make this app.</strong>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Expression Match Tutorial</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>1. Build the UI</h4>
+        <p>You will first build the UI for the app in the Designer. Below is what the UI should look like. Also note the list of components, and the name given them. Those names will be used throughout the tutorial, so make sure you name your components as shown.</p>
+        
+         <img class="enlargeImage" src="../images/expression-match/designer-screenshot.png" alt="screenshot of app user interface and components list">
+        <p style="padding-top: 1em;">First, add the Labels and Buttons, and set their properties.</p>
+          <div class="hintContainer">
+            <button>Show me how</button>
+                <div class="hint hideHint">
+                  <h4>Add 4 Labels</h4>
+                  <p>Drag in four <span class="icon" alt="label"></span> Labels, for displaying information in the game. Rename them as follows:</p>
+                    <ul><li><strong>StatusLabel</strong> - displays PersonalImageClassifier status</li>
+                      <li><strong>LastScoreLabel</strong> - displays score for matching the current expression</li>
+                      <li><strong>TotalScoreLabel</strong> - displays user's total score for the game</li>
+                      <li><strong>ExpressionLabel</strong> - displays the current expression the user must try to match</li>
+                    </ul>
+                    <img class="enlargeImage" src="../images/expression-match/add-labels.gif" alt="add four labels"> <br/>
+                    <h4>Set their Text Properties</h4>
+                    <p>Set the <i>Text</i> property for each Label as follows:</p>
+                    <ul><li><strong>StatusLabel</strong> - set to &quot;Status: &quot;</li>
+                      <li><strong>LastScoreLabel</strong> - set to &quot;Score for this expression: &quot;</li>
+                      <li><strong>TotalScoreLabel</strong> - set to &quot;Total Score: &quot;</li>
+                      <li><strong>ExpressionLabel</strong> - set to &quot;Make this expression: &quot;</li>
+                    </ul>
+                    <h4>Add 3 Buttons</h4>
+                    <p>Drag in three <span class="icon" alt="button"></span> Buttons and rename them as follows.</p>
+                    <ul><li><strong>SwitchCameraButton</strong> - to allow user to switch direction of the camera</li>
+                      <li><strong>CameraButton</strong> - takes a picture and classifies image taken</li>
+                      <li><strong>ResetButton</strong> - reset game if use chooses to play again</li>
+                    </ul>
+                    <h4>Set their Text Properties</h4>
+                    <p>Set the <i>Text</i> property for each Button so the UI looks like this:</p>
+                    <img class="enlargeImage" src="../images/expression-match/buttons-ui.png" alt="buttons and labels"> <br/>
+                    <p>Uncheck the <i>Visible</i> property for all three <span class="icon" alt="button"></span> Buttons so they are hidden when the app starts.</p>
+                        <div style="max-width: 150px;">
+                            <img class="enlargeImage" src="../images/expression-match/uncheck-visible.png" alt="uncheck the visible property">
+                        </div> 
+                      <br/>
+                </div>
+          </div><br />
+          <p>Then add the <span class="icon" alt="lookextension"></span> PersonalImageClassifer and <span class="icon" alt="webviewer"></span> WebViewer components. </p><p>Set the <span class="icon" alt="webviewer"></span> WebViewer in the <span class="icon" alt="lookextension"></span> PersonalImageClassifier properties, and upload the model trained in Part 1 as the model for the <span class="icon" alt="lookextension"></span> PersonalImageClassifier.
+          <div class="hintContainer">
+   
+              <button>Show me how</button>
+                <div class="hint hideHint">
+                <h4>Add PersonalImageClassifier Component</h4>
+                <p>
+                The <span class="icon" alt="lookextension"></span> PersonalImageClassifier is an extension component that has been preloaded into the project for you. To add it to your app, drag the extension into the Viewer to add it to your app. It will appear at the bottom of the screen, because it is a non-visible component.</p>
+              <img class="enlargeImage" src="../images/expression-match/add-pic-extension.gif" alt="upload the new model file"> <br/>
+  
+              <h4>Add a WebViewer component </h4>
+              <p>The <span class="icon" alt="lookextension"></span> PersonImageClassifier extension requires a <span class="icon" alt="webviewer"></span> WebViewer component and a model file to work. Drag in a <span class="icon" alt="button"></span> WebViewer component from the User Interface drawer. Change its Width and Height properties to “Fill Parent”.</p>
+              <img class="enlargeImage" src="../images/expression-match/add-webviewer.gif" alt="add webviewer component"> <br/>
+              <h4>Connect WebViewer to PersonalImageClassifier </h4>
+            <p>Click on <strong>PersonalImageClassifier1</strong> in the Components panel, and select <strong>WebViewer1</strong> as the WebViewer property.</p>
+            <img class="enlargeImage" src="../images/expression-match/set-webviewer-property.gif" alt="set webviewer property for personalimageclassifier"> <br/>
+
+            <h4>Upload model for PersonalImageClassifier </h4>
+            <p>Upload the model you just trained in Part 1 by clicking on the Model property and selecting the model you made and downloaded.</p>
+            <img class="enlargeImage" src="../images/expression-match/set-model-property.gif" alt="set model property for personalimageclassifier"> <br/>
+  
+
+              </div>
+          </div> 
+        </div>
+
+      <div class="tutorialContentPage">
+        <h4>2. Start Coding</h4>
+        <p>Switch to the Blocks Editor by pressing the Blocks button in the top right corner of your screen.</p>
+        <img class="enlargeImage" src="../images/expression-match/switch-blocks.png" alt="switch to the blocks editor"> <br/>
+        <p>Code the <span class="control">PersonalImageClassifier1.ClassifierReady</span> event, which is triggered when the Classifier is ready to start classifying images. Display the status as "Ready!" in <strong>StatusLabel</strong>.</p>
+        <p>Also code the <span class="control">PersonalImageClassifier1.Error</span> event, which is triggered if there is an error with the Classifier. Display the error returned in <strong>StatusLabel</strong>.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+            <img class="enlargeImage" src="../images/expression-match/classifier-ready.png" alt="add event blocks for the classifier ready and error"> <br/>
+            </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>3. Try the app!</h4>
+        <p>It's a good time to stop and test that the <span class="icon" alt="lookextension"></span> PersonalImageClassifier extension works on your mobile device. Under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. Start the companion app on your device, and scan the QR code when it appears on your computer. You should see the status label change to “Status: Ready!” when the model is done loading.</p><p><strong>Note:</strong> if you do not get the "Ready!" status, the PersonalImageClassifier extension may not work correctly with your device.</p>
+        <img class="enlargeImage" src="../images/expression-match/ai-companion.png" alt="connect the ai companion">
+      </div> 
+
+      <div class="tutorialContentPage">
+        <h4>4. Set up scoring</h4>
+        <p>Initialize the last score and total score to 0, and display these scores in <strong>LastScoreLabel</strong> and <strong>TotalScoreLabel</strong> in the <span class="control">PersonalImageClassifier1.ClassifierReady</span> event.
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+              <p>Add two variables that will be used as prefixes for the score labels.</p>
+              <img class="enlargeImage" src="../images/expression-match/prefix-labels.png" alt="initialize prefix labels"> <br/>
+
+              <p>Add two more variables to keep track of the last score (for the current expression displayed) and the total score. Initalize them both to zero.</p>
+              <img class="enlargeImage" src="../images/expression-match/score-variables.png" alt="initialize prefix labels"> <br/>       
+              <p>And update the <span class="control">ClassifierReady</span> event to initialize the Text of these Labels and the scores to 0.</p>
+              <img class="enlargeImage" src="../images/expression-match/set-score-labels.png" alt="add two more labels to the app"> <br/>
+            </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>5. Get model labels</h4>
+        <p>You need to get the list of labels (expressions) that you trained in your model, so you can use ask the user to match the expressions in the game. Call <span class="procedures">PersonalImageClassifier1.GetModelLabels</span> from the <span class="control">ClassifierReady</span> event block.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+            <img class="enlargeImage" src="../images/expression-match/getmodellabels.gif" alt="get model labels"> <br/>
+            </div>
+        </div>
+        </br />
+        <p><span class="procedures">GetModelLabels</span> triggers an event, <span class="control">LabelsReady</span>, once the Classifier returns the labels. In that event block, the result returned is the list of model labels. Store the result in a variable so you can use it in the game.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+              <p>Initialize 3 more variables: one to store the list of expression labels, one to store an index for this list, and one to store the number of labels in the list.</p>
+              <img class="enlargeImage" src="../images/expression-match/model-variables.png" alt="initialize model variables"> <br/>
+              <p>Code <span class="control">PersonalImageClassifier1.LabelsReady</span> to set the <span class="variables">modelLabels</span> variable to the result returned. Set <span class="variables">numLabels</span> to be the length of that list.</p>
+              <img class="enlargeImage" src="../images/expression-match/labelsready.png" alt="labelsready blocks"> 
+            </div>
+        </div><br />
+        <p>This is also a good place to make the <strong>SwitchCameraButton</strong> and <strong>CameraButtons</strong> visible for the start of game play.
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+             <p>Update the <span class="control">LabelsReady</span> event to turn on the Buttons’ visibilities, so that the player can only take pictures when the game is ready to start.</p>
+              <img class="enlargeImage" src="../images/expression-match/make-buttons-visible.png" alt="turn on visibility"> <br/>
+            </div>
+        </div>
+    </div>
+
+      <div class="tutorialContentPage">
+        <h4>6. Make playGame procedure</h4>
+        <p>Now you want to select an expression from your model labels list and display it for the user, so they know what expression they need to match. Since you will do this repeatedly, it might makes sense to make a procedure, called <span class="procedures">playGame</span>. Then add a call to <span class="procedures">playGame</span> from the <span class="control">LabelsReady</span> event block.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+              <p>Initialize two more variables. One as a prefix for the expression label, and one to keep track of the current expression.</p>
+              <img class="enlargeImage" src="../images/expression-match/expressionlabel-prefix.png" alt="add expression label prefix variable and current label variable."> <br/
+              <p>Create the procedure <span class="procedures">playGame</span>. <span class="procedures">playGame</span> will use the <span class="variables">currentIndex</span> variable to select an expression to prompt the user with and will save that value in <span class="variables">currentLabel</span>. It will also update the ExpressionLabel with the new expression for the user to make.</p>
+              <img class="enlargeImage" src="../images/expression-match/playgame.png" alt="playgame procedure"> <br/>
+              <p>Call <span class="procedures">playGame</span> from the <span class="control">LabelsReady</span> event.
+              </p>
+              <img class="enlargeImage" src="../images/expression-match/call-playgame.png" alt="add call to playgame"> <br/>
+            </div>
+      </div>
+    </div>
+
+      <div class="tutorialContentPage">
+        <h4>7. Code Game Buttons</h4>
+        <p>Code the <span class="control">SwitchCameraButton.Click</span> event block to change the direction of the camera. And also code <span class="control">CameraButton.Click</span> to classify an image.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+            <div class="hint hideHint">
+            <p>Code the <span class="control">SwitchCameraButton.Click</span> event block to call <span class="procedures">ToggleCameraFacingMode</span> to allow the user to switch camera views. 
+            </p>
+            <img class="enlargeImage" src="../images/expression-match/switchcamerabutton.png" alt="code switchcamerbutton.click"> <br/>
+            <p>Code the <span class="control">CameraButton.Click</span> event block to call <span class="procedures">ClassifyVideoData</span> to classify the image being recorded. 
+            </p>
+            <img class="enlargeImage" src="../images/expression-match/camerabutton.png" alt="code camera button.click">
+            </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>8. GotClassification</h4>
+        <p>You want to check if the user matched the correct expression, which you can do in the <span class="control">PersonalImageClassifier1.GotClassification</span> event.</p>
+        <p>The <span class="control">GotClassification</span> event is triggered after an image is classified (when you call <span class="procedures">ClassifyVideoData</span>).</p>
+        <p>The classification results are a list of lists with what the Classifier thinks the image is. Each sublist contains two items - the guess, and the confidence level. For example:
+        <br />
+        [[Smile 0.8]<br />
+        &nbsp;[Surprised 0.2]<br />
+        &nbsp;[Sad 0.1]]</p>
+        <p>In <span class="control">GotClassification</span>
+          <ul>
+          <li>Reset the player’s last expression score to 0.</li>
+          <li>Iterate through the classification results to see if the current label is in the result list.
+            <ul><li>If there is a match, update the last score and total score by the matching confidence level X 100.</li></ul>
+          </li>
+          <li>Display the score for this expression in <strong>LastScoreLabel</strong> and the total score in <strong>TotalScoreLabel</strong>.</li> 
+          </ul>
+          <div class="hintContainer">
+            <button>Show me how</button>
+            <div class="hint hideHint">          
+              <p>First, set <span class="variables">lastScore</span> to 0. 
+              </p><p>Then use a <span class="control">for each item in list</span> block to iterate through the classification results. Add an <span class="control">if</span> block to test if the expression is in the result list. If it is, set the <span class="variables">lastScore</span> to the corresponding confidence level x 100 (to make it larger than 1), and then add that score to the <span class="variables">totalScore</span>.</p>
+              <p>Finally, <span class="setters">set LastScoreLabel.Text</span> and <span class="setters">set TotalScoreLabel.Text</span> based on the new values.</p>
+              <img class="enlargeImage" src="../images/expression-match/gotclassification.png" alt="code gotclassification"> <br/>
+            </div>
+          </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>9. Check for more labels</h4>
+        <p>Check if there are more labels (expressions) in the model. If so, prompt the player to match the next expression by calling <span class="procedures">playGame</span>. Otherwise, end the game by hiding <strong>SwitchCameraButton</strong> and <strong>CameraButton</strong>, making <strong>ResetButton</strong> visible, and displaying a message that the game is over in <strong>ExpressionLabel</strong>. 
+        </p>
+           <div class="hintContainer">
+            <button>Show me how</button>
+            <div class="hint hideHint">         
+              <p>Add an <span class="control">if then else</span> block. Compare <span class="variables">currentIndex</span> to <span class="variables">numLabels</span> to see if you have reached the end of the list of labels. If not, increment <span class="variables">currentIndex</span> by 1 and call <span class="procedures">playGame</span> again. If you’ve reached the end of the list, hide the game  Buttons, show ResetButton, and use the ExpressionLabel for an end of game message.</p>
+              <img class="enlargeImage" src="../images/expression-match/increment-index.png" alt="increment index in list">
+            </div>
+           </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>10. ResetButton</h4>
+        <p>Finally, add functionality to the <strong>ResetButton</strong>. When the player clicks on it, reset the state of the game so that the player can start over.</p><p>This includes making the camera buttons visible, hiding this button, resetting the index and score variables, resetting the score text labels, and calling playGame at the end.</p>
+        <div class="hintContainer">
+          <button>Show me how</button>
+          <div class="hint hideHint">   
+          <img class="enlargeImage" src="../images/expression-match/reset-button-click.png" alt="reset button click event">
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>11. Test your game!</h4>
+        <p>That’s it! Connect to the AI Companion and try playing the game you just made and see how high of a score you can get. Also, try letting other people play your version of the game! What happens?</p>
+        <img class="enlargeImage" src="../images/expression-match/ai-companion.png" alt="ai companion"> <br/>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>12. Expand your app</h4>
+        <p>Here are some ideas to expand or update your app:</p>
+            <ul>
+          
+            <li>Add more labels (expressions) to your model by going back to <a href="https://classifier.appinventor.mit.edu" target="_blank">classifier.mit.edu</a>. Update the model in your app with your updated model.</li>
+              <li>You can also go back to the Classifier interface to train entirely different models. Make it a game to correctly identify objects instead of expressions.</li>
+              <li>If a user scores below 50% on an expression, give them another try at matching the expression.</li>
+              <li>Save a high score for the app in TinyDB and display the high score.</li>
+            </ul>
+            <p><strong>What other ideas to you have?</strong></p>
+
+      </div>
+
+
+
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center; padding-top: 10px;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+  </div>
+
+
+
+  </div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
