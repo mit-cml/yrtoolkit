@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+
+
+
+  <link rel="stylesheet" href="../css/scrollstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+  
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    } );
+  </script>
+
+  <script>
+        function enlargeVideo(youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
+      }
+  </script>
+  <!--You will use stg like this for videos:
+    <a onclick="enlargeVideo('aEoFmKkvdZo')" href="javascript:void(0);"><img width="100%"  src="../images/ball_bounce/ball_bounce_1_ss.png" alt="Ball Bounce tutorial introduction"></a>
+  -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;"></div>
+  </div>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>Put here a challenge statement based on an associated YR story</p>
+
+      <p>Click "Connect Your App" below to start building your app!</p>
+    </div>
+
+    <h3>Connect Your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>Rock-Paper-Scissors with AI (Level: Advanced)</h3>
+
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+
+      <div class="tutorialContentPage">
+        <h3>Introduction</h3>
+        <p>In this project you will catch a glimpse into how is it possible to program a machine to learn from its experiences and make "informed" decisions exhibiting intelligence.  You will implement a Rock-Paper-Scissors game on your mobile device in which a user can play against the machine.  The machine will keep track of the choices of the user and if a pattern emerges in the sequence of choices made by the user, the machine will exploit this knowledge to beat the user. 
+    </p>
+        
+        <img class="enlargeImage" src="../images/rps_withAI/RPS.png" alt="some_text">
+        <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed.</p>
+
+    	</div>
+
+    <div class="tutorialContentPage">
+        <h3>The User Interface</h3>
+        
+  		<p>Here is what the User Interface (UI) looks like.  In the top row there are three buttons that let the user pick a choice: Rock, Paper or Scissors.  Next is the part where the computer's choice is revealed. Then there is a label declaring the winner of a round of the game and there is a HorizontalLayout that displays each player's scores.  The last part displays what is called a "Markov Transition Matrix", named after the Russian mathematician <a href="https://en.wikipedia.org/wiki/Andrey_Markov" target="_blank">Andrey Markov</a>, best known for his seminal work on probabilistic processes.  You do not need to worry about this matrix now.  Later in the tutorial you will learn the simple idea behind this 3X3 set of numbers.</p>
+  		<img class="enlargeImage" src="../images/rps_withAI/RPS_GUI.png" alt="some_text">
+	  		
+	    
+      </div>
+  		
+     <div class="tutorialContentPage">
+        <h3>The Components Hierarchy</h3>
+        <p>The UI has already been created for you.  You can see below the GUI components and their corresponding place in the component hierarchy.  Study this diagram and the naming scheme so that you will be able to follow the rest of the tutorial where you will give functionality to the components.
+		</p>
+	    <img class="enlargeImage" src="../images/rps_withAI/GUICorrespondence.png" alt="some_text">
+
+    </div>
+        
+        
+
+      <div class="tutorialContentPage">
+        <h3>Machine Learning using a Markov Process</h3>
+        <p>Here is the basic idea behind how you will endow the machine an ability to learn from experience. The machine will keep track of the sequence choices that the user makes and record the frequency of consecutive user choices.  The matrix that holds this information is called a "Markov Transition Matrix". </p>
+		<img  src="../images/rps_withAI/Markov_prev&next.png" style="width:100%" alt="some_text">
+        <p>On the left side, the rows of the matrix denote the user's previous choice and, at the top, the columns denote the user's follow up choice.  The cells contain information about how frequently a particular sequence of consecutive choices were made. For example, in the Matrix shown above you can see that 7 times the user followed her choice of Rock with another choice of Rock, 13 times she followed her choice of Rock with Paper, 11 times she followed her choice of Paper with Scissors, 3 times she followed her choice of Scissors with another choice of Scissors, etc. </p>
+      </div>
+
+      <div class="tutorialContentPage">
+          <h3>Machine Learning using a Markov Process</h3>
+          <p>The diagram below with a highlighted second row (in red) shows the count of how many times the user's choice of Paper was followed with a choice of Rock, Paper or Scissors (2, 4, 11 respectively.)</p>
+          <img  src="../images/rps_withAI/Markov_rows.png" style="width:100%" alt="some_text">
+
+        </div>
+
+	<div class="tutorialContentPage">
+          <h3>Machine Learning using a Markov Process</h3>
+          <p>The diagram below with a highlighted second column (in green) shows the count of how many times the user's choice of Paper was preceded with a choice of Rock, Paper or Scissors (13, 4, 8 respectively.)</p>
+          <img  src="../images/rps_withAI/Markov_colmns.png" style="width:75%" alt="some_text">
+          
+        </div>
+
+<div class="tutorialContentPage">
+          <h3>Machine Learning using a Markov Process</h3>
+          <p>The orange cell in the middle of the Matrix below shows the intersection of the second row with the second column and the number 4 in the orange cell is the count of the number of times the user followed her choice of Paper with another Paper.</p>
+          <img  src="../images/rps_withAI/Markov_row&colmn.png" style="width:100%" alt="some_text">
+          
+        </div>
+<div class="tutorialContentPage">
+          <h3>Building and Incrementing the Markov Matrix</h3>
+          <p>At the start of a game Markov Matrix's entries are all zeroes.</p>
+          <img  src="../images/rps_withAI/Markov1.png" style="width:75%" alt="some_text">
+          <p>Suppose the user played Rock first and then followed this with Paper (i.e. the consecutive choice sequence was Rock, Paper).  Then, the cell in the first row (Rock) and second column (Paper) needs to be incremented as shown from a zero to a one.</p>
+          <img src="../images/rps_withAI/Markov2.png" style="width:75%" alt="some_text">
+
+          <p>Suppose then the user followed her last choice of Paper with Scissors (i.e. the sequence of choices was Rock, Paper, Scissors) then the cell in the second row (Paper) and third column (Scissors) needs to be incremented as shown.</p>
+          <img  src="../images/rps_withAI/Markov3.png" style="width:75%" alt="some_text">
+          <p>You can think of the Matrix as a record of the game choices of the user studied in pairs:<br />
+          	<ul>
+			<li>User choices in order:<br /> Rock, Paper, Scissors</li>
+			<li>First group the first two consecutive choices:<br /> (<strong>Rock, Paper</strong>), Scissors</li>
+			<li>Then group the second two consecutive choices:<br /> Rock, (<strong>Paper, Scissors</strong>)</li>
+			</ul>
+</p>
+        </div>
+
+<div class="tutorialContentPage">
+          <h3>Practice with Markov Matrix</h3>
+          <p>Suppose the game continues and at one instant you get the following matrix that keeps track of consecutive user moves.</p>
+          <img  src="../images/rps_withAI/Markov4.png" style="width:75%" alt="some_text">
+          <p>Say, then, the user followed her last move of Paper with another Paper.  How would you increment the appropriate entry of this matrix?</p>
+          <div class="hintContainer">
+   
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	<p>You would increment the cell in the second row (Paper) and second column (Paper) from a 4 to a 5.</p>
+                  <img  src="../images/rps_withAI/Markov5.png" style="width:75%" alt="some_text">
+                  <p>As you can see the Markov Matrix simply is a record of the frequency of the user's consecutive choices.</p>
+              </div>
+          </div>
+      
+        </div>
+
+
+        <div class="tutorialContentPage">
+          <h3>Practice with Markov Matrix</h3>
+          <p>Suppose the game just started and the Matrix is as shown:</p>
+          <img  src="../images/rps_withAI/Markov1.png" style="width:75%" alt="some_text">
+          <p>Supposed then the following sequence of choices is made by the user:</p>
+			<p>Rock, Scissors, Scissors, Paper</p>
+
+			<p>What would the Markov Matrix look like at that point in the game?</p>
+
+		<div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Hint:</p>
+            <ul>
+            <li>(<strong>Rock, Scissors</strong>), Scissors, Paper</li>
+			<li>Rock, (<strong>Scissors, Scissors</strong>), Paper</li>
+			<li>Rock, Scissors, (<strong>Scissors, Paper</strong>)</li>
+			</ul>
+              
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	<ul>
+                		<li>First increment the cell where Rock, Scissors meet, i.e. first row and third column.</li>
+						<li>Then increment the cell where Scissors, Scissors meet, i.e. third row and third column.</li>
+						<li>Lastly increment the cell where Scissors, Paper meet, i.e. third row and second column.</li>
+						And you get:
+
+                	</ul>
+                  <img  src="../images/rps_withAI/Markov6.png" style="width:75%" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          
+        </div>
+
+	<div class="tutorialContentPage">
+          <h3>Smart Choice Using the Markov Matrix</h3>
+          <p>Now that you understand how the app will keep track of the user's choices, consider the following scheme on how the app can "intelligently" decide its own next choice.  Say this is the Markov Matrix at some point in the game:</p>
+          <img  src="../images/rps_withAI/Markov4.png" style="width:75%" alt="some_text">
+          <p>and the user's last choice was Scissors.  Then according to "historical" record, the machine knows that user followed Scissors 15 times with Rock, 8 times with Paper and only 3 times with Scissors.  So, it is most likely that the user will follow her last move of Scissors with Rock.  So, what is the smart thing for the machine to do?  To beat the most probable choice of Rock by the user, the machine will need to choose ...  *<strong>Paper</strong>*.  Aha!</p>	
+          <p>These examples should give you a sense of how the machine tracks consecutive user choices and, based on existing patterns, makes "informed" decisions about how most likely it may be able to beat the user.</p>
+        </div>
+
+        <div class="tutorialContentPage">
+        <h3>Blocks Editor</h3>
+        <p>Now you will give functionality to the user interface (UI) and endow the machine with intelligence. Switch to the Blocks editor.</p>
+        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        	<ul>
+        	<li>Create a variable called <var>choices</var> which will eventually contain the list of possible choices (<var>ROCK, PAPER, SCISSORS</var>) and for now initialize it to an empty list.</li>
+			<li>Create a variable called <var>beatingChoices</var> which will eventually contain the list of possible beating choices (<var>PAPER, SCISSORS, ROCK</var>) and for now initialize it to an empty list.  The order given is so as: Paper beats Rock, Scissors beats Paper and Rock beats Scissors.</li>
+			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
+			<li>Create variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> and initialize them to the numbers 1,2 and 3 respectively.  Assigning numbers to the choices will allow you to easily navigate indices of various lists and update the Markov Matrix at the end of each round of the game.</li>
+			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS" (without quotes).  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for others choices.</li>
+			<li>Create a variable called <var>buttonChoices</var> and initialize it to hold a list of the button components that the user can press: <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong>.  (Review the names of the GUI elements if you need to remind yourself these names.)  Note that these are not the words "RockButton", etc. but rather the actual components <strong>RockButton</strong>, etc.</li>
+			<img  src="../images/rps_withAI/RockButtonBlock.png" style="width:75%" alt="some_text">
+
+			<li>Create a variable called <var>imageChoices</var> and initialize it to hold a list of the names of the PNG images files stored as Media files: "rock.png", "paper.png", "scissors.png".</li>
+			<li>Create a variable called <var>MarkovTransitionMatrix</var> and initialize it to an empty list.  You will later create a procedure to make this variable hold a list of lists.</li>
+			<li>Create two variables called <var>lastUserChoice</var> and <var>currentUserChoice</var> which will keep track of the last two consecutive choices made by the user and initialize them to zero.</li>
+        	</ul>
+        	<div class="hintContainer">
+   
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	
+                  <img class="enlargeImage" src="../images/rps_withAI/initializations.png" alt="some_text">
+              </div>
+          </div>
+
+
+
+
+
+        </div>
+
+        <div class="tutorialContentPage">
+        <h3>Matrix Procedures</h3>
+        <p>Create two procedures that you will use for the Markov Matrix:</p>
+        	<ul>
+			<li>Create a procedure called <strong><var>initializeMarkovMatrix</var></strong> and have it set the variable <var>MarkovTransitionMatrix</var> to a list of three lists, each of which containing three zeros as elements.  This will be equivalent to initializing the 3X3 Markov Matrix's entries to zeros.</li>
+			<img  src="../images/rps_withAI/Markov1.png" style="width:75%" alt="some_text">
+			<div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+             <img class="enlargeImage" src="../images/rps_withAI/procedure_initializeMarkovMatrix1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	<img class="enlargeImage" src="../images/rps_withAI/procedure_initializeMarkovMatrix.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+			<li>Create a procedure called <strong><var>printMatrix</var></strong>, which will write each row of the <var>MarkovTransitionMatrix</var> to labels <strong>MatrixRow1</strong>, <strong>MatrixRow2</strong>, <strong>MatrixRow3</strong> respectively.</li>
+			<img class="enlargeImage" src="../images/rps_withAI/matrixCorrespondence.png" alt="some_text">
+			<p>Note that when a list is printed to a label MIT App Inventor automatically puts the open/close parenthesis i.e . "(" and ")" .</p>
+			
+			<div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+             <img class="enlargeImage" src="../images/rps_withAI/procedure_printMatrix1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	<img class="enlargeImage" src="../images/rps_withAI/procedure_printMatrix.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+		</ul>
+        
+
+          </div>
+
+          <div class="tutorialContentPage">
+        <h3>Screen1 Initialization</h3>
+          <p>When the Screen1 initializes:
+          	<ul>
+			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
+			<li>set the variable <var>choices</var> to the list containing the variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> (in this order).  (Remember that these variables hold the values 1,2, and 3 respectively);</li>
+			<li>set the variable <var>beatingChoices</var> to the list containing the variables <var>PAPER</var>, <var>SCISSORS</var> and <var>ROCK</var> (in this order);</li>
+			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
+			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>.  Note that this choice is completely arbitrary and allows the Markov Matrix to be built immediately following the first choice made by the user instead of waiting two rounds, which leads to a slightly more complex programming code;</li>
+			<li>set the variable <var>currentUserChoice</var> to zero.  This is done to initialize this variable to a value different than 1,2,3 (<var>ROCK, PAPER, SCISSORS</var> respectively).</li>
+		</ul>
+		</p>
+
+		<div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+             <img class="enlargeImage" src="../images/rps_withAI/whenScreen1Initialize1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	<img class="enlargeImage" src="../images/rps_withAI/whenScreen1Initialize.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <p>Note: This is a subtle point but in case you are wondering why you did not simply initialize the list holding variables <var>choices</var> and  <var>beatingChoices</var> using the <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> variables at the very beginning when you initialized all the other variables, the reason is that the <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> variables needed to be initialized first prior to being used in defining other variables.</p>
+			
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Collapsing Code Blocks</h3>
+        <p>In this project you will do quite a bit of coding and you may benefit from "collapsing" long blocks of code in order to have more work space and to better organize your code, as shown below.</p>
+        <img class="enlargeImage" src="../images/rps_withAI/collapseCode1.png" alt="some_text">
+        <img class="enlargeImage" src="../images/rps_withAI/collapseCode2.png" alt="some_text">
+      </div>
+
+       <div class="tutorialContentPage">
+        <h3>Reset Button</h3>
+        <p>When the ResetButton is clicked:
+        	<ul>
+			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
+			<li>call the procedure <strong><var>printMatrix</var></strong> to show the 3X3 Matrix entries initialized to zeros;</li>
+			<li>set the user and computer scores to zero;</li>
+			<li>reset the winner announcement and the computer choice announcement;</li>
+			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>, just like at the initialization;</li>
+			<li>set the variable <var>currentUserChoice</var> to zero, just like at the initialization.</li>
+			</ul>
+        </p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/rps_withAI/whenResetButtonClick1.png" alt="some_text">
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/rps_withAI/whenResetButtonClick.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+
+
+<div class="tutorialContentPage">
+        <h3>CloudDB GotValue Event</h3>
+        <p>When <span class="icon" alt="clouddb"></span>CloudDB responds to the "get" request with a GotValue event:
+          <ul>
+          <li>if the tag is "YesVotes"  set <var>yesCount</var> to the length of the list returned in the <em>value</em> parameter.</li>
+          <li>else if the tag is "NoVotes"  set <var>noCount</var> to the length of the list returned in the <em>value</em> parameter.</li>
+        </ul>
+        </p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue1.png" alt="some_text"><br />
+              <p>You can create the "if-then-else-if-then" block via:</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/ifelseif.png" alt="some_text"><br />
+              <p>You can access "get value" and "get tag" blocks by having the mouse hover over <em>value</em> and <em>tag</em> parameters respectively:</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/getvalue.png" alt="some_text">
+              <img class="enlargeImage" src="../images/opinion_poll_app/gettag.png" alt="some_text"><br />
+
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+
+
+
+
+   
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+        <p>Now code the Yes and No buttons.  When the YesButton is clicked:
+			<ul>
+            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to leave the <em>Enabled</em> property of these buttons set to true so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
+			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "Yes" to the list stored under the tag "YesVotes".</li>
+		</ul>
+        </p>  
+
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <p>Important: This is a good place to test your app's Yes Button before going any further.</p>
+
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+        <p>The No button process is similar.  When the NoButton is clicked:
+			<ul>
+            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to leave the <em>Enabled</em> property of these buttons set to true so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
+			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
+			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "No" to the list stored under the tag "NoVotes".</li>
+		</ul>
+        </p>  
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick2.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <p>Important: This is a good place to test your app's No Button before going any further.</p>
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Yes and No Buttons</h3>
+	      <p>When you are testing your app, you want to be able to press the Yes and No buttons multiple times to make sure that the vote counts and graphs update appropriately, so leave the <em>Enabled</em> property of these buttons set to true while testing. Don't forget to change these to false after you're done testing and are ready to publish your app. That way, each voter will only be able to cast a single vote, as the voting buttons will be disabled once they vote.</p>
+	      <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
+
+	  </div>
+
+      
+
+      <div class="tutorialContentPage">
+        <h3>Show and Hide Graph Button</h3>
+        
+        <p>Now you will give functionality to the <strong>ShowHideGraphButton</strong>.  When this button is clicked:
+			<ul style="padding-left: 1.2em;">
+			<li>if the <strong>HorizontalArrangement2</strong> which contains the graphs is currently visible:
+				<ul style="padding-left: 1.2em;">
+					<li>make the <strong>HorizontalArrangement2</strong> invisible;</li>
+					<li>make the <strong>ShowHideGraphButton</strong> text "Show Graph";</li>
+				</ul></li>
+			<li>otherwise 
+					<ul style="padding-left: 1.2em;">
+					<li>make the <strong>HorizontalArrangement2</strong> visible;</li>
+					<li>make the <strong>ShowHideGraphButton</strong> text "Hide Graph".</li>
+					</ul>
+				</li>
+          </ul>
+		</p>
+		
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+
+          
+
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+      <p>Important: This is a good place to test your app's Show and Hide Graph Button before going any further.</p>
+        
+      </div>
+
+
+
+      <div class="tutorialContentPage">
+        <h3>Visual Display of Graphs</h3>
+        <p>Here are some screenshots that show how the visual display of data, in the form of horizontal bar graphs, changes as votes are cast.  Study these screenshots so you get a feel for the graphical displays you will be creating.  Note that the leftmost bases of these graphs are used to display the actual number of Yes/No votes that are cast while the horizontal bar graphs display the relative percentage of the Yes/No votes.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/bargraphs.png" alt="some_text">
+
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Data Changed in CloudDB</h3>
+
+
+        <p>
+        	When the users of the polling app cast their votes, the information is sent to the <span class="icon" alt="clouddb"></span>CloudDB (see your code above when <strong>YesButton</strong>, <strong>NoButton</strong> are clicked).  As soon as the database has changed, the <span class="icon" alt="clouddb"></span>CloudDB will need to inform <strong><em>all</em></strong> users of the app to update the information on the local devices and update the graphs etc.  Here is a sequence of events which needs to happen when <span class="icon" alt="clouddb"></span>CloudDB data has changed:</p>
+        		<ul style="padding-left: 1.2em;">
+				<li>If the value returned by <span class="icon" alt="clouddb"></span>CloudDB is an empty list (which means that the <span class="icon" alt="clouddb"></span>CloudDB is responding to a database reset initiated by the poll administrator) then call <strong>initialize</strong> procedure to reset everything.</li>
+				<li>otherwise, </li>
+        </ul>
+        <div class="hintContainer">
+                <button>Give me a hint</button>
+                  <div class="hint hideHint">  
+                    <p>Here are some of the blocks you will need to complete this functionality.</p>
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedA.png" alt="some_text">
+                </div>
+              </div>
+
+        <p>Continued on the next page.</p>
+      
+    
+  </div>
+
+  <div class="tutorialContentPage">
+        <h3>Data Changed in CloudDB (continued)</h3>
+
+        <p>Continued from the previous page</p>
+        <ul style="padding-left: 1.2em;">
+        <li>otherwise,
+					<ul style="padding-left: 1.2em;">
+						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
+						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "NoVotes" is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
+						</ul>
+          </li>
+        </ul>
+      
+       <div class="hintContainer">
+                <button>Give me a hint</button>
+                  <div class="hint hideHint">  
+                    <p>Here are some of the blocks you will need to complete this functionality.</p>
+                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedB.png" alt="some_text">
+                </div>
+              </div>
+
+
+      <p>Continued on the next page.</p>
+    </div>
+
+
+
+<div class="tutorialContentPage">
+        <h3>Data Changed in CloudDB (continued) </h3>
+
+          <p>Continued from the previous page</p>
+
+            <ul style="padding-left: 1.2em;">
+            <ul style="padding-left: 1.2em;">
+            <li>set the <var>yesPercentage</var> and <var>noPercentage</var> variables to the proper calculations.  
+              <div class="hintContainer">
+                <button>Give me a hint</button>
+                  <div class="hint hideHint">  
+                    
+    							<img class="enlargeImage" src="../images/opinion_poll_app/setyesnoPercentages.png" alt="some_text">
+    							Note that  the sum: <br /><var>yesCount</var> + <var>noCount</var> <br />gives the total number of votes cast and the ratio: <br /><var>yesCount</var> / (<var>yesCount</var> + <var>noCount</var>) <br />gives the ratio of the Yes votes to the total number of votes.  Multiplication with 100 turns this ratio into a percentage and the round operator rounds the result to the nearest whole number for simplicity. The calculation is similar for No votes.
+    							</div>
+            </div>
+						</li>
+						<li>set <strong>YesLabel</strong> and <strong>NoLabel</strong> to the <var>yesCount</var> and <var>noCount</var> respectively.  These labels will report the exact number of Yes and No votes cast.</li>
+
+						<li>set the <em>WidthPercent</em> parameter for the <strong>YesBar</strong> and <strong>NoBar</strong> components to the <var>yesPercentage</var> and <var>noPercentage</var> variables which you calculated above.  This will ensure that the bar graphs will have correct width sizes.</li>
+						<li>set the text of <strong>YesBar</strong> and <strong>NoBar</strong> components to display the proper percentages calculated above followed with the "%" symbol to indicate that these values are percentages.</li>
+
+					</ul>
+
+
+			</ul>
+
+    
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are some of the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedC.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDBDataChanged2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+
+          <p>Important: This is a good place to test your app before going any further.</p>
+
+       </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Reset Database Button</h3>
+        
+        <p>When an administrator of the polling app clicks the <strong>ResetDatabaseButton</strong>:
+        <ul>
+      <li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "YesVotes" with an empty list;</li>
+      <li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "NoVotes" with an empty list;</li>
+      <li>call the procedure <strong>initialize</strong> to reset everything.</li>
+    </ul>
+
+    </p>
+    
+          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+          <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick1.png" alt="some_text"><br />
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                  <div class="hint hideHint">
+                    <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick2.png" alt="some_text">
+                  </div>
+            </div>
+
+            </div>
+          </div>
+         
+      </div>
+
+      <div class="tutorialContentPage">
+        <h3>Build Your App</h3>
+        <p>Because this app sends information to the cloud to be shared by multiple users, it is helpful to test it using at least two devices so you can check that each user is properly accessing the cloud and getting the data updates.</p>
+        <p>Go to the "Build" menu at the  top of the screen and click on "App (provide QR code for .apk)".  This will start the process of building the app so it can be installed on any tablet.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/apkBuild.png" alt="some_text">
+        <p>A QR code will appear in a pop-up window once the app is built.  This may take a few minutes.  When it appears, both you and your partner should scan it using your devices.  Follow the prompts to download and install the .apk on your tablets.</p>
+        <img class="enlargeImage" src="../images/opinion_poll_app/apkBarcode.png" alt="some_text">
+        
+        <p>After testing, if you need to make adjustments to your code, you will need to uninstall the old .apk file from each tablet and do a new build, repeating the above procedure.</p>
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>Test your App!</h3>
+        <p>You are done!  Test your app thoroughly using multiple devices.  
+          <ul>
+            <li>make sure that you can cast Yes and No votes;</li>
+            <li>make sure that you can view the graphs after casting a vote;</li>
+            <li>make sure that the graphs dynamically update as more and more votes are cast;</li>
+            <li>make sure that the graphs correctly display the relative percentages of the Yes and No votes cast;</li>
+            <li>make sure that an admin can correctly reset the database and this change promptly leads to a reset in the user interface.</li>
+          </ul>
+          When you are done testing your app, remember that you will need to revisit the code blocks for <strong>YesButton</strong> and <strong>NoButton</strong> and disable the buttons as shown after a vote is cast.  This will ensure that each user of your app can only cast a single vote in the opinion poll.  When you make the change, be sure to test your app again using multiple devices.
+          <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
+		</p>
+      </div>
+
+    
+     <br />
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>
+
+  <h3>Expand Your App</h3>
+    <div class="tutorialContainer">
+    <div class="tutorialNavigationHeader"></div>
+
+      	<div class="tutorialContentPage">
+			   <strong>Further Explorations</strong>
+         <ul>
+            <li>Make administrator access to Reset Database button be <em>password protected</em> so that arbitrary users cannot reset the database.  (You may wish to look at another YR Media tutorial titled <a href="http://appinventor.mit.edu/explore/app-building-guides.html" target="_blank">"My To Do List"</a> to learn how to add password protection to your user interface.)</li>
+      			<li>Create an interface in the password protected administrator section so that the admin can write a poll question to be broadcast to all users of the app taking the poll via the <span class="icon" alt="clouddb"></span>CloudDB.  This will allow the admin to generate and broadcast poll questions as needed instead of being limited to a single hard-coded poll question.</li>
+      			<li>Create a version where there are multiple choices to select from, for example A, B, C, D and thus more bar graphs to display.  This version may be even more useful in a classroom setting for a teacher than the simple Yes/No version.</li>
+      			<li>Make a version of the project where the bar graphs are vertical rather than horizontal.</li>
+      			<li>Your own innovative ideas here.</li>
+
+
+          </ul>
+        
+		    </div>
+			
+	
+
+
+        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
+      </div>-->
+	
+    </div>	
+
+  <h3>Share Your App</h3>
+  <div class="setup" id="share_app"></div>
+
+ <!-- <h3>Published Apps</h3>
+  <div>
+    <div id="container">
+     <div class="projectbox"> 
+      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
+      <div class="projecttext"><span> Hello World</span> </div>
+    </div>
+  </div>
+</div>-->
+
+<h3>About Youth Mobile Power</h3> 
+    <div>
+      <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+      <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
+      <p>Essentially: get inspired by the story, get busy making your own app!</p>
+      <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+      <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+
+      <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>. 
+</div>
+
+
+</div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+<!--Revise these
+  <h3>Use a TextBox</h3>
+  <div class="setup" id="textboxGeneric"></div>
+
+  <h3>Map Properties</h3>
+  <div class="setup" id="mapProperties"></div>-->
+
+</div>
+
+
+<div id="serverTutorialId" style="display:none;">5</div>
+</body>
+<script src="../scripts/tabHandler.js"></script>
+<script src="../scripts/tutorialPage.js"></script>
+<script src="../scripts/shareAndPublish.js"></script>
+
+</html>
