@@ -227,14 +227,27 @@
 			<li>Create a variable called <var>beatingChoices</var> which will eventually contain the list of possible beating choices (<var>PAPER, SCISSORS, ROCK</var>) and for now initialize it to an empty list.  The order given is so as: Paper beats Rock, Scissors beats Paper and Rock beats Scissors.</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
 			<li>Create variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> and initialize them to the numbers 1,2 and 3 respectively.  Assigning numbers to the choices will allow you to easily navigate indices of various lists and update the Markov Matrix at the end of each round of the game.</li>
+			</ul>
+		</div>
+
+		<div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        	<ul>
 			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS" (without quotes).  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for others choices.</li>
 			<li>Create a variable called <var>buttonChoices</var> and initialize it to hold a list of the button components that the user can press: <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong>.  (Review the names of the GUI elements if you need to remind yourself these names.)  Note that these are not the words "RockButton", etc. but rather the actual components <strong>RockButton</strong>, etc.</li>
 			<img  src="../images/rps_withAI/RockButtonBlock.png" style="width:75%" alt="some_text">
 
-			<li>Create a variable called <var>imageChoices</var> and initialize it to hold a list of the names of the PNG images files stored as Media files: "rock.png", "paper.png", "scissors.png".</li>
+		</ul>
+	</div>
+
+	<div class="tutorialContentPage">
+        <h3>Initializations</h3>
+        	<ul>
+			<li>Create a variable called <var>imageChoices</var> and initialize it to hold a list of the names of the PNG images stored as Media files: "rock.png", "paper.png", "scissors.png".</li>
 			<li>Create a variable called <var>MarkovTransitionMatrix</var> and initialize it to an empty list.  You will later create a procedure to make this variable hold a list of lists.</li>
 			<li>Create two variables called <var>lastUserChoice</var> and <var>currentUserChoice</var> which will keep track of the last two consecutive choices made by the user and initialize them to zero.</li>
         	</ul>
+
         	<div class="hintContainer">
    
                 <button>Check your solution</button>
@@ -297,7 +310,7 @@
 
           </div>
 
-          <div class="tutorialContentPage">
+      <div class="tutorialContentPage">
         <h3>Screen1 Initialization</h3>
           <p>When the Screen1 initializes:
           	<ul>
@@ -305,6 +318,15 @@
 			<li>set the variable <var>choices</var> to the list containing the variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> (in this order).  (Remember that these variables hold the values 1,2, and 3 respectively);</li>
 			<li>set the variable <var>beatingChoices</var> to the list containing the variables <var>PAPER</var>, <var>SCISSORS</var> and <var>ROCK</var> (in this order);</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
+			</ul>
+			<p>Continued at the next page...</p>
+		</p>
+	</div>
+
+		<div class="tutorialContentPage">
+        <h3>Screen1 Initialization</h3>
+          <p>When the Screen1 initializes:
+          	<ul>
 			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>.  Note that this choice is completely arbitrary and allows the Markov Matrix to be built immediately following the first choice made by the user instead of waiting two rounds, which leads to a slightly more complex programming code;</li>
 			<li>set the variable <var>currentUserChoice</var> to zero.  This is done to initialize this variable to a value different than 1,2,3 (<var>ROCK, PAPER, SCISSORS</var> respectively).</li>
 		</ul>
@@ -379,7 +401,7 @@
           </div>
       </div>
       <ul>
-      	<li>make sure the button click has <em>not</em> already been handled which would be the case if it was the ResetButton (as you dealt with that event already) thus the clicked button should be one of the three user choice buttons: <strong>RockButton</strong>, <strong>PaperButton</strong> or <strong>ScissorsButton</strong>;
+      	<li>make sure the button click has <em>not</em> already been handled which would be the case if it was the ResetButton (as you dealt with that event already) thus the clicked button should be one of the three user choice buttons: <strong>RockButton</strong>, <strong>PaperButton</strong> or <strong>ScissorsButton</strong>;</li>
 		<li>set <var>currentUserChoice</var> variable to the appropriate value indicated by the button the user has pressed.</li> 
 		<li>if <var>currentUserChoice</var> is zero (which means that this is the start of the game)
 			<ul>
@@ -399,7 +421,15 @@
 			</ul>
 				
 				</li>
+			</ul>
+			<p>Continued at the next page ...</p>
+		</div>
 
+
+<div class="tutorialContentPage">
+        <h3>User Choice Buttons</h3>
+        <p>When any Button is clicked by the user: </p>
+        <ul>
 		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
 		<li>call a procedure (without a return value) named <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.  Again, create this procedure but leave it blank for now. </li>
 		<li>call a procedure (without a return value) named <strong><var>updateMatrix</var></strong>.  Again, create this procedure but leave it blank for now.</li>
@@ -628,6 +658,12 @@
 
 				<li>Try to beat the machine.  In a game of 30 rounds what is the best you can do?</li>
 
+			</ul>
+		</div>
+
+		<div class="tutorialContentPage">
+        <h3>Test Your App Further</h3>
+        	<ul>
 				<li>Can you beat the machine using its own strategy?  That is, can you anticipate how the machine will try to beat you according to the current state of the Markov Matrix and use this knowledge in return to beat the machine at that round?  For example, if this is the Markov Matrix at some point in the game and, say, your last choice as the user was Rock,<br /><br />
 					<img src="../images/rps_withAI/Markov4.png" style="width: 75%" alt="some_text"><br />
 
