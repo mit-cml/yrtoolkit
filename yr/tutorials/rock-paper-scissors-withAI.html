@@ -309,7 +309,7 @@
 			<li>set the variable <var>currentUserChoice</var> to zero.  This is done to initialize this variable to a value different than 1,2,3 (<var>ROCK, PAPER, SCISSORS</var> respectively).</li>
 		</ul>
 		</p>
-
+		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
 		<div class="hintContainer">
             <button>Give me a hint</button>
             <div class="hint hideHint">
@@ -349,6 +349,7 @@
 			<li>set the variable <var>currentUserChoice</var> to zero, just like at the initialization.</li>
 			</ul>
         </p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
         <div class="hintContainer">
             <button>Give me a hint</button>
             <div class="hint hideHint">
@@ -369,34 +370,58 @@
 
 
 <div class="tutorialContentPage">
-        <h3>CloudDB GotValue Event</h3>
-        <p>When <span class="icon" alt="clouddb"></span>CloudDB responds to the "get" request with a GotValue event:
-          <ul>
-          <li>if the tag is "YesVotes"  set <var>yesCount</var> to the length of the list returned in the <em>value</em> parameter.</li>
-          <li>else if the tag is "NoVotes"  set <var>noCount</var> to the length of the list returned in the <em>value</em> parameter.</li>
-        </ul>
-        </p>
+        <h3>User Choice Buttons</h3>
+        <p>When any Button is clicked by the user: </p>
         <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/rps_withAI/AnyButton.png" alt="some_text">
+          </div>
+      </div>
+      <ul>
+      	<li>make sure the button click has <em>not</em> already been handled which would be the case if it was the ResetButton (as you dealt with that event already) thus the clicked button should be one of the three user choice buttons: <strong>RockButton</strong>, <strong>PaperButton</strong> or <strong>ScissorsButton</strong>;
+		<li>set <var>currentUserChoice</var> variable to the appropriate value indicated by the button the user has pressed.</li> 
+		<li>if <var>currentUserChoice</var> is zero (which means that this is the start of the game)
+			<ul>
+				<li>set <var>currentComputerChoice</var> to the value returned by a procedure called <strong><var>randomChoice</var></strong>;</li>
+				<li>else set <var>currentComputerChoice</var> to the value returned by a procedure called <strong><var>smartChoice</var></strong>;</li>
+
+				<div class="hintContainer">
+            		<button>More Info</button>
+            			<div class="hint hideHint">
+
+						<p>Create these procedures as blocks but leave them blank without any code for now.  The first procedure will have the computer randomly make a choice of <var>ROCK</var>, <var>PAPER</var> or <var>SCISSORS</var>  (at the start of the game) and the second procedure will make an "informed" choice after studying the Markov Matrix.  You will fill in the code for these procedures later in the tutorial.</p>
+
+						<p>For creating a procedure with a return value choose the one on the right.</p>
+						<img class="enlargeImage" src="../images/rps_withAI/procedureTypes.png" alt="some_text">
+					</div>
+				</div>
+			</ul>
+				
+				</li>
+
+		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
+		<li>call a procedure (without a return value) named <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.  Again, create this procedure but leave it blank for now. </li>
+		<li>call a procedure (without a return value) named <strong><var>updateMatrix</var></strong>.  Again, create this procedure but leave it blank for now.</li>
+		<li>finally set <var>lastUserChoice</var> to <var>currentUserChoice</var> so that the game is ready for the next round.</li>
+      </ul>
+      <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+      <div class="hintContainer">
             <button>Give me a hint</button>
             <div class="hint hideHint">
               
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue1.png" alt="some_text"><br />
-              <p>You can create the "if-then-else-if-then" block via:</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/ifelseif.png" alt="some_text"><br />
-              <p>You can access "get value" and "get tag" blocks by having the mouse hover over <em>value</em> and <em>tag</em> parameters respectively:</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/getvalue.png" alt="some_text">
-              <img class="enlargeImage" src="../images/opinion_poll_app/gettag.png" alt="some_text"><br />
-
+              <img class="enlargeImage" src="../images/rps_withAI/whenanyButtonClick1.png" alt="some_text">
               <div class="hintContainer">
                 <button>Check your solution</button>
                 <div class="hint hideHint">
-                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDB1GotValue2.png" alt="some_text">
+                  <img class="enlargeImage" src="../images/rps_withAI/whenanyButtonClick.png" alt="some_text">
                 </div>
               </div>
 
             </div>
           </div>
+
 
       </div>
 
@@ -405,13 +430,14 @@
 
    
 
-      <div class="tutorialContentPage">
-        <h3>Yes and No Buttons</h3>
-        <p>Now code the Yes and No buttons.  When the YesButton is clicked:
+     <div class="tutorialContentPage">
+        <h3>randomChoice</h3>
+        <p>Now you will fill in the code for the procedures you created above.</p>
+
+		<p>Define procedure <strong><var>randomChoice</var></strong> with a return value:
+
 			<ul>
-            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to leave the <em>Enabled</em> property of these buttons set to true so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
-			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
-			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "Yes" to the list stored under the tag "YesVotes".</li>
+            <li>have the procedure return a randomly chosen item from the <var>choices</var> list (containing <var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>).</li>
 		</ul>
         </p>  
 
@@ -422,32 +448,32 @@
             <div class="hint hideHint">
               
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick1.png" alt="some_text"><br />
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_randomChoice1.png" alt="some_text"><br />
               
               <div class="hintContainer">
                 <button>Check your solution</button>
                 <div class="hint hideHint">
-                  <img class="enlargeImage" src="../images/opinion_poll_app/whenYesButtonClick2.png" alt="some_text">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_randomChoice.png" alt="some_text">
                 </div>
               </div>
 
             </div>
           </div>
 
-          <p>Important: This is a good place to test your app's Yes Button before going any further.</p>
-
       </div>
 
+	<div class="tutorialContentPage">
+        <h3>smartChoice</h3>
 
-      <div class="tutorialContentPage">
-        <h3>Yes and No Buttons</h3>
-        <p>The No button process is similar.  When the NoButton is clicked:
+		<p>Define procedure <strong><var>smartChoice</var></strong> with a return value:
+
 			<ul>
-            <li>disable the Yes and No buttons so that the voter cannot cast more than one vote.  (During the testing phase of your app, it is best, however, to leave the <em>Enabled</em> property of these buttons set to true so that using a single mobile phone/tablet you can cast many votes and see the graphs update.)</li>
-			<li>enable the <strong>ShowHideGraphButton</strong> so that after casting a vote the voter can choose to see the polling results update in graphs.</li>
-			<li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to append a "No" to the list stored under the tag "NoVotes".</li>
+            <li>Create another procedure with a return value to be called within the <strong><var>smartChoice</var></strong> and name it <strong><var>findMostLikelyNextUserChoice</var></strong> but leave it blank without code for now.  You will fill in the code later.  This procedure will return the most likely choice that the user will make based on the computer's assessment of the Markov Matrix which keeps track of historical data about the user's previous sequence of consecutive choices.</li>
+            <li>have the <strong><var>smartChoice</var></strong> procedure return the element from the <var>beatingChoices</var> list using the value returned by <strong><var>findMostLikelyNextUserChoice</var></strong> as the index into the list.</li>
+</li>
 		</ul>
         </p>  
+
 
         <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
         <div class="hintContainer">
@@ -455,236 +481,162 @@
             <div class="hint hideHint">
               
               <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick1.png" alt="some_text"><br />
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_smartChoice1.png" alt="some_text"><br />
               
               <div class="hintContainer">
                 <button>Check your solution</button>
                 <div class="hint hideHint">
-                  <img class="enlargeImage" src="../images/opinion_poll_app/whenNoButtonClick2.png" alt="some_text">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_smartChoice.png" alt="some_text">
                 </div>
               </div>
 
             </div>
           </div>
 
-          <p>Important: This is a good place to test your app's No Button before going any further.</p>
-
       </div>
 
+     <div class="tutorialContentPage">
+        <h3>Updating Scores</h3>
+        <p>Define the procedure <strong><var>updateWinnerScore </var></strong>  as follows:
+        	<ul>
+			<li>if the computer’s choice beats the user’s choice, increment the computer’s score and announce the computer as the winner;</li>
+			<li>else if the user’s choice beats the computer’s choice, increment the user’s score and announce the user as the winner;</li>
+			<li>else (i.e. neither beats the other) no one’s score needs to be incremented but announce that no one is a winner.</li>
+		</ul>
+	</p>
+
+		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_updateWinnerScore1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_updateWinnerScore.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+    </div>
+
+	<div class="tutorialContentPage">
+        <h3>Updating the Markov Matrix</h3>
+
+        <p>Define the procedure <strong><var>updateMatrix</var></strong> as follows:
+        	<ul>
+				<li>Increment the value in the Markov Matrix cell with row and column defined by <var>lastUserChoice</var> and <var>currentUserChoice</var>, respectively.  So, based on the last two consecutive choices of the user you will increment the frequency of the particular pair of choices stored in the appropriate Matrix cell.</li>
+				<li>call the procedure <strong><var>printMatrix</var></strong> to ensure that the Matrix update is displayed in the app.</li>
+			</ul>
+
+        </p>
+
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_updateMatrix1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_updateMatrix.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+    </div>
+
+	<div class="tutorialContentPage">
+        <h3>Finding the Most Likely Next User Choice</h3>
+        <p>Finally, you will define the procedure <strong><var>findMostLikelyNextUserChoice</var></strong>.</p>
+
+			<p>Note that this procedure has to return a value i.e. the choice (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) that the computer estimates to be most likely to be made by the user.  Make sure that you choose the appropriate type of procedure block returning a result.</p>
+
+			<p>You need to look at the last choice made by the user (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) and then with this as the row index, you need to examine the appropriate row of the Markov Matrix to decide which column has the entry with the highest frequency stored in it.  For example, if the last choice made by the user was <var>PAPER</var> in a game then looking at the following Markov Matrix at that point in the game, you would examine the second row (in red) and you would return <var>SCISSORS</var> (i.e. the column index of 3, which has the largest value of 11 in that row) as the most likely user choice.</p>
+			<img src="../images/rps_withAI/Markov_rows.png" style="width: 75%" alt="some_text">
+			<p>Follow the steps described next.</p>
+
+    </div>
+
+	<div class="tutorialContentPage">
+        <h3>Finding the Most Likely Next User Choice</h3>
+        <p>Define the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
+        	<ul>
+        		<li>initialize two local variables called <var>max</var> and <var>indexofMax</var> where you will store the maximum value encountered in a given row and the column index of that maximum.  Initialize these local variables to 0.</li>
+				<li>Using the value stored in the <var>lastUserChoice</var> variable, identify the row of the Matrix to examine and do a maximum search along this row to find the entry with the largest value and update the variables <var>max</var> and  <var>indexofMax</var> as needed.  The column index of this largest entry (1,2 or 3 i.e. <var>ROCK</var>, <var>PAPER</var>, or <var>SCISSORS</var> respectively) is the value that the procedure must return.</li>
+
+        	</ul>
+
+        </p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_findMostLikelyNextUserChoice1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_findMostLikelyNextUserChoice.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+    </div>
+
       <div class="tutorialContentPage">
-        <h3>Yes and No Buttons</h3>
-	      <p>When you are testing your app, you want to be able to press the Yes and No buttons multiple times to make sure that the vote counts and graphs update appropriately, so leave the <em>Enabled</em> property of these buttons set to true while testing. Don't forget to change these to false after you're done testing and are ready to publish your app. That way, each voter will only be able to cast a single vote, as the voting buttons will be disabled once they vote.</p>
-	      <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
+        <h3>Test Your App</h3>
+        <p>Now test your app thoroughly to make sure that:
+        	<ul>
+				<li>the user is able to click the buttons to make her choices;</li>
+				<li>the Markov Matrix updates correctly with each user click, recording the frequency of consecutive pairs of user choices;</li>
+				<li>the machine is able to randomly make a choice for the first round and thereafter is guided by the information available in the Markov Matrix and makes smart choices;</li>
+				<li>the user and computer scores update correctly;</li>
+				<li>Test that the machine responds appropriately if the user always makes the same choice, like, Rock, Rock, Rock, Rock,.....  For repeated user choices of Rock, does the machine quickly learn to respond with repeated choices of Paper?  Similarly test for the machine's response to user's repeated choices of Paper.  Does the machine quickly learn to respond to repeated Papers with repeated Scissors?  What happens when the user only chooses Scissors?</li>
+			</ul>
+        </p>
 
-	  </div>
 
-      
+    </div>
 
-      <div class="tutorialContentPage">
-        <h3>Show and Hide Graph Button</h3>
-        
-        <p>Now you will give functionality to the <strong>ShowHideGraphButton</strong>.  When this button is clicked:
-			<ul style="padding-left: 1.2em;">
-			<li>if the <strong>HorizontalArrangement2</strong> which contains the graphs is currently visible:
-				<ul style="padding-left: 1.2em;">
-					<li>make the <strong>HorizontalArrangement2</strong> invisible;</li>
-					<li>make the <strong>ShowHideGraphButton</strong> text "Show Graph";</li>
-				</ul></li>
-			<li>otherwise 
-					<ul style="padding-left: 1.2em;">
-					<li>make the <strong>HorizontalArrangement2</strong> visible;</li>
-					<li>make the <strong>ShowHideGraphButton</strong> text "Hide Graph".</li>
+	<div class="tutorialContentPage">
+        <h3>Test Your App Further</h3>
+        	<ul>
+        		<li>Try testing the machine's response to more complex patterns chosen by the user:
+        			<ul>
+					<li>Rock, Paper, Rock, Paper, Rock, Paper........</li>
+					<li>Paper, Scissors, Paper, Scissors, Paper, Scissors.......</li>
+					<li>Rock, Paper, Scissors,	Rock, Paper, Scissors, Rock, Paper, Scissors ....</li>
 					</ul>
+					Does the machine pick up on the patterns and learn how to beat the user?
 				</li>
-          </ul>
-		</p>
-		
-          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
 
-          
+				<li>Try to beat the machine.  In a game of 30 rounds what is the best you can do?</li>
 
-          <div class="hintContainer">
-            <button>Give me a hint</button>
-            <div class="hint hideHint">
-              <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick1.png" alt="some_text"><br />
-              <div class="hintContainer">
-                <button>Check your solution</button>
-                  <div class="hint hideHint">
-                    <img class="enlargeImage" src="../images/opinion_poll_app/whenShowHideButtonClick2.png" alt="some_text">
-                  </div>
-            </div>
+				<li>Can you beat the machine using its own strategy?  That is, can you anticipate how the machine will try to beat you according to the current state of the Markov Matrix and use this knowledge in return to beat the machine at that round?  For example, if this is the Markov Matrix at some point in the game and, say, your last choice as the user was Rock,<br /><br />
+					<img src="../images/rps_withAI/Markov4.png" style="width: 75%" alt="some_text"><br />
 
-            </div>
-          </div>
+				then, the machine will anticipate your choosing Paper next (as the entry with 13 is the largest in the first row) and thus will try to beat you with a Scissors.  However, with this extra knowledge you can now "surprise" the machine by choosing Rock to beat the machine using its own strategy.  How far can you play this strategy?  Can you always beat the machine by looking at the Markov Matrix?  If you play this game in this manner for a long time, what do you expect will happen to the Markov Matrix?  Can you verify your hypothesis?</li>
+			</ul>
 
-      <p>Important: This is a good place to test your app's Show and Hide Graph Button before going any further.</p>
-        
-      </div>
-
-
-
-      <div class="tutorialContentPage">
-        <h3>Visual Display of Graphs</h3>
-        <p>Here are some screenshots that show how the visual display of data, in the form of horizontal bar graphs, changes as votes are cast.  Study these screenshots so you get a feel for the graphical displays you will be creating.  Note that the leftmost bases of these graphs are used to display the actual number of Yes/No votes that are cast while the horizontal bar graphs display the relative percentage of the Yes/No votes.</p>
-        <img class="enlargeImage" src="../images/opinion_poll_app/bargraphs.png" alt="some_text">
-
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Data Changed in CloudDB</h3>
-
-
-        <p>
-        	When the users of the polling app cast their votes, the information is sent to the <span class="icon" alt="clouddb"></span>CloudDB (see your code above when <strong>YesButton</strong>, <strong>NoButton</strong> are clicked).  As soon as the database has changed, the <span class="icon" alt="clouddb"></span>CloudDB will need to inform <strong><em>all</em></strong> users of the app to update the information on the local devices and update the graphs etc.  Here is a sequence of events which needs to happen when <span class="icon" alt="clouddb"></span>CloudDB data has changed:</p>
-        		<ul style="padding-left: 1.2em;">
-				<li>If the value returned by <span class="icon" alt="clouddb"></span>CloudDB is an empty list (which means that the <span class="icon" alt="clouddb"></span>CloudDB is responding to a database reset initiated by the poll administrator) then call <strong>initialize</strong> procedure to reset everything.</li>
-				<li>otherwise, </li>
-        </ul>
-        <div class="hintContainer">
-                <button>Give me a hint</button>
-                  <div class="hint hideHint">  
-                    <p>Here are some of the blocks you will need to complete this functionality.</p>
-                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedA.png" alt="some_text">
-                </div>
-              </div>
-
-        <p>Continued on the next page.</p>
-      
-    
-  </div>
-
-  <div class="tutorialContentPage">
-        <h3>Data Changed in CloudDB (continued)</h3>
-
-        <p>Continued from the previous page</p>
-        <ul style="padding-left: 1.2em;">
-        <li>otherwise,
-					<ul style="padding-left: 1.2em;">
-						<li>if the tag returned by <span class="icon" alt="clouddb"></span>CloudDB is "YesVotes" (indicating that a change in the database occurred with the Yes votes) then set the <var>yesCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "YesVotes" is made up of a series of "Yes" texts and the length of this list specifies the total number of Yes votes collected.)</li>
-						<li>else if  the returned tag was "NoVotes"  (indicating that a change in the database occurred with the No votes) set the <var>noCount</var> variable to the <em>length</em> of the list returned as the value. (Remember that the list under the tag "NoVotes" is made up of a series of "No" texts and the length of this list specifies the total number of No votes collected.)</li>
-						</ul>
-          </li>
-        </ul>
-      
-       <div class="hintContainer">
-                <button>Give me a hint</button>
-                  <div class="hint hideHint">  
-                    <p>Here are some of the blocks you will need to complete this functionality.</p>
-                  <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedB.png" alt="some_text">
-                </div>
-              </div>
-
-
-      <p>Continued on the next page.</p>
     </div>
 
 
-
-<div class="tutorialContentPage">
-        <h3>Data Changed in CloudDB (continued) </h3>
-
-          <p>Continued from the previous page</p>
-
-            <ul style="padding-left: 1.2em;">
-            <ul style="padding-left: 1.2em;">
-            <li>set the <var>yesPercentage</var> and <var>noPercentage</var> variables to the proper calculations.  
-              <div class="hintContainer">
-                <button>Give me a hint</button>
-                  <div class="hint hideHint">  
-                    
-    							<img class="enlargeImage" src="../images/opinion_poll_app/setyesnoPercentages.png" alt="some_text">
-    							Note that  the sum: <br /><var>yesCount</var> + <var>noCount</var> <br />gives the total number of votes cast and the ratio: <br /><var>yesCount</var> / (<var>yesCount</var> + <var>noCount</var>) <br />gives the ratio of the Yes votes to the total number of votes.  Multiplication with 100 turns this ratio into a percentage and the round operator rounds the result to the nearest whole number for simplicity. The calculation is similar for No votes.
-    							</div>
-            </div>
-						</li>
-						<li>set <strong>YesLabel</strong> and <strong>NoLabel</strong> to the <var>yesCount</var> and <var>noCount</var> respectively.  These labels will report the exact number of Yes and No votes cast.</li>
-
-						<li>set the <em>WidthPercent</em> parameter for the <strong>YesBar</strong> and <strong>NoBar</strong> components to the <var>yesPercentage</var> and <var>noPercentage</var> variables which you calculated above.  This will ensure that the bar graphs will have correct width sizes.</li>
-						<li>set the text of <strong>YesBar</strong> and <strong>NoBar</strong> components to display the proper percentages calculated above followed with the "%" symbol to indicate that these values are percentages.</li>
-
-					</ul>
-
-
-			</ul>
-
-    
-          <div class="hintContainer">
-            <button>Give me a hint</button>
-            <div class="hint hideHint">
-              <p>Here are some of the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDataChangedC.png" alt="some_text"><br />
-              <div class="hintContainer">
-                <button>Check your solution</button>
-                  <div class="hint hideHint">
-                    <img class="enlargeImage" src="../images/opinion_poll_app/whenCloudDBDataChanged2.png" alt="some_text">
-                  </div>
-            </div>
-
-            </div>
-          </div>
-
-          <p>Important: This is a good place to test your app before going any further.</p>
-
-       </div>
-
-
-      <div class="tutorialContentPage">
-        <h3>Reset Database Button</h3>
-        
-        <p>When an administrator of the polling app clicks the <strong>ResetDatabaseButton</strong>:
-        <ul>
-      <li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "YesVotes" with an empty list;</li>
-      <li>make a call to <span class="icon" alt="clouddb"></span>CloudDB to replace the list under the tag "NoVotes" with an empty list;</li>
-      <li>call the procedure <strong>initialize</strong> to reset everything.</li>
-    </ul>
-
-    </p>
-    
-          <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
-          <div class="hintContainer">
-            <button>Give me a hint</button>
-            <div class="hint hideHint">
-              <p>Here are the blocks you will need to complete this functionality.</p>
-              <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick1.png" alt="some_text"><br />
-              <div class="hintContainer">
-                <button>Check your solution</button>
-                  <div class="hint hideHint">
-                    <img class="enlargeImage" src="../images/opinion_poll_app/whenResetDatabaseButtonClick2.png" alt="some_text">
-                  </div>
-            </div>
-
-            </div>
-          </div>
-         
-      </div>
-
-      <div class="tutorialContentPage">
-        <h3>Build Your App</h3>
-        <p>Because this app sends information to the cloud to be shared by multiple users, it is helpful to test it using at least two devices so you can check that each user is properly accessing the cloud and getting the data updates.</p>
-        <p>Go to the "Build" menu at the  top of the screen and click on "App (provide QR code for .apk)".  This will start the process of building the app so it can be installed on any tablet.</p>
-        <img class="enlargeImage" src="../images/opinion_poll_app/apkBuild.png" alt="some_text">
-        <p>A QR code will appear in a pop-up window once the app is built.  This may take a few minutes.  When it appears, both you and your partner should scan it using your devices.  Follow the prompts to download and install the .apk on your tablets.</p>
-        <img class="enlargeImage" src="../images/opinion_poll_app/apkBarcode.png" alt="some_text">
-        
-        <p>After testing, if you need to make adjustments to your code, you will need to uninstall the old .apk file from each tablet and do a new build, repeating the above procedure.</p>
-      </div>
-
-
-      <div class="tutorialContentPage">
-        <h3>Test your App!</h3>
-        <p>You are done!  Test your app thoroughly using multiple devices.  
-          <ul>
-            <li>make sure that you can cast Yes and No votes;</li>
-            <li>make sure that you can view the graphs after casting a vote;</li>
-            <li>make sure that the graphs dynamically update as more and more votes are cast;</li>
-            <li>make sure that the graphs correctly display the relative percentages of the Yes and No votes cast;</li>
-            <li>make sure that an admin can correctly reset the database and this change promptly leads to a reset in the user interface.</li>
-          </ul>
-          When you are done testing your app, remember that you will need to revisit the code blocks for <strong>YesButton</strong> and <strong>NoButton</strong> and disable the buttons as shown after a vote is cast.  This will ensure that each user of your app can only cast a single vote in the opinion poll.  When you make the change, be sure to test your app again using multiple devices.
-          <img class="enlargeImage" src="../images/opinion_poll_app/setYesNoButtonsEnabledFalse.png" alt="some_text">
-		</p>
-      </div>
 
     
      <br />
@@ -698,14 +650,20 @@
     <div class="tutorialNavigationHeader"></div>
 
       	<div class="tutorialContentPage">
-			   <strong>Further Explorations</strong>
+			  <strong>Further Explorations</strong>
          <ul>
-            <li>Make administrator access to Reset Database button be <em>password protected</em> so that arbitrary users cannot reset the database.  (You may wish to look at another YR Media tutorial titled <a href="http://appinventor.mit.edu/explore/app-building-guides.html" target="_blank">"My To Do List"</a> to learn how to add password protection to your user interface.)</li>
-      			<li>Create an interface in the password protected administrator section so that the admin can write a poll question to be broadcast to all users of the app taking the poll via the <span class="icon" alt="clouddb"></span>CloudDB.  This will allow the admin to generate and broadcast poll questions as needed instead of being limited to a single hard-coded poll question.</li>
-      			<li>Create a version where there are multiple choices to select from, for example A, B, C, D and thus more bar graphs to display.  This version may be even more useful in a classroom setting for a teacher than the simple Yes/No version.</li>
-      			<li>Make a version of the project where the bar graphs are vertical rather than horizontal.</li>
-      			<li>Your own innovative ideas here.</li>
+           <li>In case the user might forget her choice in a round of the game, create a label and an image showing her choice similar to (and next to) what is done in the GUI for showing the computer choice.</li>
+			<li>Create a button (perhaps instead of <strong>MarkovLabel</strong> that says "Markov Transition Matrix") to show and hide the Markov Matrix information so that the decision process of the machine can be hidden from the user.</li>
+			<li>What other machine learning schemes can you think of?  How would you implement these ideas?</li>
+		</ul>
+		</div>
 
+		<div class="tutorialContentPage">
+		<strong>Further Explorations</strong>
+			<ul>
+			<li>The Machine Learning algorithm you implemented in this project is an example of a "classical" Artificial Intelligence algorithm (i.e. "classical" as in the sense of  "not modern").  It is domain specific (i.e. only applies to the Rock-Paper-Scissors game) and it implements a particular strategy for the game.  Do some research about Neural Networks to learn about more modern approaches to Machine Learning.  Pay special attention to the "supervised" versus "unsupervised" approaches to Machine Learning.</li>
+			<li>Watch the movie  <a href="https://youtu.be/8tq1C8spV_g" target="_blank">AlphaGo</a> which documents the amazing story of the machine learning algorithm <strong>AlphaGo</strong>, developed by Google's <strong>DeepMind</strong> team, that in 2016 managed to beat Lee Sedol, the world champion of the board game Go.  </li>
+			<li>Do some research about <strong>AlphaGo Zero</strong>.  How is it different than and superior to <strong>AlphaGo</strong>?</li>
 
           </ul>
         
@@ -714,9 +672,9 @@
 	
 
 
-        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
-      </div>-->
+      </div>
 	
     </div>	
 
@@ -735,6 +693,7 @@
 
 <h3>About Youth Mobile Power</h3> 
     <div>
+    	<p>ATTENTION NEED THE NEW GRANT NO HERE FOR NSF</p>
       <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.</p>
       <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.</p>
       <p>Essentially: get inspired by the story, get busy making your own app!</p>
