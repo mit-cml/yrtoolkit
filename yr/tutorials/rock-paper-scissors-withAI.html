@@ -62,7 +62,7 @@
     <div>
       <p>Put here a challenge statement based on an associated YR story</p>
 
-      <p>Click "Connect Your App" below to start building your app!</p>
+      <p>Click "Connect Your App" below to start building your app or go directly to the Rock-Paper-Scissors with AI tutorial below.</p>
     </div>
 
     <h3>Connect Your App</h3>
@@ -77,9 +77,25 @@
         <h3>Introduction</h3>
         <p>In this project you will catch a glimpse into how is it possible to program a machine to learn from its experiences and make "informed" decisions exhibiting intelligence.  You will implement a Rock-Paper-Scissors game on your mobile device in which a user can play against the machine.  The machine will keep track of the choices of the user and if a pattern emerges in the sequence of choices made by the user, the machine will exploit this knowledge to beat the user. 
     </p>
+    	<div class="hintContainer">
+                <button>Rules of the Rock-Paper-Scissors game</button>
+                <div class="hint hideHint">
+					It is a two-person game in which each player simultaneously reveal their choices using hand gestures as shown below.  The winner of a round is determined by the following  rules:
+					<ul>
+						<li>Rock beats Scissors</li>
+						<li>Scissors beat Paper</li>
+						<li>Paper beat Rock</li>
+					</ul>
+					For more information, you can view the <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">Wikipedia entry for the game</a>.
+				</div>
+			</div>
         
         <img class="enlargeImage" src="../images/rps_withAI/RPS.png" alt="some_text">
         <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed.</p>
+
+        
+        
+
 
     	</div>
 
@@ -169,7 +185,7 @@
           <h3>Practice with Markov Matrix</h3>
           <p>Suppose the game just started and the Matrix is as shown:</p>
           <img  src="../images/rps_withAI/Markov1.png" style="width:75%" alt="some_text">
-          <p>Supposed then the following sequence of choices is made by the user:</p>
+          <p>Suppose then the following sequence of choices is made by the user:</p>
 			<p>Rock, Scissors, Scissors, Paper</p>
 
 			<p>What would the Markov Matrix look like at that point in the game?</p>
@@ -222,38 +238,55 @@
 
       <div class="tutorialContentPage">
         <h3>Initializations</h3>
-        	<ul>
+        	<ol>
         	<li>Create a variable called <var>choices</var> which will eventually contain the list of possible choices (<var>ROCK, PAPER, SCISSORS</var>) and for now initialize it to an empty list.</li>
 			<li>Create a variable called <var>beatingChoices</var> which will eventually contain the list of possible beating choices (<var>PAPER, SCISSORS, ROCK</var>) and for now initialize it to an empty list.  The order given is so as: Paper beats Rock, Scissors beats Paper and Rock beats Scissors.</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
 			<li>Create variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> and initialize them to the numbers 1,2 and 3 respectively.  Assigning numbers to the choices will allow you to easily navigate indices of various lists and update the Markov Matrix at the end of each round of the game.</li>
-			</ul>
+			</ol>
+			<div class="hintContainer">
+   
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	
+                  <img class="enlargeImage" src="../images/rps_withAI/initializations1.png" alt="some_text">
+              </div>
+          </div>
 		</div>
 
 		<div class="tutorialContentPage">
         <h3>Initializations</h3>
-        	<ul>
-			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS" (without quotes).  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for others choices.</li>
+        	<ol start="4">
+			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS" (without quotes).  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for other choices.</li>
 			<li>Create a variable called <var>buttonChoices</var> and initialize it to hold a list of the button components that the user can press: <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong>.  (Review the names of the GUI elements if you need to remind yourself these names.)  Note that these are not the words "RockButton", etc. but rather the actual components <strong>RockButton</strong>, etc.</li>
 			<img  src="../images/rps_withAI/RockButtonBlock.png" style="width:75%" alt="some_text">
 
-		</ul>
+		</ol>
+
+			<div class="hintContainer">
+   
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                	
+                  <img class="enlargeImage" src="../images/rps_withAI/initializations2.png" alt="some_text">
+              </div>
+          </div>
 	</div>
 
 	<div class="tutorialContentPage">
         <h3>Initializations</h3>
-        	<ul>
+        	<ol start="6">
 			<li>Create a variable called <var>imageChoices</var> and initialize it to hold a list of the names of the PNG images stored as Media files: "rock.png", "paper.png", "scissors.png".</li>
 			<li>Create a variable called <var>MarkovTransitionMatrix</var> and initialize it to an empty list.  You will later create a procedure to make this variable hold a list of lists.</li>
 			<li>Create two variables called <var>lastUserChoice</var> and <var>currentUserChoice</var> which will keep track of the last two consecutive choices made by the user and initialize them to zero.</li>
-        	</ul>
+        	</ol>
 
         	<div class="hintContainer">
    
                 <button>Check your solution</button>
                 <div class="hint hideHint">
                 	
-                  <img class="enlargeImage" src="../images/rps_withAI/initializations.png" alt="some_text">
+                  <img class="enlargeImage" src="../images/rps_withAI/initializations3.png" alt="some_text">
               </div>
           </div>
 
@@ -312,24 +345,24 @@
 
       <div class="tutorialContentPage">
         <h3>Screen1 Initialization</h3>
-          <p>When the Screen1 initializes:
-          	<ul>
+          <p>When Screen1 initializes:
+          	<ol>
 			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
 			<li>set the variable <var>choices</var> to the list containing the variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> (in this order).  (Remember that these variables hold the values 1,2, and 3 respectively);</li>
 			<li>set the variable <var>beatingChoices</var> to the list containing the variables <var>PAPER</var>, <var>SCISSORS</var> and <var>ROCK</var> (in this order);</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
-			</ul>
-			<p>Continued at the next page...</p>
+			</ol>
+			<p>Continued on the next page...</p>
 		</p>
 	</div>
 
 		<div class="tutorialContentPage">
         <h3>Screen1 Initialization</h3>
-          <p>When the Screen1 initializes:
-          	<ul>
+          <p>When Screen1 initializes:
+          	<ol start="4">
 			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>.  Note that this choice is completely arbitrary and allows the Markov Matrix to be built immediately following the first choice made by the user instead of waiting two rounds, which leads to a slightly more complex programming code;</li>
 			<li>set the variable <var>currentUserChoice</var> to zero.  This is done to initialize this variable to a value different than 1,2,3 (<var>ROCK, PAPER, SCISSORS</var> respectively).</li>
-		</ul>
+		</ol>
 		</p>
 		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
 		<div class="hintContainer">
@@ -390,9 +423,25 @@
 
       </div>
 
+<div class="tutorialContentPage">
+        <h3>randomChoice and smartChoice</h3>
+        <p>Create two procedures with a return value as blocks but leave them blank without any code for now.  The first procedure, <strong><var>randomChoice</var></strong>,  will have the computer randomly make a choice of <var>ROCK</var>, <var>PAPER</var> or <var>SCISSORS</var>  (at the start of the game) and the second procedure, <strong><var>smartChoice</var></strong>, will make an "informed" choice after studying the Markov Matrix.  You will fill in the code for these procedures later in the tutorial.</p>
+
+            <p>For creating a procedure with a return value choose the one on the right.</p>
+            <img class="enlargeImage" src="../images/rps_withAI/procedureTypes.png" alt="some_text">
+
+</div>   
+<div class="tutorialContentPage">
+  <h3>update procedures</h3>
+  <p>Create two procedures <em>without</em> a return value as blocks but leave them blank without any code for now.  The first procedure, <strong><var>updateWinnerScore</var></strong>, will increment the score of the winner of a given round of the game.  The second procedure, <strong><var>updateMatrix</var></strong>, will update the Markov Matrix at the end of each round of the game.</p>
+
+  <p>For creating a procedure <em>without</em> a return value choose the one on the left.</p>
+            <img class="enlargeImage" src="../images/rps_withAI/procedureTypes2.png" alt="some_text">
+</div>     
 
 <div class="tutorialContentPage">
         <h3>User Choice Buttons</h3>
+        <p>You will now handle the <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong> click events. Since they all behave the same way, it makes sense to use the Any Component feature of App Inventor.</p>
         <p>When any Button is clicked by the user: </p>
         <div class="hintContainer">
             <button>Give me a hint</button>
@@ -401,28 +450,17 @@
           </div>
       </div>
       <ul>
-      	<li>make sure the button click has <em>not</em> already been handled which would be the case if it was the ResetButton (as you dealt with that event already) thus the clicked button should be one of the three user choice buttons: <strong>RockButton</strong>, <strong>PaperButton</strong> or <strong>ScissorsButton</strong>;</li>
-		<li>set <var>currentUserChoice</var> variable to the appropriate value indicated by the button the user has pressed.</li> 
+      	<li>You already handled the <strong>ResetButton</strong> click event, so deal only with button clicks <em>not already handled</em>;</li>
+		
 		<li>if <var>currentUserChoice</var> is zero (which means that this is the start of the game)
 			<ul>
-				<li>set <var>currentComputerChoice</var> to the value returned by a procedure called <strong><var>randomChoice</var></strong>;</li>
-				<li>else set <var>currentComputerChoice</var> to the value returned by a procedure called <strong><var>smartChoice</var></strong>;</li>
-
-				<div class="hintContainer">
-            		<button>More Info</button>
-            			<div class="hint hideHint">
-
-						<p>Create these procedures as blocks but leave them blank without any code for now.  The first procedure will have the computer randomly make a choice of <var>ROCK</var>, <var>PAPER</var> or <var>SCISSORS</var>  (at the start of the game) and the second procedure will make an "informed" choice after studying the Markov Matrix.  You will fill in the code for these procedures later in the tutorial.</p>
-
-						<p>For creating a procedure with a return value choose the one on the right.</p>
-						<img class="enlargeImage" src="../images/rps_withAI/procedureTypes.png" alt="some_text">
-					</div>
-				</div>
+				<li>set <var>currentComputerChoice</var> to the value returned by the procedure <strong><var>randomChoice</var></strong>;</li>
+				<li>else set <var>currentComputerChoice</var> to the value returned by the procedure <strong><var>smartChoice</var></strong>;</li>
 			</ul>
 				
 				</li>
 			</ul>
-			<p>Continued at the next page ...</p>
+			<p>Continued on the next page ...</p>
 		</div>
 
 
@@ -431,8 +469,9 @@
         <p>When any Button is clicked by the user: </p>
         <ul>
 		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
-		<li>call a procedure (without a return value) named <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.  Again, create this procedure but leave it blank for now. </li>
-		<li>call a procedure (without a return value) named <strong><var>updateMatrix</var></strong>.  Again, create this procedure but leave it blank for now.</li>
+    <li>set <var>currentUserChoice</var> variable according to the button the user has pressed.  We set this variable only now after the computer makes it choice because the computer cannot make its decision based on what the user just chose -it would be cheating- but only based on the user's past choices.</li>
+		<li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
+		<li>call the procedure (without a return value) <strong><var>updateMatrix</var></strong> to update the Markov Matrix.</li>
 		<li>finally set <var>lastUserChoice</var> to <var>currentUserChoice</var> so that the game is ready for the next round.</li>
       </ul>
       <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
@@ -560,7 +599,7 @@
 
         <p>Define the procedure <strong><var>updateMatrix</var></strong> as follows:
         	<ul>
-				<li>Increment the value in the Markov Matrix cell with row and column defined by <var>lastUserChoice</var> and <var>currentUserChoice</var>, respectively.  So, based on the last two consecutive choices of the user you will increment the frequency of the particular pair of choices stored in the appropriate Matrix cell.</li>
+				<li>increment the appropriate Markov Matrix cell by 1, based on <var>lastUserChoice</var> and <var>currentUserChoice</var> as row and column.</li>
 				<li>call the procedure <strong><var>printMatrix</var></strong> to ensure that the Matrix update is displayed in the app.</li>
 			</ul>
 
@@ -588,13 +627,13 @@
 
 	<div class="tutorialContentPage">
         <h3>Finding the Most Likely Next User Choice</h3>
-        <p>Finally, you will define the procedure <strong><var>findMostLikelyNextUserChoice</var></strong>.</p>
+        <p>Finally, you will define the procedure <strong><var>findMostLikelyNextUserChoice</var></strong> whose return value will be used as the index into <var>beatingChoices</var> in the <strong><var>smartChoice</var></strong> procedure.</p>
 
 			<p>Note that this procedure has to return a value i.e. the choice (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) that the computer estimates to be most likely to be made by the user.  Make sure that you choose the appropriate type of procedure block returning a result.</p>
 
-			<p>You need to look at the last choice made by the user (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) and then with this as the row index, you need to examine the appropriate row of the Markov Matrix to decide which column has the entry with the highest frequency stored in it.  For example, if the last choice made by the user was <var>PAPER</var> in a game then looking at the following Markov Matrix at that point in the game, you would examine the second row (in red) and you would return <var>SCISSORS</var> (i.e. the column index of 3, which has the largest value of 11 in that row) as the most likely user choice.</p>
+			<p>Look at the last choice made by the user (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) and then with this as the row index, you need to examine the appropriate row of the Markov Matrix to decide which column has the entry with the highest frequency stored in it.  For example, if the last choice made by the user was <var>PAPER</var>, you would examine the second row (in red) and you would return <var>SCISSORS</var> (i.e. the column index of 3, which has the largest value of 11 in that row) as the most likely user choice.</p>
 			<img src="../images/rps_withAI/Markov_rows.png" style="width: 75%" alt="some_text">
-			<p>Follow the steps described next.</p>
+			<p>Follow the steps described on the next page.</p>
 
     </div>
 
@@ -602,8 +641,10 @@
         <h3>Finding the Most Likely Next User Choice</h3>
         <p>Define the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
         	<ul>
-        		<li>initialize two local variables called <var>max</var> and <var>indexofMax</var> where you will store the maximum value encountered in a given row and the column index of that maximum.  Initialize these local variables to 0.</li>
-				<li>Using the value stored in the <var>lastUserChoice</var> variable, identify the row of the Matrix to examine and do a maximum search along this row to find the entry with the largest value and update the variables <var>max</var> and  <var>indexofMax</var> as needed.  The column index of this largest entry (1,2 or 3 i.e. <var>ROCK</var>, <var>PAPER</var>, or <var>SCISSORS</var> respectively) is the value that the procedure must return.</li>
+        		<li>initialize a local variable <var>row</var> which will store (as a list) the row of the Markov Matrix determined by the <var>lastUserChoice</var>.</li>
+            <li>initialize a local variable <var>max</var> to 0. This will track the maximum value in the identified row.</li>
+            <li>do a maximum search along the <var>row</var> to find the entry with the largest value and update the variable <var>max</var> as needed.  </li>
+				    <li>use an appropriate list operation to find the index of the cell with the largest entry (column index: 1,2 or 3 i.e. <var>ROCK</var>, <var>PAPER</var>, or <var>SCISSORS</var> respectively) This index is the value that the procedure must return.</li>
 
         	</ul>
 
@@ -637,7 +678,12 @@
 				<li>the Markov Matrix updates correctly with each user click, recording the frequency of consecutive pairs of user choices;</li>
 				<li>the machine is able to randomly make a choice for the first round and thereafter is guided by the information available in the Markov Matrix and makes smart choices;</li>
 				<li>the user and computer scores update correctly;</li>
-				<li>Test that the machine responds appropriately if the user always makes the same choice, like, Rock, Rock, Rock, Rock,.....  For repeated user choices of Rock, does the machine quickly learn to respond with repeated choices of Paper?  Similarly test for the machine's response to user's repeated choices of Paper.  Does the machine quickly learn to respond to repeated Papers with repeated Scissors?  What happens when the user only chooses Scissors?</li>
+				<li>the machine responds appropriately if the user always makes the same choice, like, Rock, Rock, Rock,....
+					<ul>
+						<li>For repeated user choices of Rock, does the machine quickly learn to respond with repeated choices of Paper? </li>
+						<li>What happens when the user only chooses Paper or only chooses Scissors?</li>
+					</ul>
+				</li>
 			</ul>
         </p>
 
@@ -667,7 +713,13 @@
 				<li>Can you beat the machine using its own strategy?  That is, can you anticipate how the machine will try to beat you according to the current state of the Markov Matrix and use this knowledge in return to beat the machine at that round?  For example, if this is the Markov Matrix at some point in the game and, say, your last choice as the user was Rock,<br /><br />
 					<img src="../images/rps_withAI/Markov4.png" style="width: 75%" alt="some_text"><br />
 
-				then, the machine will anticipate your choosing Paper next (as the entry with 13 is the largest in the first row) and thus will try to beat you with a Scissors.  However, with this extra knowledge you can now "surprise" the machine by choosing Rock to beat the machine using its own strategy.  How far can you play this strategy?  Can you always beat the machine by looking at the Markov Matrix?  If you play this game in this manner for a long time, what do you expect will happen to the Markov Matrix?  Can you verify your hypothesis?</li>
+				then, the machine will anticipate your choosing Paper next (as the entry with 13 is the largest in the first row) and thus will try to beat you with a Scissors.  However, with this extra knowledge you can now "surprise" the machine by choosing Rock to beat the machine using its own strategy.  
+					<ul>
+					<li>How far can you play using this strategy?  </li>
+					<li>Can you always beat the machine by looking at the Markov Matrix?</li>
+					<li>If you play this game in this manner for a long time, what do you expect will happen to the Markov Matrix?  Can you verify your hypothesis?</li>
+					</ul>
+				</li>
 			</ul>
 
     </div>
@@ -688,9 +740,9 @@
       	<div class="tutorialContentPage">
 			  <strong>Further Explorations</strong>
          <ul>
-           <li>In case the user might forget her choice in a round of the game, create a label and an image showing her choice similar to (and next to) what is done in the GUI for showing the computer choice.</li>
-			<li>Create a button (perhaps instead of <strong>MarkovLabel</strong> that says "Markov Transition Matrix") to show and hide the Markov Matrix information so that the decision process of the machine can be hidden from the user.</li>
-			<li>What other machine learning schemes can you think of?  How would you implement these ideas?</li>
+           <li>In case the user might forget her choice in a round of the game, display the user’s choice next to the computer’s choice (label and image).</li>
+			<li>Create a button (perhaps instead of <strong>MarkovLabel</strong>) to show and hide the Markov Matrix information so that the decision process of the machine can be hidden from the user.</li>
+			<li>What other Machine Learning schemes can you think of?  How would you implement these ideas?</li>
 		</ul>
 		</div>
 
@@ -698,7 +750,7 @@
 		<strong>Further Explorations</strong>
 			<ul>
 			<li>The Machine Learning algorithm you implemented in this project is an example of a "classical" Artificial Intelligence algorithm (i.e. "classical" as in the sense of  "not modern").  It is domain specific (i.e. only applies to the Rock-Paper-Scissors game) and it implements a particular strategy for the game.  Do some research about Neural Networks to learn about more modern approaches to Machine Learning.  Pay special attention to the "supervised" versus "unsupervised" approaches to Machine Learning.</li>
-			<li>Watch the movie  <a href="https://youtu.be/8tq1C8spV_g" target="_blank">AlphaGo</a> which documents the amazing story of the machine learning algorithm <strong>AlphaGo</strong>, developed by Google's <strong>DeepMind</strong> team, that in 2016 managed to beat Lee Sedol, the world champion of the board game Go.  </li>
+			<li>Watch the movie  <a href="https://youtu.be/8tq1C8spV_g" target="_blank">AlphaGo</a> which documents the amazing story of the Machine Learning algorithm <strong>AlphaGo</strong>, developed by Google's <strong>DeepMind</strong> team, that in 2016 managed to beat Lee Sedol, the world champion of the board game Go.  </li>
 			<li>Do some research about <strong>AlphaGo Zero</strong>.  How is it different than and superior to <strong>AlphaGo</strong>?</li>
 
           </ul>
