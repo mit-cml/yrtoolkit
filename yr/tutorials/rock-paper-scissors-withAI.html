@@ -432,7 +432,7 @@
 
 </div>   
 <div class="tutorialContentPage">
-  <h3>update procedures</h3>
+  <h3>Update Procedures</h3>
   <p>Create two procedures <em>without</em> a return value as blocks but leave them blank without any code for now.  The first procedure, <strong><var>updateWinnerScore</var></strong>, will increment the score of the winner of a given round of the game.  The second procedure, <strong><var>updateMatrix</var></strong>, will update the Markov Matrix at the end of each round of the game.</p>
 
   <p>For creating a procedure <em>without</em> a return value choose the one on the left.</p>
@@ -449,7 +449,7 @@
               <img class="enlargeImage" src="../images/rps_withAI/AnyButton.png" alt="some_text">
           </div>
       </div>
-      <ul>
+      <ol>
       	<li>You already handled the <strong>ResetButton</strong> click event, so deal only with button clicks <em>not already handled</em>;</li>
 		
 		<li>if <var>currentUserChoice</var> is zero (which means that this is the start of the game)
@@ -459,7 +459,7 @@
 			</ul>
 				
 				</li>
-			</ul>
+			</ol>
 			<p>Continued on the next page ...</p>
 		</div>
 
@@ -467,13 +467,13 @@
 <div class="tutorialContentPage">
         <h3>User Choice Buttons</h3>
         <p>When any Button is clicked by the user: </p>
-        <ul>
-		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
-    <li>set <var>currentUserChoice</var> variable according to the button the user has pressed.  We set this variable only now after the computer makes it choice because the computer cannot make its decision based on what the user just chose -it would be cheating- but only based on the user's past choices.</li>
-		<li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
-		<li>call the procedure (without a return value) <strong><var>updateMatrix</var></strong> to update the Markov Matrix.</li>
-		<li>finally set <var>lastUserChoice</var> to <var>currentUserChoice</var> so that the game is ready for the next round.</li>
-      </ul>
+        <ol start="3">
+    		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
+        <li>set <var>currentUserChoice</var> variable according to the button the user has pressed.  We set this variable only now after the computer makes it choice because the computer cannot make its decision based on what the user just chose -it would be cheating- but only based on the user's past choices.</li>
+    		<li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
+    		<li>call the procedure (without a return value) <strong><var>updateMatrix</var></strong> to update the Markov Matrix.</li>
+    		<li>finally set <var>lastUserChoice</var> to <var>currentUserChoice</var> so that the game is ready for the next round.</li>
+      </ol>
       <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
       <div class="hintContainer">
             <button>Give me a hint</button>
@@ -503,7 +503,7 @@
         <h3>randomChoice</h3>
         <p>Now you will fill in the code for the procedures you created above.</p>
 
-		<p>Define procedure <strong><var>randomChoice</var></strong> with a return value:
+		<p>Complete the procedure <strong><var>randomChoice</var></strong> with a return value:
 
 			<ul>
             <li>have the procedure return a randomly chosen item from the <var>choices</var> list (containing <var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>).</li>
@@ -534,12 +534,15 @@
 	<div class="tutorialContentPage">
         <h3>smartChoice</h3>
 
-		<p>Define procedure <strong><var>smartChoice</var></strong> with a return value:
+		<p>Complete the procedure <strong><var>smartChoice</var></strong> with a return value:
 
 			<ul>
-            <li>Create another procedure with a return value to be called within the <strong><var>smartChoice</var></strong> and name it <strong><var>findMostLikelyNextUserChoice</var></strong> but leave it blank without code for now.  You will fill in the code later.  This procedure will return the most likely choice that the user will make based on the computer's assessment of the Markov Matrix which keeps track of historical data about the user's previous sequence of consecutive choices.</li>
+            <li>Create another procedure with a return value to be called within the <strong><var>smartChoice</var></strong> and name it <strong><var>findMostLikelyNextUserChoice</var></strong> but leave it blank without code for now.  You will fill in the code later.  
+              <p>For creating a procedure with a return value choose the one on the right.</p>
+            <img class="enlargeImage" src="../images/rps_withAI/procedureTypes.png" alt="some_text">
+            
+            This procedure will return the most likely choice that the user will make based on the computer's assessment of the Markov Matrix which keeps track of historical data about the user's previous sequence of consecutive choices.</li>
             <li>have the <strong><var>smartChoice</var></strong> procedure return the element from the <var>beatingChoices</var> list using the value returned by <strong><var>findMostLikelyNextUserChoice</var></strong> as the index into the list.</li>
-</li>
 		</ul>
         </p>  
 
@@ -566,7 +569,7 @@
 
      <div class="tutorialContentPage">
         <h3>Updating Scores</h3>
-        <p>Define the procedure <strong><var>updateWinnerScore </var></strong>  as follows:
+        <p>Complete the procedure <strong><var>updateWinnerScore </var></strong>  as follows:
         	<ul>
 			<li>if the computer’s choice beats the user’s choice, increment the computer’s score and announce the computer as the winner;</li>
 			<li>else if the user’s choice beats the computer’s choice, increment the user’s score and announce the user as the winner;</li>
@@ -597,7 +600,7 @@
 	<div class="tutorialContentPage">
         <h3>Updating the Markov Matrix</h3>
 
-        <p>Define the procedure <strong><var>updateMatrix</var></strong> as follows:
+        <p>Complete the procedure <strong><var>updateMatrix</var></strong> as follows:
         	<ul>
 				<li>increment the appropriate Markov Matrix cell by 1, based on <var>lastUserChoice</var> and <var>currentUserChoice</var> as row and column.</li>
 				<li>call the procedure <strong><var>printMatrix</var></strong> to ensure that the Matrix update is displayed in the app.</li>
@@ -627,7 +630,7 @@
 
 	<div class="tutorialContentPage">
         <h3>Finding the Most Likely Next User Choice</h3>
-        <p>Finally, you will define the procedure <strong><var>findMostLikelyNextUserChoice</var></strong> whose return value will be used as the index into <var>beatingChoices</var> in the <strong><var>smartChoice</var></strong> procedure.</p>
+        <p>Finally, you will complete the procedure <strong><var>findMostLikelyNextUserChoice</var></strong> whose return value will be used as the index into <var>beatingChoices</var> in the <strong><var>smartChoice</var></strong> procedure.</p>
 
 			<p>Note that this procedure has to return a value i.e. the choice (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) that the computer estimates to be most likely to be made by the user.  Make sure that you choose the appropriate type of procedure block returning a result.</p>
 
@@ -639,7 +642,7 @@
 
 	<div class="tutorialContentPage">
         <h3>Finding the Most Likely Next User Choice</h3>
-        <p>Define the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
+        <p>Complete the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
         	<ul>
         		<li>initialize a local variable <var>row</var> which will store (as a list) the row of the Markov Matrix determined by the <var>lastUserChoice</var>.</li>
             <li>initialize a local variable <var>max</var> to 0. This will track the maximum value in the identified row.</li>
