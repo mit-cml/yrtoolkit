@@ -469,7 +469,7 @@
         <h3>User Choice Buttons</h3>
         <p>When any Button is clicked by the user: </p>
         <ol start="3">
-    		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text appropriately;</li>
+    		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text using the variable <var>currentComputerChoice</var> as index for <var>imageChoices</var> and <var>choicesinWords</var> respectively;</li>
         <li>set <var>currentUserChoice</var> variable according to the button the user has pressed.  We set this variable only now after the computer makes it choice because the computer cannot make its decision based on what the user just chose -it would be cheating- but only based on the user's past choices.</li>
     		<li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
     		<li>call the procedure (without a return value) <strong><var>updateMatrix</var></strong> to update the Markov Matrix.</li>
