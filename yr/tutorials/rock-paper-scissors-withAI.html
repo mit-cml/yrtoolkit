@@ -91,7 +91,7 @@
 			</div>
         
         <img class="enlargeImage" src="../images/rps_withAI/RPS.png" alt="some_text">
-        <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed.</p>
+        <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed. <br /><br />Image Attribution:  Free Icons Library<br /><a href="https://icon-library.net/icon/rock-paper-scissors-icon-8.html" target="_blank"> Rock Paper Scissors Icon #21623</a></p>
 
         
         
@@ -646,8 +646,12 @@
 
     <div class="tutorialContentPage">
         <h3>Finding the Maximum in a Row</h3>
-        <p>To simplify the procedure  <strong><var>findMostLikelyNextUserChoice</var></strong> you will first create a simple helper procedure called <strong><var>maxInRow</var></strong> to find the maximum element  in a given row of the Markov Matrix:
-        	<ul>
+        <p>To simplify the procedure  <strong><var>findMostLikelyNextUserChoice</var></strong> first create a simple helper procedure called <strong><var>maxInRow</var></strong> to find the maximum element  in a given row of the Markov Matrix.</p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <ul>
         		<li>get the mathematical function <strong>min</strong> from the Math blocks and switch it to <strong>max</strong>.
         			 <img class="enlargeImage" src="../images/rps_withAI/minTomax.png" alt="some_text">
         		</li>
@@ -661,13 +665,6 @@
 				</li>
 
         	</ul>
-
-        </p>
-        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
-        <div class="hintContainer">
-            <button>Give me a hint</button>
-            <div class="hint hideHint">
-              
               <p>Here are the blocks you will need to complete this functionality.</p>
               <img class="enlargeImage" src="../images/rps_withAI/procedure_maxInRow1.png" alt="some_text"><br />
               
@@ -690,9 +687,9 @@
         <h3>Finding the Most Likely Next User Choice</h3>
         <p>Complete the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
         	<ul>
-        		<li>initialize a local variable <var>row</var> which will store (as a list) the row of the Markov Matrix determined by the <var>lastUserChoice</var>.</li>
-	            <li>use the procedure <strong><var>maxInRow</var></strong>  to find the maximum entry in the <var>row</var></li>
-				<li>use an appropriate list operation to find the index of the cell with this maximum entry (column index: 1,2 or 3 i.e. <var>ROCK</var>, <var>PAPER</var>, or <var>SCISSORS</var> respectively) This index is the value that the procedure <strong><var>findMostLikelyNextUserChoice</var></strong> must return.</li>
+        		<li>find the row of the Markov Matrix determined by the <var>lastUserChoice</var>;</li>
+	            <li>use the procedure <strong><var>maxInRow</var></strong>  to find the maximum entry in this row and return the index of that value in the row (1,2 or 3).</li>
+				 
 
         	</ul>
 
