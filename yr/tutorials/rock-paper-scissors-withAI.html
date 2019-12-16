@@ -78,7 +78,7 @@
         <p>In this project you will catch a glimpse into how is it possible to program a machine to learn from its experiences and make "informed" decisions exhibiting intelligence.  You will implement a Rock-Paper-Scissors game on your mobile device in which a user can play against the machine.  The machine will keep track of the choices of the user and if a pattern emerges in the sequence of choices made by the user, the machine will exploit this knowledge to beat the user. 
     </p>
     	<div class="hintContainer">
-                <button>Rules of the Rock-Paper-Scissors game</button>
+                <button>Click here for the rules of the game</button>
                 <div class="hint hideHint">
 					It is a two-person game in which each player simultaneously reveal their choices using hand gestures as shown below.  The winner of a round is determined by the following  rules:
 					<ul>
@@ -91,7 +91,7 @@
 			</div>
         
         <img class="enlargeImage" src="../images/rps_withAI/RPS.png" alt="some_text">
-        <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed.</p>
+        <p>You can click on the images to enlarge them and click and drag the top frame of the enlarged images to move them around as needed. <br /><br />Image Attribution:  Free Icons Library<br /><a href="https://icon-library.net/icon/rock-paper-scissors-icon-8.html" target="_blank"> Rock Paper Scissors Icon #21623</a></p>
 
         
         
@@ -110,7 +110,7 @@
   		
      <div class="tutorialContentPage">
         <h3>The Components Hierarchy</h3>
-        <p>The UI has already been created for you.  You can see below the GUI components and their corresponding place in the component hierarchy.  Study this diagram and the naming scheme so that you will be able to follow the rest of the tutorial where you will give functionality to the components.
+        <p>The UI has already been created for you.  You can see below the UI components and their corresponding place in the component hierarchy.  Study this diagram and the naming scheme so that you will be able to follow the rest of the tutorial where you will give functionality to the components.
 		</p>
 	    <img class="enlargeImage" src="../images/rps_withAI/GUICorrespondence.png" alt="some_text">
 
@@ -231,7 +231,7 @@
 
         <div class="tutorialContentPage">
         <h3>Blocks Editor</h3>
-        <p>Now you will give functionality to the user interface (UI) and endow the machine with intelligence. Switch to the Blocks editor.</p>
+        <p>Now you will give functionality to the User Interface (UI) and endow the machine with intelligence. Switch to the Blocks editor.</p>
         <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
         
       </div>
@@ -240,7 +240,7 @@
         <h3>Initializations</h3>
         	<ol>
         	<li>Create a variable called <var>choices</var> which will eventually contain the list of possible choices (<var>ROCK, PAPER, SCISSORS</var>) and for now initialize it to an empty list.</li>
-			<li>Create a variable called <var>beatingChoices</var> which will eventually contain the list of possible beating choices (<var>PAPER, SCISSORS, ROCK</var>) and for now initialize it to an empty list.  The order given is so as: Paper beats Rock, Scissors beats Paper and Rock beats Scissors.</li>
+			<li>Create a variable called <var>beatingChoices</var> which will eventually contain the list of possible beating choices (<var>PAPER, SCISSORS, ROCK</var>) and for now initialize it to an empty list.  The order given is so because: Paper beats Rock, Scissors beats Paper and Rock beats Scissors.</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
 			<li>Create variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> and initialize them to the numbers 1,2 and 3 respectively.  Assigning numbers to the choices will allow you to easily navigate indices of various lists and update the Markov Matrix at the end of each round of the game.</li>
 			</ol>
@@ -257,8 +257,8 @@
 		<div class="tutorialContentPage">
         <h3>Initializations</h3>
         	<ol start="4">
-			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS" (without quotes).  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for other choices.</li>
-			<li>Create a variable called <var>buttonChoices</var> and initialize it to hold a list of the button components that the user can press: <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong>.  (Review the names of the GUI elements if you need to remind yourself these names.)  Note that these are not the words "RockButton", etc. but rather the actual components <strong>RockButton</strong>, etc.</li>
+			<li>Create a variable called <var>choicesInWords</var> and initialize it to hold a list containing the words "ROCK", "PAPER" and "SCISSORS".  Please note that "ROCK" is a string of characters whereas <var>ROCK</var> is a variable that holds the numerical value 1.  Similar for other choices.</li>
+			<li>Create a variable called <var>buttonChoices</var> and initialize it to hold a list of the button components that the user can press: <strong>RockButton</strong>, <strong>PaperButton</strong> and <strong>ScissorsButton</strong>.  (Review the names of the UI elements if you need to remind yourself these names.)  Note that these are not the words "RockButton", etc. but rather the actual components <strong>RockButton</strong>, etc.</li>
 			<img  src="../images/rps_withAI/RockButtonBlock.png" style="width:75%" alt="some_text">
 
 		</ol>
@@ -299,9 +299,12 @@
 
         <div class="tutorialContentPage">
         <h3>Matrix Procedures</h3>
-        <p>Create two procedures that you will use for the Markov Matrix:</p>
+        <p>Create two procedures <em>without</em> return values that you will use for the Markov Matrix:</p>
         	<ul>
-			<li>Create a procedure called <strong><var>initializeMarkovMatrix</var></strong> and have it set the variable <var>MarkovTransitionMatrix</var> to a list of three lists, each of which containing three zeros as elements.  This will be equivalent to initializing the 3X3 Markov Matrix's entries to zeros.</li>
+        	<li>For creating a procedure <em>without</em> a return value choose the one on the left.
+        		<img class="enlargeImage" src="../images/rps_withAI/procedureTypes2.png" alt="some_text">
+        	</li>
+			<li>Create a procedure called <strong><var>initializeMarkovMatrix</var></strong> and have it set the variable <var>MarkovTransitionMatrix</var> to a list of three lists, each containing three zeros as elements.  This will be equivalent to initializing the 3X3 Markov Matrix's entries to zeros.</li>
 			<img  src="../images/rps_withAI/Markov1.png" style="width:75%" alt="some_text">
 			<div class="hintContainer">
             <button>Give me a hint</button>
@@ -349,7 +352,7 @@
           <p>When Screen1 initializes:
           	<ol>
 			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
-			<li>set the variable <var>choices</var> to the list containing the variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> (in this order).  (Remember that these variables hold the values 1,2, and 3 respectively);</li>
+			<li>set the variable <var>choices</var> to a list containing the variables <var>ROCK</var>, <var>PAPER</var> and <var>SCISSORS</var> (in this order).  (Remember that these variables hold the values 1,2, and 3 respectively);</li>
 			<li>set the variable <var>beatingChoices</var> to the list containing the variables <var>PAPER</var>, <var>SCISSORS</var> and <var>ROCK</var> (in this order);</li>
 			<img src="../images/rps_withAI/choicesVSbeatingChoices.png" style="width:100%" alt="some_text">
 			</ol>
@@ -362,7 +365,7 @@
           <p>When Screen1 initializes:
           	<ol start="4">
 			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>.  Note that this choice is completely arbitrary and allows the Markov Matrix to be built immediately following the first choice made by the user instead of waiting two rounds, which leads to a slightly more complex programming code;</li>
-			<li>set the variable <var>currentUserChoice</var> to zero.  This is done to initialize this variable to a value different than 1,2,3 (<var>ROCK, PAPER, SCISSORS</var> respectively).</li>
+			
 		</ol>
 		</p>
 		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
@@ -388,7 +391,7 @@
 
       <div class="tutorialContentPage">
         <h3>Collapsing Code Blocks</h3>
-        <p>In this project you will do quite a bit of coding and you may benefit from "collapsing" long blocks of code in order to have more work space and to better organize your code, as shown below.</p>
+        <p>In this project you will do quite a bit of coding and you may benefit from right-clicking on long blocks of code and collapsing them in order to have more work space and to better organize your code, as shown below.</p>
         <img class="enlargeImage" src="../images/rps_withAI/collapseCode1.png" alt="some_text">
         <img class="enlargeImage" src="../images/rps_withAI/collapseCode2.png" alt="some_text">
       </div>
@@ -400,7 +403,7 @@
 			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
 			<li>call the procedure <strong><var>printMatrix</var></strong> to show the 3X3 Matrix entries initialized to zeros;</li>
 			<li>set the user and computer scores to zero;</li>
-			<li>reset the winner announcement and the computer choice announcement;</li>
+			<li>reset the winner announcement label to "The winner of this round is:" and the computer choice announcement label to the empty string;</li>
 			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>, just like at the initialization;</li>
 			<li>set the variable <var>currentUserChoice</var> to zero, just like at the initialization.</li>
 			</ul>
@@ -538,7 +541,7 @@
 		<p>Complete the procedure <strong><var>smartChoice</var></strong> with a return value:
 
 			<ul>
-            <li>Create another procedure with a return value to be called within the <strong><var>smartChoice</var></strong> and name it <strong><var>findMostLikelyNextUserChoice</var></strong> but leave it blank without code for now.  You will fill in the code later.  
+            <li>Create another procedure with a return value to be called within the <strong><var>smartChoice</var></strong> procedure and name it <strong><var>findMostLikelyNextUserChoice</var></strong> but leave it blank without code for now.  You will fill in the code later.  
               <p>For creating a procedure with a return value choose the one on the right.</p>
             <img class="enlargeImage" src="../images/rps_withAI/procedureTypes.png" alt="some_text">
             
@@ -635,20 +638,58 @@
 
 			<p>Note that this procedure has to return a value i.e. the choice (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) that the computer estimates to be most likely to be made by the user.  Make sure that you choose the appropriate type of procedure block returning a result.</p>
 
-			<p>Look at the last choice made by the user (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) and then with this as the row index, you need to examine the appropriate row of the Markov Matrix to decide which column has the entry with the highest frequency stored in it.  For example, if the last choice made by the user was <var>PAPER</var>, you would examine the second row (in red) and you would return <var>SCISSORS</var> (i.e. the column index of 3, which has the largest value of 11 in that row) as the most likely user choice.</p>
+			<p>Look at the last choice made by the user (<var>ROCK</var>, <var>PAPER</var>, <var>SCISSORS</var>: 1,2,3 respectively) and then with this as the row index, you need to examine the appropriate row of the Markov Matrix to decide which column has the entry with the highest frequency stored in it.  For example, if the last choice made by the user was <var>PAPER</var>, you would examine the second row (in red) and you would return <var>SCISSORS</var> (i.e. the column index of 3, which has the largest value of 11 in that row) as the most likely next user choice.</p>
 			<img src="../images/rps_withAI/Markov_rows.png" style="width: 75%" alt="some_text">
-			<p>Follow the steps described on the next page.</p>
+			<p>Follow the steps described on the next pages.</p>
 
     </div>
+
+    <div class="tutorialContentPage">
+        <h3>Finding the Maximum in a Row</h3>
+        <p>To simplify the procedure  <strong><var>findMostLikelyNextUserChoice</var></strong> first create a simple helper procedure called <strong><var>maxInRow</var></strong> to find the maximum element  in a given row of the Markov Matrix.</p>
+        <p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
+        <div class="hintContainer">
+            <button>Give me a hint</button>
+            <div class="hint hideHint">
+              <ul>
+        		<li>get the mathematical function <strong>min</strong> from the Math blocks and switch it to <strong>max</strong>.
+        			 <img class="enlargeImage" src="../images/rps_withAI/minTomax.png" alt="some_text">
+        		</li>
+				<li>use the settings gear to give the <strong>max</strong> function three sockets.  This will allow you to compare three entries in a given row of the Markov Matrix.
+					 <img class="enlargeImage" src="../images/rps_withAI/sockets_for_max.png" alt="some_text">
+				</li>
+				<li>create the procedure <strong><var>maxInRow</var></strong> with a return value and use the settings gear to give it an input parameter <var>row</var>.
+				<img class="enlargeImage" src="../images/rps_withAI/adding_row_parameter.png" alt="some_text">
+				</li>
+				<li>use the <strong>max</strong> function to have the procedure <strong><var>maxInRow</var></strong> return the maximum element of the given row.  Remember that a row in the Markov Matrix is a list, so the individual entries in a row can be accessed using list operations.
+				</li>
+
+        	</ul>
+              <p>Here are the blocks you will need to complete this functionality.</p>
+              <img class="enlargeImage" src="../images/rps_withAI/procedure_maxInRow1.png" alt="some_text"><br />
+              
+              <div class="hintContainer">
+                <button>Check your solution</button>
+                <div class="hint hideHint">
+                  <img class="enlargeImage" src="../images/rps_withAI/procedure_maxInRow.png" alt="some_text">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+    </div>
+
+
 
 	<div class="tutorialContentPage">
         <h3>Finding the Most Likely Next User Choice</h3>
         <p>Complete the procedure (with a return value) <strong><var>findMostLikelyNextUserChoice</var></strong>:
         	<ul>
-        		<li>initialize a local variable <var>row</var> which will store (as a list) the row of the Markov Matrix determined by the <var>lastUserChoice</var>.</li>
-            <li>initialize a local variable <var>max</var> to 0. This will track the maximum value in the identified row.</li>
-            <li>do a maximum search along the <var>row</var> to find the entry with the largest value and update the variable <var>max</var> as needed.  </li>
-				    <li>use an appropriate list operation to find the index of the cell with the largest entry (column index: 1,2 or 3 i.e. <var>ROCK</var>, <var>PAPER</var>, or <var>SCISSORS</var> respectively) This index is the value that the procedure must return.</li>
+        		<li>find the row of the Markov Matrix determined by the <var>lastUserChoice</var>;</li>
+	            <li>use the procedure <strong><var>maxInRow</var></strong>  to find the maximum entry in this row and return the index of that value in the row (1,2 or 3).</li>
+				 
 
         	</ul>
 
