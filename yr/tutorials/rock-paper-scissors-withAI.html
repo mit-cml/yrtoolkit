@@ -102,7 +102,7 @@
     <div class="tutorialContentPage">
         <h3>The User Interface</h3>
         
-  		<p>Here is what the User Interface (UI) looks like.  In the top row there are three buttons that let the user pick a choice: Rock, Paper or Scissors.  Next is the part where the computer's choice is revealed. Then there is a label declaring the winner of a round of the game and there is a HorizontalLayout that displays each player's scores.  The last part displays what is called a "Markov Transition Matrix", named after the Russian mathematician <a href="https://en.wikipedia.org/wiki/Andrey_Markov" target="_blank">Andrey Markov</a>, best known for his seminal work on probabilistic processes.  You do not need to worry about this matrix now.  Later in the tutorial you will learn the simple idea behind this 3X3 set of numbers.</p>
+  		<p>Here is what the User Interface (UI) looks like.  In the top row the scores are displayed.  Underneath that there are three buttons that let the user pick a choice: Rock, Paper or Scissors.  Next is the part where the user's and the computer's choices are displayed in words and with images. Then there is a label declaring the winner of a round of the game.  The last part displays what is called a "Markov Transition Matrix", named after the Russian mathematician <a href="https://en.wikipedia.org/wiki/Andrey_Markov" target="_blank">Andrey Markov</a>, best known for his seminal work on probabilistic processes.  You do not need to worry about this matrix now.  Later in the tutorial you will learn the simple idea behind this 3X3 set of numbers.  Note that coloring of the rows of the Matrix match the colors of the buttons for Rock, Paper and Scissors.</p>
   		<img class="enlargeImage" src="../images/rps_withAI/RPS_GUI.png" alt="some_text">
 	  		
 	    
@@ -403,7 +403,7 @@
 			<li>call the procedure <strong><var>initializeMarkovMatrix</var></strong>;</li>
 			<li>call the procedure <strong><var>printMatrix</var></strong> to show the 3X3 Matrix entries initialized to zeros;</li>
 			<li>set the user and computer scores to zero;</li>
-			<li>reset the winner announcement label to "The winner of this round is:" and the computer choice announcement label to the empty string;</li>
+			<li>reset the winner announcement label, the user and computer choice announcement labels to "NONE";</li>
 			<li>set the variable <var>lastUserChoice</var> to the variable <var>ROCK</var>, just like at the initialization;</li>
 			<li>set the variable <var>currentUserChoice</var> to zero, just like at the initialization.</li>
 			</ul>
@@ -474,7 +474,8 @@
         <ol start="3">
     		<li>set the <strong>ComputerChoiceImage</strong> picture and <strong>ComputerChoiceLabel</strong> text using the variable <var>currentComputerChoice</var> as index for <var>imageChoices</var> and <var>choicesinWords</var> respectively;</li>
         <li>set <var>currentUserChoice</var> variable according to the button the user has pressed.  We set this variable only now after the computer makes it choice because the computer cannot make its decision based on what the user just chose -it would be cheating- but only based on the user's past choices.</li>
-    		<li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
+    		<li>set the <strong>UserChoiceImage</strong> picture and <strong>UserChoiceLabel</strong> text using the variable <var>currentUserChoice</var> as index for <var>imageChoices</var> and <var>choicesinWords</var> respectively;</li>
+        <li>call the procedure (without a return value) <strong><var>updateWinnerScore</var></strong> which will increment the score of the winner of a given round of the game.</li> 
     		<li>call the procedure (without a return value) <strong><var>updateMatrix</var></strong> to update the Markov Matrix.</li>
     		<li>finally set <var>lastUserChoice</var> to <var>currentUserChoice</var> so that the game is ready for the next round.</li>
       </ol>
@@ -766,6 +767,8 @@
 					</ul>
 				</li>
 			</ul>
+      
+      <p>Congratulations!  Celebrate, as you have just created your first example of Machine Learning and Artificial Intelligence!</p>
 
     </div>
 
