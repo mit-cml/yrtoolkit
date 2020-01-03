@@ -286,6 +286,7 @@ $(document).ready(function() {
     }
   };
   howToSetup();
+  
 
 });
 
@@ -294,4 +295,7 @@ sendAnalyticsEvent = function(eventObject) {
     ga('send', eventObject);
     //console.log(eventObject);
   }
+};
+enlargeVideo = function (youtubeid) {
+           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
 };
