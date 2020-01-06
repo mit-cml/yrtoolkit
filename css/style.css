@@ -13,7 +13,7 @@ a {
 	color:blue !important;
 }
 p.small {
-	line-height:
+	line-height: .9em;
 }
 
 .ui-state-active,
@@ -142,6 +142,7 @@ a.ui-button:active,
 
 .tutorialDiv {
     position: relative;
+    display: inline-block;
 }
 
 .enlargeImage {
@@ -213,4 +214,7 @@ a.ui-button:active,
 
 .btn-success:focus {
 	background-color: #8fc202;
+}
+img.DialogBox-image {
+  max-width: 100%;
 }
