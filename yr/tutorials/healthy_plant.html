@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>yrtoolkit</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/scrollstyle.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../../scripts/utils.js"></script>
@@ -23,25 +23,38 @@
     //$( "button, input, a" ).click( );
   } );
 </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
 
-  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
-    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Youth Mobile Power</div>
-    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
-
-  </div>
-
 
   <div id="youthRadioAccordion" class="accordion">
+    <h3>The Challenge</h3>
+    <div>
+      <p>Do you have a green thumb, or do you have trouble keeping your house plants alive and well? Well this app could help you and your plants!</p>
+      <p>Learn how to graph light, moisture, and temperature measurements in your healthy plant app.</p>
 
-    <h3>Healthy Plant tutorial</h3>
+      <p>Click "Connect Your App" below to connect your device, or go straight to the Heathy Plant tutorial if you already know how to connect your device.</p>
+    </div>
+
+    <h3>Connect Your App</h3>
+    <div class="setup" id="connect_app"></div>
+   <h3>Healthy Plant tutorial</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
       <div class="tutorialContentPage">
         <h4>1. Setup</h4>
         <p>We'll make an app that measures the health of a plant using graphs.</p>
-        <p>Click <a href="#" onclick="return goToHowToTutorial(0)">here</a> to learn how to set up your device if you haven't yet.</p>
+        <p>Click on the <strong>Connect your app</strong> tab above to learn how to set up your device if you haven't yet.</p>
       </div>
 
       <div class="tutorialContentPage">
@@ -108,71 +121,25 @@
       <p>Try it out on your  device. What happens to the bars? Your app should look something like this:</p>
       <img class="enlargeImage" src="../images/healthy_plant/final.png" alt="some_text">
     </div>
+
     <br/>
       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
       </div>
   </div>
+  
 
-  <h3>Share the app</h3>
-  <div class="share"></div>
 
-  <h3>Published apps</h3>
-  <div>
-    <div id="container">
-     <div class="projectbox"> 
-      <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
-      <div class="projecttext"><span> Hello World</span> </div>
-    </div>
-  </div>
-</div>
 </div>
 
-<div id="howToAccordion" class="accordion" style="display:none">
-      <h3>Connect your App</h3>
-    <div class="tutorialContainer">
-      <div class="tutorialNavigationHeader"></div>
-      <div class="tutorialContentPage">
-        <h3>1. Connect with your device over wifi</h3>
-        <p>Connect using the companion app so you can see your app on your mobile device.</p>
-        <img class="enlargeImage" src="../images/moodCounter/companionAppConnect.png" style="width:75%" alt="some_text">
-        <p>Click <a href="http://appinventor.mit.edu/explore/ai2/setup-emulator.html" target="_blank">here</a> if you don't have a device and <a href="http://appinventor.mit.edu/explore/ai2/setup-device-usb.html" target="_blank">here</a> if you don't have wifi or data available.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>2. Download and install the MIT AI2 Companion App on your phone</h3>
-        <p>Download from the Play Store using the QR code below or <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">this link</a>.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/ai2storecompanionQR.png" style="width:75%" alt="some_text">
-        <p>If you can't use the Play Store click <a href="http://appinv.us/companion" target="_blank">here</a>.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h3>3. Go through the installation instructions on your phone</h3>
-        <p>After downloading, step though the the instructions to install the Companion app on your device.You need to install the MIT AI2 Companion only once, and then leave it on your phone or tablet for whenever you use App Inventor.</p>
-        <!-- Should I expand on this/add clip art? -->
-      </div>
-      <div class="tutorialContentPage">
-        <h3>4. Open your app's QR code</h3>
-        <p>Click Connect, then AI Companion.</p>
-        <img class="enlargeImage" src="../images/connect_device/connectAI.gif" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>5. Connect your app with your phone</h3>
-        <p>A QR code similar to this should pop up on your screen.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/qrCode.png" style="width:75%" alt="some_text">
-        <p>Either scan the QR code or enter the code in the text box.</p>
-        <img class="enlargeImage" src="../images/hello_bonjour/phoneScreen.png" style="width:75%" alt="some_text">
-      </div>
-      <div class="tutorialContentPage">
-        <h3>6. Still confused?</h3>
-        <p>Click <a href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3" target="_blank">here</a> to see a more in-depth explanation of how to connect.</p>
-      </div>
-      <br/>
-      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
-    </div>
+<div id="howToAccordion" class="accordion" style="display:none;">
+ 
 </div>
 
 </div>
+
+
+
 <div id="serverTutorialId" style="display:none;">1</div>
 </body>
 <script src="../../scripts/tabHandler.js"></script>

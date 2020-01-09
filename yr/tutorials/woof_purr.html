@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>malden</title>
-  <link rel="stylesheet" href="../css/scrollstyle.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../../scripts/utils.js"></script>
@@ -45,29 +45,22 @@
 </head>
 <body>
 
-<div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
-  <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
-</div>
-
-<div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
-  <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
-  <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
-</div>
 
 
   <div id="youthRadioAccordion" class="accordion">
+    <h3>Introduction</h3>
+    <div>
 
+      <p>Let's make an app that can play a dog or cat sound when an image is pressed.</p>
+      <p>If you haven't set up your device-app connection yet, click on the <strong>Connect your app</strong> tab below. Otherwise, jump right to the tutorial on the next tab.</p>
+    </div>
   <h3>Connect your App</h3>
   <div class="setup" id="connect_app"></div>
 
     <h3>Hello Woof Purr Tutorial</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
-      <div class="tutorialContentPage">
-        <h4>1. Introduction</h4>
-        <p>Let's make an app that can play a dog or cat sound when an image is pressed.</p>
-        <p>If you haven't set up your device-app connection yet, click <a href="http://appinventor.mit.edu/explore/ai2/setup.html" target="_blank">here</a>.</p>
-      </div>
+
 
       <div class="tutorialContentPage">
         <h4>2. Add and rename Label</h4>
@@ -211,57 +204,7 @@
       </ul>
   </div>
 
-  <h3>Share the app</h3>
-  <div class="tutorialContainer">
-   <div class="tutorialNavigationHeader"></div>
-   <div class="tutorialContentPage">
-    <p>Click on "My Projects" button on the top menu bar.</p>
-    <img class="enlargeImage" src="https://farm3.staticflickr.com/2166/31967122854_b8916b2698_m.jpg" alt="some_text" style="width:width;height:height;" />
-  </div>
-  <div class="tutorialContentPage">
-    <p>Click on the project you want to share, then click on "Publish to Gallery" button.</p>
-    <img class="enlargeImage" src="https://farm3.staticflickr.com/2851/32769490586_ff773e88d8_m.jpg" alt="some_text" style="width:width;height:height;" />
-  </div>
-  <div class="tutorialContentPage">
-    <p>Fill in all the details and click the "PUBLISH" button.</p>
-    <img class="enlargeImage" src="https://farm3.staticflickr.com/2644/32769535566_29015b5e21_m.jpg" alt="some_text" style="width:width;height:height;" />
-  </div>
-  <div class="tutorialContentPage">
-    <p>Click on "SHARE" button to get the link to the app.</p>
-    <img class="enlargeImage" src="https://farm3.staticflickr.com/2023/32810277025_5c6fd8d26c_m.jpg" alt="some_text" style="width:width;height:height;" />
-  </div>
-  <div class="tutorialContentPage">
-    <p>Copy and paste the link in the space below.</p>
 
-    <div id="shareLinkError" style="display:none">
-      <p style="font-size:12pt;color:red">Your link is not correct. Follow the instructions above to get the correct link.</p>
-    </div>
-
-    <div id="shareLinkContainer">
-      <p><label for="age">Link: </label><input id="appLink" title="Paste the copied link here"></p>
-      <p><label for="age">App Name: </label><input id="appName" title="Type the app name"></p>
-      <p><label for="age">Username: </label><input id="appUsername" title="Type your username"></p>
-      <div class="widget">
-        <button class="shareApp">Share</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="shareCompleted" style="display:none">
-    <p style="font-size:12pt;color:green">Thanks for sharing your project! Check out the shared projects section below.</p>
-  </div>
-
-</div>
-
-<h3>Published apps</h3>
-<div>
-  <div id="container">
-   <div class="projectbox"> 
-    <img class="enlargeImage" src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
-    <div class="projecttext"><span> Hello World</span> </div>
-  </div>
-</div>
-</div>
 </div>
 
 <div id="howToAccordion" class="accordion" style="display:none">

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hour of Code</title>
-  <link rel="stylesheet" href="../css/scrollstyle.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../../scripts/utils.js"></script>
@@ -31,11 +31,6 @@
           //$( "button, input, a" ).click( );
         } );
   </script>
-  <script>
-        function enlargeVideo(youtubeid) {
-           window.parent.postMessage({type:"video", youtubeId: youtubeid}, "*");
-      }
-  </script>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -49,16 +44,6 @@
   </script>
 </head>
 <body>
-
-  <div style="width:100%;background-color:#8fc202;color:white;text-align:center;margin-bottom:5px;">
-    <span style="font-size:14pt;font-weight:bold">Mobile App Guide</span>
-  </div>
-
-  <div style="width:100%;height: 40px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
-
-    <div id="youthMobilePowerTab" style="float:left;height:30px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">App Guide</div>
-    <div id="howToTab" style="float:left;height:30px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">How To</div>
-  </div>
 
 
   <div id="youthRadioAccordion" class="accordion">
@@ -113,6 +98,7 @@
         <p>Then drag in a <span class="icon" alt="canvas"></span> Canvas from the Drawing and Animation drawer.</p>
         <a onclick="enlargeVideo('rYnM6qS3mQ0')" href="javascript:void(0);"><img  width="100%" src="../images/digital_doodle/digital_doodle_2_ss.png" alt="uncheck scrollable property for Screen1"></a>
       </div>
+      
       <div class="tutorialContentPage">
         <h4>Set Height and Width to "Fill Parent"</h4>
     <p>In the Properties panel for <b>Canvas1</b>, click <b>Height</b> and set it to <em>"Fill parent"</em>. Do the same for the <b>Width</b> property.</p>
@@ -163,7 +149,7 @@
               <p>The possibilities are endless! It is now up to you to see how much fun you can have with your friends.</p>
 
 
-              <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">Congratulations! You've built a game app. You're an App Inventor!</p>
+              <p style="color: #92267C; font-weight: bold; font-size: 1.5em;">Congratulations! You've built a drawing app. You're an App Inventor!</p>
               <p>Click <a href="https://code.org/api/hour/finish" target="_blank">here</a> for your Hour of Code certificate!</p>
  
       </div>
@@ -175,7 +161,8 @@
   </div>
 
       </div>
-
+    
+   
       
     </div>
 
