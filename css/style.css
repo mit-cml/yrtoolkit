@@ -218,3 +218,8 @@ a.ui-button:active,
 img.DialogBox-image {
   max-width: 100%;
 }
+
+.properties {
+	font-weight: bold; 
+	color: #3399ff;">
+}
