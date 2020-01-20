@@ -181,6 +181,11 @@ a.ui-button:active,
 	text-align: center;
 }
 
+.properties {
+	font-weight: bold; 
+	color: #3399ff;">
+}
+
 .hint {
 	background-color: #eef2e0;
 	border-radius: 3px;
@@ -217,9 +222,4 @@ a.ui-button:active,
 }
 img.DialogBox-image {
   max-width: 100%;
-}
-
-.properties {
-	font-weight: bold; 
-	color: #3399ff;">
 }
