@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hour of Code</title>
+  <title>Hello Its Me</title>
   <link rel="stylesheet" href="../../css/scrollstyle.css">
   <link rel="stylesheet" href="../../css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -47,102 +47,22 @@
 
 
   <div id="youthRadioAccordion" class="accordion">
-    <h3>Unit 1</h3>
+    <h3>Introduction</h3>
     <div>
-      <p>In this unit you will first become familiar with the MIT App Inventor platform, by running a simple app called the <strong>Two Button Game</strong>, and making some User Interface changes, as well as coding changes to the app.</p>
-      <p>Then you will make your own app, called <strong>Hello It's Me</strong>. In this interactive app, you'll use an image and a voice recording of yourself to share with friends and family.</p>
-      <img class="enlargeImage" src="../images/helloItsMe/two-apps.png" alt="screenshots of the two button game app and hello it's me app">
-      <p>First, make sure your mobile device is set up for real time testing, or using the on-screen emulator. You can set up your computer to use App Inventor by clicking on the <strong>Setup your Computer</strong> tab below. Then proceed to the <strong>Two Button Game</strong> tab to learn more about the App Inventor platform.</p>
+      <h4>What you will make</h4>
+      <p>In this lesson you will learn how to make an app that responds to a button press and plays a sound. You will be making an app about yourself that you can share with distant family and friends. Your picture will be on the button. When the user presses your picture, a recording of your voice will play!</p>
+      <img class="enlargeImage" src="../images/helloItsMe/hello-its-me-screenshot.png" alt="screenshot of the Hello Its Me app">
+      <p>So, before you begin making your app, make sure you have a good portrait-oriented picture of yourself for your app. You should also record an audio of a short statement about yourself that you can share. Most computer operating systems come with voice recording software that you can use to record yourself. Save both files somewhere on your computer so you can access them when making the app.</p>
+      <p>Then, make sure your mobile device is set up for real time testing, or using the on-screen emulator. You should remember how to set up your device from the Two Button Game but if you need help, click on the <strong>Setup your Computer</strong> tab below. Then proceed to the <strong>Hello It's Me</strong> tab to get started on your app!</p>
     </div>
 
     <h3>Setup your Computer</h3>
     <div class="setup" id="connect_app"></div>   
 
-    <h3>Two Button Game</h3>
-    <div class="tutorialContainer">
-      <div class="tutorialNavigationHeader"></div>
-      <div class="tutorialContentPage">
-        <h4>Introduction</h4>
-        <p>This is your first app to learn some of the features of App Inventor. The user interface for the app has been made for you, so you can see how to run and test an app with App Inventor.</p>
-        <p>Take a moment to look at the <strong>Viewer</strong>, where the layout of the app is presented. You can see the list of all the components in the <strong>Components</strong> panel. </p>
-        <img class="enlargeImage" src="../images/helloItsMe/two-button-game-ui.png" alt="screenshot of the two button game app">
-        <p>In the User Interface, you should see <span class="icon" alt="horizontal"></span> HorizontalArrangements, which allow you to place two components next to each other. Components normally would be placed vertically.</p>
-        <p>There are also <span class="icon" alt="label"></span> Labels, to display text, and two <span class="icon" alt="button"></span> Buttons, which the user can press to interact with the app.</p>
-      </div>
-
-      <div class="tutorialContentPage">
-      <h4>Run the App</h4>
-        <p>Start the MIT AI Companion app on your mobile device (if you are testing with a mobile device).</p>
-        <img class="enlargeImage" src="../images/helloItsMe/ai-companion.png" alt="start the AI companion" />
-        <p>Then under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. </p>
-        <p>Then on the Companion app, press the blue button and scan the QR code.</p>
-        <img class="enlargeImage" src="../images/helloItsMe/scan-qr-code.png" alt="scan qr code for AI companion" />
-        <img class="enlargeImage" src="../images/helloItsMe/ai-companion-screenshot.png" alt="AI companion screenshot" />
-        <p>If you are using the <strong>Emulator</strong>, then choose <strong>Emulator</strong> under the <strong>Connect</strong> menu.</p>
-        <p>You should see the UI appear on your mobile device, or in the emulator. Try pressing the Left and Right buttons. What happens?</p>
-      </div>
-
-      <div class="tutorialContentPage">
-        <h4>Blocks Editor</h4>      
-        <p>Click on the <strong>Blocks</strong> button in the upper right corner of the screen to switch to the <strong>Blocks Editor</strong>, where you can code your app.</p>
-        <img class="enlargeImage" src="../images/helloItsMe/switch-blocks-tbg.png" alt="switch to the blocks editor">
-        <p>Check out the code blocks already provided for you. Can you figure out what they are doing?</p>
-        <img class="enlargeImage" src="../images/helloItsMe/two-button-code-blocks.png" alt="code blocks for the two button game app" />
-        <p><span class="control">LeftButton.Click</span>, <span class="control">RightButton.Click</span>, and <span class="control">ResetButton.Click</span> are <i>Event Handler</i> blocks, which means they are triggered when an event, in this case a button click, occurs, and it tells the app what to do when that event happens.</p>
-        <p>For <strong>LeftButton</strong> and <strong>RightButton</strong>, each button click increases the value that is diplayed in the corresponding label.</p>
-        <p><span class="control">ResetButton.Click</span> resets both <i>scores</i> for the two buttons back to zero.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h4>Update the User Interface</h4>
-        <p>Now it's time for you to try changing some features of the app.</p>
-        <p>Switch back to the Designer by click on the <strong>Designer</strong> button in the upper right corner of the screen.</p>
-        <img class="enlargeImage" src="../images/helloItsMe/switch-designer.png" alt="switch back to the designer" />
-        <p>In the Designer, click on <strong>LeftButton</strong> in the Components panel and change
- the properties as follows:</p>
-        <ul>
-          <li><i>BackgroundColor:</i> <span class="properties">any color you like</span></li>
-          <li><i>Shape:</i> <span class="properties">rounded</span></li>
-        </ul>
-        <img class="enlargeImage" src="../images/helloItsMe/change-properties.png" alt="change button properties" />
-        <p>You should see your changes reflected on your mobile device or in the emulator. <strong>LeftButton</strong>'s color and shape should change.</p>
-        <p>Do the same for <strong>RightButton</strong>. You should see it change on your mobile device too.</p>
-        <p>Now try changing <strong>ResetButton</strong>. For example, how might you make it larger?</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h4>Update the Code Blocks</h4>
-        <p>Now try changing the code by first switching back to the <strong>Blocks Editor.</strong>.</p>
-        <img class="enlargeImage" src="../images/helloItsMe/switch-blocks-tbg.png" alt="switch to the blocks editor" />
-        <p>Update the <span class="control">LeftButton.Click</span> and <span class="control">RightButton.Click</span> blocks. Change the number that is added to any number other than 1.</p>
-        <img class="enlargeImage" src="../images/helloItsMe/change-blocks.png" alt="change number in leftbutton.click and rightbutton.click blocks" />
-        <p>Then try pressing the buttons on your mobile device or in the emulator. The score for each button should increase by the number you typed.</p>
-      </div>
-      <div class="tutorialContentPage">
-        <h4>What else can you change?</h4>
-        <p>This is just to give you a taste of how the App Inventor platform works. But feel free to try to change other things about your app. Update some of the other properties and code blocks. You won't break anything, so explore!</p>
-        <p>Next, you'll make your own app from scratch. Click on the <strong>Hello It's Me</strong> tab below to get started.</p>
-      </div>
-      <br />
-       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
-      </div>
-    </div>     
-
     <h3>Hello It's Me</h3>
     <div class="tutorialContainer">
       <div class="tutorialNavigationHeader"></div>
      
-      <div class="tutorialContentPage">
-        <h4>Introduction</h4>
-        <p>In this app you will learn how to make an app that responds to a button press and plays a sound. You will be making an app about yourself that you can share with distant family and friends. Your picture will be on the button. When the user presses your picture, a recording of your voice will play!</p>
-        <img class="enlargeImage" src="../images/helloItsMe/hello-its-me-screenshot.png" alt="screenshot of the Hello Its Me app">
-        <p>So, before you begin making your app, make sure you have a good portrait-oriented picture of yourself for your app. You should also record a short statement about yourself that you can share. Most computer operating systems come with voice recording software that you can use to record yourself. Save both files somewhere on your computer so you can access them when making the app.</p>
-      </div>
-
-      <div class="tutorialContentPage">
-        <h4>Start a New Project</h4>
-        <p>App Inventor automatically saves your project, so <strong>Two Button Game</strong> is automatically saved. Under the <strong>Projects</strong> menu, select <strong>Start New Project</strong>. Name the new project <i>HelloItsMe</i>. Note that you cannot put any spaces in the names of projects, or the space will be replaced with an underscore (_).</p>
-        <img class="enlargeImage" src="../images/helloItsMe/start-new-project.png" alt="start a new project">
-      </div>
       <div class="tutorialContentPage">
         <h4>Add User Interface Components</h4>
         <p>The <b>Designer</b> allows you to add <em>components</em> to your app and lay out what it will look like. In the Designer, add a <span class="icon" alt="button"></span> Button and a <span class="icon" alt="label"></span> Label component to your app by dragging them from the User Interface Drawer in the Palette to the Viewer. </p>
@@ -156,8 +76,11 @@
         <h4>Changing Properties</h4>
         <p>On the right side of the screen is the <strong>Properties</strong> panel. Click on <strong>Button1</strong> in the <strong>Components</strong> panel and change the Button properties as follows:</p>
         <ul><li><i>Height:</i> <span style="font-weight: bold; color: #3399ff;">300 pixels</span></li>    <li><i>Width:</i> <span style="font-weight: bold; color: #3399ff;">"Fill parent"</span></li>
+        <li><i>Text</i>: <span style="font-weight: bold; color: #3399ff;">""</span> (blank)</li>
         </ul>
         <img class="enlargeImage" src="../images/helloItsMe/button-properties.png" alt="set button properties">
+        <p>Then click on the <i>Image</i> property and click on "None", and upload your saved image of yourself.</p>
+        <img class="enlargeImage" src="../images/helloItsMe/add-image.gif" alt="set image for button"> 
         <p>Choose <strong>Player1</strong> from the Components list, and find the <i>Source</i> property. Upload the voice recording file that you have saved on your computer for the source.</p>
         <img class="enlargeImage" src="../images/helloItsMe/set-player-source.gif" alt="set player source">
         <p>For <strong>Label1</strong>, set its properties as follows:</p>
