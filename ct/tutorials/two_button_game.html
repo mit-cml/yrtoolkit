@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two Button Game</title>
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
+      });
+
+    }});
+
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+        } );
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>Introduction</h3>
+    <div>
+      <p>In this unit you will become familiar with the MIT App Inventor platform, by running a simple app called the <strong>Two Button Game</strong>, and making some User Interface changes, as well as coding changes to the app.</p>
+      <img class="enlargeImage" src="../images/twobutton/two-button-app.png" alt="screenshot of the two button game app">
+      <p>First, make sure your mobile device is set up for real time testing, or using the on-screen emulator. You can set up your computer to use App Inventor by clicking on the <strong>Setup your Computer</strong> tab below. Then proceed to the <strong>Two Button Game</strong> tab to learn more about the App Inventor platform.</p>
+    </div>
+
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>   
+
+    <h3>Two Button Game</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Introduction</h4>
+        <p>This is your first app to learn some of the features of App Inventor. The user interface for the app has been made for you, so you can see how to run and test an app with App Inventor.</p>
+        <p>Take a moment to look at the <strong>Viewer</strong>, where the layout of the app is presented. You can see the list of all the components in the <strong>Components</strong> panel. </p>
+        <img class="enlargeImage" src="../images/twobutton/two-button-game-ui.png" alt="screenshot of the two button game app">
+        <p>In the User Interface, you should see <span class="icon" alt="horizontal"></span> HorizontalArrangements, which allow you to place two components next to each other. Components normally would be placed vertically.</p>
+        <p>There are also <span class="icon" alt="label"></span> Labels, to display text, and three <span class="icon" alt="button"></span> Buttons (Left, Right, and Reset), which the user can press to interact with the app.</p>
+      </div>
+
+      <div class="tutorialContentPage">
+      <h4>Run the App</h4>
+        <p>Start the MIT AI Companion app on your mobile device (if you are testing with a mobile device).</p>
+        <img class="enlargeImage" src="../images/helloItsMe/ai-companion.png" alt="start the AI companion" />
+        <p>Then under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. </p>
+        <img class="enlargeImage" src="../images/helloItsMe/scan-qr-code.png" alt="scan qr code for AI companion" />
+        <p>Then on the Companion app, press the blue button and scan the QR code.</p>
+        <img class="enlargeImage" src="../images/helloItsMe/ai-companion-screenshot.png" alt="AI companion screenshot" />
+        <p>If you are using the <strong>Emulator</strong>, then choose <strong>Emulator</strong> under the <strong>Connect</strong> menu.</p>
+        <p>You should see the UI appear on your mobile device, or in the emulator. Try pressing the Left and Right buttons. What happens?</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Blocks Editor</h4>      
+        <p>Click on the <strong>Blocks</strong> button in the upper right corner of the screen to switch to the <strong>Blocks Editor</strong>, where you can code your app.</p>
+        <img class="enlargeImage" src="../images/twobutton/switch-blocks-tbg.png" alt="switch to the blocks editor">
+        <p>Check out the code blocks already provided for you. Can you figure out what they are doing?</p>
+        <img class="enlargeImage" src="../images/twobutton/two-button-code-blocks.png" alt="code blocks for the two button game app" />
+        <p><span class="control">LeftButton.Click</span>, <span class="control">RightButton.Click</span>, and <span class="control">ResetButton.Click</span> are <i>Event Handler</i> blocks, which means they are triggered when an event, in this case a button click, occurs, and it tells the app what to do when that event happens.</p>
+        <p>For <strong>LeftButton</strong> and <strong>RightButton</strong>, each button click increases the value that is diplayed in the corresponding label.</p>
+        <p><span class="control">ResetButton.Click</span> resets both <i>scores</i> for the two buttons back to zero.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Update the User Interface</h4>
+        <p>Now it's time for you to try changing some features of the app.</p>
+        <p>Switch back to the Designer by clicking on the <strong>Designer</strong> button in the upper right corner of the screen.</p>
+        <img class="enlargeImage" src="../images/twobutton/switch-designer.png" alt="switch back to the designer" />
+        <p>In the Designer, click on <strong>LeftButton</strong> in the Components panel and change
+ the properties as follows:</p>
+        <ul>
+          <li><i>BackgroundColor:</i> <span class="properties">any color you like</span></li>
+          <li><i>Shape:</i> <span class="properties">rounded</span></li>
+        </ul>
+        <img class="enlargeImage" src="../images/twobutton/change-properties.png" alt="change button properties" />
+        <p>You should see your changes reflected on your mobile device or in the emulator. <strong>LeftButton</strong>'s color and shape should change.</p>
+        <p>Do the same for <strong>RightButton</strong>. You should see it change on your mobile device too.</p>
+        <p>Now try changing <strong>ResetButton</strong>. For example, how might you make it larger?</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>Update the Code Blocks</h4>
+        <p>Now try changing the code by first switching back to the <strong>Blocks Editor.</strong>.</p>
+        <img class="enlargeImage" src="../images/twobutton/switch-blocks-tbg.png" alt="switch to the blocks editor" />
+        <p>Update the <span class="control">LeftButton.Click</span> and <span class="control">RightButton.Click</span> blocks. Change the number that is added to any number other than 1.</p>
+        <img class="enlargeImage" src="../images/twobutton/change-blocks.png" alt="change number in leftbutton.click and rightbutton.click blocks" />
+        <p>Then try pressing the buttons on your mobile device or in the emulator. The score for each button should increase by the number you typed.</p>
+      </div>
+      <div class="tutorialContentPage">
+        <h4>What else can you change?</h4>
+        <p>This is just to give you a taste of how the App Inventor platform works. But feel free to try to change other things about your app. Update some of the other properties and code blocks. You won't break anything, so explore!</p>
+        <p>Next, you'll make your own app from scratch, the <strong>Hello It's Me</strong> app.</p>
+      </div>
+      <br />
+       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div>     
+
+
+    
+      
+    </div>
+
+
+
+<div id="serverTutorialId" style="display:none;">1</div>
+<img src="http://code.org/api/hour/begin_mit_ballbounce.png">
+</body>
+<script src="../../scripts/tabHandler.js"></script>
+<script src="../../scripts/tutorialPage.js"></script>
+<script src="../../scripts/shareAndPublish.js"></script>
+
+</html>
