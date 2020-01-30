@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>yrtoolkit</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../../scripts/utils.js"></script>
+  <script>
+    $(window).bind('resize', function() {
+      console.log("window resized")
+    });
+  </script>
+
+  <script>
+    $( function() {
+      $( ".accordion" ).accordion({heightStyle: "content"});
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    //$( "button, input, a" ).click( );
+  } );
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>About this Tutorial</h3>
+    <div>
+      <p>
+      זהו מדריך בעברית
+      This tutorial introduces you to computer vision and image classification—the ability of computers to examine pictures or videos
+      and identify elements in the images.  Only a few years ago, image classification applications were advanced artificial intelligence
+      research demonstrations, accessible only to experts using the world’s most powerful computers. <br/> <br/>
+
+      <iframe width="280" height="158" src="https://www.youtube.com/embed/iOeHqRdRSHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <br/> <br/>
+      <!--<img class="enlargeImage" src="../images/ImageClassification/cover.png" alt="some_text">  <br/>-->
+      Since then, computers have become more powerful and techniques have improved to the point where you can now experiment with computer vision on your own by running image
+      classification apps on your smartphone and building your own original apps with App Inventor.
+      </p>
+    </div>
+
+    <h3>Connect your App</h3>
+    <div class="setup" id="connect_app"></div>
+
+    <h3>WhatIsIt Tutorial</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>1. Introduction</h4>
+        <p>Let's make an app that can take a picture of an object and attempt to figure out what it is using the concept of machine learning.</p>
+        <p>Look at the Viewer screen. This is what the app will look like on your mobile device. <br/>  <br/> All of the basic components are there, but you still need to add the building blocks to make the app run.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/MainScreen.png" alt="some_text">  <br/>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>2. The Components of the App </h4>
+        <img class="enlargeImage" src="../images/ImageClassification/Components.png" alt="some_text"> <br/>
+        <p>Let's take a closer look at the components and go down the list in order: </p> <br/>
+        <ul><span class="icon" alt="button"></span> HorizontalArrangement1 - This organizes Designer pieces horizontally.</ul>
+        <ul><span class="icon" alt="button"></span> ClassifyButton - When the user presses this button, the object will be classified.</ul>
+        <ul><span class="icon" alt="label"></span> Spacer - This is an invisible label to make the app look better. </ul>
+        <ul><span class="icon" alt="button"></span> ToggleButton - When the user presses this button, the camera direction is toggled from front to back and vice versa. </ul>
+        <ul><span class="icon" alt="label"></span> StatusLabel - This displays the classification of the given object. </ul>
+        <ul><span class="icon" alt="webviewer"></span> WebViewer1 - This is where the image is displayed when the camera is taking pictures to be classified. </ul>
+        <ul><span class="icon" alt="lookextension"></span> LookExtension1 - This is the component that does the magic of classifying the objects in the images. </ul>
+        <!---Webviewer1 and lookextension1 addons per Karen's suggestion? -->
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>3. The Blocks Editor </h4>
+        <p>Click on the blocks button on the right side top bar. This is where you will make the code for the app. You'll do this by clicking and dragging in different blocks to make different types of code!<br/></p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks.png" alt="some_text"> <br/>
+        <p> You will see some blocks already in the workplace; we will discuss those later. </p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>4. Toggle the camera's direction </h4>
+        <p>Now let's work on the Toggle button. When it is pressed, you want it to switch the direction of the device's camera. <br/> Click on the <span class="icon" alt="button"></span> ClassifyButton drawer, then drag the <span class="control">when ToggleButton.Click</span> block to the workspace.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/toggleButtonClick1.gif" alt="some_text"> <br/>
+        <p>Click the <span class="icon" alt="lookextension"></span> LookExtension1 drawer, then drag the call <span class="procedures">LookExtension1.ToggleCameraFacingMode</span> block to the <span class="control">when ToggleButton.Click</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/toggleCamera1.gif" alt="some_text"> <br/>
+        <p> The final block will look like this: </p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks4.png" alt="some_text"> <br/>
+        <p> When you click the Toggle button, it will tell the app to flip the camera's direction. </p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>5. Prepping LookExtension</h4>
+        <p>To be able to run the app, you need to wait for the Look extension to load and be ready to classify objects. Once it is ready, you can start pressing buttons. It would also be useful for the app to notify us when it’s ready to classify objects.
+            Let’s code the blocks to do that. <br/> <br/> Click on the <span class="icon" alt="lookextension"></span> LookExtension1 drawer on the left and drag the <span class="control">when LookExtension1.ClassifierReady</span> block to the workspace.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/whenClassifierReady1.gif" alt="some_text"> <br/>
+        <p>Click on the <span class="icon" alt="button"></span> ClassifyButton drawer, then drag the <span class="setters">set ClassifyButton.Enabled</span> block to the when <span class="control">LookExtension1.ClassifierReady</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/setClassifyButton1.gif" alt="some_text"> <br/>
+        <!--logic inline block doesn't seem to be working-->
+        <!--can't seem to find file with class that implements icons-->
+        <p>Click on the <span class="icon" alt="logic"></span> Logic drawer, then drag the <span class="logic">true</span> block to the <span class="setters">set ClassifyButton.Enabled</span> block. <br/> This will allow the Classify button to work as soon as the Look extension is ready to run.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/true1.gif" alt="some_text"> <br/>
+        <p>Click on the <span class="icon" alt="label"></span> StatusLabel drawer, then drag the <span class="setters">set StatusLabel.Text</span> block to the <span class="control">when LookExtension1.ClassifierReady</span> block, under the <span class="setters">set ClassifyButton.Enabled</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/statusLabelText1.gif" alt="some_text"> <br/>
+        <p>Click on the <span class="icon" alt="text"></span> Text drawer, then drag a blank text <span class="text">" "</span> block to the <span class="setters">StatusLabel.Text</span> block. Type "Ready" into the blank text block. <br/></p>
+        <img class="enlargeImage" src="../images/ImageClassification/text1.gif" alt="some_text"> <br/>
+        <p> The final block will look like this: </p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks3.png" alt="some_text"> <br/>
+        <p> As soon as the Look extension is ready, the word "Ready" shows up on the screen and the Classify button can be pushed! </p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>6. Coding the Classify Functionality </h4>
+        <p>Now you want your app to interpret the image it sees. <br/> Let's construct the blocks to make that happen. <br/> </p>
+        <p>Click on the <span class="icon" alt="button"></span> ClassifyButton drawer on the left and drag the <span class="control">when ClassifyButton.Click</span> block to the workspace. </p>
+        <img class="enlargeImage" src="../images/ImageClassification/classifyButtonClick1.gif" alt="some_text"> <br/>
+        <p>Click on the <span class="icon" alt="lookextension"></span>  LookExtension1 drawer, then drag the block <span class="procedures">call LookExtension1.ClassifyVideoData</span> into the <span class="control">when ClassifyButton.Click</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/classifyVideoData1.gif" alt="some_text"> <br/>
+        <p>This should be the final combined block:</p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks1.png" alt="some_text"> <br/>
+        <p> When the Classify Button is clicked, the Look Extension will classify whatever image is being displayed through your device's video. </p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>7. Displaying the Classification Result </h4>
+        <p>Once the Look Extension classifies an image, you want to see that result on the screen. <br/> Click on the <span class="icon" alt="lookextension"></span> LookExtension1 drawer on the left and drag the <span class="control">when LookExtension1.GotClassification</span> block to the workspace. This block is triggered once the Look Extension classifies an image.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/gotClassification1.gif" alt="some_text"> <br/>
+        <p>Change the text of StatusLabel. <br/> Click on the <span class="icon" alt="label"></span> StatusLabel drawer, then drag the <span class="setters">set StatusLabel.Text</span> block to the <span class="control">LookExtension1.GotClassification</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/setStatusLabelText1.gif" alt="some_text"> <br/>
+        <p>Click on the <span class="icon" alt="lists"></span> Lists drawer, then drag the <span class="lists">select list item</span> block to the <span class="setters">set StatusLabel.Text</span> block.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/listIndex1.gif" alt="some_text"> <br/>
+
+        <p>Hover over the input parameter <span class="variables">result</span> in the <span class="control">when LookExtension1.GotClassification</span> block. From there, drag the <span class="variables">get result</span> block into the <span class="lists">list</span> part of the <span class="lists">select list item</span> block. <span class="variables">result</span> is what the Look Extension classifies an image to be, which is a list of the top ten possibilities with corresponding confidences.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/getResult1.gif" alt="some_text"> <br/>
+
+
+        <p>Click on the <span class="icon" alt="math"></span> Math drawer and drag the value <span class="math">0</span> onto the index of the select list item block. Change the 0 to a 1. <br/> <br/> You do this because result returns a list of the top ten classifications along with their confidence level. Right now you only want the first and most likely classification. So you will retrieve the first item in the list.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/number1.gif" alt="some_text"> <br/>
+        <p>The final block will look like this: </p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks2.png" alt="some_text"> <br/>
+        <p>What this code does is displays the first possibility in the list the Look extension returns after it classifies the image.</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>8. Error Handling </h4>
+        <p>These other two blocks have already been given to you in order to handle any error messages returned by the LookExtension. </p>
+        <p>When the LookExtension encounters an  error, it returns an error code made of numbers. These code blocks translate the error number into text that humans can understand. When making modifications to the app, these may be useful in guiding you! </p>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks5.png" alt="some_text">  <br/>
+        <img class="enlargeImage" src="../images/ImageClassification/blocks6.png" alt="some_text">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>9. Test it out!</h4>
+        <p>Try it out on your device. Take photos of different objects and see how confident your app is in identifying them.</p>
+        <img class="enlargeImage" src="../images/ImageClassification/connectAI.png" alt="some_text">
+        <br><br/>
+        <p>If you are unsure of how to connect your device, go ahead and check the Connect Your App tab above.</p>
+      </div> <br/>
+
+      <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+  </div>
+
+  <h3>Expand your app</h3>
+  <div>
+
+    <b>Speak the result</b>
+    <p>Make the device speak the classification result rather than just showing it in the status label. You might want to have the app say only the class name without the confidence value.</p>
+
+
+    <b>Using the confidences</b>
+    <p>The app’s GotClassification event shows only the first of the ten items in the classification result.   Modify the app to show more than one. Examining these might help explain some of
+      the classification errors (such as the keyboard being identified as a crossword puzzle). You could also use the confidences to report better results. For example, if all the guesses have
+      low confidence the app might respond “I don’t know.” Or if the top two guesses have about the same confidence, the app might respond “This is a clock or a sundial.”</p>
+
+    <b>Classify still images</b>
+    <p>Create another button to toggle to a still-image mode. Modify the demo to classify images other than those from the video camera. To do this, change the Look extension’s input property
+      in the Designer to Image and use ClassifyImageData rather than ClassifyVideoData. You can get the image to classify by using the camera component</p>
+
+  </div>
+
+  </div>
+
+<div id="howToAccordion" class="accordion" style="display:none">
+
+
+</div>
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../../scripts/tabHandler.js"></script>
+<script src="../../scripts/tutorialPage.js"></script>
+<script src="../../scripts/shareAndPublish.js"></script>
+
+</html>
