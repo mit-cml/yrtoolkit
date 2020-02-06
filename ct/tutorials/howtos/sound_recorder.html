@@ -1,0 +1,66 @@
+<div class="tutorialContainer">
+   <div class="tutorialNavigationHeader"></div>
+   <div class="tutorialContentPage">
+     <h4>1. Add New Components</h4>
+     <p>Switch to the Designer.</p>
+     <img class="enlargeImage" src="../images/myPiano/switch-designer.png" alt="switch to the designer">
+     <p>Add a <span class="icon" alt="horizontal"></span> HorizontalArrangement to the Viewer, and drop 3 <span class="icon" alt="button"></span> Buttons into the <span class="icon" alt="horizontal"></span> HorizontalArrangement.</p>
+     <img class="enlargeImage" src="../images/myPiano/add-record-buttons.gif" alt="add buttons to record musc"> 
+     <p>Name them <strong>RecordButton</strong>, <strong>StopRecordingButton</strong>, and <strong>PlayRecordingButton</strong>, in that order and change the <i>Text</i> property for each to its purpose.</p>
+     <p>Uncheck the Enabled box for the <strong>StopRecordingButton</strong> and the <strong>PlayRecordingButton</strong>.</p>
+     <img class="enlargeImage" src="../images/myPiano/uncheck-enabled.png" alt="uncheck the enabled property">
+     <p>Drag in a <span class="icon" alt="soundrecorder"></span> SoundRecorder component and another <span class="icon" alt="player"></span>Player component from the Media drawer. Rename the <span class="icon" alt="player"></span> Player component <strong>RecordingPlayer</strong>.</p>
+    <img class="enlargeImage" src="../images/myPiano/add-media-components.gif" alt="add media components"> 
+   </div>
+
+   <div class="tutorialContentPage">
+    <h4>2. Code the RecordButton</span></h4>
+    <p>Switch to the Blocks Editor.</p>
+    <img class="enlargeImage" src="../images/myPiano/switch-blocks.png" alt="switch to the blocks editor">
+    <p>Code the <span class="control">when RecordButton.Click</span> event block.</p>
+    <ul>
+      <li>Enable the <strong>StopRecordingButton</strong> so the user can stop the recording when they wish.</li>
+      <li>Disable the <strong>RecordButton</strong> so the user cannot record while already recording.</li>
+      <li>Disable the <strong>PlayRecordingButton</strong> so the user cannot play back until finished recording.</li>
+      <li>Start the <strong>SoundRecorder</strong>.</li>
+    </ul>
+    <img class="enlargeImage" src="../images/myPiano/record-button-click.gif" alt="code the record button.click event">
+   </div>
+
+  <div class="tutorialContentPage">
+    <h4>3. Code the Stop Recording Button</h4>
+    <p>When the user stops recording, you want to:</p>
+      <ul>
+        <li>Disable <strong>StopRecordingButton</strong>.</li>
+        <li>Enable <strong>RecordButton</strong>.</li>
+        <li>Stop the <strong>SoundRecorder1</strong>.</li>
+      </ul>
+    <img class="enlargeImage" src="../images/myPiano/stop-record-button.gif" alt="code the stop recording button">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>4. After Recording</h4>
+    <p>When <strong>SoundRecorder1</strong> stops recording, it triggers an event, <span class="control">when SoundRecording.AfterSoundRecorded</span>. </p>
+      <ul>
+        <li>Set the <i>Source</i> for <strong>RecordingPlayer</strong> to the sound returned by the event.</li>
+        <li>And enable the <strong>PlayRecordingButton</strong> so the user can play it back.</li>
+      </ul>
+    <img class="enlargeImage" src="../images/myPiano/after-recording.gif" alt="after recording the sound">
+  </div>
+
+  <div class="tutorialContentPage">
+    <h4>5. Play the Recording</h4>
+    <p>Code <span class="control">when PlayRecordingButton.Click</span> to simply start <strong>RecordingPlayer.</strong>.</p>
+    <img class="enlargeImage" src="../images/myPiano/play-recording.gif" alt="play recording button">
+  </div>
+
+    <div class="tutorialContentPage">
+    <h4>5. Test your App</h4>
+    <p>Try out your changes! Press the <strong>RecordButton</strong>, then press several notes to play some music and record it. When finished, press the <strong>StopRecordingButton</strong>. Then press <strong>PlayRecordingButton</strong> to play back your music. How does it sound?</p>
+  </div>
+
+  <br />
+  <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+    <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+  </div>
+</div>

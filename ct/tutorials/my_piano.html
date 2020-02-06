@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hour of Code</title>
+  <link rel="stylesheet" href="../../css/scrollstyle.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../../scripts/utils.js"></script>
+  <script>
+  $(window).bind('resize', function() {
+    console.log("window resized")
+  });
+  </script>
+
+  <script>
+  $( function() {
+    $( ".accordion" ).accordion({heightStyle: "content",activate: function( event, ui ) {
+      sendAnalyticsEvent( {
+        hitType: 'event',
+        eventCategory: 'Guide-' + document.getElementById("serverTutorialId").innerHTML,
+        eventAction: 'headerClick',
+        eventLabel: ui.newHeader.text()
+      });
+
+    }});
+
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+          //$( "button, input, a" ).click( );
+        } );
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+  <div style="width:100%;height: 50px;text-align:center;background-color: #f6f6f6;margin-bottom: 10px;">
+    <div id="youthMobilePowerTab" style="float:left;height:40px;width:50%;background-color: #ccdea8;padding-top: 5px;padding-bottom: 5px;">Unit 2</div>
+    <div id="howToTab" style="float:left;height:40px;width:50%;background-color: #f6f6f6;padding-top: 5px;padding-bottom: 5px;">Challenges</div>
+  </div>
+
+
+  <div id="youthRadioAccordion" class="accordion">
+    <h3>Introduction</h3>
+    <div>
+      <p>In this unit you will extend your knowledge of the MIT App Inventor platform, by making a  the <strong>My Piano </strong> app, that will play notes like a piano!</p>
+      <img class="enlargeImage" src="../images/myPiano/my-piano-screenshot.png" alt="my piano screenshot">
+      <p>Here are the requirements:</p>
+      <ul>
+        <li>The app contains eight buttons, displayed next to each other, each depicting a piano key or note.</li>
+        <li>When a button is pressed, the corresponding note plays, using a <span class="icon" alt="sound"></span> Sound or <span class="icon" alt="player"></span> Player component.</li>
+        <li>The string of notes played should display below the keyboard. For example, if the user press the C, D, A, B, and C keys, in that order, it should display C D A B C.</li>
+        <li>Pressing the Clear button should clear the display of notes played.</li>
+        <li>Use a procedure in the app to play each note. Call it <strong>PlayNote</strong>.</li>
+      </ul>
+      <img class="enlargeImage" src="../images/myPiano/playnote.png" alt="my piano screenshot">
+      <p>If you are up for the challenge, get coding! If you need some help getting started, proceed to the guide below.</p>
+    </div>
+
+    <h3>Setup your Computer</h3>
+    <div class="setup" id="connect_app"></div>   
+
+    <h3>My Piano</h3>
+    <div class="tutorialContainer">
+      <div class="tutorialNavigationHeader"></div>
+      <div class="tutorialContentPage">
+        <h4>Designer</h4>
+        <p>The goal is to have eight buttons, side by side. Each button, when pressed, will play a note. Note that the only thing included in the template are the note sound files, found in the Media section.</p>
+        <img class="enlargeImage" src="../images/myPiano/my-piano-media.png" alt="screenshot of the  my piano app user list of media files">
+        <p>Add the following components to the app, and rename and set the properties as shown in the table.</p>
+        <img class="enlargeImage" src="../images/myPiano/my-piano-ui.png" alt="screenshot of the  my piano app user list of components">
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <ol>
+              <li>Drag out a <span class="icon" alt="horizontal"></span> HorizontalArrangement from the <strong>Layout</strong> Drawer.</li>
+              <ul>
+              <li>Change the <i>Height</i> of the <span class="icon" alt="horizontal"></span>  HorizontalArrangement to <span style="font-weight: bold; color: #3399ff;">50%</span> and its <i>Width</i> to <span style="font-weight: bold; color: #3399ff;">Fill Parent</span>.
+              </li>
+              </ul>
+              <a onclick="enlargeVideo('I3gSzisJDmg')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/add-horizontal-arr.png" alt="add a horizontal arrangement"></a>
+              <li>Drag out the eight <span class="icon" alt="button"></span> Buttons for the eight notes and drop them into the <span class="icon" alt="horizontal"></span> HorizontalArrangement.
+              <ul>
+                <li>Rename each <span class="icon" alt="button"></span> Button according to the note it represents: <strong>CNote, DNote, ENote, FNote, GNote, ANote, BNote, HighCNote</strong>.</li>
+                <li>Change each <span class="icon" alt="button"></span> Button's <i>Height</i> to <span style="font-weight: bold; color: #3399ff;">Fill Parent</span> and it's <i>Width</i> to <span style="font-weight: bold; color: #3399ff;">10%</span>.</li>
+                <li>Change the <i>Text</i> property of each note to match the note: C, D, E, F, G, A, B, HighC.</li>
+                <li>Change the <i>BackgroundColor</i> for each note to a different color. You can use the screenshot on the Introduction tab as an example.</li>
+              </ul>
+              <a onclick="enlargeVideo('R_nZd_Gcy6o')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/add-buttons.png" alt="add 8 buttons"></a>
+              </li>
+              <li>Drag out a <span class="icon" alt="label"></span> Label and a <span class="icon" alt="button"></span> Button and place them below the <span class="icon" alt="horizontal"></span> HorizontalArrangement, and rename them <strong>NoteLabel</strong> and <strong>ClearButton</strong> respectively.
+              <ul>
+                <li>Delete the <i>Text</i> property for <strong>NotesLabel</strong> so it is blank.</li>
+                <li>Change the <i>Text</i> for <strong>ClearButton</strong> to <span style="font-weight: bold; color: #3399ff;">"Clear Notes"</span></li>
+              </ul>
+              <a onclick="enlargeVideo('M7Iih2sZAgc')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/add-button-label.png" alt="add label and button"></a>
+              </li>
+              <li>Finally, add a <span class="icon" alt="player"></span> Player component from the Media drawer, and rename it <strong>NotePlayer</strong>.
+              </li>
+              <a onclick="enlargeVideo('37AEtmcmZbI')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/add-player.png" alt="add player"></a>            
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Check your work</h4>
+        <p>Your Viewer should look something like the image below. Note that the "C D A B C" is there to show where the <strong>NotesLabel</strong> goes. In your app, it should be blank, and therefore, show nothing initially.</p>
+        <img class="enlargeImage" src="../images/myPiano/my-piano-screenshot.png" alt="screenshot of the  my piano app">
+        <p>And your Components panel should look something like this:</p>
+        <img class="enlargeImage" src="../images/myPiano/my-piano-components.png" alt="screenshot of the  my piano app user list of components">
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Code the Buttons</h4>
+        <p>Now it's time to code the blocks to make your app make music!</p>
+        <p>Switch to the <strong>Blocks Editor</strong>.</p>
+        <img class="enlargeImage" src="../images/myPiano/switch-blocks.png" alt="switch to the blocks editor" />
+        <p>Start with the <strong>CNote</strong> button. Code <span class="control">when CNote.Click</span> to:</p>
+            <ul>
+              <li>Play the correct sound file.</li> 
+              <li>Display “C” in the <strong>NotesLabel</strong>.</li>
+            </ul>
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <a onclick="enlargeVideo('yphbmOTFAqc')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/c-note.png" alt="code c note button"></a> 
+          </div>
+        </div>
+        <p>Coding <strong>DNote</strong> is easy. You can Duplicate <span class="control">when CNote.Click</span> by right-clicking on it and selecting "Duplicate" from the dropdown menu. Then change references to <strong>C</strong> and <strong>CNote</strong> to <strong>D</strong> and <strong>DNote</strong>.</p>
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <img class="enlargeImage" src="../images/myPiano/duplicate-c-note.png" alt="duplicate c note.click block" />
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+      <h4>Run the App</h4>
+        <p>Stop with just the C and D Notes to see if your app is working so far. Start the MIT AI Companion app on your mobile device (if you are testing with a mobile device).</p>
+        <img class="enlargeImage" src="../images/helloItsMe/ai-companion.png" alt="start the AI companion" />
+        <p>Then under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. </p>
+        <img class="enlargeImage" src="../images/helloItsMe/scan-qr-code.png" alt="scan qr code for AI companion" />
+        <p>Then on the Companion app, press the blue button and scan the QR code.</p>
+        <img class="enlargeImage" src="../images/helloItsMe/ai-companion-screenshot.png" alt="AI companion screenshot" />
+        <p>If you are using the <strong>Emulator</strong>, then choose <strong>Emulator</strong> under the <strong>Connect</strong> menu.</p>
+        <p>Try pressing the C and D Note buttons. Do they play the notes correctly?</p>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>PlayNote Procedure</h4>
+        <p>The code blocks for <span class="control">when CNote.Click</span> and <span class="control">when DNote.Click</span> are very similar, and you have six more notes to code the same way. A good way to cut down on duplicate code and to <i>abstract</i> your code is by using a <strong>procedure</strong>.
+        <p>Drag out a new <span class="procedure">procedure</span> block from the <strong>Procedures</strong> drawer, and name the procedure "PlayNote".</p>
+        <p>Add an input parameter to the procedure, and call it "note".</p>
+        <img class="enlargeImage" src="../images/myPiano/playnote.png" alt="playnote procedure" />
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <a onclick="enlargeVideo('FnPL_9c2GM4')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/procedure.png" alt="make procedure Playnote"></a> 
+          </div>
+        </div>
+        <p>Copy the blocks from <span class="control">when CNote.Click</span> to the procedure, and change the text blocks referring to "C" to use <span class="variables">note</span>.</p>
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <a onclick="enlargeVideo('_L-BoypEOEw')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/playnote-blocks.png" alt="copy blocks to procedure playnote"></a> 
+          </div>
+        </div>       
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Call the PlayNote Procedure</h4>
+        <p>Update <span class="control">when CNote.Click</span> and <span class="control">when DNote.Click</span> to call PlayNote with the appropriate note.</p>
+          <div class="hintContainer">
+            <button>Show Me How</button>
+            <div class="hint hideHint">
+              <a onclick="enlargeVideo('1IN3_WTGQU0')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/call-playnote.png" alt="add call playnote blocks"></a> 
+            </div>
+          </div>
+          <p>Add the <span class="control">.Click</span> event blocks for the remaining notes, and add a call to the PlayNote procedure for each note.</p>
+          <div class="hintContainer">
+            <button>Check My Solution</button>
+            <div class="hint hideHint">
+              <img class="enlargeImage" src="../images/myPiano/button-clicks.png" alt="remaining button click events" />
+            </div>
+          </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Test the App</h4>
+        <p>Test your app to make sure all the notes play as they should.</p>
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+            <img class="enlargeImage" src="../images/helloItsMe/ai-companion.png" alt="start the AI companion" />
+            <p>Then under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>. </p>
+            <img class="enlargeImage" src="../images/helloItsMe/scan-qr-code.png" alt="scan qr code for AI companion" />
+            <p>Then on the Companion app, press the blue button and scan the QR code.</p>
+            <img class="enlargeImage" src="../images/helloItsMe/ai-companion-screenshot.png" alt="AI companion screenshot" />
+            <p>If you are using the <strong>Emulator</strong>, then choose <strong>Emulator</strong> under the <strong>Connect</strong> menu.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorialContentPage">
+        <h4>Update the PlayNote Procedure</h4>
+        <p>You are going to update the PlayNote procedure now to display every note played, in sequence, rather than just the current note.</p>
+        <p>This is another reason to use a procedure. If you want to update something, you only have to do it in one place.</p>
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+              <a onclick="enlargeVideo('kT4O51dTWA0')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/change-playnote.png" alt="update playnote blocks"></a> 
+          </div>
+        </div>
+      </div>
+
+       <div class="tutorialContentPage">
+        <h4>Clear Notes</h4>
+        <p>The last thing to do now is code the <span class="control">when ClearButton.Click</span> event. When the button is clicked, you want to clear the <strong>NotesLabel</strong>.</p>        
+        <div class="hintContainer">
+          <button>Show Me How</button>
+          <div class="hint hideHint">
+              <a onclick="enlargeVideo('dS6Y1_d0UcI')" href="javascript:void(0);"><img width="100%"  src="../images/myPiano/clearbutton.png" alt="code clearbutton.click"></a> 
+          </div>
+        </div>
+      </div>  
+
+       <div class="tutorialContentPage">
+        <h4>Test your App</h4>
+        <p>And that's it! Try out your finished app. Make sure all the notes appear as you play them, and check that pressing the Clear button clears the displayed notes.</p>        
+        <img class="enlargeImage" src="../images/myPiano/my-piano-complete.png" alt="completed my piano app" />
+      </div> 
+
+      <br />
+       <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next Step</button>
+      </div>
+    </div> 
+
+    <h3>Expand your app</h3>
+    <div>
+      <p>Here are some ideas to add to the <strong>My Piano</strong> app.</p>
+      <ol>
+        <li><strong>Add the Sharp notes - the note files are included in Media.</strong> 
+          Get some <a href="#" onclick="return goToHowToTutorial(0)" title="Tutorial for sharp notes">help</a>.
+        </li>
+        <li><strong>Change the keys to black and white to look like a piano.</strong> 
+          Get some <a href="#" onclick="return goToHowToTutorial(1)" title="Tutorial for changing piano keys to black and white"> help</a>.
+        </li>
+        <li><strong>Add a SoundRecorder to record the music.</strong> 
+        Get some <a href="#" onclick="return goToHowToTutorial(2)" title="Tutorial for recording music" > help</a>.
+        </li>
+      </ol>
+      <p><strong>What other ideas do you have?</strong></p>
+
+    </div> 
+  </div>
+
+
+  
+
+    <div id="howToAccordion" class="accordion" style="display:none">
+
+      <h3>Add Sharp Notes</h3>
+      <div class="setup" id="sharp_notes"></div>
+
+      <h3>Change the app to look more like a piano</h3>
+      <div class="setup" id="piano_keys"></div>
+
+      <h3>Record the Music</h3>
+      <div class="setup" id="sound_recorder"></div>
+
+    </div>  
+
+
+<div id="serverTutorialId" style="display:none;">1</div>
+</body>
+<script src="../../scripts/tabHandler.js"></script>
+<script src="../../scripts/tutorialPage.js"></script>
+<script src="../../scripts/shareAndPublish.js"></script>
+
+</html>
