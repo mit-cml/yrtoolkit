@@ -72,7 +72,7 @@
         <h3>Introduction</h3>
         <!--<img src="../images/therapistBOT/therapistBOT.png" style="width:75%" alt="some_text">-->
         <img src="../images/therapistBOT/therapistwithofficedecor.png" style="width:100%" alt="some_text">
-        <p>This project is a vastly simplified version of a famous program called ELIZA that was developed at MIT in the early 1960s by Professor <a href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" target="_blank">Joseph Weizenbaum</a>.  The BOT program engages in a "conversation" with the user, in which it mimics a <em>non-directive</em> style of psychotherapy.  In <em>non-directive</em> psychotherapy, originally developed in the 1940's by the American counseling psychologist <a href="https://en.wikipedia.org/wiki/Carl_Rogers" target="_blank">Carl Rogers</a>, the therapist never engages in giving expert advice to the patient and never gives direction to the conversation, but through active listening and asking questions, allows the patient to gain insight into their predicament and find their own way to healing.</p>
+        <p>This project is a vastly simplified version of a famous program called <a href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">ELIZA</a> that was developed at MIT in the early 1960s by Professor <a href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" target="_blank">Joseph Weizenbaum</a>.  The BOT program engages in a "conversation" with the user, in which it mimics a <em>non-directive</em> style of psychotherapy.  In <em>non-directive</em> psychotherapy, originally developed in the 1940's by the American counseling psychologist <a href="https://en.wikipedia.org/wiki/Carl_Rogers" target="_blank">Carl Rogers</a>, the therapist never engages in giving expert advice to the patient and never gives direction to the conversation, but through active listening and asking questions, allows the patient to gain insight into their predicament and find their own way to healing.</p>
     	        
         
         
@@ -126,10 +126,13 @@
     <div class="tutorialContentPage">
         <h3>The User Interface 1</h3>
         
-  		<p>Now you will build the User Interface (UI).  First, the BOT image.</p>
+  		<p>Now you will build the User Interface (UI).  Here is what the final interface will look like.</p>
   		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
-  		<p>Drag and drop an <strong>Image</strong> component (User Interface palette), upload the "therapistBOT.png" included in the starter file as its <em>Picture</em> property and rename the component as "TherapistBOTImage".  You may need to restrict the <em>Height</em> of the <strong>Image</strong> component to a small value like "100 pixels" to make sure the image fits.  You can also choose to upload your own image for the BOT.</p>
-  		<img  src="../images/therapistBOT/ImageProperties.png" style="width:75%" alt="some_text">
+      <p>To center everything horizontally in <strong>Screen1</strong>, change its <em>AlignHorizontal</em> property to "Center".</p>
+      <img src="../images/therapistBOT/AlignHorizProperty.png"  style="width:50%" alt="some_text">
+  		<p>First, you will add the BOT image.</p>
+      <p>Drag and drop an <strong>Image</strong> component (User Interface palette), rename the component as "TherapistBOTImage" and set the "therapistBOT.png" included in the starter file as its <em>Picture</em> property.  You may need to restrict the <em>Height</em> and the <em>Width</em> of the <strong>Image</strong> component to a small value like "100 pixels" to make sure the image fits.  You can also choose to upload your own image for the BOT.</p>
+  		<img  src="../images/therapistBOT/ImageProperties.png" style="width:50%" alt="some_text">
   	</div>
 
   		<div class="tutorialContentPage">
@@ -156,8 +159,7 @@
   		<p>Finally, the therapy log where the user comments and BOT responses will be recorded.</p>
   		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
   		<p>Drag and drop a <strong>ListView</strong> component (User Interface palette) and rename the component “TherapyLogListView”.</p>
-		<p>To center everything horizontally in <strong>Screen1</strong>, change its <em>AlignHorizontal</em> property to "Center".</p>
-  		<img src="../images/therapistBOT/AlignHorizProperty.png"  style="width:50%" alt="some_text">
+		
 	    
       </div>
   		
@@ -184,7 +186,7 @@
 			<li>"Many of my patients tell me the same thing."</li>
 			<li>"Please continue."</li>
 			</ul>
-		<p>In the extensions of the project you will be asked to add more choices to this list.</p>
+		<p>You can always add more hedges to this list. In fact, it is one of the suggestions in the “Expand Your App” tab below.</p>
 
 		
 
@@ -203,11 +205,12 @@
         	
         <p>Create a variable named <var>qualifiers</var> which will be a list containing three possible qualifiers to precede a person-changed version of the user’s input sentence:</p>
         	<ul>
-			<li>"Why do you say that"</li>
-			<li>"You seem to think that"</li>
-			<li>"Can you explain why"</li>
+			<li>"Why do you say that&nbsp&nbsp"</li>
+			<li>"You seem to think that&nbsp&nbsp"</li>
+			<li>"Can you explain why&nbsp&nbsp"</li>
 			</ul>
-		<p>In the extensions of the project you will be asked to add more choices to this list.</p>
+      <p>As the qualifiers will precede a reply generated by the program, be sure to add spaces at the end of each text string in the qualifiers list.</p>
+		<p>You can always add more qualifiers to this list. In fact, it is one of the suggestions in the “Expand Your App” tab below.</p>
 
 		
 
@@ -237,7 +240,7 @@
 	</p>
 	<img  src="../images/therapistBOT/keyvalueTable.png"  style="width:50%" alt="some_text">
 
-	<p>Note that these replacements change first-person to second-person but not vice versa.  In the extensions of the project you will be asked to consider these cases also.
+	<p>Note that these replacements change first-person to second-person but not vice versa.  You can add these second-person to first-person replacements also to the dictionary. In fact, it is one of the suggestions in the “Expand Your App” tab below.
 	</p>
 	<div class="hintContainer">
    
@@ -285,7 +288,7 @@
         <h3><strong>replace all</strong> Block 1</h3>
         <p>In this programming project one of the most crucial tasks to accomplish will be to properly convert user's statements, replacing first-person pronouns to second-person pronouns etc.  This is in general a non-trivial programming task but luckily there is a <strong>replace all</strong> block which can help.</p>
 
-        <p>This powerful text block needs a dictionary of replacements for its <var>mappings</var> input and a sentence as its <var>text</var> input (such as the text typed by the user).  You also need to select a preference order: the default "longest string first" or "dictionary" order.
+        <p>This powerful text block needs a dictionary of replacements for its <var>mappings</var> input and a sentence as its <var>text</var> input (such as the text typed by the user).  You also need to select a preference order: the default <em>longest string first order</em> or <em>dictionary order</em>.
 		</p>
 		<img class="enlargeImage" src="../images/therapistBOT/replaceallPLSFO.png" alt="some_text"><img class="enlargeImage" src="../images/therapistBOT/replaceallPDO.png" alt="some_text">
 
@@ -295,10 +298,13 @@
 
 	<div class="tutorialContentPage">
         <h3><strong>replace all</strong> Block 2</h3>
-        <p>To understand the effect of each of these order preferences, examine the cases below.</p>
+        <p>To understand the effect of each of these order preferences, examine the cases below.  In the first case, the preferred order is <em>dictionary order</em></p>
 
         <img class="enlargeImage" src="../images/therapistBOT/DoItIrself.png" alt="some_text">
-        <p>As the word "yourself" contains the string "you" in it and having the key "you" first in the "dictionary" order requires that the string "you" is replaced with "I" everywhere first to have the sentence<br /><br /> "<font color="red">you</font> knew it <font color="red">you</font>rself"<br /><br /> replaced with the meaningless <br /><br />"<font color="red">I</font> knew it <font color="red">I</font>rself".<br /><br /> (color is used for emphasis)
+        <p>In the sentence:</p>
+        <p>"<font color="red">you</font> knew it <font color="red">you</font>rself"</p>
+        <p>the word "<font color="red">you</font>rself" contains the string "<font color="red">you</font>" in it.</p>
+        <p>Because “you” appears first in the dictionary to be replaced with "I", “yourself” becomes “Irself” and the resulting sentence is the meaningless: <br /><br />"<font color="red">I</font> knew it <font color="red">I</font>rself".<br /><br /> (color is used for emphasis)
 	</p>
 
 
@@ -308,11 +314,11 @@
         <h3><strong>replace all</strong> Block 3</h3>
 
         <img class="enlargeImage" src="../images/therapistBOT/DoItmyself.png" alt="some_text">
-        <p>However, if you choose the "longest string first" order, then the longer string "<font color="red">yourself</font>" is first replaced with "<font color="red">myself</font>" and then next the shorter string "<font color="blue">you</font>" is replaced with "<font color="blue">I</font>" leading to a meaningful replacement of<br /><br /> "<font color="blue">you</font> knew it <font color="red">yourself</font>" <br /><br />with<br /><br />"<font color="blue">I</font> knew it <font color="red">myself</font>". <br /><br />(color is used for emphasis)</p>
+        <p>However, if you choose the <em>longest string first order</em> , then the longer string "<font color="red">yourself</font>" is first replaced with "<font color="red">myself</font>" and then next the shorter string "<font color="blue">you</font>" is replaced with "<font color="blue">I</font>" leading to a meaningful replacement of<br /><br /> "<font color="blue">you</font> knew it <font color="red">yourself</font>" <br /><br />with<br /><br />"<font color="blue">I</font> knew it <font color="red">myself</font>". <br /><br />(color is used for emphasis)</p>
 
-		<p>So, it is best to stick to the default "longest string first" order which makes more sense in the current context.   That way, the longest key in the dictionary is first sought in the sentence and replaced if found, then the next longest key is sought and replaced if found, etc.</p>
+		<p>So, it is best to stick to the default <em>longest string first order</em>  which makes more sense in the current context.   That way, the longest key in the dictionary is first sought in the sentence and replaced if found, then the next longest key is sought and replaced if found, etc.</p>
 
-		<p>Can you think of any context where the "dictionary" order would be preferable?</p>
+		<p>Can you think of any context where the <em>dictionary order</em> would be preferable?</p>
 
     </div>
       
@@ -363,7 +369,7 @@
         <h3>Submit Button</h3> 
         <p>When the user presses the Submit button:
         	<ul>
-				<li>add the user comments (preceded with "USER: ") and the program's reply (preceded by "BOT: ") to these comments in the Therapy Log.  You can use "\n" (backward slash and the letter n) to invoke a line break between the user comments and the therapist response</li>
+				<li>add the user comments (preceded with "USER: ") and then add the program's reply (preceded by "BOT: ") to these comments in the Therapy Log.</li>
 				<li>re-display the updated Therapy log</li>
 				<li>clear the <strong>UserTextBox</strong></li>
 			</ul>
@@ -399,9 +405,9 @@
         </p>
         <img class="enlargeImage" src="../images/therapistBOT/AICompanion.png" alt="some_text"><br />
         
-        <p>Congratulations, you have created your first artificially intelligent autonomous Chat BOT.</p>
+        <p>Congratulations, you have created your first artificially intelligent autonomous BOT that chats.</p>
 
-        <p>Note:  During your testing, you may realize that your BOT can use alot of improvements.  Please consider some of the extensions discussed below in the "Expand Your App" section.</p>
+        <p>Note:  During your testing, you may realize that your BOT can use a lot of improvements.  Please consider some of the extensions discussed below in the "Expand Your App" section.</p>
 
     </div>
 
@@ -417,9 +423,35 @@
     <div class="tutorialNavigationHeader"></div>
 
 
-
-
     <div class="tutorialContentPage">
+        <strong>Further Explorations</strong>
+         <ul>
+          <li>Create a button to delete the chat log.</li>
+          <br />
+      <li>Make the Therapist BOT speak its responses in addition to writing them in the chat log. Make sure that your mobile device has this capability.  (Hint: <strong>TextToSpeech</strong> component)</li>
+      <br />
+      <li>Add a speak button that allows the user to speak to the Therapist BOT rather than just type.  Make sure that your mobile device has this capability.  (Hint: <strong>SpeechRecognizer</strong> component)</li><br />
+      <li>Have the Therapist BOT make a disclaimer at the very start of the session so the user knows that it is <em>not</em> a certified healthcare professional.</li>
+          <br />
+          <li>Give the user the ability to terminate the therapy session by using a key word such as "Bye" and have the BOT respond to the user with something like "Be well.  Have a nice day!" before terminating the application.</li>
+          <br />
+      <li>Add more hedges and qualifiers, also adjusting their probabilities of being chosen.</li><br />
+      <li>Deal with cases such as when the user says "you are a bad therapist" (second-person to first-person pronoun changes) and other cases not yet covered, including capitalizations, like "You yourself told me that".  Test the Therapist BOT in a variety of conversations to make sure that it is able to change persons correctly in its responses.</li><br />
+      <li>You may have noticed that some words in the replacements dictionary may be contained in other words and may be replaced inappropriately.  For example the word “<font color="red">I</font>” is contained in the word “<font color="red">I</font>ncomplete” and when the replacements in the dictionary are done with “<font color="red">I</font>” becoming “<font color="red">you</font>”,  one would get the meaningless “<font color="red">you</font>ncomplete”.  You can avoid some of these by adding <em>spaces</em> to the strings in the replacements dictionary such as making the key : value pair  “I&nbsp&nbsp&nbsp&nbsp“ : “you&nbsp&nbsp&nbsp&nbsp“  (there is space character at the end of each word) so that “I” is processed only when used as a singleton word not as a letter that is part of other words.</li><br />
+      <li>Have the Therapist BOT offer some empathetic responses when the user says something like "I am sad" or "My father passed away last year".</li>
+      <br />
+      <li>If the conversation gets too dark (some key flag words like "depressed" etc. used), have the Therapist BOT provide the user with some Mental Health help information and refer to a hotline etc.</li><br />
+      <li>Give the Therapist BOT some memory of the conversation and have it refer to earlier topics discussed in the conversation such as "Earlier you mentioned that..."</li>
+      <br />
+      <li>Your awesome ideas here ...</li>
+         </ul>
+     </div>
+
+
+
+
+
+    <!--<div class="tutorialContentPage">
 			  <strong>Further Explorations</strong>
          <ul>
          	<li>Create a button to delete the chat log.</li>
@@ -480,30 +512,19 @@
 			<br />
 			<li>Your awesome ideas here ...</li>
 		</ul>
-		</div>
+		</div>-->
 
 			
 	
 
 
-        <div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
+        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
         <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
-      </div>
+      </div>-->
 	
-    </div>	
-
-  <!--<h3>Share Your App</h3>
-  <div class="setup" id="share_app"></div>-->
-
- <!-- <h3>Published Apps</h3>
-  <div>
-    <div id="container">
-     <div class="projectbox"> 
-      <img src="https://farm3.staticflickr.com/2510/32777057931_d96656a03d_m.jpg" alt="some_text" class="projectimage" />
-      <div class="projecttext"><span> Hello World</span> </div>
     </div>
-  </div>
-</div>-->
+
+  
 
 <h3>About Youth Mobile Power</h3> 
     <div>
