@@ -130,49 +130,57 @@
   		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
       <p>To center everything horizontally in <strong>Screen1</strong>, change its <em>AlignHorizontal</em> property to "Center".</p>
       <img src="../images/therapistBOT/AlignHorizProperty.png"  style="width:50%" alt="some_text">
+      <p>Also change its <em>ScreenOrientation</em> property to "Portrait" and click to check the <em>Scrollable</em> property.</p>
+      <img src="../images/therapistBOT/Screen1Properties.png"  style="width:50%" alt="some_text">
+
+    </div>
+     <div class="tutorialContentPage">
+        <h3>The User Interface 2</h3>
   		<p>First, you will add the BOT image.</p>
-      <p>Drag and drop an <strong>Image</strong> component (User Interface palette), rename the component as "TherapistBOTImage" and set the "therapistBOT.png" included in the starter file as its <em>Picture</em> property.  You may need to restrict the <em>Height</em> and the <em>Width</em> of the <strong>Image</strong> component to a small value like "100 pixels" to make sure the image fits.  You can also choose to upload your own image for the BOT.</p>
-  		<img  src="../images/therapistBOT/ImageProperties.png" style="width:50%" alt="some_text">
+      <img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
+      <p>Drag and drop an <span class="icon" alt="image"></span> <strong>Image</strong> component (User Interface palette), rename the component as "TherapistBOTImage" and set the "therapistBOT.png" included in the starter file as its <em>Picture</em> property.  You may need to restrict the <em>Height</em> and the <em>Width</em> of the <span class="icon" alt="image"></span><strong>Image</strong> component to a small value like "75 pixels" to make sure the image fits.  You can also choose to upload your own image for the BOT.</p>
+  		<img  src="../images/therapistBOT/TherapistBotImageProperties.png" style="width:50%" alt="some_text">
   	</div>
 
-  		<div class="tutorialContentPage">
-        <h3>The User Interface 2</h3>
-        
-  		<p>Next, the textbox where the user will write their comments. </p>
-  		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
-  		<p>Drag and drop a <strong>TextBox</strong> component (User Interface palette) and rename the component as "UserTextBox".  Change the <em>Hint</em> property to "Enter your response".</p>
-		<img src="../images/therapistBOT/HintProperty.png" style="width:50%" alt="some_text">
-	</div>
-	<div class="tutorialContentPage">
+
+      <div class="tutorialContentPage">
         <h3>The User Interface 3</h3>
         
-  		<p>Next, the button to submit user's comments.</p>
-  		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
-  			<p>Drag and drop a <strong>Button</strong> component (User Interface palette), change its <em>Text</em> property to "Submit" and rename the component "SubmitButton".  Adjust its <em>Width</em>, <em>BackgroundColor</em> and <em>Shape</em> properties as you wish.</p>
-  			<img src="../images/therapistBOT/TextProperty.png" style="width:50%" alt="some_text">
-		
-	</div>
-
-	<div class="tutorialContentPage">
-        <h3>The User Interface 4</h3>
-        
-  		<p>Finally, the therapy log where the user comments and BOT responses will be recorded.</p>
-  		<img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
-  		<p>Drag and drop a <strong>ListView</strong> component (User Interface palette) and rename the component “TherapyLogListView”.</p>
-		
-	    
-      </div>
-  		
-     
-        
-        
-
+      <p>Next, you will create the Therapy Log where the user comments and BOT responses will be recorded.</p>
+      <img class="enlargeImage" src="../images/therapistBOT/GUICorrespondence.png" alt="some_text">
+      <p>Drag and drop a <span class="icon" alt="textbox"></span><strong>TextBox</strong> component (User Interface palette) and rename the component “TherapistLogTextBox”.</p>
+      <p>Change the properties of this <span class="icon" alt="textbox"></span><strong>TextBox</strong> component as shown below, paying special attention to ones indicated in the red boxes.</p>
+      <img  src="../images/therapistBOT/TherapistLogTextBoxProperties.png" style="width:50%" alt="some_text">
       
+      </div>
+
+
+      <div class="tutorialContentPage">
+        <h3>The User Interface 4</h3>
+        <p>Next, drag and drop a <span class="icon" alt="horizontal"></span><strong>HorizontalArrangement</strong> component (Layout palette) where the user response textbox and submit button will be placed.</p>
+        <img  class="enlargeImage" src="../images/therapistBOT/HorizArrangementDragDrop.png"  alt="some_text">
+        <p>Set the properties of this component as shown below</p>
+        <img  src="../images/therapistBOT/HorizArrangementProperties.png" style="width:50%" alt="some_text">
+      </div>
+
+
+  		<div class="tutorialContentPage">
+        <h3>The User Interface 5</h3>
+        
+  		<p>Finally, drag and drop a <span class="icon" alt="textbox"></span><strong>TextBox</strong> component (User Interface palette) and then a <span class="icon" alt="button"></span><strong>Button</strong> (User Interface palette) <em>into</em> the <span class="icon" alt="horizontal"></span><strong>HorizontalArrangement</strong>.  
+        <img class="enlargeImage" src="../images/therapistBOT/TextBoxButtonDragDrop.png" alt="some_text">
+
+      <p>Rename the components as "UserTextBox" and "SubmitButton" respectively.</p>
+      <p>Change the properties of the <span class="icon" alt="textbox"></span><strong>TextBox</strong> component as shown below.</p>
+		<img src="../images/therapistBOT/UserTextBoxProperties.png" style="width:50%" alt="some_text">
+      <p>Change the <em>Text</em> property of the <span class="icon" alt="button"></span><strong>Button</strong> component to "Submit".  Adjust its <em>Width</em>, <em>BackgroundColor</em> and <em>Shape</em> properties as you wish.</p>
+      <img src="../images/therapistBOT/TextProperty.png" style="width:50%" alt="some_text">
+	   </div>
 
         <div class="tutorialContentPage">
         <h3>Blocks Editor</h3>
         <p>Now you will give functionality to the User Interface (UI) and endow the BOT some intelligence. Switch to the Blocks editor.</p>
-        <img class="enlargeImage" src="../images/howTos/goToBlocks.png" alt="some_text">
+        <img src="../images/howTos/goToBlocks.png" style="width:75%" alt="some_text">
         
       </div>
 
@@ -260,7 +268,7 @@
         
 		<div class="tutorialContentPage">
         <h3>Screen1 Initialization</h3>
-          <p>When Screen1 initializes, display a welcoming message like "Hello there!  I hope you are well today.  What can I do for you?" on the Therapy Log.</p>
+          <p>When Screen1 initializes, display a welcoming message like "Hello there.  I hope you are well today.  What can I do for you?" on the Therapy Log.</p>
 
 		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
 		<div class="hintContainer">
@@ -273,8 +281,7 @@
                 <button>Check your solution</button>
                 <div class="hint hideHint">
                 	<img class="enlargeImage" src="../images/therapistBOT/whenScreen1Initialize2.png" alt="some_text"><br />
-              
-              	<p>Note that as the elements of the <strong>TherapyLogListView</strong> component will need to be list, the welcoming message by the BOT is placed in a list.</p>
+            
                 </div>
               </div>
 
@@ -327,15 +334,18 @@
         <h3>reply Procedure</h3> 
         <p>Define a procedure named <strong><em>reply</em></strong> with a return value which takes a <var>sentence</var> as its input:
         	<ul>
-			<li>initialize a local variable named <var>response</var> to the empty string</li>
-			<li>pick a random number 1 through 4 and
-				<ul>
-			 		<li>if the number is 1 set <var>response</var> to a random item from the list <var>hedges</var></li>
-					<li>else set <var>response</var> to a random item from the list <var>qualifiers</var> appended with a person changed modification of the sentence using the <strong>replace all</strong> block.</li>
-				</ul>
-			</li>
-			<li>return <var>response</var></li>
-			</ul>
+			     <li>With a 1 in 4 probability 
+              <ul>
+                <li>return a random item from the list <var>hedges</var></li>
+              </ul>
+            </li>
+					<li>Else 
+              <ul>
+                <li>return a random item from the list <var>qualifiers</var> appended with a person changed modification of the input <var>sentence</var> (Hint: the <strong>replace all</strong> block)</li>
+              </ul>
+            </li>
+				  </ul>
+
 		</p>
 
 		<p>Do this coding on your own. If you get stuck and would like some hints, click on the hint button below.</p>
@@ -347,14 +357,15 @@
 		              <p>To add an input parameter to the procedure use the settings gear:</p>
 		              <img class="enlargeImage" src="../images/therapistBOT/inputForProcedure.png" alt="some_text"><br />
 
-		             <img class="enlargeImage" src="../images/therapistBOT/replyProcedure1.png" alt="some_text"><br />
+                 <p>You may also find this <strong>if then else</strong> block with a return value useful which is similar to the regular conditional <strong>if then else</strong> block but allows you to return different values based on the condition satisfied.</p>
+                <img src="../images/therapistBOT/ifthenelsewithreturnvalue.png"  style="width:25%" alt="some_text"><br /><br />
 	              
+                <img class="enlargeImage" src="../images/therapistBOT/replyProcedure1.png" alt="some_text"><br />
 	             <div class="hintContainer">
 	                <button>Check your solution</button>
 	                <div class="hint hideHint">
 	                	<img class="enlargeImage" src="../images/therapistBOT/replyProcedure2.png" alt="some_text"><br />
 	              
-	              		<p>Note that as the elements of the <strong>TherapyLogListView</strong> component will need to be a list, the welcoming message by the BOT is placed in a list.</p>
 	                </div>
 	             </div>
 
@@ -369,8 +380,7 @@
         <h3>Submit Button</h3> 
         <p>When the user presses the Submit button:
         	<ul>
-				<li>add the user comments (preceded with "USER: ") and then add the program's reply (preceded by "BOT: ") to these comments in the Therapy Log.</li>
-				<li>re-display the updated Therapy log</li>
+				<li>refresh the Therapy Log by appending to the existing Log first the user comments (preceded with "YOU: ") and then the program's reply to these comments (preceded by "BOT: ").  You can use "\n" (backward slash and the letter n) to make a line break between the statements.</li>
 				<li>clear the <strong>UserTextBox</strong></li>
 			</ul>
 
@@ -382,6 +392,9 @@
             <div class="hint hideHint">
               
              <img class="enlargeImage" src="../images/therapistBOT/whenSubmitButtonClick1.png" alt="some_text"><br />
+
+             <p>You can add more sockets to the <strong>join</strong> block via the settings gear:</p>
+             <img class="enlargeImage" src="../images/therapistBOT/joinmulti.png" alt="some_text"><br />
               
               <div class="hintContainer">
                 <button>Check your solution</button>
@@ -403,7 +416,7 @@
         <h3>Test your App</h3> 
         <p>Now use AI Companion to test your app thoroughly.  Make sure you are using the latest AI Companion (version 2.58 or higher) so that dictionaries and blocks such as <strong>replace all</strong> will work.
         </p>
-        <img class="enlargeImage" src="../images/therapistBOT/AICompanion.png" alt="some_text"><br />
+        <img  src="../images/therapistBOT/AICompanion.png" style="width:75%" alt="some_text"><br />
         
         <p>Congratulations, you have created your first artificially intelligent autonomous BOT that chats.</p>
 
@@ -428,14 +441,14 @@
          <ul>
           <li>Create a button to delete the chat log.</li>
           <br />
-      <li>Make the Therapist BOT speak its responses in addition to writing them in the chat log. Make sure that your mobile device has this capability.  (Hint: <strong>TextToSpeech</strong> component)</li>
+      <li>Make the Therapist BOT speak its responses in addition to writing them in the chat log. Make sure that your mobile device has this capability.  (Hint: <span class="icon" alt="textToSpeech"></span><strong>TextToSpeech</strong> component)</li>
       <br />
-      <li>Add a speak button that allows the user to speak to the Therapist BOT rather than just type.  Make sure that your mobile device has this capability.  (Hint: <strong>SpeechRecognizer</strong> component)</li><br />
+      <li>Add a speak button that allows the user to speak to the Therapist BOT rather than just type.  Make sure that your mobile device has this capability.  (Hint: <span class="icon" alt="speechRecognizer"></span><strong>SpeechRecognizer</strong> component)</li><br />
       <li>Have the Therapist BOT make a disclaimer at the very start of the session so the user knows that it is <em>not</em> a certified healthcare professional.</li>
-          <br />
-          <li>Give the user the ability to terminate the therapy session by using a key word such as "Bye" and have the BOT respond to the user with something like "Be well.  Have a nice day!" before terminating the application.</li>
-          <br />
-      <li>Add more hedges and qualifiers, also adjusting their probabilities of being chosen.</li><br />
+      <br />
+      <li>Give the user the ability to terminate the therapy session by using a key word such as "Bye" and have the BOT respond to the user with something like "Be well.  Have a nice day!" before terminating the application.</li>
+      <br />
+      <li>Add more hedges and qualifiers, also adjusting their probabilities of being chosen.  Add more choices to the replacements dictionary such as the pair <br />"I am" : "you are". </li><br />
       <li>Deal with cases such as when the user says "you are a bad therapist" (second-person to first-person pronoun changes) and other cases not yet covered, including capitalizations, like "You yourself told me that".  Test the Therapist BOT in a variety of conversations to make sure that it is able to change persons correctly in its responses.</li><br />
       <li>You may have noticed that some words in the replacements dictionary may be contained in other words and may be replaced inappropriately.  For example the word “<font color="red">I</font>” is contained in the word “<font color="red">I</font>ncomplete” and when the replacements in the dictionary are done with “<font color="red">I</font>” becoming “<font color="red">you</font>”,  one would get the meaningless “<font color="red">you</font>ncomplete”.  You can avoid some of these by adding <em>spaces</em> to the strings in the replacements dictionary such as making the key : value pair  “I&nbsp&nbsp&nbsp&nbsp“ : “you&nbsp&nbsp&nbsp&nbsp“  (there is space character at the end of each word) so that “I” is processed only when used as a singleton word not as a letter that is part of other words.</li><br />
       <li>Have the Therapist BOT offer some empathetic responses when the user says something like "I am sad" or "My father passed away last year".</li>
@@ -443,84 +456,12 @@
       <li>If the conversation gets too dark (some key flag words like "depressed" etc. used), have the Therapist BOT provide the user with some Mental Health help information and refer to a hotline etc.</li><br />
       <li>Give the Therapist BOT some memory of the conversation and have it refer to earlier topics discussed in the conversation such as "Earlier you mentioned that..."</li>
       <br />
+      <li>As you work with the Therapist BOT you have created, you may find yourself getting frustrated and experience some negative feelings for the ambiguous nature of the BOT. "<a href="https://spectrum.ieee.org/automaton/robotics/humanoids/the-uncanny-valley" target="_blank">Uncanny Valley</a>" is a term that comes from Japanese roboticist Masahiro Mori which describes the negative reactions people have to human-like robots.  Do some research on this very interesting topic.</li>
+      <br />
       <li>Your awesome ideas here ...</li>
          </ul>
      </div>
 
-
-
-
-
-    <!--<div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-         	<li>Create a button to delete the chat log.</li>
-         	<br />
-			<li>Make the therapist BOT speak its responses in addition to writing them in the chat log. Make sure that your mobile device has this capability.  (Hint: <strong>TextToSpeech</strong> component)</li>
-			<br />
-			<li>Add a speak button that allows the user to speak to the therapist BOT rather than just type.  Make sure that your mobile device has this capability.  (Hint: <strong>SpeechRecognizer</strong> component)</li>
-			
-
-         </ul>
-     </div>
-
-     <div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-         	<li>Have the BOT make a disclaimer at the very start of the session so the user knows that it is <em>not</em> a certified healthcare professional.</li>
-         	<br />
-         	<li>Give the user the ability to terminate the therapy session by using a key word such as "Bye" and have the BOT respond to the user with something like "Be well.  Have a nice day!" before terminating the application.</li>
-         	<br />
-			<li>Add more hedges and qualifiers, also adjusting their probabilities of being chosen.</li>
-         </ul>
-     </div>
-
-
-     <div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-
-         	<li>Deal with cases such as when the user says "you are a bad therapist" (second-person to first-person pronoun changes) and other cases not yet covered, including capitalizations, like "You yourself told me that".  Test the therapist in a variety of conversations to make sure that it is able to change persons correctly in its responses.</li>
-         	<br />
-         </ul>
-     </div>
-     <div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-         	<li>You may have noticed that some words in the replacements dictionary may be contained in other words and may be replaced inappropriately.  For example the word “<font color="red">I</font>” is contained in the word “<font color="red">I</font>ncomplete” and when the replacements in the dictionary are done with “<font color="red">I</font>” becoming “<font color="red">you</font>”,  one would get the meaningless “<font color="red">you</font>ncomplete”.  You can avoid some of these by adding <em>spaces</em> to the strings in the replacements dictionary such as making the key : value pair  “I&nbsp&nbsp&nbsp&nbsp“ : “you&nbsp&nbsp&nbsp&nbsp“  (there is space character at the end of each word) so that “I” is processed only when used as a singleton word not as a letter that is part of other words.</li>
-			
-			
-
-         </ul>
-     </div>
-
-      	<div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-
-			
-			<li>Have the therapist BOT offer some empathetic responses when the user says something like "I am sad" or "My father passed away last year".</li>
-			<br />
-			<li>If the conversation gets too dark (some key flag words like "depressed" etc. used), have the therapist BOT provide the user with some Mental Health help information and refer to a hotline etc.</li>
-			</ul>
-		</div>
-
-		<div class="tutorialContentPage">
-			  <strong>Further Explorations</strong>
-         <ul>
-			<li>Give the therapist BOT some memory of the conversation and have it refer to earlier topics discussed in the conversation such as "Earlier you mentioned that..."</li>
-			<br />
-			<li>Your awesome ideas here ...</li>
-		</ul>
-		</div>-->
-
-			
-	
-
-
-        <!--<div class="tutorialNextButtonContainer" style="width:100%;text-align:center;">
-        <button type="button" class="btn btn-success btn-lg tutorialNextButton" style="font-size:24pt;">Next</button>
-      </div>-->
 	
     </div>
 
