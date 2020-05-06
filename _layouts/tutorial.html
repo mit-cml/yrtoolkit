@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/scrollstyle.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../../scripts/utils.js"></script>
+  </head>
+  <body>
+    {% if page.yrmedia %}
+    <div class="tabs" style="">
+      <div id="youthMobilePowerTab">Youth Mobile Power</div>
+      <div id="howToTab" style="">How To</div>
+    </div>
+    {% endif %}
+    <div class="accordion" id="youthRadioAccordion">
+      {{ content }}
+
+      {% if page.yrmedia %}
+      <h1>About Youth Mobile Power</h1>
+      <div>
+        <p>A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we
+          know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets
+          also create untapped opportunities for young people to learn, connect and transform our communities.</p>
+        <p>That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories
+          highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is
+          continually enhancing App Inventor to make it possible for users like you to create apps like the ones featured in
+          YR’s reporting.</p>
+        <p>Essentially: get inspired by the story, get busy making your own app!</p>
+        <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75">
+        <img src="../images/logos/MITAppInvlogo1.jpg" width="75">
+        <img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+        <p>The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon
+          work supported by the National Science Foundation under Grant No. (1614239).  Any opinions, findings and
+          conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily
+          reflect the views of the National Science Foundation.</p>
+        <p>Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/"
+      target="_blank">here</a>.
+      </div>
+      {% endif %}
+    </div>
+
+    {% if page.howtos %}
+    <div id="howToAccordion" class="accordion" style="display:none">
+      <h3>Show a random message</h3>
+      <div class="setup" id="rand_message"></div>
+
+      <h3>Play a song on button press</h3>
+      <div class="setup" id="play_song"></div>
+
+      <h3>Show an image</h3>
+      <div class="setup" id="show_img"></div>
+
+      <h3>Enter and show the User's name</h3>
+      <div class="setup" id="enter_text"></div>
+
+      <h3>Send a text message</h3>
+      <div class="setup" id="send_text"></div>
+
+      <h3>Store and read files</h3>
+      <div class="setup" id="store_read_files"></div>
+    </div>
+    {% endif %}
+
+    <div id="serverTutorialId" style="display: none;">{{ page.tutorialId }}</div>
+
+    <script src="../../scripts/markdown.js"></script>
+    <script src="../../scripts/tabHandler.js"></script>
+    <script src="../../scripts/tutorialPage.js"></script>
+    <script src="../../scripts/shareAndPublish.js"></script>
+    <script>
+      $( function() {
+          $( ".widget input[type=submit], .widget a, .widget button" ).button();
+      } );
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31803258-2', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>

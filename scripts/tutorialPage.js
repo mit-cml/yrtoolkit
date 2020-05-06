@@ -284,6 +284,9 @@ $(document).ready(function() {
         });
       });
     }
+    if (howTos.length == 0) {
+      setupTutorial();
+    }
   };
   howToSetup();
   
