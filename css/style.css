@@ -261,8 +261,9 @@ img.DialogBox-image {
   font-size:24pt;
 }
 body.md img {
-  max-width: 75%;
+  max-width: 90%;
   margin: 0 auto;
+  display: block;
 }
 body.md img.enlargeImage, body.md img.zoom {
   max-width: 100%;
