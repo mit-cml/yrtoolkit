@@ -1,3 +1,5 @@
+// -*- mode: javascript; js-indent-offset: 2; -*-
+
 if (typeof bd=="undefined") {
   bd={};
 }
@@ -24,7 +26,7 @@ bd.util.ajaxPost = function(url,params,callback, callbackError){
     }
 	}
 	http.send(params);
-}
+};
 
 bd.util.ajaxGet = function(url, callback, callbackError){
   var xmlhttp;
@@ -46,7 +48,7 @@ bd.util.ajaxGet = function(url, callback, callbackError){
   xmlhttp.open("GET",url,true);
   xmlhttp.send();
 
-}
+};
 
 bd.util.getURLParamValue = function(name){
 
@@ -59,4 +61,42 @@ bd.util.getURLParamValue = function(name){
   } else {
     return results[1];
   }
-}
+};
+
+(function() {
+  if (window.location.search != "") {
+    var match = /[?&]locale=([^?&]*)/.exec(window.location.search);
+    if (match) {
+      var target = match[1].toLowerCase();
+      var parts = window.location.pathname.split('.');
+      if (parts.length == 2) {
+        if (target.indexOf('en') == 0) {
+          // Already at the English version
+          return;
+        }
+        parts.splice(1, 0, target);
+      } else if (parts.length == 3) {
+        if (parts[1] == target) {
+          // Already here
+          return;
+        } else if (target.indexOf('en') == 0) {
+          // English doesn't have a language tag in the name
+          parts.splice(1, 1);
+        } else {
+          parts[1] = match[1].toLowerCase();
+        }
+      } else {
+        return;
+      }
+      var newpath = parts.join('.');
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          window.location.pathname = newpath;
+        }
+      };
+      xhr.open('HEAD', newpath);
+      xhr.send();
+    }
+  }
+})();
