@@ -265,6 +265,9 @@ body.md img {
   margin: 0 auto;
   display: block;
 }
+body.md img.iconImg {
+	display: inline;
+}
 body.md img.enlargeImage, body.md img.zoom {
   max-width: 100%;
 }
