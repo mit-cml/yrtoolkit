@@ -11,7 +11,7 @@ In this unit, you will create an app to make your own music by composing and syn
 
 ![screenshot of the music maker app](../images/musicMaker/music-maker-screenshot.png){:.enlargeImage}
 
-This tutorial will give you some general hints to help you make the app, but will be challenged with designing and making the app yourself.
+This tutorial will give you some general hints to help you make the app, but you will be challenged with designing and making the app yourself.
 
 # Setup your computer
 
@@ -44,15 +44,17 @@ The first step is to set your app’s orientation. Did you design your app to be
 
 Look at the template layout to see how the <span class="icon" alt="horizontal"></span> HorizontalArrangement and <span class="icon" alt="vertical"></span> VerticalArrangement components can change the layout.
 
-![horizontal and vertical layouts"](../images/musicMaker/arrangements.png){:.enlargeImage}
+![horizontal and vertical layouts"](../images/musicMaker/arrangement-examples.png){:.enlargeImage}
 
 You can decide which type of layout you want for your app. You can arrange buttons horizontally, vertically, or a combination of both.
 
-<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="horizontal"></span> HorizontalArrangement appear next to each other.
+## How Layout Arrangements Work
+
+<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="horizontal"></span> HorizontalArrangement appear next to each other. Note that this <span class="icon" alt="horizontal"></span> HorizontalArrangement's <i>Height</i> is set to <span class="properties">50%</span> of the Screen, and its <i>AlignVertical</i> property is set to <span class="properties">Center</span>. That is why the <span class="icon" alt="button"></span> Buttons appear horizontally in the middle of the arrangement.
 
 ![3 buttons in a horizontalarrangement"](../images/musicMaker/horizontal.png){:.enlargeImage}
 
-<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="vertical"></span> VerticalArrangement appear below each other.
+<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="vertical"></span> VerticalArrangement appear below each other. This <span class="icon" alt="vertical"></span> VerticalArrangement's <i>Height</i> is set to <span class="properties">15%</span> of the Screen. Its <i>AlignHorizontal</i> property is set to <span class="properties">Left</span>. That is why the <span class="icon" alt="button"></span> Buttons appear below each other on the left side of the arrangement.
 
 ![3 buttons in a verticalarrangement"](../images/musicMaker/vertical.png){:.enlargeImage}
 
