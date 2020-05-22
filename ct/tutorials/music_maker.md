@@ -80,7 +80,7 @@ Add more <span class="icon" alt="button"></span> Buttons so you have at least 4 
 ![sample 1 of musicmaker app](../images/musicMaker/musicmaker-sample1.png){:.enlargeImage}
 ![sample 2 of musicmaker app](../images/musicMaker/musicmaker-sample2.png){:.enlargeImage}
 
-You will have many <span class="icon" alt="button"></span> Buttons in this app, so make sure to rename them using descriptive names to make the coding of your app more manageable.
+You will have many <span class="icon" alt="button"></span> Buttons in this app, so make sure to rename them using descriptive names to make the coding of your app more manageable. You can see how to rename a component in the next step.
 
 ## Change Button Properties
 
@@ -95,11 +95,11 @@ To make a Stop button for the drum, select <strong>Button2</strong> in the templ
 
 ## Add Player Components
 
-You need to add a separate <span class="icon" alt="player"></span> Player component for each instrument in your app. In the example below, two <span class="icon" alt="player"></span> Player components are added and renamed appropriately.
+You need to add a separate <span class="icon" alt="player"></span> Player component for each instrument in your app. In the example below, two <span class="icon" alt="player"></span> Player components are added and renamed appropriately for playing the instruments, drums and piano.
 
 ![rename player components](../images/musicMaker/player-rename.gif){:.enlargeImage}
 
-Then set the <i>Loop</i> property for each <span class="icon" alt="player"></span> Player to checked so the music loops continuously. And set the <i>Source</i> property to matching instrument sound files from the Media assets.
+Then check the box for the <i>Loop</i> property for each <span class="icon" alt="player"></span> Player so the music loops continuously. And set the <i>Source</i> property to corresponding instrument sound files from the Media assets. In this example, the sources are set to the drums and piano wav files included in the template.
 
 ![set player properties](../images/musicMaker/player-properties.gif){:.enlargeImage}
 
@@ -123,6 +123,11 @@ Drag out a matching <span class="procedures">Player.Stop</span> block and snap i
 ## Testing!
 
 Now test starting and stopping that instrument with your two Buttons!
+
+Test with the AI Companion through the Connect menu, and then scan the displayed QR code with the AI Companion app on your mobile device.
+
+![](../images/helloItsMe/scan-qr-code.png){:.enlargeImage}
+
 
 ## Now do the rest
 
