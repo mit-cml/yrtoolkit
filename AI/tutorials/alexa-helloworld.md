@@ -31,7 +31,7 @@ This will allow you to save any Alexa Skills to your account and use your skills
 
 ## Add a Skill
 
-In the Designer Toolbar at the top of the screen, you will see a button labeled **“Add Skill …”**. 
+In the Designer Toolbar at the top of the screen, you will see a button labeled **“Add Skill …”**. If you don’t see this button, you may be on the wrong MIT App Inventor page. Make sure you’re using [alexa.appinventor.mit.edu](https://alexa.appinventor.mit.edu/) and not appinventor.mit.edu.
 
 ![Add a skill](../images/alexa-helloworld/add_skill.png){:.enlargeImage}
 
@@ -91,7 +91,7 @@ Note: The invocation name needs to be at least two (2) words long, but avoid mak
 </hint>
 
 
-For this demonstration, let’s name this skill “Codi Bee,” MIT App Inventor’s mascot. This means when we want to call our skill, we will say:
+For this demonstration, let’s name this skill “Codi Bee”, which is MIT App Inventor’s mascot. This means when we want to call our skill, we will say:
 
 <center> “Alexa, tell <span style="background-color: yellow"> Codi bee</span> to <span style="background-color: LightPink"> do something</span>” </center>
 
@@ -122,7 +122,7 @@ Let’s teach our app to listen for the “SayHelloWorld” intent. To define th
 
 ![Drag the define intent block](../images/alexa-helloworld/define_intent.gif){:.enlargeImage}
 
-For this intent, we’ll rename the Intent to be “SayHelloWorld”. You can give this intent any name that makes sense to you, as long as it is a meaningful name. 
+For this intent, we’ll rename the intent to be “SayHelloWorld”. You can give this intent any name that makes sense to you, as long as it is a meaningful name. 
 
 ![Change the intent name](../images/alexa-helloworld/blocks2.png){:.enlargeImage}
 
@@ -144,13 +144,13 @@ In these text blocks, we will write a few sentences which Alexa will understand 
 
 ![Add utterances](../images/alexa-helloworld/blocks3.png){:.enlargeImage}
 
-(If you are familiar with the List block, you can make this list as bigger and add as many phrases as you can.)
+(If you are familiar with the List block, you can make this list bigger by clicking the blue icon at the top left of the block and add as many phrases as you want.)
 
 Remember that the structure of any command you tell Alexa when you want to trigger a skill is: 
 
 <center> “Alexa, tell <span style="background-color: yellow"> (Invocation Name)</span> to <span style="background-color: LightPink"> (Utterance)</span>” </center>
 
-We already set the invocation name is Codi Bee, now we added the intent phrases, “Say hi”, “Say hello”, and "Say hello world". Here is a full example of what Alexa might hear when we want to trigger our new Skill:
+We already set the invocation name as Codi Bee, and now we've added the intent phrases, “Say hi”, “Say hello”, and "Say hello world". Here is a full example of what Alexa might hear when we want to trigger our new Skill:
 
 <center> “Alexa, tell <span style="background-color: yellow"> Codi bee</span> to <span style="background-color: LightPink"> say hello</span>.” </center>
 
@@ -168,13 +168,13 @@ Below the picture of the Amazon Echo Dot, there is a button labeled **Send Updat
 
 ![Send updates](../images/alexa-helloworld/send_updates.png){:.enlargeImage}
 
-You should get a pop-up at the top of your browser that says “Skill updated successfully on Amazon”. Click OK to continue
+You should get a pop-up at the top of your browser that says “Skill updated successfully on Amazon”. Click OK to continue.
 
 ![Amazon notification](../images/alexa-helloworld/update_done.png){:.enlargeImage}
 
 ## Define the Endpoint Function
 
-Now that we have defined the Interaction Model and updated Alexa, we need to define the brain. Our skill can now recognize whenever we want it to “SayHelloWorld,” but it doesn’t know what to do or how to handle it. To make the response, we need to define the **Endpoint Function**, the brain of our Skill. To begin with, let’s navigate back to the Blocks view.
+Now that we have defined the Interaction Model and updated Alexa, we need to define the "brain" of the Alexa skill. Our skill can now recognize whenever we want it to “SayHelloWorld,” but it doesn’t know what to do or how to handle it. To make the response, we need to define the **Endpoint Function**, the brain of our Skill. To begin, let’s navigate back to the Blocks view.
 
 ![Switch to blocks editor](../images/alexa-helloworld/goto_blocks.png){:.enlargeImage}
 
@@ -191,6 +191,12 @@ Next, attach a text block to the **Say** block and type inside the text block, �
 ![Add text to Say block](../images/alexa-helloworld/blocks4.png){:.enlargeImage}
 
 And now we’ve finished defining the Endpoint function. If you decide to add more intents, like a SayGoodbye intent, you need to add a new **when intent spoken** block for each intent.
+
+<hint markdown="block" title="Tip on the Say block">
+
+When playing around with your Endpoint function, you may be tempted to add more Say blocks to an intent. But be careful! Alexa will only say whatever is in the *last* Say block of any intent.
+
+</hint>
 
 ## Generate the Endpoint Function
 
@@ -214,7 +220,7 @@ Login to your Developer Account if you get prompted to.
 
 ![Login to Amazon](../images/alexa-helloworld/amazon_login.png){:.enlargeImage}
 
-Once you’ve logged in, you will reach the Alexa Developer Console. The Alexa Developer Console should look like the page below.
+Once you’ve logged in, you will reach the Alexa Developer Console. The Alexa Developer Console should look something like the page below.
 
 ![Amazon Alexa Developer Console](../images/alexa-helloworld/dev_console.png){:.enlargeImage}
 
@@ -234,7 +240,7 @@ In the top menu bar, you should see a tab labeled **Test**. Click on the **Test*
 
 ![Switch to Test tab](../images/alexa-helloworld/test_tab.png){:.enlargeImage}
 
-Now, you should be in the Test screen for your custom Alexa Skill. The screen should look like the following.
+Now, you should be in the Test screen for your custom Alexa Skill. The screen should look something like the following.
 
 ![Amazon Alexa Test tab](../images/alexa-helloworld/test_tab2.png){:.enlargeImage}
 
@@ -246,7 +252,7 @@ Now that your skill is enabled for development, any Alexa-enabled devices that a
 
 ## Enter the Test Utterances
 
-If you don’t have an Alexa-enabled device on hand, the Alexa Developer Console allows you to simulate an Alexa using your custom Alexa skill online. Simple type in the console, “Tell codi bee to say hello.” (You can omit the Alexa at the beginning of the phrase).
+If you don’t have an Alexa-enabled device on hand, the Alexa Developer Console allows you to simulate an Alexa using your custom Alexa skill online. Simply type in the console, “Tell codi bee to say hello.” (You can omit the Alexa at the beginning of the phrase).
 
 ![Test your new skill](../images/alexa-helloworld/test_skill.png){:.enlargeImage}
 
