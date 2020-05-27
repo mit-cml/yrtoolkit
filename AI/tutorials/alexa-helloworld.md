@@ -31,7 +31,7 @@ This will allow you to save any Alexa Skills to your account and use your skills
 
 ## Add a Skill
 
-In the Designer Toolbar at the top of the screen, you will see a button labeled **“Add Skill …”**. If you don’t see this button, you may be on the wrong MIT App Inventor page. Make sure you’re using [alexa.appinventor.mit.edu](https://alexa.appinventor.mit.edu/) and not appinventor.mit.edu.
+In the Designer Toolbar at the top of the screen, you will see a button labeled **“Add Skill …”**.
 
 ![Add a skill](../images/alexa-helloworld/add_skill.png){:.enlargeImage}
 
