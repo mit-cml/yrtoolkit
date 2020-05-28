@@ -54,11 +54,11 @@ You can decide which type of layout you want for your app. You can arrange butto
 
 ![3 buttons in a horizontalarrangement"](../images/musicMaker/horizontal.png){:.enlargeImage}
 
-<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="vertical"></span> VerticalArrangement appear below each other. This <span class="icon" alt="vertical"></span> VerticalArrangement's <i>Height</i> is set to <span class="properties">15%</span> of the Screen. Its <i>AlignHorizontal</i> property is set to <span class="properties">Left</span>. That is why the <span class="icon" alt="button"></span> Buttons appear below each other on the left side of the arrangement.
+<span class="icon" alt="button"></span> Buttons added to a <span class="icon" alt="vertical"></span> VerticalArrangement appear below each other. This <span class="icon" alt="vertical"></span> VerticalArrangement's <i>Height</i> is set to <span class="properties">25%</span> of the Screen. Its <i>AlignHorizontal</i> property is set to <span class="properties">Left</span>. That is why the <span class="icon" alt="button"></span> Buttons appear below each other on the left side of the arrangement.
 
 ![3 buttons in a verticalarrangement"](../images/musicMaker/vertical.png){:.enlargeImage}
 
-<strong>This is just a starting point. Pick the arrangement that you like best, and delete the other arrangements. Or delete them all, and start over! The design of your app is up to you.</strong>
+This is just a starting point. Pick the arrangement that you like best, and delete the other arrangements. Or delete them all, and start over! The design of your app is up to you.
 
 ## Add or Change Buttons
 
@@ -75,6 +75,8 @@ You can change the <i>Width</i> and <i>Height</i> properties of both your <span 
 Note that <span class="properties">Fill Parent</span> means to fill the component in which the current component is contained. For a <span class="icon" alt="button"></span> Button, its parent would be the <strong>Arrangement</strong> in which it is contained. For a <span class="icon" alt="horizontal"></span> HorizontalArrangement or <span class="icon" alt="vertical"></span> VerticalArrangement, its parent most likely will be <strong>Screen1</strong>.
 
 The <i>Width</i> and <i>Height</i> can be set to an exact pixel value, or to a percentage. Using a percentage is recommended to ensure your components resize according to the size of the mobile device used.
+
+## Arrange Buttons
 
 Add more <span class="icon" alt="button"></span> Buttons so you have at least 4 instruments. Below are two examples of possible layouts.
 ![sample 1 of musicmaker app](../images/musicMaker/musicmaker-sample1.png){:.enlargeImage}
@@ -116,7 +118,7 @@ Code the your first <span class="icon" alt="button"></span> Button. Using the dr
 
 The <span class="icon" alt="button"></span> Button to stop the instrument sound uses the same idea. Drag out a <span class="control">Button.Click</span> event block for the matching Stop Button for this instrument. Again, we’ll use the Drums as an example.
 
-Drag out a matching <span class="procedures">Player.Stop</span> block and snap it into the <span class="control">StopButton.Click</span> event. This will make the <span class="icon" alt="player"></span> Player stop playing.
+Drag out a matching <span class="procedures">Player.Stop</span> block and snap it into the (in this example) <span class="control">StopDrum1Button.Click</span> event. This will make the <span class="icon" alt="player"></span> Player stop playing.
 
 ![](../images/musicMaker/stop-drum-button-click.gif){:.enlargeImage}
 
@@ -134,6 +136,8 @@ Test with the AI Companion through the Connect menu, and then scan the displayed
 Now that you have one <span class="icon" alt="button"></span> Button set working, add code for your other instruments. Make sure you have a <span class="icon" alt="button"></span> Button to start the instrument, and one to stop it. Also, make sure you add a new <span class="icon" alt="player"></span> Player component for each instrument. Remember to name them appropriately!
 
 # Expand your app
+
+Here are some ideas to add to your MusicMaker app!
 
 **Record and play back your music**
 <br />Use the <span class="icon" alt="soundRecorder"></span> SoundRecorder component to record music, and then add another <span class="icon" alt="player"></span> Player component to play the resulting sound.
