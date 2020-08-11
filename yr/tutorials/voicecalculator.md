@@ -2,12 +2,12 @@
 title: Voice Calculator
 layout: tutorial
 howtos: false
-yrmedia: true
+yrmedia: false
 ---
 
 # Challenge
 
-Challenge statement from YR Media
+Have you ever wondered how conversational AI agents such as Alexa and Siri work?  How do they interpret what you are saying to them and grasp your intent?  How do they then know how to appropriately and meaningfully respond to you?  In this project you are challenged to create your very first own Voice User Interface (VUI) as you build a voice driven calculator that can do basic arithmetic operations.
 
 # Setup your computer
 
@@ -17,7 +17,7 @@ Challenge statement from YR Media
 
 ## Introduction
 
-Have you ever wondered how conversational AI agents such as Alexa and Siri work?  How do they interpret what you are saying to them and grasp your intent?  How do they then know how to appropriately and meaningfully respond to you?
+
 
 The purpose of this elementary level AI project is to give you a sense of the basics of a Voice User Interface (VUI) and to teach you how to design a simple AI system that can understand the intent of the user in a verbally stated calculation question and respond appropriately.
 
@@ -31,31 +31,31 @@ The GUI has been created for you in the starter file.  Please change the propert
 
 ![GUI of Voice Calculator](../images/voiceCalculator/GUICorrespondence.png){:.enlargeImage}
 
-In the GUI you will notice that there is a Speak <span class="icon" alt="button"></span> Button which the user will press to verbally communicate the calculation they wish to be performed.  The interface will then display in writing what the Calculator heard and respond, both in writing and verbally, with the result of the calculation.  If the Calculator could not hear a meaningful calculation query or could not understand the intent of the user, it will say so.
+In the GUI you will notice that there is a Speak  button which the user will press to verbally communicate the calculation they wish to be performed.  The interface will then display in writing what the Calculator heard and respond, both in writing and verbally, with the result of the calculation.  If the Calculator could not hear a meaningful calculation query or could not understand the intent of the user, it will say so.
 
 
-## Initialize numberList
+## Initialize <var>numberList</var>
 
-The first thing you'll tackle is to extract the numbers in the sentence spoken by the user. You'll use them later when you actually perform the mathematical operation.  To do this first you will initialize a global variable named numberList where the numbers in the calculation query will be stored.  As this variable will be a list of numbers,  it will be initialized  to an empty list.
+The first thing you'll tackle is to extract the numbers in the sentence spoken by the user. You'll use them later when you actually perform the mathematical operation.  To do this first you will initialize a global variable named <var>numberList</var> where the numbers in the calculation query will be stored.  As this variable will be a list of numbers,  it will be initialized  to an empty list.
 
 
 ![Initialization of global numberList](../images/voiceCalculator/initialize_numberList.png){:.enlargeImage}
 
-## procedure extractNumbers I
+## procedure <var>extractNumbers</var> I
 
-Then you  will create  a procedure  called extractNumbers which when given an input sentence will extract the numerical values in that sentence and store these in the global variable numberList.  To do this:
-* choose a procedure and name it <var>extractNumbers</var>
+Then you  will create  a procedure  called <strong><var>extractNumbers</var></strong> which when given an input sentence will extract the numerical values in that sentence and store these in the global variable <var>numberList</var>.  To do this:
+* choose a procedure and name it <strong><var>extractNumbers</var></strong>
 * use the settings gear to add an input parameter and call it <var>sentence</var>
 
 
 ![procedure extractNumbers](../images/voiceCalculator/procedure_extractNumbers.png){:.enlargeImage}![procedure extractNumbers input parameter](../images/voiceCalculator/procedure_extractNumbers_inputParameter.png){:.enlargeImage}
 
-(continues next page)
+(procedure continues next page)
 
-## procedure extractNumbers II
+## procedure <var>extractNumbers</var> II
 
 * set the global variable <var>numberList</var> to the empty list.  We need to reinitialize the variable every time we call this procedure as each calculation the user initiates will use a new pair of numbers.
-* use  the “split at spaces” text utility to split the input sentence into a list of  its words and for each word in this list check to see if it is a number.
+* use  the <strong>split at spaces</strong> text utility to split the input sentence into a list of  its words and for each word in this list check to see if it is a number.
 
 ![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
 
@@ -86,79 +86,176 @@ As there are many ways for a user to indicate that they would like to perform a 
 
 Note that the key words/symbols/numbers in <span style="color:green">green</span> define the multiplication intent while the words/symbols in <span style="color:red">red</span> are redundant and can be disregarded.
 
+## Boolean Procedures I
+A Boolean procedure is a procedure that returns the values <strong>true</strong> or <strong>false</strong> based on the truth or falsity of the input statements.  
 
-## Arrange Buttons
+First, you will create a Boolean procedure with a return value called <strong><var>multiplicationIntended</var></strong> which will determine whether the user intends to perform a multiplication by checking for some key words in the sentence uttered by the user.
 
-Add more <span class="icon" alt="button"></span> Buttons so you have at least 4 instruments. Below are two examples of possible layouts.
-![sample 1 of musicmaker app](../images/musicMaker/musicmaker-sample1.png){:.enlargeImage}
-![sample 2 of musicmaker app](../images/musicMaker/musicmaker-sample2.png){:.enlargeImage}
+* choose a procedure with a return value and name it <strong><var>multiplicationIntended</var></strong>
+* use the settings gear to add an input parameter and call it <var>sentence</var>
+![procedure with return value](../images/voiceCalculator/procedureWithReturn.png){:.enlargeImage}
+![procedure with input](../images/voiceCalculator/proceduremultiplicationIntendedwithinput.png){:.enlargeImage}
 
-You will have many <span class="icon" alt="button"></span> Buttons in this app, so make sure to rename them using descriptive names to make the coding of your app more manageable. You can see how to rename a component in the next step.
+(procedure continues next page)
 
-## Change Button Properties
+## Boolean Procedures II
+* this procedure will return <strong>true</strong> if any of the following symbols/words: 
 
-Change the <span class="icon" alt="button"></span> Buttons' properties to fit your style. Match the instrument image, or change the color or shape.
+   { \*, x , product, multiply, times } 
 
-For example, perhaps start with a drum. Select <strong>Button1</strong> in the template, change its <i>Image</i> to <span class="properties">“drum1.png”</span> and rename it to <strong>“Drum1Button”</strong>. 
-![change drum button properties](../images/musicMaker/drum-button-properties.png){:.enlargeImage}
+   are contained in the sentence and will return <strong>false</strong> otherwise.  
+<hint markdown="block" title="Give me a hint">
 
-To make a Stop button for the drum, select <strong>Button2</strong> in the template, change its <i>BackgroundColor</i> to <span class="properties">“Red”</span>, <i>Text</i> to <span class="properties">“STOP”</span>, <i>Shape</i> to <span class="properties">“oval”</span> and rename it <strong>“StopDrum1Button”</strong>. 
-![change stop drum button properties](../images/musicMaker/stop-drum-button-properties.png){:.enlargeImage}
+Note that Boolean text block <strong>contains</strong> can be used
+<img src="../images/voiceCalculator/containstextpiece.png" alt="contains text block" style="width:50%">
+for this purpose as well as  the logic operator <strong>or</strong> which can be utilized in a nested fashion.  
+![logic block OR](../images/voiceCalculator/LogicOR.png){:.enlargeImage}
+![logic block OR nested twice](../images/voiceCalculator/2NestedOR.png){:.enlargeImage}
+![logic block OR nested three times](../images/voiceCalculator/3NestedOR.png){:.enlargeImage}
+
+You can keep nesting as many <strong>or</strong> blocks as you need.  If any one of the nested <strong>or</strong> operators returns <strong>true</strong> then the collection returns <strong>true</strong>. 
+
+<hint markdown="block" title="Check my solution">
+
+![procedure multiplicationIntended solution](../images/voiceCalculator/procedure_multiplicationIntended.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+Try this on your own but if you get stuck you can click the Hint button.
+ 
+## Boolean Procedures III
+Now you will create three additional Boolean procedures in a similar fashion that will determine if the intended operation of the user is addition, subtraction or division.  Create these procedures but leave them blank for now.   Later, after testing that multiplication is being performed correctly, you will assemble these procedures in a very similar fashion to <strong><var>multiplicationIntended</var></strong>.
+
+![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
+
+## SpeakButton
+Now you will write the code to give functionality to the Speak button.  When the Speak button is clicked:
+* the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong> are cleared
+* call the <strong>SpeechRecognizer</strong> to get the text of what the user has spoken
+
+<hint markdown="block" title="Give me a hint">
+
+![when SpeakButton Click hint](../images/voiceCalculator/whenSpeakButtonClick1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![when SpeakButton Click solution](../images/voiceCalculator/whenSpeakButtonClick2.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+Try this on your own but if you get stuck you can click the Hint button.
+
+## when SpeechRecognizer gets text I
+When the <strong>SpeechRecognizer</strong> performs its task and returns with a text <var>result</var>:
+* set the <strong>UserTextLabel</strong> to this text <var>result</var>.  This indicates what the Calculator heard.
+* extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong>.
+* set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”
+
+(procedure continues next page)
+
+## when SpeechRecognizer gets text II
+* check that there were exactly two numbers extracted from the sentence uttered by the user and if so, determine
+	* if the intent was multiplication, set <strong>CalculatorTextLabel</strong> to the product of the two numbers
+	* else if the intent was division, …… (leave blank for now)
+	* else if the intent was addition, ….. (leave blank for now)
+	* else if the intent was subtraction,  …..(leave blank for now)
+* Use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.
+
+<hint markdown="block" title="Give me a hint">
+
+![when SpeechRecognizer gets text hint](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![when SpeechRecognizer gets text partial solution](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText2.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+Try this on your own but if you get stuck you can click the Hint button.
+
+## Test your App for Multiplication
+
+<img src="../images/voiceCalculator/AICompanion.png" style="width: 65%">
+
+Now use the AI Companion to check that your app works well for a multiplication calculation.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
 
 
-## Add Player Components
+## Other operations I
+Now complete the three remaining Boolean procedures for the other operations: <strong><var>additionIntended</var></strong>, <strong><var>subtractionIntended</var></strong> and <strong><var>divisionIntended</var></strong>.  You can “copy and paste” the blocks of  the <strong><var>multiplicationIntended</var></strong>  procedure and make the appropriate changes for each operation.
+![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
 
-You need to add a separate <span class="icon" alt="player"></span> Player component for each instrument in your app. In the example below, two <span class="icon" alt="player"></span> Player components are added and renamed appropriately for playing the instruments, drums and piano.
+<hint markdown="block" title="Give me a hint">
+The following symbols/words are common ways of indicating intent for each operation
+* addition: { + , add, sum, plus}
+* subtraction: { - , subtract, difference, minus}
+* division: { /, ÷ , divide, quotient, ratio}
 
-![rename player components](../images/musicMaker/player-rename.gif){:.enlargeImage}
+<hint markdown="block" title="Check my solution">
 
-Then check the box for the <i>Loop</i> property for each <span class="icon" alt="player"></span> Player so the music loops continuously. And set the <i>Source</i> property to corresponding instrument sound files from the Media assets. In this example, the sources are set to the drums and piano wav files included in the template.
+![procedure additionIntended solution](../images/voiceCalculator/procedure_additionIntended.png){:.enlargeImage}
 
-![set player properties](../images/musicMaker/player-properties.gif){:.enlargeImage}
+![procedure subtractionIntended solution](../images/voiceCalculator/procedure_subtractionIntended.png){:.enlargeImage}
 
-## Code the Blocks
+![procedure divisionIntended solution](../images/voiceCalculator/procedure_divisionIntended.png){:.enlargeImage}
 
-Click the Blocks button and go to the Blocks Editor.
+</hint>
 
-![switch to blocks editor](../images/musicMaker/blocks-editor.png){:.enlargeImage}
+</hint>
+Try this on your own but if you get stuck you can click the Hint button.
 
+## Other operations II
+And now complete the remaining parts of <strong>when SpeechRecognizer1.AfterGettingText</strong>
 
-Code the your first <span class="icon" alt="button"></span> Button. Using the drums example, there could be a button named **Drum1Button**. Drag out a <span class="control">Button.Click</span> event block for your drum button. For the matching <span class="icon" alt="player"></span> Player component, drag out a <span class="procedures">Player.Start</span> block, and snap it into the <span class="control">Button.Click</span> event block.
+* else if the intent was division, set <strong>CalculatorTextLabel</strong> to the quotient of the two numbers
+* else if the intent was addition, set <strong>CalculatorTextLabel</strong> to the sum of the two numbers
+* else if the intent was subtraction, set <strong>CalculatorTextLabel</strong> to the difference of the two numbers
 
-![](../images/musicMaker/drum-button-click.gif){:.enlargeImage}
+<hint markdown="block" title="Check my solution">
 
-The <span class="icon" alt="button"></span> Button to stop the instrument sound uses the same idea. Drag out a <span class="control">Button.Click</span> event block for the matching Stop Button for this instrument. Again, we’ll use the Drums as an example.
+![when SpeechRecognizer gets text full solution](../images/voiceCalculator/whenSpeechRecongizer1AfterGettingText3.png){:.enlargeImage}
 
-Drag out a matching <span class="procedures">Player.Stop</span> block and snap it into the (in this example) <span class="control">StopDrum1Button.Click</span> event. This will make the <span class="icon" alt="player"></span> Player stop playing.
+</hint>
 
-![](../images/musicMaker/stop-drum-button-click.gif){:.enlargeImage}
+Try this on your own but if you get stuck you can click the Solution button.
 
-## Testing!
-
-Now test starting and stopping that instrument with your two Buttons!
-
-Test with the AI Companion through the Connect menu, and then scan the displayed QR code with the AI Companion app on your mobile device.
-
-![](../images/helloItsMe/scan-qr-code.png){:.enlargeImage}
-
-
-## Now do the rest
-
-Now that you have one <span class="icon" alt="button"></span> Button set working, add code for your other instruments. Make sure you have a <span class="icon" alt="button"></span> Button to start the instrument, and one to stop it. Also, make sure you add a new <span class="icon" alt="player"></span> Player component for each instrument. Remember to name them appropriately!
-
-# Expand your app
-
-Here are some ideas to add to your MusicMaker app!
-
-**Record and play back your music**
-<br />Use the <span class="icon" alt="soundRecorder"></span> SoundRecorder component to record music, and then add another <span class="icon" alt="player"></span> Player component to play the resulting sound.
-
-**Add a Pause button for each instrument.**
+## Test Your App again
+Congratulations, you have built your first voice driven AI system.  Test it thoroughly to make sure that your Voice Calculator can correctly respond to a variety of different utterances for each operation intended.
 
 
-**Instead of 2 Buttons, make one Button toggle play/stop.**
-<br />For each instrument in your app, make one Button, and then have it toggle to either act as a "Start" button, or a "Stop" button, depending on whether or not the instrument is playing.
+# Expand Your App
+* The calculator at this point functions a lot like how a beginning foreign language learner may try to function in a foreign country when listening to a native speaker: a few known key words are used to identify the intent of the native speaker and the rest of the other words are completely ignored in high hopes that they are redundant and thus don’t really matter.  For example in the following sentence, all the words in <span style="color:red">red</span> are redundant and can be ignored while the words in <span style="color:green">green</span> are highly relevant in defining the intent of the speaker:
 
-**Add more instruments**
-<br />You've been given several instruments and images to get started, but you can either download or create your own instrument sounds to add to your music making app. Have fun!
+	<span style="color:red">Would you be so kind, oh dear amazing Calculator, to tell me the</span> <span style="color:green">product</span> <span style="color:red">of the most glorious number</span> <span style="color:green">73</span> <span style="color:red">and the supremely wondrous quantity</span> <span style="color:green">51</span> <span style="color:red">?</span>
 
+	* Knowing this limitation of the Voice Calculator, come up with a sentence that will trick it to do a calculation when the intent of the sentence was not a calculation at all.  Test it.
+	* Knowing the limitations of the Voice Calculator, come up with a completely legitimate calculation sentence that it will fail to understand. Test it.
+	* Can you improve your code to avoid any of the tricky sentences you came up with above?
+
+* Make the calculator take square roots and other more advanced operations you might know.
+
+* Can you try to create a primitive version of Alexa or Siri where the AI will respond to some basic queries like: 
+	* What day of the week is it?
+	* What is the time?
+	* Tell me a joke.
+	* What is the weather? (perhaps opens a weather website)
+	* What are the top news stories? (perhaps opens a news website)
+	* Set up a timer for 30 seconds.
+
+
+
+
+# About Youth Mobile Power 
+A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
+
+That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.
+
+Essentially: get inspired by the story, get busy making your own app!
+ <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+ 
+ The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1906895, 1906636).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+ Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>.
