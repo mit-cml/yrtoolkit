@@ -31,7 +31,7 @@ The GUI has been created for you in the starter file.  Please change the propert
 
 ![GUI of Voice Calculator](../images/voiceCalculator/GUICorrespondence.png){:.enlargeImage}
 
-In the GUI you will notice that there is a Speak  button which the user will press to verbally communicate the calculation they wish to be performed.  The interface will then display in writing what the Calculator heard and respond, both in writing and verbally, with the result of the calculation.  If the Calculator could not hear a meaningful calculation query or could not understand the intent of the user, it will say so.
+In the GUI you will notice that there is a Speak  button which the user will press to verbally communicate the calculation they wish to have performed.  The interface will then display in writing what the Calculator heard and respond, both in writing and verbally, with the result of the calculation.  If the Calculator could not hear a meaningful calculation query or could not understand the intent of the user, it will say so.
 
 
 ## Initialize <var>numberList</var>
@@ -77,7 +77,7 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 
 
 ## Multiplication Intent
-As there are many ways for a user to indicate that they would like to perform a multiplication operation, it is essential to identify all these different approaches as a multiplication intent.  For example all of the following statements are different ways of expressing a multiplication intent: 
+As there are many ways for a user to indicate that they would like to perform a multiplication operation, it is essential to identify all these different approaches as a multiplication intent.  For example all of the following statements are different ways of expressing the same multiplication intent: 
 * <span style="color:red">what is</span> <span style="color:green">73\*51</span> <span style="color:red">?</span>
 * <span style="color:red">how much is</span> <span style="color:green">73x51</span><span style="color:red"> ?</span>
 * <span style="color:red">what is the <span style="color:green">product</span> of</span> <span style="color:green">73</span> <span style="color:red">and</span> <span style="color:green">51</span> <span style="color:red">?</span>
@@ -126,13 +126,13 @@ You can keep nesting as many <strong>or</strong> blocks as you need.  If any one
 Try this on your own but if you get stuck you can click the Hint button.
  
 ## Boolean Procedures III
-Now you will create three additional Boolean procedures in a similar fashion that will determine if the intended operation of the user is addition, subtraction or division.  Create these procedures but leave them blank for now.   Later, after testing that multiplication is being performed correctly, you will assemble these procedures in a very similar fashion to <strong><var>multiplicationIntended</var></strong>.
+Now you will create three additional Boolean procedures in a similar fashion that will determine if the intended operation of the user is addition, subtraction or division.  Create these procedures but leave them blank for now.   Later, after testing that multiplication is being performed correctly, you will assemble these procedures in a fashion very similar to <strong><var>multiplicationIntended</var></strong>.
 
 ![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
 
 ## SpeakButton
 Now you will write the code to give functionality to the Speak button.  When the Speak button is clicked:
-* the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong> are cleared
+* clear the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong>
 * call the <strong>SpeechRecognizer</strong> to get the text of what the user has spoken
 
 <hint markdown="block" title="Give me a hint">
@@ -154,7 +154,7 @@ When the <strong>SpeechRecognizer</strong> performs its task and returns with a 
 * extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong>.
 * set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”
 
-(procedure continues next page)
+(task continues next page)
 
 ## when SpeechRecognizer gets text II
 * check that there were exactly two numbers extracted from the sentence uttered by the user and if so, determine
@@ -162,7 +162,7 @@ When the <strong>SpeechRecognizer</strong> performs its task and returns with a 
 	* else if the intent was division, …… (leave blank for now)
 	* else if the intent was addition, ….. (leave blank for now)
 	* else if the intent was subtraction,  …..(leave blank for now)
-* Use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.
+* use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -181,7 +181,7 @@ Try this on your own but if you get stuck you can click the Hint button.
 
 <img src="../images/voiceCalculator/AICompanion.png" style="width: 65%">
 
-Now use the AI Companion to check that your app works well for a multiplication calculation.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
+Now use the AI Companion to check that your app works well for a multiplication calculation.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying something like "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
 
 
 ## Other operations I
