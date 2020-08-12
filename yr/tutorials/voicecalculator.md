@@ -57,8 +57,8 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 ## procedure <var>extractNumbers</var>
 (page 2)
 <ol start="3">
-<li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers.</li>
-<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and for each word in this list check to see if it is a number.</li>
+<li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers</li>
+<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and for each word in this list check to see if it is a number</li>
 </ol>
 ![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
 <ol start="5">
@@ -171,7 +171,7 @@ Try this on your own but if you get stuck you can click the Hint button.
 When the <strong>SpeechRecognizer</strong> performs its task and returns with a text <var>result</var>:
 <ol>
 <li>set the <strong>UserTextLabel</strong> to this text <var>result</var>.  This indicates what the Calculator heard.</li>
-<li>extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong>.</li>
+<li>extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong></li>
 <li>set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”</li>
 </ol>
 (task continues next page)
@@ -185,7 +185,7 @@ When the <strong>SpeechRecognizer</strong> performs its task and returns with a 
 		<li>if the intent was multiplication, set <strong>CalculatorTextLabel</strong> to the product of the two numbers</li>
 	</ul>
 </li>
-<li>use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.</li>
+<li>use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of the <strong>CalculatorTextLabel</strong>.</li>
 </ol>
 
 
