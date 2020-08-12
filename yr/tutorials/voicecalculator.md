@@ -41,25 +41,29 @@ The first thing you'll tackle is to extract the numbers in the sentence spoken b
 
 ![Initialization of global numberList](../images/voiceCalculator/initialize_numberList.png){:.enlargeImage}
 
-## procedure <var>extractNumbers</var> I
+## procedure <var>extractNumbers</var> 
+(page 1)
 
 Then you  will create  a procedure  called <strong><var>extractNumbers</var></strong> which when given an input sentence will extract the numerical values in that sentence and store these in the global variable <var>numberList</var>.  To do this:
-* choose a procedure and name it <strong><var>extractNumbers</var></strong>
-* use the settings gear to add an input parameter and call it <var>sentence</var>
-
+<ol>
+<li>choose a procedure and name it <strong><var>extractNumbers</var></strong></li>
+<li>use the settings gear to add an input parameter and call it <var>sentence</var></li>
+</ol>
 
 ![procedure extractNumbers](../images/voiceCalculator/procedure_extractNumbers.png){:.enlargeImage}![procedure extractNumbers input parameter](../images/voiceCalculator/procedure_extractNumbers_inputParameter.png){:.enlargeImage}
 
 (procedure continues next page)
 
-## procedure <var>extractNumbers</var> II
-
-* set the global variable <var>numberList</var> to the empty list.  We need to reinitialize the variable every time we call this procedure as each calculation the user initiates will use a new pair of numbers.
-* use  the <strong>split at spaces</strong> text utility to split the input sentence into a list of  its words and for each word in this list check to see if it is a number.
-
+## procedure <var>extractNumbers</var>
+(page 2)
+<ol start="3">
+<li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers.</li>
+<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and for each word in this list check to see if it is a number.</li>
+</ol>
 ![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
-
-* if any word is a number then add it to the global variable <var>numberList</var>
+<ol start="5">
+<li>if any word is a number then add it to the global variable <var>numberList</var></li>
+</ol>
 
 <hint markdown="block" title="Give me a hint">
 
@@ -86,54 +90,66 @@ As there are many ways for a user to indicate that they would like to perform a 
 
 Note that the key words/symbols/numbers in <span style="color:green">green</span> define the multiplication intent while the words/symbols in <span style="color:red">red</span> are redundant and can be disregarded.
 
-## Boolean Procedures I
+## Boolean procedure <var>multiplicationIntended</var>
+
+(page 1)
+
 A Boolean procedure is a procedure that returns the values <strong>true</strong> or <strong>false</strong> based on the truth or falsity of the input statements.  
 
-First, you will create a Boolean procedure with a return value called <strong><var>multiplicationIntended</var></strong> which will determine whether the user intends to perform a multiplication by checking for some key words in the sentence uttered by the user.
-
-* choose a procedure with a return value and name it <strong><var>multiplicationIntended</var></strong>
-* use the settings gear to add an input parameter and call it <var>sentence</var>
+First, you will create a Boolean procedure called <strong><var>multiplicationIntended</var></strong> with a return value which will determine whether the user intends to perform a multiplication by checking for some key words in the sentence uttered by the user.
+<ol>
+<li> choose a procedure with a return value and name it <strong><var>multiplicationIntended</var></strong></li>
+<li> use the settings gear to add an input parameter and call it <var>sentence</var></li>
+</ol>
 ![procedure with return value](../images/voiceCalculator/procedureWithReturn.png){:.enlargeImage}
 ![procedure with input](../images/voiceCalculator/proceduremultiplicationIntendedwithinput.png){:.enlargeImage}
 
 (procedure continues next page)
 
-## Boolean Procedures II
-* this procedure will return <strong>true</strong> if any of the following symbols/words: 
+## Boolean procedure <var>multiplicationIntended</var>
 
-   { \*, x , product, multiply, times } 
+(page 2)
+<ol start="3">
+<li>if any of the following symbols/words are contained in the sentence, have the procedure return <strong>true</strong> or return <strong>false</strong> otherwise: <br /><br />
 
-   are contained in the sentence and will return <strong>false</strong> otherwise.  
+   { * , x , product, multiply, times } <br /><br />
+   
+</li>
+</ol>
+
 <hint markdown="block" title="Give me a hint">
 
-Note that Boolean text block <strong>contains</strong> can be used
+Note that Boolean text block <span class="text"><strong>contains</strong></span> and nested logic operators <span class="logic"><strong>or</strong></span> can be used for this purpose. 
 <img src="../images/voiceCalculator/containstextpiece.png" alt="contains text block" style="width:50%">
-for this purpose as well as  the logic operator <strong>or</strong> which can be utilized in a nested fashion.  
+ 
+
 ![logic block OR](../images/voiceCalculator/LogicOR.png){:.enlargeImage}
+
+You can keep nesting as many <span class="logic"><strong>or</strong></span> blocks as you need.  If any one of the nested <span class="logic"><strong>or</strong></span> operators returns <strong>true</strong> then the collection returns <strong>true</strong>. 
+
 ![logic block OR nested twice](../images/voiceCalculator/2NestedOR.png){:.enlargeImage}
 ![logic block OR nested three times](../images/voiceCalculator/3NestedOR.png){:.enlargeImage}
 
-You can keep nesting as many <strong>or</strong> blocks as you need.  If any one of the nested <strong>or</strong> operators returns <strong>true</strong> then the collection returns <strong>true</strong>. 
+
 
 <hint markdown="block" title="Check my solution">
 
 ![procedure multiplicationIntended solution](../images/voiceCalculator/procedure_multiplicationIntended.png){:.enlargeImage}
 
+Note: For brevity only the small letter "x" has been included here.  It is possible that your device will use the capital "X" to indicate multiplication.
 </hint>
 
 </hint>
 
 Try this on your own but if you get stuck you can click the Hint button.
  
-## Boolean Procedures III
-Now you will create three additional Boolean procedures in a similar fashion that will determine if the intended operation of the user is addition, subtraction or division.  Create these procedures but leave them blank for now.   Later, after testing that multiplication is being performed correctly, you will assemble these procedures in a fashion very similar to <strong><var>multiplicationIntended</var></strong>.
-
-![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
 
 ## SpeakButton
 Now you will write the code to give functionality to the Speak button.  When the Speak button is clicked:
-* clear the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong>
-* call the <strong>SpeechRecognizer</strong> to get the text of what the user has spoken
+<ol>
+<li>clear the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong></li>
+<li>call the <strong>SpeechRecognizer</strong> to get the text of what the user has spoken</li>
+</ol>
 
 <hint markdown="block" title="Give me a hint">
 
@@ -148,21 +164,30 @@ Now you will write the code to give functionality to the Speak button.  When the
 </hint>
 Try this on your own but if you get stuck you can click the Hint button.
 
-## when SpeechRecognizer gets text I
-When the <strong>SpeechRecognizer</strong> performs its task and returns with a text <var>result</var>:
-* set the <strong>UserTextLabel</strong> to this text <var>result</var>.  This indicates what the Calculator heard.
-* extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong>.
-* set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”
+## when SpeechRecognizer gets text
 
+(page 1)
+
+When the <strong>SpeechRecognizer</strong> performs its task and returns with a text <var>result</var>:
+<ol>
+<li>set the <strong>UserTextLabel</strong> to this text <var>result</var>.  This indicates what the Calculator heard.</li>
+<li>extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong>.</li>
+<li>set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”</li>
+</ol>
 (task continues next page)
 
-## when SpeechRecognizer gets text II
-* check that there were exactly two numbers extracted from the sentence uttered by the user and if so, determine
-	* if the intent was multiplication, set <strong>CalculatorTextLabel</strong> to the product of the two numbers
-	* else if the intent was division, …… (leave blank for now)
-	* else if the intent was addition, ….. (leave blank for now)
-	* else if the intent was subtraction,  …..(leave blank for now)
-* use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.
+## when SpeechRecognizer gets text
+
+(page 2)
+<ol start="4">
+<li>check that there were exactly two numbers extracted from the sentence uttered by the user and if so, determine
+	<ul>
+		<li>if the intent was multiplication, set <strong>CalculatorTextLabel</strong> to the product of the two numbers</li>
+	</ul>
+</li>
+<li>use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of  the <strong>CalculatorTextLabel</strong>.</li>
+</ol>
+
 
 <hint markdown="block" title="Give me a hint">
 
@@ -184,8 +209,11 @@ Try this on your own but if you get stuck you can click the Hint button.
 Now use the AI Companion to check that your app works well for a multiplication calculation.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying something like "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
 
 
-## Other operations I
-Now complete the three remaining Boolean procedures for the other operations: <strong><var>additionIntended</var></strong>, <strong><var>subtractionIntended</var></strong> and <strong><var>divisionIntended</var></strong>.  You can “copy and paste” the blocks of  the <strong><var>multiplicationIntended</var></strong>  procedure and make the appropriate changes for each operation.
+## Other operations
+
+(page 1)
+
+Now you will create three more Boolean procedures for the other operations: <strong><var>additionIntended</var></strong>, <strong><var>subtractionIntended</var></strong> and <strong><var>divisionIntended</var></strong>.  You can “copy and paste” the blocks of the <strong><var>multiplicationIntended</var></strong> procedure and make the appropriate changes for each operation.
 ![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
 
 <hint markdown="block" title="Give me a hint">
@@ -207,17 +235,26 @@ The following symbols/words are common ways of indicating intent for each operat
 </hint>
 Try this on your own but if you get stuck you can click the Hint button.
 
-## Other operations II
-And now complete the remaining parts of <strong>when SpeechRecognizer1.AfterGettingText</strong>
+## Other operations
 
-* else if the intent was division, set <strong>CalculatorTextLabel</strong> to the quotient of the two numbers
-* else if the intent was addition, set <strong>CalculatorTextLabel</strong> to the sum of the two numbers
-* else if the intent was subtraction, set <strong>CalculatorTextLabel</strong> to the difference of the two numbers
+(page 2)
 
+And now revise <strong>when SpeechRecognizer1.AfterGettingText</strong> to include the extra operations
+
+*	if the intent was division, set <strong>CalculatorTextLabel</strong> to the quotient of the two numbers
+* 	if the intent was addition, set <strong>CalculatorTextLabel</strong> to the sum of the two numbers
+* 	if the intent was subtraction, set <strong>CalculatorTextLabel</strong> to the difference of the two numbers
+
+<hint markdown="block" title="Give me a hint">
+
+Using the settings gear you can access the following version of the <span class="control">if then</span> block which can be helpful:
+
+![if then else if hint](../images/voiceCalculator/ifthenelseif.png){:.enlargeImage}
 <hint markdown="block" title="Check my solution">
 
 ![when SpeechRecognizer gets text full solution](../images/voiceCalculator/whenSpeechRecongizer1AfterGettingText3.png){:.enlargeImage}
 
+</hint>
 </hint>
 
 Try this on your own but if you get stuck you can click the Solution button.
