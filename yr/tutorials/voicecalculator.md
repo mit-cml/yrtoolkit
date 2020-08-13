@@ -58,7 +58,7 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 (page 2)
 <ol start="3">
 <li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers</li>
-<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and for each word in this list check to see if it is a number</li>
+<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and <span class="control"><strong>for each word in list</strong></span> check to see if it is a number</li>
 </ol>
 ![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
 <ol start="5">
@@ -84,6 +84,7 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 As there are many ways for a user to indicate that they would like to perform a multiplication operation, it is essential to identify all these different approaches as a multiplication intent.  For example all of the following statements are different ways of expressing the same multiplication intent: 
 * <span style="color:red">what is</span> <span style="color:green">73\*51</span> <span style="color:red">?</span>
 * <span style="color:red">how much is</span> <span style="color:green">73x51</span><span style="color:red"> ?</span>
+* <span style="color:red">compute </span> <span style="color:green">73X51</span><span style="color:red"> ?</span>
 * <span style="color:red">what is the <span style="color:green">product</span> of</span> <span style="color:green">73</span> <span style="color:red">and</span> <span style="color:green">51</span> <span style="color:red">?</span>
 * <span style="color:red">what is the result when you</span> <span style="color:green">multiply 73</span> <span style="color:red">with</span> <span style="color:green">51</span> <span style="color:red">?</span>
 * <span style="color:red">what is</span> <span style="color:green">73 times 51</span> <span style="color:red">?</span>
@@ -112,10 +113,11 @@ First, you will create a Boolean procedure called <strong><var>multiplicationInt
 <ol start="3">
 <li>if any of the following symbols/words are contained in the sentence, have the procedure return <strong>true</strong> or return <strong>false</strong> otherwise: <br /><br />
 
-   { * , x , product, multiply, times } <br /><br />
+   { * , x , X , product, multiply, times } <br /><br />
    
 </li>
 </ol>
+Note: For consistency both the small letter "x" and the capital "X" have been included here.  It is possible that your device will use either to indicate multiplication.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -136,7 +138,7 @@ You can keep nesting as many <span class="logic"><strong>or</strong></span> bloc
 
 ![procedure multiplicationIntended solution](../images/voiceCalculator/procedure_multiplicationIntended.png){:.enlargeImage}
 
-Note: For brevity only the small letter "x" has been included here.  It is possible that your device will use the capital "X" to indicate multiplication.
+
 </hint>
 
 </hint>
@@ -257,7 +259,7 @@ Using the settings gear you can access the following version of the <span class=
 </hint>
 </hint>
 
-Try this on your own but if you get stuck you can click the Solution button.
+Try this on your own but if you get stuck you can click the Hint button.
 
 ## Test Your App again
 Congratulations, you have built your first voice driven AI system.  Test it thoroughly to make sure that your Voice Calculator can correctly respond to a variety of different utterances for each operation intended.
