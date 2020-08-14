@@ -81,6 +81,10 @@ Then drag out a blank text string block from the <strong>Text</strong> drawer an
 
 ![set the source for noteplayer](../images/myPiano/set-noteplayer-source.gif){:.enlargeImage}
 
+CNote.wav is the name of the note sound file for the C note in the Media assets for the project.
+
+![media asset list](../images/myPiano/cnote-wav.png){:.enlargeImage}
+
 ## Test your Piano App
 
 Test your app with the MIT AI2 Companion app. 
