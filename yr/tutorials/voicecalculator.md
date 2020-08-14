@@ -58,7 +58,7 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 (page 2)
 <ol start="3">
 <li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers</li>
-<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and <span class="control"><strong>for each word in list</strong></span> to check to see if it is a number</li>
+<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and use <span class="control"><strong>for each word in list</strong></span> block to check to see if any of the words is a number</li>
 </ol>
 ![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
 <ol start="5">
