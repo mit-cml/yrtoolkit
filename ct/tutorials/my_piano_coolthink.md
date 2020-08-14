@@ -6,7 +6,7 @@ yrmedia: false
 ---
 
 # Introduction
-In this unit you will extend your knowledge of the MIT App Inventor platform, by making a  the <strong>My Piano </strong> app, that will play notes like a piano!
+In this unit you will extend your knowledge of the MIT App Inventor platform, by making the <strong>My Piano </strong> app, that will play notes like a piano!
 
 ![screenshot of my piano app](../images/myPiano/my-piano-screenshot-coolthink.png){:.enlargeImage}
 
@@ -20,13 +20,15 @@ Here is how the app works:
 
 # My Piano
 
-## Add Components
+## View Template
 
 The goal is to have eight buttons, side by side. Each button, when pressed, will play a note.
 
 Most components have already been added for your piano app. See the components below.
 
 ![screenshot of the my piano app template](../images/myPiano/my-piano-template-ui.png){:.enlargeImage}
+
+## Add Components
 
 Drag two more buttons into <strong>HorizontalArrangement1</strong>.
 
@@ -50,13 +52,15 @@ Change the <i>Height</i> property of <strong>CNote</strong> and <strong>DNote</s
 
  ![change text property of buttons](../images/myPiano/change-button-text.gif){:.enlargeImage}
 
-## Code the Buttons
+## Switch to Blocks Editor
 
 Now it's time to code the buttons to make them play the notes! 
 
 Click on the Blocks button in the upper right corner of the screen to switch to the <strong>Blocks Editor</strong>.
 
 ![blocks button](../images/myPiano/switch-blocks.png){:.enlargeImage}
+
+## Code the Buttons
 
 Click on <strong>CNote</strong> and drag out a <span class="control">when CNote.Click</span> block.
 
@@ -83,7 +87,7 @@ Test your app with the MIT AI2 Companion app.
 
 First, start the AI2 Companion on your mobile device.
 
-![start the AI companion](../images/helloItsMe/ai-companion.png){:.enlargeImage}
+![start the AI companion](../images/myPiano/ai-companion.png){:.enlargeImage}
 
 Then under the <strong>Connect</strong> menu, choose <strong>AI Companion</strong>.
 
@@ -121,7 +125,7 @@ Test again with the MIT AI2 Companion app to see that both the CNote and DNote p
 
 Can you code the remaining note buttons? Try it!
 
-<hint markdown="block" title="Show me how">
+<hint markdown="block" title="Check my solution">
 
 ![finished blocks for my"](../images/myPiano/mypiano-completed-blocks.png){:.enlargeImage}
 
