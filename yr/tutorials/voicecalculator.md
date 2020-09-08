@@ -7,7 +7,7 @@ yrmedia: false
 
 # Challenge
 
-Have you ever wondered how conversational AI agents such as Alexa and Siri work?  How do they interpret what you are saying to them and grasp your intent?  How do they then know how to appropriately and meaningfully respond to you?  In this project you are challenged to create your very first own Voice User Interface (VUI) as you build a voice driven calculator that can do basic arithmetic operations.
+Have you ever wondered how conversational AI agents such as Alexa and Siri work?  How do they interpret what you are saying to them and grasp your intent?  How do they then know how to appropriately and meaningfully respond to you?  In this project you are challenged to create your very first own Voice User Interface (VUI) as you build a voice-driven calculator that can do basic arithmetic operations.
 
 # Setup your computer
 
@@ -19,11 +19,13 @@ Have you ever wondered how conversational AI agents such as Alexa and Siri work?
 
 
 
-The purpose of this elementary level AI project is to give you a sense of the basics of a Voice User Interface (VUI) and to teach you how to design a simple AI system that can understand the intent of the user in a verbally stated calculation question and respond appropriately.
+The purpose of this AI project is to give you a sense of the basics of a Voice User Interface (VUI) and to teach you how to design a simple AI system that can understand the intent of the user in a verbally stated calculation question and respond appropriately.  Such a voice-driven AI system can be useful in various contexts such as when designing ***assistive technologies*** for the visually disabled and the elderly.  For example, a visually impaired user can use the Voice Calculator to do mathematical calculations verbally without having to type in all the details of the calculation.
 
 
 ![GUI of Voice Calculator](../images/voiceCalculator/GUI.png){:.enlargeImage}
 
+<br />
+**Important**: Please note that for this project you cannot use the Emulator to test your app as it does not have Speech Recognition capability.  Similarly your mobile device must have Speech Recognition capability for the Voice Calculator to work.
 
 ## Graphical User Interface (GUI)
 
@@ -81,6 +83,7 @@ Then you  will create  a procedure  called <strong><var>extractNumbers</var></st
 
 
 ## Multiplication Intent
+
 As there are many ways for a user to indicate that they would like to perform a multiplication operation, it is essential to identify all these different approaches as a multiplication intent.  For example all of the following statements are different ways of expressing the same multiplication intent: 
 * <span style="color:red">what is</span> <span style="color:green">73\*51</span> <span style="color:red">?</span>
 * <span style="color:red">how much is</span> <span style="color:green">73x51</span><span style="color:red"> ?</span>
@@ -89,9 +92,17 @@ As there are many ways for a user to indicate that they would like to perform a 
 * <span style="color:red">what is the result when you</span> <span style="color:green">multiply 73</span> <span style="color:red">with</span> <span style="color:green">51</span> <span style="color:red">?</span>
 * <span style="color:red">what is</span> <span style="color:green">73 times 51</span> <span style="color:red">?</span>
 
-Note that the key words/symbols/numbers in <span style="color:green">green</span> define the multiplication intent while the words/symbols in <span style="color:red">red</span> are redundant and can be disregarded.
+Note that the key words/symbols/numbers in <span style="color:green">green</span> define the multiplication intent while the words/symbols in <span style="color:red">red</span> can be disregarded.
 
-## Boolean procedure <var>multiplicationIntended</var>
+## variable <var>multiplicationIntents</var>
+
+Now you will create a global variable <var>multiplicationIntents</var> which will be a list of all the common ways of communicating a multiplication intent with symbols and words: 
+
+{ * , x , X , product, multiply, times }
+
+![global variable multiplicationIntents](../images/voiceCalculator/multiplicationIntents.png){:.enlargeImage}
+
+<!--## Boolean procedure <var>multiplicationIntended</var>
 
 (page 1)
 
@@ -143,7 +154,7 @@ You can keep nesting as many <span class="logic"><strong>or</strong></span> bloc
 
 </hint>
 
-Try this on your own but if you get stuck you can click the Hint button.
+Try this on your own but if you get stuck you can click the Hint button.-->
  
 
 ## SpeakButton
@@ -192,7 +203,13 @@ When the <strong>SpeechRecognizer</strong> performs its task and returns with a 
 
 
 <hint markdown="block" title="Give me a hint">
+You may find the the text block <span class="text"><strong>contains any</strong></span> helpful.
+![text block contains any](../images/voiceCalculator/contains_to_contains_any.png){:.enlargeImage}
 
+In the following example you can see that the <span class="text"><strong>contains any</strong></span> block returns true when one of the words in the piece list ("you") is contained in the input text ("How are you?").
+![text block contains any do it](../images/voiceCalculator/contains_any_doit.png){:.enlargeImage}
+
+<hint markdown="block" title="Give me another hint">
 ![when SpeechRecognizer gets text hint](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText1.png){:.enlargeImage}
 
 <hint markdown="block" title="Check my solution">
@@ -200,7 +217,7 @@ When the <strong>SpeechRecognizer</strong> performs its task and returns with a 
 ![when SpeechRecognizer gets text partial solution](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText2.png){:.enlargeImage}
 
 </hint>
-
+</hint>
 </hint>
 Try this on your own but if you get stuck you can click the Hint button.
 
@@ -208,15 +225,15 @@ Try this on your own but if you get stuck you can click the Hint button.
 
 <img src="../images/voiceCalculator/AICompanion.png" style="width: 65%">
 
-Now use the AI Companion to check that your app works well for a multiplication calculation.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying something like "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
+Now you will use the AI Companion to check that your app works well for a multiplication calculation.  Be sure to use AI2 Companion version 2.60 or later otherwise the app will give errors.  Also please note that an Emulator cannot be used in the testing as it does not support Speech Recognition.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying something like "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
 
 
 ## Other operations
 
 (page 1)
 
-Now you will create three more Boolean procedures for the other operations: <strong><var>additionIntended</var></strong>, <strong><var>subtractionIntended</var></strong> and <strong><var>divisionIntended</var></strong>.  You can “copy and paste” the blocks of the <strong><var>multiplicationIntended</var></strong> procedure and make the appropriate changes for each operation.
-![procedure other operations intended](../images/voiceCalculator/otherOperationsIntended.png){:.enlargeImage}
+Now you will create three more global variables for the other operations: <strong><var>additionIntents</var></strong>, <strong><var>subtractionIntents</var></strong> and <strong><var>divisionIntents</var></strong>.
+
 
 <hint markdown="block" title="Give me a hint">
 The following symbols/words are common ways of indicating intent for each operation
@@ -226,11 +243,11 @@ The following symbols/words are common ways of indicating intent for each operat
 
 <hint markdown="block" title="Check my solution">
 
-![procedure additionIntended solution](../images/voiceCalculator/procedure_additionIntended.png){:.enlargeImage}
+![procedure additionIntents solution](../images/voiceCalculator/additionIntents.png){:.enlargeImage}
 
-![procedure subtractionIntended solution](../images/voiceCalculator/procedure_subtractionIntended.png){:.enlargeImage}
+![procedure subtractionIntents solution](../images/voiceCalculator/subtractionIntents.png){:.enlargeImage}
 
-![procedure divisionIntended solution](../images/voiceCalculator/procedure_divisionIntended.png){:.enlargeImage}
+![procedure divisionIntents solution](../images/voiceCalculator/divisionIntents.png){:.enlargeImage}
 
 </hint>
 
@@ -254,7 +271,7 @@ Using the settings gear you can access the following version of the <span class=
 ![if then else if hint](../images/voiceCalculator/ifthenelseif.png){:.enlargeImage}
 <hint markdown="block" title="Check my solution">
 
-![when SpeechRecognizer gets text full solution](../images/voiceCalculator/whenSpeechRecongizer1AfterGettingText3.png){:.enlargeImage}
+![when SpeechRecognizer gets text full solution](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText3.png){:.enlargeImage}
 
 </hint>
 </hint>
@@ -262,29 +279,29 @@ Using the settings gear you can access the following version of the <span class=
 Try this on your own but if you get stuck you can click the Hint button.
 
 ## Test Your App again
-Congratulations, you have built your first voice driven AI system.  Test it thoroughly to make sure that your Voice Calculator can correctly respond to a variety of different utterances for each operation intended.
+Congratulations, you have built your first voice-driven AI system.  Test it thoroughly to make sure that your Voice Calculator can correctly respond to a variety of different utterances for each operation intended.
 
 
 # Expand Your App
-* The calculator at this point functions a lot like how a beginning foreign language learner may try to function in a foreign country when listening to a native speaker: a few known key words are used to identify the intent of the native speaker and the rest of the other words are completely ignored in high hopes that they are redundant and thus don’t really matter.  For example in the following sentence, all the words in <span style="color:red">red</span> are redundant and can be ignored while the words in <span style="color:green">green</span> are highly relevant in defining the intent of the speaker:
+* The calculator at this point functions a lot like how a beginning foreign language learner may try to function in a foreign country when listening to a native speaker: a few known key words are used to identify the intent of the native speaker and the rest of the other words are completely ignored in high hopes that they are irrelevant and thus don’t really matter.  For example in the following sentence, all the words in <span style="color:red">red</span> are irrelevant and can be ignored while the words in <span style="color:green">green</span> are highly relevant in defining the intent of the speaker:
 
 	<span style="color:red">Would you be so kind, oh dear amazing Calculator, to tell me the</span> <span style="color:green">product</span> <span style="color:red">of the most glorious number</span> <span style="color:green">73</span> <span style="color:red">and the supremely wondrous quantity</span> <span style="color:green">51</span> <span style="color:red">?</span>
 
 	* Knowing this limitation of the Voice Calculator, come up with a sentence that will trick it to do a calculation when the intent of the sentence was not a calculation at all.  Test it.
 	* Knowing the limitations of the Voice Calculator, come up with a completely legitimate calculation sentence that it will fail to understand. Test it.
 	* Can you improve your code to avoid any of the tricky sentences you came up with above?
-
+<br /><br />
 * Make the calculator take square roots and other more advanced operations you might know.
-
+<br /><br />
 * Can you try to create a primitive version of Alexa or Siri where the AI will respond to some basic queries like: 
 	* What day of the week is it?
 	* What is the time?
 	* Tell me a joke.
 	* What is the weather? (perhaps opens a weather website)
 	* What are the top news stories? (perhaps opens a news website)
-	* Set up a timer for 30 seconds.
-
-
+	* Set a timer for 30 seconds.
+<br /><br />
+* As mentioned earlier in the introduction this project can be viewed as an example of ***assistive technology*** that can aid people with disabilities or the elderly.  Do some research about assistive technologies and how they are helping people with disabilities and the elderly population.  What other apps can you think of that can be examples of assistive technologies?  Use MIT App Inventor to build such an app.
 
 
 # About Youth Mobile Power 
