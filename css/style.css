@@ -271,3 +271,16 @@ body.md img.iconImg {
 body.md img.enlargeImage, body.md img.zoom {
   max-width: 100%;
 }
+
+.noemulator {
+  display: none;
+}
+.noemulator.setup {
+  display: block;
+}
+.noemulator .emulator {
+  display: none;
+}
+.noemulator span.noemulator {
+  display: inline;
+}

@@ -11,7 +11,7 @@ Have you ever wondered how conversational AI agents such as Alexa and Siri work?
 
 # Setup your computer
 
-<div class="setup" id="connect_app"></div>
+<div class="setup noemulator" id="connect_app"></div>
 
 # Voice Calculator (Level: Intermediate)
 
