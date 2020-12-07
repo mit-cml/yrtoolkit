@@ -11,49 +11,139 @@ Some blurb here tying to the YR Media Article: https://yr.media/tech/can-you-tea
 
 # Setup your computer
 
-<div class="setup" id="connect_app"></div>
+<div class="setup noemulator" id="connect_app"></div>
 
 # Awesome Dancing with AI (Level: Intermediate)
 
 ## Introduction
-![Dancers](../images/aiDance/dancers.png){:.enlargeImage}
+![Dancers](../images/aiDance/dancers.png)
 Do you like dancing?   Are you good at it?  Would you like to improve?   Is there an algorithm to describe, identify or measure an amazing dance? Can dance moves be quantified and measured?  Can AI be used to help you improve your dancing skills?  In this project you will learn how to use the new AI technology PoseNet to track key points of your body to create a skeletal model and develop some basic methods to quantify, measure and identify some dance moves.
 
-
-
-![Posenet Demo](../images/aiDance/PosenetDemo.png){:.enlargeImage}
+![Posenet Demo](../images/aiDance/PosenetDemo.gif)
+<a href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/camera.gif" target="_blank">Image Credit</a>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as it does not have Speech Recognition capability.  Similarly your mobile device must have Speech Recognition capability for the Voice Calculator to work.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the Posenet Extension.  To make sure that your mobile device has the needed hardware capability for Posenet, use AI2 Companion on <a href="" target="_blank">this .aia </a>test file.
 
 ## Graphical User Interface (GUI)
 
-The GUI has been created for you in the starter file.  Please change the properties of the components as you wish to get the look and feel you want.  However, please do not rename the components, as this tutorial will refer to the given names in the instructions.
+A possible GUI has been created for you in the starter file.  Please change the properties of the components as you wish to get the look and feel you want.  However, please do not rename the components, as this tutorial will refer to the given names in the instructions.
 
-![GUI of Voice Calculator](../images/voiceCalculator/GUICorrespondence.png){:.enlargeImage}
+![GUI of AI Dance](../images/aiDance/GUICorrespondence.png){:.enlargeImage}
 
-In the GUI you will notice that there is a Speak  button which the user will press to verbally communicate the calculation they wish to have performed.  The interface will then display in writing what the Calculator heard and respond, both in writing and verbally, with the result of the calculation.  If the Calculator could not hear a meaningful calculation query or could not understand the intent of the user, it will say so.
+The <strong>SwapCameraButton</strong> toggles the camera view from Front to Back as the user wishes.  <strong>CanvasLiveButton</strong>  toggles the Canvas background from a solid black color to a live camera view.  <strong>ResetButton</strong> sets the Dance Score back to zero.  The <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component is where the camera view will be cast and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component is where the skeletal model of the body will be created either against a black background or a live camera view background.
 
-
-## Initialize <var>numberList</var>
-
-The first thing you'll tackle is to extract the numbers in the sentence spoken by the user. You'll use them later when you actually perform the mathematical operation.  To do this first you will initialize a global variable named <var>numberList</var> where the numbers in the calculation query will be stored.  As this variable will be a list of numbers,  it will be initialized  to an empty list.
+Note that at the very bottom of the Components panel is the <span class="icon" alt="posenetextension"></span><strong>PosenetExtension</strong> which is the AI technology that we will be using to track key points of a body and which will help us to build a skeletal version of the body.
 
 
-![Initialization of global numberList](../images/voiceCalculator/initialize_numberList.png){:.enlargeImage}
 
-## procedure <var>extractNumbers</var> 
-(page 1)
+## Posenet key points
 
-Then you  will create  a procedure  called <strong><var>extractNumbers</var></strong> which when given an input sentence will extract the numerical values in that sentence and store these in the global variable <var>numberList</var>.  To do this:
-<ol>
-<li>choose a procedure and name it <strong><var>extractNumbers</var></strong></li>
-<li>use the settings gear to add an input parameter and call it <var>sentence</var></li>
-</ol>
+The key points of the body tracked by Posenet are: eyes, ears, nose, shoulders, elbows, wrists, hips, knees and ankles.  
 
-![procedure extractNumbers](../images/voiceCalculator/procedure_extractNumbers.png){:.enlargeImage}![procedure extractNumbers input parameter](../images/voiceCalculator/procedure_extractNumbers_inputParameter.png){:.enlargeImage}
+![Posenet key points of the body ](../images/aiDance/keypoints.png){:.enlargeImage}
 
-(procedure continues next page)
+Whenever Posenet is able to track a body key point, it will return a list of two elements representing the x and y-coordinates of the key point.  When Posenet is unable to track a body key point, it will return an empty list.
+
+## Preliminary GUI code
+You are also given some preliminary code for the GUI.  Study these to make sure that you have a general idea what they do.
+
+
+![Posenet Ready Error ](../images/aiDance/whenPosenetExtensionReadyError.png){:.enlargeImage}
+These two blocks are used to communicate the status of Posenet as either "Ready" or in case of error, display the error message.
+
+![Reset Button ](../images/aiDance/whenResetButtonClick.png){:.enlargeImage}
+The <strong>ResetButton</strong> resets the Dance Score to zero each time it is clicked.
+
+![Swap Camera Button](../images/aiDance/whenSwapCameraButtonClick.png){:.enlargeImage}
+The <strong>SwapCameraButton</strong> toggles the camera view from its default "Front" view to "Back" and vice versa.
+
+![Live Canvas Button ](../images/aiDance/whenCanvasLiveButtonClick.png){:.enlargeImage}
+The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to either display the Posenet constructed skeleton on a live background or on a solid black background.
+
+## Helper functions (1)
+You are also given some helper functions. 
+
+<strong><em>getX</em></strong> and <strong><em>getY</em></strong> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that Posenet returns representing the x and y-coordinates of a given location.
+
+![getX and getY ](../images/aiDance/getXgetY.png){:.enlargeImage}
+
+## Helper functions (2)
+<strong><em>defined</em></strong> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point) and false otherwise.  If Posenet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
+
+![procedure defined ](../images/aiDance/defined.png){:.enlargeImage}
+
+<strong><em>allDefined</em></strong> is a Boolean function that checks whether all the points in a given list of points are defined.  If all the points are defined, it returns true and otherwise, if any of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the Posenet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by Posenet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
+
+![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
+
+## Helper functions (3)
+<strong><em>distance</em></strong> is a function that computes the Euclidean distance between two points on the Canvas when the two points are defined.   It uses the Pythagorean formula:
+
+![distance formula ](../images/aiDance/distanceFormula.png){:.enlargeImage}
+
+which you may recall from high school Algebra.  If any of the points are not defined, then the distance is set to an arbitrarily large value implying infinite distance between undefined points.
+
+![distance function](../images/aiDance/distance.png){:.enlargeImage}
+
+## Helper functions (4)
+<strong><em>drawPoint</em></strong> procedure draws a small circle of 4 pixel radius on the Canvas at the location of a given defined point.  This procedure will help us draw the key points of the body such as the joints.  We use the 4 pixel radius to make the point visible to the eye.
+
+![procedure drawPoint](../images/aiDance/drawPoint.png){:.enlargeImage}
+
+<strong><em>drawLine</em></strong> procedure draws a line segment on the Canvas between two defined points.  We will use this procedure to draw the bones of the skeletal representation of the body.
+
+
+![procedure drawLine](../images/aiDance/drawLine.png){:.enlargeImage}
+
+## Pose Update
+When Posenet extension detects that the body it is tracking has changed its position, it triggers the following <strong>PosenetExtension1.PoseUpdated</strong> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<strong><em>drawKeyPoints, drawBody, drawHead</em></strong> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong> the Camera live feed is broadcast on the Canvas which by default has a solid black background color.
+
+![when Pose Updated](../images/aiDance/whenPosenetExtensionPoseUpdated.png){:.enlargeImage}
+
+## Constructing the Skeleton
+Now you will write some of these procedures.
+
+<strong><em>drawKeyPoints</em></strong> procedure:
+* set the Canvas <em>PaintColor</em>  to red color (or something else distinctive)
+* for each point returned by Posenet in the <strong>PosenetExtension1.KeyPoints</strong>,  draw a point using the helper procedure <strong><em>drawPoint</em></strong> described earlier.
+
+<hint markdown="block" title="Give me a hint">
+
+![procedure drawKeyPoints hint](../images/aiDance/drawKeyPoints1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![procedure drawKeyPoints solution](../images/aiDance/drawKeyPoints.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+ Try this on your own but if you get stuck you can click the Hint button.
+
+<strong><em>drawBody</em></strong> procedure: 
+* set the canvas <em>PaintColor</em>  to yellow color (or something else distinctive different than the one used for key points)
+* for each bone in the <strong>PosenetExtension1.Skeleton</strong>, draw a line between the endpoints of the bone, using the helper procedure <strong><em>drawLine</em></strong> described earlier.
+
+<hint markdown="block" title="Give me a hint">
+
+![procedure lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
+
+<strong>PosenetExtension1.Skeleton</strong> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list of an ankle and a knee key points.
+
+![procedure drawBody hint](../images/aiDance/drawBody1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![procedure drawBody solution](../images/aiDance/drawBody.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+ Try this on your own but if you get stuck you can click the Hint button.
+
 
 ## procedure <var>extractNumbers</var>
 (page 2)
@@ -101,59 +191,7 @@ Now you will create a global variable <var>multiplicationIntents</var> which wil
 
 ![global variable multiplicationIntents](../images/voiceCalculator/multiplicationIntents.png){:.enlargeImage}
 
-<!--## Boolean procedure <var>multiplicationIntended</var>
 
-(page 1)
-
-A Boolean procedure is a procedure that returns the values <strong>true</strong> or <strong>false</strong> based on the truth or falsity of the input statements.  
-
-First, you will create a Boolean procedure called <strong><var>multiplicationIntended</var></strong> with a return value which will determine whether the user intends to perform a multiplication by checking for some key words in the sentence uttered by the user.
-<ol>
-<li> choose a procedure with a return value and name it <strong><var>multiplicationIntended</var></strong></li>
-<li> use the settings gear to add an input parameter and call it <var>sentence</var></li>
-</ol>
-![procedure with return value](../images/voiceCalculator/procedureWithReturn.png){:.enlargeImage}
-![procedure with input](../images/voiceCalculator/proceduremultiplicationIntendedwithinput.png){:.enlargeImage}
-
-(procedure continues next page)
-
-## Boolean procedure <var>multiplicationIntended</var>
-
-(page 2)
-<ol start="3">
-<li>if any of the following symbols/words are contained in the sentence, have the procedure return <strong>true</strong> or return <strong>false</strong> otherwise: <br /><br />
-
-   { * , x , X , product, multiply, times } <br /><br />
-   
-</li>
-</ol>
-Note: For consistency both the small letter "x" and the capital "X" have been included here.  It is possible that your device will use either to indicate multiplication.
-
-<hint markdown="block" title="Give me a hint">
-
-Note that Boolean text block <span class="text"><strong>contains</strong></span> and nested logic operators <span class="logic"><strong>or</strong></span> can be used for this purpose. 
-<img src="../images/voiceCalculator/containstextpiece.png" alt="contains text block" style="width:50%">
- 
-
-![logic block OR](../images/voiceCalculator/LogicOR.png){:.enlargeImage}
-
-You can keep nesting as many <span class="logic"><strong>or</strong></span> blocks as you need.  If any one of the nested <span class="logic"><strong>or</strong></span> operators returns <strong>true</strong> then the collection returns <strong>true</strong>. 
-
-![logic block OR nested twice](../images/voiceCalculator/2NestedOR.png){:.enlargeImage}
-![logic block OR nested three times](../images/voiceCalculator/3NestedOR.png){:.enlargeImage}
-
-
-
-<hint markdown="block" title="Check my solution">
-
-![procedure multiplicationIntended solution](../images/voiceCalculator/procedure_multiplicationIntended.png){:.enlargeImage}
-
-
-</hint>
-
-</hint>
-
-Try this on your own but if you get stuck you can click the Hint button.-->
  
 
 ## SpeakButton
