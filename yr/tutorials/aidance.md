@@ -259,203 +259,71 @@ procedure <strong><em>checkForKneeUpMove</em></strong>:
 
 Try this on your own but if you get stuck you can click the Hint button.
 
+## Travolta Move
 
+<img src="../images/aiDance/travolta12.png" height="200">
 
-
-## procedure <var>extractNumbers</var>
-(page 2)
-<ol start="3">
-<li>set the global variable <var>numberList</var> to the empty list.  You need to reinitialize the variable every time you call this procedure as each calculation the user initiates will use a new pair of numbers</li>
-<li>use  the <span class="text"><strong>split at spaces</strong></span> text block to split the input sentence into a list of  its words and use <span class="control"><strong>for each word in list</strong></span> block to check to see if any of the words is a number</li>
-</ol>
-![for each word ](../images/voiceCalculator/foreach_split.png){:.enlargeImage}
-<ol start="5">
-<li>if any word is a number then add it to the global variable <var>numberList</var></li>
-</ol>
+Now why don't you try to define the Travolta moves and define the procedure <strong><em>checkForTravoltaMove</em></strong> yourself?
 
 <hint markdown="block" title="Give me a hint">
 
-![procedure extractNumbers hint](../images/voiceCalculator/procedure_extractNumbers1.png){:.enlargeImage}
+One way to define the Travolta move is either the right wrist is above the right ear and the left wrist is below the left shoulder OR the left wrist is above the left ear and the right wrist is below the right shoulder.
 
 <hint markdown="block" title="Check my solution">
 
-![procedure extractNumbers solution](../images/voiceCalculator/procedure_extractNumbers2.png){:.enlargeImage}
-
-</hint>
-
-</hint>
-
- Try this on your own but if you get stuck you can click the Hint button.
-
-
-## Multiplication Intent
-
-As there are many ways for a user to indicate that they would like to perform a multiplication operation, it is essential to identify all these different approaches as a multiplication intent.  For example all of the following statements are different ways of expressing the same multiplication intent: 
-* <span style="color:red">what is</span> <span style="color:green">73\*51</span> <span style="color:red">?</span>
-* <span style="color:red">how much is</span> <span style="color:green">73x51</span><span style="color:red"> ?</span>
-* <span style="color:red">compute </span> <span style="color:green">73X51</span><span style="color:red"> ?</span>
-* <span style="color:red">what is the <span style="color:green">product</span> of</span> <span style="color:green">73</span> <span style="color:red">and</span> <span style="color:green">51</span> <span style="color:red">?</span>
-* <span style="color:red">what is the result when you</span> <span style="color:green">multiply 73</span> <span style="color:red">with</span> <span style="color:green">51</span> <span style="color:red">?</span>
-* <span style="color:red">what is</span> <span style="color:green">73 times 51</span> <span style="color:red">?</span>
-
-Note that the key words/symbols/numbers in <span style="color:green">green</span> define the multiplication intent while the words/symbols in <span style="color:red">red</span> can be disregarded.
-
-## variable <var>multiplicationIntents</var>
-
-Now you will create a global variable <var>multiplicationIntents</var> which will be a list of all the common ways of communicating a multiplication intent with symbols and words: 
-
-{ * , x , X , product, multiply, times }
-
-![global variable multiplicationIntents](../images/voiceCalculator/multiplicationIntents.png){:.enlargeImage}
-
-
- 
-
-## SpeakButton
-Now you will write the code to give functionality to the Speak button.  When the Speak button is clicked:
-<ol>
-<li>clear the <strong>UserTextLabel</strong> and <strong>CalculatorTextLabel</strong></li>
-<li>call the <strong>SpeechRecognizer</strong> to get the text of what the user has spoken</li>
-</ol>
-
-<hint markdown="block" title="Give me a hint">
-
-![when SpeakButton Click hint](../images/voiceCalculator/whenSpeakButtonClick1.png){:.enlargeImage}
+Are you sure you are ready to see a solution? 
 
 <hint markdown="block" title="Check my solution">
 
-![when SpeakButton Click solution](../images/voiceCalculator/whenSpeakButtonClick2.png){:.enlargeImage}
+![procedure checkForTravoltaMove hint](../images/aiDance/checkForTravoltaMove.png){:.enlargeImage}
 
 </hint>
 
 </hint>
-Try this on your own but if you get stuck you can click the Hint button.
 
-## when SpeechRecognizer gets text
-
-(page 1)
-
-When the <strong>SpeechRecognizer</strong> performs its task and returns with a text <var>result</var>:
-<ol>
-<li>set the <strong>UserTextLabel</strong> to this text <var>result</var>.  This indicates what the Calculator heard.</li>
-<li>extract the numbers from the  text <var>result</var> to store them in the global variable <var>numberList</var>  using the procedure <strong><var>extractNumbers</var></strong></li>
-<li>set the <strong>CalculatorTextLabel</strong> to a default statement indicating that the Calculator could not understand what the user asked and inviting them to ask a clear calculation question.  For ex:  “I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?”</li>
-</ol>
-(task continues next page)
-
-## when SpeechRecognizer gets text
-
-(page 2)
-<ol start="4">
-<li>check that there were exactly two numbers extracted from the sentence uttered by the user and if so, determine
-	<ul>
-		<li>if the intent was multiplication, set <strong>CalculatorTextLabel</strong> to the product of the two numbers</li>
-	</ul>
-</li>
-<li>use the <strong>TextToSpeech</strong> component to have the Calculator verbally read the contents of the <strong>CalculatorTextLabel</strong>.</li>
-</ol>
-
-
-<hint markdown="block" title="Give me a hint">
-You may find the the text block <span class="text"><strong>contains any</strong></span> helpful.
-![text block contains any](../images/voiceCalculator/contains_to_contains_any.png){:.enlargeImage}
-
-In the following example you can see that the <span class="text"><strong>contains any</strong></span> block returns true when one of the words in the piece list ("you") is contained in the input text ("How are you?").
-![text block contains any do it](../images/voiceCalculator/contains_any_doit.png){:.enlargeImage}
-
-<hint markdown="block" title="Give me another hint">
-![when SpeechRecognizer gets text hint](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText1.png){:.enlargeImage}
-
-<hint markdown="block" title="Check my solution">
-
-![when SpeechRecognizer gets text partial solution](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText2.png){:.enlargeImage}
-
-</hint>
-</hint>
-</hint>
-Try this on your own but if you get stuck you can click the Hint button.
-
-## Test your App for Multiplication
-
-<img src="../images/voiceCalculator/AICompanion.png" style="width: 65%">
-
-Now you will use the AI Companion to check that your app works well for a multiplication calculation.  Be sure to use AI2 Companion version 2.60 or later otherwise the app will give errors.  Also please note that an Emulator cannot be used in the testing as it does not support Speech Recognition.  Try to state your multiplication intent in a variety of ways to make sure that the Calculator responds properly with the correct product.  Also make a non-calculation statement like "Hello how are you doing today?" and check that the Calculator responds appropriately by saying something like "I could not understand.  Please ask me a multiplication or addition or subtraction or division question like: What is 123 times 85?"
-
-
-## Other operations
-
-(page 1)
-
-Now you will create three more global variables for the other operations: <strong><var>additionIntents</var></strong>, <strong><var>subtractionIntents</var></strong> and <strong><var>divisionIntents</var></strong>.
-
-
-<hint markdown="block" title="Give me a hint">
-The following symbols/words are common ways of indicating intent for each operation
-* addition: { + , add, sum, plus}
-* subtraction: { - , subtract, difference, minus}
-* division: { /, ÷ , divide, quotient, ratio}
-
-<hint markdown="block" title="Check my solution">
-
-![procedure additionIntents solution](../images/voiceCalculator/additionIntents.png){:.enlargeImage}
-
-![procedure subtractionIntents solution](../images/voiceCalculator/subtractionIntents.png){:.enlargeImage}
-
-![procedure divisionIntents solution](../images/voiceCalculator/divisionIntents.png){:.enlargeImage}
-
-</hint>
-
-</hint>
-Try this on your own but if you get stuck you can click the Hint button.
-
-## Other operations
-
-(page 2)
-
-And now revise <strong>when SpeechRecognizer1.AfterGettingText</strong> to include the extra operations
-
-*	if the intent was division, set <strong>CalculatorTextLabel</strong> to the quotient of the two numbers
-* 	if the intent was addition, set <strong>CalculatorTextLabel</strong> to the sum of the two numbers
-* 	if the intent was subtraction, set <strong>CalculatorTextLabel</strong> to the difference of the two numbers
-
-<hint markdown="block" title="Give me a hint">
-
-Using the settings gear you can access the following version of the <span class="control">if then</span> block which can be helpful:
-
-![if then else if hint](../images/voiceCalculator/ifthenelseif.png){:.enlargeImage}
-<hint markdown="block" title="Check my solution">
-
-![when SpeechRecognizer gets text full solution](../images/voiceCalculator/whenSpeechRecognizer1AfterGettingText3.png){:.enlargeImage}
-
-</hint>
 </hint>
 
 Try this on your own but if you get stuck you can click the Hint button.
 
-## Test Your App again
-Congratulations, you have built your first voice-driven AI system.  Test it thoroughly to make sure that your Voice Calculator can correctly respond to a variety of different utterances for each operation intended.
+## T-Pose Move
+
+<img src="../images/aiDance/TPose.png" height="200">
+
+If you want a good challenge, try to define the T-Pose move where the dancer stretches left and right hands horizontally to form the shape of the letter “T”.
+
+<hint markdown="block" title="Give me a hint">
+
+![Arm stretch](../images/aiDance/armStretch.png){:.enlargeImage}
+
+A stretched arm means that the distance between the right wrist and the right shoulder should be very close to the sum of the distances from the right wrist to the right elbow to the right shoulder. And similarly on the left side.
+
+<hint markdown="block" title="Check my solution">
+
+Are you sure you are ready to see a solution? 
+
+<hint markdown="block" title="Check my solution">
+
+![procedure checkForTPoseMove hint](../images/aiDance/checkForTPoseMove.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+</hint>
+
+Try this on your own but if you get stuck you can click the Hint button.
+
+## Test your App
+Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.
+
+Congratulations you have now built an AI based app that can recognize some basic dance moves.
 
 
 # Expand Your App
-* The calculator at this point functions a lot like how a beginning foreign language learner may try to function in a foreign country when listening to a native speaker: a few known key words are used to identify the intent of the native speaker and the rest of the other words are completely ignored in high hopes that they are irrelevant and thus don’t really matter.  For example in the following sentence, all the words in <span style="color:red">red</span> are irrelevant and can be ignored while the words in <span style="color:green">green</span> are highly relevant in defining the intent of the speaker:
+* Currently if you maintain a certain dance move, the dance score keeps going up.  Add some smart code to make sure that a given dance move is rewarded only once until a new dance move is observed.
 
-	<span style="color:red">Would you be so kind, oh dear amazing Calculator, to tell me the</span> <span style="color:green">product</span> <span style="color:red">of the most glorious number</span> <span style="color:green">73</span> <span style="color:red">and the supremely wondrous quantity</span> <span style="color:green">51</span> <span style="color:red">?</span>
+* What other more hip dance moves can you think of that can be described and quantified in terms of the key points of the body?  Implement these ideas in your app.
 
-	* Knowing this limitation of the Voice Calculator, come up with a sentence that will trick it to do a calculation when the intent of the sentence was not a calculation at all.  Test it.
-	* Knowing the limitations of the Voice Calculator, come up with a completely legitimate calculation sentence that it will fail to understand. Test it.
-	* Can you improve your code to avoid any of the tricky sentences you came up with above?
-<br /><br />
-* Make the calculator take square roots and other more advanced operations you might know.
-<br /><br />
-* Can you try to create a primitive version of Alexa or Siri where the AI will respond to some basic queries like: 
-	* What day of the week is it?
-	* What is the time?
-	* Tell me a joke.
-	* What is the weather? (perhaps opens a weather website)
-	* What are the top news stories? (perhaps opens a news website)
-	* Set a timer for 30 seconds.
-<br /><br />
-* As mentioned earlier in the introduction this project can be viewed as an example of ***assistive technology*** that can aid people with disabilities or the elderly.  Do some research about assistive technologies and how they are helping people with disabilities and the elderly population.  What other apps can you think of that can be examples of assistive technologies?  Use MIT App Inventor to build such an app.
 
 
 # About Youth Mobile Power 
