@@ -23,7 +23,7 @@ Do you like dancing?   Are you good at it?  Would you like to improve?   Is ther
 <a href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/camera.gif" target="_blank">Image Credit</a>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the Posenet Extension.  To make sure that your mobile device has the needed hardware capability for Posenet, use AI2 Companion on <a href="" target="_blank">this .aia </a>test file.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PoseNet Extension.  To make sure that your mobile device has the needed hardware capability for PoseNet, use AI2 Companion on <a href="" target="_blank">this .aia </a>test file.
 
 ## Graphical User Interface (GUI)
 
@@ -33,24 +33,24 @@ A possible GUI has been created for you in the starter file.  Please change the 
 
 The <strong>SwapCameraButton</strong> toggles the camera view from Front to Back as the user wishes.  <strong>CanvasLiveButton</strong>  toggles the Canvas background from a solid black color to a live camera view.  <strong>ResetButton</strong> sets the Dance Score back to zero.  The <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component is where the camera view will be cast and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component is where the skeletal model of the body will be created either against a black background or a live camera view background.
 
-Note that at the very bottom of the Components panel is the <span class="icon" alt="posenetextension"></span><strong>PosenetExtension</strong> which is the AI technology that we will be using to track key points of a body and which will help us to build a skeletal version of the body.
+Note that at the very bottom of the Components panel is the <span class="icon" alt="posenetextension"></span><strong>PosenetExtension</strong> which is the AI technology that we will be using to track key points of a body and which will help you to build a skeletal version of the body.
 
 
 
-## Posenet key points
+## PoseNet key points
 
-The key points of the body tracked by Posenet are: eyes, ears, nose, shoulders, elbows, wrists, hips, knees and ankles.  
+The key points of the body tracked by PoseNet are: eyes, ears, nose, shoulders, elbows, wrists, hips, knees and ankles.  
 
 ![Posenet key points of the body ](../images/aiDance/keypoints.png){:.enlargeImage}
 
-Whenever Posenet is able to track a body key point, it will return a list of two elements representing the x and y-coordinates of the key point.  When Posenet is unable to track a body key point, it will return an empty list.
+Whenever PoseNet is able to track a body key point, it will return a list of two elements representing the x and y-coordinates of the key point.  When PoseNet is unable to track a body key point, it will return an empty list.
 
 ## Preliminary GUI code
 You are also given some preliminary code for the GUI.  Study these to make sure that you have a general idea what they do.
 
 
 ![Posenet Ready Error ](../images/aiDance/whenPosenetExtensionReadyError.png){:.enlargeImage}
-These two blocks are used to communicate the status of Posenet as either "Ready" or in case of error, display the error message.
+These two blocks are used to communicate the status of PoseNet as either "Ready" or in case of error, display the error message.
 
 ![Reset Button ](../images/aiDance/whenResetButtonClick.png){:.enlargeImage}
 The <strong>ResetButton</strong> resets the Dance Score to zero each time it is clicked.
@@ -59,21 +59,21 @@ The <strong>ResetButton</strong> resets the Dance Score to zero each time it is 
 The <strong>SwapCameraButton</strong> toggles the camera view from its default "Front" view to "Back" and vice versa.
 
 ![Live Canvas Button ](../images/aiDance/whenCanvasLiveButtonClick.png){:.enlargeImage}
-The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to either display the Posenet constructed skeleton on a live background or on a solid black background.
+The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to either display the PoseNet constructed skeleton on a live background or on a solid black background.
 
 ## Helper functions (1)
 You are also given some helper functions. 
 
-<strong><em>getX</em></strong> and <strong><em>getY</em></strong> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that Posenet returns representing the x and y-coordinates of a given location.
+<strong><em>getX</em></strong> and <strong><em>getY</em></strong> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that PoseNet returns representing the x and y-coordinates of a given location.
 
 ![getX and getY ](../images/aiDance/getXgetY.png){:.enlargeImage}
 
 ## Helper functions (2)
-<strong><em>defined</em></strong> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point) and false otherwise.  If Posenet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
+<strong><em>defined</em></strong> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point) and false otherwise.  If PoseNet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
 
 ![procedure defined ](../images/aiDance/defined.png){:.enlargeImage}
 
-<strong><em>allDefined</em></strong> is a Boolean function that checks whether all the points in a given list of points are defined.  If all the points are defined, it returns true and otherwise, if any of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the Posenet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by Posenet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
+<strong><em>allDefined</em></strong> is a Boolean function that checks whether all the points in a given list of points are defined.  If all the points are defined, it returns true and otherwise, if any of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
 
 ![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
 
@@ -97,7 +97,7 @@ which you may recall from high school Algebra.  If any of the points are not def
 ![procedure drawLine](../images/aiDance/drawLine.png){:.enlargeImage}
 
 ## Pose Update
-When Posenet extension detects that the body it is tracking has changed its position, it triggers the following <strong>PosenetExtension1.PoseUpdated</strong> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<strong><em>drawKeyPoints, drawBody, drawHead</em></strong> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong> the Camera live feed is broadcast on the Canvas which by default has a solid black background color.
+When PoseNet extension detects that the body it is tracking has changed its position, it triggers the following <strong>PosenetExtension1.PoseUpdated</strong> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<strong><em>drawKeyPoints, drawBody, drawHead</em></strong> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong>, the Camera live feed is broadcast on the Canvas which by default has a solid black background color.
 
 ![when Pose Updated](../images/aiDance/whenPosenetExtensionPoseUpdated.png){:.enlargeImage}
 
@@ -106,7 +106,7 @@ Now you will write some of these procedures.
 
 <strong><em>drawKeyPoints</em></strong> procedure:
 * set the Canvas <em>PaintColor</em>  to red color (or something else distinctive)
-* for each point returned by Posenet in the <strong>PosenetExtension1.KeyPoints</strong>,  draw a point using the helper procedure <strong><em>drawPoint</em></strong> described earlier.
+* for each point returned by PoseNet in the <strong>PosenetExtension1.KeyPoints</strong>,  draw a point using the helper procedure <strong><em>drawPoint</em></strong> described earlier.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -128,7 +128,7 @@ Now you will write some of these procedures.
 
 <hint markdown="block" title="Give me a hint">
 
-![procedure lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
+![lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
 
 <strong>PosenetExtension1.Skeleton</strong> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list of an ankle and a knee key points.
 
@@ -143,6 +143,123 @@ Now you will write some of these procedures.
 </hint>
 
  Try this on your own but if you get stuck you can click the Hint button.
+
+## Optional: Drawing a circular head
+If you would like to have a <em>circular</em> head above the skeletal shoulders then complete the <strong><em>drawHead</em></strong> procedure.  Otherwise there will only be some key points above the shoulder designating the ears, eyes and the nose without the circular head, just like shown in the animation on the first page of the tutorial.
+
+<strong><em>drawHead</em></strong> procedure:
+* set Canvas paint color to green (or some other distinctive color)
+* check that <strong>LeftEar</strong> and <strong>RightEar</strong> key points are defined.
+* draw a circle with the midpoint between the two ears as its center using the midpoint formula from Algebra:
+![midpoint formula](../images/aiDance/midpointFormula.png){:.enlargeImage}
+ * and make sure that the circle goes through both ears by selecting the radius of the circle to be half the distance between the two ears.
+<img src="../images/aiDance/headConstruct.png" style="width: 75%">
+
+<hint markdown="block" title="Give me a hint">
+
+![procedure drawHead hint](../images/aiDance/drawHead1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![procedure drawHead solution](../images/aiDance/drawHead.png){:.enlargeImage}
+
+Note: When the computation becomes too large horizontally, you can use the "External Inputs" menu option (via a right-click) to shrink the space needed for your operations.  To go back to the default option, use "Inline Inputs" as shown.
+
+![External and Inline inputs](../images/aiDance/external&inlineInputs.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+Try this on your own but if you get stuck you can click the Hint button.
+
+## Test your App
+Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor extensions like PoseNet.
+
+Check that your app can track a body (yours or someone else's) and have the skeleton constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.
+
+## Detecting Dance Moves
+<img src="../images/aiDance/DanceClip.gif" height="250">
+
+Some simple dance moves that we will explore are:
+
+<strong>Hands in the Air Move</strong>
+
+<img src="../images/aiDance/handsInTheAir.png" height="200">
+
+<strong>Knee Up Move I, II</strong>
+
+<img src="../images/aiDance/kneeUp12.png" height="200">
+
+<strong>Travolta Move I, II</strong>
+
+<img src="../images/aiDance/travolta12.png" height="200">
+
+If you are too young to remember John Travolta's famous <em>Saturday Night Fever</em> dance move, click the button.
+<hint markdown="block" title="Show me Travolta @ SNF">
+<img src="../images/aiDance/travoltaSNF12.png" height="250">
+<a href="https://en.wikipedia.org/wiki/Saturday_Night_Fever" target="_blank">Image Credit: Wikipedia</a>
+</hint>
+
+<br />
+<strong>T-Pose Move</strong>
+
+<img src="../images/aiDance/TPose.png" height="200">
+
+Now you will write some code to detect some of these dance moves.  As these dance moves are detected the Dance Score of the dancer being tracked will automatically be incremented.
+
+## Hands in the Air Move
+
+<img src="../images/aiDance/handsInTheAir.png" height="200">
+
+procedure <strong><em>checkForHandsintheAirMove</em></strong>:
+* first check that the following key points returned by PoseNet are defined: right and left wrists and right and left ears.  
+* one way to define the “Hands in the Air” move is to make sure that both wrist points are above their respective ear points.  To do this you just need to compare the y-coordinate of the right wrist to the y-coordinate of the right ear and do a similar thing for the left wrist and left ear.  Please note that the x and y axes on the Canvas are positioned as shown below with the origin at the top left corner of the Canvas.  So having the right wrist above the right ear will mean that the y-coordinate of the right wrist will be less than the y-coordinate of the right ear.  Similar is true for the left wrist and left ear. 
+
+![X Y Coordinate System](../images/aiDance/XYCoordSystem.png){:.enlargeImage}
+
+ * if both wrists are above their respective ears then increment the Dance Score.
+
+<hint markdown="block" title="Give me a hint">
+
+![procedure checkForHandsintheAirMove hint](../images/aiDance/checkForHIAMove1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![procedure checkForHandsintheAirMove solution](../images/aiDance/checkForHIAMove.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+Try this on your own but if you get stuck you can click the Hint button.
+
+
+## Knee Up Move 
+
+<img src="../images/aiDance/kneeUp12.png" height="200">
+
+procedure <strong><em>checkForKneeUpMove</em></strong>:
+
+* first check that either of the following pairs of key points returned by PoseNet are defined: right knee and right hip or left knee and left hip.  
+* one way to define the “Knee Up” move  is to make sure that either the right knee point is above the right hip point, or, the left  knee point is above the left  hip point.  To do this you just need to compare the y-coordinate of the right knee to the y-coordinate of the right hip and do a similar thing for the left knee and the left hip. 
+* if either knee is above its respective hip then increment the Dance Score
+
+<hint markdown="block" title="Give me a hint">
+
+![procedure checkForKneeUpMove hint](../images/aiDance/checkForKneeUpMove1.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+
+![procedure checkForKneeUpMove hint](../images/aiDance/checkForKneeUpMove.png){:.enlargeImage}
+
+</hint>
+
+</hint>
+
+Try this on your own but if you get stuck you can click the Hint button.
+
+
 
 
 ## procedure <var>extractNumbers</var>
