@@ -59,21 +59,21 @@ The <strong>ResetButton</strong> resets the Dance Score to zero each time it is 
 The <strong>SwapCameraButton</strong> toggles the camera view from its default "Front" view to "Back" and vice versa.
 
 ![Live Canvas Button ](../images/aiDance/whenCanvasLiveButtonClick.png){:.enlargeImage}
-The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to either display the PoseNet constructed skeleton on a live background or on a solid black background.
+The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to display the PoseNet constructed skeleton either on a live background or on a solid black background.
 
 ## Helper functions (1)
 You are also given some helper functions. 
 
-<strong><em>getX</em></strong> and <strong><em>getY</em></strong> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that PoseNet returns representing the x and y-coordinates of a given location.
+<strong><em>getX</em></strong> and <strong><em>getY</em></strong> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that PoseNet returns representing the x and y-coordinates of the given point's location.
 
 ![getX and getY ](../images/aiDance/getXgetY.png){:.enlargeImage}
 
 ## Helper functions (2)
-<strong><em>defined</em></strong> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point) and false otherwise.  If PoseNet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
+<strong><em>defined</em></strong> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point's location) and false otherwise.  If PoseNet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
 
 ![procedure defined ](../images/aiDance/defined.png){:.enlargeImage}
 
-<strong><em>allDefined</em></strong> is a Boolean function that checks whether all the points in a given list of points are defined.  If all the points are defined, it returns true and otherwise, if any of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
+<strong><em>allDefined</em></strong> is a Boolean function that checks whether <em>all</em> the points in a given list of points are defined.  If <em>all</em> the points are defined, it returns true and otherwise, if <em>any</em> of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
 
 ![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
 
@@ -97,7 +97,7 @@ which you may recall from high school Algebra.  If any of the points are not def
 ![procedure drawLine](../images/aiDance/drawLine.png){:.enlargeImage}
 
 ## Pose Update
-When PoseNet extension detects that the body it is tracking has changed its position, it triggers the following <strong>PosenetExtension1.PoseUpdated</strong> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<strong><em>drawKeyPoints, drawBody, drawHead</em></strong> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong>, the Camera live feed is broadcast on the Canvas which by default has a solid black background color.
+When PoseNet extension detects that the body it is tracking has changed its position, it triggers the following <strong>PosenetExtension1.PoseUpdated</strong> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<strong><em>drawKeyPoints, drawBody, drawHead</em></strong> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong>, the camera live feed is broadcast on the Canvas which by default has a solid black background color.
 
 ![when Pose Updated](../images/aiDance/whenPosenetExtensionPoseUpdated.png){:.enlargeImage}
 
@@ -130,7 +130,7 @@ Now you will write some of these procedures.
 
 ![lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
 
-<strong>PosenetExtension1.Skeleton</strong> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list of an ankle and a knee key points.
+<strong>PosenetExtension1.Skeleton</strong> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list consisting of an ankle key point and a knee key point.
 
 ![procedure drawBody hint](../images/aiDance/drawBody1.png){:.enlargeImage}
 
@@ -174,7 +174,7 @@ Note: When the computation becomes too large horizontally, you can use the "Exte
 Try this on your own but if you get stuck you can click the Hint button.
 
 ## Test your App
-Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor extensions like PoseNet.
+Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor Extensions like PoseNet.
 
 Check that your app can track a body (yours or someone else's) and have the skeleton constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.
 
@@ -206,7 +206,7 @@ If you are too young to remember John Travolta's famous <em>Saturday Night Fever
 
 <img src="../images/aiDance/TPose.png" height="200">
 
-Now you will write some code to detect some of these dance moves.  As these dance moves are detected the Dance Score of the dancer being tracked will automatically be incremented.
+Now you will write some code to detect some of these dance moves.  As these dance moves are detected, the Dance Score of the dancer being tracked will automatically be incremented.
 
 ## Hands in the Air Move
 
@@ -316,15 +316,21 @@ Try this on your own but if you get stuck you can click the Hint button.
 ## Test your App
 Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.
 
-Congratulations you have now built an AI based app that can recognize some basic dance moves.
+Test your app on some YouTube dance videos like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin dance video</a> to see how your app is able to track the dancer.
+
+Congratulations you have now built your first AI based app that can track the movements of a person and recognize some basic dance moves.
 
 
 # Expand Your App
-* Currently if you maintain a certain dance move, the dance score keeps going up.  Add some smart code to make sure that a given dance move is rewarded only once until a new dance move is observed.
+* Currently if you maintain a certain dance move, the Dance Ccore keeps going up.  Add some smart code to make sure that a given dance move is rewarded only once until a new dance move is observed.
+
+* Create a penalty system that subtracts from the Dance Score for poorly executed basic dance moves (for example, if the dancer makes almost a T-Pose move but not quite due to non-horizontal stretching of the arms, forming a pose like the letter Y instead of the letter T, etc.)
+ 
+* Imagine a Yoga version of this app where different Yoga postures are detected and correct postures are rewarded.
 
 * What other more hip dance moves can you think of that can be described and quantified in terms of the key points of the body?  Implement these ideas in your app.
 
-
+* What other amazing ideas do you have?
 
 # About Youth Mobile Power 
 A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
