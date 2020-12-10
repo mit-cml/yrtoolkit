@@ -7,7 +7,7 @@ yrmedia: false
 
 # Challenge
 
-Some blurb here tying to the YR Media Article: https://yr.media/tech/can-you-teach-ai-to-dance/
+Our amazing friends at YR Media has published an intriguing interactive story on AI titled <a href="https://yr.media/tech/can-you-teach-ai-to-dance/" target="_blank">Can You Teach AI to Dance?</a> which got us thinking whether something as organic and complex as a dance can be quantified, measured and mathematically studied with the help of AI.  In this project you are challenged to create an AI based app that can track the movements of a dancer and recognize some basic dance moves.
 
 # Setup your computer
 
@@ -23,7 +23,7 @@ Do you like dancing?   Are you good at it?  Would you like to improve?   Is ther
 <a href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/camera.gif" target="_blank">Image Credit</a>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PoseNet Extension.  To make sure that your mobile device has the needed hardware capability for PoseNet, use AI2 Companion on <a href="" target="_blank">this .aia </a>test file.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PoseNet Extension.  To make sure that your mobile device has the needed hardware capability for PoseNet, use AI2 Companion on <a href="../aiaFiles/aiDance/Posenet_TestProject.aia" target="_blank">this .aia </a>test file.
 
 ## Graphical User Interface (GUI)
 
@@ -176,7 +176,7 @@ Try this on your own but if you get stuck you can click the Hint button.
 ## Test your App
 Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor Extensions like PoseNet.
 
-Check that your app can track a body (yours or someone else's) and have the skeleton constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.
+Check that your app can track a body (yours or someone else's) and have the skeleton constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.  You can also choose to make the <strong>HorizontalArrangement1</strong> (where the shadow dancers images are) invisible.
 
 ## Detecting Dance Moves
 <img src="../images/aiDance/DanceClip.gif" height="250">
@@ -314,9 +314,9 @@ Are you sure you are ready to see a solution?
 Try this on your own but if you get stuck you can click the Hint button.
 
 ## Test your App
-Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.
+Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.   As mentioned before, for best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.
 
-Test your app on some YouTube dance videos like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin dance video</a> to see how your app is able to track the dancer.
+Test your app on some YouTube dance videos like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin dance video</a> (where the dancer is against a clear background) to see how your app is able to track the dancer.
 
 Congratulations you have now built your first AI based app that can track the movements of a person and recognize some basic dance moves.
 
