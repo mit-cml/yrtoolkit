@@ -9,6 +9,8 @@ yrmedia: false
 
 Our amazing friends at YR Media has published an intriguing interactive story on AI titled <a href="https://yr.media/tech/can-you-teach-ai-to-dance/" target="_blank">Can You Teach AI to Dance?</a> which got us thinking whether something as organic and complex as a dance can be quantified, measured and mathematically studied with the help of AI.  In this project you are challenged to create an AI based app that can track the movements of a dancer and recognize some basic dance moves.
 
+If you haven’t set up your computer and mobile device for App Inventor, go to the “Setup your Computer” tab to set up your system. Otherwise, go directly to the “Awesome Dancing with AI” tab to start the tutorial.
+
 # Setup your computer
 
 <div class="setup noemulator" id="connect_app"></div>
@@ -104,9 +106,9 @@ When PoseNet extension detects that the body it is tracking has changed its posi
 ## Constructing the Skeleton
 Now you will write some of these procedures.
 
-<strong><em>drawKeyPoints</em></strong> procedure:
+<strong><em>drawKeyPoints</em></strong> procedure will draw a red circle depicting each key point of the body returned by PoseNet:
 * set the Canvas <em>PaintColor</em>  to red color (or something else distinctive)
-* for each point returned by PoseNet in the <strong>PosenetExtension1.KeyPoints</strong>,  draw a point using the helper procedure <strong><em>drawPoint</em></strong> described earlier.
+* for each point returned by PoseNet in the <strong>PosenetExtension1.KeyPoints</strong> list,  draw a point using the helper procedure <strong><em>drawPoint</em></strong> described earlier.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -122,9 +124,9 @@ Now you will write some of these procedures.
 
  Try this on your own but if you get stuck you can click the Hint button.
 
-<strong><em>drawBody</em></strong> procedure: 
+<strong><em>drawBody</em></strong> procedure will draw the skeleton of the body, by drawing yellow lines to depict bones between the appropriate key points: 
 * set the canvas <em>PaintColor</em>  to yellow color (or something else distinctive different than the one used for key points)
-* for each bone in the <strong>PosenetExtension1.Skeleton</strong>, draw a line between the endpoints of the bone, using the helper procedure <strong><em>drawLine</em></strong> described earlier.
+* for each bone in the <strong>PosenetExtension1.Skeleton</strong> list, draw a line between the endpoints of the bone, using the helper procedure <strong><em>drawLine</em></strong> described earlier.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -176,7 +178,9 @@ Try this on your own but if you get stuck you can click the Hint button.
 ## Test your App
 Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor Extensions like PoseNet.
 
-Check that your app can track a body (yours or someone else's) and have the skeleton constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.  You can also choose to make the <strong>HorizontalArrangement1</strong> (where the shadow dancers images are) invisible.
+Check that your app can track a body (yours or someone else's) and have the skeleton correctly constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  
+
+If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.  You can also choose to make the <strong>HorizontalArrangement1</strong> (where the shadow dancers images are) invisible.  If you are still short of screen space you can also choose to make <strong>WebViewer1</strong> invisible by unchecking its <em>Visible</em> property.  If you do so, beware that the <strong>Canvas1</strong> dimensions (250X300) must still exactly match the dimensions of the <strong>WebViewer1</strong>.
 
 ## Detecting Dance Moves
 <img src="../images/aiDance/DanceClip.gif" height="250">
