@@ -201,7 +201,7 @@ Some simple dance moves that we will explore are:
 
 If you are too young to remember John Travolta's famous <em>Saturday Night Fever</em> dance move, click the button.
 <hint markdown="block" title="Show me Travolta @ SNF">
-<img src="../images/aiDance/travoltaSNF12.png" height="250">
+<img src="../images/aiDance/TravoltaSNF12.png" height="250">
 <a href="https://en.wikipedia.org/wiki/Saturday_Night_Fever" target="_blank">Image Credit: Wikipedia</a>
 </hint>
 
