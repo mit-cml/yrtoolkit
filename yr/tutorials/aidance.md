@@ -33,7 +33,9 @@ A possible GUI has been created for you in the starter file.  Please change the 
 
 ![GUI of AI Dance](../images/aiDance/GUICorrespondence.png){:.enlargeImage}
 
-The <strong>SwapCameraButton</strong> toggles the camera view from Front to Back as the user wishes.  <strong>CanvasLiveButton</strong>  toggles the Canvas background from a solid black color to a live camera view.  <strong>ResetButton</strong> sets the Dance Score back to zero.  The <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component is where the camera view will be cast and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component is where the skeletal model of the body will be created either against a black background or a live camera view background.
+The <strong>SwapCameraButton</strong> toggles the camera view from Front to Back as the user wishes.  <strong>CanvasLiveButton</strong>  toggles the Canvas background from a solid black color to a live camera view.  <strong>ResetButton</strong> sets the Dance Score back to zero.  
+
+The <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component is where the camera view will be cast and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component is where the skeletal model of the body will be created either against a black background or a live camera view background.  The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component have to match in order to facilitate body tracking.  It is recommended that you do <em>not</em> change the default values given in this starter file.
 
 Note that at the very bottom of the Components panel is the <span class="icon" alt="posenetextension"></span><strong>PosenetExtension</strong> which is the AI technology that we will be using to track key points of a body and which will help you to build a skeletal version of the body.
 
@@ -80,7 +82,7 @@ You are also given some helper functions.
 ![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
 
 ## Helper functions (3)
-<span class="procedures">distance</span> is a function that computes the Euclidean distance between two points on the Canvas when the two points are defined.   It uses the Pythagorean formula:
+<span class="procedures">distance</span> is a function that computes the Euclidean distance between two points on the Canvas when the two points are defined.   It uses the <a href="https://blossoms.mit.edu/videos/lessons/pythagorean_theorem_geometry_most_elegant_theorem" target="_blank">Pythagorean formula</a>:
 
 ![distance formula ](../images/aiDance/distanceFormula.png){:.enlargeImage}
 
@@ -128,11 +130,11 @@ Now you will write some of these procedures.
 * set the canvas <em>PaintColor</em>  to yellow color (or something else distinctive different than the one used for key points)
 * for each bone in the <span class="getters">PosenetExtension1.Skeleton</span> list, draw a line between the endpoints of the bone, using the helper procedure <span class="procedures">drawLine</span> described earlier.
 
-<hint markdown="block" title="Give me a hint">
+Note: <span class="getters">PosenetExtension1.Skeleton</span> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list consisting of an ankle key point and a knee key point.
 
 ![lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
 
-<span class="getters">PosenetExtension1.Skeleton</span> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list consisting of an ankle key point and a knee key point.
+<hint markdown="block" title="Give me a hint">
 
 ![procedure drawBody hint](../images/aiDance/drawBody1.png){:.enlargeImage}
 
@@ -245,9 +247,9 @@ Try this on your own but if you get stuck you can click the Hint button.
 
 procedure <span class="procedures">checkForKneeUpMove</span>:
 
-* first check that either of the following pairs of key points returned by PoseNet are defined: right knee and right hip or left knee and left hip.  
-* one way to define the “Knee Up” move  is to make sure that either the right knee point is above the right hip point, or, the left  knee point is above the left  hip point.  To do this you just need to compare the y-coordinate of the right knee to the y-coordinate of the right hip and do a similar thing for the left knee and the left hip
-* if either knee is above its respective hip then increment the Dance Score
+* first check that the following key points returned by PoseNet are defined: right knee, right hip, left knee and left hip.  
+* one way to define the “Knee Up” move  is to make sure that either the right knee point is above the right hip point, or, the left  knee point is above the left  hip point.  To do this you just need to compare the y-coordinate of the right knee to the y-coordinate of the right hip and do a similar thing for the left knee and the left hip.
+* if either knee is above its respective hip then increment the Dance Score.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -309,6 +311,8 @@ Are you sure you are ready to see a solution?
 
 ![procedure checkForTPoseMove hint](../images/aiDance/checkForTPoseMove.png){:.enlargeImage}
 
+Note: If you know some Trigonometry, it may be possible to simplify some of this code by utilizing angular relationships of the key points.
+
 </hint>
 
 </hint>
@@ -320,7 +324,7 @@ Try this on your own but if you get stuck you can click the Hint button.
 ## Test your App
 Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.   As mentioned before, for best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.
 
-Test your app on some YouTube dance videos like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin Dance video</a> and this <a href="https://youtu.be/9WFJoXGEItc" target="_blank">Cardio Dance Workout video</a> (where the dancers are against a clear background) to see how your app is able to track the dancer.
+Test your app on some YouTube dance videos, <!--like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin Dance video</a> and this <a href="https://youtu.be/9WFJoXGEItc" target="_blank">Cardio Dance Workout video</a>--> where a solo dancer is against a clear background, to see how your app is able to track the dancer.
 
 Congratulations you have now built your first AI based app that can track the movements of a person and recognize some basic dance moves.
 
