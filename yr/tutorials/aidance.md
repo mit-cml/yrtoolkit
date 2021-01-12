@@ -86,7 +86,7 @@ You are also given some helper functions.
 
 ![distance formula ](../images/aiDance/distanceFormula.png){:.enlargeImage}
 
-which you may recall from high school Algebra.  If any of the points are not defined, then the distance is set to an arbitrarily large value implying infinite distance between undefined points.
+which you may recall from high school Geometry and Algebra.
 
 ![distance function](../images/aiDance/distance.png){:.enlargeImage}
 
