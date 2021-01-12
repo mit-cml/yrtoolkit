@@ -77,7 +77,7 @@ You are also given some helper functions.
 
 ![procedure defined ](../images/aiDance/defined.png){:.enlargeImage}
 
-<span class="procedures">allDefined</span> is a Boolean function that checks whether <em>all</em> the points in a given list of points are defined.  If <em>all</em> the points are defined, it returns true and otherwise, if <em>any</em> of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.  Note that the logical function <span class="logic"><strong>and</strong></span> is used to check that all points are defined.
+<span class="procedures">allDefined</span> is a Boolean function that checks whether <em>all</em> the points in a given list of points are defined.  If <em>all</em> the points are defined, it returns true and otherwise, if <em>any</em> of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.
 
 ![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
 
@@ -301,7 +301,7 @@ If you want a good challenge, try to define the T-Pose move where the dancer str
 
 ![Arm stretch](../images/aiDance/armStretch.png){:.enlargeImage}
 
-A stretched arm means that the distance between the right wrist and the right shoulder should be very close to the sum of the distances from the right wrist to the right elbow to the right shoulder. And similarly on the left side.
+To ensure that the hands are held <em>horizontally</em> the wrist and shoulder y-coordinates should be very close on both sides.  Also, a stretched arm means that the distance between the right wrist and the right shoulder should be very close to the sum of the distances from the right wrist to the right elbow to the right shoulder. And similarly on the left side.  
 
 <hint markdown="block" title="Check my solution">
 
