@@ -7,14 +7,9 @@ yrmedia: false
 
 # Challenge
 
-In this project, you are challenged to create an AI-based creative camera app. You will be making a facial filter from scratch, similar to the ones you may have played with on Instagram or Snapchat. 
-
-Our friends at YR Media have <a href="https://interactive.yr.media/erase-your-face/" target="_blank"> this interesting article </a> about the implications of facial recognition technology. In this tutorial, we will not be using facial recognition, but facial landmark detection. The difference is that we are not identifying people, but purely identifying geometric shapes. It is worth nothing that we do not store any unique facial representation. 
+Our friends at YR Media have <a href="https://interactive.yr.media/erase-your-face/" target="_blank"> this excellent article </a> about facial recognition. In this tutorial, we will not be using similar but different technology - facial landmark detection. You are challenged to create an AI-based filter camera. You have two options: the cute cat seen in the GIF below, or a fiercer lion.
 
 <img src="../images/facemesh/catDemoAligned.gif" style="width: 75%">
-
-You have two options: you can choose between the cute cat seen in the GIF above, or a fierce lion. You’ll be using AI to change human faces into cat or lion faces! 
-Once you’ve mastered the basics, feel free to get your creative juices flowing and expand “Facemesh Filter Camera” to any character camera of your choosing.
 
 If you haven’t set up your computer and mobile device for App Inventor, go to the “Setup your Computer” tab to set up your system. Otherwise, go directly to the “Facemesh Filter Camera” tab to start the tutorial.
 
@@ -28,36 +23,38 @@ If you haven’t set up your computer and mobile device for App Inventor, go to 
 
 Have you taken photos with facial filters? Instagram and Snapchat facial filters have taken the internet by storm, but do you know how these filters work? Would you like to make your own facial filters?
 
-![Funny Photo](../images/facemesh/funPhoto.png)
+![Funny Photo](../images/facemesh/funPhoto.png){:.enlargeImage}
 
-In this project you will learn how to use a new AI technology called FaceMesh; it is a model trained by Google and available to the public. 
+In this project you will learn how to use a new AI technology called Facemesh; it is a model trained by Google and available to the public. 
 <hint markdown="block" title="What is a model?"> 
 
 A model represents how a computer thinks. It can be considered an artificial “brain”. For example, when you see a face, your brain will quickly make a decision about where the eyes are. Similarly, the Facemesh model takes in a photo of a face and makes a decision about where the eyes are. A brain’s decision-making process is in the field of cognitive science; a computer’s decision-making process is in the field of Artificial Intelligence. 
 
 Models are quite complicated and involve a lot of math. The level of math you need to understand the processes is at the university level, but do not worry! You do not need to fully understand the process to be able to benefit from it!
 </hint>
+<br>
+Feel free to click on any images in the tutorial for a magnified view.
 
-The FaceMesh model takes in the image of your face and give you the specific location of many different facial features, such as where your nose, forehead, or mouth is. Using such information, you can create facial filters; these are essentially images that follow specific points on your face.
+## Facemesh Model
 
-To access the Facemesh model, you will use the FaceExtension, which is an App Inventor tool that acts as a bridge to empower you to use the model in your own mobile app. The end result of this project will be your own filter camera! You can use this app to take creative photos like the ones above and share them with your friends. 
+The Facemesh model takes in the image of your face and give you the specific location of many different facial features, such as where your nose, forehead, or mouth is. Using such information, you can create facial filters; these are essentially images that follow specific points on your face.
+
+To access the Facemesh model, you will use the <strong>FaceExtension</strong>, which is an App Inventor tool that acts as a bridge to empower you to use the model in your own mobile app. The end result of this project will be your own filter camera! You can use this app to take creative photos and share them with your friends. 
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PoseNet Extension.  To make sure that your mobile device has the needed hardware capability for PoseNet, use AI2 Companion on <a href="../aiaFiles/facemesh/Facemesh_TestProject.aia" target="_blank">this .aia </a>test file.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <strong>FaceExtension</strong>.  To make sure that your mobile device has the needed hardware capability for Facemesh, use AI2 Companion on <a href="../aiaFiles/facemesh/Facemesh_TestProject.aia" target="_blank">this .aia </a>test file.
 
 ## Graphical User Interface (GUI)
 
 A possible GUI has been created for you in the starter file. Please do not rename the components, as this tutorial will refer to the given names in the instructions.
 
-Feel free to click on any images in the tutorial for a magnified view.
-
 ![GUI of Facemesh](../images/facemesh/2.GUI.png){:.enlargeImage}
 
-The <strong>TakePhotoButton</strong>  allows the user to take a photo. The <strong>SharePhotoButton</strong>  allows the user to share the most recently taken photo using any photo-sharing app installed on the phone.
+The <strong>TakePhotoButton</strong>  allows the user to take a photo. The <strong>SharePhotoButton</strong> allows the user to share the most recently taken photo using any photo-sharing app installed on the device.
 
-The <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> is the AI technology that we will be using to track key points of a face and which will give you the information needed to create the facial filter. It requires a web browser to run, so we link it the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component. The <strong>Webviewer’s</strong> visibility is turned off (despite what the name suggests) because we use the <span class="icon" alt="canvas"></span><strong>Canvas</strong> as our viewer. The <strong>Canvas</strong> component will show the live camera view background as well as the cat/lion facial filter. 
+The <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> is the AI technology to track key points of a face and will give you the information needed to create the facial filter. It requires a web browser to run, so we link it the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component. The <span class="icon" alt="webviewer"></span><strong>Webviewer’s</strong> visibility is turned off because we use the <span class="icon" alt="canvas"></span><strong>Canvas</strong> as our viewer. The <span class="icon" alt="canvas"></span><strong>Canvas</strong> component will show the live camera view background as well as the cat/lion facial filter. 
 
-The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component,the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component, and the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> must match in order to facilitate face tracking. If you change the default values of the height and width for any one of the <strong>Webviewer</strong>, the <strong>Canvas</strong>, or the <strong>FaceExtension</strong> components, make sure that you change it identically for all three of them.
+The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component,the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component, and the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> must match in order to facilitate face tracking. If you change the default values of the height and width for any one of the three components, make sure that you change it identically for all three of them.
 
 Finally, the <span class="icon" alt="sharing"></span><strong>Sharing</strong> component is a social component that allows you to share the photo file via another app on the phone such as Email and Messenger.
 
@@ -87,53 +84,64 @@ Actually, there are 486 points available for you to use via the AllPoints proper
 
 ![Facemesh Key Points](../images/facemesh/3.Facemesh_key_points.png){:.enlargeImage}
 
+## Facepoint Format
+
 Each key point is returned as a list of two elements representing the x and y-coordinates. 
 
 For example, the key point “forehead” will be a list of 2 elements: 
 
 <strong>[forehead x-coord, forehead y-coord]</strong> 
 
+<br>
+
+![Facemesh Forehead](../images/facemesh/Facemesh_forehead.png){:.enlargeImage}
+
 When Facemesh is unable to track the entirety of a face, it will return an empty list so the filter will not work; make sure the face is within the camera frame!
 
 ## Choose a cat or a lion
-Let's get right into our project! Right now, the canvas looks like it’s empty. This is because we haven’t set the “Picture” property for our <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong> yet. 
+Let's get right into our project! Right now, the canvas looks like it’s empty. This is because we haven’t set the <em>Picture</em> property for our <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong> yet. 
 
 First, decide if you would like to have a cat or a lion filter. Once you’ve decided, check out the Media, which has images for either option. 
 
-![Media](../images/facemesh/4.choose_p1.png){:.enlargeImage}
+<img src="../images/facemesh/4.choose_p1.png" style="width: 65%">
 
-Now, click on “whiskers" in the components bar. You’ll notice that whiskers' properties will show up. If you’ve chosen a lion, set the Picture property for <strong>whiskers</strong> as LION_whiskers.png. If you’ve chosen a cat, you would want to set the Picture property for <strong>whiskers</strong> as CAT_whiskers.png. 
+
+Now, click on “whiskers" in the components bar. You’ll notice that whiskers' properties will show up. If you’ve chosen a lion, set <em>Picture</em> for <strong>whiskers</strong> as LION_whiskers.png. If you’ve chosen a cat, you would want to set <em>Picture</em> for <strong>whiskers</strong> as CAT_whiskers.png. 
 
 ![How to choose whiskers' Picture](../images/facemesh/4.choose_p2.png){:.enlargeImage}
 
-For example, if you’ve set the Picture property for <strong>whiskers</strong> as LION_whiskers.png, you should see the following change in the designer.
+## Choose a cat or lion (2)
+For example, if you’ve set <em>Picture</em> for <strong>whiskers</strong> as LION_whiskers.png, you should see the following change in the designer.
 
 ![Lion Whiskers](../images/facemesh/4.choose_p2.5.png){:.enlargeImage}
 
 Repeat this process for the <strong>leftEar</strong> and <strong>rightEar</strong> images, selecting images for the animal of your choice. 
 
-* If you’ve chosen a lion, set the Picture property for <strong>leftEar</strong> as LION_leftEar.png, and set the Picture property for <strong>rightEar</strong> as LION_rightEar.png. 
-* If you’ve chosen a cat, set the Picture property for <strong>leftEar</strong> as CAT_leftEar.png, and set the Picture property for <strong>rightEar</strong> as CAT_rightEar.png.
+Lion:
+* Set the <em>Picture</em> property for <strong>leftEar</strong> as LION_leftEar.png, and the <em>Picture</em> property for <strong>rightEar</strong> as LION_rightEar.png. 
 
-Once you’ve finished setting the Picture property for all three of the <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, your canvas should look something like one of the two following images.
+Cat:
+* Set the <em>Picture</em> property for <strong>leftEar</strong> as CAT_leftEar.png, and the <em>Picture</em> property for <strong>rightEar</strong> as CAT_rightEar.png.
+
+## Choose a cat or lion (3)
+Once you’ve finished setting <em>Picture</em> for all three of the <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, your canvas should look something like one of the two following images.
 
 ![Whiskers complete](../images/facemesh/4.choose_p3.png){:.enlargeImage}
 
 ## Preliminary GUI Code
 You are also given some code that makes the buttons work as expected. Check out the code blocks so you can have a general idea what they do.
 
-![Whiskers complete](../images/facemesh/prelimBlock1.png){:.enlargeImage}
-![Whiskers complete](../images/facemesh/prelimBlock2.png){:.enlargeImage}
+![photoCount and mostRecentPhoto](../images/facemesh/prelimBlock1and2.png){:.enlargeImage}
 
-Here we have two variables, <strong>photoCount</strong> and <strong>mostRecentPhoto</strong>. <strong>photoCount</strong> simply counts how many photos have been taken, and <strong>mostRecentPhoto</strong> stores the file name of the most recently taken photo. 
+Here we have two variables: <var>photoCount</var> simply counts how many photos have been taken, and <var>mostRecentPhoto</var> stores the file name of the most recently taken photo. 
 
-![Whiskers complete](../images/facemesh/prelimBlock3.png){:.enlargeImage}
+![TakePhotoButton logic](../images/facemesh/prelimBlock3.png){:.enlargeImage}
 
-When you click the <strong>TakePhotoButton</strong>, the <strong>mostRecentPhoto</strong> file name is updated to be the current image, and the <strong>photoCount</strong> increases by 1. The first photo you take will be called ‘characterCamera1.jpg’ and the second photo will be called ‘characterCamera2.jpg’, etc. These files are all saved to your device. Depending on your device, you can find the photos wherever files are saved. For example, on a Google Pixel, the photos are saved to the “Files” app. 
+When you click the <strong>TakePhotoButton</strong>, the <var>mostRecentPhoto</var> file name is updated to be the current image, and the <var>photoCount</var> increases by 1. The first photo you take will be called ‘characterCamera1.jpg’ and the second photo will be called ‘characterCamera2.jpg’, etc. These files are all saved to your device. Depending on your device, you can find the photos wherever files are saved. For example, on a Google Pixel, the photos are saved to the “Files” app. 
 
-The reason we keep track of <strong>photoCount</strong> and increment is by 1 is so that each picture file has a unique name. If we didn’t increment by 1, each photo you take would be writing to the same file over and over again. The reason we keep track of <strong>mostRecentPhoto</strong> is so that we can share this photo using the <strong>SharePhotoButton</strong>. 
+The reason we keep track of <var>photoCount</var> and increment is by 1 is so that each picture file has a unique name. If we didn’t increment by 1, each photo you take would be writing to the same file over and over again. The reason we keep track of <var>mostRecentPhoto</var> is so that we can share this photo using the <strong>SharePhotoButton</strong>. 
 
-![Whiskers complete](../images/facemesh/prelimBlock4.png){:.enlargeImage}
+![SharePhotoButton logic](../images/facemesh/prelimBlock4.png){:.enlargeImage}
 
 When you click the <strong>SharePhotoButton</strong>, you can share the most recent photo! You’ll be able to share it using any app installed on your device that shares images, such as Google Drive, Dropbox, etc.
 
@@ -142,24 +150,29 @@ Your first coding task is to fill in this helper function called <span class="pr
 
 ![Incomplete placeImage procedure](../images/facemesh/placeImageIncomplete.png){:.enlargeImage}
 
-<span class="procedures">placeImage</span> procedure takes in two arguments: <span class="variables">img</span> and <span class="variables">facePoint</span>. The result is that the center of <span class="variables">img</span>, the given image, will be placed on the <span class="variables">facePoint</span>, the key point tracked by Facemesh. You will fill in this procedure and use it to move the three images (<strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>) to points on the face. 
+<span class="procedures">placeImage</span> procedure places the center of <span class="variables">img</span> on the <span class="variables">facePoint</span>, the key point tracked by Facemesh. 
 
-<hint markdown="block" title="Why is this procedure necessary?">
+Click "Next Step" for guidance on how to fill in this procedure and move the three images (<strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>) to match points on the face. 
 
-In App Inventor, we can only move the ImageSprite by its top-left corner. By calling <span class="procedures">ImageSprite.MoveTo</span> (x, y), we move the ImageSprite’s top-left corner to (x, y). 
+## First, why is this procedure necessary?
 
-If we want the <em>center</em> of <strong>img</strong> to be placed on the <strong>facePoint</strong> (x1, y1), we have to do some simple math to get the coordinates of its top-left corner, which we will call (x2, y2). The relationship between (x1, y1) and (x2, y2) is demonstrated in the diagram below. 
+By calling <span class="procedures">ImageSprite.MoveTo</span> (x, y), we move the ImageSprite’s <strong>top-left corner</strong> to (x, y). 
 
-<strong>x2 = x1 - 0.5 * image width</strong>
+However, if we want the <strong>center</strong> of <span class="variables">img</span> to be placed on the <span class="variables">facePoint</span> (x1, y1), we have to do some simple math to get the coordinates of its top-left corner, which we will call (x2, y2).
 
-<strong>y2 = y1 - 0.5 * image height</strong>
+Note that in this x-y coordinate system, (0, 0) is the top left corner. The difference from the normal Cartesian plane is that y increases downwards.
 
 ![Coordinate Math](../images/facemesh/6.helper.png){:.enlargeImage}
 
-For example, as seen above, you want to place the left ear centered on the left forehead <strong>facePoint</strong> (x1, y1) returned by Facemesh. To get the correct horizontal placement, you need to subtract ½ of the width of the leftEar image from x1; to get the correct vertical placement, you need to subtract ½ of the height of the leftEar image from y1. The result is the new point (x2, y2) which represents the top-left corner of the image, so the image is centered on the left forehead <strong>facePoint</strong> (x1, y1). 
+In the scenario above, you want to place the left ear centered on the left forehead <span class="variables">facePoint</span> (x1, y1) returned by Facemesh.
+* To get the adjusted horizontal placement
+	* <strong>x2 = x1 - 0.5 * leftEar image width</strong>
+* To get the adjusted vertical placement
+	* <strong>y2 = y1 - 0.5 * leftEar image height</strong>
+
+Thus when we call <span class="procedures">ImageSprite.MoveTo</span> (x2, y2), the image is centered on (x1, y1), the left forehead <span class="variables">facePoint</span>. 
  
-To summarize, the <strong>facePoint</strong> is at (x1, y1), so we need to place the top-left corner of the ImageSprite at (x2, y2), where x2 is (x1 -  ½ * width) and y2 is (y1 - ½ * height). To get the top-left corner, we need to subtract half of the image’s width from the <strong>facePoint’s</strong> x-coordinate and half of the image’s height from the <strong>facePoint’s</strong> y-coordinate. 
-</hint>
+## Fill in the procedure
 
 In the <span class="procedures">placeImage</span> procedure, your task is to
 * Fill in the <span class="procedures">x</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be <strong>x1 - 0.5 * image width</strong>. This is the result of subtracting half of the ImageSprite’s width from the facePoint’s x-coordinate.
@@ -193,66 +206,59 @@ To access these ImageSprite blocks shown above, click “Any component” in the
 
 If you are stuck, feel free to see which blocks are needed 
 <hint markdown="block" title="Show Hint">
-![Get imageSprite height](../images/facemesh/placeImageHint1.png){:.enlargeImage} 
-![Get imageSprite width](../images/facemesh/placeImageHint2.png){:.enlargeImage}
-![Get facepoint index 1](../images/facemesh/getFacepoint1.png){:.enlargeImage}
-![Get facepoint index 2](../images/facemesh/getFacepoint2.png){:.enlargeImage}
-![0.5](../images/facemesh/0.5.png){:.enlargeImage}
-</hint> 
+![placeImage incomplete block](../images/facemesh/placeImageHint.png){:.enlargeImage} 
 <hint markdown="block" title="Check my solution">
 ![placeImage procedure solution](../images/facemesh/placeImageSolution.png){:.enlargeImage}
 </hint>
+</hint> 
 
 ## Face Updated
-When the extension detects a face, it triggers the following FaceExtension1.FaceUpdated event. This event handler’s code has also been created for you. The code for the resizing procedure is given to you, but the code for the moving procedure is incomplete and will soon be created by you.
+When the extension detects a face, it triggers the following <span class="control">FaceExtension1.FaceUpdated</span> event. This event handler’s code has also been created for you. The code for the <span class="procedures">resizing</span> procedure is given to you, but the code for the <span class="procedures">moving</span> procedure is incomplete and will soon be created by you.
 ![Face Updated Block](../images/facemesh/faceUpdatedBlock.png){:.enlargeImage}
 
-## Moving and Resizing
+## Moving
 The way a basic filter works has two parts.
 1. moving: when the face moves, the images move along with the face.
 2. resizing: when the face becomes bigger or smaller, the images are resized accordingly.
 
-You are given the following incomplete <span class="procedures">moving</span> procedure: 
-<img src="../images/facemesh/incompleteMovingProcedure.png" style="width: 60%">
+Let's cover the first procedure, <span class="procedures">moving</span>: 
+<br>
+<img src="../images/facemesh/movingIncomplete.png" style="width: 50%">
 
 To complete the block, you should
-* Call <span class="procedures">placeImage</span> (the procedure you wrote earlier) to move the left ear to the left-side of the forehead  (which is the FaceExtension property <span class="getters">LeftForehead</span>). 
-* Call <span class="procedures">placeImage</span> to move the right ear to the right-side of the forehead (which is the FaceExtension property <span class="getters">RightForehead</span>). 
-* Call <span class="procedures">placeImage</span> to move the whiskers to the top of the mouth (which is the FaceExtension property <span class="getters">MouthTop</span>). 
+* Call <span class="procedures">placeImage</span> to move <strong>leftEar</strong> to the left-side of the forehead (<span class="getters">FaceExtension.LeftForehead</span>). 
+* Call <span class="procedures">placeImage</span> to move <strong>rightEar</strong> to the right-side of the forehead (<span class="getters">FaceExtension.RightForehead</span>). 
+* Call <span class="procedures">placeImage</span> to move <strong>whiskers</strong> to the top of the mouth (<span class="getters">FaceExtension.MouthTop</span>). 
 
 Remember, <span class="procedures">placeImage</span> takes in two arguments: 
-1. the image (the imageSprite object)
-2. the facePoint (a facial coordinate provided by FaceExtension). 
+1. the imageSprite object
+2. the facial coordinates provided by <strong>FaceExtension</strong>. 
 
 <hint markdown="block" title="Give me a hint">
-![leftEar](../images/facemesh/moving1.png){:.enlargeImage} 
-![rightEar](../images/facemesh/moving2.png){:.enlargeImage}
-![whiskers](../images/facemesh/moving3.png){:.enlargeImage}
-![Left Forehead](../images/facemesh/moving4.png){:.enlargeImage}
-![Right Forehead](../images/facemesh/moving5.png){:.enlargeImage}
-![Mouth Top](../images/facemesh/moving6.png){:.enlargeImage}
-</hint>
+![incomplete moving procedure](../images/facemesh/movingHint.png){:.enlargeImage} 
+
 <hint markdown="block" title="Check my solution">
 ![Moving procedure solution](../images/facemesh/movingProcedureSolution.png){:.enlargeImage}
 </hint>
+</hint>
 
+## Resizing
+Let’s explain the second procedure which is given to you: <span class="procedures">resizing</span>.
 <br>
+![resizing solution](../images/facemesh/resizingProcedureSolution.png){:.enlargeImage}
 
-Let’s explain other procedure which is given to you: <span class="procedures">resizing</span>.
-![Moving procedure solution](../images/facemesh/resizingProcedureSolution.png){:.enlargeImage}
+* When we define the width or height of the image, we're defining the width or height of the image <em>bounding box</em> (highlighted in red). 
+* All widths and heights are arbitrarily chosen to fit what we might expect; you can change them as you like. 
 
-The details of the procedure are explained below. Note these are all arbitrarily chosen to fit what we might expect, but you can change the procedure as you like. 
+![Resizing explanation image](../images/facemesh/resizingExplanation.png){:.enlargeImage} 
 
 Whiskers:
-* The width of the whiskers is set to the width of the face (which is the FaceExtension property <span class="getters">FaceWidth</span>).
-* The height of the whiskers is the height between the eye and the mouth (which is the FaceExtension property <span class="getters">EyeToMouthHeight</span>). This makes sense because the distance between the eye and the mouth is what we would expect the whiskers’ height to be.
+* Width is set to the width of the face.
+* Height is the distance between the eye and the mouth.
 
-Left Ear:
-* The width of the left ear is the distance between the cheek and the nose (which is the FaceExtension property <span class="getters">CheekToNoseDistance</span>). This is arbitrary but the distance between the cheek and nose is typically the same as what we would expect the ear width to be.
-* The width of the right ear is the same as the width of the left ear.
-
-Right Ear:
-* Finally, set the height of the left ear and the height of the right ear to both be the same as the width of the left ear. This makes sense because the ears have the same height and width.
+Ears:
+* Width is set to the distance between the cheek and the nose.
+* These have square bounding boxes, so we can set the width and height to be the same
 
 ## Test your App
 Now you will use the AI Companion to check that your app works. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor Extensions like FaceExtension.
@@ -262,26 +268,50 @@ Check that your app can track a face and have the ears and whiskers correctly po
 ## Take a photo and send it to your friend!
 Now, you can make a pose with your new cat or lion makeover, and click the “Take Photo” button. After, click the “Share Most Recent Image” to share the photo with your friends! 
 
-In the demo below, a user takes a photo, clicks “Share the Most Recent Image”, and many options to share the photo, including “Share with Messages” on top, and other apps such as Maps, Allo, Bluetooth, Duo, Gmail, Hangouts, Notes, etc. These apps will vary depending on which apps are installed on your device. 
+In the demo below, a user takes a photo, clicks “Share the Most Recent Image”, and uses Google Hangouts to share the photo with her friend. The apps available will vary depending on what you have installed on your device.
 
-<img src="../images/facemesh/sharing.gif" style="width: 75%">
+<img src="../images/facemesh/sharingDemo.gif" style="width: 75%">
 
 Good job! You’ve completed this character camera app! You’ve built an AI-based app that can track the movements of a face.
 
 # Expand your app
-* You can get your own images online for any character filter, go to the website remove.bg to get rid of the background, and upload them on your own ImageSprite components to make your own filters. Go wild and let the creative juices flow! 
-* You can add a button to switch between a lion and a cat filter. You would need to add some code to change the Picture property of the ImageSprites when the button is clicked.
-* Check out <a href="https://github.com/tensorflow/tfjs-models/blob/master/facemesh/mesh_map.jpg" target="_blank">this facemesh map</a> to see all the points you can access. If you want to put something in between your eyes, find the number on the map. In this case, the number is 6 so the facePoint can be accessed via this block: 
-	![Point 6](../images/facemesh/point6.png){:.enlargeImage}
-	And the x-coordinate is this nested block
-	![Point 6 X-coord](../images/facemesh/point6X.png){:.enlargeImage}
-	And the y-coordinate is this nested block
-	![Point 6 Y-coord](../images/facemesh/point6Y.png){:.enlargeImage}
-* Using these points, you can identify movement in the face by tracking the difference between two facePoints. For example, here is a demo where blush appears on the cheek when the mouth opens and disappears when the mouth closes. 
-	<img src="../images/facemesh/blushCat.gif" style="width: 75%">
-	To get this extra interactivity in your app, you need to:
-	* Add new Imagesprites with a blush picture (you can find the image online)
-	* Track the difference between the y-coordinates of your lips; change the visibility of the blush Imagesprites accordingly.
+
+## Choose your own character!
+You can 
+1. get your own images online
+2. go to the website <a href="https://remove.bg/" target="_blank">remove.bg</a> to get rid of the background
+3. make your own <span class="icon" alt="imagesprite"></span><strong>ImageSprites</strong>. 
+4. update height and width sizing as you see fit
+5. place images on the corresponding face points as you see fit
+
+Go wild and let the creative juices flow! 
+
+Here are some ideas to get you started:
+![Character Camera Dog](../images/facemesh/characterCameraMORE.png){:.enlargeImage} 
+
+## Allow filter switching
+You can add two buttons to switch between different filters. 
+
+You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imagesprite"></span><strong>ImageSprites</strong> when the button is clicked.
+
+## Using FaceExtension AllPoints
+Scroll down to the very bottom of <a href="https://github.com/tensorflow/tfjs-models/tree/master/facemesh" target="_blank">this Facemesh webpage</a> to see a facemesh map of all the points you can access. You can click on it to zoom in. 
+
+For example, if you want a specific point on your lip, find the number on the map. In this case, the number is 14 so the <span class="variables">facePoint</span> can be accessed via this block: 
+![Point 14](../images/facemesh/point14.png){:.enlargeImage}
+Now you can use this block as the <span class="variables">facePoint</span> argument for <span class="procedures">placeImage</span>.
+
+## Adding Interactivity
+Using various points, you can identify movement in the face by tracking the difference between two facePoints.
+
+Here is a demo of an app where the emoji matches your facial expression. 
+
+<img src="../images/facemesh/emojiDemo.gif" style="width: 75%">
+<br>
+To get this extra interactivity in your app, you need to:
+* Have two Imagesprites, one for mouth open and one for mouth closed
+* Track the difference between the y-coordinates of your lips
+* change the <em>Visible</em> property of the different emoji Imagesprites accordingly.
 
 # About Youth Mobile Power 
 A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
