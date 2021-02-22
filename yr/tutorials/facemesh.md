@@ -304,11 +304,17 @@ You would need to add some code to change the <em>Picture</em> property of the <
 ## Using FaceExtension AllPoints
 Actually, there are 486 points available for you to use via <span class='getters'>FaceExtension.AllPoints</span>
 
-Scroll down to the very bottom of <a href="https://github.com/tensorflow/tfjs-models/tree/master/facemesh" target="_blank">this Facemesh webpage</a> to see a facemesh map of all the points you can access. You can click on it to zoom in.
+Scroll down to the very bottom of <a href="https://github.com/tensorflow/tfjs-models/tree/master/facemesh" target="_blank">this Facemesh webpage</a> to see a Facemesh map of all the points you can access. You can click on it to zoom in.
 
 For example, if you want a specific point on your lip, find the number on the map. In this case, the number is 14 so the <span class="variables">facePoint</span> can be accessed via this block: 
 ![Point 14](../images/facemesh/point14.png){:.enlargeImage}
 Now you can use this block as the <span class="variables">facePoint</span> argument for <span class="procedures">placeImage</span>.
+
+Here is an important image illustrating how to read the Facemesh map: <strong>the right side of the map is actually the left side of the face, and vice versa.</strong> Please click on the image to see a magnified view.
+![How to read the Facemesh map](../images/facemesh/faceMap_explain.png){:.enlargeImage} 
+
+* The point for your left cheek is 454, <em>not</em> 234. 
+* The point for your right cheek is 234, <em>not</em> 454.
 
 ## Adding Interactivity
 Using various points, you can identify movement in the face by tracking the difference between two facePoints.
