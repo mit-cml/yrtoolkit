@@ -287,7 +287,7 @@ Good job! You’ve completed this character camera app! You’ve built an AI-bas
 You can 
 1. get your own images online
 2. go to the website <a href="https://remove.bg/" target="_blank">remove.bg</a> to get rid of the background
-3. make your own <span class="icon" alt="imagesprite"></span><strong>ImageSprites</strong>. 
+3. make your own <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong>. 
 4. update height and width sizing as you see fit
 5. place images on the corresponding face points as you see fit
 
@@ -299,7 +299,7 @@ Here are some ideas to get you started:
 ## Allow filter switching
 You can add two or more buttons to switch between different filters. 
 
-You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imagesprite"></span><strong>ImageSprites</strong> when the button is clicked.
+You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong> when the button is clicked.
 
 ## Using FaceExtension AllPoints
 Actually, there are 486 points available for you to use via <span class='getters'>FaceExtension.AllPoints</span>
