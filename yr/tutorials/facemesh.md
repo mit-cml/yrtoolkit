@@ -310,12 +310,6 @@ For example, if you want a specific point on your lip, find the number on the ma
 ![Point 14](../images/facemesh/point14.png){:.enlargeImage}
 Now you can use this block as the <span class="variables">facePoint</span> argument for <span class="procedures">placeImage</span>.
 
-Here is an important image illustrating how to read the Facemesh map: <strong>the right side of the map is actually the left side of the face, and vice versa.</strong> Please click on the image to see a magnified view.
-![How to read the Facemesh map](../images/facemesh/faceMap_explain.png){:.enlargeImage} 
-
-* The point for your left cheek is 454, <em>not</em> 234. 
-* The point for your right cheek is 234, <em>not</em> 454.
-
 ## Adding Interactivity
 Using various points, you can identify movement in the face by tracking the difference between two facePoints.
 
