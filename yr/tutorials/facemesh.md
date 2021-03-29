@@ -344,9 +344,10 @@ Here are some ideas to get you started:
 ## Allow filter switching
 You can add two or more buttons to switch between different filters. 
 
-You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong> when the button is clicked. Here's an example of some code to switch to the cat filter.
+You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong> when the button is clicked. Here's an example of some code for the buttons.
 
 ![Set filter to cat](../images/facemesh/switchToCatButton.png){:.enlargeImage}
+![Set filter to lion](../images/facemesh/switchToLionButton.png){:.enlargeImage}
 
 
 ## Create a Photo Gallery
