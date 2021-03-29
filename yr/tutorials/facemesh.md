@@ -28,7 +28,7 @@ Have you taken photos with facial filters? Instagram and Snapchat facial filters
 In this project you will learn how to use a new AI technology called Facemesh; it is a model trained by Google and available to the public. 
 <hint markdown="block" title="What is a model?"> 
 
-A model is the mathematical representation of how a computer thinks. It can be considered the computer's “brain”. For example, when you see a face, your brain will quickly make a decision about where the eyes are. Similarly, the Facemesh model takes in a photo of a face and makes a decision about where the eyes are. A human brain’s decision-making process is in the field of cognitive science; a computer’s decision-making process is in the field of Artificial Intelligence. 
+A model is the mathematical representation of how a computer thinks. It can be considered the computer's “brain”. For example, when you see a face, your brain will quickly make a decision about where the eyes are. Similarly, the Facemesh model takes in a photo of a face and makes a decision about where the eyes are. A human brain’s decision-making process is in the field of cognitive science; a computer’s decision-making process is in the field of Artificial Intelligence.
 
 Models are quite complicated and involve a lot of math. The level of math you need to understand the processes is at the university level, but do not worry! You do not need to fully understand the entire process to be able to benefit from it in this project!
 </hint>
@@ -39,12 +39,12 @@ Feel free to click on any images in the tutorial for a magnified view.
 
 The Facemesh model takes in the image of your face and gives you the specific location of many different facial features, such as the X and Y coordinates of your nose, forehead, or mouth. Using such information, you can create facial filters; these are essentially images that follow specific points on your face.
 
-To access the Facemesh model, you will use the <strong>FaceExtension</strong>, which is an App Inventor tool that acts as a bridge to empower you to use the model in your own mobile app. 
+To access the Facemesh model, you will use the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong>, which is an App Inventor tool that acts as a bridge to empower you to use the model in your own mobile app.
 ![Bridge](../images/facemesh/bridge.png){:.enlargeImage}
 The end result of this project will be your own filter camera! You can use this app to take creative photos and share them with your friends. 
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <strong>FaceExtension</strong>.  To make sure that your mobile device has the needed hardware capability for Facemesh, use AI2 Companion on <a href="../aiaFiles/facemesh/Facemesh_TestProject.aia" target="_blank">this .aia </a>test file.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong>.  To make sure that your mobile device has the needed hardware capability for Facemesh, use AI2 Companion on <a href="../aiaFiles/facemesh/Facemesh_TestProject.aia" target="_blank">this .aia </a>test file.
 
 ## Graphical User Interface (GUI)
 
@@ -56,7 +56,7 @@ The <strong>TakePhotoButton</strong>  allows the user to take a photo; it's conn
 
 The <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> is the AI technology to track key points of a face and will give you the information needed to create the facial filter. It requires a web browser to run, so we link it the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component. The <span class="icon" alt="webviewer"></span><strong>Webviewer’s</strong> visibility is turned off because we use the <span class="icon" alt="canvas"></span><strong>Canvas</strong> as our viewer. The <span class="icon" alt="canvas"></span><strong>Canvas</strong> component will show the live camera view background as well as the cat/lion facial filter. 
 
-The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component,the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component, and the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> must match in order to facilitate face tracking. If you change the default values of the height and width for any one of the three components, make sure that you change it identically for all three of them.
+The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component, the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component, and the <span class="icon" alt="posenetextension"></span><strong>FaceExtension</strong> must match in order to facilitate face tracking. If you change the default values of the height and width for any one of the three components, make sure that you change it identically for all three of them.
 
 Finally, the <span class="icon" alt="sharing"></span><strong>Sharing</strong> component is a social component that allows you to share the photo file via another app on the phone such as Email and Messenger.
 
@@ -310,16 +310,27 @@ Try checking <em>ShowMesh</em> to turn it on. This will show you a live map of a
 
 ![Explain FaceExtension](../images/facemesh/meshOnOff.png){:.enlargeImage}
 
+## Using FaceExtension AllPoints
+There are 486 points available for you to use via <span class='getters'>FaceExtension.AllPoints</span>
+
+Scroll down to the very bottom of <a href="https://github.com/tensorflow/tfjs-models/tree/master/facemesh" target="_blank">this Facemesh webpage</a> to see a Facemesh map of all the points you can access. You can click on it to zoom in.
+
+For example, if you want a specific point on your lip, find the number on the map. In this case, the number is 14 so the <span class="variables">facePoint</span> can be accessed via this block:
+![Point 14](../images/facemesh/point14.png){:.enlargeImage}
+Now you can use this block as the <span class="variables">facePoint</span> argument for <span class="procedures">placeImage</span>.
+
 ## FaceExtension UseCamera
 ![Explain FaceExtension](../images/facemesh/useCamera.png){:.enlargeImage}
 
 By default, <em>UseCamera</em> is set to "Front" to take selfies. Try to switch it to "Back" so you can take photos of your friends. You can also add a button that toggles between cameras. Note that if you change <em>UseCamera</em> in the blocks, you must set it to text (either "Back" or "Front").
 
+![Set camera to Back](../images/facemesh/useCameraBack.png){:.enlargeImage}
+
 Note: A camera component is unnecessary in this app because the <span class="icon" alt="posenetextension"></span><strong>FaceExtension </strong> component accesses your device's camera for you.
 
 ## Choose your own character!
 You can 
-1. get your own images online
+1. get your own images online or check out this <a href="https://drive.google.com/drive/folders/1_fmbqlm3z18M_-9eciN-4jIrkySX_rz1?usp=sharing" target="_blank">image library</a>
 2. go to the website <a href="https://remove.bg/" target="_blank">remove.bg</a> to get rid of the background
 3. make your own <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong>. 
 4. update height and width sizing as you see fit
@@ -333,21 +344,18 @@ Here are some ideas to get you started:
 ## Allow filter switching
 You can add two or more buttons to switch between different filters. 
 
-You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong> when the button is clicked.
+You would need to add some code to change the <em>Picture</em> property of the <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong> when the button is clicked. Here's an example of some code to switch to the cat filter.
+
+![Set filter to cat](../images/facemesh/switchToCatButton.png){:.enlargeImage}
+
 
 ## Create a Photo Gallery
 Wouldn't it be nice to see all the photos you've taken in a gallery?
 
-You can add a second Screen, save the names of the photos taken so far, and display them as a gallery.
+You can add a second Screen, save the names of the photos taken so far, and display them as a gallery. You may need to use TinyDB to save the photos. Here's an idea of what your simple gallery might look like.
 
-## Using FaceExtension AllPoints
-Actually, there are 486 points available for you to use via <span class='getters'>FaceExtension.AllPoints</span>
+![Set filter to cat](../images/facemesh/gallery.png){:.enlargeImage}
 
-Scroll down to the very bottom of <a href="https://github.com/tensorflow/tfjs-models/tree/master/facemesh" target="_blank">this Facemesh webpage</a> to see a Facemesh map of all the points you can access. You can click on it to zoom in.
-
-For example, if you want a specific point on your lip, find the number on the map. In this case, the number is 14 so the <span class="variables">facePoint</span> can be accessed via this block: 
-![Point 14](../images/facemesh/point14.png){:.enlargeImage}
-Now you can use this block as the <span class="variables">facePoint</span> argument for <span class="procedures">placeImage</span>.
 
 ## Adding Interactivity
 Using various points, you can identify movement in the face by tracking the difference between two facePoints.
