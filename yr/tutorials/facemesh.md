@@ -325,6 +325,7 @@ Now you can use this block as the <span class="variables">facePoint</span> argum
 By default, <em>UseCamera</em> is set to "Front" to take selfies. Try to switch it to "Back" so you can take photos of your friends. You can also add a button that toggles between cameras. Note that if you change <em>UseCamera</em> in the blocks, you must set it to text (either "Back" or "Front").
 
 ![Set camera to Back](../images/facemesh/useCameraBack.png){:.enlargeImage}
+![Set camera to Front](../images/facemesh/useCameraFront.png){:.enlargeImage}
 
 Note: A camera component is unnecessary in this app because the <span class="icon" alt="posenetextension"></span><strong>FaceExtension </strong> component accesses your device's camera for you.
 
