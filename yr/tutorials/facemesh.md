@@ -331,7 +331,8 @@ Note: A camera component is unnecessary in this app because the <span class="ico
 
 ## Choose your own character!
 You can 
-1. get your own images online or check out this <a href="https://drive.google.com/drive/folders/1_fmbqlm3z18M_-9eciN-4jIrkySX_rz1?usp=sharing" target="_blank">image library</a>
+1. get your own images online or check out this <a href="https://github.com/mit-cml/yrtoolkit/tree/master/yr/images/facemesh/imageLibrary
+" target="_blank">image library</a>
 2. go to the website <a href="https://remove.bg/" target="_blank">remove.bg</a> to get rid of the background
 3. make your own <span class="icon" alt="imageSprite"></span><strong>ImageSprites</strong>. 
 4. update height and width sizing as you see fit
