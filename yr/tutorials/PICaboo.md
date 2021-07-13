@@ -1,5 +1,5 @@
 ---
-title: AIDance
+title: PICaboo
 layout: tutorial
 howtos: false
 yrmedia: false
@@ -7,9 +7,8 @@ yrmedia: false
 
 # Challenge
 
-Our amazing friends at YR Media has published an intriguing interactive story on AI titled <a href="https://yr.media/tech/can-you-teach-ai-to-dance/" target="_blank">Can You Teach AI to Dance?</a> which got us thinking whether something as organic and complex as a dance can be quantified, measured and mathematically studied with the help of AI.  In this project you are challenged to create an AI based app that can track the movements of a dancer and recognize some basic dance moves.
+Machine Learning (ML) and Artificial Intelligence (AI) are the big craze today that everyone is talking about.  But what do these words mean?  How can a machine learning something and exhibit intelligence?  In this two part tutorial you will learn about the basics of AI and ML and then using the App Inventor coding environment you will explore Image Classification as an example of Machine Learning and create an app that intelligently responds to your actions.
 
-<img src="../images/aiDance/GUIDance.gif" style="width: 75%">
 
 If you haven’t set up your computer and mobile device for App Inventor, go to the “Setup your Computer” tab to set up your system. Otherwise, go directly to the “Awesome Dancing with AI” tab to start the tutorial.
 
@@ -17,17 +16,20 @@ If you haven’t set up your computer and mobile device for App Inventor, go to 
 
 <div class="setup noemulator" id="connect_app"></div>
 
-# Awesome Dancing with AI (Level: Intermediate)
+# PICaboo (Level: Intermediate)
 
 ## Introduction
-![Dancers](../images/aiDance/dancers.png)
-Do you like dancing?   Are you good at it?  Would you like to improve?   Is there an algorithm to describe, identify or measure an amazing dance? Can dance moves be quantified and measured?  Can AI be used to help you improve your dancing skills?  In this project you will learn how to use the new AI technology PoseNet to track key points of your body to create a skeletal model and develop some basic methods to quantify, measure and identify some dance moves.
+In this tutorial, you will make a Peekaboo game app with your very own Personal Image Classification (PIC) model where the baby in the app will smile if your face is shown and will cry if your face is hidden.
+![PICaboo show face](../images/PICaboo/ShowFace.png)
+![PICaboo hide face](../images/PICaboo/HideFace.png)
 
-![Posenet Demo](../images/aiDance/PosenetDemo.gif)
-<a href="https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/camera.gif" target="_blank">Image Credit</a>
+<hint markdown="block" title="What is the Game of Peekaboo?">
+Very young babies do not quite understand yet how to make sense of the visual world around them. One of their challenges is the lack of the sense that objects continue their existence even when they are invisible. This concept is described by the famous child psychologist Jean Piaget as “Object Permanence”. A game that parents often play with their very young babies in the US is called Peekaboo where a parent hides her face (with her hands or with a pillow etc.) and “disappear” to the surprise of the baby and then suddenly show her face saying “Peekaboo, I see you” much to the delight of the baby, who is astonished to see the parent suddenly appear out of “nowhere”. Here is a <a href="https://www.youtube.com/watch?v=Z37Ru-GRtks" target="_blank"> video</a> you can watch for this game. The process through which a machine learns to make sense of visual data is not unlike the way babies learn visual cues. In both cases there needs to be many examples (large sets of training data) and the categories of examples need to be easily distinguishable from one another (visually distinct data classes).
+
+</hint>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PoseNet Extension.  To make sure that your mobile device has the needed hardware capability for PoseNet, use AI2 Companion on <a href="../aiaFiles/aiDance/Posenet_TestProject.aia" target="_blank">this .aia </a>test file.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PersonalImageClassifier (PIC) Extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on <a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank">this LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the PersonalImageClassifier extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
 
 ## Graphical User Interface (GUI)
 
