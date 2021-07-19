@@ -33,6 +33,8 @@ Very young babies do not quite understand yet how to make sense of the visual wo
 
 ## PICaboo Part 1: Training the model
 First you will need to train and image classification model on the App Inventor Personal Image Classifier page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.
+![PIC](../images/PICaboo/TrainingML.png){:.enlargeImage}
+
 
 ## Graphical User Interface (GUI)
 
