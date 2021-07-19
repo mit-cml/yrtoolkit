@@ -19,6 +19,7 @@ If you haven’t set up your computer and mobile device for App Inventor, go to 
 # PICaboo (Level: Intermediate)
 
 ## Introduction
+
 In this tutorial, you will make a Peekaboo game app with your very own Personal Image Classification (PIC) model where the baby in the app will smile if your face is shown and will cry if your face is hidden.
 
 ![PICaboo show-hide face](../images/PICaboo/ShowHideFace.png){:.enlargeImage}
@@ -33,6 +34,7 @@ Very young babies do not quite understand yet how to make sense of the visual wo
 **Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> (PIC) extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on this<a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank"> LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the PersonalImageClassifier extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
 
 ## PICaboo Part 1: Training the model
+
 First you will need to train an image classification model on the App Inventor Personal Image Classifier page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.  At the end of this process do not forget to download the model.mdl file to your computer which you will upload to App Inventor in the next part of the tutorial.
 
 ![PIC](../images/PICaboo/TrainingML.png){:.enlargeImage}
@@ -48,7 +50,7 @@ A possible Graphical User Interface (GUI) has been created for you in the starte
 
 ## Uploading Your Trained Model
 
-Look at the non-visible component <span class="icon" alt="pic"></span><strong>PersonalImageClassifier1</strong>. This is the component that will classify your poses based on your trained model.
+Look at the non-visible component <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong>. This is the component that will classify your poses based on your trained model.
 
 Upload the model you trained in Part 1 by clicking on the “Model” property and selecting the model you made and downloaded in Part 1 of the tutorial.
 
@@ -67,7 +69,8 @@ Follow the sequence of events in the running of the PICaboo. Fill in the missing
 <br />
 
 ## Review Given Code
-Now switch to the Blocks Editor to start coding the behaviour for the app.  First look at the some of the code blocks that are already included. These blocks set up the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> when the app first starts.
+
+Now switch to the Blocks Editor to start coding the behaviour for the app.  First look at some of the code blocks that are already included. These blocks set up the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> when the app first starts.
 
 In case the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> returns an error, the <span class="control">when PersonalImageClassifier1.Error</span> event block displays the error in the <strong>StatusLabel</strong>.
 
@@ -81,279 +84,165 @@ When <strong>ToggleCameraButton</strong> is pressed, the direction the camera is
 
 ![Toggle Camera](../images/PICaboo/whenToggleCameraButtonClick.png){:.enlargeImage}
 
+<strong>StartButton</strong> is a start/stop toggle button and when it is clicked, if the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> has been running, its continuous classification process is stopped and otherwise this process is started. Button texts are also changed from "Start" to "Stop" or vice versa accordingly.
+
+![Start button](../images/PICaboo/whenStartButtonClick.png){:.enlargeImage}
+
+## Result of Image Classification
+
+Before coding the PICaboo app, let’s see how the <span class="variables">result</span> of classification from the component <span class="icon" alt="pic"></span><strong>PersonelImageClassifier</strong> is received and used.
+
+When the classifier produces a classification for what it sees, the <span class="control">when PersonalImageClassifier1.GotClassification</span> event handler block is called. In this tutorial your main task is to complete the code block set for this event handler.
 
 
-## Preliminary GUI code
-You are also given some preliminary code for the GUI.  Study these to make sure that you have a general idea what they do.
+![Got Classification](../images/PICaboo/whenPIC1GotClassification_empty.png){:.enlargeImage}
+
+The <span class="variables">result</span> lists the classifications in the form of dictionary data structure.  A dictionary in Computer Science is a data structure used to store key-value pairs much like a real-world dictionary where words and their definitions are stored. Unlike in the real-world dictionary, the dictionary data structure used in Computer Science can hold arbitrary keys associated with arbitrary values. These arbitrary keys and values can be pretty much anything: letters, words, multi-word strings, numbers, as well as mixed combinations of all these.  Below is an example:
+
+![Phone Book](../images/PICaboo/phoneBookDictionary.png){:.enlargeImage}
+
+In the above example of key-value pairs, “Name” is the key, “Tel” is the value, and the phonebook is the dictionary. 
+
+## Result of Image Classification
+The <span class="variables">result</span> returned by <span class="icon" alt="pic"></span><strong>PersonelImageClassifier</strong> lists the name (key) of two classes (“Me” and “NotMe”) with their confidence levels (value). This data structure can be represented with code blocks as below. It is important to note that the key-value pairs in result are listed in the order of highest to lowest confidence levels.
+
+![Result](../images/PICaboo/dictinonaryMeNotMe.png){:.enlargeImage}
+
+For example, the <span class="variables">result</span> could be composed of the class “Me” with the high confidence level of 0.925 (i.e. 92.5%) and the class “NotMe” with a low confidence level of 0.075 (i.e. 7.5%). These confidence level numbers have been computed by the model you created during the training phase. At this instance the baby in the PICaboo app would be smiling as the baby (i.e. the machine) is confident that he is seeing your face.
+
+![Smiling Baby](../images/PICaboo/smilingbaby.png){:.enlargeImage}
 
 
-![Posenet Ready Error ](../images/aiDance/whenPosenetExtensionReadyError.png){:.enlargeImage}
-These two blocks are used to communicate the status of PoseNet as either "Ready" or in case of error, display the error message.
+## Result of Image Classification
 
-![Reset Button ](../images/aiDance/whenResetButtonClick.png){:.enlargeImage}
-The <strong>ResetButton</strong> resets the Dance Score to zero each time it is clicked.
+In order to find out the value of a particular key from the <span class="variables">result</span>, the <span class="dictionary">get value for key</span> block is used. In the example below, if you searched for the key “Me” in the given dictionary, you would get 0.925 which is its associated confidence level (value). If no key was matched, you would get the value “0”.
 
-![Swap Camera Button](../images/aiDance/whenSwapCameraButtonClick.png){:.enlargeImage}
-The <strong>SwapCameraButton</strong> toggles the camera view from its default "Front" view to "Back" and vice versa.
+![Get Value](../images/PICaboo/DoItgetvalue.png){:.enlargeImage}
 
-![Live Canvas Button ](../images/aiDance/whenCanvasLiveButtonClick.png){:.enlargeImage}
-The <strong>CanvasLiveButton</strong> adjusts the value of a Boolean variable which will be used to display the PoseNet constructed skeleton either on a live background or on a solid black background.
+## Got Classification
 
-## Helper functions (1)
-You are also given some helper functions. 
+The <span class="control">when PersonalImageClassifier1.GotClassification</span> event handler block starts by initializing two local variables. Local variables can only be used inside the code block where they are defined:
+<ul>
+    <li><span class="variables">MeConfidence</span>: is the confidence level for the “Me” class (showing face).</li>
+    <li><span class="variables">NotMeConfidence</span>: is the confidence level for the “NotMe” class (hiding face).</li>
+</ul>
 
-<span class="procedures">getX</span> and <span class="procedures">getY</span> functions extract the x and y-coordinates of a given point. A point is simply a list of two elements that PoseNet returns representing the x and y-coordinates of the given point's location.
+![Local Variables](../images/PICaboo/whenPIC1GotClassification_empty2.png){:.enlargeImage}
 
-![getX and getY ](../images/aiDance/getXgetY.png){:.enlargeImage}
+You will soon see how these variables will be used.
 
-## Helper functions (2)
-<span class="procedures">defined</span> is a Boolean function that returns true if the given point is a list of two elements (representing the x and y-coordinates of the point's location) and false otherwise.  If PoseNet is unable to detect any of the body key points, it will return an empty list for each of the missing key points.
+## Initializations
 
-![procedure defined ](../images/aiDance/defined.png){:.enlargeImage}
-
-<span class="procedures">allDefined</span> is a Boolean function that checks whether <em>all</em> the points in a given list of points are defined.  If <em>all</em> the points are defined, it returns true and otherwise, if <em>any</em> of the points is not defined, it returns false.  We will use this helper function to collectively check if certain key points of the body are properly tracked and returned by the PoseNet extension.  If the posture of the body is such that perhaps due to poor lighting, messy background, baggy clothes etc. any key point of the body is not trackable by PoseNet, an empty list will be returned to indicate the failure to detect this key point.
-
-![procedure allDefined ](../images/aiDance/allDefined.png){:.enlargeImage}
-
-## Helper functions (3)
-<span class="procedures">distance</span> is a function that computes the Euclidean distance between two points on the Canvas when the two points are defined.   It uses the <a href="https://blossoms.mit.edu/videos/lessons/pythagorean_theorem_geometry_most_elegant_theorem" target="_blank">Pythagorean formula</a>:
-
-![distance formula ](../images/aiDance/distanceFormula.png){:.enlargeImage}
-
-which you may recall from high school Geometry and Algebra.
-
-![distance function](../images/aiDance/distance.png){:.enlargeImage}
-
-## Helper functions (4)
-<span class="procedures">drawPoint</span> procedure draws a small circle of 4 pixel radius on the Canvas at the location of a given defined point.  This procedure will help us draw the key points of the body such as the joints.  We use the 4 pixel radius to make the point visible to the eye.
-
-![procedure drawPoint](../images/aiDance/drawPoint.png){:.enlargeImage}
-
-<span class="procedures">drawLine</span> procedure draws a line segment on the Canvas between two defined points.  We will use this procedure to draw the bones of the skeletal representation of the body.
-
-
-![procedure drawLine](../images/aiDance/drawLine.png){:.enlargeImage}
-
-## Pose Update
-When PoseNet extension detects that the body it is tracking has changed its position, it triggers the following <span class="control">PosenetExtension1.PoseUpdated</span> event.  This event handler’s code has also been created for you even though the code for each of the procedures that are invoked (<span class="procedures">drawKeyPoints</span>, <span class="procedures">drawBody</span>, <span class="procedures">drawHead</span> etc.) are all empty and will soon be created by you.  Please note that the <span class="control">if then</span> statement in this event handler makes sure that if the user clicked the <strong>CanvasLiveButton</strong>, the camera live feed is broadcast on the Canvas which by default has a solid black background color.
-
-![when Pose Updated](../images/aiDance/whenPosenetExtensionPoseUpdated.png){:.enlargeImage}
-
-## Constructing the Skeleton
-Now you will write some of these procedures.
-
-<span class="procedures">drawKeyPoints</span> procedure will draw a red circle depicting each key point of the body returned by PoseNet:
-* set the canvas <em>PaintColor</em>  to red color (or something else distinctive)
-* for each point returned by PoseNet in the <span class="getters">PosenetExtension1.KeyPoints</span> list,  draw a point using the helper procedure <span class="procedures">drawPoint</span> described earlier.
+Initialize the variables <span class="variables">MeConfidence</span> and <span class="variables">NotMeConfidence</span> to the confidence levels associated with each class, "Me" and "NotMe".  Remember these confidence levels are the values in the dictionary data structure returned in the <span class="variables">result</span> by the classifier.
 
 <hint markdown="block" title="Give me a hint">
 
-![procedure drawKeyPoints hint](../images/aiDance/drawKeyPoints1.png){:.enlargeImage}
+Initialize the local variables as shown.  If you mouse over the parameter result, you will be able to get the needed block.
+Be sure to replace the default not found Text block with the “0” from Math blocks.  This makes sure that a confidence level of 0% is assigned in case the classifier has not yet returned a result.
+
+![Initialization hint](../images/PICaboo/initializations.png){:.enlargeImage}
 
 <hint markdown="block" title="Check my solution">
 
-![procedure drawKeyPoints solution](../images/aiDance/drawKeyPoints.png){:.enlargeImage}
+![Initialization solution](../images/PICaboo/whenPIC1GotClassification_part1.png){:.enlargeImage}
 
 </hint>
 
 </hint>
-
- Try this on your own but if you get stuck you can click the Hint button.
-
-<span class="procedures">drawBody</span> procedure will draw the skeleton of the body, by drawing yellow lines to depict bones between the appropriate key points: 
-* set the canvas <em>PaintColor</em>  to yellow color (or something else distinctive different than the one used for key points)
-* for each bone in the <span class="getters">PosenetExtension1.Skeleton</span> list, draw a line between the endpoints of the bone, using the helper procedure <span class="procedures">drawLine</span> described earlier.
-
-Note: <span class="getters">PosenetExtension1.Skeleton</span> returns a list of "bones" where each "bone" is a list of two key points that are its endpoints.  For example a lower leg bone in the skeleton would be a list consisting of an ankle key point and a knee key point.
-
-![lower leg bone](../images/aiDance/lowerlegbone.png){:.enlargeImage}
-
-<hint markdown="block" title="Give me a hint">
-
-![procedure drawBody hint](../images/aiDance/drawBody1.png){:.enlargeImage}
-
-<hint markdown="block" title="Check my solution">
-
-![procedure drawBody solution](../images/aiDance/drawBody.png){:.enlargeImage}
-
-</hint>
-
-</hint>
-
- Try this on your own but if you get stuck you can click the Hint button.
-
-## Optional: Drawing a circular head
-If you would like to have a <em>circular</em> head above the skeletal shoulders then complete the <span class="procedures">drawHead</span> procedure.  Otherwise there will only be some key points above the shoulder designating the ears, eyes and the nose without the circular head, just like shown in the animation on the first page of the tutorial.
-
-<span class="procedures">drawHead</span> procedure:
-* set Canvas paint color to green (or some other distinctive color)
-* check that <strong>LeftEar</strong> and <strong>RightEar</strong> key points are defined.
-* draw a circle with the midpoint between the two ears as its center using the midpoint formula from Algebra:
-![midpoint formula](../images/aiDance/midpointFormula.png){:.enlargeImage}
- * and make sure that the circle goes through both ears by selecting the radius of the circle to be half the distance between the two ears.
-<img src="../images/aiDance/headConstruct.png" style="width: 75%">
-
-<hint markdown="block" title="Give me a hint">
-
-![procedure drawHead hint](../images/aiDance/drawHead1.png){:.enlargeImage}
-
-<hint markdown="block" title="Check my solution">
-
-![procedure drawHead solution](../images/aiDance/drawHead.png){:.enlargeImage}
-
-Note: When the computation becomes too large horizontally, you can use the "External Inputs" menu option (via a right-click) to shrink the space needed for your operations.  To go back to the default option, use "Inline Inputs" as shown.
-
-![External and Inline inputs](../images/aiDance/external&inlineInputs.png){:.enlargeImage}
-
-</hint>
-
-</hint>
-
-Try this on your own but if you get stuck you can click the Hint button.
-
-## Test your App
-Now you will use the AI Companion to check that your app works well. Please note that an Emulator cannot be used in the testing as it does not support MIT App Inventor Extensions like PoseNet.
-
-Check that your app can track a body (yours or someone else's) and have the skeleton correctly constructed joining the key points of the body. For best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.  
-
-If you are using a mobile phone (instead of a tablet) your screen might be too small to display everything at once.  In this case, as the <em>"Scrollable"</em> property of the Screen is checked by default in this project, you can adjust the screen by scrolling to show what you wish.  You can also choose to make the <strong>HorizontalArrangement1</strong> (where the shadow dancers images are) invisible.  If you are still short of screen space you can also choose to make <strong>WebViewer1</strong> invisible by unchecking its <em>Visible</em> property.  If you do so, beware that the <strong>Canvas1</strong> dimensions (250X300) must still exactly match the dimensions of the <strong>WebViewer1</strong>.
-
-## Detecting Dance Moves
-<img src="../images/aiDance/DanceClip.gif" height="250">
-
-Some simple dance moves that we will explore are:
-
-<strong>Hands in the Air Move</strong>
-
-<img src="../images/aiDance/handsInTheAir.png" height="200">
-
-<strong>Knee Up Move I, II</strong>
-
-<img src="../images/aiDance/kneeUp12.png" height="200">
-
-<strong>Travolta Move I, II</strong>
-
-<img src="../images/aiDance/travolta12.png" height="200">
-
-If you are too young to remember John Travolta's famous <em>Saturday Night Fever</em> dance move, click the button.
-<hint markdown="block" title="Show me Travolta @ SNF">
-<img src="../images/aiDance/TravoltaSNF12.png" height="250">
-<a href="https://en.wikipedia.org/wiki/Saturday_Night_Fever" target="_blank">Image Credit: Wikipedia</a>
-</hint>
-
 <br />
-<strong>T-Pose Move</strong>
 
-<img src="../images/aiDance/TPose.png" height="200">
+## Sequence of Events Recap
 
-Now you will write some code to detect some of these dance moves.  As these dance moves are detected, the Dance Score of the dancer being tracked will automatically be incremented.
+When the classifier gets its classification…
 
-## Hands in the Air Move
+<ul>
+    <li>Set the <strong>Percentage1</strong> text and <strong>BarGraph1</strong> width % correctly.</li>
+    <li>Set the <strong>Percentage2</strong> text and <strong>BarGraph2</strong> width % correctly.</li>
+    <li>If the classification with higher confidence is “Me” (i.e. the machine is highly confident that it is seeing your face) then show the happy baby image and hide the sad baby image and make the Screen1 background color in light green.</li>
+    <li>Otherwise, show the sad baby image and hide the happy baby image and make the Screen1 background color in light pink.</li>
+</ul>
 
-<img src="../images/aiDance/handsInTheAir.png" height="200">
+![Show Hide face](../images/PICaboo/ShowHideFace.png){:.enlargeImage}
 
-procedure <span class="procedures">checkForHandsintheAirMove</span>:
-* first check that the following key points returned by PoseNet are defined: right and left wrists and right and left ears.  
-* one way to define the “Hands in the Air” move is to make sure that both wrist points are above their respective ear points.  To do this you just need to compare the y-coordinate of the right wrist to the y-coordinate of the right ear and do a similar thing for the left wrist and left ear.  Please note that the x and y axes on the Canvas are positioned as shown below with the origin at the top left corner of the Canvas.  So having the right wrist above the right ear will mean that the y-coordinate of the right wrist will be less than the y-coordinate of the right ear.  Similar is true for the left wrist and left ear. 
+## Setting Percentages and Bar Graphs
 
-![X Y Coordinate System](../images/aiDance/XYCoordSystem.png){:.enlargeImage}
+First, set the <strong>Percentage1</strong> text to the confidence level of the “Me” class.  As this value is given as a decimal between 0 and 1 you will need to convert it to a percentage (by multiplying with a 100) and add the “%” symbol.  For example if the confidence level was 0.75, this proper percentage would be 75 %.
 
- * if both wrists are above their respective ears then increment the Dance Score.
+Secondly, note that <strong> BarGraph1</strong> is a colored label the width of which will graphically represent the confidence level of the “Me” class.  Set its <var>WidthPercent</var> accordingly.  You can duplicate part of earlier code you wrote.
+
+Finally, do a similar thing for <strong>Percentage2</strong> and <strong>BarGraph2</strong>.  Be sure to use the <span class="variables">NotMeConfidence</span> local variable for these latter cases.
+
 
 <hint markdown="block" title="Give me a hint">
 
-![procedure checkForHandsintheAirMove hint](../images/aiDance/checkForHIAMove1.png){:.enlargeImage}
+
+![Percentage hint](../images/PICaboo/setPercentage1.png){:.enlargeImage}
+![Bar Graph hint](../images/PICaboo/setBarGraph1.png){:.enlargeImage}
 
 <hint markdown="block" title="Check my solution">
 
-![procedure checkForHandsintheAirMove solution](../images/aiDance/checkForHIAMove.png){:.enlargeImage}
+Snap code in as shown.
+
+![Bar Graph solution](../images/PICaboo/snapCodeIn.png){:.enlargeImage}
 
 </hint>
 
 </hint>
+<br />
 
-Try this on your own but if you get stuck you can click the Hint button.
+## The Conditional Statement
 
-
-## Knee Up Move 
-
-<img src="../images/aiDance/kneeUp12.png" height="200">
-
-procedure <span class="procedures">checkForKneeUpMove</span>:
-
-* first check that the following key points returned by PoseNet are defined: right knee, right hip, left knee and left hip.  
-* one way to define the “Knee Up” move  is to make sure that either the right knee point is above the right hip point, or, the left  knee point is above the left  hip point.  To do this you just need to compare the y-coordinate of the right knee to the y-coordinate of the right hip and do a similar thing for the left knee and the left hip.
-* if either knee is above its respective hip then increment the Dance Score.
+Now build the <span class="control">if-then-else</span> conditional block set which will test if the class with higher level of confidence is the “Me” class, representing the machine recognizing you showing your face with a higher level of confidence.
 
 <hint markdown="block" title="Give me a hint">
 
-![procedure checkForKneeUpMove hint](../images/aiDance/checkForKneeUpMove1.png){:.enlargeImage}
+
+![If then else hint](../images/PICaboo/ifthenelse1.png){:.enlargeImage}
+
 
 <hint markdown="block" title="Check my solution">
 
-![procedure checkForKneeUpMove hint](../images/aiDance/checkForKneeUpMove.png){:.enlargeImage}
+![If then else solution](../images/PICaboo/ifthenelse2.png){:.enlargeImage}
 
 </hint>
 
 </hint>
+<br />
 
-Try this on your own but if you get stuck you can click the Hint button.
+## Displaying Happy and Sad Baby
 
-## Travolta Move
+Now you will first build the code blocks for the then part of the <span class="control">if-then-else</span> block set.   You must
 
-<img src="../images/aiDance/travolta12.png" height="200">
+<ul>
+    <li>Set the Screen1 background color to light green.  You are given a light green colour block in the template which you can use.</li>
+    <li>Show happy baby image</li>
+    <li>Hide sad baby image</li>
+    
+</ul>
 
-Now why don't you try to define the Travolta moves and define the procedure <span class="procedures">checkForTravoltaMove</span> yourself?
+Now similarly build code blocks for the else part of the  <span class="control">if-then-else</span> block and snap these code blocks to where they belong. You are given a light pink color block in the template which you can use.
 
 <hint markdown="block" title="Give me a hint">
 
-One way to define the Travolta move is either the right wrist is above the right ear and the left wrist is below the left shoulder OR the left wrist is above the left ear and the right wrist is below the right shoulder.
+
+![then hint](../images/PICaboo/thenBlock.png){:.enlargeImage}
+
 
 <hint markdown="block" title="Check my solution">
 
-Are you sure you are ready to see a solution? 
-
-<hint markdown="block" title="Check my solution">
-
-![procedure checkForTravoltaMove hint](../images/aiDance/checkForTravoltaMove.png){:.enlargeImage}
+![If then else full solution](../images/PICaboo/withelseBlock.png){:.enlargeImage}
 
 </hint>
 
 </hint>
+<br />
 
-</hint>
+## Final Code
 
-Try this on your own but if you get stuck you can click the Hint button.
+When you are done your entire code should look something like this:
 
-## T-Pose Move
+![Final code](../images/PICaboo/whenPIC1GotClassification.png){:.enlargeImage}
 
-<img src="../images/aiDance/TPose.png" height="200">
-
-If you want a good challenge, try to define the T-Pose move where the dancer stretches left and right hands horizontally to form the shape of the letter “T”.
-
-<hint markdown="block" title="Give me a hint">
-
-![Arm stretch](../images/aiDance/armStretch.png){:.enlargeImage}
-
-To ensure that the hands are held <em>horizontally</em> the wrist and shoulder y-coordinates should be very close on both sides.  Also, a stretched arm means that the distance between the right wrist and the right shoulder should be very close to the sum of the distances from the right wrist to the right elbow to the right shoulder. And similarly on the left side.  
-
-<hint markdown="block" title="Check my solution">
-
-Are you sure you are ready to see a solution? 
-
-<hint markdown="block" title="Check my solution">
-
-![procedure checkForTPoseMove hint](../images/aiDance/checkForTPoseMove.png){:.enlargeImage}
-
-Note: If you know some Trigonometry, it may be possible to simplify some of this code by utilizing angular relationships of the key points.
-
-</hint>
-
-</hint>
-
-</hint>
-
-Try this on your own but if you get stuck you can click the Hint button.
 
 ## Test your App
 Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.   As mentioned before, for best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.
