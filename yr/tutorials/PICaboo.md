@@ -20,6 +20,7 @@ If you haven’t set up your computer and mobile device for App Inventor, go to 
 
 ## Introduction
 In this tutorial, you will make a Peekaboo game app with your very own Personal Image Classification (PIC) model where the baby in the app will smile if your face is shown and will cry if your face is hidden.
+
 ![PICaboo show-hide face](../images/PICaboo/ShowHideFace.png){:.enlargeImage}
 
 
@@ -29,34 +30,58 @@ Very young babies do not quite understand yet how to make sense of the visual wo
 </hint>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the PersonalImageClassifier (PIC) Extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on this<a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank"> LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the PersonalImageClassifier extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> (PIC) extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on this<a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank"> LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the PersonalImageClassifier extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
 
 ## PICaboo Part 1: Training the model
-First you will need to train and image classification model on the App Inventor Personal Image Classifier page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.
+First you will need to train an image classification model on the App Inventor Personal Image Classifier page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.  At the end of this process do not forget to download the model.mdl file to your computer which you will upload to App Inventor in the next part of the tutorial.
+
 ![PIC](../images/PICaboo/TrainingML.png){:.enlargeImage}
 
 
-## Graphical User Interface (GUI)
+## PICaboo Part 2: Designing and Coding the App
 
-A possible GUI has been created for you in the starter file.  Please change the properties of the components as you wish to get the look and feel you want.  However, please do not rename the components, as this tutorial will refer to the given names in the instructions.
+A possible Graphical User Interface (GUI) has been created for you in the starter file.  Change the properties of the components as you wish to get the look and feel you want.  However, please do not rename the components, as this tutorial will refer to the given names in the instructions.
 
-![GUI of AI Dance](../images/aiDance/GUICorrespondence.png){:.enlargeImage}
-
-The <strong>SwapCameraButton</strong> toggles the camera view from Front to Back as the user wishes.  <strong>CanvasLiveButton</strong>  toggles the Canvas background from a solid black color to a live camera view.  <strong>ResetButton</strong> sets the Dance Score back to zero.  
-
-The <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component is where the camera view will be cast and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component is where the skeletal model of the body will be created either against a black background or a live camera view background.  The dimensions of the <span class="icon" alt="webviewer"></span><strong>WebViewer</strong> component and the <span class="icon" alt="canvas"></span><strong>Canvas</strong> component have to match in order to facilitate body tracking.  It is recommended that you do <em>not</em> change the default values given in this starter file.
-
-Note that at the very bottom of the Components panel is the <span class="icon" alt="posenetextension"></span><strong>PosenetExtension</strong> which is the AI technology that we will be using to track key points of a body and which will help you to build a skeletal version of the body.
+![GUI of PICaboo](../images/PICaboo/GUICorrespondence.png){:.enlargeImage}
 
 
 
-## PoseNet key points
+## Uploading Your Trained Model
 
-The key points of the body tracked by PoseNet are: eyes, ears, nose, shoulders, elbows, wrists, hips, knees and ankles.  
+Look at the non-visible component <span class="icon" alt="pic"></span><strong>PersonalImageClassifier1</strong>. This is the component that will classify your poses based on your trained model.
 
-![Posenet key points of the body ](../images/aiDance/keypoints.png){:.enlargeImage}
+Upload the model you trained in Part 1 by clicking on the “Model” property and selecting the model you made and downloaded in Part 1 of the tutorial.
 
-Whenever PoseNet is able to track a body key point, it will return a list of two elements representing the x and y-coordinates of the key point.  When PoseNet is unable to track a body key point, it will return an empty list.
+![Upload Model](../images/PICaboo/UploadModel.png){:.enlargeImage}
+
+
+## Sequence of Events
+
+Follow the sequence of events in the running of the PICaboo. Fill in the missing blocks with the letter corresponding to the correct event.
+
+![Sequence of Events](../images/PICaboo/sequenceOfEvents.png){:.enlargeImage}
+
+<hint markdown="block" title="Check my solution">
+    Left to right boxes: A, B, C.
+</hint>
+<br />
+
+## Review Given Code
+Now switch to the Blocks Editor to start coding the behaviour for the app.  First look at the some of the code blocks that are already included. These blocks set up the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> when the app first starts.
+
+In case the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> returns an error, the <span class="control">when PersonalImageClassifier1.Error</span> event block displays the error in the <strong>StatusLabel</strong>.
+
+![PIC error](../images/PICaboo/whenPIC1Error.png){:.enlargeImage}
+
+The <span class="control">when PersonalImageClassifer.ClassifierReady</span> block is called when the classifier is ready to start classifying images. <strong>StartButton</strong> and <strong>ToggleCameraButton</strong> are enabled. “Ready” is displayed in the <strong>StatusLabel</strong>. <strong>BarLabel1</strong> and <strong>BarLabel2</strong> are assigned the names of the models labels (Me and NotMe). These are the classes you trained in the model.
+
+![PIC ready](../images/PICaboo/whenPIC1ClassifierReady.png){:.enlargeImage}
+
+When <strong>ToggleCameraButton</strong> is pressed, the direction the camera is facing is switched from Front to Back and vice versa. 
+
+![Toggle Camera](../images/PICaboo/whenToggleCameraButtonClick.png){:.enlargeImage}
+
+
 
 ## Preliminary GUI code
 You are also given some preliminary code for the GUI.  Study these to make sure that you have a general idea what they do.
