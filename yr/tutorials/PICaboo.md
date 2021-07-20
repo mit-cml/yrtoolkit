@@ -31,11 +31,11 @@ Very young babies do not quite understand yet how to make sense of the visual wo
 </hint>
 
 <br />
-**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> (PIC) extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on this<a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank"> LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the PersonalImageClassifier extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
+**Important**: Please note that for this project you cannot use the Emulator to test your app as the Emulator cannot run MIT App Inventor extensions such as the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> (PIC) extension.  To make sure that your mobile device has the needed hardware capability for PIC, use AI2 Companion on this<a href="../aiaFiles/PICaboo/LookTest.aia" target="_blank"> LookTest.aia </a>test file.  If the status at the top reads "Status: Ready!" then the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong> extension will work. If not, you won't be able to run apps made with this extension. If it works, you can try classifying some objects by pointing the device at an object and pressing the Classify button.
 
 ## PICaboo Part 1: Training the model
 
-First you will need to train an image classification model on the App Inventor Personal Image Classifier page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.  At the end of this process do not forget to download the model.mdl file to your computer which you will upload to App Inventor in the next part of the tutorial.
+First you will need to train an image classification model on the App Inventor <a href="https://classifier.appinventor.mit.edu/" target="_blank">Personal Image Classifier</a> page.  To do so follow the instructions on the <a href="../images/PICaboo/PICaboo_Part1.pdf" target="_blank">PICaboo Part 1 pdf document</a>.  At the end of this process do not forget to export the model.mdl file to your computer which you will upload to App Inventor in the next part of the tutorial.
 
 ![PIC](../images/PICaboo/TrainingML.png){:.enlargeImage}
 
@@ -76,7 +76,7 @@ In case the <span class="icon" alt="pic"></span><strong>PersonalImageClassifier<
 
 ![PIC error](../images/PICaboo/whenPIC1Error.png){:.enlargeImage}
 
-The <span class="control">when PersonalImageClassifer.ClassifierReady</span> block is called when the classifier is ready to start classifying images. <strong>StartButton</strong> and <strong>ToggleCameraButton</strong> are enabled. “Ready” is displayed in the <strong>StatusLabel</strong>. <strong>BarLabel1</strong> and <strong>BarLabel2</strong> are assigned the names of the models labels (Me and NotMe). These are the classes you trained in the model.
+The <span class="control">when PersonalImageClassifer.ClassifierReady</span> block is called when the classifier is ready to start classifying images. <strong>StartButton</strong> and <strong>ToggleCameraButton</strong> are enabled. “Ready” is displayed in the <strong>StatusLabel</strong>. <strong>BarLabel1</strong> and <strong>BarLabel2</strong> are assigned the names of the models labels ("Me" and "NotMe"). These are the classes you trained in the model.
 
 ![PIC ready](../images/PICaboo/whenPIC1ClassifierReady.png){:.enlargeImage}
 
@@ -122,10 +122,10 @@ In order to find out the value of a particular key from the <span class="variabl
 ## Got Classification
 
 The <span class="control">when PersonalImageClassifier1.GotClassification</span> event handler block starts by initializing two local variables. Local variables can only be used inside the code block where they are defined:
-<ul>
-    <li><span class="variables">MeConfidence</span>: is the confidence level for the “Me” class (showing face).</li>
-    <li><span class="variables">NotMeConfidence</span>: is the confidence level for the “NotMe” class (hiding face).</li>
-</ul>
+
+* <span class="variables">MeConfidence</span>: is the confidence level for the “Me” class (showing face).
+* <span class="variables">NotMeConfidence</span>: is the confidence level for the “NotMe” class (hiding face).
+
 
 ![Local Variables](../images/PICaboo/whenPIC1GotClassification_empty2.png){:.enlargeImage}
 
@@ -138,7 +138,7 @@ Initialize the variables <span class="variables">MeConfidence</span> and <span c
 <hint markdown="block" title="Give me a hint">
 
 Initialize the local variables as shown.  If you mouse over the parameter result, you will be able to get the needed block.
-Be sure to replace the default not found Text block with the “0” from Math blocks.  This makes sure that a confidence level of 0% is assigned in case the classifier has not yet returned a result.
+Be sure to replace the default "not found" Text block with the “0” from Math blocks.  This makes sure that a confidence level of 0% is assigned in case the classifier has not yet returned a result.
 
 ![Initialization hint](../images/PICaboo/initializations.png){:.enlargeImage}
 
@@ -155,12 +155,12 @@ Be sure to replace the default not found Text block with the “0” from Math b
 
 When the classifier gets its classification…
 
-<ul>
-    <li>Set the <strong>Percentage1</strong> text and <strong>BarGraph1</strong> width % correctly.</li>
-    <li>Set the <strong>Percentage2</strong> text and <strong>BarGraph2</strong> width % correctly.</li>
-    <li>If the classification with higher confidence is “Me” (i.e. the machine is highly confident that it is seeing your face) then show the happy baby image and hide the sad baby image and make the Screen1 background color in light green.</li>
-    <li>Otherwise, show the sad baby image and hide the happy baby image and make the Screen1 background color in light pink.</li>
-</ul>
+
+* Set the <strong>Percentage1</strong> text and <strong>BarGraph1</strong> width % correctly.
+* Set the <strong>Percentage2</strong> text and <strong>BarGraph2</strong> width % correctly.
+* If the classification with higher confidence is “Me” (i.e. the machine is highly confident that it is seeing your face) then show the happy baby image and hide the sad baby image and make the Screen1 background color in light green.
+* Otherwise, show the sad baby image and hide the happy baby image and make the Screen1 background color in light pink.
+
 
 ![Show Hide face](../images/PICaboo/ShowHideFace.png){:.enlargeImage}
 
@@ -209,18 +209,17 @@ Now build the <span class="control">if-then-else</span> conditional block set wh
 </hint>
 <br />
 
-## Displaying Happy and Sad Baby
+## Displaying Happy Baby and Sad Baby
 
-Now you will first build the code blocks for the then part of the <span class="control">if-then-else</span> block set.   You must
+Now you will first build the code blocks for the <strong>then</strong> part of the <span class="control">if-then-else</span> block set.   You must
 
-<ul>
-    <li>Set the Screen1 background color to light green.  You are given a light green colour block in the template which you can use.</li>
-    <li>Show happy baby image</li>
-    <li>Hide sad baby image</li>
+
+* Set the Screen1 background color to light green.  You are given a light green color block in the template which you can use.
+* Show happy baby image.
+* Hide sad baby image.
     
-</ul>
 
-Now similarly build code blocks for the else part of the  <span class="control">if-then-else</span> block and snap these code blocks to where they belong. You are given a light pink color block in the template which you can use.
+Now similarly build code blocks for the <strong>else</strong> part of the  <span class="control">if-then-else</span> block and snap these code blocks to where they belong. You are given a light pink color block in the template which you can use.
 
 <hint markdown="block" title="Give me a hint">
 
@@ -245,21 +244,33 @@ When you are done your entire code should look something like this:
 
 
 ## Test your App
-Check your app thoroughly that if you (or someone else you are tracking with PoseNet) do any one of the dance moves, the move is correctly detected and the Dance Score goes up.   As mentioned before, for best results with PoseNet, make sure that the body is well lit and is in front of a background of a solid single color.  Baggy clothes may also interfere with the tracking of the body key points.
 
-Test your app on some YouTube dance videos, <!--like this <a href="https://www.youtube.com/watch?v=xfDVrv54Lfc" target="_blank">Latin Dance video</a> and this <a href="https://youtu.be/9WFJoXGEItc" target="_blank">Cardio Dance Workout video</a>--> where a solo dancer is against a clear background, to see how your app is able to track the dancer.
+![AI Companion](../images/PICaboo/AICompanion.png){:.enlargeImage}
 
-Congratulations you have now built your first AI based app that can track the movements of a person and recognize some basic dance moves.
+It is time to test the Peekaboo game out! Connect to the AI Companion, and see if you can play Peekaboo with the baby? Remember to crack your finger open slightly when covering your face so that you can see what is going on. Does the baby smile when the baby can see your face and cry when you hide your face? What happens to the confidence levels?  What happens when you wave your hand up and down in front of your face repeatedly showing and hiding your face? What happens then to the confidence levels?
+
+Congratulations, you are done!  You have created an AI app that uses Machine Learning to classify images and intelligently respond to your actions.
 
 
 # Expand Your App
-* Currently if you maintain a certain dance move, the Dance Score keeps going up.  Add some smart code to make sure that a given dance move is rewarded only once until a new dance move is observed.
 
-* Create a penalty system that subtracts from the Dance Score for poorly executed basic dance moves (for example, if the dancer makes almost a T-Pose move but not quite due to non-horizontal stretching of the arms, forming a pose like the letter Y instead of the letter T, etc.)
- 
-* Imagine a Yoga version of this app where different Yoga postures are detected and correct postures are rewarded.
+Here are some ideas about how to expand your project. Explore them or come up with your own.
 
-* What other more hip dance moves can you think of that can be described and quantified in terms of the key points of the body?  Implement these ideas in your app.
+* Retrain your model so that in addition to recognizing you showing your face (“Me”) and you hiding your face (“NotMe”), it recognizes a third facial posture, such as perhaps you making a silly face (“Silly”).  Make sure this last class is visually distinct from the previous two classes (use flashy colors etc.)
+    * Save a copy of your original code for the PICaboo app and create a copy to work further on. 
+    * Upload the new and expanded model and change the app code so that there are now three bar graphs for the confidence levels of three labels and three images of the baby image to respond to each case (happy baby, sad baby and laughing baby for when you make the “silly” face).
+![Silly Face](../images/PICaboo/SillyFace.png){:.enlargeImage}
+
+* A really ambitious class project is to make an app for a classroom that automatically takes attendance using Personal Image Classifier (PIC).  
+    * In the PIC trainer, create a label for each student in the classroom (“Eva”, “Philip”, "Andrea" etc.) and for each label (i.e. student) take 25 images of that student from various angles.  
+    ![Attendance PIC](../images/PICaboo/AttendancePIC.png){:.enlargeImage}
+    * Train the classifier on the images.  This may take a while as there will be so many images to process.  
+    * Then test your model to see if it correctly identifies randomly selected students.  
+    * If the model is accurate and you build a good app, then all the teacher would have to do, at the start of the class, is to have each student pass by a mobile device running this app and when a student is recognized with a high level of confidence, the student is marked as present.  
+    * It may be wise to make a simplified version of this app first for a small class of size, say, 5 so you can understand how the code would change.  
+    * In the process you may discover some inherent limitations of the PIC program.  Note these down and let the MIT team know.
+
+
 
 * What other amazing ideas do you have?
 
