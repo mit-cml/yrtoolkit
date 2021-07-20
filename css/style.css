@@ -123,6 +123,14 @@ a.ui-button:active,
 	padding:1px;
 }
 
+.dictionary {
+	background-color: #2d1799;
+	border: 1px dashed #000;
+	color: white;
+	padding:1px;
+}
+
+
 /* Enlarge Image feature */
 
 .tutorialDiv:hover .enlargeImage {
