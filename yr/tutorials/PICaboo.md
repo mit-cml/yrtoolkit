@@ -53,7 +53,7 @@ An example of a Graphical User Interface (GUI) is in the starter file.  (Change 
 
 ## Uploading Your Trained Model
 
-Look at the non-visible component <span class="icon" alt="pic"></span><strong>PersonalImageClassifier</strong>. This component will classify your poses based on your trained model.
+Click on the non-visible component <span class="icon" alt="pic"></span><strong>PersonalImageClassifier1</strong>. This component will classify your poses based on your trained model.
 
 Upload the model you trained in Part 1 by clicking on the “Model” property and selecting the model on your computer's hard drive.
 
