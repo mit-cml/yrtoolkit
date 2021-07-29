@@ -7,7 +7,9 @@ yrmedia: false
 
 # Challenge
 
-How can a machine learn about the world? In some ways computers are like very young babies, always soaking up new examples and trying to put what they sense into different buckets — dog, cat, familiar face, stranger. In this two-part tutorial, you will learn about a type of artificial intelligence (AI) called machine learning (ML), exploring an example called “image classification” — a way for computers to put what they see into various buckets. You will create an app that sees a human gesture that you make and intelligently responds!
+How can a machine learn about the world? In some ways computers are like very young babies, always soaking up new examples and trying to put what they sense into different buckets — dog, cat, familiar face, stranger. 
+
+In this two-part tutorial, you will learn about a type of artificial intelligence (AI) called machine learning (ML), exploring an example called “image classification” — a way for computers to put what they see into various buckets. You will create an app that sees a human gesture that you make and intelligently responds!
 
 If you haven’t set up your computer and mobile device for App Inventor, go to the “Setup Your Computer” tab below. Otherwise, go directly to the “PICaboo” tab to start the tutorial.
 
@@ -19,7 +21,7 @@ If you haven’t set up your computer and mobile device for App Inventor, go to 
 
 ## Introduction
 
-In this tutorial, you make a "Peekaboo" game with your very own Personal Image Classification (PIC) model. A baby shown in the app smiles when you show your face and cries when you hide your face.
+In this tutorial, you will make a "Peekaboo" game with your very own Personal Image Classification (PIC) model. A baby shown in the app smiles when you show your face and cries when you hide your face.
 
 ![PICaboo show-hide face](../images/PICaboo/ShowHideFace.png){:.enlargeImage}
 
@@ -27,7 +29,7 @@ In this tutorial, you make a "Peekaboo" game with your very own Personal Image C
 <hint markdown="block" title="What is the Game of Peekaboo?">
 Very young babies do not quite understand how to make sense of the visual world around them. One challenge? They lack an understanding that objects continue to exist even when not visible. This concept is described by the famous child psychologist Jean Piaget as “object permanence.” Parents often play a game with their very young babies in the US, called Peekaboo, where the parent hides her face (with her hands or a pillow etc.) and “disappears” to the baby's surprise.  Then, she suddenly shows her face, saying, “Peekaboo, I see you!” –much to the delight of the baby, who is astonished to see the parent suddenly appear out of “nowhere.”  Here is a <a href="https://www.youtube.com/watch?v=Z37Ru-GRtks" target="_blank"> video</a> you can watch about this game. 
 
-A machine <em>learns</em> to make sense of visual data somewhat like a baby learns visual cues. Both babies and computers, need many examples (large sets of training data).  Also, they need the categories for the examples to be easily distinguishable (visually distinct data classes).
+A machine <em>learns</em> to make sense of visual data somewhat like a baby learns visual cues. Both babies and computers need many examples (large sets of training data).  Also, they need the categories for the examples to be easily distinguishable (visually distinct data classes).
 
 
 </hint>
@@ -167,7 +169,7 @@ When the classifier gets its classification, you can:
 
 ## Setting Percentages and Bar Graphs
 
-First, set the <strong>Percentage1</strong> text to the confidence level of the “Me” class.  This value is a decimal between 0 and 1, so you will need to convert it to a percentage (by multiplying with 100) and add the “%” symbol.  For example if the confidence level was 0.75, this proper percentage would be 75 %.
+First, set the <strong>Percentage1</strong> text to the confidence level of the “Me” class.  This value is a decimal between 0 and 1, so you will need to convert it to a percentage (multiplying by 100) and add the “%” symbol.  For example if the confidence level was 0.75, this proper percentage would be 75 %.
 
 Secondly, note that <strong> BarGraph1</strong> is a colored label showing the confidence level of the “Me” class by its width.  Set its <var>WidthPercent</var> accordingly.  You can duplicate part of earlier code you wrote.
 
