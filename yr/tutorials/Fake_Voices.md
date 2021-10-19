@@ -10,16 +10,20 @@ yrmedia: false
 <p style="font-size: 150%;
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Fake Voice!</p>
 
-“Deepfakes” are videos and sounds created by artificial intelligence. Powerful computers make deepfakes by learning from recordings of human beings, then creating new, fake versions that match humans almost exactly.
+“Deepfakes” are videos and sounds created by artificial intelligence. Powerful computers make deepfakes by learning from recordings of human beings, then creating new, fake versions that match the humans almost exactly.
 
-![An video image of Frederick Douglass's face making various gestures.](../images/Fake_Voices/douglas_deepfake.gif){:.enlargeImage}
+For example, the sound of Jay-Z's voice was created by a computer model in this video:
 
+<video width="90%" controls>
+  <source src="../images/Fake_Voices/2B.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 <p style="padding-top: 0; padding-bottom: 5; text-align: center;
-  font-style: italic;">An app called MyHeritage makes lifelike recreations of anyone. A fake of the historical black hero Fredrick Douglas is shown here.</p>
+  font-style: italic;">This <a href="https://www.youtube.com/watch?v=m7u-y9oqUSw" target="_blank">deepfake video</a> makes it sound like Jay-Z is reading Shakespeare's "To be, or not to be" speech.</p>
 
 Sometimes the voices in deepfakes sound a little fake — other times, it is hard to tell. Can anyone trust what they hear ever again?
 
-Create your own strange or spooky voices by coding the Fake Voices app using the steps below. These voices are not true deepfakes because they do not use artificial intelligence, but they are still pretty good!
+Create your own strange or spooky voices by coding the Fake Voices app below. These voices are not true deepfakes because they do not use artificial intelligence, but they are still pretty good!
 
 The tutorial already has some code to get you started. When you are done, try modifying the design and function of your app to perform some useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
 
@@ -27,7 +31,7 @@ If you have never used App Inventor before, check out “Set Up Your Computer”
 
 This tutorial was inspired by the YR Media stories <a href="https://interactive.yr.media/double-take-four-deepfake-scenarios/" target="_blank">Four Deepfake Scenarios</a> and the <a href="https://yr.media/podcasts/fake-ish/" target="_blank"> Fake-Ish Podcast: Getting Real about Imposter Syndrome and Other Ways We Feel Fake</a>.
 
-# Set up Your Computer
+# Set Up Your Computer
 
 <div class="setup noemulator" id="connect_app"></div>
 
@@ -57,7 +61,7 @@ Toggle between these screens using the buttons in the top right corner.
 
 ## Look at the Designer
 
-In the designer view, the <strong>Palette</strong> is where you find all the components. Drag and drop any component from <strong>Palette</strong> into the viewer. (But for this tutorial, stick with the components in the starter file. You will need them later.)
+In the designer view, <strong>Palette</strong> is where you find all the components. Drag and drop any component from <strong>Palette</strong> into the viewer. (But for this tutorial, stick with the components in the starter file. You will need them later.)
 
 ![The Palette is a window pane all the way to the left.](../images/Fake_Voices/palette.jpg){:.enlargeImage}
 
@@ -99,7 +103,7 @@ See what the finished Fake Voices app will look like, then follow the steps to m
 
 In the <strong>Designer</strong> view, look at the components that are already in the starter template. Don’t forget to look at the non-visible components under the phone!
 
-Try to figure out what each component does. (But keep the component names as they are. You will need to code with them later!)
+Try to figure out what each component does. (But keep the component names the same. You will need to code with them later!)
 
 ![An image of the App Inventor Designer interface for the Fake Voices app.](../images/Fake_Voices/unmarked_designer.jpg){:.enlargeImage}
 
@@ -115,7 +119,9 @@ For this app, start by adding a button and a few slider bars.
 
 <p style="padding-bottom: 7px"></p>
 
-<span style="font-size: 110%; padding-top: 50px; font-weight: bold; color:#1c2f8d;">Name the button.</span> Make sure the button is selected in <strong>Components</strong> and change the button name to “HearTheWordsButton”:
+<span style="font-size: 110%; padding-top: 50px; font-weight: bold; color:#1c2f8d;">Rename the button.</span> Renaming components is important so you can to identify each component during the coding phase. For instance, the name "Button1" does not tell you what it is, so you should name it something you will remember later.  
+
+Make sure the button is selected in <strong>Components</strong> and change the button name to “HearTheWordsButton”:
 
 ![The animation shows how to change the button name.](../images/Fake_Voices/Change_button_name.gif){:.enlargeImage}
 
@@ -147,7 +153,7 @@ For this app, start by adding a button and a few slider bars.
 
 <p style="padding-bottom: 7px"></p>
 
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Change the slider properties.</span> Make the PitchSlider slider stretches across the screen by changing its width to “Fill Parent.” To make the slider work with the app's other features, change its <i>MaxValue</i>, <i>MinValue</i>, and <i>ThumbPosition</i> as shown.
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Change the slider properties.</span> Make the PitchSlider slider stretch across the screen by changing its width to “Fill Parent.” To make the slider work with the app's other features, change its <i>MaxValue</i>, <i>MinValue</i>, and <i>ThumbPosition</i> as shown.
 
 ![The animation shows how to change the pitch slider properties.](../images/Fake_Voices/properties_for_the_pitch_slider.jpg){:.enlargeImage}
 
@@ -168,30 +174,32 @@ Click on the "Blocks" button in the upper right corner to see where to code your
 
 <p style="padding-bottom: 7px"></p>
 
-Some code is already in the blocks editor to get you started. First, look over each code block so you understand what it does.
+Some code is already in the <strong>Blocks</strong> editor to get you started. First, look over the code to understand what it does.
 
 ![An image of the starter code already in the app.](../images/Fake_Voices/blocks_view_no_highlight.jpg){:.enlargeImage}
 
 <p style="padding-bottom: 7px"></p>
 
-The first block shows what happens when you click the “Say Something!” button in the app. The button starts the purple block inside — <span class="procedures">call SpeechRecognizer1.GetText</span>. This code turns spoken words into text.
+The main blocks are called "event handlers" because they fire when something important happens in the app. The first event handler shows what happens when you click the “Say Something!” button in the app. The button starts the purple block inside — <span class="procedures">call SpeechRecognizer1.GetText</span>. This code turns spoken words into text:
 
 ![An image of the event handler for the "Say Something" button.](../images/Fake_Voices/something_button_handler.jpg){:.enlargeImage}
 
 The button <i>calls</i> the SpeechRecognizer code in purple. To <i>call</i> something means to start some useful code that has a special purpose. It’s like calling your sister from across town to come fix your bike tire. (Because she’s really good with bikes!)
 
-The second event block — <span class="control">when SpeechRecognizer1.AfterGettingText</span> — waits for SpeechRecognizer to be done listening and “calls” more useful code.
+<p style="padding-bottom: 7px"></p>
+
+The second event handler calls <span class="setters">set SpeechTextBox.Text</span> to make the app put all the text into the text box in your app:
 
 ![An image of the SpeechRecognizer event handler.](../images/Fake_Voices/speechRecognizer_handler.jpg){:.enlargeImage}
 
-In this case, it puts what you say into a text block called <span class="variables">get result</span>. The <span class="variables">get result</span> connects to the <span class="setters">set SpeechTextBox.Text</span> block to make the app dump all the text into the big yellow text block on the screen. (You can always find result by hovering over the word “result” in orange on the block.)
+ In this case, SpeechRecogizer stores what you say in <span class="variables">get result</span> so that you can put it into the text box. (In the future, you can always find <span class="variables">get result</span> by hovering over the word “result” in orange on this block.)
 
 <p style="padding-bottom: 7px"></p>
 
 ## Test the Speech Recognition
-The SpeechRecognizer code turns what you say into written text. (The new buttons and sliders you made near the bottom will not work until you add more code later.)
+The SpeechRecognizer code turns what you say into written text. (The new button and sliders you made near the bottom will not work until you add more code later.)
 
-Connect your app to your phone using App Inventor Companion.
+Connect the app to your phone using App Inventor Companion.
 
 ![An image showing how to connect to the Companion app.](../images/Fake_Voices/how_to_use_companion.jpg){:.enlargeImage}
 
@@ -203,18 +211,18 @@ Try to fool the SpeechRecognizer software with unusual words or phrases. Does it
 
 ## Make the App Talk
 
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Add a new block.</span> This time you will use a different event to make the app start speaking. Drag in the button-click event <span class="control">when HearTheWordsButton.click</span>.
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Add a new block.</span> This time, you will use a different event handler to make the app start speaking. Drag in the button-click event handler <span class="control">when HearTheWordsButton.click</span>.
 
 ![An animation showing how to change the button text.](../images/Fake_Voices/when_hear_the_words_button_click.gif){:.enlargeImage}
 
-The <span class="control">when HearTheWordsButton.click</span> block says what happens when you press the “Hear the Words Read Back” button. The button calls whatever code is inside this block.
+The <span class="control">when HearTheWordsButton.click</span> block calls whatever code is inside when you press the button.
 
-In this case, you want the phone to read the contents of the text box out loud. When computers read text aloud, it is called “text to speech” or “speech synthesis.”
+In this case, you want the phone to read the contents of the text box out loud. When computers read text aloud, it is called “text-to-speech” or “speech synthesis.”
 
-<hint markdown="block" title="What Is Text to Speech?">
+<hint markdown="block" title="What Is Text-to-Speech?">
 Computers can speak written words, but it is harder than it seems for machines to speak like humans. Sometimes the emphasis is wrong, or the pauses sound unnatural.
 
-Text-to-speech in this app can be adjusted to reproduce accents. The software can speak English with an American, Irish, Australian, or another accent. The software can also speak Spanish with a Mexican, Castilian, or another accent.
+Text-to-speech in this app can be adjusted to reproduce accents. The software can speak English with an American, Irish, Australian, or another accent. The software can also speak Spanish with a Latin American, Castilian, or another accent.
 
 Text-to-speech in phones is pretty good, but synthetic speech made by artificial intelligence software sounds even better. In many cases, you cannot easily tell that the AI is not a human being!
 </hint>
@@ -251,12 +259,12 @@ Try a second way of entering text in the orange text box: Cut some text from som
 
   <p style="padding-bottom: 7px"></p>
 
-## Mix It up with Sliders
+## Add Some Sliders
 Want to make the computer voice especially creepy? Use the slider buttons to change the pitch and rate of the voice.
 
 Each time the user moves these sliders, the slider bars assign a numerical value for their new position. When the user moves the slider to the left, it assigns a lower number, and to the right, it assigns a higher number.
 
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Set the voice pitch.</span> Add a “setter” block from the TextToSpeech components.
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Set the voice pitch.</span> Add a “setter” block from the TextToSpeech components:
 
 ![An animation showing how to change the button text.](../images/Fake_Voices/pitch_setter_TTS.gif){:.enlargeImage}
 
@@ -278,7 +286,7 @@ Yes, to get the pitch value, drag in the thumb position for the pitch slider.
 
 <p style="padding-bottom: 7px"></p>
 
-Now create another setter for the speech rate. The process is the same as for the pitch, except that now it is the <span class="setters">set TextToSpeech1.SpeechRate</span> setter and the thumb position for the <i>rate</i> slider instead.
+Now create another setter for the speech rate. The process is the same as for the pitch, except that now it is the <span class="setters">set TextToSpeech1.SpeechRate</span> setter and the thumb position for the <i>rate</i> slider.
 
 <hint markdown="block" title="Check My Solution">
 
@@ -292,35 +300,35 @@ Now create another setter for the speech rate. The process is the same as for th
 
 One more time, test your app using App Inventor Companion. This time, make the app read the text in a creepy monster voice or high birdy voice. What are the strangest combinations of low/high pitch and fast/slow rate you can find?
 
-Congratulations, you are done! You have created an app that recognizes speech and speaks the words with custom pitch and rate. Next, you can <strong>Build</strong> the app in App Inventor to use on any Android phone anywhere. Remember, with great power comes great responsibility! Don’t use your new app to scare or freak anyone out!
+Congratulations, you are done! You have created an app that recognizes speech and speaks the words with custom pitch and rate. Next, you can <a href="http://appinventor.mit.edu/explore/ai2/share" target="_blank">Build</a> the app in App Inventor to share with any Android phone anywhere. <span style="font-size: 110%; font-weight: bold; color:#b01418;">Important: with great power comes great responsibility! Don’t use your new app to scare or freak anyone out!</span>
 
 ![An animation showing how to change the button text.](../images/Fake_Voices/frankenstein.jpg){:.enlargeImage}
 <span style=" padding-top: 0; text-align: center;
-  font-style: italic;">Boris Karloff in the movie Frankenstein (1931). © Universal Pictures</span>
+  font-style: italic;">Boris Karloff in the movie Frankenstein. © 1931 Universal Pictures</span>
 
 # Expand Your App
 Computers make fake voices in many different ways. The system inside a phone or tablet is a very basic one called <i>text to speech</i>. Do you think the voice from your app would fake anyone out when reading a long passage? What is missing?
 
-Some artificial intelligence systems — such as Siri, Google Voice, or Alexa — sound much more human. They create <i>synthetic speech</i>. These machine learning models are trained by listening to millions of humans speak. Can they really trick the human ear? You decide.
+Some artificial intelligence systems — such as Siri, Google Voice, or Alexa — sound much more human. They create <i>synthetic speech</i>. These machine-learning models are trained by listening to millions of humans speak. Can they really trick the human ear? You decide.
 
 Try the following experiment:
 
-* In your phone or tablet, copy a few sentences of text from a speech or book, such as the famous passage from Martin Luther King, Jr.’s “I Have a Dream” speech, below.
+* In your phone or tablet, copy a few sentences of text from a speech or book, such as a passage from Martin Luther King, Jr.’s “I Have a Dream” speech, below.
 
 <p style="padding-left: 20%; padding-right: 20%; font-style: italic;">We refuse to believe that the bank of justice is bankrupt. We refuse to believe that there are insufficient funds in the great vaults of opportunity of this nation. So we have come to cash this check, a check that will give us upon demand the riches of freedom and security of justice.</p>
 
-* Paste this passage into the text box in your app and take note of how natural it sounds.
-* Next, paste this passage into artificial intelligence systems, such as:
-  - <b>Google Cloud Assistant</b>. Go down <a href="https://cloud.google.com/text-to-speech/">the page</a> to the section on the left side named “Demo.” Replace the text provided in the box with any text you want. Experiment with the <i>Language</i> and <i>Voice name</i> settings.
-  - <b><a href="https://www.ibm.com/demos/live/tts-demo/self-service/home">IBM Watson Text to Speech</a></b>. Replace the text provided in the box with any text you want. Experiment with the <i>Language</i>, <i>Dialect</i>, and <i>Neutral voice</i> settings.
+* Paste this passage into the text box in your app and take note: Does it sound natural?
+* Next, paste this passage into an artificial intelligence system, such as:
+  - <a href="https://cloud.google.com/text-to-speech/" target="_blank"><b>Google Cloud Assistant</b></a>. Go down the page to the section on the left named “Demo.” Replace the text provided in the box with any text you want. Experiment with the <i>Language</i> and <i>Voice name</i> settings.
+  - <b><a href="https://www.ibm.com/demos/live/tts-demo/self-service/home" target="_blank">IBM Watson Text to Speech</a></b>. Replace the text provided in the box with any text you want. Experiment with the <i>Language</i>, <i>Dialect</i>, and <i>Neutral voice</i> settings.
 
 Which fake voices sound the most human? Which is your favorite?
 
 Here are some ideas for ways to enhance your app. Try them out, or come up with your own ideas!
 
 * Make the user interface simpler to use or more attractive. Let five people try your app and see what they think. Ask people of different ages and different comfort levels with computers. Based on this feedback, what user interface changes do you need to make?
-* Show a numerical value for the pitch and speed levels on the screen.
-* Speak into the app in another language (the app should automatically detect some languages). How could you set TextToSpeech1 to read the text back in a better sounding accent? For instance, how could you use the <span class="setters">set TextToSpeech1.Language</span> block and the language code “ES” to get a better Spanish accent in your app?
+* Show a numerical value for the pitch and rates on the screen.
+* Type or paste into the app text in another language (in some cases, you can even speak to it in Spanish!) How could you set TextToSpeech1 to read the text back in a better accent? For instance, how could you use the <span class="setters">set TextToSpeech1.Language</span> block and the language code “ES” to get a better Spanish accent in your app? (If you are using an Android device, make sure the device's text-to-speech is set to the Google Speech Engine in the settings.)
 * How could you use the app features to create something that performs an important task or service, such as an instant translator for traveling?
 
 What ideas do you have?
