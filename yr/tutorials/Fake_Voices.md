@@ -27,7 +27,7 @@ Create your own strange or spooky voices by coding the Fake Voices app below. Th
 
 The tutorial already has some code to get you started. When you are done, try modifying the design and function of your app to perform some useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
 
-If you have never used App Inventor before, check out “Set Up Your Computer” and “Get to Know App Inventor” below for a quick overview.
+You can use either an iOS or Android phone/tablet to test this app, but a Chomebook will not work as the mobile device because of the way it handles speech recognition. If you have never used App Inventor before, check out “Set Up Your Computer” and “Get to Know App Inventor” below for a quick overview.
 
 This tutorial was inspired by the YR Media stories <a href="https://interactive.yr.media/double-take-four-deepfake-scenarios/" target="_blank">Four Deepfake Scenarios</a> and the <a href="https://yr.media/podcasts/fake-ish/" target="_blank"> Fake-Ish Podcast: Getting Real about Imposter Syndrome and Other Ways We Feel Fake</a>.
 
@@ -139,7 +139,7 @@ Make sure the button is selected in <strong>Components</strong> and change the b
 
 <p style="padding-bottom: 7px"></p>
 
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Change the label text.</span> Select the label, go to <strong>Properties</strong>, and change the label text to “Change the Pitch”. Don’t forget to change the <i>TextColor</i> to white so that people can see your new label!
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Change the label name and text.</span> Select the label and rename it PitchLabel. Then, go to <strong>Properties</strong> and change the label text to “Change the Pitch”. Don’t forget to change the <i>TextColor</i> to white so that people can see your new label!
 
 ![The animation show how to change the label text and turn it white.](../images/Fake_Voices/change_label_text.gif){:.enlargeImage}
 
@@ -192,7 +192,7 @@ The second event handler calls <span class="setters">set SpeechTextBox.Text</spa
 
 ![An image of the SpeechRecognizer event handler.](../images/Fake_Voices/speechRecognizer_handler.jpg){:.enlargeImage}
 
- In this case, SpeechRecogizer stores what you say in <span class="variables">get result</span> so that you can put it into the text box. (In the future, you can always find <span class="variables">get result</span> by hovering over the word “result” in orange on this block.)
+ In this case, SpeechRecogizer stores what you say in the variable <span class="variables">result</span> so that you can put it into the text box. (In the future, you can always find the <span class="variables">get result</span> block by hovering over the word “result” in orange on this block.)
 
 <p style="padding-bottom: 7px"></p>
 
@@ -237,7 +237,7 @@ Text-to-speech in phones is pretty good, but synthetic speech made by artificial
 
 <p style="padding-bottom: 7px"></p>
 
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Link back to the text box.</span> The text-to-speech component still needs to know what to say. To do that, add a link to the text inside the text box. You can find that here:
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Get the text.</span> The text-to-speech component still needs to know what to say. To do that, get the text inside the text box. You can find that here:
 
 ![An animation showing how to change the button text.](../images/Fake_Voices/link_to_text_box_text.gif){:.enlargeImage}
 
@@ -259,8 +259,8 @@ Try a second way of entering text in the orange text box: Cut some text from som
 
   <p style="padding-bottom: 7px"></p>
 
-## Add Some Sliders
-Want to make the computer voice especially creepy? Use the slider buttons to change the pitch and rate of the voice.
+## Use Your Sliders
+Want to make the computer voice especially creepy? Use the slider buttons in the coding to change the pitch and rate of the voice.
 
 Each time the user moves these sliders, the slider bars assign a numerical value for their new position. When the user moves the slider to the left, it assigns a lower number, and to the right, it assigns a higher number.
 
@@ -318,8 +318,8 @@ Try the following experiment:
 <p style="padding-left: 20%; padding-right: 20%; font-style: italic;">We refuse to believe that the bank of justice is bankrupt. We refuse to believe that there are insufficient funds in the great vaults of opportunity of this nation. So we have come to cash this check, a check that will give us upon demand the riches of freedom and security of justice.</p>
 
 * Paste this passage into the text box in your app and take note: Does it sound natural?
-* Next, paste this passage into an artificial intelligence system, such as:
-  - <a href="https://cloud.google.com/text-to-speech/" target="_blank"><b>Google Cloud Assistant</b></a>. Go down the page to the section on the left named “Demo.” Replace the text provided in the box with any text you want. Experiment with the <i>Language</i> and <i>Voice name</i> settings.
+* Next, paste this passage into one of the following artificial intelligence systems (both are free):
+  - <a href="https://cloud.google.com/text-to-speech/#section-2" target="_blank"><b>Google Cloud Assistant</b></a>. Go down the page to the section on the left named “Demo.” Replace the text provided in the box with any text you want. Experiment with the <i>Language</i> and <i>Voice name</i> settings.
   - <b><a href="https://www.ibm.com/demos/live/tts-demo/self-service/home" target="_blank">IBM Watson Text to Speech</a></b>. Replace the text provided in the box with any text you want. Experiment with the <i>Language</i>, <i>Dialect</i>, and <i>Neutral voice</i> settings.
 
 Which fake voices sound the most human? Which is your favorite?
@@ -328,7 +328,7 @@ Here are some ideas for ways to enhance your app. Try them out, or come up with 
 
 * Make the user interface simpler to use or more attractive. Let five people try your app and see what they think. Ask people of different ages and different comfort levels with computers. Based on this feedback, what user interface changes do you need to make?
 * Show a numerical value for the pitch and rates on the screen.
-* Type or paste into the app text in another language (in some cases, you can even speak to it in Spanish!) How could you set TextToSpeech1 to read the text back in a better accent? For instance, how could you use the <span class="setters">set TextToSpeech1.Language</span> block and the language code “ES” to get a better Spanish accent in your app? (If you are using an Android device, make sure the device's text-to-speech is set to the Google Speech Engine in the settings.)
+* Type or paste into the app text in another language (in some cases, you can even speak to it in Spanish!) How could you set TextToSpeech1 to read the text back in a better accent? For instance, how could you use the <span class="setters">set TextToSpeech1.Language</span> block and the language code “ES” to get a better Spanish accent in your app? (If you are using an Android device, make sure the device's text-to-speech is set to the Google Speech Engine in the settings.) How could you allow the user to choose accents from the app's interface?
 * How could you use the app features to create something that performs an important task or service, such as an instant translator for traveling?
 
 What ideas do you have?
