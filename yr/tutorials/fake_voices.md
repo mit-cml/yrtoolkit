@@ -69,7 +69,7 @@ In the designer view, <strong>Palette</strong> is where you find all the compone
 
 <p style="padding-bottom: 7px"></p>
 
-<strong>Components</strong> shows all the components you will use in the app. You can rename or delete them here too. (But, again, keep the components as the same for now!)
+<strong>Components</strong> shows all the components you will use in the app. You can rename or delete them here too. (But, again, keep the components the same for now!)
 
 ![Components highlights a window to the right of viewer.](../images/Fake_Voices/components.jpg){:.enlargeImage}
 
@@ -112,7 +112,7 @@ For this app, start by adding a button and a few slider bars.
 
 ![The animation shows how to add a button to the interface.](../images/Fake_Voices/Add_a_button.gif){:.enlargeImage}
 
-You just added a component to the app, but it is not connected to anything until you code later on. (It's like the doorbell at your uncle's house: there might be a button on the front door, but nothing happens when you push it.)
+You just added a component to the app, but it is not connected to anything until you code later on. (It's like the doorbell at your uncle's house: there might be a button on the front door, but nothing happens when you push it because it's usually broken.)
 
 <p style="padding-bottom: 7px"></p>
 
@@ -140,7 +140,7 @@ Make sure the button is selected in <strong>Components</strong> and change the b
 
 <span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Change the label name and text.</span> Select the label and rename it "PitchLabel". Then, go to <strong>Properties</strong> and change the label text to “Change the Pitch”. Don’t forget to change the <i>TextColor</i> to white so that people can see your new label!
 
-![The animation show how to change the label text and turn it white.](../images/Fake_Voices/change_label_text.gif){:.enlargeImage}
+![The animation shows how to change the label text and turn it white.](../images/Fake_Voices/change_label_text.gif){:.enlargeImage}
 
 <p style="padding-bottom: 7px"></p>
 
@@ -157,9 +157,9 @@ Make sure the button is selected in <strong>Components</strong> and change the b
 <p style="padding-bottom: 7px"></p>
 
 ## Add Another Slider
-<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Drag in another label and slider to change the rate.</span> Rename the label to "RateLabel" as shown below. Change the name of the slider to “RateSlider”. Change the text for this label to “Change the Rate”. Then, change its properties as shown in the second image, below.
+<span style="font-size: 110%; font-weight: bold; color:#1c2f8d;">Drag in a label and slider to change the rate.</span> Rename the label to "RateLabel" as shown below. Change the text for this label to “Change the Rate”. Then, change the label properties. Then, change the name of the slider to “RateSlider” and change its properties as shown in the second image, below.
 
-(Note: Don’t worry about changing the appearance of these components for now. You can tweak the design once you test the app!
+(Note: Don’t worry about changing the appearance of these components for now. You can tweak the design once you test the app!)
 
 ![The image shows how to add another slider and name it rate slider.](../images/Fake_Voices/rate_slider_label.jpg){:.enlargeImage}
 ![The image shows how to change the rate slider properties.](../images/Fake_Voices/properties_for_the_rate_slider.jpg){:.enlargeImage}
@@ -301,7 +301,7 @@ Congratulations, you are done! You have created an app that recognizes speech an
   font-style: italic; font-size: 80%">Boris Karloff in the movie Frankenstein. © 1931 Universal Pictures</span>
 
 # Expand Your App
-Computers make fake voices in many different ways. The system inside a phone or tablet is a very basic one called <i>text to speech</i>. Do you think the voice from your app would fake anyone out when reading a long passage? What is missing?
+Computers make fake voices in many different ways. The system inside a phone or tablet is very basic, called <i>text to speech</i>. Do you think the voice from your app would fake anyone out when reading a long passage? What is missing?
 
 Some artificial intelligence systems — such as Siri, Google Voice, or Alexa — sound much more human. They create <i>synthetic speech</i>. These machine-learning models are trained by listening to millions of humans speak. Can they really trick the human ear? You decide.
 
@@ -314,7 +314,7 @@ Try the following experiment:
 * Paste this passage into the text box in your app and take note: Does it sound natural?
 * Next, paste this passage into one of the following artificial intelligence systems (both are free):
   - <a href="https://cloud.google.com/text-to-speech/#section-2" target="_blank"><b>Google Cloud Assistant</b></a>. Go down the page to the section on the left named “Demo.” Replace the text provided in the box with any text you want. Experiment with the <i>Language</i> and <i>Voice name</i> settings.
-  - <b><a href="https://www.ibm.com/demos/live/tts-demo/self-service/home" target="_blank">IBM Watson Text to Speech</a></b>. Replace the text provided in the box with any text you want. Experiment with the <i>Language</i>, <i>Dialect</i>, and <i>Neutral voice</i> settings.
+  - <b><a href="https://www.ibm.com/demos/live/tts-demo/self-service/home" target="_blank">IBM Watson Text to Speech</a></b>. Replace the text provided in the box with any text you want. Experiment with the <i>Language</i>, <i>Dialect</i>, and <i>Neural voice</i> settings.
 
 Which fake voices sound the most human? Which is your favorite?
 
