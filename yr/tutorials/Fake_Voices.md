@@ -11,7 +11,7 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Fake Voice!</
 
 “Deepfakes” are videos and sounds created by artificial intelligence. Powerful computers make deepfakes by learning from recordings of human beings, then creating new, fake versions that match the humans almost exactly.
 
-For example, the sound of Jay-Z's voice was created by a computer model in this video:
+For example, the sound of Jay-Z's voice was created by a computer model in this video: 
 
 <video width="90%" controls>
   <source src="../images/Fake_Voices/2B.mp4" type="video/mp4">
@@ -24,7 +24,7 @@ Sometimes the voices in deepfakes sound a little fake — other times, it is har
 
 Create your own strange or spooky voices by coding the Fake Voices app below. These voices are not true deepfakes because they do not use artificial intelligence, but they are pretty good!
 
-The tutorial already has some code to get you started. When you are done, try modifying the design and function of your app to perform a useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
+The tutorial has some code to get you started. When you are done, try modifying the design and function of your app to perform a useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
 
 Use either an iOS or Android phone/tablet to test this app, but a Chromebook will not work as a test device because of the way it handles speech recognition. If you have never used App Inventor before, check out “Set Up Your Computer” and “Get to Know App Inventor” below for a quick overview.
 
