@@ -24,7 +24,7 @@ Sometimes the voices in deepfakes sound a little fake — other times, it is har
 
 Create your own strange or spooky voices by coding the Fake Voices app below. These voices are not true deepfakes because they do not use artificial intelligence, but they are pretty good!
 
-The tutorial already has some code to get you started. When you are done, try modifying the design and function of your app to perform a useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
+The tutorial has some code to get you started. When you are done, try modifying the design and function of your app to perform a useful task in your life. You can also explore fake voices that use artificial intelligence using the links at the end.
 
 Use either an iOS or Android phone/tablet to test this app, but a Chromebook will not work as a test device because of the way it handles speech recognition. If you have never used App Inventor before, check out “Set Up Your Computer” and “Get to Know App Inventor” below for a quick overview.
 
