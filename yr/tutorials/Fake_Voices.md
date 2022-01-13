@@ -28,7 +28,7 @@ The tutorial has some code to get you started. When you are done, try modifying 
 
 Use either an iOS or Android phone/tablet to test this app, but a Chromebook will not work as a test device because of the way it handles speech recognition. If you have never used App Inventor before, check out “Set Up Your Computer” and “Get to Know App Inventor” below for a quick overview.
 
-This tutorial was inspired by the YR Media stories <a href="https://interactive.yr.media/double-take-four-deepfake-scenarios/" target="_blank">Four Deepfake Scenarios</a>, <a href="https://yr.media/tech/on-to-the-next-one-jay-z-beefs-with-a-i-are-other-artists-next/">Jay-Z Beefs with A.I</a>, and the <a href="https://yr.media/podcasts/fake-ish/" target="_blank"> Fake-Ish Podcast: Getting Real about Imposter Syndrome and Other Ways We Feel Fake</a>.
+This tutorial was inspired by the YR Media stories <a href="https://interactive.yr.media/double-take-four-deepfake-scenarios/" target="_blank">Four Deepfake Scenarios</a>, <a href="https://yr.media/tech/on-to-the-next-one-jay-z-beefs-with-a-i-are-other-artists-next/">Jay-Z Beefs with A.I.</a>, and the <a href="https://yr.media/podcasts/fake-ish/" target="_blank"> Fake-Ish Podcast: Getting Real about Imposter Syndrome and Other Ways We Feel Fake</a>.
 
 # Set Up Your Computer
 <div class="setup noemulator" id="connect_app"></div>
