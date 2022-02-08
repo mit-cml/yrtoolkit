@@ -1,36 +1,64 @@
-# yrtoolkit
+# MIT App Inventor Sidebar Tutorials
 
-<b>Updated 8/21/18</b>
-<br></br>
-<p>This toolkit was developed as part of the Youth Radio "Youth Mobile Power" grant. As such, much of this documentation refers to the toolkit as the "yrtoolkit" - however, this can (and is used) in many non-Youth Radio App Inventor implementations. Depending on your implementation, some of the commands may have slightly different names.</p>
+This toolkit was developed as part of the Youth Radio "Youth Mobile Power" grant. As such, much of this documentation refers to the toolkit as the "yrtoolkit" - however, this can (and is used) in many non-Youth Radio App Inventor implementations. Depending on your implementation, some of the commands may have slightly different names.
 
-<br></br><p><b>Why is it the “yrtoolkit”? </b></p>
-<p>Youth Radio Toolkit, which is how this tutorial toolkit was started.</p>
-<p>Youth Radio Interactive is the technical branch of Youth Radio. They are exploring alternate ways of telling their stories, such as through mobile apps. You may see “Youth Mobile Power” thrown around, as well. </p>
-<p>Our contacts are Lissa Soep and Asha Richardson. Paul Medlock-Walton was the MIT person running point on this until he went to Thunkable. Then it moved to Farzeen Harunani. </p>
+## Setup
 
-<br></br><p><b>Where do the tutorials live? </b></p>
-<p>Technically, here: http://appinventor.mit.edu/yrtoolkit/</p>
-<p>Or, on github, mit-cml/yrtoolkit</p>
-<p>That being said, anything in yrtoolkit/tutorials will show up directly at the above link. The rest need to be pointed at via specific links.</p>
+Need:
 
-<br></br><p><b>The Two Systems </b></p>
-<p>Well, why on earth would you need to hard link some tutorials and not others? </p>
-<p>It's because there are actually two systems of tutorials buried within a single toolkit, for reasons unknown. I call them the "standalone" tutorials and the "grouped" tutorials. They are NOT interchangeable. All the grouped tutorials are within yrtoolkit/tutorials. The standalone tutorials currently have three homes: yrtoolkit/yr/tutorials, yrtoolkit/malden/tutorials, and yrtoolkit/mcsp. YR tutorials are the ones requested by Youth Radio, alone with some others that we use often (like the Hour of Code activity, accessible at http://bit.ly/MITAppInventorHoC). Malden tutorials are related to a Computational Action study done in Malden High School. MCSP tutorials are controlled by Beryl Hoffman at Mobile CSP. </p>
+* git 2.11 or later
+* ruby 2.6
+* bundler 2.0.1
 
-<br></br><p><b>Adding a Tutorial to Your MIT App Inventor Project </b></p>
-<p>So you want to add a tutorial to your project? All you need to do is specify the TutorialURL property of Screen1! For security reasons, you can only use a tutorial with an App Inventor URL. This means that technically, any App Inventor URL will work. That doesn’t mean every website looks good in a little sidebar. </p>
-<p>If you want one of the toolkit tutorials, specify the URL such as: http://appinventor.mit.edu/yrtoolkit/yr/tutorials/snapRemix.html.</p> 
-<p>Because this is a full html page this will look correct. If you put in one of the grouped tutorials, it won’t function correctly. If you want to link the grouped tutorials, just put http://appinventor.mit.edu/yrtoolkit as the TutorialURL.</p>
+1. Clone the repository:
 
-<br></br><p><b>Running a Local Copy of the Toolkit </b></p>
-<p>Run “python -m SimpleHTTPServer” to start the yrtoolkit on port 8000</p>
-<p>If you want to view your local copy of your tutorials while testing, change Ode.java in your local copy of App Inventor to allow any URL in the TutorialURL property. </p>
+        git clone git@github.com:mit-cml/yrtoolkit.git
+        cd yrtoolkit
 
-<br></br><p><b>So you want to add a new tutorial?  </b></p>
-<p>For a grouped tutorial? Easy. Add your html page in the tutorials folder, images to a new folder under images/ and your starter aia under aiaFiles. Use the convert asc python script to convert your aia to an asc ("python convertToAsc.py FileToConvert") and keep that .asc in the folder as well. Finally, add it to tutorials/tutorials.html. Done! The format should mirror anything else in the tutorials folder. </p>
-<p>However, if this is a tutorial you want to function as a standalone tutorial, add the HTML file (which should mirror any other standalone tutorial) under the yr/tutorials folder (or whatever other folder is appropriate). Add your images under yr/images/NEW_TUTORIAL/. Make sure the TutorialURL property is filled in correctly in your .aia to point at your new HTML file! Convert that aia into an asc using "python convertToAsc.py FileToConvert". Drop both the aia and asc files into yr/aiaFiles/NEW_TUTORIAL/. </p>
-<p>In order to have an .asc file that will open up to an App Inventor project with the appropriate tutorial, the link will be as such: http://ai2.appinventor.mit.edu/?locale=en&repo=http://appinventor.mit.edu/yrtoolkit/path/to/file.asc</p>
+2. Install dependencies:
 
-<br></br><p><b>Pushing to the Real World </b></p>
-<p>Update master branch! A git hook will do the work of putting it on the site for you. </p>
+        bundle install --path vendor/bundle
+
+## Run
+
+1. Start the Jekyll server:
+
+        bundle exec jekyll serve -b /yrtoolkit
+
+2. Edit any tutorial files. Jekyll will rebuild the site as changes are made.
+3. In App Inventor, you can set the TutorialURL of Screen1 to view the tutorial based on the path in the file tree. For example, `yr/tutorials/markdown-tutorial.md` becomes `http://localhost:4000/yrtoolkit/yr/tutorials/markdown-tutorial.html`.
+
+## Publish
+
+1. Before publishing your template project, make sure to change the domain to `appinventor.mit.edu` from `localhost:4000`.
+2. Convert your AIA file to ASC:
+
+        base64 template.aia | tr -d '\n' > tutorial.asc
+
+3. Deploy your ASC file on a server that supports CORS headers from ai2.appinventor.mit.edu/code.appinventor.mit.edu (such as this repository, which is published with GitHub pages).
+
+## Adding a Tutorial to your MIT App Inventor Project
+
+So you want to add a tutorial to your project? All you need to do is specify the TutorialURL property of Screen1! For security reasons, you can only use a tutorial with an App Inventor URL. This means that technically, any App Inventor URL will work. That doesn’t mean every website looks good in the sidebar.
+
+If you want one of the toolkit tutorials, specify the URL such as: http://appinventor.mit.edu/yrtoolkit/yr/tutorials/snapRemix.html.
+
+Because this is a full html page this will look correct. If you put in one of the grouped tutorials, it won’t function correctly. If you want to link the grouped tutorials, just put http://appinventor.mit.edu/yrtoolkit as the TutorialURL.
+
+## FAQ
+
+### Why is it the “yrtoolkit”?
+
+yrtoolkit stands for Youth Radio Toolkit, which is how this tutorial toolkit was started. Youth Radio has since rebranded as YR Media.
+
+Youth Radio Interactive is the technical branch of Youth Radio. They are exploring alternate ways of telling their stories, such as through mobile apps. You may see “Youth Mobile Power” thrown around, as well.
+
+### Where do the tutorials live?
+
+The tutorials are served to the world at http://appinventor.mit.edu/yrtoolkit/, although they are usually embedded in App Inventor template projects using the TutorialURL property on Screen1. The source materials are hosted on GitHub at https://github.com/mit-cml/yrtoolkit.
+
+**The Two Systems**
+
+There are actually two systems of tutorials within this toolkit, called the "standalone" tutorials and the "grouped" tutorials. They are NOT interchangeable. All the grouped tutorials are within tutorials. The standalone tutorials currently have three homes: yr/tutorials, malden/tutorials, and mcsp. YR tutorials are the ones in collaboration with YR Media, alone with some others that we use often (like the Hour of Code activity, accessible at http://bit.ly/MITAppInventorHoC). Malden tutorials are related to a Computational Action study done in Malden High School. MCSP tutorials are controlled by Beryl Hoffman at Mobile CSP. </p>
+
+**Last Updated: 2022-02-08**
