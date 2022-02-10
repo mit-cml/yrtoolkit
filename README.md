@@ -23,7 +23,7 @@ Need:
 
 1. Start the Jekyll server:
 
-        bundle exec jekyll serve -b /yrtoolkit
+        bundle exec jekyll serve
 
 2. Edit any tutorial files. Jekyll will rebuild the site as changes are made.
 3. In App Inventor, you can set the TutorialURL of Screen1 to view the tutorial based on the path in the file tree. For example, `yr/tutorials/markdown-tutorial.md` becomes `http://localhost:4000/yrtoolkit/yr/tutorials/markdown-tutorial.html`.
