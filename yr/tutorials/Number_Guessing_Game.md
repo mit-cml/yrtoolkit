@@ -389,7 +389,7 @@ In order to get the value of our slot **myGuessSlot**, click the **myGuessSlot**
 <p style="padding-bottom: 7px"></p>
 
 ## Define the Intent Handler for *makeGuessIntent* (Part 2)
-Now we want our **makeGuessIntent** to respond differently based on our **myGuessSlot** value. **IF** our guess is greater than our **secret** variable, **THEN** Alexa will **ask**: “<myGuessSlot> is too big. Guess again”. The user will then have another opportunity to guess, which will create a loop until the user guesses correctly. **IF** our guess is less than our **secret** variable, **THEN** Alexa will **ask**: “(myGuessSlot) is too small. Guess again”, which will once again create a loop. **IF** our guess is accurate, **THEN** Alexa will say: “<myGuessSlot> is correct. Congratulations!"
+Now we want our **makeGuessIntent** to respond differently based on our **myGuessSlot** value. **IF** our guess is greater than our **secret** variable, **THEN** Alexa will **ask**: “(myGuessSlot) is too big. Guess again”. The user will then have another opportunity to guess, which will create a loop until the user guesses correctly. **IF** our guess is less than our **secret** variable, **THEN** Alexa will **ask**: “(myGuessSlot) is too small. Guess again”, which will once again create a loop. **IF** our guess is accurate, **THEN** Alexa will say: “<myGuessSlot> is correct. Congratulations!"
 
 Because we want a different response based on our **myGuessSlot** value, we need to use **conditionals**. **Conditionals** provide us with the ability to choose different responses based on different parameters using **if/else if/then** statements. Let’s try it out!
 
@@ -472,12 +472,41 @@ If you have an Alexa-enabled device handy, say *“Alexa, tell guessing game hos
 
 If you don’t have an Alexa-enabled device on hand, the Testing page in App Inventor allows you to simulate an Alexa using your custom Alexa skill right in your browser! Simply type in the textbox at the bottom, *“tell guessing game host to quiz me”* (You can omit the Alexa at the beginning of the phrase when using the testing box). Does the conversation flow like we planned it to? Here’s an example conversation:
 
+Note that the "secret" number is randomly generated, so that the user will see different sequences than the example shown here.
+
+<p style="padding-bottom: 7px"></p>
 ![Example Conversation](../images/number_guessing_game/image43.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Finish!!
 
 Congratulations! You've finished programming the **Try Number tutorial** and learned about using **conditionals!**
+
+# Expand Your App
+
+Here are some ideas for ways to enhance your app! 
+
+The way our app is built as of now, once we guess the correct number, the game ends. Try changing the app so that you can "restart" the game once you guess the right number! 
+
+* Add a new line asking "Do you want to play again?" once the correct number is guessed.
+* Try implementing an utterance in your quizmeIntent such that when "Do you want to play again?" is asked and responded to accordingly, the game "resets" and a new secret number is set. 
+
+Currently, when given an incorrect guess, our app tells us that our guess is either too big or too small. Can you think of better hints that provide the player with more information?
+
+* For example, if the difference between the secret number and our guess is less than 10, have the app tell us: "Your guess is less than ten away from my secret number!" 
+* To do this, try implementing more conditionals that compare the guess with the secret number. Based on whether the comparison is true or not, have the app provide the appropriate response.
+
+# About Youth Mobile Power
+A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
+
+That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.
+
+Essentially: Get inspired by the story, get busy making your own app!
+ <img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+
+ The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1906895, 1906636). Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+ Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>.
 
 
 
