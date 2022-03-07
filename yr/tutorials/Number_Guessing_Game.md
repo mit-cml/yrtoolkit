@@ -472,6 +472,9 @@ If you have an Alexa-enabled device handy, say *“Alexa, tell guessing game hos
 
 If you don’t have an Alexa-enabled device on hand, the Testing page in App Inventor allows you to simulate an Alexa using your custom Alexa skill right in your browser! Simply type in the textbox at the bottom, *“tell guessing game host to quiz me”* (You can omit the Alexa at the beginning of the phrase when using the testing box). Does the conversation flow like we planned it to? Here’s an example conversation:
 
+Note that the "secret" number is randomly generated, so that the user will see different sequences than the example shown here.
+
+<p style="padding-bottom: 7px"></p>
 ![Example Conversation](../images/number_guessing_game/image43.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
