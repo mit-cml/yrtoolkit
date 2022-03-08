@@ -30,7 +30,7 @@ This will allow you to save any Alexa Skills to your account and use your skills
 <p style="padding-bottom: 7px"></p>
 
 ## Create a New Project
-Navigate to (CHANGE SERVER LINK). 
+Navigate to the App Inventor server [here](http://staging-dot-alexa-test-232319.uc.r.appspot.com).
 If you have another project open, go to <strong>My Projects</strong> menu and choose <strong>New Project</strong>
 
 ![Create New Project](../images/number_guessing_game/create_proj.jpg){:.enlargeImage}
