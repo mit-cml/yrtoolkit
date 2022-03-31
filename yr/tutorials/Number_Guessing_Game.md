@@ -26,11 +26,6 @@ An Alexa Skill is a <strong>voice-based application</strong> for Amazon Alexa-en
 
 If you haven't already, follow the written instructions [here](../images/number_guessing_game/amazonDevAccount.pdf) or the Youtube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
 
-<video width="80%" controls>
-  <source src="../images/number_guessing_game/amazon_Account.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-<p style="padding-bottom: 7px"></p>
 This will allow you to save any Alexa Skills to your account and use your skills on any Alexa-enabled devices that you have linked to your Amazon account.
 <p style="padding-bottom: 7px"></p>
 
@@ -470,7 +465,7 @@ If you don’t have an Alexa-enabled device on hand, the Testing page in App Inv
 Note that the "secret" number is randomly generated, so that the user will see different sequences than the example shown here.
 
 <p style="padding-bottom: 7px"></p>
-![Example Conversation](../images/number_guessing_game/image43.png){:.enlargeImage}
+![Example Conversation](../images/number_guessing_game/final_pic.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Finish!
