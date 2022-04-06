@@ -251,7 +251,7 @@ We will now move on to creating our second intent, *“makeGuessIntent”*. In o
 
 Let's first teach our app to listen for the **makeGuessIntent**. To define this intent, repeat the previous steps done to create the **quizmeIntent**, but this time rename the intent to **makeGuessIntent**. If done correctly, the page should look like this.
 
-![Make Guess Intent](../images/number_guessing_game/make_guess_intent.jpg){:.enlargeImage}
+![Make Guess Intent](../images/number_guessing_game/make_guess_intent.JPG){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 Now, we need to give the intent a list of **utterances**.
@@ -287,7 +287,7 @@ Let's define our slot for the user's guess. Take a **Slot** component from the *
 
 You should see a new **Slot** component named SlotA appear as a Non-visible component under the Echo Dot. The new Slot will also appear in our **Components** box to the right. 
 
-![Slot in Components](../images/number_guessing_game/make_slot.jpg){:.enlargeImage}
+![Slot in Components](../images/number_guessing_game/make_slot.JPG){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 For this slot, we’ll rename the slot to be *“myGuessSlot”*, and we’ll change the slot type to **Number**.
@@ -340,7 +340,7 @@ And an example of what you might say to match this utterance is:
 
 Let’s add our second **utterance** for the **makeGuessIntent** intent. Another phrase you might respond to Alexa’s question of “What is your guess?” might be something else like “My guess is nine”. Follow the previous steps done to complete our first **utterance**. If done correctly, your **Properties** box should now look like this:
 
-![Add Slot Utterance](../images/number_guessing_game/add_utterances.jpg){:.enlargeImage}
+![Add Slot Utterance](../images/number_guessing_game/add_utterances.JPG){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 Feel free to create your own **utterances**! (e.g., "**{myGuessSlot}** is my guess”). Remember, the more **utterances** you have, the more likely Alexa will understand correctly.
