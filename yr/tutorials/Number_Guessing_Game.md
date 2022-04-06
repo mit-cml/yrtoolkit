@@ -24,7 +24,7 @@ An Alexa Skill is a <strong>voice-based application</strong> for Amazon Alexa-en
 
 # Setup
 
-If you haven't already, follow the written instructions [here](../images/number_guessing_game/amazonDevAccount.pdf) or the Youtube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
+If you haven't already, follow the written instructions [here](../images/number_guessing_game/createDevAccount.pdf) or the Youtube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
 
 This will allow you to save any Alexa Skills to your account and use your skills on any Alexa-enabled devices that you have linked to your Amazon account.
 <p style="padding-bottom: 7px"></p>
@@ -363,7 +363,7 @@ Here, you should see our **makeGuessIntent** as its own Component drawer to the 
 
 Whenever our Skill hears the user trigger the **makeGuessIntent**, this block will run anything inside of it.
 
-Let's first have our Skill repeat our guess and say: "You guessed **{myGuessSlot}**", where **{myGuessSlot}** represents the value of our guess. Similar to before, we need to use the **say** block from the **Voice** drawer and the <span class = "text">join</span> block from the **Text** drawer. Try implementing everything except **{myGuessSlot}** yourself! Click the hint when you're finished to see what your blocks should look like.
+Let's first have our Skill repeat our guess and say: "You guessed **{myGuessSlot}**", where **{myGuessSlot}** represents the value of our guess. Similar to before, we need to use the **say** block from the **Voice** drawer and the <span class = "text">join</span> block from the **Text** drawer. Try implementing everything except **{myGuessSlot}** yourself! Click the Answer button when you're finished to see what your blocks should look like.
 
 <hint markdown="block" title="Answer!">
 ![Answer](../images/number_guessing_game/image49.png){:.enlargeImage}
@@ -406,7 +406,7 @@ Let's fill in these empty values! In the first space, put in **myGuessSlot.value
 ![Insert values](../images/number_guessing_game/image50.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-We've now set our first if statement! **IF** our **myGuessSlot** value is greater than our secret value, then the expression within the first **then** statement will be run. Let's define this first **then** statement - we want Alexa to **ask**: "**{myGuessSlot}** is too big. Guess again". To do this, we need to once again use the **ask** block from the **Voice** drawer, the **myGuessSlot.value** block, and the <span class = "text">join</span> block from the **Text** drawer. Try it yourself! (Hint: How many parts are there in Alexa's response? Do we need to add parts to the **join** block? Click the hint to check your blocks!)
+We've now set our first if statement! **IF** our **myGuessSlot** value is greater than our secret value, then the expression within the first **then** statement will be run. Let's define this first **then** statement - we want Alexa to **ask**: "**{myGuessSlot}** is too big. Guess again". To do this, we need to once again use the **ask** block from the **Voice** drawer, the **myGuessSlot.value** block, and the <span class = "text">join</span> block from the **Text** drawer. Try it yourself! (Hint: How many parts are there in Alexa's response? Do we need to add parts to the **join** block? Click the Answer button to check your blocks!)
 
 <hint markdown = "block" title = "Answer!">
 If done correctly, your blocks should look like this: 
@@ -425,7 +425,7 @@ We've now programmed the **makeGuessIntent** such that **if {myGuessSlot}** is g
 
 In order to define the **else if** statement, follow the same steps as before for defining the **if statement**, using the <span class = "math">equality</span> function block to compare **{myGuessSlot}** and our **secret** value - but this time change the greater than sign to a less than sign (<).
 
-Now let's define the second **then** statement. Follow the same steps as the first **then** statement, but instead of having Alexa **ask**: "{myGuessSlot} is too **big**. Guess again", we want Alexa to **ask**: "{myGuessSlot} is too **small**. Guess again". 
+Now let's define the second **then** statement. Follow the same steps as the first **then** statement, but instead of having Alexa **ask**: "**{myGuessSlot}** is too **big**. Guess again", we want Alexa to **ask**: "**{myGuessSlot}** is too **small**. Guess again". 
 
 Your blocks should look like this! 
 
