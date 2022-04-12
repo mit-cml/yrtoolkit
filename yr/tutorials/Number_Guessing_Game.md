@@ -85,7 +85,7 @@ Now, we need to add a custom <strong>Intent</strong> to our app.
 
 Let's design the flow of our conversation. Our goal is to have Alexa generate a random number as a "guess", and ask us to guess this random number. Then, based on the user's guess, Alexa will respond with three options: the user's guess was too high, too low, or correct.
 
-We want Alexa to know when to begin quizing the user, so we will first teach our app to listen for the *quizmeIntent* intent. 
+We want Alexa to know when to begin quizzing the user, so we will first teach our app to listen for the *quizmeIntent* intent. 
 
 First, drag out an <strong>Intent</strong> component from the Palette to the left and drop it over the image of the Amazon Echo Dot. The Intent should appear as a <strong>Non-visible component</strong> named <strong>IntentA</strong> both under the Echo Dot and in the <strong>Components</strong> box. 
 
@@ -107,13 +107,26 @@ As you might have noticed, we need to give the intent block a list of <strong>ut
 Let’s say your parent wants you to do the dishes. They might say “Clean the dishes.” Or, maybe they’ll say “*Do* the dishes.” Maybe they’ll just say “Wash the dirty plates.” All these sentences have the same *intent*: you need to do the dishes.
 
 Just like this example, when talking to Alexa, there might be a lot of ways to say something to trigger an intent. Each of these phrases that all mean the same thing is called an **utterance**. 
+
+**IMPORTANT:**
+Make sure your utterances follow the rules below or your skills will not work properly:
+1. All letters must be lowercase letters (say hello, NOT Say Hello)
+2. The utterance must be at least two words (say hello, NOT sayhello)
+3. The utterance must start with a letter (say hello, NOT "say hello)
+4. Punctuations can only be spaces, apostrophes, or periods (codi' bee, NOT ^codibee)
+5. No period at the end of your utterances! (say hello, NOT say hello.)
+
+In addition, make sure there is no empty utterance created! Remove it by selecting the empty utterance and clicking the "Remove" button.
+
+![Empty Utterance](../images/number_guessing_game/empty_utterance.PNG){:.enlargeImage}
+
 </hint>
 <p style="padding-bottom: 7px"></p>
 
 ![Set Utterance 1](../images/number_guessing_game/image24.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-In the text box beneath the text **"Utterances"**, we will write a phrase which Alexa will understand to mean to begin quizzing the user and start the conversation. We can add several **utterances** to invoke the Intent, for example we added “quiz me”, “start the quiz”, “start the game” as our **utterances** to invoke the quizmeIntent. We encourage you to be creative and add more **utterances**!
+In the text box beneath the text **"Utterances"**, we will write a phrase which Alexa will understand to mean to begin quizzing the user and start the conversation. We can add several **utterances** to invoke the Intent. For example we added “quiz me”, “start the quiz”, “start the game” as our **utterances** to invoke the quizmeIntent. We encourage you to be creative and add more **utterances**! Click on the button above that says **"What are Utterances?"** for more information and guidelines on utterances! 
 
 ![Set Utterance 2](../images/number_guessing_game/image13.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
