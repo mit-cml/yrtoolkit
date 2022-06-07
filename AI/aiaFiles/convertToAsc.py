@@ -1,7 +1,7 @@
 import sys
 import base64
 if len(sys.argv) < 2:
-   print ('use: convertToAsc.py WhatIsIt')
+   print ('use: convertToAsc.py Alexa_Hello_World')
    sys.exit(2)
 s = sys.argv[1]
 #s = 'LogoWParamsTemplate'
