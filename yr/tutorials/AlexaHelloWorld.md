@@ -8,11 +8,13 @@ layout: tutorial
 <p style="font-size: 150%;
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Amazon Alexa Skill!</p>
 
-In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface v2</strong> to create your own Amazon Alexa skill. You will also learn how to test your new Alexa skill using Amazon’s <strong>Alexa Development Console</strong>.
+In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface v2</strong> to create your own Amazon Alexa skill for Alexa to say "Hello World" when prompted by the user. 
+
+You will also learn how to test your new Alexa skill using Amazon’s <strong>Alexa Development Console</strong>.
 
 # Setup
 
-1. If you have not done so, please complete the following prior to this tutorial to set up all the needed accounts, and Amazon devices if applicable: [App Inventor Setup Tutorial](https://docs.google.com/document/d/15SbjSasmgiCibz_NK8rS0Le1hZ1dZNZSb7a5JIT8H1c/edit)
+1. If you have not done so, please complete the following prior to this tutorial to set up all the needed accounts, and Amazon devices if applicable: [App Inventor Setup Tutorial](../images/alexa_hello_world/setup.pdf)
 
 2. Once that's done, you can move onto the tutorial!
 
@@ -31,16 +33,18 @@ In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Con
     <p style="padding-bottom: 7px"></p>
 
 
-<strong>What is an Invocation name?</strong>
-<br/>
+<hint markdown="block" title="What is an Invocation Name?">
 Just like how every mobile app needs to have a name, so does our custom Alexa Skill. An <strong>Invocation Name</strong> is just the name of the Skill that we are making, and is used to “invoke”, or call our skill. The structure of any command you will tell Alexa is:
 
 <center> “Alexa, ask <span style="background-color: yellow"> (Invocation name) </span> to <span style="background-color: LightPink"> ...</span>” </center>
 
-The invocation name will help Alexa know which skill it needs to use, so make sure that every skill you make has a unique name. For our example, the Invocation name of a custom skill is “hello world”
+The invocation name will help Alexa know which skill it needs to use, so make sure that every skill you make has a unique name. For our example, the Invocation name of a custom skill is “hello world greeter”
 <center> “Alexa, ask <span style="background-color: yellow"> hello world greeter </span> to <span style="background-color: LightPink"> do something</span>” </center>
 
 <strong>Note</strong>: The invocation name needs to be at least two (2) words long, but avoid making it a full sentence, since you will be saying the name a lot.
+</hint>
+
+<p style="padding-bottom: 7px"></p>
 
 ## Logging in to your Amazon Account
 1. You will now be taken to a new Designer Page for the Conversational AI Interface. On the rightmost part of the screen, there should be a “Testing” box. Click the <strong>“Login to Amazon”</strong> button and enter your Amazon Developer Account information into the external pop-up*.
@@ -58,11 +62,12 @@ The invocation name will help Alexa know which skill it needs to use, so make su
 
 ## Defining a Custom Intent
 
-Now we need to add a custom <strong>Intent</strong> to our app
+Now we need to add a custom <strong>Intent</strong> to our app.
 
-<strong>What is an Intent?</strong>
-<br/>
-You can think of an Intent as a “command” that you want to teach Alexa to listen to. It could be a Stop Intent, a HelloWorld Intent, or any intent you can really think of that you will need in a skill. 
+<hint markdown="block" title="What is an Intent?">
+You can think of an **Intent** as a “command” that you want to teach Alexa to listen to. It could be a Stop Intent, a HelloWorld Intent, or any intent you can really think of that you will need in a skill. 
+</hint>
+<p style="padding-bottom: 7px"></p>
 
 1. Let’s teach our app to listen for the “HelloWorldIntent” intent. To make this intent, from the leftmost box on the screen, drag the “Intent” button to the Amazon device on the screen.
 
@@ -82,8 +87,7 @@ The current screen should look something like this:
 
 After creaing an intent, we need to give the intent a list of <strong>utterances</strong>.
 
-<strong> What are Utterances? </strong>
-
+<hint markdown="block" title="What are Utterances?">
 When talking to Alexa, there might be a lot of ways to say something to trigger an intent. Each of these phrases that all mean the same thing is called an <strong>utterance</strong>. 
 
  Let’s say your parent wants you to do the dishes. They might say one of the following:
@@ -94,6 +98,9 @@ When talking to Alexa, there might be a lot of ways to say something to trigger 
 
 All these sentences have the same <em>intent</em>: you need to do the dishes.
 
+</hint>
+<p style="padding-bottom: 7px"></p>
+
 1. Select the "HelloWorldIntent" intent.
 
 2. In the “Properties” box, there should be an utterance text box at the bottom. Write in the utterance, “say hi”, and press <strong>“Add”</strong> after.
@@ -101,7 +108,7 @@ All these sentences have the same <em>intent</em>: you need to do the dishes.
     ![Utterance](../images/alexa_hello_world/utterance.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
-3. Add in more utterances like “say hello”, and “say hello world” following the same step 2. Be sure to add utterances in one at a time by pressing <strong>“Add”</strong> after each one
+3. Add in more utterances like “say hello”, and “say hello world” following the same step 2. Be sure to add utterances in one at a time by pressing <strong>“Add”</strong> after each one!
 
     *IMPORTANT:* Make sure your utterances follow the rules below or your skills will not work properly:
 
@@ -109,7 +116,7 @@ All these sentences have the same <em>intent</em>: you need to do the dishes.
     - At least two words (ex. say hello, NOT sayhello)
     - Starts with a letter (ex. say hello, NOT ‘’say hello)
     - Punctuations can only be spaces, apostrophes, or periods (ex. codi’ bee, NOT ^codi bee)
-    - No period at the end of your utterance (ex. say hello, NOT say hello)
+    - No period at the end of your utterance (ex. say hello, NOT say hello.)
 
 4. After inputting your utterances, there may be an empty utterance created. Remove it by selecting it then pressing the <strong>“Remove”</strong> button.
 
@@ -168,14 +175,14 @@ Your current screen should look like the following:
 
 ## Testing your Skill
 
-Now it’s time to test our Alexa skill! If you have an Alexa-enabled device handy and [set up](https://docs.google.com/document/d/15SbjSasmgiCibz_NK8rS0Le1hZ1dZNZSb7a5JIT8H1c/edit), say *“Alexa, open hello world greeter”,* and then *“Alexa, tell hello world greeter to say hello.”* to it and hear the response, which should be “hello world”, as we programmed it.
+Now it’s time to test our Alexa skill! If you have an Alexa-enabled device handy and [set up](../images/alexa_hello_world/setup.pdf), say *“Alexa, open hello world greeter”,* and then *“Alexa, tell hello world greeter to say hello.”* to it and hear the response, which should be “hello world”, as we programmed it.
 
 If you don’t have an Alexa-enabled device on hand, App Inventor allows you to simulate an Alexa using your custom Alexa skill right in your browser! Simply type in the textbox at the bottom, *“Alexa, ask hello world greeter to say hi.”* The response should be what we plugged into the <strong>say</strong> block earlier, *“hello world.”*
 
 ![Sayhello](../images/alexa_hello_world/sayhello.png){:.enlargeImage} 
 <p style="padding-bottom: 7px"></p>
 
-Note: If you are interested in testing in other ways, feel free to explore this [document](https://docs.google.com/document/u/0/d/1ISS1lI1MK7PCehxCRS3eKQkBiA0fjeXwuL_WlAY-fQU/edit)!
+Note: If you are interested in testing in other ways, feel free to explore this [document](../images/alexa_hello_world/testing.pdf)!
 
 ## Finish!
 
@@ -187,7 +194,10 @@ Here are some ideas for ways to enhance your app!
 
 * Our Alexa app currently only has one intent- saying "hello world." Try adding more intents that instruct Alexa to say different things. For example, you can add an intent for Alexa to say "good bye."
 
-* Slots: (add something here)
+* Have Alexa learn the name of the user from an input user sentence like "my name is Sebastian" and respond "It is my pleasure to meet you Sebastian." 
+    <hint markdown="block" title="Hint">
+    Hint: you will need to learn about Slots.
+    </hint>
 
 
 # About Youth Mobile Power
