@@ -8,7 +8,7 @@ layout: tutorial
 <p style="font-size: 150%;
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Amazon Alexa Skill!</p>
 
-In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface v2</strong> to create your own Amazon Alexa skill for Alexa to say "Hello World" when prompted by the user. 
+In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface</strong> to create your own Amazon Alexa skill for Alexa to say "Hello World" when prompted by the user. 
 
 You will also learn how to test your new Alexa skill using Amazon’s <strong>Alexa Development Console</strong>.
 
@@ -85,7 +85,7 @@ The current screen should look something like this:
 
 ## Adding a List of Utterances
 
-After creaing an intent, we need to give the intent a list of <strong>utterances</strong>.
+After creating an intent, we need to give the intent a list of <strong>utterances</strong>.
 
 <hint markdown="block" title="What are Utterances?">
 When talking to Alexa, there might be a lot of ways to say something to trigger an intent. Each of these phrases that all mean the same thing is called an <strong>utterance</strong>. 
@@ -152,7 +152,7 @@ Now we will tell Alexa what to say after it detects the intent.
     ![Emptyquote](../images/alexa_hello_world/emptyquote.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p> 
 
-5. Within the empty quotation block, type “hello world”. Your block should be <strong>“hello world”</strong>. 
+5. Within the empty quotation block, type “hello world”. 
 
     ![Blocksdone](../images/alexa_hello_world/blocksdone.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
