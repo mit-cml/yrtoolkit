@@ -8,7 +8,7 @@ layout: tutorial
 <p style="font-size: 150%;
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Calculator!</p>
 
-In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface</strong> to create your own multiplication calculator for Alexa to tell the user the answer when asked a basic multiplication question. 
+In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface</strong> to create your own multiplication calculator for Alexa to tell the user the answer when a basic multiplication question is asked. 
 
 The Skill we will be making uses <strong> slots </strong> to keep track of what numbers the user is asking Alexa to multiply.
 
@@ -16,7 +16,7 @@ The Skill we will be making uses <strong> slots </strong> to keep track of what 
 
 # Setup
 
-If you haven't already, follow the written instructions [here](../images/my_calculator/setup.pdf) or the Youtube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
+If you haven't already, follow the written instructions [here](../images/my_calculator/setup.pdf) or the YouTube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
 
 This will allow you to save any Alexa Skills to your account and use your skills on any Alexa-enabled devices that you have linked to your Amazon account.
 
@@ -264,7 +264,7 @@ Here are some ideas for ways to enhance your app!
 
 * Our app currently only has one intent - multiplying two numbers. Try adding more intents that instruct Alexa to add, subtract, and divide two numbers for a basic calculator.
 
-* Our app allows multiplication of two numbers. Try altering the app to allow for the multiplication of more numbers. How can Alexa help us multiply three number? Or even four or five?
+* Our app allows multiplication of two numbers. Try altering the app to allow for the multiplication of more numbers. How can Alexa help us multiply three numbers? Or even four or five?
 
 # About Youth Mobile Power
 A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
