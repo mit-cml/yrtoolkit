@@ -18,6 +18,8 @@ You will also learn how to test your new Alexa skill using Amazon’s <strong>Al
 
 2. Once that's done, you can move onto the tutorial!
 
+Please note: If your instructor gave you access to an anonymous Alexa account then you can skip this section on how to set up an Alexa Developer Account.
+
 # Alexa Hello World Tutorial
 
 ## Creating a New Skill
