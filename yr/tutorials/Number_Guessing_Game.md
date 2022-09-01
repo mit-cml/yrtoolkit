@@ -27,6 +27,8 @@ An Alexa Skill is a <strong>voice-based application</strong> for Amazon Alexa-en
 If you haven't already, follow the written instructions [here](../images/number_guessing_game/createDevAccount.pdf) or the Youtube video instructions [here](https://www.youtube.com/watch?v=NHbkpzBXQ84&ab_channel=MITAppInventor) to create a <u>free</u> <strong>Amazon Developer Account</strong>. 
 
 This will allow you to save any Alexa Skills to your account and use your skills on any Alexa-enabled devices that you have linked to your Amazon account.
+
+Please note: If your instructor gave you access to an anonymous Alexa account then you can skip this section on how to set up an Alexa Developer Account.
 <p style="padding-bottom: 7px"></p>
 
 # The Number Guessing Game Tutorial 

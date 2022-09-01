@@ -20,6 +20,8 @@ If you haven't already, follow the written instructions [here](../images/my_calc
 
 This will allow you to save any Alexa Skills to your account and use your skills on any Alexa-enabled devices that you have linked to your Amazon account.
 
+Plese note: If your instructor gave you access to an anonymous Alexa account then you can skip this section on how to set up an Alexa Developer Account.
+
 <p style="padding-bottom: 7px"></p>
 
 # My Calculator Tutorial
