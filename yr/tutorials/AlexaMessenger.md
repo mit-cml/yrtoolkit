@@ -28,14 +28,114 @@ Up to this point you have only seen App Inventor Alexa tutorials where App Inven
 The app you will develop will be a messenger app where a user can write or speak a message they wish to their mobile device which will then be sent to the cloud and from where another user elsewhere can retrieve the message and hear it through an Alexa device.
 
 ![App to Alexa](../images/alexa_messenger/AppToAlexaMessageProcess.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
+<p style="padding-bottom: 7px"></p>
 
 The messenger app will alternatively have a user ask Alexa to forward a message, which again will then be sent to the cloud and from where a user elsewhere can retrieve it using their mobile app.
 
 ![App to Alexa](../images/alexa_messenger/AlexaToAppMessageProcess.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
+<p style="padding-bottom: 7px"></p>
 
 Through this two-way communication scheme you will be able to see how it is possible to seamlessly integrate Alexa skills with mobile app capabilities using two parallel development environments provided by MIT App Inventor.
+
+
+## The Graphical User Interface (GUI)
+
+![GUI Correspondence](../images/alexa_messenger/GUICorrespondence.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+In App Inventor designer view, you will see the mobile app’s graphical user interface (GUI) has already been created for you.  Notice the top textbox lets you enter a message to send (either by typing directly into the textbox or by talking into your device via the orange SPEAK button). Then the green SEND TO ALEXA button sends the message to CloudDB.
+
+At the bottom, the green button GET FROM ALEXA  retrieves a pending message from CloudDB and post it to the bottom textbox.  Use the orange READ button to read the retrieved message out loud.
+
+Also notice the three non-visible components (SpeechRecognizer, CloudDB, TextToSpeech) working in the background. They generate text from speech, transfer the text to the cloud, and read the text out loud.
+
+
+## Coding the GUI functionality (I)
+
+Click on the Blocks button to go to the Blocks editor.
+
+![Blocks Button](../images/alexa_messenger/BlocksButton.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+First, code what happens when the user clicks the orange SPEAK button.  Make the  SpeechRecognizer component listen to the user’s speech and turn it into text. Code the block to erase any previous message in the top textbox and replace it with an empty string.
+
+![When Speak Button Clicked](../images/alexa_messenger/whenspeakButtonClick.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+When the SpeechRecognizer returns with the text of the user’s speech, paste the text into the top textbox.
+
+![When SpeechRecognizer After Getting Text](../images/alexa_messenger/whenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+When the user clicks the green SEND TO ALEXA button, send the text message to CloudDB and store it under the tag “toAlexa”. Also update the textbox with the text “Message sent to Alexa”, confirming that the message is sent.
+
+![When Send Alexa Button Clicked](../images/alexa_messenger/whensendAlexaButtonClick.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Coding the GUI functionality (II)
+
+At the bottom when the green GET FROM ALEXA button is clicked then the CloudDB should be invoked to return the contents stored under the tag “fromAlexa”
+
+![When Get Alexa Button Clicked](../images/alexa_messenger/whengetAlexaButtonClick.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+When CloudDB responds with the contents, after checking that the returned item has the correct tag (“fromAlexa”), the contents should be pasted to the textbox at the bottom.
+
+
+![When CloudDB Got Value](../images/alexa_messenger/whenCloudDB1GotValue.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+When the user clicks the READ button, the contents of the bottom textbox should be read out loud using a TextToSpeech component.
+
+![When Read Button Clicked](../images/alexa_messenger/whenreadButtonClick.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+
+## Coding the GUI functionality (III)
+
+Finally, when the user clicks the DELETE ALL MESSAGES button, both textboxes should be cleared and all content on CloudDB (stored under both tags “toAlexa” and “fromAlexa”) should be erased.
+
+![When Delete All Button Clicked](../images/alexa_messenger/whendeleteAllButtonClick.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+
+## Creating the Voice User Interface (VUI) (I)
+
+You just finished coding the mobile app.  Now, create the voice user interface (VUI) in the Alexa development environment so Alexa can retrieve and send messages.
+
+First, create an Alexa skill by going to the Add button in the App Inventor interface and selecting the Skill option.
+
+![Add Skill](../images/alexa_messenger/addSkill.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Give an invocation name for the Alexa skill. In this example, call it “message master”. That way, we can tell Alexa something like “Ask message master to get my message”
+
+![Naming Skill](../images/alexa_messenger/namingSkill.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+
+## Creating the Voice User Interface (VUI) (II)
+
+It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI instead of graphical components we have vocal spoken elements called ‘intents” and “slots.”   You will soon see how these are used. Drag and drop two intents and one slot into the Viewer over the Amazon Echo Dot image.
+
+
+![Two Intents and a Slot](../images/alexa_messenger/twointents&aslotDragged.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 1. In the Designer Toolbar at the top of the screen, you will see a dropdown button labeled <strong>“Add…”</strong>. Press it, and within it, select the <strong>“Skill”</strong> button.
