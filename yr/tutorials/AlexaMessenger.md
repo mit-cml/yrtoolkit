@@ -35,6 +35,8 @@ The messenger app will alternatively have a user ask Alexa to forward a message,
 ![App to Alexa](../images/alexa_messenger/AlexaToAppMessageProcess.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
+Through this two-way communication scheme you will be able to see how it is possible to seamlessly integrate Alexa skills with mobile app capabilities using two parallel development environments provided by MIT App Inventor.
+
 
 1. In the Designer Toolbar at the top of the screen, you will see a dropdown button labeled <strong>“Add…”</strong>. Press it, and within it, select the <strong>“Skill”</strong> button.
 
