@@ -50,7 +50,7 @@ At the bottom, the green button GET FROM ALEXA  retrieves a pending message from
 Also notice the three non-visible components (SpeechRecognizer, CloudDB, TextToSpeech) working in the background. They generate text from speech, transfer the text to the cloud, and read the text out loud.
 
 
-## Coding the GUI functionality (I)
+## Coding the GUI functionality (1)
 
 Click on the Blocks button to go to the Blocks editor.
 
@@ -72,7 +72,7 @@ When the user clicks the green SEND TO ALEXA button, send the text message to Cl
 ![When Send Alexa Button Clicked](../images/alexa_messenger/whensendAlexaButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (II)
+## Coding the GUI functionality (2)
 
 At the bottom when the green GET FROM ALEXA button is clicked then the CloudDB should be invoked to return the contents stored under the tag “fromAlexa”
 
@@ -91,7 +91,7 @@ When the user clicks the READ button, the contents of the bottom textbox should 
 <p style="padding-bottom: 7px"></p>
 
 
-## Coding the GUI functionality (III)
+## Coding the GUI functionality (3)
 
 Finally, when the user clicks the DELETE ALL MESSAGES button, both textboxes should be cleared and all content on CloudDB (stored under both tags “toAlexa” and “fromAlexa”) should be erased.
 
@@ -99,7 +99,7 @@ Finally, when the user clicks the DELETE ALL MESSAGES button, both textboxes sho
 <p style="padding-bottom: 7px"></p>
 
 
-## Creating the Voice User Interface (VUI) (I)
+## Creating the Voice User Interface (VUI) (1)
 
 You just finished coding the mobile app.  Now, create the voice user interface (VUI) in the Alexa development environment so Alexa can retrieve and send messages.
 
@@ -114,7 +114,7 @@ Give an invocation name for the Alexa skill. In this example, call it “message
 <p style="padding-bottom: 7px"></p>
 
 
-## Creating the Voice User Interface (VUI) (II)
+## Creating the Voice User Interface (VUI) (2)
 
 It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI instead of graphical components we have vocal spoken elements called ‘intents” and “slots.”   You will soon see how these are used. Drag and drop two intents and one slot into the Viewer over the Amazon Echo Dot image.
 
@@ -122,198 +122,165 @@ It is easier to create an interface you can see than one you can only hear. That
 ![Two Intents and a Slot](../images/alexa_messenger/twointents&aslotDragged.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
+This will create IntentA, IntentB, and SlotA.  Then rename them getMessageIntent, sendMessageIntent, and messageSentSlot respectively as shown below.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. In the Designer Toolbar at the top of the screen, you will see a dropdown button labeled <strong>“Add…”</strong>. Press it, and within it, select the <strong>“Skill”</strong> button.
-
-    ![Add Skill](../images/alexa_hello_world/addskill.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-2. Enter the skill's <strong>Invocation name</strong>. For this demonstration, we will name it "hello world greeter". 
-
-    ![Add Invocation](../images/alexa_hello_world/invocationname.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-
-<hint markdown="block" title="What is an Invocation Name?">
-Just like how every mobile app needs to have a name, so does our custom Alexa Skill. An <strong>Invocation Name</strong> is just the name of the Skill that we are making, and is used to “invoke”, or call our skill. The structure of any command you will tell Alexa is:
-
-<center> “Alexa, ask <span style="background-color: yellow"> (Invocation name) </span> to <span style="background-color: LightPink"> ...</span>” </center>
-
-The invocation name will help Alexa know which skill it needs to use, so make sure that every skill you make has a unique name. For our example, the Invocation name of a custom skill is “hello world greeter”
-<center> “Alexa, ask <span style="background-color: yellow"> hello world greeter </span> to <span style="background-color: LightPink"> do something</span>” </center>
-
-<strong>Note</strong>: The invocation name needs to be at least two (2) words long, but avoid making it a full sentence, since you will be saying the name a lot.
-</hint>
-
+![Rename IntentA](../images/alexa_messenger/renameIntentA.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Logging in to your Amazon Account
-1. You will now be taken to a new Designer Page for the Conversational AI Interface. On the rightmost part of the screen, there should be a “Testing” box. Click the <strong>“Login to Amazon”</strong> button and enter your Amazon Developer Account information into the external pop-up*.
-    
-    ![Amazon](../images/alexa_hello_world/amazon.png){:.enlargeImage}
-    ![Login](../images/alexa_hello_world/login.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-2. Your testing box should now look like the following after signing in successfully:
-
-    ![Testing](../images/alexa_hello_world/testing.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-**If this window does not appear, check if your browser has blocked a pop up and allow the pop-up.*
-
-## Defining a Custom Intent
-
-Now we need to add a custom <strong>Intent</strong> to our app.
-
-<hint markdown="block" title="What is an Intent?">
-You can think of an **Intent** as a “command” that you want to teach Alexa to listen to. It could be a Stop Intent, a HelloWorld Intent, or any intent you can really think of that you will need in a skill. 
-</hint>
+![Rename IntentB](../images/alexa_messenger/renameIntentB.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-1. Let’s teach our app to listen for the “HelloWorldIntent” intent. To make this intent, from the leftmost box on the screen, drag the “Intent” button to the Amazon device on the screen.
-
-    ![Intent1](../images/alexa_hello_world/intent1.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-2. In the components box, select IntentA and rename the intent to “HelloWorldIntent”. Press <strong>“OK”</strong> after renaming.
-
-    ![Intent2](../images/alexa_hello_world/intent2.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-The current screen should look something like this:
-
-![Screen](../images/alexa_hello_world/screen.png){:.enlargeImage}
-
-## Adding a List of Utterances
-
-After creating an intent, we need to give the intent a list of <strong>utterances</strong>.
-
-<hint markdown="block" title="What are Utterances?">
-When talking to Alexa, there might be a lot of ways to say something to trigger an intent. Each of these phrases that all mean the same thing is called an <strong>utterance</strong>. 
-
- Let’s say your parent wants you to do the dishes. They might say one of the following:
- 
-- “Clean the dishes.” 
-- “Do the dishes.” 
-- “Wash the dirty plates.” 
-
-All these sentences have the same <em>intent</em>: you need to do the dishes.
-
-</hint>
+![Rename SlotA](../images/alexa_messenger/renameSlotA.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-1. Select the "HelloWorldIntent" intent.
 
-2. In the “Properties” box, there should be an utterance text box at the bottom. Write in the utterance, “say hi”, and press <strong>“Add”</strong> after.
+## Creating the Voice User Interface (VUI) (3)
 
-    ![Utterance](../images/alexa_hello_world/utterance.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
+Access CloudDB at the bottom of the Palette in the Alexa drawer.
 
-3. Add in more utterances like “say hello”, and “say hello world” following the same step 2. Be sure to add utterances in one at a time by pressing <strong>“Add”</strong> after each one!
-
-    *IMPORTANT:* Make sure your utterances follow the rules below or your skills will not work properly:
-
-    - Must be all lowercase letters (ex. say hello, NOT Say Hello)
-    - At least two words (ex. say hello, NOT sayhello)
-    - Starts with a letter (ex. say hello, NOT ‘’say hello)
-    - Punctuations can only be spaces, apostrophes, or periods (ex. codi’ bee, NOT ^codi bee)
-    - No period at the end of your utterance (ex. say hello, NOT say hello.)
-
-4. After inputting your utterances, there may be an empty utterance created. Remove it by selecting it then pressing the <strong>“Remove”</strong> button.
-
-    ![Remove](../images/alexa_hello_world/remove.png){:.enlargeImage} 
-    <p style="padding-bottom: 7px"></p>
-
-    Your properties box should look like the following:
-
-    ![Properties](../images/alexa_hello_world/properties.png){:.enlargeImage} 
-    <p style="padding-bottom: 7px"></p>
-
-## Defining the First Intent Handler
-
-Now we will tell Alexa what to say after it detects the intent.
-
-1. Move to the Blocks section located above the “Testing” Box.
-
-    ![Blocks](../images/alexa_hello_world/blocks.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-2. On the leftmost part of the screen, there’s now a “Blocks” box. Within it, select the “HelloWorldIntent” intent. A drawer should open with yellow and green blocks. Drag the <strong>HelloWorldIntent.spoken</strong> block out.
- 
-    ![Helloworldintent](../images/alexa_hello_world/helloworldintent.png){:.enlargeImage} 
-    <p style="padding-bottom: 7px"></p>
-
-3. Next, select the Voice drawer (2nd button in the Blocks section), and drag out the <strong>say</strong> block from the top. Connect it within the <strong>HelloWorldIntent.spoken</strong> block. 
-    
-    ![Sayblock](../images/alexa_hello_world/say.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-4. Select the Text drawer (5th button in the Blocks section) and drag out the empty <strong>“ ”</strong> block from the top. Connect it to the <strong>say</strong> block.
-
-    ![Emptyquote](../images/alexa_hello_world/emptyquote.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p> 
-
-5. Within the empty quotation block, type “hello world”. 
-
-    ![Blocksdone](../images/alexa_hello_world/blocksdone.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
-
-## Sending Your Skill to Amazon
-
-Now, we need to send this <strong>skill</strong> to Amazon.
-
-1. At the rightmost part of the screen, there is the “Testing” box. Within it, there is a button labeled <strong>“Send Updates”</strong>. Click this button.
-
-    ![Sendskill](../images/alexa_hello_world/sendskill.png){:.enlargeImage} 
-    <p style="padding-bottom: 7px"></p>
-
-2. The gray part of the “Testing” box should change text when loading. Wait a few minutes until the gray part turns white.
-
-Your current screen should look like the following:
-
-![Sentscreen](../images/alexa_hello_world/sentscreen.png){:.enlargeImage} 
+![CloudDB](../images/alexa_messenger/CloudDB.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Testing your Skill
+And drag and drop CloudDB over the Amazon Echo Dot. 
 
-Now it’s time to test our Alexa skill! If you have an Alexa-enabled device handy and [set up](../images/alexa_hello_world/setup.pdf), say *“Alexa, open hello world greeter”,* and then *“Alexa, tell hello world greeter to say hello.”* to it and hear the response, which should be “hello world”, as we programmed it.
-
-If you don’t have an Alexa-enabled device on hand, App Inventor allows you to simulate an Alexa using your custom Alexa skill right in your browser! Simply type in the textbox at the bottom, *“Alexa, ask hello world greeter to say hi.”* The response should be what we plugged into the <strong>say</strong> block earlier, *“hello world.”*
-
-![Sayhello](../images/alexa_hello_world/sayhello.png){:.enlargeImage} 
+![Drag CloudDB](../images/alexa_messenger/dragCloudDB.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Note: If you are interested in testing in other ways, feel free to explore this [document](../images/alexa_hello_world/testing.pdf)!
+The non-visible component, CloudDB, will by default have a Token identical to the CloudDB you have in  your Screen1 of your mobile app and thus both Alexa and the app will be accessing and communicating via the same CloudDB.
 
-## Finish!
+![CloudDB Token](../images/alexa_messenger/CloudDBToken.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
-Congratulations! You’ve made your first custom Alexa Skill! Feel free to extend this app by adding new intents and new ways for Alexa to respond to each intent.
+
+(Your token will look different than what you see here)
+
+## Creating the Voice User Interface (VUI) (4)
+
+Your Viewer now should look like this.
+
+![Viewer](../images/alexa_messenger/EchoDotViewer.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Your Components should look like this.
+
+![Components](../images/alexa_messenger/messagemasterComponents.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Creating the Voice User Interface (VUI) (4)
+
+Define the getMessageIntent by specifying some phrases people would use to mean “retrieve my message.” These phrases are called “utterances” for a VUI. Some possibilities are shown below.  Add a few of your own to this list. When Alexa hears these and similar utterances, she will understand that you would like to get your message from the cloud that was sent by the user of the mobile app.
+
+![Get Message Intent](../images/alexa_messenger/getMessageIntent.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Creating the Voice User Interface (VUI) (5)
+
+Now, specify the SlotType for the messageSentSlot.  Choose the option Phrase.  Alexa will capture the message to be sent to the app user (via the cloud) and store it in this slot.
+
+![Message  Sent Slot](../images/alexa_messenger/messageSentSlot.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Define the sendMessageIntent with a few utterances that amount to something like “send the message XXXX”. The XXXX in this phrase will have to be a placeholder for what the message will be. This placeholder is the slot. Create the slot by pressing the messageSentSlot button under the Utterances textbox. Note that App Inventor textualizes this placeholder using curly braces { Slot }.
+![Send Message Intent](../images/alexa_messenger/sendMessageIntent.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+
+## Coding the VUI functionality (1)
+
+
+Go to Blocks editor.
+![Blocks Button](../images/alexa_messenger/BlocksButton.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+From the getMessageIntent block, pick the when getMessageIntent.spoken event handler.
+When Alexa hears an utterance like “get me my message” she will say “Your latest message is:”, pause for a second, then retrieve the content stored in CloudDB by the mobile app user under the tag “toAlexa” and speak this message.  After that, Alexa will pause for another second and say “End of message” to indicate that the message retrieval has concluded.
+
+![When Get Message Intent Spoken](../images/alexa_messenger/whengetMessageIntentSpoken.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Coding the VUI functionality (2)
+
+When the Alexa user wants to send a message to the mobile app user, they will say something like “send the message I miss you, hope all is well”. Alexa will recognize this as sendMessageIntent, capture the message part of the utterance (“I miss you, hope all is well”) and forward it to the cloud.  To accomplish this, go to sendMessageIntent blocks and pick when sendMessageIntent.spoken event handler.  Alexa captures the message in the user’s utterance and stores it in messageSentSlot.  First, have Alexa repeat the message she heard for the purpose of accuracy.  Then store the message text to the mutually used CloudDB under the tag “fromAlexa”.  The mobile app user will use their GET FROM ALEXA green button to retrieve this stored message.
+
+
+![When Send Message Intent Spoken](../images/alexa_messenger/whensendMessageIntentSpoken.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+This is all the code needed to give functionality to the VUI.
+
+
+## Testing your Alexa Messenger app (1)
+
+Test that your Alexa integrated app is working.  Make sure that:
+* The mobile app is able to send and retrieve messages to and from Alexa via CloudDB
+* Alexa is able to send and retrieve messages to and from the mobile app via CloudDB
+
+Go to the message master skill interface (unless you are there already.)
+
+
+![Message Master](../images/alexa_messenger/messagemasterChoice.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Under the Testing panel select Send Updates (to Amazon.)
+
+![Send Updates](../images/alexa_messenger/SendUpdatesButton.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Go back to Screen1.
+![Screen1](../images/alexa_messenger/Screen1Choice.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Connect to AI Companion by scanning the generated QR Code
+![AI Companion](../images/alexa_messenger/AICompanionChoice.png){:.enlargeImage}
+![QR Code](../images/alexa_messenger/QRCode.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Testing your Alexa Messenger app (2)
+
+In your mobile app type in a message to be sent to Alexa either by typing or via the SPEAK button.  When done press SEND TO ALEXA BUTTON green button.
+
+![Message Sent](../images/alexa_messenger/appSendingMessage.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Now go back to Alexa interface via message master skill.
+
+![Message Master](../images/alexa_messenger/messagemasterChoice.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Enter the following in the Testing window “ask message master to get me my message”
+You should see Alexa retrieve the message sent by the mobile app.
+
+![Alexa Getting Message](../images/alexa_messenger/AlexaGettingMessage.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Now try sending a message from Alexa to the mobile app.  Enter “send the message *your message here*”.  Alexa should read you back your message and indicate she is sending the message.
+
+![Alexa Sending Message](../images/alexa_messenger/AlexaSendingMessage.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+Now check that the mobile app is able to retrieve this message sent by Alexa by pressing GET FROM ALEXA green button.  You should see the message that was sent.  Use the READ button to listen to it read back to you.  (Note that the voice is your mobile phone's Text-to-Speech voice, not Alexa’s.)
+
+![Message Received](../images/alexa_messenger/appGettingMessage.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+After a few messages back and forth you should also test your DELETE ALL MESSAGES red button to make sure you can erase all your messages.
+
+Congratulations, you have just created your first fully integrated Alexa-App Inventor project.
+
 
 # Expand Your App
 
 Here are some ideas for ways to enhance your app!
 
-* Our Alexa app currently only has one intent- saying "hello world." Try adding more intents that instruct Alexa to say different things. For example, you can add an intent for Alexa to say "good bye."
+* Currently, only the mobile app user can delete all messages by the pressing the red DELETE ALL MESSAGES button.  Create a deleteAllMessagesIntent so the Alexa user can also delete all messages as needed.  (For example, when they regret a message they sent!)
 
-* Have Alexa learn the name of the user from an input user sentence like "my name is Sebastian" and respond "It is my pleasure to meet you Sebastian." 
-    <hint markdown="block" title="Hint">
-    Hint: you will need to learn about Slots.
-    </hint>
+* Currently, if there are no new messages waiting for a user in the cloud, no meaningful response like “You have no new messages” is given.  Fix this.
+
+* Currently, only two single messages can be stored in the cloud at a time, one going to Alexa and one coming from Alexa.  Create a messaging system so that multiple messages can be stored and retrieved by each user and the messages are kept until a user decides to clear them. 
+
+* Try bringing to life your own awesome ideas for perfecting the Alexa Messaging system.
+
 
 
 # About Youth Mobile Power
