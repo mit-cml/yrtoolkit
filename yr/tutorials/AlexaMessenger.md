@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Alexa Messenger
 layout: tutorial
 ---
 
@@ -8,9 +8,8 @@ layout: tutorial
 <p style="font-size: 150%;
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Amazon Alexa Skill!</p>
 
-In this tutorial, you will learn how to use the <strong>MIT App Inventor’s Conversational AI Interface</strong> to create your own Amazon Alexa skill for Alexa to say "Hello World" when prompted by the user. 
+Have you tried programming Alexa skills? Tried programming App Inventor? Both can be powerful coding environments alone — but together they allow you to combine conversational AI with other types of AI and programming components. To get a taste of this combo, try the tutorial below! 
 
-You will also learn how to test your new Alexa skill using Amazon’s <strong>Alexa Development Console</strong>.
 
 # Setup
 
@@ -20,9 +19,22 @@ You will also learn how to test your new Alexa skill using Amazon’s <strong>Al
 
 Please note: If your instructor gave you access to an anonymous Alexa account then you can skip this section on how to set up an Alexa Developer Account.
 
-# Alexa Hello World Tutorial
+# Alexa Messenger Tutorial
 
-## Creating a New Skill
+## Overview
+
+Up to this point you have only seen App Inventor Alexa tutorials where App Inventor was only used to provide an easy block-based language environment to develop Alexa Skills.  These may have given the wrong impression that Alexa does not really integrate with many of the native mobile app developing features of App Inventor.  The purpose of this tutorial is to show how you can develop a mobile app with App Inventor that is fully integrated with Alexa’s conversational AI capabilities.
+
+The app you will develop will be a messenger app where a user can write or speak a message they wish to their mobile device which will then be sent to the cloud and from where another user elsewhere can retrieve the message and hear it through an Alexa device.
+
+![App to Alexa](../images/alexa_messenger/AppToAlexaMessageProcess.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+The messenger app will alternatively have a user ask Alexa to forward a message, which again will then be sent to the cloud and from where a user elsewhere can retrieve it using their mobile app.
+
+![App to Alexa](../images/alexa_messenger/AlexaToAppMessageProcess.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
 
 1. In the Designer Toolbar at the top of the screen, you will see a dropdown button labeled <strong>“Add…”</strong>. Press it, and within it, select the <strong>“Skill”</strong> button.
 
