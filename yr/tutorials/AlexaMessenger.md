@@ -6,10 +6,12 @@ layout: tutorial
 # Challenge
 
 <p style="font-size: 150%;
-font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Make Your Own Amazon Alexa Skill!</p>
+font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Build Your Own App-to-Alexa Messaging System</p>
 
-Have you tried programming Alexa skills? Tried programming App Inventor? Both can be powerful coding environments alone — but together they allow you to combine conversational AI with other types of AI and programming components. To get a taste of this combo, try the tutorial below! 
+Have you tried programming Alexa skills? Tried programming App Inventor? Both can be powerful coding environments alone — but together they allow you to combine conversational AI with other mobile programming components. To get a taste of this combo, try the tutorial below! 
 
+![App to Alexa](../images/alexa_messenger/AppToAlexaMessageProcess.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
 # Setup
 
@@ -43,7 +45,7 @@ Through this two-way communication scheme you will be able to see how it is poss
 ![GUI Correspondence](../images/alexa_messenger/GUICorrespondence.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-In App Inventor designer view, you will see the mobile app’s graphical user interface (GUI) has already been created for you.  Notice the top textbox lets you enter a message to send (either by typing directly into the textbox or by talking into your device via the orange SPEAK button). Then the green SEND TO ALEXA button sends the message to CloudDB.
+In App Inventor designer view, you will see that the mobile app’s graphical user interface (GUI) has already been created for you.  Notice the top textbox lets you enter a message to send (either by typing directly into the textbox or by talking into your device via the orange SPEAK button). Then the green SEND TO ALEXA button sends the message to CloudDB.
 
 At the bottom, the green button GET FROM ALEXA  retrieves a pending message from CloudDB and post it to the bottom textbox.  Use the orange READ button to read the retrieved message out loud.
 
@@ -116,7 +118,7 @@ Give an invocation name for the Alexa skill. In this example, call it “message
 
 ## Creating the Voice User Interface (VUI) (2)
 
-It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI instead of graphical components we have vocal spoken elements called ‘intents” and “slots.”   You will soon see how these are used. Drag and drop two intents and one slot into the Viewer over the Amazon Echo Dot image.
+It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI instead of graphical components we have spoken elements called ‘intents” and “slots.”   You will soon see how these are used. Drag and drop two intents and one slot into the Viewer over the Amazon Echo Dot image.
 
 
 ![Two Intents and a Slot](../images/alexa_messenger/twointents&aslotDragged.png){:.enlargeImage}
@@ -222,7 +224,7 @@ Go to the message master skill interface (unless you are there already.)
 ![Message Master](../images/alexa_messenger/messagemasterChoice.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Under the Testing panel select Send Updates (to Amazon.)
+Under the Testing panel select Send Updates (to Amazon.)  This may take a few minutes.  Be patient.
 
 ![Send Updates](../images/alexa_messenger/SendUpdatesButton.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -231,7 +233,7 @@ Go back to Screen1.
 ![Screen1](../images/alexa_messenger/Screen1Choice.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Connect to AI Companion by scanning the generated QR Code
+Connect to AI Companion by scanning the generated QR Code.  Your code will look different than what you see here.
 ![AI Companion](../images/alexa_messenger/AICompanionChoice.png){:.enlargeImage}
 ![QR Code](../images/alexa_messenger/QRCode.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -255,6 +257,8 @@ You should see Alexa retrieve the message sent by the mobile app.
 <p style="padding-bottom: 7px"></p>
 
 Now try sending a message from Alexa to the mobile app.  Enter “send the message *your message here*”.  Alexa should read you back your message and indicate she is sending the message.
+
+Note that, as in the Testing panel Alexa already knows the context, you do not need to include in your message the words "ask message master to ..." any more.  If you were using a home Alexa device instead of the Testing panel, you would need to every time say "Alexa, ask message master to ..."  
 
 ![Alexa Sending Message](../images/alexa_messenger/AlexaSendingMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
