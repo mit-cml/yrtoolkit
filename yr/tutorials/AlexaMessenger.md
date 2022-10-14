@@ -25,7 +25,7 @@ Please note: If your instructor gave you access to an anonymous Alexa account th
 
 ## Overview
 
-Up to this point you have only seen App Inventor Alexa tutorials where App Inventor was only used to provide an easy block-based language environment to develop Alexa Skills.  These may have given the wrong impression that Alexa does not really integrate with many of the native mobile app developing features of App Inventor.  The purpose of this tutorial is to show how you can develop a mobile app with App Inventor that is fully integrated with Alexa’s conversational AI capabilities.
+Up to this point you have only seen App Inventor Alexa tutorials where App Inventor was only used to provide an easy block-based language environment to develop Alexa Skills.  These may have given the wrong impression that Alexa does not really integrate with many of the native mobile app developing features of App Inventor.  This tutorial aims to show how you can develop a mobile app with App Inventor that is fully integrated with Alexa’s conversational AI capabilities.
 
 The app you will develop will be a messenger app where a user can write or speak a message they wish to their mobile device which will then be sent to the cloud and from where another user elsewhere can retrieve the message and hear it through an Alexa device.
 
@@ -37,7 +37,7 @@ The messenger app will alternatively have a user ask Alexa to forward a message,
 ![App to Alexa](../images/alexa_messenger/AlexaToAppMessageProcess.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Through this two-way communication scheme you will be able to see how it is possible to seamlessly integrate Alexa skills with mobile app capabilities using two parallel development environments provided by MIT App Inventor.
+Through this two-way communication scheme, you will see how it is possible to seamlessly integrate Alexa skills with mobile app capabilities using two parallel development environments provided by MIT App Inventor.
 
 
 ## The Graphical User Interface (GUI)
@@ -47,7 +47,7 @@ Through this two-way communication scheme you will be able to see how it is poss
 
 In App Inventor designer view, you will see that the mobile app’s graphical user interface (GUI) has already been created for you.  Notice the top textbox lets you enter a message to send (either by typing directly into the textbox or by talking into your device via the orange SPEAK button). Then the green SEND TO ALEXA button sends the message to CloudDB.
 
-At the bottom, the green button GET FROM ALEXA  retrieves a pending message from CloudDB and post it to the bottom textbox.  Use the orange READ button to read the retrieved message out loud.
+At the bottom, the green button GET FROM ALEXA  retrieves a pending message from CloudDB and posts it to the bottom textbox.  Use the orange READ button to read the retrieved message out loud.
 
 Also notice the three non-visible components (SpeechRecognizer, CloudDB, TextToSpeech) working in the background. They generate text from speech, transfer the text to the cloud, and read the text out loud.
 
@@ -118,24 +118,25 @@ Give an invocation name for the Alexa skill. In this example, call it “message
 
 ## Creating the Voice User Interface (VUI) (2)
 
-It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI instead of graphical components we have spoken elements called ‘intents” and “slots.”   You will soon see how these are used. Drag and drop two intents and one slot into the Viewer over the Amazon Echo Dot image.
+It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI, instead of graphical components, we have spoken elements called ‘intents” and “slots.”   You will soon see how these are used. 
+
+Drag and drop one intent, one slot and then another intent into the Viewer over the Amazon Echo Dot image.
 
 
 ![Two Intents and a Slot](../images/alexa_messenger/twointents&aslotDragged.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-This will create IntentA, IntentB, and SlotA.  Then rename them getMessageIntent, sendMessageIntent, and messageSentSlot respectively as shown below.
+This will create IntentA, SlotA and IntentB.  Rename them getMessageIntent, messageSentSlot and sendMessageIntent, respectively as shown below.
 
 
 ![Rename IntentA](../images/alexa_messenger/renameIntentA.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-![Rename IntentB](../images/alexa_messenger/renameIntentB.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
 ![Rename SlotA](../images/alexa_messenger/renameSlotA.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
+![Rename IntentB](../images/alexa_messenger/renameIntentB.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
 ## Creating the Voice User Interface (VUI) (3)
 
@@ -149,7 +150,7 @@ And drag and drop CloudDB over the Amazon Echo Dot.
 ![Drag CloudDB](../images/alexa_messenger/dragCloudDB.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-The non-visible component, CloudDB, will by default have a Token identical to the CloudDB you have in  your Screen1 of your mobile app and thus both Alexa and the app will be accessing and communicating via the same CloudDB.
+The non-visible component, CloudDB, will by default have a token identical to the CloudDB you have in  your Screen1 of your mobile app and thus both Alexa and the app will be accessing and communicating via the same CloudDB.
 
 ![CloudDB Token](../images/alexa_messenger/CloudDBToken.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -159,19 +160,21 @@ The non-visible component, CloudDB, will by default have a Token identical to th
 
 ## Creating the Voice User Interface (VUI) (4)
 
-Your Viewer now should look like this.
+Your Viewer now should look like this:
 
 ![Viewer](../images/alexa_messenger/EchoDotViewer.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Your Components should look like this.
+Your Components should look like this:
 
 ![Components](../images/alexa_messenger/messagemasterComponents.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Creating the Voice User Interface (VUI) (4)
 
-Define the getMessageIntent by specifying some phrases people would use to mean “retrieve my message.” These phrases are called “utterances” for a VUI. Some possibilities are shown below.  Add a few of your own to this list. When Alexa hears these and similar utterances, she will understand that you would like to get your message from the cloud that was sent by the user of the mobile app.
+Define the getMessageIntent by specifying some phrases people would use to mean “retrieve my message.” These phrases are called “utterances” for a VUI. Some possibilities are shown below.  Add a few of your own to this list. 
+
+When Alexa hears these and similar utterances, she will understand that you would like to get your message from the cloud, which was sent by the user of the mobile app.
 
 ![Get Message Intent](../images/alexa_messenger/getMessageIntent.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -183,7 +186,7 @@ Now, specify the SlotType for the messageSentSlot.  Choose the option Phrase.  A
 ![Message  Sent Slot](../images/alexa_messenger/messageSentSlot.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Define the sendMessageIntent with a few utterances that amount to something like “send the message XXXX”. The XXXX in this phrase will have to be a placeholder for what the message will be. This placeholder is the slot. Create the slot by pressing the messageSentSlot button under the Utterances textbox. Note that App Inventor textualizes this placeholder using curly braces { Slot }.
+Define the sendMessageIntent with a few utterances that amount to something like “send the message XXXX”. The XXXX in this phrase will have to be a placeholder for what the message will be. This placeholder is the slot. Create the slot by pressing the messageSentSlot button under the Utterances textbox. Note that App Inventor textualizes this placeholder using curly braces {Slot}.
 ![Send Message Intent](../images/alexa_messenger/sendMessageIntent.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
@@ -192,18 +195,26 @@ Define the sendMessageIntent with a few utterances that amount to something like
 
 
 Go to Blocks editor.
-![Blocks Button](../images/alexa_messenger/BlocksButton.png){:.enlargeImage}
+![Blocks Button](../images/alexa_messenger/SkillBlocksButton.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 From the getMessageIntent block, pick the when getMessageIntent.spoken event handler.
-When Alexa hears an utterance like “get me my message” she will say “Your latest message is:”, pause for a second, then retrieve the content stored in CloudDB by the mobile app user under the tag “toAlexa” and speak this message.  After that, Alexa will pause for another second and say “End of message” to indicate that the message retrieval has concluded.
+
+Code the block so that when Alexa hears an utterance like “get me my message” she will say, “Your latest message is:”, pause for a second, then retrieve the content stored in CloudDB by the mobile app user under the tag “toAlexa” and speak this message.  
+
+After that, Alexa will pause for another second and say “End of message” to indicate that the message retrieval has concluded.
 
 ![When Get Message Intent Spoken](../images/alexa_messenger/whengetMessageIntentSpoken.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Coding the VUI functionality (2)
 
-When the Alexa user wants to send a message to the mobile app user, they will say something like “send the message I miss you, hope all is well”. Alexa will recognize this as sendMessageIntent, capture the message part of the utterance (“I miss you, hope all is well”) and forward it to the cloud.  To accomplish this, go to sendMessageIntent blocks and pick when sendMessageIntent.spoken event handler.  Alexa captures the message in the user’s utterance and stores it in messageSentSlot.  First, have Alexa repeat the message she heard for the purpose of accuracy.  Then store the message text to the mutually used CloudDB under the tag “fromAlexa”.  The mobile app user will use their GET FROM ALEXA green button to retrieve this stored message.
+When the Alexa user wants to send a message to the mobile app user, they will say something like “send the message I miss you, hope all is well”. Alexa will recognize this as sendMessageIntent, capture the message part of the utterance (“I miss you, hope all is well”), and forward the message to the cloud.  
+
+To code this: 
+* Go to sendMessageIntent blocks and pick the when sendMessageIntent.spoken event handler.  Alexa will capture the message in the user’s utterance and store it in messageSentSlot.  
+* Code Alexa to repeat the message she heard for the purpose of accuracy.  
+* Then store the message text to CloudDB under the tag “fromAlexa”.  The mobile app user will use their GET FROM ALEXA green button to retrieve this stored message.
 
 
 ![When Send Message Intent Spoken](../images/alexa_messenger/whensendMessageIntentSpoken.png){:.enlargeImage}
@@ -233,14 +244,14 @@ Go back to Screen1.
 ![Screen1](../images/alexa_messenger/Screen1Choice.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Connect to AI Companion by scanning the generated QR Code.  Your code will look different than what you see here.
+Connect to AI Companion by scanning the generated QR Code.  Your code will be different than the one you see here.
 ![AI Companion](../images/alexa_messenger/AICompanionChoice.png){:.enlargeImage}
 ![QR Code](../images/alexa_messenger/QRCode.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Testing your Alexa Messenger app (2)
 
-In your mobile app type in a message to be sent to Alexa either by typing or via the SPEAK button.  When done press SEND TO ALEXA BUTTON green button.
+In your mobile app, create a message to be sent to Alexa either by typing or via the SPEAK button.  When done, press the green SEND TO ALEXA button.
 
 ![Message Sent](../images/alexa_messenger/appSendingMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -258,17 +269,17 @@ You should see Alexa retrieve the message sent by the mobile app.
 
 Now try sending a message from Alexa to the mobile app.  Enter “send the message *your message here*”.  Alexa should read you back your message and indicate she is sending the message.
 
-Note that, as in the Testing panel Alexa already knows the context, you do not need to include in your message the words "ask message master to ..." any more.  If you were using a home Alexa device instead of the Testing panel, you would need to every time say "Alexa, ask message master to ..."  
+Note that, as in the Testing panel Alexa already knows the context, you do not need to include in your message the words "ask message master to ..." anymore.  If you were using a home Alexa device instead of the Testing panel, you would need to every time say "Alexa, ask message master to ..."  
 
 ![Alexa Sending Message](../images/alexa_messenger/AlexaSendingMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Now check that the mobile app is able to retrieve this message sent by Alexa by pressing GET FROM ALEXA green button.  You should see the message that was sent.  Use the READ button to listen to it read back to you.  (Note that the voice is your mobile phone's Text-to-Speech voice, not Alexa’s.)
+Now check that the mobile app is able to retrieve this message sent by Alexa by pressing the green GET FROM ALEXA button.  You should see the message that was sent.  Use the READ button to listen to it read back to you.  (Note that the voice is your mobile phone's Text-to-Speech voice, not Alexa’s.)
 
 ![Message Received](../images/alexa_messenger/appGettingMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-After a few messages back and forth you should also test your DELETE ALL MESSAGES red button to make sure you can erase all your messages.
+After a few messages back and forth, you should also test your DELETE ALL MESSAGES red button to make sure you can erase all your messages.
 
 Congratulations, you have just created your first fully integrated Alexa-App Inventor project.
 
@@ -277,11 +288,11 @@ Congratulations, you have just created your first fully integrated Alexa-App Inv
 
 Here are some ideas for ways to enhance your app!
 
-* Currently, only the mobile app user can delete all messages by the pressing the red DELETE ALL MESSAGES button.  Create a deleteAllMessagesIntent so the Alexa user can also delete all messages as needed.  (For example, when they regret a message they sent!)
+* Currently, only the mobile app user can delete all messages by pressing the red DELETE ALL MESSAGES button.  Create a deleteAllMessagesIntent so the Alexa user can also delete all messages as needed.  (For example, when they regret a message they sent!)
 
 * Currently, if there are no new messages waiting for a user in the cloud, no meaningful response like “You have no new messages” is given.  Fix this.
 
-* Currently, only two single messages can be stored in the cloud at a time, one going to Alexa and one coming from Alexa.  Create a messaging system so that multiple messages can be stored and retrieved by each user and the messages are kept until a user decides to clear them. 
+* Currently, only two single messages can be stored in the cloud at a time, one going to Alexa and one coming from Alexa.  Create a messaging system so that multiple messages can be stored and retrieved by each user, and the messages are kept until a user decides to clear them. 
 
 * Try bringing to life your own awesome ideas for perfecting the Alexa Messaging system.
 
