@@ -150,13 +150,14 @@ And drag and drop CloudDB over the Amazon Echo Dot.
 ![Drag CloudDB](../images/alexa_messenger/dragCloudDB.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-The non-visible component, CloudDB, will by default have a token identical to the CloudDB you have in  your Screen1 of your mobile app and thus both Alexa and the app will be accessing and communicating via the same CloudDB.
+The non-visible component in your skill, CloudDB, will by default have a token identical to the CloudDB you have in your Screen1 of your mobile app. Also make sure that both in Screen1 and in your Alexa skill (message master) the CloudDBs have identical ProjectID.  By default the ProjectIDs should be the name of the current project (AlexaMessenger_Starter) but as long as they are made identical you can name them both anything you want.  Once the ProjectIDs and tokens are the same, then both Alexa and the app are able to access and communicate via the <em><strong>same</strong></em> CloudDB.
 
-![CloudDB Token](../images/alexa_messenger/CloudDBToken.png){:.enlargeImage}
+Screen 1 and message master CloudDB ProjectIDs and Tokens should be identical:
+![CloudDB Token and ProjectID for Screen1](../images/alexa_messenger/ProjectID&TokenMatch.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 
-(Your token will look different than what you see here)
+(Your token may look different than what you see here)
 
 ## Creating the Voice User Interface (VUI) (4)
 
