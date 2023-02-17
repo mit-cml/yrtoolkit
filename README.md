@@ -59,6 +59,6 @@ The tutorials are served to the world at http://appinventor.mit.edu/yrtoolkit/, 
 
 **The Two Systems**
 
-There are actually two systems of tutorials within this toolkit, called the "standalone" tutorials and the "grouped" tutorials. They are NOT interchangeable. All the grouped tutorials are within tutorials. The standalone tutorials currently have three homes: yr/tutorials, malden/tutorials, and mcsp. YR tutorials are the ones in collaboration with YR Media, alone with some others that we use often (like the Hour of Code activity, accessible at http://bit.ly/MITAppInventorHoC). Malden tutorials are related to a Computational Action study done in Malden High School. MCSP tutorials are controlled by Beryl Hoffman at Mobile CSP. </p>
+There are actually two systems of tutorials within this toolkit, called the "standalone" tutorials and the "grouped" tutorials. They are NOT interchangeable. All the grouped tutorials are within tutorials. The standalone tutorials currently have three homes: yr/tutorials, malden/tutorials, and mcsp. YR tutorials are the ones in collaboration with YR Media, along with some others that we use often (like the Hour of Code activity, accessible at http://bit.ly/MITAppInventorHoC). Malden tutorials are related to a Computational Action study done in Malden High School. MCSP tutorials are controlled by Beryl Hoffman at Mobile CSP. </p>
 
 **Last Updated: 2022-02-08**
