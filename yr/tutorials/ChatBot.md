@@ -33,7 +33,7 @@ and then asks ChatGPT to “explain the Big Bang Theory,” the response will be
 
 
 ![System Prompt](../images/chatBot/KindergartenTeacherSystemPrompt.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>< /br>
+<p style="padding-bottom: 7px"></p>
 
 ![ChatGPT Response](../images/chatBot/BigBangExplained.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
