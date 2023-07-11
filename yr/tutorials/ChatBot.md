@@ -10,14 +10,14 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">MIT App Inventor ChatGPT Tu
 Capturing the world’s wisdom at your fingertips
 </p>
 
-Have you ever wondered how it is possible to create your very own app that will tap into ChatGPT and access all the information available whereever you are?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
+Have you ever wondered how it is possible to create your very own ChatGPT app that will allow you, wherever you are, to tap into a world of useful information?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
 
 ![ChatBot GUI](../images/chatBot/FinalGUI.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 # Setup
 
-1. If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
+If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
 
 # ChatGPT Tutorial
 
@@ -47,7 +47,7 @@ In this project you are given a GUI that is almost completed.
 ![Initial GUI Corrrespondence](../images/chatBot/Correspondence_InitialGUI.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-What do you think is the function of each component? Many of the components may be self-explanatory. However, ListView is where you will display the user’s conversation with ChatGPT.
+What do you think is the function of each component? Many of the components may be self-explanatory. However, <strong>ListView</strong> is where you will display the user’s conversation with ChatGPT.
 
 Drag and drop a <strong>SpeechRecognizer</strong> component and then a <strong>TextToSpeech</strong> component from the <strong>Media</strong> drawer.
 
@@ -72,246 +72,111 @@ Your Viewer and Components panel now should look like this with three non-visibl
 
 Click on the Blocks button to go to the Blocks editor.
 
-![Blocks Button](../images/alexa_messenger/BlocksButton.png){:.enlargeImage}
+![Blocks Button](../images/chatBot/BlocksEditor.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-First, code what happens when the user clicks the orange SPEAK button.  Make the  SpeechRecognizer component listen to the user’s speech and turn it into text. Code the block to erase any previous message in the top textbox and replace it with an empty string.
+You will accomplish all the details of this ChatBot app with only 4 essential blocks of the <strong>ChatBot</strong> component.  So first pull these blocks and have them ready for deployment.  Can you guess what each block does?
 
-![When Speak Button Clicked](../images/alexa_messenger/whenspeakButtonClick.png){:.enlargeImage}
+
+![Essential ChatBot Blocks](../images/chatBot/ChatBotBlocksNeeded.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-When the SpeechRecognizer returns with the text of the user’s speech, paste the text into the top textbox.
+Now you are ready to start.  Initialize a global variable <em><strong>chatList</strong></em> to an empty list. This is the variable that will hold the messages of the chat as list entries.
 
-![When SpeechRecognizer After Getting Text](../images/alexa_messenger/whenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-When the user clicks the green SEND TO ALEXA button, send the text message to CloudDB and store it under the tag “toAlexa”. Also update the textbox with the text “Message sent to Alexa”, confirming that the message is sent.
-
-![When Send Alexa Button Clicked](../images/alexa_messenger/whensendAlexaButtonClick.png){:.enlargeImage}
+![Initialize chatList Variable](../images/chatBot/initializeglobalChatList.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Coding the GUI functionality (2)
 
-At the bottom when the green GET FROM ALEXA button is clicked then the CloudDB should be invoked to return the contents stored under the tag “fromAlexa”
+Recall that when you use a chunk of code many times throughout your program it is best to “factor it out” — that is, define it as a procedure so you can simplify your code and make it more maintainable (i.e., if you need to edit something due to an error for example, you can fix it in one place instead of all over your program)
 
-![When Get Alexa Button Clicked](../images/alexa_messenger/whengetAlexaButtonClick.png){:.enlargeImage}
+Create a procedure <em><strong>processMessage</strong></em> which takes two inputs: <em>speaker</em> and <em>text</em>.
+The speaker will either be “AI” or “User” for a given instance of the conversation and the text will be the text of a given message. The procedure will form text that looks like
+
+<em><strong>User</strong>: explain the Big Bang Theory</em>
+ 
+by joining the speaker (“User”) to the text (“explain Big Bang Theory”) with a : (colon) in between. This new text will be inserted at the top of the <em><strong>chatList</strong></em> and then the procedure will update the <strong>ListView</strong> with the newly added text. Note that the <strong>ListView</strong> will display the chat between the user and the AI in reverse order so it is easier to read with the most recent conversation always at the very top.
+
+![Procedure processMessage](../images/chatBot/procedure_processMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
-
-When CloudDB responds with the contents, after checking that the returned item has the correct tag (“fromAlexa”), the contents should be pasted to the textbox at the bottom.
-
-
-![When CloudDB Got Value](../images/alexa_messenger/whenCloudDB1GotValue.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-When the user clicks the READ button, the contents of the bottom textbox should be read out loud using a TextToSpeech component.
-
-![When Read Button Clicked](../images/alexa_messenger/whenreadButtonClick.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
 
 ## Coding the GUI functionality (3)
 
-Finally, when the user clicks the DELETE ALL MESSAGES button, both textboxes should be cleared and all content on CloudDB (stored under both tags “toAlexa” and “fromAlexa”) should be erased.
+When the <strong>SystemRoleButton</strong> is clicked, assign the <strong>ChatBot</strong>’s <em>System</em> property to the role designated by the user in the <strong>SystemRoleTextBox</strong>. The first entry in the <em><strong>chatList</strong></em> should be an indication of the assigned system role. For example:
 
-![When Delete All Button Clicked](../images/alexa_messenger/whendeleteAllButtonClick.png){:.enlargeImage}
+<em><strong>User</strong>: You are a kindergarten teacher explaining everything at the level of 4 year old children</em>
+
+Once the system role has been assigned, clear the <strong>SystemRoleTextBox</strong> of any text and make invisible the <strong>VerticalArrangement</strong> that holds all the system role assignment components.
+
+![System Role Assignment](../images/chatBot/whenSystemRoleButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
+## Coding the GUI functionality (4)
 
-## Creating the Voice User Interface (VUI) (1)
+When the user presses the <strong>TalkButton</strong>, the <strong>SpeechRecognizer</strong> should capture the user’s speech and send it to Google for analysis:
 
-You just finished coding the mobile app.  Now, create the voice user interface (VUI) in the Alexa development environment so Alexa can retrieve and send messages.
-
-First, create an Alexa skill by going to the Add button in the App Inventor interface and selecting the Skill option.
-
-![Add Skill](../images/alexa_messenger/addSkill.png){:.enlargeImage}
+![When TalkButton Clicked](../images/chatBot/whenTalkButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Give an invocation name for the Alexa skill. In this example, call it “message master”. That way, we can tell Alexa something like “Ask message master to get my message”
+When the text of the speech is received from Google, the app will create the next line in the chat. For example:
 
-![Naming Skill](../images/alexa_messenger/namingSkill.png){:.enlargeImage}
+<em><strong>User</strong>: explain the Big Bang Theory</em>
+
+Also include code to send this text to ChatGPT as a query:
+
+![When SpeechRecognizer After Getting Text](../images/chatBot/whenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
+## Coding the GUI functionality (5)
 
-## Creating the Voice User Interface (VUI) (2)
+When ChatGPT returns with a response, a new message should be added to the <strong>ListView</strong>, like:
 
-It is easier to create an interface you can see than one you can only hear. That’s why creating a voice user interface (VUI) may seem less intuitive than creating a graphical user interface (GUI). But similar principles apply.  For a VUI, instead of graphical components, we have spoken elements called ‘intents” and “slots.”   You will soon see how these are used. 
+<em><strong>AI</strong> : The Big Bang Theory is like a really big explosion that happened a really long time ago…</em>
 
-Drag and drop one intent, one slot and then another intent into the Viewer over the Amazon Echo Dot image.
+And make the <strong>TextToSpeech</strong> component read this response out loud. 
 
-
-![Two Intents and a Slot](../images/alexa_messenger/twointents&aslotDragged.png){:.enlargeImage}
+![When ChatBot Got Response](../images/chatBot/whenChatBot1GotResponse.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-This will create IntentA, SlotA and IntentB.  Rename them getMessageIntent, messageSentSlot and sendMessageIntent, respectively as shown below.
+## Coding the GUI functionality (6)
 
+Finally, when the user clicks <strong>ResetConversationButton</strong>, reset the conversation, initialize the variable <em><strong>chatList</strong></em> to an empty list, clear the <strong>ListView</strong>, and make visible the <strong>VerticalArrangement</strong> that hosts system role assigning components.
 
-![Rename IntentA](../images/alexa_messenger/renameIntentA.png){:.enlargeImage}
+![When ResetConversationButton Clicked](../images/chatBot/whenResetConversationButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-![Rename SlotA](../images/alexa_messenger/renameSlotA.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
+## Testing the app
 
-![Rename IntentB](../images/alexa_messenger/renameIntentB.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
+Now test your app by scanning the QR Code generated via your AI2 Companion.  Give the system an interesting role and ask ChatGPT some questions.  For example:
 
-## Creating the Voice User Interface (VUI) (3)
+<em><strong>User</strong>: You are a Shakespearean actor who answers every question in limerick</em>
 
-Access CloudDB at the bottom of the Palette in the Alexa drawer.
+<em><strong>User</strong>: Explain why the chicken crossed the road </em>
 
-![CloudDB](../images/alexa_messenger/CloudDB.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
+Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.
 
-And drag and drop CloudDB over the Amazon Echo Dot. 
+Congratulations! You just created a powerful app that will allow you to chat with ChatGPT at the touch of a button and access a reservoir of knowledge and wisdom. 
 
-![Drag CloudDB](../images/alexa_messenger/dragCloudDB.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
+<strong>Disclaimer</strong>: Always use common sense when evaluating ChatGPT’s responses and be aware that, like any computer system, ChatGPT may fail.
 
-The non-visible component CloudDB in your Alexa skill will by default have a token identical to the CloudDB you have in your Screen1 of your mobile app. Also make sure that both in Screen1 and in your Alexa skill the CloudDBs have identical ProjectIDs.  By default the ProjectIDs should be the name of the current project (AlexaMessenger_Starter) but as long as they are made identical you can name them both anything you want.  Once the ProjectIDs and tokens are the same, then both Alexa and the app are able to access and communicate via the <em><strong>same</strong></em> CloudDB.
-
-Screen 1 and message master CloudDB ProjectIDs and Tokens should be identical:
-![CloudDB Token and ProjectID for Screen1](../images/alexa_messenger/ProjectID&TokenMatch.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-
-(Your token may look different than what you see here)
-
-## Creating the Voice User Interface (VUI) (4)
-
-Your Viewer now should look like this:
-
-![Viewer](../images/alexa_messenger/EchoDotViewer.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Your Components should look like this:
-
-![Components](../images/alexa_messenger/messagemasterComponents.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Creating the Voice User Interface (VUI) (4)
-
-Define the getMessageIntent by specifying some phrases people would use to mean “retrieve my message.” These phrases are called “utterances” for a VUI. Some possibilities are shown below.  Add a few of your own to this list. 
-
-When Alexa hears these and similar utterances, she will understand that you would like to get your message from the cloud, which was sent by the user of the mobile app.
-
-![Get Message Intent](../images/alexa_messenger/getMessageIntent.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Creating the Voice User Interface (VUI) (5)
-
-Now, specify the SlotType for the messageSentSlot.  Choose the option Phrase.  Alexa will capture the message to be sent to the app user (via the cloud) and store it in this slot.
-
-![Message  Sent Slot](../images/alexa_messenger/messageSentSlot.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Define the sendMessageIntent with a few utterances that amount to something like “send the message XXXX”. The XXXX in this phrase will have to be a placeholder for what the message will be. This placeholder is the slot. Create the slot by pressing the messageSentSlot button under the Utterances textbox. Note that App Inventor textualizes this placeholder using curly braces {Slot}.
-![Send Message Intent](../images/alexa_messenger/sendMessageIntent.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-
-## Coding the VUI functionality (1)
-
-
-Go to Blocks editor.
-![Blocks Button](../images/alexa_messenger/SkillBlocksButton.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-From the getMessageIntent block, pick the when getMessageIntent.spoken event handler.
-
-Code the block so that when Alexa hears an utterance like “get me my message” she will say, “Your latest message is:”, pause for a second, then retrieve the content stored in CloudDB by the mobile app user under the tag “toAlexa” and speak this message.  
-
-After that, Alexa will pause for another second and say “End of message” to indicate that the message retrieval has concluded.
-
-![When Get Message Intent Spoken](../images/alexa_messenger/whengetMessageIntentSpoken.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Coding the VUI functionality (2)
-
-When the Alexa user wants to send a message to the mobile app user, they will say something like “send the message I miss you, hope all is well”. Alexa will recognize this as sendMessageIntent, capture the message part of the utterance (“I miss you, hope all is well”), and forward the message to the cloud.  
-
-To code this: 
-* Go to sendMessageIntent blocks and pick the when sendMessageIntent.spoken event handler.  Alexa will capture the message in the user’s utterance and store it in messageSentSlot.  
-* Code Alexa to repeat the message she heard for the purpose of accuracy.  
-* Then store the message text to CloudDB under the tag “fromAlexa”.  The mobile app user will use their GET FROM ALEXA green button to retrieve this stored message.
-
-
-![When Send Message Intent Spoken](../images/alexa_messenger/whensendMessageIntentSpoken.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-This is all the code needed to give functionality to the VUI.
-
-
-## Testing your Alexa Messenger app (1)
-
-Test that your Alexa integrated app is working.  Make sure that:
-* The mobile app is able to send and retrieve messages to and from Alexa via CloudDB
-* Alexa is able to send and retrieve messages to and from the mobile app via CloudDB
-
-Go to the message master skill interface (unless you are there already.)
-
-
-![Message Master](../images/alexa_messenger/messagemasterChoice.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Under the Testing panel select Send Updates (to Amazon.)  This may take a few minutes.  Be patient.
-
-![Send Updates](../images/alexa_messenger/SendUpdatesButton.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Go back to Screen1.
-![Screen1](../images/alexa_messenger/Screen1Choice.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Connect to AI Companion by scanning the generated QR Code.  Your code will be different than the one you see here.
-![AI Companion](../images/alexa_messenger/AICompanionChoice.png){:.enlargeImage}
-![QR Code](../images/alexa_messenger/QRCode.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Testing your Alexa Messenger app (2)
-
-In your mobile app, create a message to be sent to Alexa either by typing or via the SPEAK button.  When done, press the green SEND TO ALEXA button.
-
-![Message Sent](../images/alexa_messenger/appSendingMessage.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Now go back to Alexa interface via message master skill.
-
-![Message Master](../images/alexa_messenger/messagemasterChoice.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Enter the following in the Testing window “ask message master to get me my message”
-You should see Alexa retrieve the message sent by the mobile app.
-
-![Alexa Getting Message](../images/alexa_messenger/AlexaGettingMessage.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Now try sending a message from Alexa to the mobile app.  Enter “send the message *your message here*”.  Alexa should read you back your message and indicate she is sending the message.
-
-Note that, as in the Testing panel Alexa already knows the context, you do not need to include in your message the words "ask message master to ..." anymore.  If you were using a home Alexa device instead of the Testing panel, you would need to every time say "Alexa, ask message master to ..."  
-
-![Alexa Sending Message](../images/alexa_messenger/AlexaSendingMessage.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Now check that the mobile app is able to retrieve this message sent by Alexa by pressing the green GET FROM ALEXA button.  You should see the message that was sent.  Use the READ button to listen to it read back to you.  (Note that the voice is your mobile phone's Text-to-Speech voice, not Alexa’s.)
-
-![Message Received](../images/alexa_messenger/appGettingMessage.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-After a few messages back and forth, you should also test your DELETE ALL MESSAGES red button to make sure you can erase all your messages.
-
-Congratulations, you have just created your first fully integrated Alexa-App Inventor project.
 
 
 # Expand Your App
 
-Here are some ideas for ways to enhance your app!
+* How can you use the chatGPT app to act as a non-directive therapist and guide you in your mental-health-related questions?  You may also enjoy revisiting the classical (pre- Machine Learning) AI project <a  href="http://appinventor.mit.edu/explore/resources/ai/therapist-bot" target="_blank">Therapist Bot</a> based on the <a  href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</a>  project from the 1960’s.
 
-* Currently, only the mobile app user can delete all messages by pressing the red DELETE ALL MESSAGES button.  Create a deleteAllMessagesIntent so the Alexa user can also delete all messages as needed.  (For example, when they regret a message they sent!)
+* How can you use the app to collaborate with you in creating some bars for a rap song or lines of poetry?
 
-* Currently, if there are no new messages waiting for a user in the cloud, no meaningful response like “You have no new messages” is given.  Fix this.
+* Can ChatGPT give you information about current events? Are there topics ChatGPT is <em>not</em> programmed to chat about? Are there times when ChatGPT clearly gives you false information? What examples can you find that point to the limitations of ChatGPT? Explore other limitations and failings of ChatGPT.
 
-* Currently, only two single messages can be stored in the cloud at a time, one going to Alexa and one coming from Alexa.  Create a messaging system so that multiple messages can be stored and retrieved by each user, and the messages are kept until a user decides to clear them. 
+* Get your own OpenAI API key so the number of conversations you can have with ChatGPT is not limited.
 
-* Try bringing to life your own awesome ideas for perfecting the Alexa Messaging system.
+* ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  Explore these other options.
+
+* Explore the new <strong>ImageBot</strong> component which uses generative AI of DALL-E to create fascinating visuals.
+
+* What other cool ideas do you have?
+
 
 
 
