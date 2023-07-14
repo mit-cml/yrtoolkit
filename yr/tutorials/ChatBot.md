@@ -95,7 +95,7 @@ The speaker will either be “AI” or “User” for a given instance of the co
 
 <em><strong>User</strong>: explain the Big Bang Theory</em>
  
-by joining the speaker (“User”) to the text (“explain Big Bang Theory”) with a : (colon) in between. This new text will be inserted at the top of the <em><strong>chatList</strong></em> and then the procedure will update the <strong>ListView</strong> with the newly added text. Note that the <strong>ListView</strong> will display the chat between the user and the AI in reverse order so it is easier to read with the most recent conversation always at the very top.
+by joining the speaker (“User”) to the text (“explain Big Bang Theory”) with a ": " (colon-space) in between. This new text will be added to the <em><strong>chatList</strong></em> and then the procedure will update the <strong>ListView</strong> with the newly added text. Note that the <strong>ListView</strong> will display the chat between the user and the AI in <em>reverse</em> order so it is easier to read with the most recent conversation always at the very top.
 
 ![Procedure processMessage](../images/chatBot/procedure_processMessage.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -107,6 +107,8 @@ When the <strong>SystemRoleButton</strong> is clicked, assign the <strong>ChatBo
 <em><strong>User</strong>: You are a kindergarten teacher explaining everything at the level of 4 year old children</em>
 
 Once the system role has been assigned, clear the <strong>SystemRoleTextBox</strong> of any text and make invisible the <strong>VerticalArrangement</strong> that holds all the system role assignment components.
+
+Note: Don't forget to include a space after "You are a" in the two join blocks.
 
 ![System Role Assignment](../images/chatBot/whenSystemRoleButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -122,7 +124,7 @@ When the text of the speech is received from Google, the app will create the nex
 
 <em><strong>User</strong>: explain the Big Bang Theory</em>
 
-Also include code to send this text to ChatGPT as a query:
+Also include code to send this text to ChatGPT as a question:
 
 ![When SpeechRecognizer After Getting Text](../images/chatBot/whenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -140,7 +142,7 @@ And make the <strong>TextToSpeech</strong> component read this response out loud
 
 ## Coding the GUI functionality (6)
 
-Finally, when the user clicks <strong>ResetConversationButton</strong>, reset the conversation, initialize the variable <em><strong>chatList</strong></em> to an empty list, clear the <strong>ListView</strong>, and make visible the <strong>VerticalArrangement</strong> that hosts system role assigning components.
+Finally, when the user clicks <strong>ResetConversationButton</strong>, reset the conversation, set the variable <em><strong>chatList</strong></em> to an empty list, clear the <strong>ListView</strong>, and make visible the <strong>VerticalArrangement</strong> that hosts system role assigning components.
 
 ![When ResetConversationButton Clicked](../images/chatBot/whenResetConversationButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -153,7 +155,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.  Giv
 
 <em><strong>User</strong>: Explain why the chicken crossed the road </em>
 
-Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.
+Please note that unless you use your own OpenAI API key, the number of questions you can ask ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.
 
 Congratulations! You just created a powerful app that will allow you to chat with ChatGPT at the touch of a button and access a reservoir of knowledge and wisdom. 
 
@@ -171,7 +173,7 @@ Congratulations! You just created a powerful app that will allow you to chat wit
 
 * Get your own OpenAI API key so the number of conversations you can have with ChatGPT is not limited.
 
-* ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  Explore these other options.
+* ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  An example would be Google's PaLM. Explore these other options.
 
 * Explore the new <strong>ImageBot</strong> component which uses generative AI of DALL-E to create fascinating visuals.
 
