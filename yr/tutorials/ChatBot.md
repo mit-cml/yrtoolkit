@@ -221,7 +221,6 @@ Congratulations! You just created a powerful app that will allow you to chat wit
 
 * Can ChatGPT give you information about current events? Are there topics ChatGPT is <em>not</em> programmed to chat about? Are there times when ChatGPT clearly gives you false information? What examples can you find that point to the limitations of ChatGPT? Explore other limitations and failings of ChatGPT.
 
-
 * ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  An example would be Google's PaLM. Explore these other options.
 
 * Explore the new <strong>ImageBot</strong> component which uses generative AI of DALL-E to create fascinating visuals.
