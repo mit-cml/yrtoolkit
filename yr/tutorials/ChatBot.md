@@ -19,7 +19,7 @@ Have you ever wondered how it is possible to create your very own ChatGPT app th
 
 ## Getting your own OpenAI API Key
 
-For this project you will need to get your own OpenAI API key to use MIT App Inventor’s ChatBot component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys.  For the first 3 months you are given a $5 free credit which should get you quite a bit of exploration time.  After 3 months any unused portion of the free credit expires.  Once your free credit is gone you will need to be a paying customer and will need a credit card to use OpenAI.   
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 Follow the steps below to create you OpenAI account and get your OpenAI API key.
 
@@ -53,7 +53,7 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
     <p style="padding-bottom: 7px"></p>
 
 
-8. Copy and save your API key somewhere safe.  You will need it while doing the project.
+8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
 
 ## Updating AI2 Companion
 
