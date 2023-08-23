@@ -17,7 +17,48 @@ Have you ever wondered how it is possible to create your very own ChatGPT app th
 
 # Setup
 
+## Getting your own OpenAI API Key
+
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+
+Follow the steps below to create you OpenAI account and get your OpenAI API key.
+
+1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
+    
+2. Click on the Sign up button on  the upper right
+
+    ![OpenAI Sign up](../images/chatBot/OpenAISignUp.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
+
+    ![Create Account](../images/chatBot/CreateAccount.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+    ![Sign In](../images/chatBot/SignIn.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+4. You will need to verify your e-mail and phone number during the signup process.
+
+5. To get your personal OpenAI API  key go to <a href="https://platform.openai.com/account/api-keys" target="_blank">https://platform.openai.com/account/api-keys </a>
+ 
+6. Click on the  API keys tab and the Create new secret key button.
+
+    ![Key Generate](../images/chatBot/KeyGenerate.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+7. Give your key a name if you wish.  This step is optional.
+
+    ![Name Secret Key](../images/chatBot/NameSecretKey.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+
+8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
+
+## Updating AI2 Companion
+
 If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
+
 
 # ChatGPT Tutorial
 
@@ -65,6 +106,13 @@ Then, from the <strong>Experimental</strong> drawer drag and drop a <strong>Chat
 Your Viewer and Components panel now should look like this with three non-visible components added.
 
 ![Non-Visible Components](../images/chatBot/NonVisibleComponentsGUI.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Adding your OpenAI API Key
+
+Now you are ready to copy paste your OpenAI API key you generated during the Setup phase into the <strong>ChatBot</strong> property <em>ApiKey</em>. Your key will be different than what you partially see below
+
+![Api Key Property](../images/chatBot/ApiKeyProperty.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 
@@ -155,7 +203,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.  Giv
 
 <em><strong>User</strong>: Explain why the chicken crossed the road </em>
 
-Please note that unless you use your own OpenAI API key, the number of questions you can ask ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.
+<!--Please note that unless you use your own OpenAI API key, the number of questions you can ask ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.-->
 
 Congratulations! You just created a powerful app that will allow you to chat with ChatGPT at the touch of a button and access a reservoir of knowledge and wisdom. 
 
@@ -165,13 +213,13 @@ Congratulations! You just created a powerful app that will allow you to chat wit
 
 # Expand Your App
 
+* Do some research on and/or ask ChatGPT how Large Language Models (LLM) like it are trained and how they operate.
+
 * How can you use the chatGPT app to act as a non-directive therapist and guide you in your mental-health-related questions?  You may also enjoy revisiting the classical (pre- Machine Learning) AI project <a  href="http://appinventor.mit.edu/explore/resources/ai/therapist-bot" target="_blank">Therapist Bot</a> based on the <a  href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</a>  project from the 1960’s.
 
 * How can you use the app to collaborate with you in creating some bars for a rap song or lines of poetry?
 
 * Can ChatGPT give you information about current events? Are there topics ChatGPT is <em>not</em> programmed to chat about? Are there times when ChatGPT clearly gives you false information? What examples can you find that point to the limitations of ChatGPT? Explore other limitations and failings of ChatGPT.
-
-* Get your own OpenAI API key so the number of conversations you can have with ChatGPT is not limited.
 
 * ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  An example would be Google's PaLM. Explore these other options.
 
