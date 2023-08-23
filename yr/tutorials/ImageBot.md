@@ -146,57 +146,40 @@ When OpenAI returns with an image filename, cancel the <strong>Notifier</strong>
 ![When ImageBot Image Created](../images/imageBot/WhenImageBotImageCreated.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
+Once the image shows up on the Canvas, users can repeat the process until they generate an image they like.
+
 ## Coding the GUI functionality (5)
 
-When ChatGPT returns with a response, a new message should be added to the <strong>ListView</strong>, like:
+When users finish with image generation, the <strong>ShareButton</strong> allows users to access the social media apps available on their mobile devices and share with their friends. 
 
-<em><strong>AI</strong> : The Big Bang Theory is like a really big explosion that happened a really long time ago…</em>
+To prevent runtime errors (such as when users press the <strong>ShareButton</strong> before generating an image), you will need to make sure that the <strong><em>imageFileName</em></strong> is not an empty string. In the message sent on social media, be sure to include the prompt of the image generated along with the image.
 
-And make the <strong>TextToSpeech</strong> component read this response out loud. 
-
-![When ChatBot Got Response](../images/chatBot/whenChatBot1GotResponse.png){:.enlargeImage}
+![When ShareButton Click](../images/imageBot/WhenShareButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Coding the GUI functionality (6)
 
-Finally, when the user clicks <strong>ResetConversationButton</strong>, reset the conversation, set the variable <em><strong>chatList</strong></em> to an empty list, clear the <strong>ListView</strong>, and make visible the <strong>VerticalArrangement</strong> that hosts system role assigning components.
+Finally, when users are done sharing their image, they may wish to get a clean slate and start the process again by generating a new image with a different prompt. So when users click the <strong>ResetButton</strong>, set the image resolution back to the default 256, clear the <strong>Canvas</strong> background image, clear the global variable <strong><em>imageFileName</em></strong>and clear the <strong>PromptTextBox</strong>.
 
-![When ResetConversationButton Clicked](../images/chatBot/whenResetConversationButtonClick.png){:.enlargeImage}
+![When ResetButton Click](../images/imageBot/WhenResetButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Testing the app
+## Testing the App
 
-Now test your app by scanning the QR Code generated via your AI2 Companion.  Give the system an interesting role and ask ChatGPT some questions.  For example:
+Now test your app by speaking a prompt, generating an image, sharing it on social media, and resetting the app. Try to break it by testing different possibilities of button presses. If any issues are found, revisit your code and make the necessary revisions.
 
-<em><strong>User</strong>: You are a Shakespearean actor who answers every question in limerick</em>
-
-<em><strong>User</strong>: Explain why the chicken crossed the road </em>
-
-<!--Please note that unless you use your own OpenAI API key, the number of questions you can ask ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.-->
-
-Congratulations! You just created a powerful app that will allow you to chat with ChatGPT at the touch of a button and access a reservoir of knowledge and wisdom. 
-
-<strong>Disclaimer</strong>: Always use common sense when evaluating ChatGPT’s responses and be aware that, like any computer system, ChatGPT may fail.
-
+Congratulations — you have just created a powerful app that can generate and share creative images from user prompts.
 
 
 # Expand Your App
 
-* Do some research on and/or ask ChatGPT how Large Language Models (LLM) like it are trained and how they operate.
-
-* How can you use the chatGPT app to act as a non-directive therapist and guide you in your mental-health-related questions?  You may also enjoy revisiting the classical (pre- Machine Learning) AI project <a  href="http://appinventor.mit.edu/explore/resources/ai/therapist-bot" target="_blank">Therapist Bot</a> based on the <a  href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</a>  project from the 1960’s.
-
-* How can you use the app to collaborate with you in creating some bars for a rap song or lines of poetry?
-
-* Can ChatGPT give you information about current events? Are there topics ChatGPT is <em>not</em> programmed to chat about? Are there times when ChatGPT clearly gives you false information? What examples can you find that point to the limitations of ChatGPT? Explore other limitations and failings of ChatGPT.
-
-* ChatBot component allows you to access chatbot API’s other than the default ChatGPT API via the <em>Provider</em> property.  An example would be Google's PaLM. Explore these other options.
-
-* Explore the new <strong>ImageBot</strong> component which uses generative AI of DALL-E to create fascinating visuals.
-
-* What other cool ideas do you have?
-
-
+* Research artistic generative AI programs like DALL-E to catch a glimpse of how they are trained and how they operate.
+* Create a version of your app in which users can save their favorite image in an image gallery.
+* Create a UI that allows users to draw over generated images and share these.
+* Create a program that uses ChatGPT to generate a story from user input and then uses DALL-E to generate the visuals that go with the story.
+* Play a game where you separate the prompts from their generated images and see if people can guess which goes with which.
+* Organize a visual arts competition (in your class, school, district) to see who can create the best images.
+* What awesome ideas do you have?
 
 
 # About Youth Mobile Power
