@@ -90,7 +90,7 @@ Your final GUI should look like the one below. (Note: you may need to scroll dow
 
 ## Adding your OpenAI API Key
 
-To use the DALL-E program, you will need an OpenAI API Key. You generated this in this tutorial’s Setup section (see below). Copy-paste the key you generated to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. Your key will look different than the partial key shown below.
+To use the DALL-E program, you will need an OpenAI API Key. You generated this in this tutorial’s Setup section. Copy-paste the key you generated to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. Your key will look different than the partial key shown below.
 
 ![Api Key Property](../images/imageBot/ImageBotAPIKeyProperty.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -116,7 +116,7 @@ Code an event block that allows users to speak their prompt into the app.  When 
 ![When speakButton Click](../images/imageBot/WhenSpeakButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-After the <strong>SpeechRecognizer</strong> returns with the text of the user's prompt, then set the <strong>PromptTextBox</strong>’s text to this returned text.
+After the <strong>SpeechRecognizer</strong> returns with the text of the user's prompt, set the <strong>PromptTextBox</strong>’s text to this returned text.
 
 ![When SpeechRecognizer After Getting Text](../images/imageBot/WhenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
