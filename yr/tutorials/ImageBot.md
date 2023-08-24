@@ -1,5 +1,5 @@
 ---
-title: IamgeBot App
+title: ImageBot App
 layout: tutorial
 ---
 
@@ -10,7 +10,7 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">MIT App Inventor ImageBot T
 Imagine, Articulate, Generate, and Share
 </p>
 
-Have you ever wondered how it is possible to create your very own artistic generative AI app that will allow you to create wildly imaginative visualizations from simple prompts?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to OpenAI's DALL-E generative AI program and generate exciting artistic visualizations.
+Have you ever wondered how to create your own generative AI app for wildly imaginative visualizations? In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to OpenAI’s DALL-E generative AI program, submit their own prompts, and see the result in exciting artistic visions from the AI.
 
 ![Kitten with Wings](../images/imageBot/KittenwithWings.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -19,13 +19,14 @@ Have you ever wondered how it is possible to create your very own artistic gener
 
 ## Getting your own OpenAI API Key
 
-For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+For this project, you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
-Follow the steps below to create you OpenAI account and get your OpenAI API key.
+<strong>Note</strong>: As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  
+
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
     
-2. Click on the Sign up button on  the upper right
+2. Click on the <strong>Sign up</strong> button on  the upper right
 
     ![OpenAI Sign up](../images/imageBot/OpenAISignUp.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
@@ -42,7 +43,7 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
 
 5. To get your personal OpenAI API  key go to <a href="https://platform.openai.com/account/api-keys" target="_blank">https://platform.openai.com/account/api-keys </a>
  
-6. Click on the  API keys tab and the Create new secret key button.
+6. Click on the  <strong>API keys</strong> tab and the <strong>Create new secret key</strong> button.
 
     ![Key Generate](../images/imageBot/KeyGenerate.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
@@ -72,7 +73,7 @@ In this tutorial, you will be exploring the <strong>ImageBot</strong> component 
 <p style="padding-bottom: 7px"></p>
 
 
-## The Graphical User Interface (GUI)
+## The User Interface (UI)
 
 In this project, most of the User Interface (UI) has been created for you. Study the given components (most should be intuitive). The <strong>Spinner</strong> component may be unfamiliar to you — in this app, it provides a drop-down menu for users to select the desired resolution for the image to be generated.
 
@@ -96,7 +97,7 @@ To use the DALL-E program, you will need an OpenAI API Key. You generated this i
 <p style="padding-bottom: 7px"></p>
 
 
-## Coding the GUI functionality
+## Coding the UI Functionality
 
 Now you are ready to give functionality to all these components.  Click on the Blocks button to go to the Blocks editor.
 
@@ -109,7 +110,7 @@ Start by initializing a global variable <strong><em>imageFileName</em></strong> 
 ![Initialize imageFileName Variable](../images/imageBot/initializeglobalImageFileNameTo.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Getting User's Prompt Input
+## Getting Users' Prompt Input
 
 Code an event block that allows users to speak their prompt into the app.  When users press the <strong>SpeakButton</strong>, the <strong>SpeechRecognizer</strong> must capture their utterance and turn it into text.
 
@@ -159,7 +160,7 @@ To prevent runtime errors (such as when users press the <strong>ShareButton</str
 
 ## Resetting
 
-Finally, when users are done sharing their image, they may wish to get a clean slate and start the process again by generating a new image with a different prompt. So when users click the <strong>ResetButton</strong>, set the image resolution back to the default 256, clear the <strong>Canvas</strong> background image, clear the global variable <strong><em>imageFileName</em></strong>and clear the <strong>PromptTextBox</strong>.
+Finally, when users are done sharing their image, they may wish to get a clean slate and start the process again by generating a new image with a different prompt. So when users click the <strong>ResetButton</strong>, set the image resolution back to the default 256, clear the <strong>Canvas</strong> background image, clear the global variable <strong><em>imageFileName</em></strong> and clear the <strong>PromptTextBox</strong>.
 
 ![When ResetButton Click](../images/imageBot/WhenResetButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
