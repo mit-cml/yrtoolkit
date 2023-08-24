@@ -96,7 +96,7 @@ To use the DALL-E program, you will need an OpenAI API Key. You generated this i
 <p style="padding-bottom: 7px"></p>
 
 
-## Coding the GUI functionality (1)
+## Coding the GUI functionality
 
 Now you are ready to give functionality to all these components.  Click on the Blocks button to go to the Blocks editor.
 
@@ -109,7 +109,7 @@ Start by initializing a global variable <strong><em>imageFileName</em></strong> 
 ![Initialize imageFileName Variable](../images/imageBot/initializeglobalImageFileNameTo.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (2)
+## Getting User's Prompt Input
 
 Code an event block that allows users to speak their prompt into the app.  When users press the <strong>SpeakButton</strong>, the <strong>SpeechRecognizer</strong> must capture their utterance and turn it into text.
 
@@ -121,7 +121,7 @@ After the <strong>SpeechRecognizer</strong> returns with the text of the user's 
 ![When SpeechRecognizer After Getting Text](../images/imageBot/WhenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (3)
+## Selecting a Resolution
 
 Next, users can choose a resolution (256, 512, or 1024) for the image.  The default is 256.
 
@@ -133,7 +133,7 @@ After a selection has been made using the <strong>ResolutionSpinner</strong>, th
 ![When Resolution Spinner After Selecting](../images/imageBot/WhenResolutionSpinnerAfterSelecting.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (4)
+## Generating an Image
 
 Now you have all the info needed to generate an image. When users click the <strong>CreateButton</strong>, unless the <strong>PromptTextBox</strong> is empty, have the <strong>Notifier</strong> inform users that the generation process has started via a Progress Dialog message. Then send the entered prompt to OpenAI so that an image based on the description in the prompt can be generated.
 
@@ -148,7 +148,7 @@ When OpenAI returns with an image filename, cancel the <strong>Notifier</strong>
 
 Once the image shows up on the Canvas, users can repeat the process until they generate an image they like.
 
-## Coding the GUI functionality (5)
+## Sharing the Image
 
 When users finish with image generation, the <strong>ShareButton</strong> allows users to access the social media apps available on their mobile devices and share with their friends. 
 
@@ -157,7 +157,7 @@ To prevent runtime errors (such as when users press the <strong>ShareButton</str
 ![When ShareButton Click](../images/imageBot/WhenShareButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (6)
+## Resetting
 
 Finally, when users are done sharing their image, they may wish to get a clean slate and start the process again by generating a new image with a different prompt. So when users click the <strong>ResetButton</strong>, set the image resolution back to the default 256, clear the <strong>Canvas</strong> background image, clear the global variable <strong><em>imageFileName</em></strong>and clear the <strong>PromptTextBox</strong>.
 
