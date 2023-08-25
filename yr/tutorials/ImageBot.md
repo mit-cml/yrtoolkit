@@ -17,7 +17,7 @@ Have you ever wondered how to create your own generative AI app for wildly imagi
 
 # Setup
 
-## Getting your own OpenAI API Key
+## Getting Your Own OpenAI API Key
 
 For this project, you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
@@ -66,7 +66,13 @@ If you have not done so, please upgrade your AI2 Companion to version 2.67 or hi
 
 ## Overview
 
-In this tutorial, you will be exploring the <strong>ImageBot</strong> component of App Inventor, building  an app that allows users to create images using OpenAI’s DALL-E. Users choose the image resolution, then speak a prompt that goes to OpenAI. Once OpenAI creates the image in the app, users can re-generate other images with the same prompt until they like the final result. With the click of a button, they can share the image with friends on social media or email it to themselves. Once the process completes, users can reset the interface and start over again.
+In this tutorial, you will explore the <strong>ImageBot</strong> component of App Inventor, building  an app that allows users to create images using OpenAI’s DALL-E. Here is how it works:
+* Choose an image resolution.
+* Speak a prompt that goes to OpenAI.
+* Click <strong>Create</strong>.
+* Once OpenAI creates the image in the app, you can re-generate other images with the same prompt until you like the final result. 
+* With the click of a button, <strong>Share</strong> the image with friends on social media or email it to yourself. 
+* <strong>Reset</strong> the interface and start again!
 
 
 ![Finished app](../images/imageBot/FinishedApp.png){:.enlargeImage}
@@ -77,7 +83,7 @@ In this tutorial, you will be exploring the <strong>ImageBot</strong> component 
 
 In this project, most of the User Interface (UI) has been created for you. Study the given components (most should be intuitive). The <strong>Spinner</strong> component may be unfamiliar to you — in this app, it provides a drop-down menu for users to select the desired resolution for the image to be generated.
 
-Drag and drop the following Non-visible components to your app: 
+Drag and drop the following non-visible components to your app: 
 * <strong>Notifier</strong> (from <strong>User Interface</strong> components drawer)
 * <strong>ImageBot</strong> (from <strong>Experimental</strong> components drawer)
 * <strong>Sharing</strong> (from <strong>Social</strong> components drawer) 
@@ -89,9 +95,9 @@ Your final GUI should look like the one below. (Note: you may need to scroll dow
 <p style="padding-bottom: 7px"></p>
 
 
-## Adding your OpenAI API Key
+## Adding Your OpenAI API Key
 
-To use the DALL-E program, you will need an OpenAI API Key. You generated this in this tutorial’s Setup section. Copy-paste the key you generated to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. Your key will look different than the partial key shown below.
+To use the DALL-E program, you will need an OpenAI API Key. (You generated the key in this tutorial’s Setup section above. Copy & paste your key to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. (Your key will look different than the partial key shown below.)
 
 ![Api Key Property](../images/imageBot/ImageBotAPIKeyProperty.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
