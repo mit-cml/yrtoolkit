@@ -68,7 +68,7 @@ If you have not done so, please upgrade your AI2 Companion to version 2.67 or hi
 
 In this tutorial, you will explore the <strong>ImageBot</strong> component of App Inventor, building  an app that allows users to create images using OpenAI’s DALL-E. Here is how it works:
 * Choose an image resolution.
-* Speak a prompt that goes to OpenAI.
+* <strong>Speak</strong> a prompt that goes to OpenAI.
 * Click <strong>Create</strong>.
 * Once OpenAI creates the image in the app, you can re-generate other images with the same prompt until you like the final result. 
 * With the click of a button, <strong>Share</strong> the image with friends on social media or email it to yourself. 
@@ -97,7 +97,7 @@ Your final GUI should look like the one below. (Note: you may need to scroll dow
 
 ## Adding Your OpenAI API Key
 
-To use the DALL-E program, you will need an OpenAI API Key. (You generated the key in this tutorial’s Setup section above. Copy & paste your key to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. (Your key will look different than the partial key shown below.)
+To use the DALL-E program, you will need an OpenAI API Key. (You generated the key in this tutorial’s Setup section above.) Copy & paste your key to the <em>ApiKey</em> property of your <strong>ImageBot</strong> component. (Your key will look different than the partial key shown below.)
 
 ![Api Key Property](../images/imageBot/ImageBotAPIKeyProperty.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
