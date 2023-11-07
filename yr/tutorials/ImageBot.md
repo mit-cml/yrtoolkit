@@ -13,6 +13,9 @@ Imagine, Articulate, Generate, and Share
 Have you ever wondered how to create your own generative AI app for wildly imaginative visualizations? In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to OpenAI’s DALL-E generative AI program, submit their own prompts, and see the result in exciting artistic visions from the AI.
 
 ![Kitten with Wings](../images/imageBot/KittenwithWings.png){:.enlargeImage}
+
+<img src="https://code.org/api/hour/begin_mit_imagebot.png">
+
 <p style="padding-bottom: 7px"></p>
 
 # Setup
