@@ -13,6 +13,9 @@ Capturing the world’s wisdom at your fingertips
 Have you ever wondered how it is possible to create your very own ChatGPT app that will allow you, wherever you are, to tap into a world of useful information?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
 
 ![ChatBot GUI](../images/chatBot/FinalGUI.png){:.enlargeImage}
+
+<img src="https://code.org/api/hour/begin_mit_chatgpt.png">
+
 <p style="padding-bottom: 7px"></p>
 
 # Setup
