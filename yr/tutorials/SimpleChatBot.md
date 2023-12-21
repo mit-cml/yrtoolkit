@@ -6,13 +6,12 @@ layout: tutorial
 # Challenge
 
 <p style="font-size: 150%;
-font-weight:bold; color:#1c2f8d; padding-bottom: 0;">MIT App Inventor ChatGPT Tutorial: 
+font-weight:bold; color:#1c2f8d; padding-bottom: 0;">MIT App Inventor simple ChatGPT Tutorial: 
 Capturing the world’s wisdom at your fingertips
 </p>
 
 Have you ever wondered how it is possible to create your very own ChatGPT app that will allow you, wherever you are, to tap into a world of useful information?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
 
-![ChatBot GUI](../images/simpleChatBot/FinalApp.png){:.enlargeImage}
 
 <img src="https://code.org/api/hour/begin_mit_chatgpt.png">
 
@@ -63,24 +62,13 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
 If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
 
 
-# ChatGPT Tutorial
+# Simple ChatGPT Tutorial
 
 ## Overview
 
 In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
 
-The app will allow users to define a System Role first so that ChatGPT will respond according to the role assigned to it. For example, if the user defines the System Role as:
-
- <em><strong>“You are a kindergarten teacher explaining everything at the level of 4 year old children”</strong></em>
-
-and then asks ChatGPT to “explain the Big Bang Theory,” the response will be matched to the understanding of a 4 year old.
-
-
-![System Prompt](../images/chatBot/KindergartenTeacherSystemPrompt.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-![ChatGPT Response](../images/chatBot/BigBangExplained.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
+![ChatBot GUI](../images/simpleChatBot/FinalApp.png){:.enlargeImage}
 
 
 
@@ -88,137 +76,94 @@ and then asks ChatGPT to “explain the Big Bang Theory,” the response will be
 
 In this project you are given a GUI that is almost completed.
 
-![Initial GUI Corrrespondence](../images/chatBot/Correspondence_InitialGUI.png){:.enlargeImage}
+![Initial GUI Corrrespondence](../images/simpleChatBot/ChatBotGUI_Initial.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-What do you think is the function of each component? Many of the components may be self-explanatory. However, <strong>ListView</strong> is where you will display the user’s conversation with ChatGPT.
+What do you think is the function of each component? Hopefully many of the components will be self-explanatory.
 
-Drag and drop a <strong>SpeechRecognizer</strong> component and then a <strong>TextToSpeech</strong> component from the <strong>Media</strong> drawer.
+Now from the <strong>Experimental</strong> drawer drag and drop a <strong>ChatBot</strong> component.
 
-![Add SpeechRecognizer](../images/chatBot/AddSpeechRecognizer.png){:.enlargeImage}
+![Add ChatBot](../images/simpleChatBot/AddChatBot.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-![Add TextToSpeech](../images/chatBot/AddTextToSpeech.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Then, from the <strong>Experimental</strong> drawer drag and drop a <strong>ChatBot</strong> component.
-
-![Add ChatBot](../images/chatBot/AddChatBot.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-Your Viewer and Components panel now should look like this with three non-visible components added.
-
-![Non-Visible Components](../images/chatBot/NonVisibleComponentsGUI.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
 
 ## Adding your OpenAI API Key
 
 Now you are ready to copy paste your OpenAI API key you generated during the Setup phase into the <strong>ChatBot</strong> property <em>ApiKey</em>. Your key will be different than what you partially see below
 
-![Api Key Property](../images/chatBot/ApiKeyProperty.png){:.enlargeImage}
+![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 
-## Coding the GUI functionality (1)
+## Getting Users’ Prompt Input
 
-Click on the Blocks button to go to the Blocks editor.
+Now click on the Blocks button to start the coding to give functionality to your components.
 
-![Blocks Button](../images/chatBot/BlocksEditor.png){:.enlargeImage}
+![Blocks Button](../images/simpleChatBot/BlocksEditor.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-You will accomplish all the details of this ChatBot app with only 4 essential blocks of the <strong>ChatBot</strong> component.  So first pull these blocks and have them ready for deployment.  Can you guess what each block does?
+Start by coding the <strong>speakButton</strong>.
 
+When <strong>speakButton</strong> is clicked:
+* Clear the two textboxes from any earlier content
+* Call the <strong>SpeechRecognizer</strong> to get the text of the speech
 
-![Essential ChatBot Blocks](../images/chatBot/ChatBotBlocksNeeded.png){:.enlargeImage}
+![When Speak Button Clicked](../images/simpleChatBot/WhenSpeakButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-Now you are ready to start.  Initialize a global variable <em><strong>chatList</strong></em> to an empty list. This is the variable that will hold the messages of the chat as list entries.
+When the <strong>SpeechRecognizer</strong> returns with the text of the speech, paste this text to the <strong>speakTextBox</strong>.
 
-![Initialize chatList Variable](../images/chatBot/initializeglobalChatList.png){:.enlargeImage}
+![When SpeechRecognizer Get Text](../images/simpleChatBot/WhenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (2)
+## Communicating with ChatGPT
 
-Recall that when you use a chunk of code many times throughout your program it is best to “factor it out” — that is, define it as a procedure so you can simplify your code and make it more maintainable (i.e., if you need to edit something due to an error for example, you can fix it in one place instead of all over your program)
+When the <strong>sendButton</strong> is clicked, have the <strong>ChatBot</strong> send the text to OpenAI for a response.
 
-Create a procedure <em><strong>processMessage</strong></em> which takes two inputs: <em>speaker</em> and <em>text</em>.
-The speaker will either be “AI” or “User” for a given instance of the conversation and the text will be the text of a given message. The procedure will form text that looks like
-
-<em><strong>User</strong>: explain the Big Bang Theory</em>
- 
-by joining the speaker (“User”) to the text (“explain Big Bang Theory”) with a ": " (colon-space) in between. This new text will be added to the <em><strong>chatList</strong></em> and then the procedure will update the <strong>ListView</strong> with the newly added text. Note that the <strong>ListView</strong> will display the chat between the user and the AI in <em>reverse</em> order so it is easier to read with the most recent conversation always at the very top.
-
-![Procedure processMessage](../images/chatBot/procedure_processMessage.png){:.enlargeImage}
+![When Send Button Clicked](../images/simpleChatBot/WhenSendButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (3)
+When the <strong>ChatBot</strong> gets a response from OpenAI, paste this to <strong>responseTextBox</strong>.
 
-When the <strong>SystemRoleButton</strong> is clicked, assign the <strong>ChatBot</strong>’s <em>System</em> property to the role designated by the user in the <strong>SystemRoleTextBox</strong>. The first entry in the <em><strong>chatList</strong></em> should be an indication of the assigned system role. For example:
-
-<em><strong>User</strong>: You are a kindergarten teacher explaining everything at the level of 4 year old children</em>
-
-Once the system role has been assigned, clear the <strong>SystemRoleTextBox</strong> of any text and make invisible the <strong>VerticalArrangement</strong> that holds all the system role assignment components.
-
-Note: Don't forget to include a space after "You are a" in the two join blocks.
-
-![System Role Assignment](../images/chatBot/whenSystemRoleButtonClick.png){:.enlargeImage}
+![When ChatBot Got Response](../images/simpleChatBot/WhenChatBotGotResponse.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-## Coding the GUI functionality (4)
 
-When the user presses the <strong>TalkButton</strong>, the <strong>SpeechRecognizer</strong> should capture the user’s speech and send it to Google for analysis:
+## Reading the Response to the User
 
-![When TalkButton Clicked](../images/chatBot/whenTalkButtonClick.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-When the text of the speech is received from Google, the app will create the next line in the chat. For example:
-
-<em><strong>User</strong>: explain the Big Bang Theory</em>
-
-Also include code to send this text to ChatGPT as a question:
-
-![When SpeechRecognizer After Getting Text](../images/chatBot/whenSpeechRecognizerAfterGettingText.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Coding the GUI functionality (5)
-
-When ChatGPT returns with a response, a new message should be added to the <strong>ListView</strong>, like:
-
-<em><strong>AI</strong> : The Big Bang Theory is like a really big explosion that happened a really long time ago…</em>
-
-And make the <strong>TextToSpeech</strong> component read this response out loud. 
-
-![When ChatBot Got Response](../images/chatBot/whenChatBot1GotResponse.png){:.enlargeImage}
-<p style="padding-bottom: 7px"></p>
-
-## Coding the GUI functionality (6)
-
-Finally, when the user clicks <strong>ResetConversationButton</strong>, reset the conversation, set the variable <em><strong>chatList</strong></em> to an empty list, clear the <strong>ListView</strong>, and make visible the <strong>VerticalArrangement</strong> that hosts system role assigning components.
-
-![When ResetConversationButton Clicked](../images/chatBot/whenResetConversationButtonClick.png){:.enlargeImage}
+When the <strong>readButton</strong> is clicked, have the <strong>TextToSpeech</strong> read the text in the <strong>responseTextBox</strong> to the user.
+![When Read Button Clicked](../images/simpleChatBot/WhenReadButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Testing the app
 
-Now test your app by scanning the QR Code generated via your AI2 Companion.  Give the system an interesting role and ask ChatGPT some questions.  For example:
+Now test your app by scanning the QR Code generated via your AI2 Companion.  
+![QR Code](../images/simpleChatBot/QRCode.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
-<em><strong>User</strong>: You are a Shakespearean actor who answers every question in limerick</em>
 
-<em><strong>User</strong>: Explain why the chicken crossed the road </em>
+Give ChatGPT an interesting role and ask it some questions.  For example:
+<em>You are a Shakespearean actor who answers every question in limerick.   Explain why the chicken crossed the road.</em>
 
-<!--Please note that unless you use your own OpenAI API key, the number of questions you can ask ChatGPT is limited.  This limit is approximately 10,000 tokens at the time of the writing of this tutorial, where a token is roughly a word, which includes ChatGPT's responses to you.-->
+
+Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.
 
 Congratulations! You just created a powerful app that will allow you to chat with ChatGPT at the touch of a button and access a reservoir of knowledge and wisdom. 
 
 <strong>Disclaimer</strong>: Always use common sense when evaluating ChatGPT’s responses and be aware that, like any computer system, ChatGPT may fail.
 
 
-
 # Expand Your App
 
-* Do some research on and/or ask ChatGPT how Large Language Models (LLM) like it are trained and how they operate.
+* If you have not done so already, get your own OpenAI API key so the number of  conversations you can have with ChatGPT is not limited.
 
-* How can you use the chatGPT app to act as a non-directive therapist and guide you in your mental-health-related questions?  You may also enjoy revisiting the classical (pre- Machine Learning) AI project <a  href="http://appinventor.mit.edu/explore/resources/ai/therapist-bot" target="_blank">Therapist Bot</a> based on the <a  href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</a>  project from the 1960’s.
+*  Do some research on and/or ask ChatGPT how Large Language Models (LLM) like it are trained and how they operate.
+
+* Allow the user to specify a System Role for ChatGPT in the UI.  For example “You are a kindergarten teacher who explains everything in a way understandable by 4-5 year olds.”
+
+* Keep an ongoing record of the entire history of the chat.
+
+* How can you use the ChatGPT app to act as a non-directive therapist and guide you in your mental-health-related questions?  You may also enjoy revisiting the classical (pre- Machine Learning) AI project <a  href="http://appinventor.mit.edu/explore/resources/ai/therapist-bot" target="_blank">Therapist Bot</a> based on the <a  href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</a>  project from the 1960’s.
 
 * How can you use the app to collaborate with you in creating some bars for a rap song or lines of poetry?
 
