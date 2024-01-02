@@ -74,7 +74,7 @@ In this project you are going to learn how to build an app that can access a gen
 
 In this project you are given a GUI that is almost completed.
 
-![Initial GUI Corrrespondence](../images/simpleImageBot/ImageBotGUI_Initial.png){:.enlargeImage}
+![Initial GUI Corrrespondence](../images/simpleImageBot/ImageBotGUI_Initialize.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 What do you think is the function of each component? Hopefully many of the components will be self-explanatory.
