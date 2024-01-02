@@ -12,11 +12,7 @@ Capturing the world’s wisdom at your fingertips
 
 Have you ever wondered how it is possible to create your very own ChatGPT app that will allow you, wherever you are, to tap into a world of useful information?  In this tutorial, you will build a simple app with MIT App Inventor that allows users to connect to ChatGPT, ask questions, and have a conversation.
 
-
-<img src="https://code.org/api/hour/begin_mit_chatgpt.png">
-
-<p style="padding-bottom: 7px"></p>
-
+<!--<img src="https://code.org/api/hour/begin_mit_chatgpt.png">-->
 # Setup
 
 ## Getting your own OpenAI API Key
@@ -27,18 +23,16 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
     
-2. Click on the Sign up button on  the upper right
+2. Click on the <strong>Login</strong> button on  the upper right, then click <strong>Sign up</strong> option.
 
-    ![OpenAI Sign up](../images/chatBot/OpenAISignUp.png){:.enlargeImage}
+    ![OpenAI Sign up](../images/simpleChatBot/OpenAISite.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
 
-    ![Create Account](../images/chatBot/CreateAccount.png){:.enlargeImage}
+    ![Create Account](../images/simpleChatBot/OpenAISignUp.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
-    ![Sign In](../images/chatBot/SignIn.png){:.enlargeImage}
-    <p style="padding-bottom: 7px"></p>
 
 4. You will need to verify your e-mail and phone number during the signup process.
 
@@ -46,16 +40,21 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
  
 6. Click on the  API keys tab and the Create new secret key button.
 
-    ![Key Generate](../images/chatBot/KeyGenerate.png){:.enlargeImage}
+    ![Key Generate](../images/simpleChatBot/KeyGenerate.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 7. Give your key a name if you wish.  This step is optional.
 
-    ![Name Secret Key](../images/chatBot/NameSecretKey.png){:.enlargeImage}
+    ![Name Secret Key](../images/simpleChatBot/NameSecretKey.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 
 8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
+
+9. During the ChatBot project, when you add your <strong>ChatBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
+
+![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
 ## Updating AI2 Companion
 
@@ -89,7 +88,7 @@ Now from the <strong>Experimental</strong> drawer drag and drop a <strong>ChatBo
 
 ## Adding your OpenAI API Key
 
-Now you are ready to copy paste your OpenAI API key you generated during the Setup phase into the <strong>ChatBot</strong> property <em>ApiKey</em>. Your key will be different than what you partially see below
+Now you are ready to copy paste your OpenAI API key you generated during the Setup phase into the <strong>ChatBot</strong> property <em>ApiKey</em>. Your key will be different than what you partially see below.  If you do not generate and use your own OpenAI API Key, the number of queries you can send to ChatGPT will be limited.
 
 ![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -143,6 +142,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.
 
 
 Give ChatGPT an interesting role and ask it some questions.  For example:
+
 <em>You are a Shakespearean actor who answers every question in limerick.   Explain why the chicken crossed the road.</em>
 
 
