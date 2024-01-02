@@ -82,7 +82,7 @@ What do you think is the function of each component? Hopefully many of the compo
 
 Now from the <strong>Experimental</strong> drawer drag and drop a <strong>ChatBot</strong> component.
 
-![Add ChatBot](../images/simpleChatBot/AddChatBot.png){:.enlargeImage}
+![Add ChatBot](../images/simpleChatBot/AddingChatBot.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 
