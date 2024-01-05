@@ -148,6 +148,7 @@ Give ChatGPT an interesting role and ask it some questions.  For example:
 
 <em>You are a Shakespearean actor who answers every question in limerick.   Explain why the chicken crossed the road.</em>
 
+It often takes around a full minute for the ChatBot query to come back from OpenAI because of all the traffic and computation going on with OpenAI. So be patient!
 
 Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.
 

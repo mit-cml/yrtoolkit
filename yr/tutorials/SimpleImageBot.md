@@ -140,6 +140,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.
 
 Now test your app by speaking a prompt, generating an image.  Try to break it by testing different possibilities of button presses. If any issues are found, revisit your code and make the necessary revisions.
 
+It often takes around a full minute for the ImageBot query to come back from OpenAI because of all the traffic and computation going on with OpenAI. So be patient!
 
 Please note that unless you use your own OpenAI API key, the number of queries you can make to DALL-E is limited.
  
