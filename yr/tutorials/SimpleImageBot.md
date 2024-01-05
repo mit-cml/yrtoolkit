@@ -18,7 +18,7 @@ Have you ever wondered how to create your own generative AI app for wildly imagi
 
 For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
-Follow the steps below to create you OpenAI account and get your OpenAI API key.
+Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
     
@@ -57,7 +57,7 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
 
 ## Updating AI2 Companion
 
-If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
+If you have not done so, please upgrade your AI2 Companion to version 2.69 or higher.
 
 
 # Simple ImageBot Tutorial
@@ -67,7 +67,6 @@ If you have not done so, please upgrade your AI2 Companion to version 2.67 or hi
 In this project you are going to learn how to build an app that can access a generative AI tool like DALL-E and create wildly imaginative visuals based on user input.
 
 ![ImageBot GUI](../images/simpleImageBot/FinalApp.png){:.enlargeImage}
-
 
 
 ## The Graphical User Interface (GUI)
@@ -102,7 +101,7 @@ Now click on the Blocks button to start the coding to give functionality to your
 
 Start by coding the <strong>speakButton</strong>.
 
-When <strong>speakButton</strong> is clicked, call the <strong>SpeechRecognizer</strong> to get the text of the speech
+When <strong>speakButton</strong> is clicked, clear the contents fo the speakTextBox and call the <strong>SpeechRecognizer</strong> to get the text of the speech
 
 ![When Speak Button Clicked](../images/simpleImageBot/WhenSpeakButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -115,7 +114,7 @@ When the <strong>SpeechRecognizer</strong> returns with the text of the speech, 
 ## Communicating with DALL-E
 
 When the <strong>createImageButton</strong> is clicked:
-* Check to make sure that the <strong>TextBox</strong> is not empty, if so
+* Check to make sure that the <strong>speakTextBox</strong> is not empty, if so
     * Call the <strong>Notifier</strong> to show a progress dialogue to notify the user that their image is being generated.
     * Call the <strong>ImageBot</strong> to send the description entered by the user to be sent to OpenAI DALL-E to create an image.
 
