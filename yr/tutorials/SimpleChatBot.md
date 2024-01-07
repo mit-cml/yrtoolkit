@@ -125,7 +125,9 @@ When the <strong>sendButton</strong> is clicked:
 ![When Send Button Clicked](../images/simpleChatBot/WhenSendButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-When the <strong>ChatBot</strong> gets a response from OpenAI, paste this to <strong>responseTextBox</strong>.
+When the <strong>ChatBot</strong> gets a response from OpenAI:
+* Dismiss the progress dialogue.
+* Paste this to <strong>responseTextBox</strong>.
 
 ![When ChatBot Got Response](../images/simpleChatBot/WhenChatBotGotResponse.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
