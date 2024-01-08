@@ -19,7 +19,7 @@ Have you ever wondered how it is possible to create your very own ChatGPT app th
 
 For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
-Follow the steps below to create you OpenAI account and get your OpenAI API key.
+Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
     
@@ -58,7 +58,7 @@ Follow the steps below to create you OpenAI account and get your OpenAI API key.
 
 ## Updating AI2 Companion
 
-If you have not done so, please upgrade your AI2 Companion to version 2.67 or higher.
+If you have not done so, please upgrade your AI2 Companion to version 2.69 or higher.
 
 
 # Simple ChatGPT Tutorial
@@ -117,12 +117,17 @@ When the <strong>SpeechRecognizer</strong> returns with the text of the speech, 
 
 ## Communicating with ChatGPT
 
-When the <strong>sendButton</strong> is clicked, have the <strong>ChatBot</strong> send the text to OpenAI for a response.
+When the <strong>sendButton</strong> is clicked:
+* Check to make sure that the <strong>speakTextBox</strong> is not empty, if so 
+    * Call the <strong>Notifier</strong> to show a progress dialogue to notify the user that their response is being generated.
+    * Have the <strong>ChatBot</strong> send the text to OpenAI for a response.
 
 ![When Send Button Clicked](../images/simpleChatBot/WhenSendButtonClick.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
-When the <strong>ChatBot</strong> gets a response from OpenAI, paste this to <strong>responseTextBox</strong>.
+When the <strong>ChatBot</strong> gets a response from OpenAI:
+* Dismiss the progress dialogue.
+* Paste this to <strong>responseTextBox</strong>.
 
 ![When ChatBot Got Response](../images/simpleChatBot/WhenChatBotGotResponse.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
@@ -145,6 +150,7 @@ Give ChatGPT an interesting role and ask it some questions.  For example:
 
 <em>You are a Shakespearean actor who answers every question in limerick.   Explain why the chicken crossed the road.</em>
 
+It often takes around a full minute for the ChatBot query to come back from OpenAI because of all the traffic and computation going on with OpenAI. So be patient!
 
 Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.
 
