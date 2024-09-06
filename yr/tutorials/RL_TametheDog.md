@@ -73,9 +73,75 @@ Initially, all the matrix entries are 0’s as there is no memory of a training:
 
 Initialize the variable Qtable as shown below:
 
-[Initialzie Q-Table](../images/RL_tamethedog/InitializeQtable.png){:.enlargeImage}
+[Initialize Q-Table](../images/RL_tamethedog/InitializeQtable.png){:.enlargeImage}
 
-## Q-Table Procedures
+## Q-Table Procedures I
+
+Study the following Q-Table procedures: 
+    * the first procedure  allows you to access a row of the Q-Table, which is a list of two numbers, 
+    ![Q-Table row](../images/RL_tamethedog/Procedure_QTableRow.png){:.enlargeImage}
+    * the second procedure allows access to an individual cell of the Q-Table, which is a number
+    ![Q-Table cell](../images/RL_tamethedog/Procedure_QTableRowColumn.png){:.enlargeImage}
+    * the third procedure allows you to assign a value to a given cell of the Q-Table. 
+    ![Q-Table set](../images/RL_tamethedog/Procedure_setQTable.png){:.enlargeImage}
+
+Notice that the two latter procedures use the first procedure in their definitions.
+
+
+## Q-Table Procedures II
+
+For example, for the Q-Table shown below
+![Q-Table](../images/RL_tamethedog/QT3.png){:.enlargeImage}
+
+which is equivalent to this Q-Table
+![Q-Table](../images/RL_tamethedog/QT4.png){:.enlargeImage}
+
+QTable Row#1 is a list of two numbers [0.25, -0.15]
+
+![Q-Table](../images/RL_tamethedog/QT5a.png){:.enlargeImage}
+
+In code, the procedure block <strong><em>QTableRow(1)</em></strong> returns the list containing the numbers 0.25 and -0.15.
+![Q-Table](../images/RL_tamethedog/Q[1].png){:.enlargeImage}
+
+Similarly, QTable Row#2 is a list of two numbers [-0.35, 0.45]
+
+![Q-Table](../images/RL_tamethedog/QT5b.png){:.enlargeImage}
+
+In code, the procedure block QTableRow(2) returns the list containing the numbers -0.35 and 0.45.
+
+![Q-Table](../images/RL_tamethedog/Q[2].png){:.enlargeImage}
+
+The following identifies a specific cell of the Q-Table. QTable Row#2 Column#1 is a number: -0.35.
+
+![Q-Table](../images/RL_tamethedog/QT6.png){:.enlargeImage}
+
+In code, the procedure block <strong><em>QTable(2,1)</em></strong> returns the number -0.35.
+
+![Q-Table(2,1)](../images/RL_tamethedog/Q[2,1].png){:.enlargeImage}
+
+What do you think is QTable Row#1 Column#2?
+
+![Q-Table](../images/RL_tamethedog/QT7.png){:.enlargeImage}
+
+i.e. What value does this procedure <strong><em>QTable(1,2)</em></strong> return?
+
+![Q-Table(1,2)](../images/RL_tamethedog/Q[1,2].png){:.enlargeImage}
+
+<strong><em>Answer</em></strong>: -0.15
+
+What does this procedure call <strong><em>set_QTable(1,2,-0.75)</em></strong> do?
+
+![Q-Table set](../images/RL_tamethedog/setQTableQ12.png){:.enlargeImage}
+
+<strong><em>Answer</em></strong>:  The procedure call alters the given Q-Table cell at row 1, column 2 
+
+![Q-Table](../images/RL_tamethedog/QT8.png){:.enlargeImage} 
+
+which becomes the following when -0.15 is replaced by -0.75.
+
+![Q-Table](../images/RL_tamethedog/QT9.png){:.enlargeImage}
+
+These procedures will make accessing and revising the Q-Table matrix easier than manipulating a list of lists.
 
 
 # Expand Your App
