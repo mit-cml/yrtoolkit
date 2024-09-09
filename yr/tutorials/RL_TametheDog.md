@@ -210,11 +210,15 @@ and the user gives the command “Sit!”, then you examine the <em>first</em> r
 
 <strong><em>Answer</em></strong>:
 
+<hint markdown="block" title="Possible Solution">
+
 ![Procedure findMaxAction](../images/RL_tamethedog/Procedure_findMaxAction.png){:.enlargeImage}
 
 <strong>Note</strong>: the block <strong>max in list</strong> is in the Math blocks selectable under the menu of <strong>arithmetic mean (average)</strong> block.
 
 Observe that the procedure will return the column index corresponding to the higher Q-value, either 1 (<strong><em>SIT</em></strong>) or 2 (<strong><em>SHAKE</em></strong>). This is why we wanted to define the variables <strong><em>SIT</em></strong> and <strong><em>SHAKE</em></strong> as numbers 1 and 2 rather than as text.
+
+</hint>
 
 ## Procedure showDogAction
 
