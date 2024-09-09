@@ -57,7 +57,7 @@ The coding starts by initializing the variables you will use in the programming.
 
 The variables <strong><em>STAND</em></strong>, <strong><em>SIT</em></strong>, and <strong><em>SHAKE</em></strong> correspond to various states of the dog and have numerical values of 0, 1, and 2, respectively (rather than text) to allow numerical use and manipulation.
 
-The variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are both initialized to 0 and will eventually store and keep track of the current command given by the user and the action chosen by the dog and will be assigned values <strong><em>SIT</em></strong> (1) or <strong><em>SHAKE>/</em> (2)
+The variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are both initialized to 0 and will eventually store and keep track of the current command given by the user and the action chosen by the dog and will be assigned values <strong><em>SIT</em></strong> (1) or <strong><em>SHAKE</em></strong>(2)
 
 The variable <strong><em>reward is initialized to 0. It will take the value +1 if the dog receives a reward, and the value -1 if the dog receives a penalty.
 
@@ -65,7 +65,7 @@ The variable <strong><em>counter will keep track of the number of trials in the 
 
 The variable <strong><em>learningRate</em></strong> will control the learning rate of the dog, a measure of how quickly the dog learns from its experience. For example, when <strong><em>learningRate</em></strong> is 1 (or 100%), the dog will immediately learn from its current reward or penalty about what to do or what not to do. When <strong><em>learningRate</em></strong> is 0 (or 0%) the dog will not be able to learn from its current reward or penalty no matter what. <strong><em>learningRate</em></strong> is initialized to 0.5 (50%), which is halfway between perfect and no learning (probably not a very unrealistic learning rate for a dog!).
 
-<strong><em>Qtable<.</em></strong> variable keeps track of the 2X2 matrix mentioned above — a record of the memory of the dog's training. (There is no matrix data structure currently in App Inventor, so a list of lists will hold the data. Make sure you understand how the list of lists corresponds to the 2X2 matrix, as you will be manipulating the Q-Table a lot.) 
+<strong><em>Qtable</em></strong> variable keeps track of the 2X2 matrix mentioned above — a record of the memory of the dog's training. (There is no matrix data structure currently in App Inventor, so a list of lists will hold the data. Make sure you understand how the list of lists corresponds to the 2X2 matrix, as you will be manipulating the Q-Table a lot.) 
 
 Initially, all the matrix entries are 0’s as there is no memory of a training:
 
@@ -73,16 +73,22 @@ Initially, all the matrix entries are 0’s as there is no memory of a training:
 
 Initialize the variable Qtable as shown below:
 
-[Initialize Q-Table](../images/RL_tamethedog/InitializeQtable.png){:.enlargeImage}
+![Initialize Q-Table](../images/RL_tamethedog/InitializeQtable.png){:.enlargeImage}
 
 ## Q-Table Procedures I
 
-Study the following Q-Table procedures: 
-    * the first procedure  allows you to access a row of the Q-Table, which is a list of two numbers, 
-    ![Q-Table row](../images/RL_tamethedog/Procedure_QTableRow.png){:.enlargeImage}
-    * the second procedure allows access to an individual cell of the Q-Table, which is a number
+Study the following Q-Table procedures:
+
+* the first procedure  allows you to access a row of the Q-Table, which is a list of two numbers, 
+
+![Q-Table row](../images/RL_tamethedog/Procedure_QTableRow.png){:.enlargeImage}
+
+* the second procedure allows access to an individual cell of the Q-Table, which is a number
+
     ![Q-Table cell](../images/RL_tamethedog/Procedure_QTableRowColumn.png){:.enlargeImage}
-    * the third procedure allows you to assign a value to a given cell of the Q-Table. 
+
+* the third procedure allows you to assign a value to a given cell of the Q-Table. 
+
     ![Q-Table set](../images/RL_tamethedog/Procedure_setQTable.png){:.enlargeImage}
 
 Notice that the two latter procedures use the first procedure in their definitions.
@@ -101,7 +107,7 @@ QTable Row#1 is a list of two numbers [0.25, -0.15]
 ![Q-Table](../images/RL_tamethedog/QT5a.png){:.enlargeImage}
 
 In code, the procedure block <strong>QTableRow(1)</strong> returns the list containing the numbers 0.25 and -0.15.
-![Q-Table](../images/RL_tamethedog/Q[1].png){:.enlargeImage}
+![Q-Table](../images/RL_tamethedog/Q1.png){:.enlargeImage}
 
 Similarly, QTable Row#2 is a list of two numbers [-0.35, 0.45]
 
@@ -109,7 +115,7 @@ Similarly, QTable Row#2 is a list of two numbers [-0.35, 0.45]
 
 In code, the procedure block <strong>QTableRow(2)</strong> returns the list containing the numbers -0.35 and 0.45.
 
-![Q-Table](../images/RL_tamethedog/Q[2].png){:.enlargeImage}
+![Q-Table](../images/RL_tamethedog/Q2.png){:.enlargeImage}
 
 The following identifies a specific cell of the Q-Table. QTable Row#2 Column#1 is a number: -0.35.
 
@@ -117,7 +123,7 @@ The following identifies a specific cell of the Q-Table. QTable Row#2 Column#1 i
 
 In code, the procedure block <strong>QTable(2,1)</strong> returns the number -0.35.
 
-![Q-Table(2,1)](../images/RL_tamethedog/Q[2,1].png){:.enlargeImage}
+![Q-Table(2,1)](../images/RL_tamethedog/Q21.png){:.enlargeImage}
 
 What do you think is QTable Row#1 Column#2?
 
@@ -125,13 +131,13 @@ What do you think is QTable Row#1 Column#2?
 
 i.e. What value does this procedure <strong>QTable(1,2)</strong> return?
 
-![Q-Table(1,2)](../images/RL_tamethedog/Q[1,2].png){:.enlargeImage}
+![Q-Table(1,2)](../images/RL_tamethedog/Q12.png){:.enlargeImage}
 
 <strong><em>Answer</em></strong>: -0.15
 
 What does this procedure call <strong>set_QTable(1,2,-0.75)</strong> do?
 
-![Q-Table set](../images/RL_tamethedog/setQTableQ12.png){:.enlargeImage}
+![Q-Table set](../images/RL_tamethedog/setQTable12.png){:.enlargeImage}
 
 <strong><em>Answer</em></strong>:  The procedure call alters the given Q-Table cell at row 1, column 2 
 
@@ -186,7 +192,7 @@ Now, you will define the <strong>chooseAction</strong> procedure. This procedure
 
 <strong>Note</strong>: In the extensions of this project, you can try more advanced approaches to defining this procedure.
 
-# Procedure findMaxAction
+## Procedure findMaxAction
 
 Now define the procedure <strong>findMaxAction</strong>. This procedure uses the Q-Table to decide how to act optimally given a user command. 
 
@@ -282,11 +288,7 @@ Test everything thoroughly and see if the dog is learning according to its learn
 
 * Can you include a learning graph showing the cumulative percentages of correct actions? You can use the graphing component <strong>Chart1</strong> in the UI by making it visible.
 
-* Incorporate the new parameter called “Memory Responsiveness” which measures how responsive the dog is to the memory of its training. Most animals (and people) take a while before they even start paying attention to the memories of their training. These memories need to reach a high enough threshold of pain and pleasure for them to start understanding what their training is trying to teach and thus how to act appropriately. Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 25 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. In the UI, make the Horizontal Arrangements 3 and 4 containing this slider visible. 
-
-Note that if the dog is <em>very responsive</em> to its memory then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory then even for <em>large</em> Q values (close to +1 or -1) it will not be relying on the memory of its training. 
-
-Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
+* Incorporate the new parameter called “Memory Responsiveness” which measures how responsive the dog is to the memory of its training. Most animals (and people) take a while before they even start paying attention to the memories of their training. These memories need to reach a high enough threshold of pain and pleasure for them to start understanding what their training is trying to teach and thus how to act appropriately. Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 25 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. In the UI, make the Horizontal Arrangements 3 and 4 containing this slider visible. Note that if the dog is <em>very responsive</em> to its memory then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory then even for <em>large</em> Q values (close to +1 or -1) it will not be relying on the memory of its training. Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
 
 ![Procedure chooseAction](../images/RL_tamethedog/Procedure_chooseAction_Alternate.png){:.enlargeImage}
 
