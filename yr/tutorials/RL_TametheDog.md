@@ -25,7 +25,7 @@ Write a nice Challenge openning paragraph here...
 In this project, we will explore <strong>Reinforcement Learning (RL)</strong> which is one of the main machine learning methods along with Supervised Learning and Unsupervised Learning. We will use the context of “taming a dog” to illustrate the main ideas of RL. In our simulation, we would like to teach a dog which is initially standing,
 
 
-![Dog standing](../images/RL_tamethedog/dog_stand.jpg){:.enlargeImage}
+<img src="../images/RL_tamethedog/dog_stand.jpg" alt="Dog standing" width="100" />
 
 to sit or shake hands when the user gives the commands “Sit!” or “Shake!”
 
@@ -85,11 +85,11 @@ Study the following Q-Table procedures:
 
 * the second procedure allows access to an individual cell of the Q-Table, which is a number
 
-    ![Q-Table cell](../images/RL_tamethedog/Procedure_QTableRowColumn.png){:.enlargeImage}
+![Q-Table cell](../images/RL_tamethedog/Procedure_QTableRowColumn.png){:.enlargeImage}
 
 * the third procedure allows you to assign a value to a given cell of the Q-Table. 
 
-    ![Q-Table set](../images/RL_tamethedog/Procedure_setQTable.png){:.enlargeImage}
+![Q-Table set](../images/RL_tamethedog/Procedure_setQTable.png){:.enlargeImage}
 
 Notice that the two latter procedures use the first procedure in their definitions.
 
@@ -131,15 +131,21 @@ What do you think is QTable Row#1 Column#2?
 
 i.e. What value does this procedure <strong>QTable(1,2)</strong> return?
 
-![Q-Table(1,2)](../images/RL_tamethedog/Q12.png){:.enlargeImage}
+<img src="../images/RL_tamethedog/Q12.png" alt="Q-Table(1,2)" width="150" />
 
-<strong><em>Answer</em></strong>: -0.15
+
+<hint markdown="block" title="Solution">
+ -0.15
+</hint>
 
 What does this procedure call <strong>set_QTable(1,2,-0.75)</strong> do?
 
-![Q-Table set](../images/RL_tamethedog/setQTable12.png){:.enlargeImage}
+<img src="../images/RL_tamethedog/setQTable12.png" alt="Q-Table set" width="175" />
 
-<strong><em>Answer</em></strong>:  The procedure call alters the given Q-Table cell at row 1, column 2 
+
+<hint markdown="block" title="Solution">
+
+The procedure call alters the given Q-Table cell at row 1, column 2 
 
 ![Q-Table](../images/RL_tamethedog/QT8.png){:.enlargeImage} 
 
@@ -147,15 +153,20 @@ which becomes the following when -0.15 is replaced by -0.75.
 
 ![Q-Table](../images/RL_tamethedog/QT9.png){:.enlargeImage}
 
+</hint>
+
 These procedures will make accessing and revising the Q-Table matrix easier than manipulating a list of lists.
 
 ## Learning Rate Slider
 
-Study this block. Can you tell what it does when the Learning Rate slider is moved?
+Study this block. Can you explain what it does when the Learning Rate slider is moved?
 
 ![When Learning Rate Slider position changed](../images/RL_tamethedog/WhenLearningRateSliderPositionChanged.png){:.enlargeImage}
 
-<strong><em>Answer</em></strong>: the variable <strong><em>learningRate</em></strong> is set to the <strong><em>thumbPosition</em></strong> of the slider, and the associated label is updated to report this value in the UI.
+<hint markdown="block" title="Explanation">
+ The variable <strong><em>learningRate</em></strong> is set to the <strong><em>thumbPosition</em></strong> of the slider, and the associated label is updated to report this value in the UI.
+</hint>
+<br/>
 
 ## Reset Button
 
@@ -163,8 +174,11 @@ In this code, see if you can explain what happens when the Reset button is click
 
 ![When Reset Button clicked](../images/RL_tamethedog/WhenResetButtonClick.png){:.enlargeImage}
 
-<strong><em>Answer</em></strong>: <strong><em>Qtable</em></strong> entries are re-initialized to 0’s, and these values are displayed via the <strong>printQTable</strong> procedure on the UI. The variables <strong><em>counter</em></strong> and <strong><em>reward</em></strong> are set to 0, and the variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are also initialized to <strong><em>STAND</em></strong> (or the number 0). <strong><em>learningRate</em></strong> is re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. The dog’s image is set to the “standing” image. <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the SitButton and <strong>ShakeButton</strong> are enabled. Everything resets to what it was before the training started.
+<hint markdown="block" title="Explanation">
 
+<strong><em>Qtable</em></strong> entries are re-initialized to 0’s, and these values are displayed via the <strong>printQTable</strong> procedure on the UI. The variables <strong><em>counter</em></strong> and <strong><em>reward</em></strong> are set to 0, and the variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are also initialized to <strong><em>STAND</em></strong> (or the number 0). <strong><em>learningRate</em></strong> is re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. The dog’s image is set to the “standing” image. <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. Everything resets to what it was before the training started.
+</hint>
+<br />
 
 ## Sit Button and Shake Button
 
@@ -174,11 +188,13 @@ Study this code given to explain what happens when the Sit button is clicked. Yo
 
 Next, use the Sit button code given above code as reference code to create the <strong>whenShakeButton.Click</strong> event handler. You can do much with copy/paste (CTRL-C/CTRL-V) and make minor edits.
 
-![When Shake Button clicked empty block](../images/RL_tamethedog/WhenShakeButtonClick1.png){:.enlargeImage}
+<img src="../images/RL_tamethedog/WhenShakeButtonClick1.png" alt="When Shake Button clicked empty block" width="200" />
 
-<strong><em>Answer</em></strong>:
+<hint markdown="block" title="Possible Solution">
 
 ![When Shake Button clicked](../images/RL_tamethedog/WhenShakeButtonClick.png){:.enlargeImage}
+</hint>
+<br/>
 
 ## Procedure chooseAction
 
@@ -186,12 +202,13 @@ Now, you will define the <strong>chooseAction</strong> procedure. This procedure
 
 ![Procedure chosseAction empty block](../images/RL_tamethedog/Procedure_chooseAction1.png){:.enlargeImage}
 
-<strong><em>Answer</em></strong>:
+<hint markdown="block" title="Possible Solution">
 
 ![Procedure chooseAction](../images/RL_tamethedog/Procedure_chooseAction.png){:.enlargeImage}
 
 <strong>Note</strong>: In the extensions of this project, you can try more advanced approaches to defining this procedure.
-
+</hint>
+<br/>
 ## Procedure findMaxAction
 
 Now define the procedure <strong>findMaxAction</strong>. This procedure uses the Q-Table to decide how to act optimally given a user command. 
@@ -239,9 +256,11 @@ Now using the <strong>RewardButton</strong> as a reference, code the when <stron
 ![When Penalty Button clicked empty block](../images/RL_tamethedog/WhenPenaltyButtonClick1.png){:.enlargeImage}
 
 
-<strong><em>Answer</em></strong>:
+<hint markdown="block" title="Possible Solution">
 
 ![When Penalty Button clicked](../images/RL_tamethedog/WhenPenaltyButtonClick.png){:.enlargeImage}
+</hint>
+<br/>
 
 ## Procedure printQTable
 
@@ -270,20 +289,27 @@ For example, if the learning rate is 100% (i.e. the dog learns perfectly and imm
 Here is another example:
 ![Q-Table](../images/RL_tamethedog/QT11.png){:.enlargeImage}
 
-Assuming the Q-Table above, if the learning rate is 0.7 (70%), the command was “Sit!”, and the dog responded by sitting, then the new Q-value at Q[1,1] is computed by 
+Assuming the Q-Table above, if the learning rate is 0.7 (70%), the command was “Sit!”, and the dog responded by sitting, then the new Q-value at Q[1,1] is computed by
+
 Q[1,1]  = 0.7X(+1)+(1-0.7)X<strong>0.25</strong>  = 0.7X(+1)+0.3X<strong>0.25</strong> = 0.775
 
 Now code this procedure based on what you learned about how to revise the Q-Table:
 
 ![Procedure learn_updateQTable empty block](../images/RL_tamethedog/Procedure_learn_updateQTable1.png){:.enlargeImage}
 
-<strong><em>Answer</em></strong>:
+<hint markdown="block" title="Possible Solution">
 
 ![Procedure learn_updateQTable](../images/RL_tamethedog/Procedure_learn_updateQTable.png){:.enlargeImage}
 
-To make the addition look more compact, right-click on the addition block and select “External Inputs”. This formatting change will align the added values vertically rather than horizontally.
+To make the addition block and <strong>QTable(row,column)</strong> block look more compact, right-click on these blocks and select “External Inputs”. This formatting change will align the parameters vertically rather than horizontally.
+</hint>
+<br/>
 
 ## Test
+Now test your app by scanning the QR Code generated via your AI2 Companion.
+
+![Scan QR Code](../images/RL_tamethedog/QRCode.png){:.enlargeImage}
+
 Test everything thoroughly and see if the dog is learning according to its learning rate after the first 25 random responses. Congratulations! You have coded your first AI reinforcement learning (RL) project.
 
 
@@ -291,7 +317,7 @@ Test everything thoroughly and see if the dog is learning according to its learn
 
 * First, train the dog correctly. Can you then “untrain” the dog to always perform the wrong actions?
 
-* Can you include a learning graph showing the cumulative percentages of correct actions? You can use the graphing component <strong>Chart1</strong> in the UI by making it visible.
+* Can you include a learning graph showing the cumulative percentages of correct actions? You can use the graphing component <strong>Chart1</strong> already placed in the UI by making it visible.
 
 * Incorporate the new parameter called “Memory Responsiveness” which measures how responsive the dog is to the memory of its training. Most animals (and people) take a while before they even start paying attention to the memories of their training. These memories need to reach a high enough threshold of pain and pleasure for them to start understanding what their training is trying to teach and thus how to act appropriately. Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 25 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. In the UI, make the Horizontal Arrangements 3 and 4 containing this slider visible. Note that if the dog is <em>very responsive</em> to its memory then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory then even for <em>large</em> Q values (close to +1 or -1) it will not be relying on the memory of its training. Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
 
