@@ -208,7 +208,6 @@ and the user gives the command “Sit!”, then you examine the <em>first</em> r
 
 ![Procedure findMaxAction empty block](../images/RL_tamethedog/Procedure_findMaxAction1.png){:.enlargeImage}
 
-<strong><em>Answer</em></strong>:
 
 <hint markdown="block" title="Possible Solution">
 
@@ -218,7 +217,9 @@ and the user gives the command “Sit!”, then you examine the <em>first</em> r
 
 Observe that the procedure will return the column index corresponding to the higher Q-value, either 1 (<strong><em>SIT</em></strong>) or 2 (<strong><em>SHAKE</em></strong>). This is why we wanted to define the variables <strong><em>SIT</em></strong> and <strong><em>SHAKE</em></strong> as numbers 1 and 2 rather than as text.
 
+
 </hint>
+<br/>
 
 ## Procedure showDogAction
 
