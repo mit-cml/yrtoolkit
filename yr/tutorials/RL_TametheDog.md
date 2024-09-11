@@ -9,12 +9,13 @@ layout: tutorial
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Reinforcement Learning: Tame the Dog
 </p>
 
-Write a nice Challenge openning paragraph here...
+<img src="../images/RL_tamethedog/dog_shake.jpg" alt="Dog shaking hands" width="200" />
+Learning is a mysterious phenomena and the process through which humans and animals learn how to adopt certain behaviors in response to certain stimuli from their environments is not fully understood.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process in the form of <em>rewards</em> and <em>penalties</em> can help speed up and solidify the learning.  In this project you will be introduced to a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where, in the context of "taming a dog", you will learn how to employ rewards and penalties to emulate and reinforce a learning process.
 
 
 # Setup
 
-## Decide if anything needs to go here
+<howto id="connect_app"></howto>
 
 
 
@@ -29,7 +30,8 @@ In this project, we will explore <strong>Reinforcement Learning (RL)</strong> wh
 
 to sit or shake hands when the user gives the commands “Sit!” or “Shake!”
 
-![Dog sitting and shaking](../images/RL_tamethedog/dog_sitshake.png){:.enlargeImage}
+<img src="../images/RL_tamethedog/dog_sitshake.png" alt="Dog sitting and shaking" width="250" />
+
 
 ## Introduction II
 
@@ -57,11 +59,11 @@ The coding starts by initializing the variables you will use in the programming.
 
 The variables <strong><em>STAND</em></strong>, <strong><em>SIT</em></strong>, and <strong><em>SHAKE</em></strong> correspond to various states of the dog and have numerical values of 0, 1, and 2, respectively (rather than text) to allow numerical use and manipulation.
 
-The variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are both initialized to 0 and will eventually store and keep track of the current command given by the user and the action chosen by the dog and will be assigned values <strong><em>SIT</em></strong> (1) or <strong><em>SHAKE</em></strong>(2)
+The variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are both initialized to 0 and will eventually store and keep track of the current command given by the user and the action chosen by the dog and will be assigned values <strong><em>SIT</em></strong> (1) or <strong><em>SHAKE</em></strong> (2).
 
-The variable <strong><em>reward is initialized to 0. It will take the value +1 if the dog receives a reward, and the value -1 if the dog receives a penalty.
+The variable <strong><em>reward</em></strong> is initialized to 0. It will take the value +1 if the dog receives a reward, and the value -1 if the dog receives a penalty.
 
-The variable <strong><em>counter will keep track of the number of trials in the training process and is initially set to 0.
+The variable <strong><em>counter</em></strong> will keep track of the number of trials in the training process and is initially set to 0.
 
 The variable <strong><em>learningRate</em></strong> will control the learning rate of the dog, a measure of how quickly the dog learns from its experience. For example, when <strong><em>learningRate</em></strong> is 1 (or 100%), the dog will immediately learn from its current reward or penalty about what to do or what not to do. When <strong><em>learningRate</em></strong> is 0 (or 0%) the dog will not be able to learn from its current reward or penalty no matter what. <strong><em>learningRate</em></strong> is initialized to 0.5 (50%), which is halfway between perfect and no learning (probably not a very unrealistic learning rate for a dog!).
 
@@ -79,15 +81,15 @@ Initialize the variable Qtable as shown below:
 
 Study the following Q-Table procedures:
 
-* the first procedure  allows you to access a row of the Q-Table, which is a list of two numbers, 
+* the first procedure  allows you to access a <em>row</em> of the Q-Table, which is a list of two numbers, 
 
 ![Q-Table row](../images/RL_tamethedog/Procedure_QTableRow.png){:.enlargeImage}
 
-* the second procedure allows access to an individual cell of the Q-Table, which is a number
+* the second procedure allows access to an <em>individual cell</em> of the Q-Table, which is a number
 
 ![Q-Table cell](../images/RL_tamethedog/Procedure_QTableRowColumn.png){:.enlargeImage}
 
-* the third procedure allows you to assign a value to a given cell of the Q-Table. 
+* the third procedure allows you to <em>assign</em> a value to a given cell of the Q-Table. 
 
 ![Q-Table set](../images/RL_tamethedog/Procedure_setQTable.png){:.enlargeImage}
 
@@ -102,14 +104,16 @@ For example, for the Q-Table shown below
 which is equivalent to this Q-Table
 ![Q-Table](../images/RL_tamethedog/QT4.png){:.enlargeImage}
 
-QTable Row#1 is a list of two numbers [0.25, -0.15]
+QTable Row#1 is a list of two numbers:
+[0.25, -0.15]
 
 ![Q-Table](../images/RL_tamethedog/QT5a.png){:.enlargeImage}
 
 In code, the procedure block <strong>QTableRow(1)</strong> returns the list containing the numbers 0.25 and -0.15.
 ![Q-Table](../images/RL_tamethedog/Q1.png){:.enlargeImage}
 
-Similarly, QTable Row#2 is a list of two numbers [-0.35, 0.45]
+Similarly, QTable Row#2 is a list of two numbers:
+[-0.35, 0.45]
 
 ![Q-Table](../images/RL_tamethedog/QT5b.png){:.enlargeImage}
 
@@ -186,7 +190,7 @@ Study this code given to explain what happens when the Sit button is clicked. Yo
 
 ![When Sit Button clicked](../images/RL_tamethedog/WhenSitButtonClick.png){:.enlargeImage}
 
-Next, use the Sit button code given above code as reference code to create the <strong>whenShakeButton.Click</strong> event handler. You can do much with copy/paste (CTRL-C/CTRL-V) and make minor edits.
+Next, use the Sit button code given above code as reference code to create the code for the <strong>whenShakeButton.Click</strong> event handler. You can do much with copy/paste (CTRL-C/CTRL-V) and make minor edits.
 
 <img src="../images/RL_tamethedog/WhenShakeButtonClick1.png" alt="When Shake Button clicked empty block" width="200" />
 
@@ -198,7 +202,7 @@ Next, use the Sit button code given above code as reference code to create the <
 
 ## Procedure chooseAction
 
-Now, you will define the <strong>chooseAction</strong> procedure. This procedure will determine how the dog will act based on the user's command. There are many ways to define this procedure. For starters, you can try the following simplistic scheme: for the first 25 trials, assume that the dog is clueless and only <em>randomly</em> sits or shakes hands whatever commands are given. That is, it takes a while for the dog to realize that the commands and the rewards following its actions are somehow related to each other.   After that, the dog wisens up, starts paying attention to the memory of its training, and acts according to the optimal action dictated by its Q-Table. This optimal action will be decided by the procedure <strong>findMaxAction</strong>.
+Now, you will define the <strong>chooseAction</strong> procedure. This procedure will determine how the dog will act based on the user's command. There are many ways to define this procedure. For starters, you can try the following simplistic scheme: for the first 10 trials, assume that the dog is clueless and only <em>randomly</em> sits or shakes hands whatever commands are given. That is, it takes a while for the dog to realize that the commands and the rewards following its actions are somehow related to each other.   After that, the dog wisens up, starts paying attention to the memory of its training, and acts according to the optimal action dictated by its Q-Table. This optimal action will be decided by the procedure <strong>findMaxAction</strong>.
 
 ![Procedure chosseAction empty block](../images/RL_tamethedog/Procedure_chooseAction1.png){:.enlargeImage}
 
@@ -310,7 +314,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.
 
 ![Scan QR Code](../images/RL_tamethedog/QRCode.png){:.enlargeImage}
 
-Test everything thoroughly and see if the dog is learning according to its learning rate after the first 25 random responses. Congratulations! You have coded your first AI reinforcement learning (RL) project.
+Test everything thoroughly and see if the dog is learning according to its learning rate after the first 10 random responses. Congratulations! You have coded your first AI Reinforcement Learning (RL) project.
 
 
 # Expand Your App
@@ -319,7 +323,7 @@ Test everything thoroughly and see if the dog is learning according to its learn
 
 * Can you include a learning graph showing the cumulative percentages of correct actions? You can use the graphing component <strong>Chart1</strong> already placed in the UI by making it visible.
 
-* Incorporate the new parameter called “Memory Responsiveness” which measures how responsive the dog is to the memory of its training. Most animals (and people) take a while before they even start paying attention to the memories of their training. These memories need to reach a high enough threshold of pain and pleasure for them to start understanding what their training is trying to teach and thus how to act appropriately. Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 25 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. In the UI, make the Horizontal Arrangements 3 and 4 containing this slider visible. Note that if the dog is <em>very responsive</em> to its memory then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory then even for <em>large</em> Q values (close to +1 or -1) it will not be relying on the memory of its training. Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
+* Incorporate the new parameter called “Memory Responsiveness” which measures how responsive the dog is to the memory of its training. Most animals (and people) take a while before they even start paying attention to the memories of their training. These memories need to reach a high enough threshold of pain and pleasure for them to start understanding what their training is trying to teach and thus how to act appropriately. Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 10 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. In the UI, make the Horizontal Arrangements 3 and 4 containing this slider visible. Note that if the dog is <em>very responsive</em> to its memory then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory then even for <em>large</em> Q values (close to +1 or -1) it will not be relying on the memory of its training. Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
 
 ![Procedure chooseAction](../images/RL_tamethedog/Procedure_chooseAction_Alternate.png){:.enlargeImage}
 
