@@ -50,8 +50,16 @@ Where Q(c,a):Q[command,action] and α: Learning Rate
 To allow you to focus on the new ideas of RL in this project, the User Interface (UI) has been created for you.
 ![GUI explained](../images/RL_tamethedog/GUIExplained.png){:.enlargeImage}
 
+<strong>Note</strong>: If the entire UI is not visible in the default Phone size given in the <strong>Viewer</strong>, try switching to the Tablet size to be able to see everything together.
+
+<img src="../images/RL_tamethedog/TabletSize.png" alt="Tablet Size" width="200" />
+
 
 ## Variable Initializations
+
+Now switch to the <strong>Blocks</strong> editor.
+
+![Blocks editor](../images/RL_tamethedog/BlocksEditor.png){:.enlargeImage}
 
 The coding starts by initializing the variables you will use in the programming.
 
@@ -180,7 +188,7 @@ In this code, see if you can explain what happens when the Reset button is click
 
 <hint markdown="block" title="Explanation">
 
-<strong><em>Qtable</em></strong> entries are re-initialized to 0’s, and these values are displayed via the <strong>printQTable</strong> procedure on the UI. The variables <strong><em>counter</em></strong> and <strong><em>reward</em></strong> are set to 0, and the variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are also initialized to <strong><em>STAND</em></strong> (or the number 0). <strong><em>learningRate</em></strong> is re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. The dog’s image is set to the “standing” image. <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. Everything resets to what it was before the training started.
+<strong><em>Qtable</em></strong> entries are re-initialized to 0’s, and these values are displayed via the <strong>printQTable</strong> procedure on the UI. The variables <strong><em>counter</em></strong> and <strong><em>reward</em></strong> are set to 0, and the variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are also initialized to <strong><em>STAND</em></strong> (or the number 0). <strong><em>learningRate</em></strong> and its label are re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. The dog’s image is set to the “standing” image. <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. Everything resets to what it was before the training started.
 </hint>
 <br />
 
@@ -314,7 +322,9 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.
 
 ![Scan QR Code](../images/RL_tamethedog/QRCode.png){:.enlargeImage}
 
-Test everything thoroughly and see if the dog is learning according to its learning rate after the first 10 random responses. Congratulations! You have coded your first AI Reinforcement Learning (RL) project.
+Test everything thoroughly and see if the dog is learning according to its learning rate after the first 10 random responses.  Be sure to try different learning rates (for example: 0.00, 0.25, 0.50, 0.75, 1.0)for the dog and see that the learning results are in accordance with these different learning rate values.
+
+Congratulations! You have coded your first AI Reinforcement Learning (RL) project.
 
 
 # Expand Your App
