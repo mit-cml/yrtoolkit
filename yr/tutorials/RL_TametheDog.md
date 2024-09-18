@@ -10,7 +10,7 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Reinforcement Learning: Tam
 </p>
 
 <img src="../images/RL_tamethedog/dog_shake.jpg" alt="Dog shaking hands" width="200" />
-Learning is a mysterious phenomena and the process through which humans and animals learn how to adopt certain behaviors in response to certain stimuli from their environments is not fully understood.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process in the form of <em>rewards</em> and <em>penalties</em> can help speed up and solidify the learning.  In this project you will be introduced to a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where, in the context of "taming a dog", you will learn how to employ rewards and penalties to emulate and reinforce a learning process.
+Learning is a mysterious phenomenon and the process through which humans and animals learn how to adopt certain behaviors in response to certain stimuli from their environments is not fully understood.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process in the form of <em>rewards</em> and <em>penalties</em> can help speed up and solidify the learning.  In this project you will be introduced to a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where, in the context of "taming a dog", you will learn how to employ rewards and penalties to emulate and reinforce a learning process.
 
 
 # Setup
@@ -284,7 +284,7 @@ The following procedure prints/displays the Q-Table's current state by copying t
 
 Now, it is time to understand the critical formula in RL: how to update Q-Table values when the user gives a command (c), the dog performs an action (a) and the user gives the dog feedback (reward: +1 or penalty: -1) based on the action.
 
-Q(c,a) is the Q-Table value for a given user command (c) and dog action (a). (Remember, the commands are in the rows, and the actions are in the columns)The formula below shows how to update the value Q(c,a):
+Q(c,a) is the Q-Table value for a given user command (c) and dog action (a). (Remember, the commands are in the rows, and the actions are in the columns) The formula below shows how to update the value Q(c,a):
 
 ![RL formula](../images/RL_tamethedog/Formula.png){:.enlargeImage}
 
@@ -322,7 +322,7 @@ Now test your app by scanning the QR Code generated via your AI2 Companion.
 
 ![Scan QR Code](../images/RL_tamethedog/QRCode.png){:.enlargeImage}
 
-Test everything thoroughly and see if the dog is learning according to its learning rate after the first 10 random responses.  Be sure to try different learning rates (for example: 0.00, 0.25, 0.50, 0.75, 1.0)for the dog and see that the learning results are in accordance with these different learning rate values.
+Test everything thoroughly and see if the dog is learning according to its learning rate after the first 10 random responses.  Be sure to try different learning rates (for example: 0.00, 0.25, 0.50, 0.75, 1.0) for the dog and see that the learning results are in accordance with these different learning rate values.
 
 Congratulations! You have coded your first AI Reinforcement Learning (RL) project.
 
