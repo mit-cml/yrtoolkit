@@ -132,10 +132,9 @@ Once you’ve finished setting <em>Picture</em> for all three of the <strong>lef
 
 In the finished app, the left ear, right ear and whisker images need to stay on their respective facial positions as the user moves around or turns their head etc.  In order to be able to do this we need to paste the <em>centers</em> of our images to their appropriate facial landmarks.  To do this we need to set their <em>OriginX</em> and <em>OriginY</em> properties to 0.5.  This will ensure that the <em>centers</em> of the images get pasted rather than their top left corners which is what the default values of 0 for <em>OriginX</em> and <em>OriginY</em> would do.  So for all three image components <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, set their origin x and y coordinates as shown below.
 
-![Image components](../images/facemesh/ImageComponents.png){:.enlargeImage}
+<img src="../images/facemesh/ImageComponents.png" style="width: 75%">
 
-![Setting Image origins](../images/facemesh/ImageMarkOrigin.png){:.enlargeImage}
-
+<img src="../images/facemesh/ImageMarkOrigin.png" style="width: 75%">
 
 ## Preliminary GUI Code
 You are also given some code that makes the buttons work as expected. Check out the code blocks so you can have a general idea what they do.
