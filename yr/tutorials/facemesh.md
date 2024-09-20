@@ -128,6 +128,18 @@ Once you’ve finished setting <em>Picture</em> for all three of the <strong>lef
 
 ![Whiskers complete](../images/facemesh/4.choose_p3.png){:.enlargeImage}
 
+## Setting the Origin of the Image components
+
+In the finished app, the left ear, right ear and whisker images need to stay on their respective facial positions as the user moves around or turns their head etc.  
+
+In order to be able to do this we need to paste the <em>centers</em> of our images to their appropriate facial landmarks.  To do this we need to set the <em>OriginX</em> and <em>OriginY</em> properties of the three image components to 0.5.  This will ensure that the <em>centers</em> of the images get pasted rather than their top left corners which is what the default values of 0 for <em>OriginX</em> and <em>OriginY</em> would do.  So for all three image components <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, 
+
+<img src="../images/facemesh/ImageComponents.png" style="width: 75%">
+
+set their <em>OriginX</em> and <em>OriginY</em> properties to 0.5 as shown below.
+
+<img src="../images/facemesh/ImageMarkOrigin.png" style="width: 75%">
+
 ## Preliminary GUI Code
 You are also given some code that makes the buttons work as expected. Check out the code blocks so you can have a general idea what they do.
 
@@ -148,11 +160,11 @@ The <span class="icon" alt="texttospeech"></span><strong>TextToSpeech</strong> m
 When you click the <strong>SharePhotoButton</strong>, you can share the most recent photo! You’ll be able to share it using any app installed on your device that shares images, such as Google Drive, Dropbox, etc.
 
 ## Helper function
-Now we need to write some code to place the three ImageSprites (leftEar, rightEar, and whiskers) on the corresponding points on the face.
+Now we need to write some code to place the three ImageSprites (<strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>) on the corresponding points on the face.
 
 Your first coding task is to fill in this helper function called <span class="procedures">placeImage</span>. 
 
-![Incomplete placeImage procedure](../images/facemesh/placeImageIncomplete.png){:.enlargeImage}
+![Incomplete placeImage procedure](../images/facemesh/Procedure-placeImage1.png){:.enlargeImage}
 
 <span class="procedures">placeImage</span> procedure places the center of <span class="variables">img</span>, the <strong>ImageSprite</strong>, on the <span class="variables">facePoint</span>, the key point tracked by Facemesh. 
 
@@ -160,61 +172,48 @@ Click "Next Step" for guidance on how to fill in this procedure and move the thr
 
 ## Placing the ears and whiskers
 
-By calling <span class="procedures">ImageSprite.MoveTo</span> (x, y), we move the ImageSprite’s <strong>top-left corner</strong> to (x, y). 
+By calling <span class="procedures">ImageSprite.MoveTo</span> (x, y), we move the ImageSprite’s <strong>center</strong> to (x, y). 
 
-However, if we want the <strong>center</strong> of <span class="variables">img</span> to be placed on the <span class="variables">facePoint</span> (x<sub>f</sub>, y<sub>f</sub>), we have to do some simple math to get the coordinates of its top-left corner, which we will call (x<sub>c</sub>, y<sub>c</sub>).
 
 Note that in this x-y coordinate system of the <strong>Canvas</strong>, (0, 0) is the top left corner. The difference from the normal Cartesian coordinate system is that y increases downwards.
 
-![Coordinate Math](../images/facemesh/6.helper.png){:.enlargeImage}
+![Center paste](../images/facemesh/ImageCenterPlacement.png){:.enlargeImage}
 
-In the scenario above, you want to place the left ear centered on the left forehead <span class="variables">facePoint</span> (x<sub>f</sub>, y<sub>f</sub>) returned by Facemesh.
-* To get the adjusted horizontal placement
-	* <strong>x<sub>c</sub> = x<sub>f</sub> - 0.5 * image width</strong>
-* To get the adjusted vertical placement
-	* <strong>y<sub>c</sub> = y<sub>f</sub> - 0.5 * image height</strong>
+In the scenario above, you want to place the left ear centered on the left forehead <span class="variables">facePoint</span> (x, y) returned by Facemesh.
 
-When we call <span class="procedures">ImageSprite.MoveTo</span> (x<sub>c</sub>, y<sub>c</sub>), the image is centered on (x<sub>f</sub>, y<sub>f</sub>), which are the coordinates of the <span class="variables">facePoint</span>.
+When we call <span class="procedures">ImageSprite.MoveTo</span> (x,y), the image is centered on (x,y), which are the coordinates of the <span class="variables">facePoint</span>.
  
 ## Fill in the procedure
 
 In the <span class="procedures">placeImage</span> procedure, your task is to
-* Fill in the <span class="procedures">x</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be <strong>x<sub>f</sub> - 0.5 * image width</strong>. This is the result of subtracting half of the ImageSprite’s width from the facePoint’s x-coordinate.
+* Fill in the <span class="procedures">x</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the <span class="variables">facePoint</span>’s x-coordinate.
 <br>
 <br>
-* Fill in the <span class="procedures">y</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be <strong>y<sub>f</sub> - 0.5 * image height</strong>. This is the result of subtracting half of the ImageSprite’s height from the facePoint’s y-coordinate.
+* Fill in the <span class="procedures">y</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the <span class="variables">facePoint</span>’s y-coordinate.
 
-Don’t worry if this is a handful right now. Click on the questions below for more help on how to complete the procedure.
-<hint markdown="block" title="How do I get the height/width of img?">
-To get the height/width of the image, you use the following blocks..
-![Get imageSprite height](../images/facemesh/placeImageHint1.png){:.enlargeImage}
-![Get imageSprite width](../images/facemesh/placeImageHint2.png){:.enlargeImage}
-To access these ImageSprite blocks shown above, click “Any component” in the Blocks menu. This will open the drop-down menu to show the following. Then click “Any ImageSprite” and you’ll find the blocks there.
-![Any Component Blocks](../images/facemesh/anyComponent.png){:.enlargeImage}
-</hint>
-<hint markdown="block" title="How do I get the number 0.5?">
-Click on the “Math” option in the Blocks, and you’ll find the number 0. You can drag this number onto the Viewer and double click on the 0 to erase the old value and insert your new value.
-![Get 0.5](../images/facemesh/getNum.png){:.enlargeImage}
-</hint>
-<hint markdown="block" title="How do I get facePoint and img?">
+Click on the questions below for more help on how to complete the procedure.
+
+
+<hint markdown="block" title="How do I get img and facePoint?">
 Hover your mouse over “img” for about a second in the placeImage procedure, and the following will pop up. You can then drag “get img”.
 ![Get img](../images/facemesh/getImg.png){:.enlargeImage}
 Hover your mouse over “facePoint” for about a second in the placeImage procedure, and the following will pop up. You can then drag “get facePoint”.
 ![Get Facepoint](../images/facemesh/getFacepoint.png){:.enlargeImage}
 </hint>
+
 <hint markdown="block" title="How do I get the x, y coords of facePoint?">
 As mentioned earlier, each <strong>facePoint</strong> is a list of 2 items. The x-coordinate is at index 1 and the y-coordinate is at index 2.
-* To get x<sub>f</sub>, use the following block that gets the item at index 1 from the facePoint list.
+* To get x, use the following block that gets the item at index 1 from the facePoint list.
 ![Get facepoint index 1](../images/facemesh/getFacepoint1.png){:.enlargeImage}
-* To get y<sub>f</sub>, use the following block that gets the item at index 2 from the facePoint list.
+* To get y, use the following block that gets the item at index 2 from the facePoint list.
 ![Get facepoint index 2](../images/facemesh/getFacepoint2.png){:.enlargeImage}
 </hint>
 
 If you are stuck, feel free to see which blocks are needed 
 <hint markdown="block" title="Show Hint">
-![placeImage incomplete block](../images/facemesh/placeImageHint.png){:.enlargeImage} 
+![placeImage incomplete block](../images/facemesh/Hint-placeImage.png){:.enlargeImage} 
 <hint markdown="block" title="Check my solution">
-![placeImage procedure solution](../images/facemesh/placeImageSolution.png){:.enlargeImage}
+![placeImage procedure solution](../images/facemesh/Procedure-placeImage.png){:.enlargeImage}
 </hint>
 </hint> 
 <br>
