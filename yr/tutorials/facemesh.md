@@ -130,9 +130,13 @@ Once you’ve finished setting <em>Picture</em> for all three of the <strong>lef
 
 ## Setting the Origin of the Image components
 
-In the finished app, the left ear, right ear and whisker images need to stay on their respective facial positions as the user moves around or turns their head etc.  In order to be able to do this we need to paste the <em>centers</em> of our images to their appropriate facial landmarks.  To do this we need to set their <em>OriginX</em> and <em>OriginY</em> properties to 0.5.  This will ensure that the <em>centers</em> of the images get pasted rather than their top left corners which is what the default values of 0 for <em>OriginX</em> and <em>OriginY</em> would do.  So for all three image components <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, set their origin x and y coordinates as shown below.
+In the finished app, the left ear, right ear and whisker images need to stay on their respective facial positions as the user moves around or turns their head etc.  
+
+In order to be able to do this we need to paste the <em>centers</em> of our images to their appropriate facial landmarks.  To do this we need to set the <em>OriginX</em> and <em>OriginY</em> properties of the three image components to 0.5.  This will ensure that the <em>centers</em> of the images get pasted rather than their top left corners which is what the default values of 0 for <em>OriginX</em> and <em>OriginY</em> would do.  So for all three image components <strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>, 
 
 <img src="../images/facemesh/ImageComponents.png" style="width: 75%">
+
+set their <em>OriginX</em> and <em>OriginY</em> properties to 0.5 as shown below.
 
 <img src="../images/facemesh/ImageMarkOrigin.png" style="width: 75%">
 
@@ -156,7 +160,7 @@ The <span class="icon" alt="texttospeech"></span><strong>TextToSpeech</strong> m
 When you click the <strong>SharePhotoButton</strong>, you can share the most recent photo! You’ll be able to share it using any app installed on your device that shares images, such as Google Drive, Dropbox, etc.
 
 ## Helper function
-Now we need to write some code to place the three ImageSprites (leftEar, rightEar, and whiskers) on the corresponding points on the face.
+Now we need to write some code to place the three ImageSprites (<strong>leftEar</strong>, <strong>rightEar</strong>, and <strong>whiskers</strong>) on the corresponding points on the face.
 
 Your first coding task is to fill in this helper function called <span class="procedures">placeImage</span>. 
 
@@ -182,10 +186,10 @@ When we call <span class="procedures">ImageSprite.MoveTo</span> (x,y), the image
 ## Fill in the procedure
 
 In the <span class="procedures">placeImage</span> procedure, your task is to
-* Fill in the <span class="procedures">x</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the facePoint’s x-coordinate.
+* Fill in the <span class="procedures">x</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the <span class="variables">facePoint</span>’s x-coordinate.
 <br>
 <br>
-* Fill in the <span class="procedures">y</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the facePoint’s y-coordinate.
+* Fill in the <span class="procedures">y</span> argument of the <span class="procedures">ImageSprite.MoveTo</span> block to be the <span class="variables">facePoint</span>’s y-coordinate.
 
 Click on the questions below for more help on how to complete the procedure.
 
