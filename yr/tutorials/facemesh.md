@@ -153,7 +153,7 @@ When you click the <strong>TakePhotoButton</strong>, the <var>mostRecentPhoto</v
 
 The reason we keep track of <var>photoCount</var> and increment by 1 is so that each picture file has a unique name. If we didn’t increment by 1, each photo you take would be writing to the same file over and over again. The reason we keep track of <var>mostRecentPhoto</var> is so that we can share this photo using the <strong>SharePhotoButton</strong>. 
 
-The <span class="icon" alt="texttospeech"></span><strong>TextToSpeech</strong> means that a robot will say "Photo Captured!" out loud when the photo is taken.
+The <span class="icon" alt="textToSpeech"></span><strong>TextToSpeech</strong> means that a robot will say "Photo Captured!" out loud when the photo is taken.
 
 ![SharePhotoButton logic](../images/facemesh/prelimBlock4.png){:.enlargeImage}
 
