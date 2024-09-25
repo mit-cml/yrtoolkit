@@ -179,7 +179,7 @@ Note that in this x-y coordinate system of the <strong>Canvas</strong>, (0, 0) i
 
 ![Center paste](../images/facemesh/ImageCenterPlacement.png){:.enlargeImage}
 
-In the scenario above, you want to place the left ear centered on the left forehead <span class="variables">facePoint</span> (x, y) returned by Facemesh.
+In the scenario above, you want to place the left ear's center on the left forehead.  The left forehead's location is given by <span class="variables">facePoint</span> (x, y) coordinates returned by Facemesh.
 
 When we call <span class="procedures">ImageSprite.MoveTo</span> (x,y), the image is centered on (x,y), which are the coordinates of the <span class="variables">facePoint</span>.
  
@@ -219,7 +219,7 @@ If you are stuck, feel free to see which blocks are needed
 <br>
 
 ## Face Updated
-When the <strong>FaceExtension</strong> detects a face, it triggers the following <span class="control">FaceExtension1.FaceUpdated</span> event. This event handler’s code has also been created for you. The code for the <span class="procedures">resizing</span> procedure is given to you, but the code for the <span class="procedures">moving</span> procedure is incomplete and will soon be created by you.
+When the user moves, the <strong>FaceExtension</strong> <em>continuously</em> keep tracking their face and when it detects the face, it triggers the following <span class="control">FaceExtension1.FaceUpdated</span> event. This event handler’s code has also been created for you. The code for the <span class="procedures">resizing</span> procedure is given to you, but the code for the <span class="procedures">moving</span> procedure is incomplete and will soon be created by you.
 ![Face Updated Block](../images/facemesh/faceUpdatedBlock.png){:.enlargeImage}
 
 ## Moving
