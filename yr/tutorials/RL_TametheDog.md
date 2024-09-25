@@ -10,7 +10,7 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Reinforcement Learning: Tam
 </p>
 
 <img src="../images/RL_tamethedog/dog_shake.jpg" alt="Dog shaking hands" width="200" />
-Learning is a mysterious phenomenon —the process through which humans and animals learn how to adopt certain behaviors in response to environmental stimuli.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process (<em>rewards</em> and <em>penalties</em>) can help solidify and speed it up.  In this project, you will be use a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where you will learn how to employ <em>rewards</em> and <em>penalties</em> to emulate and reinforce a learning process.
+Learning is a mysterious phenomenon —the process through which humans and animals learn how to adopt certain behaviors in response to environmental stimuli.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process (<em>rewards</em> and <em>penalties</em>) can help solidify and speed it up.  In this project, you will be using a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where you will learn how to employ <em>rewards</em> and <em>penalties</em> to emulate and reinforce a learning process.
 
 
 # Setup
