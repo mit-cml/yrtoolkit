@@ -219,7 +219,7 @@ If you are stuck, feel free to see which blocks are needed
 <br>
 
 ## Face Updated
-When the user moves, the <strong>FaceExtension</strong> <em>continuously</em> keep tracking their face and when it detects the face, it triggers the following <span class="control">FaceExtension1.FaceUpdated</span> event. This event handler’s code has also been created for you. The code for the <span class="procedures">resizing</span> procedure is given to you, but the code for the <span class="procedures">moving</span> procedure is incomplete and will soon be created by you.
+When the user moves, the <strong>FaceExtension</strong> <em>continuously</em> keeps tracking their face.  When it detects the face, it triggers the following <span class="control">FaceExtension1.FaceUpdated</span> event. This event handler’s code has also been created for you. The code for the <span class="procedures">resizing</span> procedure is given to you, but the code for the <span class="procedures">moving</span> procedure is incomplete and will soon be created by you.
 ![Face Updated Block](../images/facemesh/faceUpdatedBlock.png){:.enlargeImage}
 
 ## Moving
