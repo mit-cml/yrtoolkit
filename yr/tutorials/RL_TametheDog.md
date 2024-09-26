@@ -10,7 +10,7 @@ font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Reinforcement Learning: Tam
 </p>
 
 <img src="../images/RL_tamethedog/dog_shake.jpg" alt="Dog shaking hands" width="200" />
-Learning is a mysterious phenomenon —the process through which humans and animals learn how to adopt certain behaviors in response to environmental stimuli.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process (<em>rewards</em> and <em>penalties</em>) can help solidify and speed it up.  In this project, you will be use a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where you will learn how to employ <em>rewards</em> and <em>penalties</em> to emulate and reinforce a learning process.
+Learning is a mysterious phenomenon —the process through which humans and animals learn how to adopt certain behaviors in response to environmental stimuli.  However, it is clear that introducing a <em>feedback cycle</em> into any learning process (<em>rewards</em> and <em>penalties</em>) can help solidify and speed it up.  In this project, you will be using a type of machine learning called <strong>Reinforcement Learning (RL)</strong> where you will learn how to employ <em>rewards</em> and <em>penalties</em> to emulate and reinforce a learning process.
 
 
 # Setup
@@ -195,6 +195,7 @@ In this code, see if you can explain what happens when the Reset button is click
 * <strong><em>Qtable</em></strong> entries are re-initialized to 0’s, and these values are displayed via the <strong>printQTable</strong> procedure on the UI. 
 * The variables <strong><em>counter</em></strong> and <strong><em>reward</em></strong> are set to 0, and the variables <strong><em>command</em></strong> and <strong><em>action</em></strong> are also initialized to <strong><em>STAND</em></strong> (or the number 0). 
 * <strong><em>learningRate</em></strong> and its label are re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. 
+* Label showing the trial number is set to 0.
 * The dog’s image is set to the “standing” image. 
 * <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. 
 
@@ -360,7 +361,7 @@ Incorporate a new parameter called “Memory Responsiveness”, which would meas
 
 Revise the procedure <strong>chooseAction</strong> based on this new parameter. For example, you now can let this parameter decide when the dog will stop acting randomly. Initially, we arbitrarily chose this to be the first 10 trials. However, this new parameter should allow you to revise the procedure so it more naturally guides the decision process based on when the Q-Table values start becoming significant. 
 
-In the UI, make visible the Horizontal Arrangements 3 and 4 containing this slider. 
+In the UI, make visible the Horizontal Arrangements 1 and 2 containing this slider. 
 
 Note that if the dog is <em>very responsive</em> to its memory, then even <em>very small</em> Q-values (close to 0) will prompt the dog to act according to its training. If the dog is <em>not responsive</em> to its memory, then even <em>large</em> Q values (close to +1 or -1) will not allow the dog to rely on its memory. Below is a possible adjustment to the <strong>chooseAction</strong> procedure that considers the dog's memory responsiveness.
 
