@@ -108,7 +108,7 @@ Notice that the two latter procedures use the first procedure in their definitio
 
 ## Q-Table Procedures II
 
-Here are some examples to solidify your understanding of Q-Tables.  Note that you do need to replicate these examples in code.
+Here are some examples to solidify your understanding of Q-Tables.  Note that you do not need to replicate these examples in code.
 
 For example, for the Q-Table shown below
 ![Q-Table](../images/RL_tamethedog/QT3.png){:.enlargeImage}
