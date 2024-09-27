@@ -197,6 +197,7 @@ In this code, see if you can explain what happens when the Reset button is click
 * <strong><em>learningRate</em></strong> and its label are re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. 
 * Label showing the trial number is set to 0.
 * The dog’s image is set to the “standing” image. 
+* The label indicating the commmand is initialized to "What do you want Doggy to do?"
 * <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. 
 
 Everything resets to what it was before the training started.
