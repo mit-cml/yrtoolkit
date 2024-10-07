@@ -108,7 +108,7 @@ Notice that the two latter procedures use the first procedure in their definitio
 
 ## Q-Table Procedures II
 
-Here are some examples to solidify your understanding of Q-Tables.  Note that you do need to replicate these examples in code.
+Here are some examples to solidify your understanding of Q-Tables.  Note that you do not need to replicate these examples in code.
 
 For example, for the Q-Table shown below
 ![Q-Table](../images/RL_tamethedog/QT3.png){:.enlargeImage}
@@ -121,7 +121,7 @@ QTable Row#1 is a list of two numbers:
 
 ![Q-Table](../images/RL_tamethedog/QT5a.png){:.enlargeImage}
 
-In code, the procedure block <strong>QTableRow(1)</strong> returns the list containing the numbers 0.25 and -0.15.
+In code, the procedure block <strong>get_QTableRow(1)</strong> returns the list containing the numbers 0.25 and -0.15.
 ![Q-Table](../images/RL_tamethedog/Q1.png){:.enlargeImage}
 
 Similarly, QTable Row#2 is a list of two numbers:
@@ -129,7 +129,7 @@ Similarly, QTable Row#2 is a list of two numbers:
 
 ![Q-Table](../images/RL_tamethedog/QT5b.png){:.enlargeImage}
 
-In code, the procedure block <strong>QTableRow(2)</strong> returns the list containing the numbers -0.35 and 0.45.
+In code, the procedure block <strong>get_QTableRow(2)</strong> returns the list containing the numbers -0.35 and 0.45.
 
 ![Q-Table](../images/RL_tamethedog/Q2.png){:.enlargeImage}
 
@@ -137,7 +137,7 @@ The following identifies a specific cell of the Q-Table. QTable Row#2 Column#1 i
 
 ![Q-Table](../images/RL_tamethedog/QT6.png){:.enlargeImage}
 
-In code, the procedure block <strong>QTable(2,1)</strong> returns the number -0.35.
+In code, the procedure block <strong>get_QTableCell(2,1)</strong> returns the number -0.35.
 
 ![Q-Table(2,1)](../images/RL_tamethedog/Q21.png){:.enlargeImage}
 
@@ -145,7 +145,7 @@ What do you think is QTable Row#1 Column#2?
 
 ![Q-Table](../images/RL_tamethedog/QT7.png){:.enlargeImage}
 
-i.e. What value does this procedure <strong>QTable(1,2)</strong> return?
+i.e. What value does this procedure <strong>get_QTableCell(1,2)</strong> return?
 
 <img src="../images/RL_tamethedog/Q12.png" alt="Q-Table(1,2)" width="150" />
 
@@ -154,7 +154,7 @@ i.e. What value does this procedure <strong>QTable(1,2)</strong> return?
  -0.15
 </hint>
 
-What does this procedure call <strong>set_QTable(1,2,-0.75)</strong> do?
+What does this procedure call <strong>set_QTableCell(1,2,-0.75)</strong> do?
 
 <img src="../images/RL_tamethedog/setQTable12.png" alt="Q-Table set" width="175" />
 
@@ -197,6 +197,7 @@ In this code, see if you can explain what happens when the Reset button is click
 * <strong><em>learningRate</em></strong> and its label are re-initialized to 0.5, as is the <strong>LearningRateSlider.ThumbPosition</strong>. 
 * Label showing the trial number is set to 0.
 * The dog’s image is set to the “standing” image. 
+* The label indicating the commmand is initialized to "What do you want Doggy to do?"
 * <strong>RewardButton</strong> and <strong>PenaltyButton</strong> are both disabled, and the <strong>SitButton</strong> and <strong>ShakeButton</strong> are enabled. 
 
 Everything resets to what it was before the training started.
