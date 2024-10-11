@@ -14,8 +14,6 @@ Have you ever wondered how to create your own generative AI app for wildly imagi
 
 ![Kitten with Wings](../images/imageBot/KittenwithWings.png){:.enlargeImage}
 
-<img src="https://code.org/api/hour/begin_mit_imagebot.png">
-
 <p style="padding-bottom: 7px"></p>
 
 # Setup
