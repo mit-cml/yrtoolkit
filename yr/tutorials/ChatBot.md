@@ -14,8 +14,6 @@ Have you ever wondered how it is possible to create your very own ChatGPT app th
 
 ![ChatBot GUI](../images/chatBot/FinalGUI.png){:.enlargeImage}
 
-<img src="https://code.org/api/hour/begin_mit_chatgpt.png">
-
 <p style="padding-bottom: 7px"></p>
 
 # Setup
