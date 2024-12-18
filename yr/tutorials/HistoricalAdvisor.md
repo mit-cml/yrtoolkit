@@ -9,21 +9,67 @@ layout: tutorial
 font-weight:bold; color:#1c2f8d; padding-bottom: 0;">Wisdom of the Ages: Historical Character Advisor App
 </p>
 
-<img src="../images/historicaladvisor/CharacterGAllery.png" alt="Historical Characters" width="200" />
-
-XXXXXXXXXXXXXXXXX
+![Character Gallery](../images/historicaladvisor/CharacterGallery.png){:.enlargeImage}
+Imagine that you could access all these great teachers from history and benefit from their life experiences and wisdom  with the touch of a phone on your finger tips.  Imagine that you could ask them any questions you wanted and get authentic answers.  What would you ask?  What would you want to know?  With GenAI this is now a possibility.  In this project you will build an app to realize such a dream.
 
 # Setup
 
+## Getting Started
+
 If you need help getting started and set up with App Inventor please visit our <a href="https://appinventor.mit.edu/explore/ai2/setup" target="_blank">Setting Up App Inventor</a> page.
 
-In this project we will be using the <em>new</em> App Inventor User Interface called "Neo".  To set this up go to the Settings menu and select "User Interface Settings:
+## New User Interface Neo
+
+In this project we will be using the <em>new</em> App Inventor User Interface called "Neo".  To set this up, go to the Settings menu and select "User Interface Settings:
 ![Settings](../images/historicaladvisor/Settings.png){:.enlargeImage}
 
 When the following dialog comes up, select the "Neo" option:
 ![UI Settings](../images/historicaladvisor/UISettings.png){:.enlargeImage}
 
+## Getting your own OpenAI API Key
 
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+
+Follow the steps below to create your OpenAI account and get your OpenAI API key.
+
+1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
+    
+2. Click on the <strong>Login</strong> button on  the upper right, then click <strong>Sign up</strong> option.
+
+    ![OpenAI Sign up](../images/simpleChatBot/OpenAISite.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
+
+    ![Create Account](../images/simpleChatBot/OpenAISignUp.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+
+4. You will need to verify your e-mail and phone number during the signup process.
+
+5. To get your personal OpenAI API  key go to <a href="https://platform.openai.com/account/api-keys" target="_blank">https://platform.openai.com/account/api-keys </a>
+ 
+6. Click on the  API keys tab and the Create new secret key button.
+
+    ![Key Generate](../images/simpleChatBot/KeyGenerate.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+7. Give your key a name if you wish.  This step is optional.
+
+    ![Name Secret Key](../images/simpleChatBot/NameSecretKey.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+
+8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
+
+9. During the project, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
+
+![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
+
+## Updating AI2 Companion
+
+If you have not done so, please upgrade your AI2 Companion to version 2.73 or higher.
 
 # Historical Character Advisor App (Level: Intermediate)
 
@@ -95,8 +141,9 @@ When the Get Advice button is clicked
 ![When Get Advice button clicked](../images/historicaladvisor/whenGetAdviceButtonClick.png){:.enlargeImage}
 
 </hint>
+<br/>
 
-When <strong>ChatBot</strong> returns with a response, dismiss the <strong>Notifier</strong> and paste this to the appropriate text box.
+When <strong>ChatBot</strong> returns with a response, dismiss the <strong>Notifier</strong> and paste this response to the appropriate text box.
 
 <hint markdown="block" title="Solution">
 
@@ -107,12 +154,12 @@ When <strong>ChatBot</strong> returns with a response, dismiss the <strong>Notif
 
 ## Spinner Option Selection
 
-When the user selects a historical character option for the <strong>Spinner</strong> menu
+When the user selects a historical character option from the <strong>Spinner</strong> menu
 * The <strong>ResponseTextBox.Text</strong> should be cleared
 * The <strong>ChatBot</strong> should reset the conversation
 * The <strong>Image.Picture</strong> should be set to the newly selected character’s image stored in the <var>photoList</var> variable
 
-<strong>Note<:</strong> We are not, by default, clearing the <strong>QuestionTextBox.Text</strong> in case the user would like to ask the same question to multiple historical characters.
+<strong>Note:</strong> We are not, by default, clearing the <strong>QuestionTextBox.Text</strong>, in case the user would like to ask the same question to multiple historical characters.
 
 <hint markdown="block" title="Solution">
 
@@ -137,7 +184,7 @@ When the Clear button is clicked, both text boxes should be cleared.
 
 Now test your app by scanning the QR Code generated via your AI2 Companion on your mobile device.
 
-![Scan QR Code](../images/historicaladvisor/Connect_AI2Companion_QRCode.png.png){:.enlargeImage}
+![Scan QR Code](../images/historicaladvisor/Connect_AI2Companion_QRCode.png){:.enlargeImage}
 
 Select different historical characters, ask questions, and seek advice. In your opinion, does the app do a convincing job of embodying the life experiences and mannerisms of the character you have selected?
 
@@ -146,12 +193,11 @@ Congratulations! You have created a GenAI app that fulfills Steve Jobs’ vision
 
 # Expand Your App
 
-## Further Explorations
 
-* Add at least one more character (for example, Michelle Obama) to your Spinner list and their image to your Media. Then, test that your app works with the new character.
-* Try to break down your app so that the GenAI hallucinates. Have it say things that your historical character is unlikely to say. Explore the limits of your app.
+* Add at least one more character (for example, Michelle Obama) to your <strong>Spinner</strong> list and their image to your Media files. Then, test that your app works with the new character(s).
+* Create an app that groups many historical characters by category using multiple screens, such as <em>Ancient Philosophers, Spiritual Teachers, Politicians, Scientists, Literary Figures,</em> etc.
+* Try to break down your app so that the GenAI <a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)" target="_blank"><em>hallucinates</em></a>. Have it say things that your historical character is unlikely to say. Explore the limits of your app.
 * As technology improves, it will be possible to have an animated 3D avatar of the characters you select and have them speak in the voice of these characters (especially for those living after the 20th Century when voice recordings are available). Explore whether these advancements are available now. Imagine how your app could incorporate such features.
-* Create an app that groups many historical characters by category using multiple screens, such as Ancient Philosophers, Spiritual Teachers, Politicians, Scientists, or Literary Figures.
 * Add your amazing ideas here.
 
 
