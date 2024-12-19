@@ -26,9 +26,13 @@ In this project we will be using the <em>new</em> App Inventor User Interface ca
 When the following dialog comes up, select the "Neo" option:
 ![UI Settings](../images/historicaladvisor/UISettings.png){:.enlargeImage}
 
-## Getting your own OpenAI API Key
+## Using Gemini or Getting your own OpenAI API Key
 
-For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+For this project, by default, you will be using Google's Gemini LLM to power your <strong>ChatBot</strong> component.  If you are happy with this choice, you can ignore the following comments.
+
+![Gemini as LLM](../images/historicaladvisor/Gemini.png){:.enlargeImage}
+
+If, instead, you wish to use OpenAI's ChatGPT instead, you will need to get your own OpenAI API key to use the <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
@@ -64,7 +68,7 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 9. During the project, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
 
-![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
+![Api Key Property](../images/historicaladvisor/ChatBotAPIKey.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Updating AI2 Companion
@@ -75,7 +79,7 @@ If you have not done so, please upgrade your AI2 Companion to version 2.73 or hi
 
 ## Introduction I
 
-In 1985 Steve Jobs shared a vision for an AI tool that could capture the “underlying worldview” of a historical figure like Aristotle and answer students’ questions <em>as</em> that character. 
+In 1985 Steve Jobs shared a vision for an AI tool that could capture the “underlying worldview” of a historical figure like Aristotle and answer students’ questions <strong><em>as</em></strong> that character. 
 
 ![Steve Jobs Lecture](../images/historicaladvisor/SteveJobsonAristotle.png){:.enlargeImage}
 <a href="https://youtu.be/iosUmVdobnM?si=qT2ZkHuMNys2vCFu" target="_blank">YouTube video.</a>
@@ -132,9 +136,9 @@ When the <strong>SpeechRecognizer</strong> gets the text, the text should be pas
 
 When the Get Advice button is clicked
 * Start the <stong>Notifier</stong> telling the user that the app is working on the task
-* Set the <strong>ChatBot.System</strong> to a prompt like: 
-	<em>“You are [selected character]. Based on everything you know about [selected character]’s personality and life experience, answer the questions and give advice clearly and concisely as if this personality would answer or give advice. Do NOT make up stuff. Be truthful to the character. Chat with the mannerisms and in the style of the character. Start by stating what character you are and give some background information.”</em>
-* Have the <strong>ChatBot</strong> send the user’s question to the LLM.
+* Create a prompt like: 
+	<strong><em>“You are [selected character]. Based on everything you know about [selected character]’s personality and life experience, answer the questions and give advice clearly and concisely as if this personality would answer or give advice. Do NOT make up stuff. Be truthful to the character. Chat with the mannerisms and in the style of the character. Start by stating what character you are and give some background information.”</em></strong>
+* Have the <strong>ChatBot</strong> send the user’s question to the LLM along with the above prompt.
 
 <hint markdown="block" title="Solution">
 
