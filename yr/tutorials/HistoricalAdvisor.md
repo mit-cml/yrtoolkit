@@ -84,7 +84,7 @@ In 1985 Steve Jobs shared a vision for an AI tool that could capture the “unde
 ![Steve Jobs Lecture](../images/historicaladvisor/SteveJobsonAristotle.png){:.enlargeImage}
 <a href="https://youtu.be/iosUmVdobnM?si=qT2ZkHuMNys2vCFu" target="_blank">YouTube video.</a>
 
-Amazingly, in just 40 years, generative AI tools such as ChatGPT have done that. In this project, you will learn how to create a GenAI-powered app that will allow you to ask questions of a historical character and get answers and advice.
+Amazingly, in just 40 years, generative AI tools such as ChatGPT have done that. In this project, you will learn how to create a GenAI-powered app that will allow you to ask questions to a historical character and get answers and advice.
 
 ![Einstein Advisor](../images/historicaladvisor/EinsteinAdvisor.png){:.enlargeImage}
 
