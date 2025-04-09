@@ -107,3 +107,30 @@ If you want to build more aspects of your app, you're in the perfect place! Let'
 Navigate back to the Designer screen by clicking the Designer button in the top right of your screen.
 
 ![Designer Button](../images/digitaldoodlewithAI/switch_to_designer_screen.png)
+
+
+In the Designer screen, open the Sensors drawer. Drag and drop an <strong> AccelerometerSensor </strong> into the phone screen.
+
+![Accelerometer Add](../images/digitaldoodlewithAI/drag_in_accelerometer.png)
+
+
+You will NOT see the component on your screen. Instead, look below the phone screen. You should see <strong> AccelerometerSensor </strong> underneath, labeled as a "Non-visible component".
+
+![Non-visible componenets](../images/digitaldoodlewithAI/nonvisible_accelerometer.png)
+
+
+Now return to the Blocks screen.
+
+On the left side of you screen, under <strong> AccelerometerSensor1 </strong>, drag and drop the when AccelerometerSensor1.Shaking block into your workspace.
+
+![Accelerometer Block](../images/digitaldoodlewithAI/accelerometer_when_shaking.png)
+
+Under <strong>Canvas1</strong>, drag callCanvas1.Clear into your workspace and click it into the wehn AccelerometerSensor1.Shaking block.
+
+![Canvas Clear](../images/digitaldoodlewithAI/call_canvas_clear.png)
+
+Once you have this finished, your block of code should look like this.
+
+![Accelerometer Final Block](../images/digitaldoodlewithAI/accelerometer_final_block.png)
+
+Time to test your app using your AI companion again! When you shake your companion, does the screen clear?
