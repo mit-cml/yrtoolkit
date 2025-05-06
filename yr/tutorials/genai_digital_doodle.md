@@ -5,7 +5,7 @@ layout: tutorial
 
 # Challenge
 
-
+The Digital Doodle App allows users to draw on their mobile device screens. With the addition of generative AI tools, users can ask an AI model to generate a background image for them to draw on.
 
 ![Finished Product](../images/digitaldoodlewithAI/final_product.jpg){:.enlargeImage}
 
