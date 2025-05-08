@@ -33,7 +33,7 @@ Click on the "Neo" Interface, then click "OK".
 
 ## Getting your own OpenAI API Key
 
-For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
@@ -41,12 +41,12 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 2. Click on the <strong>Login</strong> button on  the upper right, then click <strong>Sign up</strong> option.
 
-    ![OpenAI Sign up](../images/simpleChatBot/OpenAISite.png){:.enlargeImage}
+    ![OpenAI Sign up](../images/simpleImageBot/OpenAISite.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
 
-    ![Create Account](../images/simpleChatBot/OpenAISignUp.png){:.enlargeImage}
+    ![Create Account](../images/simpleImageBot/OpenAISignUp.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 
@@ -56,20 +56,20 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 6. Click on the  API keys tab and the Create new secret key button.
 
-    ![Key Generate](../images/simpleChatBot/KeyGenerate.png){:.enlargeImage}
+    ![Key Generate](../images/simpleImageBot/KeyGenerate.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 7. Give your key a name if you wish.  This step is optional.
 
-    ![Name Secret Key](../images/simpleChatBot/NameSecretKey.png){:.enlargeImage}
+    ![Name Secret Key](../images/simpleImageBot/NameSecretKey.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 
 8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
 
-9. During the ChatBot project, when you add your <strong>ChatBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
+9. During the ImageBot project, when you add your <strong>ImageBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ImageBot</strong> property <em>ApiKey</em>.
 
-![Api Key Property](../images/historicaladvisor/ChatBotAPIKey.png){:.enlargeImage}
+![Api Key Property](../images/digitaldoodlewithAI/api_key_location.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Updating AI2 Companion
@@ -194,7 +194,7 @@ In the Layout drawer, drag and drop a <strong> HorizontalArrangement</strong> un
 ![Horizontal Arrangement](../images/digitaldoodlewithAI/add_horizontal_arrangement.png){:.enlargeImage}
 
 
-Set the <em>Width</em> component of <strong>Horizontal Arrangement</strong> to Fill Parent. Set <strong> AlignHorizontal</strong> to Center:3.
+Set the <em>Width</em> property of <strong>Horizontal Arrangement</strong> to Fill Parent. Set <strong> AlignHorizontal</strong> to Center:3.
 
 ![Horizontal Arrangement Properties](../images/digitaldoodlewithAI/horizontal_arrange_properties.png){:.enlargeImage}
 
@@ -208,7 +208,7 @@ Under the Screen1 panel, select <strong> Button1</strong> and click Rename and r
 ![Rename Button](../images/digitaldoodlewithAI/renaming_button.png){:.enlargeImage}
 
 
-Under components, set <em> Background Color </em> to black. Set <em> Width </em> to 20 percent.
+Under properties, set <em> Background Color </em> to black. Set <em> Width </em> to 20 percent.
 
 ![Button Properties](../images/digitaldoodlewithAI/button_properties.png){:.enlargeImage}
 
