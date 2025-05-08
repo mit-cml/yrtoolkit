@@ -5,9 +5,9 @@ layout: tutorial
 
 # Challenge
 
-The Digital Doodle App allows users to draw lines on their mobile device screens. With the addition of generative AI tools, users can ask an AI model to generate a background image for them to draw on.
 
-![Finished Product](../images/digitaldoodlewithAI/finished_product_intro_image.png){:.enlargeImage}
+
+![Finished Product](../images/digitaldoodlewithAI/final_product.jpg){:.enlargeImage}
 
 # Setup
 
@@ -29,6 +29,50 @@ Click on the "Neo" Interface, then click "OK".
 
 ![Selecting Neo](../images/digitaldoodlewithAI/select_neo_ui.png){:.enlargeImage}
 
+## Using Gemini or Getting your own OpenAI API Key
+
+For this project, by default, you will be using Google's Gemini LLM to power your <strong>ChatBot</strong> component.  If you are happy with this choice, you can ignore the following comments.
+
+![Gemini as LLM](../images/historicaladvisor/Gemini.png){:.enlargeImage}
+
+If, instead, you wish to use OpenAI's ChatGPT instead, you will need to get your own OpenAI API key to use the <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+
+Follow the steps below to create your OpenAI account and get your OpenAI API key.
+
+1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
+
+2. Click on the <strong>Login</strong> button on  the upper right, then click <strong>Sign up</strong> option.
+
+    ![OpenAI Sign up](../images/simpleChatBot/OpenAISite.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
+
+    ![Create Account](../images/simpleChatBot/OpenAISignUp.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+
+4. You will need to verify your e-mail and phone number during the signup process.
+
+5. To get your personal OpenAI API  key go to <a href="https://platform.openai.com/account/api-keys" target="_blank">https://platform.openai.com/account/api-keys </a>
+
+6. Click on the  API keys tab and the Create new secret key button.
+
+    ![Key Generate](../images/simpleChatBot/KeyGenerate.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+7. Give your key a name if you wish.  This step is optional.
+
+    ![Name Secret Key](../images/simpleChatBot/NameSecretKey.png){:.enlargeImage}
+    <p style="padding-bottom: 7px"></p>
+
+
+8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
+
+9. During the project, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
+
+![Api Key Property](../images/historicaladvisor/ChatBotAPIKey.png){:.enlargeImage}
+<p style="padding-bottom: 7px"></p>
 
 ## Familiarizing Yourself With App Inventor Layout
 
@@ -61,7 +105,7 @@ In the top right corner of your screen, click the Blocks button. The Blocks scre
 One the left hand side of your screen, you will see the drawers of the blocks you will use to code your app. The rest of the screen is your workspace.
 
 
-On the left side of your screen, click <strong> Canvas1 </strong> and drag the When Canvas1.Dragged block into your workspace.
+On the left side of your screen, click <strong> Canvas1 </strong> and drag the when Canvas1.Dragged block into your workspace.
 
 ![Canvas Dragged Block](../images/digitaldoodlewithAI/selecting_canvas_dragged.png){:.enlargeImage}
 
@@ -83,8 +127,6 @@ Once you have finished this, your block of code should look like the example bel
 ![First Block](../images/digitaldoodlewithAI/block_1_final_product.png){:.enlargeImage}
 
 
-Time to test your app out! You should now be able to draw on your companion screen. What issues are there with this version of the app? Can you clear your drawing? Can you change the colors of your ink?
-
 
 
 
@@ -98,10 +140,14 @@ Now it's time to test your code on a mobile device! Make sure you have App Inven
 A QR code should appear on your screen. Open the App Inventor app on your mobile device and click "scan QR code". Your app should appear on your mobile device.
 
 
+Time to test your app out! You should now be able to draw on your companion screen. What issues are there with this version of the app? Can you clear your drawing? Can you change the colors of your ink?
 
-## Accelerometer Adding
+
+## Adding an Accelerometer
 
 If you want to build more aspects of your app, you're in the perfect place! Let's keep adding elements!
+
+The next step is to add an <strong> Accelerometer </strong> element to your app. This will allow the user to erase their drawing by shaking their phone screen.
 
 
 Navigate back to the Designer screen by clicking the Designer button in the top right of your screen.
@@ -121,11 +167,11 @@ You will NOT see the component on your screen. Instead, look below the phone scr
 
 Now return to the Blocks screen.
 
-On the left side of you screen, under <strong> AccelerometerSensor1 </strong>, drag and drop the when AccelerometerSensor1.Shaking block into your workspace.
+On the left side of you screen, under <strong> AccelerometerSensor1</strong>, drag and drop the when AccelerometerSensor1.Shaking block into your workspace.
 
 ![Accelerometer Block](../images/digitaldoodlewithAI/accelerometer_when_shaking.png){:.enlargeImage}
 
-Under <strong>Canvas1</strong>, drag callCanvas1.Clear into your workspace and click it into the wehn AccelerometerSensor1.Shaking block.
+Under <strong>Canvas1</strong>, drag call Canvas1.Clear into your workspace and click it into the when AccelerometerSensor1.Shaking block.
 
 ![Canvas Clear](../images/digitaldoodlewithAI/call_canvas_clear.png){:.enlargeImage}
 
@@ -133,11 +179,11 @@ Once you have this finished, your block of code should look like this.
 
 ![Accelerometer Final Block](../images/digitaldoodlewithAI/accelerometer_final_block.png){:.enlargeImage}
 
-Time to test your app using your AI companion again! When you shake your companion, does the screen clear?
+Time to test your app using your AI Companion again! When you shake your companion, does the screen clear?
 
 
 
-## Colored Ink Buttons
+## Colored Ink Buttons UI
 
 Once again, it is time to return to the Designer screen.
 
@@ -146,7 +192,7 @@ In the Layout drawer, drag and drop a <strong> HorizontalArrangement</strong> un
 ![Horizontal Arrangement](../images/digitaldoodlewithAI/add_horizontal_arrangement.png){:.enlargeImage}
 
 
-Set the <strong>Width</strong> component of <strong>Horizontal Arrangement</strong> to Fill Parent. Set <strong> AlignHorizontal</strong> to Center:3.
+Set the <em>Width</em> component of <strong>Horizontal Arrangement</strong> to Fill Parent. Set <strong> AlignHorizontal</strong> to Center:3.
 
 ![Horizontal Arrangement Properties](../images/digitaldoodlewithAI/horizontal_arrange_properties.png){:.enlargeImage}
 
@@ -160,7 +206,7 @@ Under the Screen1 panel, select <strong> Button1</strong> and click Rename and r
 ![Rename Button](../images/digitaldoodlewithAI/renaming_button.png){:.enlargeImage}
 
 
-Under components, set <strong> Background Color </strong> to black. Set <em> Width </em> to 20 percent.
+Under components, set <em> Background Color </em> to black. Set <em> Width </em> to 20 percent.
 
 ![Button Properties](../images/digitaldoodlewithAI/button_properties.png){:.enlargeImage}
 
@@ -174,6 +220,8 @@ Repeat the above steps three more times to create a Red, Blue, and Green Button.
 ![Button UI](../images/digitaldoodlewithAI/all_buttons_UI.png){:.enlargeImage}
 
 
+## Colored Ink Buttons Code
+
 Change screens to the Blocks screen.
 
 
@@ -182,7 +230,7 @@ On the left side of your screen, select <strong> BlackButton </strong>. Drag and
 ![When Button Clicked](../images/digitaldoodlewithAI/when_button_clicked.png){:.enlargeImage}
 
 
-Under <strong> Canvas1 </strong>, drag the set PaintColor to block into your workspace and click it into the when BlackButton.Clicked block.
+Under <strong> Canvas1 </strong>, drag the set Canvas1.PaintColor to block into your workspace and click it into the when BlackButton.Clicked block.
 
 ![Set Paint Color](../images/digitaldoodlewithAI/getting_set_paint_color_block.png){:.enlargeImage}
 
@@ -200,11 +248,11 @@ Repeat this for RedButton, BlueButton, and GreenButton. Your code should now loo
 ![All Color Button Code](../images/digitaldoodlewithAI/all_buttons_code.png){:.enlargeImage}
 
 
-Time to test your code using your AI companion! When you click on the color buttons, the ink color will change. Can you draw a picture using all four colors?
+Time to test your code using your AI Companion! When you click on the color buttons, the ink color will change. Can you draw a picture using all four colors?
 
 
 
-## Slider
+## Line Thickness Slider
 
 The next component you will implement in your app is a slider function that allows a user to change the line thickness on their canvas. Start by switching back to the Designer screen.
 
@@ -217,12 +265,12 @@ In the Properties, set <em>MaxValue</em> of the <strong> Slider </strong> to 100
 ![Slider Properties](../images/digitaldoodlewithAI/slider_property_settings.png){:.enlargeImage}
 
 
-Switch to the Blocks screen. Under <strong> Canvas1 </strong>, drag and drop set Canvas1.LineWidth to into your workspace.
+Switch to the Blocks screen. Under <strong> Canvas1</strong>, drag and drop set Canvas1.LineWidth to into your workspace.
 
 ![Line Width](../images/digitaldoodlewithAI/set_LineWidth.png){:.enlargeImage}
 
 
-Under <strong>Slider </strong>, select Slider.ThumbPosition. Drag it into your workspace and click it into set Canvas1.LineWidth to.
+Under <strong>Slider</strong>, select Slider1.ThumbPosition. Drag it into your workspace and click it into set Canvas1.LineWidth to.
 
 ![Get Thumb Position](../images/digitaldoodlewithAI/slider_getThumbPosition.png){:.enlargeImage}
 
@@ -232,11 +280,11 @@ Place your current code block as the first block under when Canvas1.Dragged. You
 ![Canvas1 Dragged](../images/digitaldoodlewithAI/canvas_when_dragged_plus_line_width.png){:.enlargeImage}
 
 
-Time to test your app with your AI companion! Remember, the line width will only change for anything you draw AFTER adjusting the slider.
+Time to test your app with your AI Companion! Remember, the line width will only change for anything you draw AFTER adjusting the slider.
 
 
 
-## Adding ImageBot
+## Adding ImageBot UI
 
 Now it's time to return to the Designer screen. Select <strong> Screen1 </strong> on the right side of your screen and set <em> AlignHorizontal </em> to Center:3.
 
@@ -261,7 +309,7 @@ Rename <strong> TextBox1 </strong> to <strong> GenAITextBox </strong>.
 ![Rename Textbox](../images/digitaldoodlewithAI/rename_genai_textbox.png){:.enlargeImage}
 
 
-Set <em> Width </em> of GenAITextBox to Fill Parent.
+Set <em> Width </em> of <strong>GenAITextBox</strong> to Fill Parent.
 
 ![Textbox Width](../images/digitaldoodlewithAI/genai_textbox_width.png){:.enlargeImage}
 
@@ -279,24 +327,24 @@ Set <em> Background Color </em> of <strong> GenAIButton </strong> to Orange.
 ![Generate Button Color](../images/digitaldoodlewithAI/set_generate_button_color.png){:.enlargeImage}
 
 
-Set <em>Shape </em> to rounded. Set <em> Text </em> to Generate Background.
+Set <em>Shape </em> to rounded. Set <em> Text </em> to "Generate Background".
 
 ![Button Properties](../images/digitaldoodlewithAI/button_shap_rounded.png){:.enlargeImage}
 
 
-In the Experimental drawer, drag and drop an <strong>ImageBot</strong> component onto your phone screen. You can select "ok" to the warning pop up. <strong> ImageBot </strong> is a non-visible component and should appear under your phone screen alongside the Accelerometer.
+In the Experimental drawer, drag and drop an <strong>ImageBot</strong> component onto your phone screen. You can select "OK" to the warning pop up. <strong> ImageBot </strong> is a non-visible component and should appear under your phone screen alongside the Accelerometer.
 
 ![Add ImageBot](../images/digitaldoodlewithAI/image_bot_in_app.png){:.enlargeImage}
 
 
-Enter your personal ApiKey in the ImageBot settings. If you do not have an ApiKey, you can get a personal one from OpenAI using these instructions.
-
-[Get ApiKey](https://docs.google.com/document/d/1T1x2bDON_1N2WnujKi7bLRyQeN10rJRxrPcoi_2XObo/edit?tab=t.0#heading=h.bnxluif8o4ux){:.enlargeImage}
+Enter your personal ApiKey in the ImageBot settings.
 
 ![ApiKey](../images/digitaldoodlewithAI/api_key.png){:.enlargeImage}
 
 
-Switch to the Blocks screen. Under <strong>GenAIButton </strong>, drag and drop when GenAIButton.Click into your workspace.
+## Adding ImageBot Code
+
+Switch to the Blocks screen. Under <strong>GenAIButton</strong>, drag and drop when GenAIButton.Click into your workspace.
 
 ![When GenAI Button](../images/digitaldoodlewithAI/when_genaibutton_clicked.png){:.enlargeImage}
 
@@ -306,7 +354,7 @@ Under <strong>ImageBot1</strong>, drag call ImageBot1.CreateImage into your work
 ![Create Image Block](../images/digitaldoodlewithAI/create_image_block.png){:.enlargeImage}
 
 
-Under <strong>GenAITextBox</strong>, drag and drop GenAITextBox.Text into your workspace. Click it into the call ImageBot1.Createimage description socket.
+Under <strong>GenAITextBox</strong>, drag and drop GenAITextBox.Text into your workspace. Click it into the call ImageBot1.CreateImage description socket.
 
 ![GenAITextBox.Text](../images/digitaldoodlewithAI/genati_textbox_text.png){:.enlargeImage}
 
@@ -319,7 +367,7 @@ Under <strong>ImageBot1</strong>, drag and drop the when ImageBot1.ImageCreated 
 
 ![When Image Created](../images/digitaldoodlewithAI/when_image_created_block.png){:.enlargeImage}
 
-Under <strong>Canvas1</strong>, drag and drop the set Canvas1BackgroundImage to block into your workspace and click it into the when ImageBot1.ImageCreated block. Deleted the No available assets block.
+Under <strong>Canvas1</strong>, drag and drop the set Canvas1.BackgroundImage to block into your workspace and click it into the when ImageBot1.ImageCreated block. Delete the No available assets block.
 
 ![Set Background Image](../images/digitaldoodlewithAI/set_canvas_backgroundimage.png){:.enlargeImage}
 
@@ -332,7 +380,7 @@ Your code block should look like this.
 ![When Image Created](../images/digitaldoodlewithAI/when_image_created_final_block.png){:.enlargeImage}
 
 
-Time to test your app using your AI companion! Try submitting a few different background prompts. Do you notice any issues with the app? Does it feel like your app is not responding to your prompt? Let's add a notifier so that the user knows that the ImageBot is working to create a background!
+Time to test your app using your AI Companion! Try submitting a few different background prompts. Do you notice any issues with the app? Does it feel like your app is not responding to your prompt? Do you feel like you are waiting too long without knowing if your app is working? Let's add a notifier so that the user knows that the ImageBot is working to create a background!
 
 
 
@@ -346,7 +394,7 @@ Start by switching back to the Designer screen. In the User Interface drawer, dr
 
 Switch to the Blocks screen.
 
-Under <strong>Notifier1</strong>, drag and drop the call Notifier1.ShowProgressDialog block and click it in as the first block in the when GenAIButton.Click block.
+Under <strong>Notifier1</strong>, drag and drop the indicated call Notifier1.ShowProgressDialog block and click it in as the first block in the when GenAIButton.Click block.
 
 ![Show Progress Dialog](../images/digitaldoodlewithAI/notifier_progress_dialog.png){:.enlargeImage}
 
@@ -356,7 +404,7 @@ Under Text, drag and drop two empty text boxes into your workspace.
 ![Adding TextBoxes](../images/digitaldoodlewithAI/empty_text_boxes.png){:.enlargeImage}
 
 
-Click the empty text boxes into the sockets of callNotifier1.ShowProgressDialog. In the message text box, enter "Generating Image". In the title text box, enter "Please wait". Your code block should now look like this.
+Click the empty text boxes into the sockets of call Notifier1.ShowProgressDialog. In the message text box, enter "Generating Image". In the title text box, enter "Please wait". Your code block should now look like this.
 
 ![Added Progress Dialog](../images/digitaldoodlewithAI/genai_clicked_plus_notifier.png){:.enlargeImage}
 
@@ -370,7 +418,7 @@ Your code block should now look like this.
 
 Congratulations! You have now completed the Digital Doodle with GenAI app tutorial. Have fun creating your own doodles with personalized AI generated backgrounds! Your block code should look like this.
 
-![Final Block Code](../images/digitaldoodlewithAI/final_block_code.png){:.enlargeImage}
+![Final Block Code](../images/digitaldoodlewithAI/blocks.png){:.enlargeImage}
 
 
 
@@ -379,7 +427,10 @@ Congratulations! You have now completed the Digital Doodle with GenAI app tutori
 Here are some ideas of how you can expand your app:
 
 * add more colors
-* allow users to draw dots as well as lines (Hint: use the DrawCircle Block)
+* allow users to draw dots as well (Hint: use the DrawCircle block)
 * develop the capability to erase specific parts of a doodle
 * create a list of preset background ideas that the user can choose from
 * edit certain parts of your canvas with a generated image
+* try to create a collection of doodled images and form a class gallery
+* try organizing an image doodle competition
+* see what other ideas you can come up with! There are countless ways to expand and improve your app
