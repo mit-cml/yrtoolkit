@@ -5,7 +5,7 @@ layout: tutorial
 
 # Challenge
 
-
+The Digital Doodle App allows users to draw on their mobile device screens. With the addition of generative AI tools, users can ask an AI model to generate a background image for them to draw on.
 
 ![Finished Product](../images/digitaldoodlewithAI/final_product.jpg){:.enlargeImage}
 
@@ -29,13 +29,11 @@ Click on the "Neo" Interface, then click "OK".
 
 ![Selecting Neo](../images/digitaldoodlewithAI/select_neo_ui.png){:.enlargeImage}
 
-## Using Gemini or Getting your own OpenAI API Key
 
-For this project, by default, you will be using Google's Gemini LLM to power your <strong>ChatBot</strong> component.  If you are happy with this choice, you can ignore the following comments.
 
-![Gemini as LLM](../images/historicaladvisor/Gemini.png){:.enlargeImage}
+## Getting your own OpenAI API Key
 
-If, instead, you wish to use OpenAI's ChatGPT instead, you will need to get your own OpenAI API key to use the <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
 Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
@@ -69,10 +67,14 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
 
-9. During the project, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
+9. During the ChatBot project, when you add your <strong>ChatBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
 
 ![Api Key Property](../images/historicaladvisor/ChatBotAPIKey.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
+
+## Updating AI2 Companion
+
+If you have not done so, please upgrade your AI2 Companion to version 2.69 or higher.
 
 ## Familiarizing Yourself With App Inventor Layout
 
@@ -337,7 +339,7 @@ In the Experimental drawer, drag and drop an <strong>ImageBot</strong> component
 ![Add ImageBot](../images/digitaldoodlewithAI/image_bot_in_app.png){:.enlargeImage}
 
 
-Enter your personal ApiKey in the ImageBot settings.
+Enter your personal ApiKey in the ImageBot settings. If you have not yet gotten a personal ApiKey from OpenAI, review the Setup section.
 
 ![ApiKey](../images/digitaldoodlewithAI/api_key.png){:.enlargeImage}
 
