@@ -39,7 +39,7 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
 
-2. Click on the <strong>Login</strong> button on  the upper right, then click <strong>Sign up</strong> option.
+2. Click on the <strong>Login</strong> button on the upper right, then click <strong>Sign up</strong> option.
 
     ![OpenAI Sign up](../images/simpleImageBot/OpenAISite.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
@@ -296,7 +296,7 @@ In the User Interface drawer, drag a <strong> Label </strong> onto the top of yo
 
 ![Label](../images/digitaldoodlewithAI/adding_a_label.png){:.enlargeImage}
 
-Set the <em>Text</em> of <strong> Label1 </strong> to "Type in your background.
+Set the <em>Text</em> of <strong> Label1 </strong> to "Type in your background".
 
 ![Label Text](../images/digitaldoodlewithAI/set_label_text.png){:.enlargeImage}
 
