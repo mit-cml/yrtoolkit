@@ -53,7 +53,9 @@ The screen you are currently looking at is the "Design" Screen. On the left hand
 
 Start by changing the background color of your app. Select the Screen1 button and under properties, change its <em> Background Color </em> to a color of your choice.
 
-![Set Background Color](../images/translation/finished_product.png){:.enlargeImage}
+![Set Background Color](../images/translation/background_color.png){:.enlargeImage}
+
+## SpeakEnglishButton UI
 
 From the User Interface drawer, drag and drop a Button onto the phone screen in the middle.
 
@@ -75,6 +77,8 @@ Under “Screen1”, set <em> AlignHorizontal </em> to “Center : 3” and <em>
 
 ![Centering](../images/translation/center.png){:.enlargeImage}
 
+## SpokenTextBox UI
+
 In the User Interface drawer, drag and drop a <strong> TextBox </strong> beneath your <strong> SpeakEnglishButton </strong>.
 
 ![TextBox1](../images/translation/adding_textbox1.png){:.enlargeImage}
@@ -90,6 +94,8 @@ Set the <em> BackgroundColor </em> to “White”. Set the <em> FontSize </em> t
 Check the box for <em> MultiLine </em>.
 
 ![TextBox1 MultiLine](../images/translation/textbox1_features2.png){:.enlargeImage}
+
+## TranslateSpanish Button UI
 
 Drag a <strong>Button</strong> onto the screen below <strong>SpokenTextBox</strong>.
 
@@ -107,6 +113,8 @@ Change <em>Text</em> to “Translate to Spanish”.
 
 ![Button2 Text](../images/translation/button2_text.png){:.enlargeImage}
 
+## TranslatedTextBox UI
+
 Drag and drop a <strong>TextBox</strong> onto the screen below <strong>TranslateSpanishButton</strong>.
 
 ![Add TextBox2](../images/translation/adding_textbox2.png){:.enlargeImage}
@@ -123,6 +131,8 @@ Check the box for <em> MultiLine </em> .
 
 ![TextBox2 MultiLine](../images/translation/textbox2_multiline.png){:.enlargeImage}
 
+## SpeakSpanishButton UI
+
 Drag and drop a third <strong> Button </strong> onto the screen below <strong> TranslatedTextBox </strong>.
 
 ![Add Button3](../images/translation/add_button3.png){:.enlargeImage}
@@ -138,6 +148,8 @@ Set <em> BackgroundColor </em> to “Green”. Set <em> FontSize </em> to “24�
 Set the <em> Text </em> to “Speak Spanish”.
 
 ![Button3 Text](../images/translation/button3_features2.png){:.enlargeImage}
+
+## ClearButton UI
 
 From the Layout drawer, drag and drop a <strong> HorizontalArrangement </strong> onto the screen.
 
@@ -162,6 +174,8 @@ Set <em> BackgroundColor </em> to “Red”. Set <em> FontSize </em> to “24”
 Set <em> Text </em> to “CLEAR”.
 
 ![Button4 Text](../images/translation/button4_text.png){:.enlargeImage}
+
+## Adding Non-visible Componenets
 
 In the Media drawer, drag and drop a <strong> SpeechRecognizer </strong> component onto the screen.
 
@@ -198,8 +212,10 @@ In the top right corner, select the “Blocks” button. This will take you to t
 
 ## Translation App Code
 
-One the left hand side of your screen, you will see the drawers of the blocks you will use to code your app. The rest of the screen is your workspace.
+On the left hand side of your screen, you will see the drawers of the blocks you will use to code your app. The rest of the screen is your workspace.
 
+
+## SpeakEnglishButton Code
 
 On the left side of your screen, under <strong> SpeakEnglishButton </strong>, drag and drop the “when SpeakEnglishButton.Click” into your workspace.
 
@@ -208,6 +224,8 @@ On the left side of your screen, under <strong> SpeakEnglishButton </strong>, dr
 Under <strong> SpeechRecognizer1</strong>, select “call SpeechRecognizer1.GetText”. Click this block into the “when SpeakEnglishButton.Click” block.
 
 ![SpeechRecognizer Get Text](../images/translation/recognizer.getText.png){:.enlargeImage}
+
+## SpeechRecognizer Get Text
 
 From <strong> SpeechRecognizer1</strong>, drag and drop “when SpeechRecognizer1.AfterGettingText” into your workspace.
 
@@ -220,6 +238,8 @@ Under <strong> SpokenTextBox</strong>, get the “set SpokenTextBox.Text to” b
 Hover over “result” and grab the “get result” block. Snap that into the “set SpokenTextBox.Text to” block.
 
 ![Get Speech](../images/translation/get_result_from_speechrecognizer.png){:.enlargeImage}
+
+## TranslateSpanishButton Code
 
 Under <strong> TranslateSpanishButton</strong>, drag and drop the “when TranslateSpanishButton.Click” block into your workspace.
 
@@ -241,6 +261,8 @@ Under <strong> SpokenTextBox </strong>, drag and drop the “SpokenTextBox.Text�
 
 ![SpokenTextBox.Text](../images/translation/spokenTextBox.text.png){:.enlargeImage}
 
+## Got Translation Code
+
 Under <strong> Translator1 </strong>, drag and drop the “when Translator1.GotTranslation” block into your workspace.
 
 ![Got Translation](../images/translation/translator.gotTranslation.png){:.enlargeImage}
@@ -253,6 +275,8 @@ Hover over “translation” in the “when Translator1.GetTranslation” block,
 
 ![Get Translation](../images/translation/get_translation.png){:.enlargeImage}
 
+## SpeakSpanishButton Code
+
 Under <strong> SpeakSpanishButton</strong>, drag and drop the “when SpeakSpanishButton.Click” block into your workspace.
 
 ![Click SpeakSpanishButton](../images/translation/when_spanishspeakbutton.click.png){:.enlargeImage}
@@ -264,6 +288,8 @@ Under <strong> TextToSpeech1</strong>, drag and drop the “call TextToSpeech1.S
 Under <strong> TranslatedTextBox</strong>, select the “TranslatedTextBox.Text” block and click it into the “message” socket on the “call TextToSpeech1.Speak” block.
 
 ![TranslatedTextBox.Text](../images/translation/translatedtextbox.text.png){:.enlargeImage}
+
+## ClearButton Code
 
 Under <strong> ClearButton </strong>, drag and drop the “when ClearButton.Click” block into your workspace.
 
@@ -281,8 +307,9 @@ Under Text, drag and drop an empty text block into the socket of “set SpokenTe
 
 ![Empty Texts](../images/translation/empty_text.png){:.enlargeImage}
 
+## Congratulations!
 
-Congratulations! You have finished coding the functionality of your Translation App. Here is what your block code should look like.
+Congrats! You have finished coding the functionality of your Translation App. Here is what your block code should look like.
 
 ![Final Code](../images/translation/final_code.png){:.enlargeImage}
 
@@ -294,8 +321,6 @@ You now have completed your Translation App and it is time to test it out! Make 
 ![AI Companion](../images/translation/ai_companion.png){:.enlargeImage}
 
 A QR code should appear on your screen.  Open the App Inventor app on your mobile device and click “scan QR code”. Your app should appear on your mobile device. Time to use your app!
-
-
 
 
 
