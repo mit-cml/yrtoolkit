@@ -175,7 +175,7 @@ Set <em> Text </em> to “CLEAR”.
 
 ![Button4 Text](../images/translation/button4_text.png){:.enlargeImage}
 
-## Adding Non-visible Componenets
+## Adding Non-visible Components
 
 In the Media drawer, drag and drop a <strong> SpeechRecognizer </strong> component onto the screen.
 
@@ -213,6 +213,8 @@ In the top right corner, select the “Blocks” button. This will take you to t
 ## Translation App Code
 
 On the left hand side of your screen, you will see the drawers of the blocks you will use to code your app. The rest of the screen is your workspace.
+
+![Blocks Screen](../images/translation/blocks_screen.png){:.enlargeImage}
 
 
 ## SpeakEnglishButton Code
@@ -316,7 +318,7 @@ Congrats! You have finished coding the functionality of your Translation App. He
 
 ## Pairing your Companion
 
-You now have completed your Translation App and it is time to test it out! Make sure you have the App Inventor app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
+You now have completed your Translation App and it is time to test it out! Make sure you have the App Inventor Companion app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
 
 ![AI Companion](../images/translation/ai_companion.png){:.enlargeImage}
 
