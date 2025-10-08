@@ -7,10 +7,8 @@ layout: tutorial
 
 The Translation App allows users to translate from English to Spanish. The user speaks into the translator and the app provides both a text translation and an audio translation.
 
-![Finished Product](../images/translation/finished_product.png){:.enlargeImage}
 
-
-
+<img src="../images/translation/finished_product.png" alt="image" width="300" height="auto">
 
 # Setup
 
@@ -334,3 +332,16 @@ Here are some ideas of how you can expand your app:
 * Provide the user with a list of languages to translate from and to.
 * Allow the user to enter what languages they want to translate between.
 * See what other ideas you can come up with! There are countless ways to expand and improve your app.
+
+
+
+
+# About Youth Mobile Power
+
+A lot of us spend all day on our phones, hooked on our favorite apps. We keep typing and swiping, even when we know the risks phones can pose to our attention, privacy, and even our safety.  But the computers in our pockets also create untapped opportunities for young people to learn, connect and transform our communities.
+That’s why MIT and YR Media teamed up to launch the Youth Mobile Power series. YR teens produce stories highlighting how young people use their phones in surprising and powerful ways. Meanwhile, the team at MIT is continually enhancing MIT App Inventor to make it possible for users like you to create apps like the ones featured in YR’s reporting.
+Essentially: get inspired by the story, get busy making your own app!
+<img src="../images/logos/NSF_4-Color_bitmap_Logo.png" width="75"><img src="../images/logos/MITAppInvlogo1.jpg" width="75"><img src="../images/logos/LOGO_YR_PNG_TRANS.png" width="75">
+The YR + MIT collaboration is supported in part by the National Science Foundation. This material is based upon work supported by the National Science Foundation under Grant No. (1614239).   Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+Check out more apps and interactive news content created by YR <a href="https://yr.media/category/interactive/" target="_blank">here</a>.
