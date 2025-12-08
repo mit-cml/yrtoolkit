@@ -116,13 +116,15 @@ These blocks initialize global variables that are accessible throughout the enti
 
 * arNodes creates an empty list to store all nodes in.
 
+* camera_coordinates creates an empty dictionary to hold the (x,y,z) coordinates of where the camera looks when getCameraLook is called.
+
 
 <img src="../images/chicken_bowling/global_variable_blocks.png" alt="Global Variable Blocks" width = "500" >
 
 
 This block places a ball for the user to play with at the (x, height_y, -100). Additionally, it changes other elements of the SphereNode, including enabling physics, which allows for collisions.
 
-<img src = "../images/chicken_bowling/adding_ball_block" alt = "Tap at Location Block" width = "500">
+<img src = "../images/chicken_bowling/adding_ball_block.png" alt = "Tap at Location Block" width = "500">
 
 
 This block changes the global variable pin_type from BowlingPins.obj to Halva_the_Chicken.usdz and back. It also changes the global variable pin_scale so that the ModelNode is scaled properly. These changes occur when the <strong> ChangePinButton </strong> is clicked.
