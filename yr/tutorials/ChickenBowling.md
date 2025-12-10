@@ -6,7 +6,7 @@ layout: tutorial
 
 # Challenge
 
-The Chicken Bowling app allows users to go bowling with bowling pins or chickens as pins in augmented reality. This app tutorial is designed to help users become comfortable with MIT App Inventor's augmented reality feature.
+The Chicken Bowling App allows users to go bowling with bowling pins or chickens as pins in augmented reality. This app tutorial is designed to help users become comfortable with MIT App Inventor's augmented reality feature.
 
 
 ![Finished Product](../images/chicken_bowling/final_product.jpg){:.enlargeImage}
@@ -49,13 +49,13 @@ Take some time to look over the components in the User Interface of the app. Som
     * The <strong> ARView3D </strong> component displays the live camera feed once tracking has started. This is where the user will see and experience the augmented reality. The origin of the world, or the (0, 0, 0) coordinate, is placed where the phone is when tracking is first started.
 
 * <strong> SphereNode </strong>
-    * The <strong> SphereNode </strong> component displays a 3D sphere in <strong> ARView3D </strong> that can roll and bounce. This component is
+    * The <strong> SphereNode </strong> component displays a 3D sphere in <strong> ARView3D </strong> that can roll and bounce.
 
 * <strong> ModelNode </strong>
     * The <strong> ModelNode </strong> component displays a 3D model in <strong> ARView3D </strong>. Users can upload their own 3D models. In the Chicken Bowling app, users will utilize a bowling pin model and a chicken model.
 
 *  <strong> LoadPinsButton </strong>
-    * The <strong> LoadPinsButton </strong> component places the pins in <strong> ARView3D </strong>.
+    * The <strong> LoadPinsButton </strong>  places the pins in <strong> ARView3D </strong>.
 
 *  <strong> ChangePinsButton </strong>
     * The <strong> ChangePinsButton </strong> toggles between the bowling pins 3D model and the chicken 3D model.
@@ -106,11 +106,11 @@ Your completed code block should look like this.
 
 These blocks initialize global variables that are accessible throughout the entire app.
 
-* height_y sets the y value for where the pins will initialize at.
+* height_y stores the y value for where the pins will initialize at.
 
-* pin_scale sets the value that a ModelNode will be scaled by.
+* pin_scale stores the value that a ModelNode will be scaled by.
 
-* pin_type sets the 3D model that will be displayed for the pins.
+* pin_type stores the 3D model that will be displayed for the pins.
 
 * selectedNode creates an empty list to store a selected node in.
 
@@ -122,18 +122,18 @@ These blocks initialize global variables that are accessible throughout the enti
 <img src="../images/chicken_bowling/global_variable_blocks.png" alt="Global Variable Blocks" width = "500" >
 
 
-This block places a ball for the user to play with at the (x, height_y, -100). Additionally, it changes other elements of the SphereNode, including enabling physics, which allows for collisions.
+This block places a SphereNode (ball) for the user to play with at the coordinates (x, height_y, -100) when the user taps in the ARView3D. Additionally, it changes other elements of the SphereNode, including enabling physics, which allows for collisions.
 
 <img src = "../images/chicken_bowling/adding_ball_block.png" alt = "Tap at Location Block" width = "500">
 
 
-This block changes the global variable pin_type from BowlingPins.obj to Halva_the_Chicken.usdz and back. It also changes the global variable pin_scale so that the ModelNode is scaled properly. These changes occur when the <strong> ChangePinButton </strong> is clicked.
+This block changes the global variable pin_type from BowlingPins.obj to Halva_the_Chicken.usdz and back. It also changes the value of the global variable pin_scale so that the ModelNode is scaled properly. These changes occur when the <strong> ChangePinButton </strong> is clicked.
 
 
 <img src = "../images/chicken_bowling/change_pins_button_block.png" alt = "Change Pins Block" width = "500">
 
 
-This block calls the procedure "set_pins" to place the pins for the user to play with when the <strong> LoadPinsButton </strong> is clicked. The set_pins procedure places all of the pins at a given location in the (x, y, z) plane.
+This block calls the procedure "set_pins", which places the pins for the user to play with when the <strong> LoadPinsButton </strong> is clicked. The set_pins procedure places all of the pins at a given location in the (x, y, z) plane.
 
 
 <img src = "../images/chicken_bowling/load_pins_button.png" alt = "Load Pins Block" width = "500">
@@ -158,7 +158,6 @@ A QR code should appear on your screen. Open the App Inventor app on your mobile
 
 Here are some ideas of how you can expand your app:
 
-* Experiment with different scalings of the ball, pins, and chickens
-* Save frames you create to use later
-* Download the Scaniverse app on your device and use it to create your own personal 3D models which you can upload into App Inventor
-* Add a scoring tool that tracks how many points a user earns
+* Experiment with different scalings of the ball, pins, and chickens.
+* Download the Scaniverse app on your device and use it to create your own personal 3D models which you can upload into App Inventor.
+* Add a scoring tool that tracks how many points a user earns.
