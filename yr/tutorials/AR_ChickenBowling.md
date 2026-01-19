@@ -6,22 +6,16 @@ layout: tutorial
 
 # Getting Started
 
-<<<<<<< HEAD
 
 Augmented reality, or AR for short, is a human-computer interaction where 3D computer graphics are placed into the physical world around the user through a device. In this case, the user will utilize their phone. The AR Chicken Placement App is the first part of the AR Chicken Bowling App and it teaches users how to place virtual objects in augmented reality using MIT App Inventor.
 
 
-=======
-Augmented reality, or AR for short, is a human-computer interaction where 3D computer graphics are placed into the physical world around the user through a device. In this case, the user will utilize their phone. The AR Chicken Placement App is the first part of the AR Chicken Bowling App and it teaches users how to place virtual objects in augmented reality using MIT App Inventor.
-
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 ![Final Product](../images/chicken_placement/placement_final.jpg){:.enlargeImage}
 
 
 
 # Setup
 
-<<<<<<< HEAD
 
 ## Using the Neo Interface
 
@@ -29,12 +23,6 @@ Augmented reality, or AR for short, is a human-computer interaction where 3D com
 For this tutorial, we will be using the App Inventor Neo Interface, which has a more modern look.
 
 
-=======
-## Using the Neo Interface
-
-For this tutorial, we will be using the App Inventor Neo Interface, which has a more modern look.
-
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 To switch to Neo Interface, go to your Projects space. On the top bar, click on "Settings", and select "User Interface Settings".
 
 ![Changing UIs](../images/digitaldoodlewithAI/changing_to_neo_screen1.png){:.enlargeImage}
@@ -45,26 +33,15 @@ Click on the "Neo" Interface, then click "OK".
 ![Selecting Neo](../images/digitaldoodlewithAI/select_neo_ui.png){:.enlargeImage}
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 ## Familiarizing Yourself With App Inventor Layout
 
 The screen you are currently looking at is the "Design" Screen. On the left hand side of your screen (outlined in red) is the Palette, where there are drawers with components you can add to your app. In the center of the screen (outlined in green) is the Viewer, which is an empty phone screen where you will build the User Interface (UI) of your app. On the right side of the screen (outlined in blue) is the Properties window, you can edit specific aspects of each component you add to your app. Take a few minutes to explore the components within the drawers.
 
-<<<<<<< HEAD
 ![Layout](../images/chicken_placement/familiarizing.png){:.enlargeImage}
 
 
 # Building Your Chicken Placement App
-=======
-
-![Layout](../images/chicken_placement/familiarizing.png){:.enlargeImage}
-
-
-# Building Your App
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 
 
 ## Chicken Placement UI
@@ -75,18 +52,11 @@ Start by setting <em> AlignHorizontal </em> of Screen1 to "Center : 3".
 ![Center Screen](../images/chicken_placement/center_screen1.png){:.enlargeImage}
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 From the HorizontalArrangement drawer, drag and drop a <strong> HorizontalArrangement </strong> onto the screen.
 
 ![Add HorizontalArrangement](../images/chicken_placement/horizontal_arrangement.png){:.enlargeImage}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 From the User Interface drawer, drag and drop a <strong> Button </strong> into <strong> HorizontalArrangement1 </strong>. By using a <strong> HorizontalArrangement </strong>, you can later add more components (and thus, functionalities), as we will do in the second part of this tutorial.
 
 ![Add Button](../images/chicken_placement/adding_button.png){:.enlargeImage}
@@ -101,10 +71,7 @@ Under Properties, set <em> BackgroundColor </em> to "Red". Set <em> FontSize </e
 
 ![Button Properties 1](../images/chicken_placement/button_settings_1.png){:.enlargeImage}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 Set <em> Text </em> to "Reset". Set <em> TextColor </em> to "Yellow".
 
 ![Button Properties 2](../images/chicken_placement/button_settings_2.png){:.enlargeImage}
@@ -130,13 +97,9 @@ In the top right corner, select the "Blocks" button. This will take you to the B
 ![Blocks Button](../images/chicken_placement/switch_to_blocks.png){:.enlargeImage}
 
 
-<<<<<<< HEAD
 
 
 ## Initialize Block
-=======
-## Chicken Placement Code
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 
 On the left side of your screen, under Screen1, drag and drop the "when Screen1.Initialize" block into your workspace.
 
@@ -148,11 +111,8 @@ Under <strong> ARView3D1 </strong>, drag and drop a "call ARView3D1.StartTrackin
 ![Start Tracking](../images/chicken_placement/start_tracking.png){:.enlargeImage}
 
 
-<<<<<<< HEAD
 ## Tap At Point Block
 
-=======
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 Under <strong> ARView3D1 </strong>, drag and drop a "when ARView3D1.TapAtPoint" block into your workspace.
 
 ![Tap At Point](../images/chicken_placement/tap_atpoint_handler.png){:.enlargeImage}
@@ -175,10 +135,6 @@ Under <strong> ARView3D1 </strong>, drag and drop a "call ARView3D1.CreateModelN
 
 Hover over "x" in the "when ARView3D1.TapAtPoint" block. Grab the "get x" block and drag and drop it into the "x" socket on the "call ARView3D1.CreateModelNode" block.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 ![Get x](../images/chicken_placement/get_variablex.png){:.enlargeImage}
 
 
@@ -231,10 +187,7 @@ Under Math, drag and drop a number block into the "to" socket and set the number
 
 ![Math](../images/chicken_placement/grab_number.png){:.enlargeImage}
 
-<<<<<<< HEAD
 ## Reset Button
-=======
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
 
 Under <strong> ResetButton </strong>, drag and drop a "when ResetButton.Click" block into your workspace.
 
@@ -266,7 +219,6 @@ Hover over "node" in the "for each node in list" block. Grab the "get node" bloc
 ![get node](../images/chicken_placement/get_node.png){:.enlargeImage}
 
 
-<<<<<<< HEAD
 # Pairing Your Companion
 
 Congratulations! You now have completed your AR Chicken Placement App, the first part of the AR Chicken Bowling App, and it is time to test it out! Make sure you have the App Inventor companion app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
@@ -559,10 +511,3 @@ Add different node types to the spinner such as BoxNodes and CapsuleNodes. Be su
 Download the Scaniverse app from the App Store on your device and use it to create your own personal 3D models which you can upload into App Inventor.
 Add a scoring tool that tracks how many points a user earns. (Hint: utilize blocks such as ObjectCollidedWithObject to detect when collisions occur)
 See what other ideas you can come up with! There are countless ways to expand and improve your app.
-=======
-## Congratulations!
-
-Congratulations, you have finished coding the functionality of your AR Chicken Placement App. Here is what your finished block code should look like.
-
-![Final Code](../images/chicken_placement/final_code.png){:.enlargeImage}
->>>>>>> 91a44e3078bf829e5c7795c50030694f662586d4
