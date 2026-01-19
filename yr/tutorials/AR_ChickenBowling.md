@@ -170,7 +170,7 @@ Under Math, drag and drop a number block into the "to" socket and set the number
 
 In 3D space, there are 3 axes: x, y, z. You can imagine the x axis as the left-right direction, the y axis as the up-down direction, and the z axis as the forward-backward direction.
 
-![3D](../images/chicken_placement/axes_of_3d.png){:.enlargeImage}
+![3D](../images/chicken_placement/axes_in_3d.png){:.enlargeImage}
 
 
 Under Any ModelNode, drag and drop a "set ModelNode.YRotation" block beneath the "set ModelNode.Scale" block.
@@ -506,8 +506,12 @@ A QR code should appear on your screen.  Open the App Inventor app on your mobil
 
 Here are some ideas of how you can expand your app:
 
-Experiment with different scalings of balls and chickens.
-Add different node types to the spinner such as BoxNodes and CapsuleNodes. Be sure to EnablePhysics so that you can do fun things like stack nodes!
-Download the Scaniverse app from the App Store on your device and use it to create your own personal 3D models which you can upload into App Inventor.
-Add a scoring tool that tracks how many points a user earns. (Hint: utilize blocks such as ObjectCollidedWithObject to detect when collisions occur)
-See what other ideas you can come up with! There are countless ways to expand and improve your app.
+* Experiment with different scalings of balls and chickens.
+
+* Add different node types to the spinner such as BoxNodes and CapsuleNodes. Be sure to EnablePhysics so that you can do fun things like stack nodes!
+
+* Download the Scaniverse app from the App Store on your device and use it to create your own personal 3D models which you can upload into App Inventor.
+
+* Add a scoring tool that tracks how many points a user earns. (Hint: utilize blocks such as ObjectCollidedWithObject to detect when collisions occur)
+
+* See what other ideas you can come up with! There are countless ways to expand and improve your app.
