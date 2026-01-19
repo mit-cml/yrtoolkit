@@ -9,9 +9,7 @@ layout: tutorial
 
 Augmented reality, or AR for short, is a human-computer interaction where 3D computer graphics are placed into the physical world around the user through a device. In this case, the user will utilize their phone. The AR Chicken Placement App is the first part of the AR Chicken Bowling App and it teaches users how to place virtual objects in augmented reality using MIT App Inventor.
 
-
-![Final Product](../images/chicken_placement/placement_final.jpg){:.enlargeImage}
-
+<img src="../images/chicken_placement/placement_final.jpg" alt="image" width="300" height="auto">
 
 
 # Setup
@@ -153,6 +151,8 @@ In the textbox, type "Chicken.usdz" to match the name of the file under media.
 ![With Text](../images/chicken_placement/emphasize_chicken.usdz.png){:.enlargeImage}
 
 
+## ModelNode Scale
+
 Click the little plus sign next to "Any Components". Under Any ModelNode, drag and drop a "set ModelNode.Scale" block into the "in" section of the "initialize local newModelNode to" block.
 
 ![Scale](../images/chicken_placement/setModelNode_Scale.png){:.enlargeImage}
@@ -166,6 +166,8 @@ Hover over "newModelNode". Grab a "get newModelNode" block and drop it into the 
 Under Math, drag and drop a number block into the "to" socket and set the number to ".25". We want to scale chickens to 25% to create space for multiple chickens within <strong> ARView3D1 </strong>.
 
 ![Number](../images/chicken_placement/grab_number.png){:.enlargeImage}
+
+## ModelNode Rotation
 
 
 In 3D space, there are 3 axes: x, y, z. You can imagine the x axis as the left-right direction, the y axis as the up-down direction, and the z axis as the forward-backward direction.
@@ -232,8 +234,7 @@ A QR code should appear on your screen.  Open the App Inventor app on your mobil
 
 The AR Chicken Bowling App is a continuation of the AR Chicken Placement App to help users continue to build their skills and confidence with augmented reality. The AR Chicken Bowling App allows users to place spheres and chickens on their screen and explore how these nodes can interact with one another.
 
-![Example Image](../images/AR_Chicken/final_image.jpg){:.enlargeImage}
-
+<img src="../images/ar_Chicken/final_image.jpg" alt="image" width="300" height="auto">
 
 
 # Building Your Chicken Bowling App
@@ -412,6 +413,14 @@ Under Math, drag and drop an empty number into the "to" socket of the "set Spher
 
 ![Get Math](../images/AR_Chicken/number.png){:.enlargeImage}
 
+Check what your code block should look like now:
+
+<hint markdown="block" title="Give me a hint">
+
+![Scale](../images/AR_Chicken/block_withscale.png){:.enlargeImage}
+
+</hint>
+
 
 ## SphereNode PinchToScale
 
@@ -425,9 +434,13 @@ Under Logic, drag and drop a "true" block into the "to" socket.
 ![True](../images/AR_Chicken/true_block.png){:.enlargeImage}
 
 
-Your code block should now look like this.
+Check what your code block should look like now:
+
+<hint markdown="block" title="Give me a hint">
 
 ![Check in](../images/AR_Chicken/block_withpinchtoscale.png){:.enlargeImage}
+
+</hint>
 
 
 ## SphereNode PanToMove
@@ -442,9 +455,13 @@ Under Logic, drag and drop a "true" block into the "to" socket.
 ![True](../images/AR_Chicken/true_block.png){:.enlargeImage}
 
 
-Your code block should now look like this.
+Check what your code block should look like now:
+
+<hint markdown="block" title="Give me a hint">
 
 ![Check](../images/AR_Chicken/block_withpantomove.png){:.enlargeImage}
+
+</hint>
 
 
 ## SphereNode EnablePhysics
@@ -454,9 +471,14 @@ Under Any SphereNode, drag and drop a "set SphereNode.EnablePhysics" block benea
 ![EnablePhysics](../images/AR_Chicken/spherenode_enablephysics.png){:.enlargeImage}
 
 
-Your code block should now look like this.
+Check what your code block should look like now:
+
+<hint markdown="block" title="Give me a hint">
 
 ![Check](../images/AR_Chicken/block_withenablephysics.png){:.enlargeImage}
+
+</hint>
+
 
 ## Else If Logic
 
@@ -492,7 +514,7 @@ Congratulation, you have finished coding the functionality of your AR Chicken Bo
 
 # Congratulations! And Testing Your App
 
-You now have completed your AR Chicken Placement App and it is time to test it out! Make sure you have the App Inventor companion app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
+You have now completed your AR Chicken Placement App and it is time to test it out! Make sure you have the App Inventor companion app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
 
 
 ![Connect Companion](../images/AR_Chicken/connect_companion.png){:.enlargeImage}
