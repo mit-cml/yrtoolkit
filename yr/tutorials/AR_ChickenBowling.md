@@ -153,7 +153,12 @@ In the textbox, type "Chicken.usdz" to match the name of the file under media.
 
 ## ModelNode Scale
 
-Click the little plus sign next to "Any Components". Under Any ModelNode, drag and drop a "set ModelNode.Scale" block into the "in" section of the "initialize local newModelNode to" block.
+Click the little plus sign next to "Any Component".
+
+![Any Component Location](../images/chicken_placement/Any_component_location.png){:.enlargeImage}
+
+
+Under Any ModelNode, drag and drop a "set ModelNode.Scale" block into the "in" section of the "initialize local newModelNode to" block.
 
 ![Scale](../images/chicken_placement/setModelNode_Scale.png){:.enlargeImage}
 
@@ -221,6 +226,12 @@ Hover over "node" in the "for each node in list" block. Grab the "get node" bloc
 ![get node](../images/chicken_placement/get_node.png){:.enlargeImage}
 
 
+## Congratulations!
+
+Congrats! You have finished coding the function of your AR Chicken Placement App. Here is what your block code should look like.
+
+![Final Code](../images/chicken_placement/final_code.png){:.enlargeImage}
+
 # Pairing Your Companion
 
 Congratulations! You now have completed your AR Chicken Placement App, the first part of the AR Chicken Bowling App, and it is time to test it out! Make sure you have the App Inventor companion app downloaded on your mobile device. To connect your mobile device, click the “Connect” button in the top center, then select “AI Companion”.
@@ -232,9 +243,10 @@ A QR code should appear on your screen.  Open the App Inventor app on your mobil
 
 # Getting Started With Chicken Bowling
 
-The AR Chicken Bowling App is a continuation of the AR Chicken Placement App to help users continue to build their skills and confidence with augmented reality. The AR Chicken Bowling App allows users to place spheres and chickens on their screen and explore how these nodes can interact with one another.
+The AR Chicken Bowling App is a continuation of the AR Chicken Placement App to help users continue to build their skills and confidence with augmented reality. The AR Chicken Bowling App allows users to place spheres and chickens on their screen and explore how these nodes can interact with one another. Please note, no actual chicks are harmed in this project.
 
-<img src="../images/ar_Chicken/final_image.jpg" alt="image" width="300" height="auto">
+
+<img src="../images/AR_Chicken/final_image.jpg" alt="image" width="300" height="auto">
 
 
 # Building Your Chicken Bowling App
@@ -288,7 +300,7 @@ Under Properties, check <em> FontBold </em>. Set <em> Text </em> to "Select Obje
 ![Label2 Properties](../images/AR_Chicken/selectLabel_properties.png){:.enlargeImage}
 
 
-Under Layout, drag and drop a <strong> HorizontalArrangement </strong> between <strong> SelectLabel </select> and <strong> ResetButton </strong>. This <strong> HorizontalArrangement </strong> is to create space between the <strong> SelectLabel </strong> and the <strong> ResetButton </strong>.
+Under Layout, drag and drop a <strong> HorizontalArrangement </strong> between <strong> SelectLabel </strong> and <strong> ResetButton </strong>. This <strong> HorizontalArrangement </strong> is to create space between the <strong> SelectLabel </strong> and the <strong> ResetButton </strong>.
 
 ![Add HorizontalArrangement](../images/AR_Chicken/spacer_HA_1.png){:.enlargeImage}
 
@@ -382,7 +394,7 @@ Repeat this for "y" and "z" so that your code block now looks like this.
 
 ## SphereNode Texture
 
-Click the little plus sign next to "Any Components". Under Any SphereNode, drag and drop a "set SphereNode.Texture to" in the "in" section of the "initialize local newSphereNode to" block. The texture provides the visual appearance of a <strong> SphereNode </strong>.
+Click the little plus sign next to "Any Component". Under Any SphereNode, drag and drop a "set SphereNode.Texture to" in the "in" section of the "initialize local newSphereNode to" block. The texture provides the visual appearance of a <strong> SphereNode </strong>.
 
 ![SphereNode Texture](../images/AR_Chicken/set_sphere_texture.png){:.enlargeImage}
 
@@ -392,7 +404,7 @@ Hover over "newSphereNode". Grab a "get newSphereNode" block and drag and drop i
 ![get newSphereNode](../images/AR_Chicken/get_newSphereNode.png){:.enlargeImage}
 
 
-Under Text, drag and drop an empty textbox into the "to" socket. Change the text to "Palette.png".
+Under Text, drag and drop an empty textbox into the "to" socket. Change the text to "Palette.png". Palette.png is the media file that contains the texture we will use for SphereNodes.
 
 ![Empty Textbox](../images/AR_Chicken/empty_textbox.png){:.enlargeImage}
 
@@ -415,7 +427,7 @@ Under Math, drag and drop an empty number into the "to" socket of the "set Spher
 
 Check what your code block should look like now:
 
-<hint markdown="block" title="Give me a hint">
+<hint markdown="block" title="Show me the code">
 
 ![Scale](../images/AR_Chicken/block_withscale.png){:.enlargeImage}
 
@@ -436,7 +448,7 @@ Under Logic, drag and drop a "true" block into the "to" socket.
 
 Check what your code block should look like now:
 
-<hint markdown="block" title="Give me a hint">
+<hint markdown="block" title="Show me the code">
 
 ![Check in](../images/AR_Chicken/block_withpinchtoscale.png){:.enlargeImage}
 
@@ -457,7 +469,7 @@ Under Logic, drag and drop a "true" block into the "to" socket.
 
 Check what your code block should look like now:
 
-<hint markdown="block" title="Give me a hint">
+<hint markdown="block" title="Show me the code">
 
 ![Check](../images/AR_Chicken/block_withpantomove.png){:.enlargeImage}
 
@@ -473,7 +485,7 @@ Under Any SphereNode, drag and drop a "set SphereNode.EnablePhysics" block benea
 
 Check what your code block should look like now:
 
-<hint markdown="block" title="Give me a hint">
+<hint markdown="block" title="Show me the code">
 
 ![Check](../images/AR_Chicken/block_withenablephysics.png){:.enlargeImage}
 
@@ -532,7 +544,7 @@ Here are some ideas of how you can expand your app:
 
 * Add different node types to the spinner such as BoxNodes and CapsuleNodes. Be sure to EnablePhysics so that you can do fun things like stack nodes!
 
-* Download the Scaniverse app from the App Store on your device and use it to create your own personal 3D models which you can upload into App Inventor.
+* Download the Scaniverse app from the App Store/Google Play Store on your device and use it to create your own personal 3D models which you can upload into App Inventor.
 
 * Add a scoring tool that tracks how many points a user earns. (Hint: utilize blocks such as ObjectCollidedWithObject to detect when collisions occur)
 
