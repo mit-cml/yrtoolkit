@@ -22,7 +22,7 @@ Have you ever wondered how to create your own generative AI app for wildly imagi
 
 For this project, you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
-<strong>Note</strong>: As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  
+<strong>Note</strong>: As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. You will need a credit card.  
 
 
 1. Go to <a href="https://openai.com/" target="_blank">https://openai.com/ </a>
