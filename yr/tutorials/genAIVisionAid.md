@@ -69,23 +69,27 @@ The screen you are currently looking at is the "Design" Screen. On the left hand
 
 # Gen AI Vision Aid
 
-## Vision Aid UI
+## Gen AI Vision Aid UI
 
 Start by changing the background color of your app. Select the <strong> Screen1 </strong> button and under Properties, change its <em>BackgroundColor</em> to a color of your choice. Then change the <em>AlignHorizontal</em> to Center:3.
 
 ![Screen Properties](../images/genAIVisionAid/Screen_properties.png){:.enlargeImage}
 
+## Camera Button
+
 From the User Interface drawer, drag and drop a <strong> Button </strong> onto the phone screen.
 
 ![Button](../images/genAIVisionAid/AddCameraButton.png){:.enlargeImage}
 
-Under the <strong> Screen1 </strong> panel, select <strong> Button1 </strong>, click Rename and rename it to <strong> CameraButton </strong>.
+Under the <strong> Screen1 </strong> panel, select <strong> Button1</strong>, click Rename and rename it to <strong> CameraButton</strong>.
 
 ![Rename Button](../images/genAIVisionAid/RenameCameraButton.jpg){:.enlargeImage}
 
 Under properties, set <em> BackgroundColor </em> to green, change <em> FontSize </em> to 30.0, and change <em> Text </em> to "Take Picture".
 
 ![Button Properties](../images/genAIVisionAid/ChangeCameraButtonProperties.png){:.enlargeImage}
+
+## Image Box
 
 From the Layout drawer, drag and drop a <strong> HorizontalArrangement </strong> onto the phone screen.
 
@@ -103,17 +107,21 @@ Under properties, change <em> Height </em> to Fill Parent, and change <em> Width
 
 ![Image Component Properties](../images/genAIVisionAid/ChangeImageComponentProperties.png){:.enlargeImage}
 
-From the User Interface drawer, drag and drop a <strong> Button </strong> onto the phone screen under the <strong> HorizontalArrangement </strong>.
+## Describe Image Button
+
+From the User Interface drawer, drag and drop a <strong> Button </strong> onto the phone screen under the <strong> HorizontalArrangement</strong>.
 
 ![Button](../images/genAIVisionAid/AddDescribeImageButton.png){:.enlargeImage}
 
-Under the <strong> Screen1 </strong> panel, select <strong> Button1 </strong>, click Rename and rename it to <strong> DescribeImageButton </strong>.
+Under the <strong> Screen1 </strong> panel, select <strong> Button1</strong>, click Rename and rename it to <strong> DescribeImageButton</strong>.
 
 ![Rename Button](../images/genAIVisionAid/RenameDescribeButton.jpg){:.enlargeImage}
 
 Under properties, set <em> BackgroundColor </em> to green, change <em> FontSize </em> to 30.0, and change <em> Text </em> to "Describe Image".
 
 ![Button Properties](../images/genAIVisionAid/ChangeDescribeImageButtonProperties.png){:.enlargeImage}
+
+## Text Box
 
 From the User Interface drawer, drag and drop a <strong> TextBox </strong> onto the phone screen.
 
@@ -123,17 +131,21 @@ Under properties, change <em> FontSize </em> to 30.0, change <em> Width </em> to
 
 ![Text Box Properties](../images/genAIVisionAid/ChangeTextBoxProperties.png){:.enlargeImage}
 
+## Clear Button
+
 From the User Interface drawer, drag and drop a <strong> Button </strong> onto the phone screen.
 
 ![Button](../images/genAIVisionAid/InsertClearAllButton.png){:.enlargeImage}
 
-Under the <strong> Screen1 </strong> panel, select <strong> Button1 </strong>, click Rename and rename it to <strong> ClearButton </strong>.
+Under the <strong> Screen1 </strong> panel, select <strong> Button1</strong>, click Rename and rename it to <strong> ClearButton</strong>.
 
 ![Rename Button](../images/genAIVisionAid/RenameClearButton.jpg){:.enlargeImage}
 
 Under properties, set <em> BackgroundColor </em> to red, change <em> FontSize </em> to 30.0, and change <em> Text </em> to "CLEAR ALL".
 
 ![Button Properties](../images/genAIVisionAid/ChangeClearAllButtonProperties.png){:.enlargeImage}
+
+## Non-Visible Components
 
 From the Media drawer, drag and drop a <strong> Camera </strong> and a <strong> TextToSpeech </strong> onto the phone screen.
 
@@ -152,15 +164,17 @@ In the top right corner of your screen, click the Blocks button. The Blocks scre
 
 ![Blocks Button](../images/genAIVisionAid/ChangeToBlocks.png){:.enlargeImage}
 
-On the left side of your screen, select <strong> CameraButton </strong>. Drag and drop when CameraButton.Clicked into your workspace.
+## Take Picture
+On the left side of your screen, select <strong> CameraButton</strong>. Drag and drop when CameraButton.Clicked into your workspace.
 
 ![When Camera Button](../images/genAIVisionAid/WhenCameraButton.Click.png){:.enlargeImage}
 
-Under <strong> Camera1 </strong>, drag the call Camera1.TakePicture block into your workspace and click it into the when CameraButton.Click block.
+Under <strong> Camera1</strong>, drag the call Camera1.TakePicture block into your workspace and click it into the when CameraButton.Click block.
 
 ![Camera Take Picture](../images/genAIVisionAid/CallCamera1.TakePicture.png){:.enlargeImage}
 
-Under <strong> Camera1 </strong>, drag and drop the when Camera1.AfterPicture block into your workspace.
+## Set Image
+Under <strong> Camera1</strong>, drag and drop the when Camera1.AfterPicture block into your workspace.
 
 ![Camera After Picture](../images/genAIVisionAid/WhenCamera1.AfterPicture.png){:.enlargeImage}
 
@@ -184,6 +198,7 @@ Change the 0 to 90. Depending on your device, if it is iOS, the rotation may not
 
 ![Set Rotation Angle](../images/genAIVisionAid/SetRotationAngle.png){:.enlargeImage}
 
+## Describe Image
 Under <strong>DescribeImageButton</strong>, drag the when DescribeImageButton.Click block into your workspace.
 
 ![When Describe Image Button](../images/genAIVisionAid/WhenDescribeImageButton.Click.png){:.enlargeImage}
@@ -216,19 +231,20 @@ Set the first text to “Describe the image in a brief way in detail for” and 
 
 ![Edit Text](../images/genAIVisionAid/EditTextCharBot1ConverseWithImage.png){:.enlargeImage}
 
-Under <strong> Image1 </strong>, drag the Image1.Picture block into your workspace and click it into source of the call ChatBot1.ConverseWithImage block.
+Under <strong> Image1</strong>, drag the Image1.Picture block into your workspace and click it into source of the call ChatBot1.ConverseWithImage block.
 
 ![Picture Source](../images/genAIVisionAid/SetChatBot1SourceToImage1.png){:.enlargeImage}
 
-Under <strong> ChatBot1 </strong>, drag the when ChatBot1.GotResponse block into your workspace.
+## Show Response
+Under <strong> ChatBot1</strong>, drag the when ChatBot1.GotResponse block into your workspace.
 
 ![Chat Response](../images/genAIVisionAid/WhenChatBot1.GotResponse.png){:.enlargeImage}
 
-Under <strong> Notifier1 </strong>, drag the call Notifier1.DismissProgressDialog block into your workspace and click it into the when ChatBot1.GotResponse block.
+Under <strong> Notifier1</strong>, drag the call Notifier1.DismissProgressDialog block into your workspace and click it into the when ChatBot1.GotResponse block.
 
 ![Dismiss Notifier](../images/genAIVisionAid/CallNotifier1.DismissProgressDialog.png){:.enlargeImage}
 
-Under <strong> TextBox1 </strong>, drag the set TextBox1.Text to block into your workspace and click it into the when ChatBot1.GotResponse block.
+Under <strong> TextBox1</strong>, drag the set TextBox1.Text to block into your workspace and click it into the when ChatBot1.GotResponse block.
 
 ![Set Text Box](../images/genAIVisionAid/SetTextBox1.png){:.enlargeImage}
 
@@ -236,7 +252,7 @@ Hover over <strong> responseText </strong> in the when ChatBot1.GotResponse bloc
 
 ![Set Text](../images/genAIVisionAid/SetTextBox1Text.png){:.enlargeImage}
 
-Under <strong> TextToSpeech1 </strong>, drag the call TextToSpeech1.Speak block into your workspace and click it into the when ChatBot1.GotResponse block.
+Under <strong> TextToSpeech1</strong>, drag the call TextToSpeech1.Speak block into your workspace and click it into the when ChatBot1.GotResponse block.
 
 ![Call Text To Speech](../images/genAIVisionAid/CallTextToSpeech1.Speak.png){:.enlargeImage}
 
@@ -244,30 +260,32 @@ Hover over <strong> responseText </strong> in the when ChatBot1.GotResponse bloc
 
 ![Set Text To Speech](../images/genAIVisionAid/SetTextToSpeechMessage.png){:.enlargeImage}
 
-Under <strong> ClearButton </strong>, drag the when ClearButton.Click block into your workspace.
+## Clear Function
+Under <strong> ClearButton</strong>, drag the when ClearButton.Click block into your workspace.
 
 ![When Clear Button](../images/genAIVisionAid/WhenClearButton.Click.png){:.enlargeImage}
 
-Under <strong> Image1 </strong>, drag the set Image1.Picture to block into your workspace and click it into the when ClearButton.Click block.
+Under <strong> Image1</strong>, drag the set Image1.Picture to block into your workspace and click it into the when ClearButton.Click block.
 
 ![Set Image](../images/genAIVisionAid/SetImage1.Picture.png){:.enlargeImage}
 
-Under <strong> Text </strong>, drag the “ ” block into your workspace and click it into the set Image1.Picture to block. The empty text block is used to clear any existing image file name. Delete the No available assets block.
+Under <strong> Text</strong>, drag the “ ” block into your workspace and click it into the set Image1.Picture to block. The empty text block is used to clear any existing image file name. Delete the No available assets block.
 
 ![Set Image Empty](../images/genAIVisionAid/SetImagetoEmptyText.png){:.enlargeImage}
 
-Under <strong> TextBox1 </strong>, drag the set TextBox1.Text to block into your workspace and click it into the when ClearButton.Click block.
+Under <strong> TextBox1</strong>, drag the set TextBox1.Text to block into your workspace and click it into the when ClearButton.Click block.
 
 ![Set Text Box](../images/genAIVisionAid/WhenClearAllSetTextBox1Text.png){:.enlargeImage}
 
-Under <strong> Text </strong>, drag the “ ” block into your workspace and click it into the set TextBox1.text to block. The empty text block is used to clear any existing writing.
+Under <strong> Text</strong>, drag the “ ” block into your workspace and click it into the set TextBox1.text to block. The empty text block is used to clear any existing writing.
 
 ![Clear Text Box](../images/genAIVisionAid/ClearTextBox.png){:.enlargeImage}
 
-Under <strong> TextToSpeech1 </strong>, drag the call TextToSpeech1.Stop block into your workspace and click it into the when ClearButton.Click block.
+Under <strong> TextToSpeech1</strong>, drag the call TextToSpeech1.Stop block into your workspace and click it into the when ClearButton.Click block.
 
 ![Clear Text To Speech](../images/genAIVisionAid/CallTextToSpeech1.Stop.png){:.enlargeImage}
 
+## Finished Product
 Congratulations! You have now completed the Vision Aid with Gen AI app tutorial. Your block code should look like this.
 
 ![Final Block Code](../images/genAIVisionAid/FinalBlocks.png){:.enlargeImage}
