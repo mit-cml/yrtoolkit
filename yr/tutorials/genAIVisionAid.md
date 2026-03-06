@@ -17,7 +17,7 @@ If you need help getting started and set up with App Inventor please visit our <
 
 ## Getting your own OpenAI API Key
 
-For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ImageBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys. For the first 3 months, you are given a $5 free credit which should get you quite a bit of exploration time. After 3 months, any unused portion of the credit expires. Once your free credit is gone, you will need to become a paying customer with a credit card.  Follow the steps below to create your OpenAI account and get your OpenAI API key.
+For this project you will need to get your own OpenAI API key to use MIT App Inventor’s <strong>ChatBot</strong> component.  As of the writing of this tutorial, OpenAI allows users 13 years old and older to create their own OpenAI accounts and generate their own OpenAI API keys.
 
 Follow the steps below to create your OpenAI account and get your OpenAI API key.
 
@@ -25,12 +25,12 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 2. Click on the <strong>Login</strong> button on the upper right, then click <strong>Sign up</strong> option.
 
-    ![OpenAI Sign up](../images/simpleImageBot/OpenAISite.png){:.enlargeImage}
+    ![OpenAI Sign up](../images/simpleChatBot/OpenAISite.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 3. Create your account by entering your email and choosing a password.  You can also sign up using your Google, Microsoft and Apple accounts.
 
-    ![Create Account](../images/simpleImageBot/OpenAISignUp.png){:.enlargeImage}
+    ![Create Account](../images/simpleChatBot/OpenAISignUp.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 
@@ -40,20 +40,20 @@ Follow the steps below to create your OpenAI account and get your OpenAI API key
 
 6. Click on the  API keys tab and the Create new secret key button.
 
-    ![Key Generate](../images/simpleImageBot/KeyGenerate.png){:.enlargeImage}
+    ![Key Generate](../images/simpleChatBot/KeyGenerate.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 7. Give your key a name if you wish.  This step is optional.
 
-    ![Name Secret Key](../images/simpleImageBot/NameSecretKey.png){:.enlargeImage}
+    ![Name Secret Key](../images/simpleChatBot/NameSecretKey.png){:.enlargeImage}
     <p style="padding-bottom: 7px"></p>
 
 
 8. Copy and save your API key somewhere safe on your computer.  You will need it while doing the project.
 
-9. During the ImageBot project, when you add your <strong>ImageBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ImageBot</strong> property <em>ApiKey</em>.
+9. During the ChatBot project, when you add your <strong>ChatBot</strong> component, you will need to copy-paste your OpenAI API key in the <strong>ChatBot</strong> property <em>ApiKey</em>.
 
-![Api Key Property](../images/digitaldoodlewithAI/api_key_location.png){:.enlargeImage}
+![Api Key Property](../images/simpleChatBot/ChatBotAPIKey.png){:.enlargeImage}
 <p style="padding-bottom: 7px"></p>
 
 ## Updating AI2 Companion
@@ -289,6 +289,20 @@ Under <strong> TextToSpeech1</strong>, drag the call TextToSpeech1.Stop block in
 Congratulations! You have now completed the Vision Aid with Gen AI app tutorial. Your block code should look like this.
 
 ![Final Block Code](../images/genAIVisionAid/FinalBlocks.png){:.enlargeImage}
+
+## Testing the App
+Now test your app by scanning the QR Code generated via your AI2 Companion.
+![QR Code](../images/simpleChatBot/QRCode.png){:.enlargeImage}
+
+Once the app is running, you can take a picture and ask ChatGPT to describe it. After sending the image, the app will process your request and return a response.
+
+Responses may take a few seconds to appear because your request is being sent to OpenAI’s servers for processing. Due to traffic and computation time, please be patient while waiting for the reply.
+
+Please note that unless you use your own OpenAI API key, the number of queries you can make to ChatGPT is limited.
+
+Congratulations! You’ve built a powerful app that allows you to capture images and receive AI-generated descriptions with a single button tap.
+
+Disclaimer: Use this application responsibly. Do not rely on it in situations where mistakes could put you or others at risk.
 
 # Expand Your App
 
