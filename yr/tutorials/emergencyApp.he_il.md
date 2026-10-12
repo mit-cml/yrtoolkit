@@ -1,3 +1,5 @@
+<div dir="rtl">
+
 ---
 title: Emergency App
 layout: tutorial
@@ -7,7 +9,7 @@ layout: tutorial
 
 אפליקציית החירום (Emergency App) מסייעת למשתמשים להגיב במהירות במצבי סכנה או דחיפות. האפליקציה מציגה מפה לזיהוי מיקום המשתמש/ת, ובזמן אמת יכולה ללכוד ולשתף אותו. בנוסף, ניתן להקליט הודעה, לצלם תמונה ולשלוח אותן יחד עם המיקום לאנשי קשר נבחרים בהודעת טקסט. האפליקציה כוללת גם לחצן חירום המשמיע צליל אזעקה חזק למשיכת תשומת לב והרתעת גורמי סכנה.
 
-<strong>הבהרה! (Disclaimer)</strong>
+<strong>הבהרה! (Disclaimer)</strong>  
 מדריך זה מיועד למטרות לימודיות בלבד. אם אתם חווים אירוע חירום אמיתי, אנא פנו מיד לשירותי החירום והרשויות המוסמכות.
 
 ![Finished Product](../images/emergencyApp/app.jpg){:.enlargeImage}
@@ -258,7 +260,7 @@ layout: tutorial
 
 ## שמירת האפליקציה (Saving the app)
 
-באפליקציית Companion ניתן לשמור פרויקט בלחיצה על האייקון בפינה הימנית העליונה وبחירה ב-"Download Project". בפעם הבאה שתפתחו את האפליקציה, הפרויקט יופיע תחת "my saved apps".
+באפליקציית Companion ניתן לשמור פרויקט בלחיצה על האייקון בפינה הימנית העליונה ובחירה ב-"Download Project". בפעם הבאה שתפתחו את האפליקציה, הפרויקט יופיע תחת "my saved apps".
 
 ![Download Project](../images/emergencyApp/DownloadProj.png){:.enlargeImage}
 ![Saved Apps](../images/emergencyApp/SavedApps.png){:.enlargeImage}
@@ -276,8 +278,4 @@ layout: tutorial
 ![Social Texting Hint](../images/emergencyApp/Hint2.png){:.enlargeImage}
 ![Comma Seperation Hint](../images/emergencyApp/Hint3.png){:.enlargeImage}
 
-```
-
------
-
-תרצה לעשות התאמות או שינויים נוספים בטקסט המתורגם?
+</div>
